@@ -21,6 +21,6 @@ MONO_BIN=`which mono`
 MONO_OPTIONS="--debug"
 EXEC_PATH="$APP_ROOT"/"$APP_NAME"
 if [ -f "$EXEC_PATH" ]; then rm -f "$EXEC_PATH" ; fi
-ln -s $MONO_BIN "$EXEC_PATH"
 echo $EXEC_PATH >> /tmp/logme 
-exec -a $APP_NAME "$EXEC_PATH" $MONO_OPTIONS "$RESOURCES_PATH"/"$ASSEMBLY"
+EXEC_PATH=/usr/bin/mono
+exec "$EXEC_PATH" $MONO_OPTIONS "$RESOURCES_PATH"/"$ASSEMBLY"
