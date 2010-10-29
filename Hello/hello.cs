@@ -22,15 +22,27 @@
 //
 using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.ObjCRuntime;
 
 [Register]
+public class MyView : NSView {
+	public MyView (RectangleF frame) : base (frame) {
+	}
+
+	public override void DrawRect (RectangleF rect) {
+		Graphics g = Graphics.FromHwnd (Handle);
+		g.FillRectangle (Brushes.Red, 0, 0, 200, 100);
+		g.Dispose ();
+	}
+}
+
+[Register]
 public class HelloAppDelegate : NSApplicationDelegate {
 	NSWindow window;
 	NSTextField text;
+	MyView view;
 	
 	public HelloAppDelegate ()
 	{
@@ -38,12 +50,18 @@ public class HelloAppDelegate : NSApplicationDelegate {
 
 	public override void FinishedLaunching (NSObject notification)
 	{
+		view = new MyView (new RectangleF (10, 10, 200, 200));
+
 		text = new NSTextField (new RectangleF (44, 32, 232, 31)) {
 			StringValue = "Hello Mono Mac!"
 		};
 			
 		window = new NSWindow (new RectangleF (50, 50, 400, 400), (NSWindowStyle) (1 | (1 << 1) | (1 << 2) | (1 << 3)), 0, false);
 		window.ContentView.AddSubview (text);
+		window.ContentView.AddSubview (view);
+
+
+
 		window.MakeKeyAndOrderFront (this);
 	}
 }
@@ -51,8 +69,8 @@ public class HelloAppDelegate : NSApplicationDelegate {
 class Demo {
 	static void Main (string [] args)
 	{
-		//System.Threading.Thread.Sleep (10000);
 		NSApplication.Init ();
+		NSApplication.InitDrawingBridge ();
 		NSApplication.Main (args);
 	}		
 }
