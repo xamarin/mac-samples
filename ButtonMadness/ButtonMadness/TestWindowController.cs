@@ -59,9 +59,9 @@ namespace SamplesButtonMadness
 			base.AwakeFromNib ();
 			
 			// add the image menu item back to the first menu item
-			NSMenuItem menuItem = new NSMenuItem (@"", new Selector (@""), @"");
+			NSMenuItem menuItem = new NSMenuItem ("", new Selector (""), "");
 			
-			menuItem.Image = NSImage.ImageNamed (@"moof.png");
+			menuItem.Image = NSImage.ImageNamed ("moof.png");
 			buttonMenu.InsertItematIndex (menuItem, 0);
 			
 			nibBasedPopUpDown.Menu = buttonMenu;
@@ -71,7 +71,7 @@ namespace SamplesButtonMadness
 			RectangleF buttonFrame = placeHolder1.Frame;
 			codeBasedPopUpDown = new NSPopUpButton (buttonFrame, true);
 			
-			((NSPopUpButtonCell)codeBasedPopUpDown.Cell).ArrowPosition = NSPopUpArrowPosition.AtBottom;
+			((NSPopUpButtonCell)codeBasedPopUpDown.Cell).ArrowPosition = NSPopUpArrowPosition.Bottom;
 			((NSPopUpButtonCell)codeBasedPopUpDown.Cell).BezelStyle = NSBezelStyle.ThickSquare;
 			codeBasedPopUpDown.Menu = buttonMenu;
 			popupBox.AddSubview (codeBasedPopUpDown);
@@ -81,7 +81,7 @@ namespace SamplesButtonMadness
 			buttonFrame = placeHolder2.Frame;
 			codeBasedPopUpRight = new NSPopUpButton (buttonFrame, true);
 			
-			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).ArrowPosition = NSPopUpArrowPosition.AtBottom;
+			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).ArrowPosition = NSPopUpArrowPosition.Bottom;
 			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).PreferredEdge = NSRectEdge.MaxXEdge;
 			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).BezelStyle = NSBezelStyle.Circular;
 			codeBasedPopUpRight.Menu = buttonMenu;
@@ -98,7 +98,7 @@ namespace SamplesButtonMadness
 		
 		partial void dropDownAction (NSObject sender)
 		{
-			Console.WriteLine (@"Drop down button clicked");
+			Console.WriteLine ("Drop down button clicked");
 		}
 		
 		#endregion

@@ -58,22 +58,20 @@ namespace SamplesButtonMadness
 			// create the menu the popup will use
 			NSMenu popUpMenu = this.Menu;
 			
-			if (popUpCell.NumberOfItems() > 0)
+			if (popUpCell.Count > 0)
 			{
-				NSMenuItem item = popUpCell.ItemAtIndex(0);
+				NSMenuItem item = popUpCell [0];
 				
-				if (item.Title != @"")
-				{
-					popUpMenu.InsertItem(@"", null, @"", 0);					
-				}
+				if (item.Title != "")
+					popUpMenu.InsertItem ("", null, "", 0);					
 			}
 			
 			popUpCell.Menu = popUpMenu;
     
 			// and show it
-			popUpCell.PerformClickWithFrameinView(this.Bounds, this);
+			popUpCell.PerformClick (Bounds, this);
     
-			this.NeedsDisplay = true;
+			NeedsDisplay = true;
 		}
 	}
 }
