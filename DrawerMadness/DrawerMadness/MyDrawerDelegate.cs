@@ -54,23 +54,21 @@ namespace DrawerMadness
 		{
 			Console.WriteLine("Drawer Resize from MyDrawerDelegate");
 			contentSize.Width = 10 * (float)Math.Ceiling(contentSize.Width / 10);
-    		if (contentSize.Width < 50) 
+			if (contentSize.Width < 50) 
 				contentSize.Width = 50;
-    		if (contentSize.Width > 250) 
+			if (contentSize.Width > 250) 
 				contentSize.Width = 250;
-    		if (sender == controller.upperRightDrawer) {
-				
+			if (sender == controller.upperRightDrawer) {
 				controller.lowerRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
 				                                                    controller.lowerRightDrawer.ContentSize.Height);
-    		} 
+			} 
 			else if (sender == controller.lowerRightDrawer) {
 				controller.upperRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
 				                                                    controller.upperRightDrawer.ContentSize.Height);
-        		
-    		}
-    		
-			return contentSize;
+				
+			}
 			
+			return contentSize;
 		}
 	}
 }

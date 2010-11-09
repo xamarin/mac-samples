@@ -118,10 +118,11 @@ namespace DrawerMadness
 		private void setupBottomDrawer() 
 		{
 			SizeF contentSize = new SizeF(100,100);
-			bottomDrawer = new NSDrawer(contentSize,NSRectEdge.MinYEdge);
-			bottomDrawer.ParentWindow = myParentWindow;
-			bottomDrawer.MinContentSize = contentSize;
-			bottomDrawer.MaxContentSize = contentSize;
+			bottomDrawer = new NSDrawer(contentSize,NSRectEdge.MinYEdge) {
+				ParentWindow = myParentWindow,
+				MinContentSize = contentSize,
+				MaxContentSize = contentSize
+			};
 		}
 		
 		partial void openBottomDrawer (NSButtonCell sender)
@@ -136,14 +137,11 @@ namespace DrawerMadness
 		
 		partial void toggleBottomDrawer (NSButtonCell sender)
 		{
-			
-			NSDrawerState state = bottomDrawer.State;
-		    if (state == NSDrawerState.Opening 
-			    	|| state == NSDrawerState.Open) {
-		        bottomDrawer.Close(sender);
-		    } else {
-		        bottomDrawer.OpenOnEdge(NSRectEdge.MinYEdge);
-		    }
+			var state = bottomDrawer.State;
+			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
+				bottomDrawer.Close(sender);
+			else
+				bottomDrawer.OpenOnEdge(NSRectEdge.MinYEdge);
 		}
 		
 		private void setBottomDrawerOffsets() 
@@ -168,14 +166,14 @@ namespace DrawerMadness
 		
 		private void setupUpperRightDrawer() {
 			SizeF contentSize = new SizeF(150,150);
-			upperRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge);
-			upperRightDrawer.ParentWindow = myParentWindow;
-			upperRightDrawer.MinContentSize = contentSize;
+			upperRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge) {
+				ParentWindow = myParentWindow,
+				MinContentSize = contentSize
+			};
 
 			// setup delegate to recompute the sizes and control close
 			myDrawerDelegate = new MyDrawerDelegate(this);
 			upperRightDrawer.Delegate = myDrawerDelegate;
-			
 		}
 		
 			                                                                
@@ -191,28 +189,25 @@ namespace DrawerMadness
 		
 		partial void toggleUpperRightDrawer (NSButtonCell sender)
 		{
-			
-			NSDrawerState state = upperRightDrawer.State;
-		    if (state == NSDrawerState.Opening 
-			    	|| state == NSDrawerState.Open) {
-		        upperRightDrawer.Close(sender);
-		    } else {
-		        upperRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
-		    }
+			var state = upperRightDrawer.State;
+			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
+				upperRightDrawer.Close(sender);
+			else
+				upperRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
 		}
 		
 		/****************** Lower right drawer ******************/
 		private void setupLowerRightDrawer()
 		{
 			SizeF contentSize = new SizeF(150,150);
-			lowerRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge);
-			lowerRightDrawer.ParentWindow = myParentWindow;
-			lowerRightDrawer.MinContentSize = new SizeF(50,50);
+			lowerRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge) {
+				ParentWindow = myParentWindow,
+				MinContentSize = new SizeF(50,50)
+			};
 			
 			// Attach our delegate methods
-			lowerRightDrawer.DrawerWillResizeContents = 
-					new DrawerWillResizeContentsDelegate(DrawerWillResizeContents);
-			lowerRightDrawer.DrawerShouldClose = new DrawerShouldCloseDelegate(DrawerShouldClose);
+			lowerRightDrawer.DrawerWillResizeContents = DrawerWillResizeContents;
+			lowerRightDrawer.DrawerShouldClose = DrawerShouldClose;
 		}
 		
 		partial void openLowerRightDrawer (NSButtonCell sender)
@@ -227,14 +222,11 @@ namespace DrawerMadness
 		
 		partial void toggleLowerRightDrawer (NSButtonCell sender)
 		{
-			
-			NSDrawerState state = lowerRightDrawer.State;
-		    if (state == NSDrawerState.Opening 
-			    	|| state == NSDrawerState.Open) {
-		        lowerRightDrawer.Close(sender);
-		    } else {
-		        lowerRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
-		    }
+			var state = lowerRightDrawer.State;
+			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
+				lowerRightDrawer.Close(sender);
+			else
+				lowerRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
 		}
 		
 		private void setRightDrawerOffsets() 
@@ -254,46 +246,37 @@ namespace DrawerMadness
 		{
 			Console.WriteLine("Drawer Resize");
 			contentSize.Width = 10 * (float)Math.Ceiling(contentSize.Width / 10);
-    		if (contentSize.Width < 50) 
+			if (contentSize.Width < 50) 
 				contentSize.Width = 50;
-    		if (contentSize.Width > 250) 
+			if (contentSize.Width > 250) 
 				contentSize.Width = 250;
-    		if (sender == upperRightDrawer) {
-				
+			if (sender == upperRightDrawer)
 				lowerRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
-				                                                   lowerRightDrawer.ContentSize.Height);
-    		} 
-			else if (sender == lowerRightDrawer) {
+									 lowerRightDrawer.ContentSize.Height);
+			else if (sender == lowerRightDrawer) 
 				upperRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
-				                                                    upperRightDrawer.ContentSize.Height);
-        		
-    		}
-    		
+									 upperRightDrawer.ContentSize.Height);
 			return contentSize;
 			
 		}
 		
-		private bool DrawerShouldClose (NSDrawer sender) {
-			
+		private bool DrawerShouldClose (NSDrawer sender)
+		{
 			return (lowerRightAllowClose.State == NSCellStateValue.On);
-				
 		}
 		
 		#endregion
 		
 		#region Accessor Properties from controller
 		
-		internal bool AllowUpperRightDrawerToClose 
-		{
-			get 
-			{
+		internal bool AllowUpperRightDrawerToClose  {
+			get {
 				return (upperRightAllowClose.State == NSCellStateValue.On);
 			}
 		}
 		
 		#endregion
 	}
-}	
-	
+}		
 
 
