@@ -30,42 +30,29 @@ namespace AnimatingViews
 		private const float BOX_HEIGHT = 80.0f;
 		
 		
-		#region Constructors
-
 		// Called when created from unmanaged code
 		public AnimatingViewsWindowController (IntPtr handle) : base(handle)
 		{
-			Initialize ();
 		}
 
 		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
 		public AnimatingViewsWindowController (NSCoder coder) : base(coder)
 		{
-			Initialize ();
 		}
 
 		// Call to load from the XIB/NIB file
 		public AnimatingViewsWindowController () : base("AnimatingViewsWindow")
 		{
-			Initialize ();
 		}
-
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-
-		#endregion
 		
 		private Layout LayoutStyle 
 		{
-			get
-			{
+			get {
 				return layoutStyle;
 			}
-			set
-			{
+			
+			set {
 				if (layoutStyle != value) {
 					layoutStyle = value;
 					layout();
@@ -83,27 +70,26 @@ namespace AnimatingViews
 		// Action for change layout Matrix
 		partial void changeLayout (NSMatrix sender)
 		{
-			
 			LayoutStyle = (Layout)sender.SelectedTag;
-			layout();
+			layout ();
 			
 		} 
 		
 		// Action for Add pushbutton
 		partial void addABox (NSButton sender)
 		{
-			simpleView.AddSubview(viewToBeAdded());
-			layout();
+			simpleView.AddSubview (viewToBeAdded ());
+			layout ();
 		}
 		
 		// Action for Remove pushbutton
 		partial void removeLastBox (NSButton sender)
 		{
-			if (simpleView.Subviews.Count() == 0)
+			if (simpleView.Subviews.Length == 0)
 				return;
 			
-			simpleView.Subviews.Last().RemoveFromSuperview();
-			layout();
+			simpleView.Subviews.Last ().RemoveFromSuperview ();
+			layout ();
 		}
 		
 		#endregion
@@ -115,7 +101,7 @@ namespace AnimatingViews
  		*/
 		private NSView viewToBeAdded() 
 		{
-			NSBox box = new NSBox(new RectangleF(0.0f,0.0f,BOX_WIDTH,BOX_HEIGHT));
+			NSBox box = new NSBox (new RectangleF (0.0f, 0.0f, BOX_WIDTH, BOX_HEIGHT));
 			box.BoxType = NSBoxType.NSBoxCustom;
 			box.BorderType = NSBorderType.LineBorder;
 			box.TitlePosition = NSTitlePosition.NoTitle;
@@ -126,7 +112,7 @@ namespace AnimatingViews
 		
 		/* This method returns a rect that is integral in base coordinates.
  		*/
-		private RectangleF integralRect(RectangleF rect) 
+		private RectangleF integralRect (RectangleF rect) 
 		{
 			// missing NSIntegralRect
 			//return simpleView.ConvertRectFromBase(NSIntegralRect(simpleView.ConvertRectToBase(rect)));
@@ -134,15 +120,13 @@ namespace AnimatingViews
 		}
 		
 		// Layout the sub views
-		private void layout()
+		private void layout ()
 		{
-			
 			NSView[] subviews = simpleView.Subviews;
 			
 			PointF curPoint;
 				
-			switch (LayoutStyle)
-			{
+			switch (LayoutStyle){
 			case Layout.ColumnLayout:
 				curPoint = new PointF(simpleView.Bounds.Size.Width / 2.0f, 0.0f);
 				foreach (NSView subview in subviews)
