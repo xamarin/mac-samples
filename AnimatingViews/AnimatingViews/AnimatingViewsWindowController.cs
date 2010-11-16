@@ -189,7 +189,15 @@ namespace AnimatingViews
 		// Helper method to animate the sub view
 		private void animateView(NSView subView, RectangleF toFrame) 
 		{
-				
+#if true
+			// Simple animation: assign the new value, and let CoreAnimation
+			// take it from here
+			
+			((NSView) subView.Animator).Frame = toFrame;
+#else
+			//
+			// Performing the animation by hand, every step of the way
+			//
 			var animationY = CABasicAnimation.FromKeyPath("position.y");
 			animationY.To = NSNumber.FromFloat(toFrame.Y);
 			animationY.AnimationStopped += delegate {
@@ -211,7 +219,7 @@ namespace AnimatingViews
 			
 			subView.Layer.AddAnimation(animationX,"moveX");
 			subView.Layer.AddAnimation(animationY,"moveY");
-		
+#endif
 		}
 		
 		#endregion
