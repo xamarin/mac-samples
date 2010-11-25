@@ -77,7 +77,7 @@ namespace StillMotion
 			}
 		}
 		
-		NSDictionary imageAttributes = NSDictionary.FromObjectAndKey (new NSString ("jpeg"), QTMovie.ImageCodecType);
+		QTImageAttributes attrs = new QTImageAttributes () { CodecType = "jpeg" };
 			
 		// Invoked when the user clicks "Add Frame"
 		partial void addFrame (NSObject sender)
@@ -94,7 +94,7 @@ namespace StillMotion
 				image = new NSImage (imageRep.Size);
 				image.AddRepresentation (imageRep);
 			}
-			movie.AddImageForDuration (image, new QTTime (1, 10), imageAttributes);
+			movie.AddImage (image, new QTTime (1, 10), attrs);
 			movie.CurrentTime = movie.Duration;
 			movieView.NeedsDisplay = true;
 		}
