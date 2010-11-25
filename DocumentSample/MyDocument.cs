@@ -37,6 +37,8 @@ namespace DocumentSample
 				return "MyDocument";
 			}
 		}
+		
+		override 
 	}
 }
 
