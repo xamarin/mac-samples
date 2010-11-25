@@ -5,6 +5,8 @@ using System.Linq;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.QTKit;
+using MonoMac.CoreImage;
+using MonoMac.CoreVideo;
 
 namespace StillMotion
 {
@@ -61,21 +63,45 @@ namespace StillMotion
 			// Start running.
 			captureSession.StartRunning ();
 		}
-
+		
+		volatile CVImageBuffer currentImage;
+		
+		// This is inovked on a separate thread
 		void NewVideoFrame (object sender, QTCaptureVideoFrameEventArgs e)
 		{
-			Console.WriteLine ("New video frame");
+			Console.WriteLine ("Here");
+			lock (this){
+				currentImage = e.VideoFrame;
+				if (currentImage == null)
+					throw new Exception ();
+			}
 		}
 		
+		NSDictionary imageAttributes = NSDictionary.FromObjectAndKey (new NSString ("jpeg"), QTMovie.ImageCodecType);
+			
+		// Invoked when the user clicks "Add Frame"
+		partial void addFrame (NSObject sender)
+		{
+			NSImage image;
+			
+			lock (this){
+				if (currentImage == null)
+					return;
+
+				var img = CIImage.FromImageBuffer (currentImage);
+				Console.WriteLine (img);
+				var imageRep = NSCIImageRep.FromCIImage (CIImage.FromImageBuffer (currentImage));
+				image = new NSImage (imageRep.Size);
+				image.AddRepresentation (imageRep);
+			}
+			movie.AddImageForDuration (image, new QTTime (1, 10), imageAttributes);
+			movie.CurrentTime = movie.Duration;
+			movieView.NeedsDisplay = true;
+		}
+
 		//strongly typed window accessor
 		public new MainWindow Window {
 			get { return (MainWindow)base.Window; }
-		}
-		
-		
-		partial void addFrame (NSObject sender)
-		{
-			Console.WriteLine ("Adding frame");
 		}
 	}
 }
