@@ -23,6 +23,10 @@ namespace DocumentSample
 			Initialize ();
 		}
 
+		public MyDocument (string type, NSError outError)
+		{
+		}
+		
 		void Initialize ()
 		{
 		}
@@ -38,7 +42,7 @@ namespace DocumentSample
 			}
 		}
 		
-		override 
+		
 	}
 }
 
