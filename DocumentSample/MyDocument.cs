@@ -13,21 +13,11 @@ namespace DocumentSample
 		// Called when created from unmanaged code
 		public MyDocument (IntPtr handle) : base (handle)
 		{
-			Initialize ();
 		}
 
 		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
 		public MyDocument (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
-
-		public MyDocument (string type, NSError outError)
-		{
-		}
-		
-		void Initialize ()
 		{
 		}
 		
@@ -41,8 +31,36 @@ namespace DocumentSample
 				return "MyDocument";
 			}
 		}
+
+		public override void WindowControllerDidLoadNib (NSWindowController windowController)
+		{
+			base.WindowControllerDidLoadNib (windowController);
+			
+			// Add code to here after the controller has loaded the document window
+		}
 		
+		// 
+		// Save support:
+		//    Override one of GetAsData, GetAsFileWrapper, or WriteToUrl.
+		//
 		
+		// This method should store the contents of the document using the given typeName
+		// on the return NSData value.
+		public override NSData GetAsData (string documentType, out NSError outError)
+		{
+			outError = NSError.FromDomain (NSError.OsStatusErrorDomain, -4);
+			return null;
+		}
+		
+		// 
+		// Load support:
+		//    Override one of ReadFromData, ReadFromFileWrapper or ReadFromUrl
+		//
+		public override bool ReadFromData (NSData data, string typeName, out NSError outError)
+		{
+			outError = NSError.FromDomain (NSError.OsStatusErrorDomain, -4);
+			return false;
+		}
 	}
 }
 
