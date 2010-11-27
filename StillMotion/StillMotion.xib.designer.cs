@@ -11,14 +11,9 @@
 namespace StillMotion {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
-	public partial class MainWindow {
-	}
-	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
-	public partial class MainWindowController {
+	// Should subclass MonoMac.AppKit.NSDocument
+	[MonoMac.Foundation.Register("StillMotionDocument")]
+	public partial class StillMotionDocument {
 		
 		private global::MonoMac.QTKit.QTCaptureView __mt_captureView;
 		

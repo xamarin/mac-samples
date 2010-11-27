@@ -5,25 +5,35 @@ using System.Linq;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.QTKit;
-using MonoMac.CoreImage;
 using MonoMac.CoreVideo;
+using MonoMac.CoreImage;
 
 namespace StillMotion
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class StillMotionDocument : NSDocument
 	{
 		QTMovie movie;
 		QTCaptureSession captureSession;
 		QTCaptureDeviceInput captureInput;
 		QTCaptureDecompressedVideoOutput decompressedVideo;
+		volatile CVImageBuffer currentImage;
 		
-		public MainWindowController () : base("MainWindow")
+		// Called when created from unmanaged code
+		public StillMotionDocument (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override string WindowNibName {
+			get {
+
+				return "StillMotion";
+			}
+		}
 		
-		public override void WindowDidLoad ()
+		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
-			base.WindowDidLoad ();
+			base.WindowControllerDidLoadNib (windowController);
+			
 			NSError err;
 			
 			// Create a movie, and store the information in memory on an NSMutableData
@@ -49,9 +59,13 @@ namespace StillMotion
 				return;
 			}
 			
-	        // Create decompressor for video output, to get raw frames
+			// Create decompressor for video output, to get raw frames
 			decompressedVideo = new QTCaptureDecompressedVideoOutput ();
-			decompressedVideo.DidOutputVideoFrame += NewVideoFrame;
+			decompressedVideo.DidOutputVideoFrame += delegate(object sender, QTCaptureVideoFrameEventArgs e) {
+				lock (this){
+					currentImage = e.VideoFrame;
+				}
+			};
 			if (!captureSession.AddOutput (decompressedVideo, out err)){
 				NSAlert.WithError (err).RunModal ();
 				return;
@@ -64,22 +78,8 @@ namespace StillMotion
 			captureSession.StartRunning ();
 		}
 		
-		volatile CVImageBuffer currentImage;
-		
-		// This is inovked on a separate thread
-		void NewVideoFrame (object sender, QTCaptureVideoFrameEventArgs e)
-		{
-			Console.WriteLine ("Here");
-			lock (this){
-				currentImage = e.VideoFrame;
-				if (currentImage == null)
-					throw new Exception ();
-			}
-		}
-		
 		QTImageAttributes attrs = new QTImageAttributes () { CodecType = "jpeg" };
-			
-		// Invoked when the user clicks "Add Frame"
+		
 		partial void addFrame (NSObject sender)
 		{
 			NSImage image;
@@ -96,12 +96,28 @@ namespace StillMotion
 			}
 			movie.AddImage (image, new QTTime (1, 10), attrs);
 			movie.CurrentTime = movie.Duration;
-			movieView.NeedsDisplay = true;
+			movieView.NeedsDisplay = true;			
 		}
-
-		//strongly typed window accessor
-		public new MainWindow Window {
-			get { return (MainWindow)base.Window; }
+		
+		public override bool WriteToUrl (NSUrl absoluteUrl, string typeName, NSSaveOperationType saveOperation, NSUrl absoluteOriginalContentsUrl, out NSError outError)
+		{
+			var saveOptions = new QTMovieSaveOptions () {
+				Flatten = true
+			};
+			return movie.SaveTo (absoluteUrl.Path, new QTMovieSaveOptions () { Flatten = true }, out outError);
+		}
+		
+		public override bool ReadFromUrl (NSUrl absoluteUrl, string typeName, out NSError outError)
+		{
+			var loaded = QTMovie.FromUrl (absoluteUrl, out outError);
+			if (loaded != null){
+				loaded.SetAttribute (NSNumber.FromBoolean (true), QTMovie.EditableAttribute);
+				
+				if (movie != null)
+					movie.Dispose ();
+				movie = loaded;
+			}
+			return loaded != null;
 		}
 	}
 }
