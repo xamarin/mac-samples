@@ -33,8 +33,16 @@ namespace StillMotion
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
 			base.WindowControllerDidLoadNib (windowController);
-			
+
 			NSError err;
+			
+			windowController.Window.WillClose += delegate {
+				if (captureSession != null)
+					captureSession.StopRunning ();
+				var device = captureInput.Device;
+				if (device.IsOpen)
+					device.Close ();
+			};
 			
 			// Create a movie, and store the information in memory on an NSMutableData
 			movie = new QTMovie (new NSMutableData (1), out err);
@@ -118,6 +126,21 @@ namespace StillMotion
 				movie = loaded;
 			}
 			return loaded != null;
+		}
+		
+		//
+		// Not strictly necessary, but the movie might be very large, so we might
+		// as well help the system by disposing before the GC kicks-in
+		//
+		protected override void Dispose (bool disposing)
+		{
+			if (disposing){
+				movie.Dispose ();
+				captureSession.Dispose ();
+				captureInput.Dispose ();
+				decompressedVideo.Dispose ();
+			}
+			base.Dispose (disposing);
 		}
 	}
 }
