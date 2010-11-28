@@ -21,21 +21,16 @@ namespace PopupBindings
 			this.personValues = new NSMutableDictionary(attributes);	
 		}
 		
-		[Export("name")]
-		public NSString name()
-		{
-			return this.Name;
-		}
-		
+		[Connect ("name")]
 		public NSString Name
 		{
 			get {
 				return (NSString) personValues.ObjectForKey (NAME);	
 			}
 		}
-		
-		public NSNumber Age
-		{
+
+		[Connect ("age")]
+		public NSNumber Age {
 			get {
 				return (NSNumber) personValues.ObjectForKey (AGE);	
 			}
@@ -61,57 +56,30 @@ namespace PopupBindings
 			
 		}
 		
-		[Export("addressStreet")]
-		public NSString addressStreet()
-		{
-			return this.AddressStreet;
-		}
-		
-		public NSString AddressStreet
-		{
+		[Connect("addressStreet")]
+		public NSString AddressStreet {
 			get {
 				return (NSString) personValues [ADDRESS_STREET];	
 			}
 		}
 		
-		[Export("addressCity")]
-		public NSString addressCity()
-		{
-			return this.AddressCity;
-		}		
-		
-		public NSString AddressCity
-		{
-			get 
-			{
+		[Connect("addressCity")]
+		public NSString AddressCity {
+			get {
 				return (NSString)personValues[ADDRESS_CITY];	
 			}
 		}
-
-		[Export("addressState")]
-		public NSString addressState()
-		{
-			return this.AddressState;
-		}	
 		
-		public NSString AddressState
-		{
-			get 
-			{
+		[Connect ("addressState")]
+		public NSString AddressState {
+			get {
 				return (NSString)personValues[ADDRESS_STATE];	
 			}
 		}
 		
-		[Export("addressZip")]
-		public NSString addressZip()
-		{
-			return this.AddressZip;
-		}	
-		
-		public NSString AddressZip
-		{
-			get 
-			{
+		[Connect ("addressZip")]
+		public NSString AddressZip {
+			get {
 				return (NSString)personValues.ObjectForKey(ADDRESS_ZIP);	
 			}
 		}
@@ -119,8 +87,7 @@ namespace PopupBindings
 		public NSMutableDictionary Attributes
 		{
 			get { return personValues; }
-			set 
-			{
+			set {
 				personValues = NSMutableDictionary.FromDictionary(value);	
 			}
 		}
