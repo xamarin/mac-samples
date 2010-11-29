@@ -14,5 +14,34 @@ namespace QTRecorder {
 	// Should subclass MonoMac.AppKit.NSDocument
 	[MonoMac.Foundation.Register("QTRDocument")]
 	public partial class QTRDocument {
+		
+		private global::MonoMac.AppKit.NSLevelIndicator __mt_audioLevelIndicator;
+		
+		private global::MonoMac.QTKit.QTCaptureView __mt_captureView;
+		
+		#pragma warning disable 0169
+		[MonoMac.Foundation.Connect("audioLevelIndicator")]
+		private global::MonoMac.AppKit.NSLevelIndicator audioLevelIndicator {
+			get {
+				this.__mt_audioLevelIndicator = ((global::MonoMac.AppKit.NSLevelIndicator)(this.GetNativeField("audioLevelIndicator")));
+				return this.__mt_audioLevelIndicator;
+			}
+			set {
+				this.__mt_audioLevelIndicator = value;
+				this.SetNativeField("audioLevelIndicator", value);
+			}
+		}
+		
+		[MonoMac.Foundation.Connect("captureView")]
+		private global::MonoMac.QTKit.QTCaptureView captureView {
+			get {
+				this.__mt_captureView = ((global::MonoMac.QTKit.QTCaptureView)(this.GetNativeField("captureView")));
+				return this.__mt_captureView;
+			}
+			set {
+				this.__mt_captureView = value;
+				this.SetNativeField("captureView", value);
+			}
+		}
 	}
 }
