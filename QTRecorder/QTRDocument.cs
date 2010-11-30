@@ -10,12 +10,15 @@ namespace QTRecorder
 {
 	public partial class QTRDocument : MonoMac.AppKit.NSDocument
 	{
-		// Called when created from unmanaged code
+		QTCaptureSession session;
+		QTCaptureDeviceInput videoDeviceInput, audioDeviceInput;
+		QTCaptureMovieFileOutput movieFileOutput;
+		QTCaptureAudioPreviewOutput audioPreviewOutput;
+		
 		public QTRDocument (IntPtr handle) : base(handle)
 		{
 		}
 
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
 		public QTRDocument (NSCoder coder) : base(coder)
 		{
@@ -23,9 +26,27 @@ namespace QTRecorder
 
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
+			NSError error;
 			base.WindowControllerDidLoadNib (windowController);
 			
-			// Add code to here after the controller has loaded the document window
+			// Create session
+			session = new QTCaptureSession ();
+			
+			// Attach preview to session
+			captureView.CaptureSession = session;
+		
+			// Attach outputs to session
+			movieFileOutput = new QTCaptureMovieFileOutput ();
+			session.AddOutput (movieFileOutput, out error);
+			
+			audioPreviewOutput = new QTCaptureAudioPreviewOutput ();
+			session.AddOutput (audioPreviewOutput, out error);
+			
+			if (VideoDevices.Length > 0)
+				SelectedVideoDevice = VideoDevices [0];
+			
+			if (AudioDevices.Length > 0)
+				SelectedAudioDevice = AudioDevices [0];
 		}
 
 		// 
@@ -51,22 +72,30 @@ namespace QTRecorder
 			return false;
 		}
 		
-		QTCaptureDevice [] videoDevices;
+		QTCaptureDevice [] videoDevices, audioDevices;
 		void RefreshDevices ()
 		{
-			Console.WriteLine ("Foo");
 			WillChangeValue ("VideoDevices");
 			videoDevices = QTCaptureDevice.GetInputDevices (QTMediaType.Video).Concat (QTCaptureDevice.GetInputDevices (QTMediaType.Muxed)).ToArray ();
 			DidChangeValue ("VideoDevices");
+			
+			WillChangeValue ("AudioDevices");
+			audioDevices = QTCaptureDevice.GetInputDevices (QTMediaType.Sound);
+			DidChangeValue ("AudioDevices");
+			
+			if (!videoDevices.Contains (SelectedVideoDevice))
+				SelectedVideoDevice = null;
+			
+			if (!audioDevices.Contains (SelectedAudioDevice))
+				SelectedAudioDevice = null;
 		}
 		
 		//
-		// Connections
+		// Binding support
 		//
 		[Export]
 		public QTCaptureDevice [] VideoDevices {
 			get {
-				Console.WriteLine ("Bar");
 				if (videoDevices == null)
 					RefreshDevices ();
 				return videoDevices;
@@ -76,16 +105,71 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export ("SelectedVideoDevice")]
+		[Export]
 		public QTCaptureDevice SelectedVideoDevice { 
 			get {
-				return null;
+				return videoDeviceInput == null ? null : videoDeviceInput.Device;
 			}
 			set {
-				Console.WriteLine ("Foo");
+				if (videoDeviceInput != null){
+					session.RemoveInput (videoDeviceInput);
+					videoDeviceInput.Device.Close ();
+					videoDeviceInput.Dispose ();
+					videoDeviceInput = null;
+				}
+				
+				if (value != null){
+					NSError err;
+					if (!value.Open (out err)){
+						NSAlert.WithError (err).BeginSheet (WindowControllers [0].Window, delegate {});
+						return;
+					}
+					videoDeviceInput = new QTCaptureDeviceInput (value);
+					if (!session.AddInput (videoDeviceInput, out err)){
+						NSAlert.WithError (err).BeginSheet (WindowControllers [0].Window, delegate {});
+						videoDeviceInput.Dispose ();
+						videoDeviceInput = null;
+						value.Close ();
+						return;
+					}
+				}
+				// If the video device provides audio, do not use a new audio device
+				if (SelectedVideoDeviceProvidesAudio)
+					SelectedAudioDevice = null;
 			}
 		}
 		
+		[Export]
+		public QTCaptureDevice [] AudioDevices {
+			get {
+				if (audioDevices == null)
+					RefreshDevices ();
+				return audioDevices;
+			}
+		}
+		
+		[Export]
+		public QTCaptureDevice SelectedAudioDevice { 
+			get {
+				if (audioDeviceInput == null)
+					return null;
+				return audioDeviceInput.Device;
+			}
+			set {
+				if (videoDeviceInput != null){
+					
+				}
+			}
+		}
+		
+		bool SelectedVideoDeviceProvidesAudio {
+			get {
+				var x = SelectedVideoDevice;
+				if (x == null)
+					return false;
+				return x.HasMediaType (QTMediaType.Muxed) || x.HasMediaType (QTMediaType.Sound);
+			}
+		}
 		public override string WindowNibName {
 			get {
 				return "QTRDocument";
