@@ -38,7 +38,7 @@ namespace QTRecorder
 		
 			// Attach outputs to session
 			movieFileOutput = new QTCaptureMovieFileOutput ();
-#if false
+
 			movieFileOutput.WillStartRecording += delegate {
 				Console.WriteLine ("Will start recording");
 			};
@@ -82,7 +82,7 @@ namespace QTRecorder
 					}
 				});
 			};
-#endif
+
 			session.AddOutput (movieFileOutput, out error);
 
 			audioPreviewOutput = new QTCaptureAudioPreviewOutput ();
