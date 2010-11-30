@@ -38,12 +38,14 @@ namespace QTRecorder
 		
 			// Attach outputs to session
 			movieFileOutput = new QTCaptureMovieFileOutput ();
+#if false
 			movieFileOutput.WillStartRecording += delegate {
 				Console.WriteLine ("Will start recording");
 			};
 			movieFileOutput.DidStartRecording += delegate {
 				Console.WriteLine ("Started Recording");
 			};
+
 			movieFileOutput.ShouldChangeOutputFile = (output, url, connections, reason) => {
 				// Should change the file on error
 				Console.WriteLine (reason.LocalizedDescription);
@@ -52,7 +54,7 @@ namespace QTRecorder
 			movieFileOutput.MustChangeOutputFile += delegate(object sender, QTCaptureFileErrorEventArgs e) {
 				Console.WriteLine ("Must change file due to error");
 			};
-			
+
 			// These ones we care about, some notifications
 			movieFileOutput.WillFinishRecording += delegate(object sender, QTCaptureFileErrorEventArgs e) {
 				Console.WriteLine ("Will finish recording");
@@ -72,7 +74,7 @@ namespace QTRecorder
 				save.CanSelectHiddenExtension = true;
 				save.Begin (code => {
 					NSError err2;
-					if (code == NSPanelButtonType.Ok){
+					if (code == (int) NSPanelButtonType.Ok){
 						var filename = save.Filename;
 						NSFileManager.DefaultManager.Move (e.OutputFileURL.Path, filename, out err2);
 					} else {
@@ -80,9 +82,9 @@ namespace QTRecorder
 					}
 				});
 			};
-			
+#endif
 			session.AddOutput (movieFileOutput, out error);
-			
+
 			audioPreviewOutput = new QTCaptureAudioPreviewOutput ();
 			session.AddOutput (audioPreviewOutput, out error);
 			
