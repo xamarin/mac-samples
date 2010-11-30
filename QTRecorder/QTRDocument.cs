@@ -63,21 +63,20 @@ namespace QTRecorder
 		//
 		// Connections
 		//
+		[Export]
 		public QTCaptureDevice [] VideoDevices {
-			[Export ("VideoDevices")]
 			get {
-			Console.WriteLine ("Bar");
+				Console.WriteLine ("Bar");
 				if (videoDevices == null)
 					RefreshDevices ();
 				return videoDevices;
 			}
-			[Export ("setVideoDevices:")]
 			set {
 				videoDevices = value;
 			}
 		}
 		
-		[Connect ("SelectedVideoDevice")]
+		[Export ("SelectedVideoDevice")]
 		public QTCaptureDevice SelectedVideoDevice { 
 			get {
 				return null;
