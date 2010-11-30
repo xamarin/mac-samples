@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
+using MonoMac.QTKit;
 
 namespace QTRecorder
 {
@@ -48,6 +49,38 @@ namespace QTRecorder
 		{
 			outError = NSError.FromDomain (NSError.OsStatusErrorDomain, -4);
 			return false;
+		}
+		
+		QTCaptureDevice [] videoDevices;
+		void RefreshDevices ()
+		{
+			Console.WriteLine ("Foo");
+			WillChangeValue ("VideoDevices");
+			videoDevices = QTCaptureDevice.GetInputDevices (QTMediaType.Video).Concat (QTCaptureDevice.GetInputDevices (QTMediaType.Muxed)).ToArray ();
+			DidChangeValue ("VideoDevices");
+		}
+		
+		//
+		// Connections
+		//
+		[Connect ("VideoDevices")]
+		public QTCaptureDevice [] VideoDevices {
+			get {
+			Console.WriteLine ("Bar");
+				if (videoDevices == null)
+					RefreshDevices ();
+				return videoDevices;
+			}
+		}
+		
+		[Connect ("SelectedVideoDevice")]
+		public QTCaptureDevice SelectedVideoDevice { 
+			get {
+				return null;
+			}
+			set {
+				Console.WriteLine ("Foo");
+			}
 		}
 		
 		public override string WindowNibName {
