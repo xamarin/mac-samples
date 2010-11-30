@@ -39,9 +39,9 @@ namespace StillMotion
 			windowController.Window.WillClose += delegate {
 				if (captureSession != null)
 					captureSession.StopRunning ();
-				var device = captureInput.Device;
-				if (device.IsOpen)
-					device.Close ();
+				var dev = captureInput.Device;
+				if (dev.IsOpen)
+					dev.Close ();
 			};
 			
 			// Create a movie, and store the information in memory on an NSMutableData
