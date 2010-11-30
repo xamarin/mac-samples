@@ -5,6 +5,7 @@ using System.Linq;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.QTKit;
+using System.IO;
 
 namespace QTRecorder
 {
@@ -37,6 +38,49 @@ namespace QTRecorder
 		
 			// Attach outputs to session
 			movieFileOutput = new QTCaptureMovieFileOutput ();
+			movieFileOutput.WillStartRecording += delegate {
+				Console.WriteLine ("Will start recording");
+			};
+			movieFileOutput.DidStartRecording += delegate {
+				Console.WriteLine ("Started Recording");
+			};
+			movieFileOutput.ShouldChangeOutputFile = (output, url, connections, reason) => {
+				// Should change the file on error
+				Console.WriteLine (reason.LocalizedDescription);
+				return false;
+			};
+			movieFileOutput.MustChangeOutputFile += delegate(object sender, QTCaptureFileErrorEventArgs e) {
+				Console.WriteLine ("Must change file due to error");
+			};
+			
+			// These ones we care about, some notifications
+			movieFileOutput.WillFinishRecording += delegate(object sender, QTCaptureFileErrorEventArgs e) {
+				Console.WriteLine ("Will finish recording");
+				InvokeOnMainThread (delegate {
+					WillChangeValue ("Recording");
+				});
+			};
+			movieFileOutput.DidFinishRecording += delegate(object sender, QTCaptureFileErrorEventArgs e) {
+				Console.WriteLine ("Recorded {0} bytes duration {1}", movieFileOutput.RecordedFileSize, movieFileOutput.RecordedDuration);
+				DidChangeValue ("Recording");
+				if (e.Reason != null){
+					NSAlert.WithError (e.Reason).BeginSheet (Window, delegate {});
+					return;
+				}
+				var save = NSSavePanel.SavePanel;
+				save.RequiredFileType = "mov";
+				save.CanSelectHiddenExtension = true;
+				save.Begin (code => {
+					NSError err2;
+					if (code == NSPanelButtonType.Ok){
+						var filename = save.Filename;
+						NSFileManager.DefaultManager.Move (e.OutputFileURL.Path, filename, out err2);
+					} else {
+						NSFileManager.DefaultManager.Remove (e.OutputFileURL.Path, out err2);
+					}
+				});
+			};
+			
 			session.AddOutput (movieFileOutput, out error);
 			
 			audioPreviewOutput = new QTCaptureAudioPreviewOutput ();
@@ -47,8 +91,42 @@ namespace QTRecorder
 			
 			if (AudioDevices.Length > 0)
 				SelectedAudioDevice = AudioDevices [0];
+			
+			session.StartRunning ();
+			
+			// events: devices added/removed
+			AddObserver (QTCaptureDevice.WasConnectedNotification, DevicesDidChange);
+			AddObserver (QTCaptureDevice.WasDisconnectedNotification, DevicesDidChange);
+			
+			// events: connection format changes
+			AddObserver (QTCaptureConnection.FormatDescriptionDidChangeNotification, FormatDidChange);
+			AddObserver (QTCaptureConnection.FormatDescriptionWillChangeNotification, FormatWillChange);
+				
+			AddObserver (QTCaptureDevice.AttributeDidChangeNotification, AttributeDidChange);
+			AddObserver (QTCaptureDevice.AttributeWillChangeNotification, AttributeWillChange);
 		}
-
+		
+		List<NSObject> notifications = new List<NSObject> ();
+		void AddObserver (NSString key, Action<NSNotification> notification)
+		{
+			notifications.Add (NSNotificationCenter.DefaultCenter.AddObserver (key, notification));
+		}
+		
+		NSWindow Window { 
+			get {
+				return WindowControllers [0].Window;
+			}
+		}
+					
+		protected override void Dispose (bool disposing)
+		{
+			if (disposing){
+				NSNotificationCenter.DefaultCenter.RemoveObservers (notifications);
+				notifications = null;
+			}
+			base.Dispose (disposing);
+		}
+		
 		// 
 		// Save support:
 		//    Override one of GetAsData, GetAsFileWrapper, or WriteToUrl.
@@ -72,6 +150,26 @@ namespace QTRecorder
 			return false;
 		}
 		
+#if false
+		// Not available until we bind CIFilter
+		
+		string [] filterNames = new string [] {
+			"CIKaleidoscope", "CIGaussianBlur",	"CIZoomBlur",
+			"CIColorInvert", "CISepiaTone", "CIBumpDistortion",
+			"CICircularWrap", "CIHoleDistortion", "CITorusLensDistortion",
+			"CITwirlDistortion", "CIVortexDistortion", "CICMYKHalftone",
+			"CIColorPosterize", "CIDotScreen", "CIHatchedScreen",
+			"CIBloom", "CICrystallize", "CIEdges",
+			"CIEdgeWork", "CIGloom", "CIPixellate",
+		};
+		
+		NSString [] videoPreviewFilterDescriptions;
+		NSString [] VideoPreviewFilterDescriptions {
+			get {
+			}
+		}
+#endif
+				
 		QTCaptureDevice [] videoDevices, audioDevices;
 		void RefreshDevices ()
 		{
@@ -88,6 +186,11 @@ namespace QTRecorder
 			
 			if (!audioDevices.Contains (SelectedAudioDevice))
 				SelectedAudioDevice = null;
+		}
+		
+		void DevicesDidChange (NSNotification notification)
+		{
+			RefreshDevices ();
 		}
 		
 		//
@@ -121,12 +224,12 @@ namespace QTRecorder
 				if (value != null){
 					NSError err;
 					if (!value.Open (out err)){
-						NSAlert.WithError (err).BeginSheet (WindowControllers [0].Window, delegate {});
+						NSAlert.WithError (err).BeginSheet (Window, delegate {});
 						return;
 					}
 					videoDeviceInput = new QTCaptureDeviceInput (value);
 					if (!session.AddInput (videoDeviceInput, out err)){
-						NSAlert.WithError (err).BeginSheet (WindowControllers [0].Window, delegate {});
+						NSAlert.WithError (err).BeginSheet (Window, delegate {});
 						videoDeviceInput.Dispose ();
 						videoDeviceInput = null;
 						value.Close ();
@@ -156,9 +259,32 @@ namespace QTRecorder
 				return audioDeviceInput.Device;
 			}
 			set {
-				if (videoDeviceInput != null){
-					
+				if (audioDeviceInput != null){
+					session.RemoveInput (audioDeviceInput);
+					audioDeviceInput.Device.Close ();
+					audioDeviceInput.Dispose ();
+					audioDeviceInput = null;
 				}
+				
+				if (value == null || SelectedVideoDeviceProvidesAudio)
+					return;
+				
+				NSError err;
+				
+				// try to open
+				if (!value.Open (out err)){
+					NSAlert.WithError (err).BeginSheet (Window, delegate {});
+					return;
+				}
+				
+				audioDeviceInput = new QTCaptureDeviceInput (value);
+				if (session.AddInput (audioDeviceInput, out err))
+					return;
+				
+				NSAlert.WithError (err).BeginSheet (Window, delegate {});
+				audioDeviceInput.Dispose ();
+				audioDeviceInput = null;
+				value.Close ();
 			}
 		}
 		
@@ -170,6 +296,49 @@ namespace QTRecorder
 				return x.HasMediaType (QTMediaType.Muxed) || x.HasMediaType (QTMediaType.Sound);
 			}
 		}
+		
+		bool HasRecordingDevice {
+			get {
+				return videoDeviceInput != null || audioDeviceInput != null;
+			}
+		}
+		
+		[Export]
+		bool Recording {
+			get {
+				return movieFileOutput.OutputFileUrl != null;	
+			}
+			set {
+				if (value == Recording)
+					return;
+				if (value){
+					movieFileOutput.RecordToOutputFile (NSUrl.FromFilename (Path.GetTempFileName () + ".mov"));
+					Path.GetTempPath ();
+				} else {
+					movieFileOutput.RecordToOutputFile (null);
+				}
+			}
+		}
+		
+		//
+		// Notifications
+		//
+		void AttributeWillChange (NSNotification n)
+		{
+		}
+		
+		void AttributeDidChange (NSNotification n)
+		{
+		}
+		
+		void FormatWillChange (NSNotification n)
+		{
+		}
+		
+		void FormatDidChange (NSNotification n)
+		{
+		}
+
 		public override string WindowNibName {
 			get {
 				return "QTRDocument";
