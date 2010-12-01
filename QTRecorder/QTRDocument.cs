@@ -299,19 +299,24 @@ namespace QTRecorder
 			}
 		}
 		
-		bool HasRecordingDevice {
-			[Export ("HasRecordingDevice")]
+		[Export ("HasRecordingDevice")]
+		public bool HasRecordingDevice {
+		
 			get {
 				return videoDeviceInput != null || audioDeviceInput != null;
 			}
 		}
 		
 		[Export]
-		bool Recording {
+		public bool Recording {
 			get {
+				if (movieFileOutput == null) return false;
 				return movieFileOutput.OutputFileUrl != null;	
 			}
 			set {
+				Console.WriteLine ("here");
+				return;
+				
 				if (value == Recording)
 					return;
 				if (value){
@@ -325,7 +330,7 @@ namespace QTRecorder
 		
 		// UI controls
 		[Export]
-		QTCaptureDevice ControllableDevice ()
+		public QTCaptureDevice ControllableDevice ()
 		{
 			if (SelectedVideoDevice == null)
 				return null;
@@ -339,7 +344,7 @@ namespace QTRecorder
 		}
 		
 		[Export]
-		bool DevicePlaying {
+		public bool DevicePlaying {
 			get {
 				var device = ControllableDevice ();
 				if (device == null)
@@ -356,7 +361,24 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		// Link any co-dependent keys
+		[Export ("keyPathsForValuesAffectingHasRecordingDevice")]
+		public static NSSet DepsHasRecordingDevice ()
+		{
+			return new NSSet (new string [] { "SelectedVideoDevice", "SelectedAudioDevice" });
+		}
+		
+		[Export ("keyPathsForValuesAffectingControllableDevice")]
+		public static NSSet DepsControllableDevice ()
+		{
+			return new NSSet (new string [] { "SelectedVideoDevice" });
+		}
+		
+		[Export ("keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio")]
+		public static NSSet DepsVideoProvidesAudio ()
+		{
+			return new NSSet (new string [] { "SelectedVideoDevice" });
+		}
 		
 		//
 		// Notifications
