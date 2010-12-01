@@ -300,6 +300,7 @@ namespace QTRecorder
 		}
 		
 		bool HasRecordingDevice {
+			[Export ("HasRecordingDevice")]
 			get {
 				return videoDeviceInput != null || audioDeviceInput != null;
 			}
@@ -321,6 +322,41 @@ namespace QTRecorder
 				}
 			}
 		}
+		
+		// UI controls
+		[Export]
+		QTCaptureDevice ControllableDevice ()
+		{
+			if (SelectedVideoDevice == null)
+				return null;
+			
+			if (SelectedVideoDevice.AvcTransportControl == null)
+				return null;
+			if (SelectedVideoDevice.IsAvcTransportControlReadOnly)
+				return null;
+		
+			return SelectedVideoDevice;
+		}
+		
+		[Export]
+		bool DevicePlaying {
+			get {
+				var device = ControllableDevice ();
+				if (device == null)
+					return false;
+				
+				var controls = device.AvcTransportControl;
+				if (controls == null)
+					return false;
+				
+				return controls.Speed  == QTCaptureDeviceControlsSpeed.NormalForward && controls.PlaybackMode == QTCaptureDevicePlaybackMode.Playing;
+			}
+
+			set {
+			}
+		}
+		
+		[Export]
 		
 		//
 		// Notifications
