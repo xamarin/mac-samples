@@ -16,7 +16,7 @@ namespace QTRecorder
 		QTCaptureMovieFileOutput movieFileOutput;
 		QTCaptureAudioPreviewOutput audioPreviewOutput;
 		
-		public QTRDocument (IntPtr handle) : base(handle)
+		public QTRDocument ()
 		{
 		}
 
