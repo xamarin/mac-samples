@@ -11,24 +11,18 @@ namespace AnimatingViews
 {
 	public partial class AnimatingViewsWindowController : MonoMac.AppKit.NSWindowController
 	{
-		
-		// Type of layout used
-		private enum Layout
-		{
-			ColumnLayout = 0,
+		private enum Layout {
+			ColumnLayout,
 			RowLayout,
 			GridLayout
 		}
 		
-		// Variable for layoutStyle - default to ColumnLayout
 		private Layout layoutStyle = Layout.ColumnLayout;
 		
-		/* Default separation between items, and default size of added subviews.
-		 */
+		/* Default separation between items, and default size of added subviews. */
 		private const float SEPARATION = 10.0f;
 		private const float BOX_WIDTH = 80.0f;
 		private const float BOX_HEIGHT = 80.0f;
-		
 		
 		// Called when created from unmanaged code
 		public AnimatingViewsWindowController (IntPtr handle) : base(handle)
@@ -46,8 +40,7 @@ namespace AnimatingViews
 		{
 		}
 		
-		private Layout LayoutStyle 
-		{
+		private Layout LayoutStyle {
 			get {
 				return layoutStyle;
 			}
@@ -55,7 +48,7 @@ namespace AnimatingViews
 			set {
 				if (layoutStyle != value) {
 					layoutStyle = value;
-					layout();
+					layout ();
 				}
 			}
 		}
@@ -64,8 +57,6 @@ namespace AnimatingViews
 		public new AnimatingViewsWindow Window {
 			get { return (AnimatingViewsWindow)base.Window; }
 		}
-		
-		#region Actions
 		
 		// Action for change layout Matrix
 		partial void changeLayout (NSMatrix sender)
@@ -92,26 +83,17 @@ namespace AnimatingViews
 			layout ();
 		}
 		
-		#endregion
-		
-		#region Helper Methods
-		
-		/* Create a new view to be added/animated. Any kind of view can be added here, we go for simple colored box using the Leopard
- 			"custom" box type.
- 		*/
 		private NSView viewToBeAdded() 
 		{
-			NSBox box = new NSBox (new RectangleF (0.0f, 0.0f, BOX_WIDTH, BOX_HEIGHT));
-			box.BoxType = NSBoxType.NSBoxCustom;
-			box.BorderType = NSBorderType.LineBorder;
-			box.TitlePosition = NSTitlePosition.NoTitle;
-			box.FillColor = colorWell.Color;
-			
-			return box;
+			return new NSBox (new RectangleF (0.0f, 0.0f, BOX_WIDTH, BOX_HEIGHT)){
+				BoxType = NSBoxType.NSBoxCustom,
+				BorderType = NSBorderType.LineBorder,
+				TitlePosition = NSTitlePosition.NoTitle,
+				FillColor = colorWell.Color
+			};
 		}
 		
-		/* This method returns a rect that is integral in base coordinates.
- 		*/
+		/* This method returns a rect that is integral in base coordinates. */
 		private RectangleF integralRect (RectangleF rect) 
 		{
 			// missing NSIntegralRect
@@ -123,63 +105,41 @@ namespace AnimatingViews
 		private void layout ()
 		{
 			NSView[] subviews = simpleView.Subviews;
-			
 			PointF curPoint;
 				
 			switch (LayoutStyle){
 			case Layout.ColumnLayout:
 				curPoint = new PointF(simpleView.Bounds.Size.Width / 2.0f, 0.0f);
-				foreach (NSView subview in subviews)
-				{
-					// Centered horizontally, stacked higher
-					RectangleF frame = new RectangleF(curPoint.X - BOX_WIDTH /2.0f,
-					                                  curPoint.Y,
-					                                  BOX_WIDTH,
-					                                  BOX_HEIGHT);
+				foreach (NSView subview in subviews) {
+					RectangleF frame = new RectangleF(curPoint.X - BOX_WIDTH /2.0f, curPoint.Y, BOX_WIDTH, BOX_HEIGHT);
 					animateView(subview, frame);
-					
 					curPoint.Y += frame.Size.Height + SEPARATION;
 				}
 				break;
+
 			case Layout.RowLayout:
 				curPoint = new PointF(0.0f , simpleView.Bounds.Size.Height / 2.0f);
-				foreach (NSView subview in subviews)
-				{
-					// Centered vertically, stacked left to right
-					RectangleF frame = new RectangleF(curPoint.X,
-					                                  curPoint.Y  - BOX_HEIGHT /2.0f,
-					                                  BOX_WIDTH,
-					                                  BOX_HEIGHT);
+				foreach (NSView subview in subviews) {
+					RectangleF frame = new RectangleF(curPoint.X, curPoint.Y - BOX_HEIGHT /2.0f, BOX_WIDTH, BOX_HEIGHT);
 					animateView(subview, frame);
 					curPoint.X += frame.Size.Width + SEPARATION;
-					
 				}
 				break;
+
 			case Layout.GridLayout:
-				
-				// Put the views in a roughly square grid
 				int viewsPerSide = (int)Math.Ceiling( Math.Sqrt(subviews.Count()) ); 
 				
 				int idx = 0;
-				curPoint = new PointF();
-				
-				foreach (NSView subview in subviews)
-				{
-					RectangleF frame = new RectangleF(curPoint.X,
-					                                  curPoint.Y,
-					                                  BOX_WIDTH,
-					                                  BOX_HEIGHT);
+				foreach (NSView subview in subviews) {
+					RectangleF frame = new RectangleF(curPoint.X, curPoint.Y, BOX_WIDTH, BOX_HEIGHT);
 					
 					animateView(subview, frame);
 					curPoint.X += frame.Size.Width + SEPARATION;
 					
-					if (++idx % viewsPerSide == 0) 
-					{
-						// move up to the next
+					if (++idx % viewsPerSide == 0) {
 						curPoint.X = 0;
 						curPoint.Y += BOX_HEIGHT + SEPARATION;
 					}
-					
 				}
 				break;
 				
@@ -221,8 +181,6 @@ namespace AnimatingViews
 			subView.Layer.AddAnimation(animationY,"moveY");
 #endif
 		}
-		
-		#endregion
 	}
 }
 
