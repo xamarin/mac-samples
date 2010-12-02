@@ -199,6 +199,13 @@ namespace QTRecorder
 		// Binding support
 		//
 		[Export]
+		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
+			get {
+				return audioPreviewOutput;
+			}
+		}
+		
+		[Export]
 		public QTCaptureDevice [] VideoDevices {
 			get {
 				if (videoDevices == null)
@@ -241,6 +248,7 @@ namespace QTRecorder
 				// If the video device provides audio, do not use a new audio device
 				if (SelectedVideoDeviceProvidesAudio)
 					SelectedAudioDevice = null;
+
 			}
 		}
 		
@@ -314,9 +322,6 @@ namespace QTRecorder
 				return movieFileOutput.OutputFileUrl != null;	
 			}
 			set {
-				Console.WriteLine ("here");
-				return;
-				
 				if (value == Recording)
 					return;
 				if (value){
@@ -330,23 +335,24 @@ namespace QTRecorder
 		
 		// UI controls
 		[Export]
-		public QTCaptureDevice ControllableDevice ()
-		{
-			if (SelectedVideoDevice == null)
-				return null;
+		public QTCaptureDevice ControllableDevice {
+			get {
+				if (SelectedVideoDevice == null)
+					return null;
+				
+				if (SelectedVideoDevice.AvcTransportControl == null)
+					return null;
+				if (SelectedVideoDevice.IsAvcTransportControlReadOnly)
+					return null;
 			
-			if (SelectedVideoDevice.AvcTransportControl == null)
-				return null;
-			if (SelectedVideoDevice.IsAvcTransportControlReadOnly)
-				return null;
-		
-			return SelectedVideoDevice;
+				return SelectedVideoDevice;
+			}
 		}
 		
 		[Export]
 		public bool DevicePlaying {
 			get {
-				var device = ControllableDevice ();
+				var device = ControllableDevice;
 				if (device == null)
 					return false;
 				
@@ -358,6 +364,67 @@ namespace QTRecorder
 			}
 
 			set {
+				var device = ControllableDevice;
+				if (device == null)
+					return;
+				device.AvcTransportControl = new QTCaptureDeviceTransportControl () {
+					Speed = value ? QTCaptureDeviceControlsSpeed.NormalForward : QTCaptureDeviceControlsSpeed.Stopped,
+					PlaybackMode = QTCaptureDevicePlaybackMode.Playing
+				};
+			}
+		}
+		
+		partial void StopDevice (NSObject sender)
+		{
+			var device = ControllableDevice;
+			if (device == null)
+				return;
+			device.AvcTransportControl = new QTCaptureDeviceTransportControl () {
+				Speed = QTCaptureDeviceControlsSpeed.Stopped,
+				PlaybackMode = QTCaptureDevicePlaybackMode.NotPlaying
+			};
+		}
+
+		bool GetDeviceSpeed (Func<QTCaptureDeviceControlsSpeed?,bool> g)
+		{
+				var device = ControllableDevice;
+				if (device == null)
+					return false;
+				var control = device.AvcTransportControl;
+				if (control == null)
+					return false;
+				return g (control.Speed);
+		}
+		
+		void SetDeviceSpeed (bool value, QTCaptureDeviceControlsSpeed speed)
+		{
+				var device = ControllableDevice;
+				if (device == null)
+					return;
+				var control = device.AvcTransportControl;
+				if (control == null)
+					return;
+				control.Speed = value ? speed : QTCaptureDeviceControlsSpeed.Stopped;
+				device.AvcTransportControl = control;
+		}
+		
+		[Export]
+		public bool DeviceRewinding {
+			get {
+				return GetDeviceSpeed (x => x < QTCaptureDeviceControlsSpeed.Stopped);
+			}
+			set {
+				SetDeviceSpeed (value, QTCaptureDeviceControlsSpeed.FastReverse);
+			}
+		}
+		
+		[Export]
+		public bool DeviceFastForwarding {
+			get {
+				return GetDeviceSpeed (x => x > QTCaptureDeviceControlsSpeed.Stopped);
+			}
+			set {
+				SetDeviceSpeed (value, QTCaptureDeviceControlsSpeed.FastForward);
 			}
 		}
 		

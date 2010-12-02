@@ -21,7 +21,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
+			<integer value="35"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -281,7 +281,7 @@
 									<reference key="NSSuperview" ref="109028820"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="613943819">
-										<int key="NSCellFlags">67239424</int>
+										<int key="NSCellFlags">-2080244224</int>
 										<int key="NSCellFlags2">134217728</int>
 										<string key="NSContents"/>
 										<reference key="NSSupport" ref="377725428"/>
@@ -323,7 +323,7 @@
 								<reference key="NSControlView" ref="134229289"/>
 								<double key="NSMaxValue">1</double>
 								<double key="NSMinValue">0.0</double>
-								<double key="NSValue">0.0</double>
+								<double key="NSValue">0.70909090909090911</double>
 								<double key="NSAltIncValue">0.0</double>
 								<int key="NSNumberOfTickMarks">0</int>
 								<int key="NSTickMarkPosition">1</int>
@@ -632,6 +632,10 @@
 				<string key="NSExtension">NSResponder</string>
 			</object>
 			<object class="NSUserDefaultsController" id="534792852">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>DevicePlaying</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -850,6 +854,158 @@
 						</object>
 					</object>
 					<int key="connectionID">102</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: DeviceRewinding</string>
+						<reference key="source" ref="402858612"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="402858612"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: DeviceRewinding</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">DeviceRewinding</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">105</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: ControllableDevice</string>
+						<reference key="source" ref="472331658"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="472331658"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: ControllableDevice</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">ControllableDevice</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">110</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: ControllableDevice</string>
+						<reference key="source" ref="402858612"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="402858612"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: ControllableDevice</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">ControllableDevice</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">112</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: ControllableDevice</string>
+						<reference key="source" ref="246209420"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="246209420"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: ControllableDevice</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">ControllableDevice</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">114</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: Recording</string>
+						<reference key="source" ref="642503530"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="642503530"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: Recording</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">Recording</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">116</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: DeviceFastForwarding</string>
+						<reference key="source" ref="200873698"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="200873698"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: DeviceFastForwarding</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">DeviceFastForwarding</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">120</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: ControllableDevice</string>
+						<reference key="source" ref="200873698"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="200873698"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: ControllableDevice</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">ControllableDevice</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">121</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: DevicePlaying</string>
+						<reference key="source" ref="246209420"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="246209420"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: DevicePlaying</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">DevicePlaying</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">123</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">StopDevice:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="613943819"/>
+					</object>
+					<int key="connectionID">125</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: AudioPreviewOutput.volume</string>
+						<reference key="source" ref="267229788"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="267229788"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: AudioPreviewOutput.volume</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">AudioPreviewOutput.volume</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">127</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1433,9 +1589,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{300, 217}, {503, 445}}</string>
+					<string>{{310, 411}, {503, 445}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{300, 217}, {503, 445}}</string>
+					<string>{{310, 411}, {503, 445}}</string>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
 					<string>{503, 200}</string>
@@ -1464,7 +1620,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">102</int>
+			<int key="maxID">127</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1472,6 +1628,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">QTRDocument</string>
 					<string key="superclassName">NSDocument</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">StopDevice:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">StopDevice:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">StopDevice:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">

@@ -20,6 +20,9 @@ namespace QTRecorder {
 		private global::MonoMac.QTKit.QTCaptureView __mt_captureView;
 		
 		#pragma warning disable 0169
+		[MonoMac.Foundation.Export("StopDevice:")]
+		partial void StopDevice (MonoMac.Foundation.NSObject sender);
+
 		[MonoMac.Foundation.Connect("audioLevelIndicator")]
 		private global::MonoMac.AppKit.NSLevelIndicator audioLevelIndicator {
 			get {
