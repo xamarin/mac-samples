@@ -6,6 +6,8 @@ using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.QTKit;
 using System.IO;
+using MonoMac.CoreImage;
+using System.Text;
 
 namespace QTRecorder
 {
@@ -35,6 +37,17 @@ namespace QTRecorder
 			
 			// Attach preview to session
 			captureView.CaptureSession = session;
+			captureView.WillDisplayImage = (view, image) => {
+				if (videoPreviewFilterDescription == null)
+					return image;
+				var selectedFilter = (NSString) videoPreviewFilterDescription [filterNameKey];
+				
+				var filter = CIFilter.FromName (selectedFilter);
+				filter.SetDefaults ();
+				filter.SetValueForKey (image, CIFilter.InputImageKey);
+				
+				return (CIImage) filter.ValueForKey (CIFilter.OutputImageKey);
+			};
 		
 			// Attach outputs to session
 			movieFileOutput = new QTCaptureMovieFileOutput ();
@@ -152,7 +165,6 @@ namespace QTRecorder
 			return false;
 		}
 		
-#if false
 		// Not available until we bind CIFilter
 		
 		string [] filterNames = new string [] {
@@ -164,14 +176,35 @@ namespace QTRecorder
 			"CIBloom", "CICrystallize", "CIEdges",
 			"CIEdgeWork", "CIGloom", "CIPixellate",
 		};
+		static NSString filterNameKey = new NSString ("filterName");
+		static NSString localizedFilterKey = new NSString ("localizedName");
 		
+		// Creates descriptions that can be accessed with Key/Values
 		NSString [] videoPreviewFilterDescriptions;
-		NSString [] VideoPreviewFilterDescriptions {
+		[Export]
+		NSDictionary [] VideoPreviewFilterDescriptions {
 			get {
+				return (from name in filterNames 
+					select NSDictionary.FromObjectsAndKeys (
+						new NSObject [] { new NSString (name), new NSString (CIFilter.FilterLocalizedName (name)) },
+						new NSObject [] { filterNameKey, localizedFilterKey })).ToArray ();
 			}
 		}
-#endif
 				
+		NSDictionary videoPreviewFilterDescription;
+		[Export]
+		NSDictionary VideoPreviewFilterDescription {
+			get {
+				return videoPreviewFilterDescription;
+			}
+			set {
+				if (value == videoPreviewFilterDescription)
+					return;
+				videoPreviewFilterDescription = value;
+				captureView.NeedsDisplay = true;
+			}
+		}
+		
 		QTCaptureDevice [] videoDevices, audioDevices;
 		void RefreshDevices ()
 		{
@@ -298,6 +331,22 @@ namespace QTRecorder
 			}
 		}
 		
+		[Export]
+		public string MediaFormatSummary {
+			get {
+				var sb = new StringBuilder ();
+				
+				if (videoDeviceInput != null)
+					foreach (var c in videoDeviceInput.Connections)
+						sb.AppendFormat ("{0}\n", c.FormatDescription.LocalizedFormatSummary);
+				if (audioDeviceInput != null)
+					foreach (var c in videoDeviceInput.Connections)
+						sb.AppendFormat ("{0}\n", c.FormatDescription.LocalizedFormatSummary);
+
+				return sb.ToString ();
+			}
+		}
+		
 		bool SelectedVideoDeviceProvidesAudio {
 			get {
 				var x = SelectedVideoDevice;
@@ -307,7 +356,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export ("HasRecordingDevice")]
+		[Export]
 		public bool HasRecordingDevice {
 		
 			get {
@@ -460,10 +509,18 @@ namespace QTRecorder
 		
 		void FormatWillChange (NSNotification n)
 		{
+			var owner = ((QTCaptureConnection)n.Object).Owner;
+			Console.WriteLine (owner);
+			if (owner == videoDeviceInput || owner == audioDeviceInput)
+				WillChangeValue ("mediaFormatSummary");
 		}
 		
 		void FormatDidChange (NSNotification n)
 		{
+			var owner = ((QTCaptureConnection)n.Object).Owner;
+			Console.WriteLine (owner);
+			if (owner == videoDeviceInput || owner == audioDeviceInput)
+				DidChangeValue ("mediaFormatSummary");
 		}
 
 		public override string WindowNibName {
