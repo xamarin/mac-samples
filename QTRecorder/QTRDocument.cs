@@ -478,20 +478,20 @@ namespace QTRecorder
 		}
 		
 		// Link any co-dependent keys
-		[Export ("keyPathsForValuesAffectingHasRecordingDevice")]
-		public static NSSet DepsHasRecordingDevice ()
+		[Export]
+		public static NSSet keyPathsForValuesAffectingHasRecordingDevice ()
 		{
 			return new NSSet (new string [] { "SelectedVideoDevice", "SelectedAudioDevice" });
 		}
 		
-		[Export ("keyPathsForValuesAffectingControllableDevice")]
-		public static NSSet DepsControllableDevice ()
+		[Export]
+		public static NSSet keyPathsForValuesAffectingControllableDevice ()
 		{
 			return new NSSet (new string [] { "SelectedVideoDevice" });
 		}
 		
-		[Export ("keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio")]
-		public static NSSet DepsVideoProvidesAudio ()
+		[Export]
+		public static NSSet keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio ()
 		{
 			return new NSSet (new string [] { "SelectedVideoDevice" });
 		}
