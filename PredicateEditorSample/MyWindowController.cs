@@ -132,17 +132,16 @@ namespace PredicateEditorSample
 				
 				NSArray phoneNumbers = (NSArray)item.ValueForAttribute ("kMDItemPhoneNumbers");
 				// grab only the first phone number
-				var phoneStr = phoneNumbers == null ? null : phoneNumbers.ValueAt (0)
-				var storePath = item.ValueForAttribute ("kMDItemPath");
+				var phoneStr = phoneNumbers == null ? null : new NSString (phoneNumbers.ValueAt (0));
+				var storePath = (NSString) item.ValueForAttribute ("kMDItemPath");
 				
 				// create a dictionary entry to be added to our search results array
-				NSUrl url = new NSUrl (storePath,false);
 				NSObject [] objects = new NSObject [] {
-					(nameStr != null)  ? nameStr  : emptyStr,
-					(phoneStr != null) ? phoneStr : emptyStr,
-					(cityStr != null)  ? cityStr  : emptyStr,
-					(stateStr != null) ? stateStr : emptyStr,
-					url};
+					nameStr  ?? emptyStr,
+					phoneStr ?? emptyStr,
+					cityStr  ?? emptyStr,
+					stateStr ?? emptyStr,
+					new NSUrl (storePath, false) };
 				
 				NSDictionary dict = NSDictionary.FromObjectsAndKeys (objects, keys);
 				mySearchResults.AddObject (dict);
