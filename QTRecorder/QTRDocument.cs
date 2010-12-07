@@ -481,19 +481,31 @@ namespace QTRecorder
 		[Export]
 		public static NSSet keyPathsForValuesAffectingHasRecordingDevice ()
 		{
-			return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
+			// With MonoMac 0.4:
+			return new NSSet (new string [] {"SelectedVideoDevice", "SelectedAudioDevice" });
+
+			// With the new MonoMac:
+			//return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
 		}
 		
 		[Export]
 		public static NSSet keyPathsForValuesAffectingControllableDevice ()
 		{
-			return new NSSet ("SelectedVideoDevice");
+			// With MonoMac 0.4:
+			return new NSSet (new string [] { "SelectedVideoDevice" });
+
+			// With the new MonoMac:
+			//return new NSSet ("SelectedVideoDevice");
 		}
 		
 		[Export]
 		public static NSSet keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio ()
 		{
-			return new NSSet ("SelectedVideoDevice");
+			// With MonoMac 0.4:
+			return new NSSet (new string [] { "SelectedVideoDevice" });
+
+			// With the new MonoMac:
+			//return new NSSet ("SelectedVideoDevice");
 		}
 		
 		//
