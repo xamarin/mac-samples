@@ -481,19 +481,19 @@ namespace QTRecorder
 		[Export]
 		public static NSSet keyPathsForValuesAffectingHasRecordingDevice ()
 		{
-			return new NSSet (new string [] { "SelectedVideoDevice", "SelectedAudioDevice" });
+			return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
 		}
 		
 		[Export]
 		public static NSSet keyPathsForValuesAffectingControllableDevice ()
 		{
-			return new NSSet (new string [] { "SelectedVideoDevice" });
+			return new NSSet ("SelectedVideoDevice");
 		}
 		
 		[Export]
 		public static NSSet keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio ()
 		{
-			return new NSSet (new string [] { "SelectedVideoDevice" });
+			return new NSSet ("SelectedVideoDevice");
 		}
 		
 		//
