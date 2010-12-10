@@ -18,20 +18,10 @@ namespace PredicateEditorSample
 		
 		NSApplication NSApp = NSApplication.SharedApplication;
 
-		NSString [] keys = new NSString [] { (NSString)"name", (NSString)"phone", (NSString)"city", (NSString)"state", (NSString)"url"};	
 		NSString emptyStr = new NSString ();
 		
 		public MyWindowController (IntPtr handle) : base (handle) {}
-
-		[Export ("initWithCoder:")]
-		public MyWindowController (NSCoder coder) : base (coder)   {} 
-
 		public MyWindowController () : base ("MyWindow") {} 
-
-		//strongly typed window accessor
-		public new MyWindow Window {
-			get { return (MyWindow)base.Window; }
-		}
 		
 		public override void AwakeFromNib ()
 		{
@@ -51,11 +41,10 @@ namespace PredicateEditorSample
 			
 			// setup our Spotlight notifications 
 			var nf = NSNotificationCenter.DefaultCenter;
-			nf.AddObserver (this,new Selector ("queryNotification:"), null, query);
+			nf.AddObserver (this, new Selector ("queryNotification:"), null, query);
 			
 			// initialize our Spotlight query, sort by contact name
-			var sorters = new List<NSSortDescriptor> {new NSSortDescriptor ("kMDItemContactKeywords",true)};
-			query.SortDescriptors = sorters.ToArray ();
+			query.SortDescriptors = new NSSortDescriptor [] { new NSSortDescriptor ("kMDItemContactKeywords",true) };
 			
 			// start with our progress search label empty
 			progressSearchLabel.StringValue = "";
@@ -143,6 +132,9 @@ namespace PredicateEditorSample
 					stateStr ?? emptyStr,
 					new NSUrl (storePath, false) };
 				
+				var keys = new object [] {
+					"name", "phone", "city", "state", "url" 
+				};
 				NSDictionary dict = NSDictionary.FromObjectsAndKeys (objects, keys);
 				mySearchResults.AddObject (dict);
 			}
