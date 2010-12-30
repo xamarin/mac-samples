@@ -1,7 +1,7 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonMadness", "ButtonMadness\ButtonMadness.csproj", "{CB11FE74-3242-4357-9852-04A9E8C84046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonMadness", "ButtonMadness.csproj", "{CB11FE74-3242-4357-9852-04A9E8C84046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,6 @@ Global
 		{CB11FE74-3242-4357-9852-04A9E8C84046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ButtonMadness\ButtonMadness.csproj
+		StartupItem = ButtonMadness.csproj
 	EndGlobalSection
 EndGlobal
