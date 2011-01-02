@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="ReadMe\README.rtf" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />
@@ -77,8 +77,5 @@
     <Content Include="EdgeMarkerBottom.tiff" />
     <Content Include="EdgeMarkerRight.tiff" />
     <Content Include="EdgeMarkerTop.tiff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ReadMe\" />
   </ItemGroup>
 </Project>
