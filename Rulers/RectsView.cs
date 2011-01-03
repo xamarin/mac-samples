@@ -921,7 +921,7 @@ namespace Rulers
 				}
 			}
 				
-			newColor = NSColor.FromDeviceRGBA ((float)rand.NextDouble (),
+			newColor = NSColor.FromDeviceRgba ((float)rand.NextDouble (),
 			                                        (float)rand.NextDouble (),
 			                                        (float)rand.NextDouble (),
 			                                        1.0f);
