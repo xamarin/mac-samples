@@ -42,3 +42,18 @@ p {
     background-color: #0af;
     color: #000;
 }
+
+#message_button_jscript {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    padding: 3px 5px;
+    border: 2px solid #0af;
+    -webkit-border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+}
+
+#message_button_jscript:active {
+    background-color: #0af;
+    color: #000;
+}

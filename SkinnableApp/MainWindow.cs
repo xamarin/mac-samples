@@ -14,4 +14,3 @@ namespace SkinnableApp {
 		public MainWindow (NSCoder coder) : base(coder) {}
 	}
 }
-
