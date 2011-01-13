@@ -8,87 +8,92 @@ namespace PopupBindings
 {
 	public partial class Person : NSObject
 	{
-		NSMutableDictionary personValues;
-		static NSString NAME = new NSString ("name");
-		static NSString AGE = new NSString ("age");
-		static NSString ADDRESS_STREET = new NSString ("addressStreet");
-		static NSString ADDRESS_CITY = new NSString ("addressCity");
-		static NSString ADDRESS_STATE = new NSString ("addressState");
-		static NSString ADDRESS_ZIP = new NSString ("addressZip");
-		
-		public Person (NSMutableDictionary attributes)
+		Dictionary<string, object> personValues;
+		static string NAME = "name";
+		static string AGE = "age";
+		static string ADDRESS_STREET = "addressStreet";
+		static string ADDRESS_CITY = "addressCity";
+		static string ADDRESS_STATE = "addressState";
+		static string ADDRESS_ZIP = "addressZip";
+
+		string[] keys = new string[] { NAME, AGE, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_ZIP };
+
+		public Person (object[] attributes)
 		{
-			this.personValues = new NSMutableDictionary(attributes);	
+			var newAttributes = new Dictionary<string, object> ();
+			for (int x = 0; x < keys.Length; x++)
+				newAttributes.Add(keys[x],attributes[x]);
+
+			this.personValues = newAttributes;	
 		}
 		
 		[Export ("name")]
-		public NSString Name
-		{
+		public string Name {
 			get {
-				return (NSString) personValues.ObjectForKey (NAME);	
+				return personValues [NAME].ToString ();	
+			}
+			
+			set {
+				personValues [NAME] = value;
 			}
 		}
 
 		[Export ("age")]
-		public NSNumber Age {
+		public int Age {
 			get {
-				return (NSNumber) personValues.ObjectForKey (AGE);	
+				return (int)personValues [AGE];
+			}
+			set {
+				personValues [AGE] = value;
 			}
 		}
 		
-		// Get a value for a key.  Not using this method but instead
-		//  used the [Export("xxxxxx")] method.
-		//public override NSObject ValueForKey (NSString key)
-		//{
-		//	return attributeValues[key];
-		//}
-		
-		public override void SetValueForKey (NSObject value, NSString key)
-		{
-			
-			if (personValues.ContainsKey (key))
-				personValues [key] = value;	
-			else
-				base.SetValueForKey (value, key);
-
-			// you can also just do a simple:
-			//attributeValues[key] = value;
-			
-		}
-		
 		[Export("addressStreet")]
-		public NSString AddressStreet {
+		public string AddressStreet {
 			get {
-				return (NSString) personValues [ADDRESS_STREET];	
+				return personValues [ADDRESS_STREET].ToString ();
+			}
+			set {
+				personValues [ADDRESS_STREET] = value;
 			}
 		}
 		
 		[Export("addressCity")]
-		public NSString AddressCity {
+		public string AddressCity {
 			get {
-				return (NSString)personValues[ADDRESS_CITY];	
+				return personValues [ADDRESS_CITY].ToString ();	
+			}
+			set {
+				personValues [ADDRESS_CITY] = value;
 			}
 		}
 		
 		[Export ("addressState")]
-		public NSString AddressState {
+		public string AddressState {
 			get {
-				return (NSString)personValues[ADDRESS_STATE];	
+				return personValues [ADDRESS_STATE].ToString ();	
+			}
+			set
+			{
+				personValues [ADDRESS_STATE] = value;
 			}
 		}
 		
 		[Export ("addressZip")]
-		public NSString AddressZip {
+		public string AddressZip {
 			get {
-				return (NSString)personValues.ObjectForKey(ADDRESS_ZIP);	
+				return personValues [ADDRESS_ZIP].ToString ();	
+			}
+			set {
+				personValues [ADDRESS_ZIP] = value;
 			}
 		}
 		
-		public NSMutableDictionary Attributes
+		public Dictionary<string,object> Attributes
 		{
 			get { return personValues; }
 			set {
-				personValues = NSMutableDictionary.FromDictionary(value);	
+				personValues = value;	
 			}
 		}
 		
