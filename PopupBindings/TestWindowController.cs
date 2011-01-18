@@ -23,7 +23,6 @@ namespace PopupBindings
 		{
 		}
 
-		#endregion
 
 		//strongly typed window accessor
 		public new TestWindow Window {

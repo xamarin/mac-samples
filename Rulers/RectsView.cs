@@ -183,7 +183,7 @@ namespace Rulers
 			if (!Window.MakeFirstResponder (this)) 
 				return;
 			
-			mouseLoc = ConvertPointfromView (theEvent.LocationInWindow, null);
+			mouseLoc = ConvertPointFromView (theEvent.LocationInWindow, null);
 			
 			// we go from last to first
 			for (int x = rects.Count - 1;x >= 0; x--){
@@ -228,7 +228,7 @@ namespace Rulers
 						drawRulerLinesWithRect (selectedItem.Frame);
 					
 					dragged = true;
-					mouseLoc = ConvertPointfromView (theEvent.LocationInWindow, null);
+					mouseLoc = ConvertPointFromView (theEvent.LocationInWindow, null);
 					
 					moveSelectedItemWithEvent (theEvent, mouseOffset);
 					
@@ -382,7 +382,7 @@ namespace Rulers
 			RectangleF oldRect, newRect, bounds;
 			PointF mouseLoc;
 			
-			mouseLoc = ConvertPointfromView (theEvent.LocationInWindow, null);
+			mouseLoc = ConvertPointFromView (theEvent.LocationInWindow, null);
 			
 			bounds = Bounds;
 			oldRect = newRect = selectedItem.Frame;
@@ -418,16 +418,16 @@ namespace Rulers
 			vertRuler = scrollView.VerticalRulerView;
 			
 			if (horizRuler != null){
-				convOldRect = ConvertRecttoView (oldRect,horizRuler);
-				convNewRect = ConvertRecttoView (newRect,horizRuler);
+				convOldRect = ConvertRectToView (oldRect,horizRuler);
+				convNewRect = ConvertRectToView (newRect,horizRuler);
 				
 				horizRuler.MoveRulerline (MinX (convOldRect), MinX (convNewRect));
 				horizRuler.MoveRulerline (MaxX (convOldRect), MaxX (convNewRect));
 			}
 			
 			if (vertRuler != null){
-				convOldRect = ConvertRecttoView (oldRect, vertRuler);
-				convNewRect = ConvertRecttoView (newRect, vertRuler);
+				convOldRect = ConvertRectToView (oldRect, vertRuler);
+				convNewRect = ConvertRectToView (newRect, vertRuler);
 				
 				vertRuler.MoveRulerline (MinY (convOldRect), MinY (convNewRect));
 				vertRuler.MoveRulerline (MaxY (convOldRect), MaxY (convNewRect));
@@ -467,14 +467,14 @@ namespace Rulers
 			vertRuler = scrollView.VerticalRulerView;
 			
 			if (horizRuler != null){
-				convRect = ConvertRecttoView (aRect, horizRuler);
+				convRect = ConvertRectToView (aRect, horizRuler);
 				
 				horizRuler.MoveRulerline (-1.0f, MinX (convRect));
 				horizRuler.MoveRulerline (-1.0f, MaxX (convRect));
 			}
 			
 			if (vertRuler != null){
-				convRect = this.ConvertRecttoView (aRect, vertRuler);
+				convRect = this.ConvertRectToView (aRect, vertRuler);
 				
 				vertRuler.MoveRulerline (-1.0f, MinY (convRect));
 				vertRuler.MoveRulerline (-1.0f, MaxY (convRect));
@@ -499,7 +499,7 @@ namespace Rulers
 			horizRuler = scrollView.HorizontalRulerView;
 			vertRuler = scrollView.VerticalRulerView;
 			
-			zero = docView.ConvertPointfromView (clientView.Bounds.Location,clientView);
+			zero = docView.ConvertPointFromView (clientView.Bounds.Location,clientView);
 			
 			horizRuler.OriginOffset = zero.X - docView.Bounds.Location.X;
 			vertRuler.OriginOffset = zero.Y - docView.Bounds.Location.Y;

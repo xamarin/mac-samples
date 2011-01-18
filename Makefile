@@ -1,12 +1,11 @@
 MDTOOL=/Applications/MonoDevelop.app/Contents/MacOS/mdtool
 
 XDIRS = \
-	AnimatingViews ButtonMadness DocumentSample 	\
-	DrawerMadness NSTableViewBinding PlayFile 	\
-	PopupBindings QTRecorder Rulers StillMotion	\
-	SearchField DatePicker VillainTracker		\
-	SkinnableApp RoundedTransparentWindow		\
-	PredicateEditorSample
+	AnimatingViews ButtonMadness DatePicker DocumentSample		\
+	DrawerMadness GlossyClock macdoc NSTableViewBinding		\
+	PopupBindings PredicateEditorSample QTRecorder			\
+	RoundedTransparentWindow Rulers SearchField SkinnableApp	\
+	StillMotion VillainTracker WhereIsMyMac
 
 all:
 	for i in $(XDIRS); do (cd $$i; $(MDTOOL) build); done

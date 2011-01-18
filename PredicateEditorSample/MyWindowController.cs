@@ -208,7 +208,7 @@ namespace PredicateEditorSample
 			// convert the size to window coordinates -
 			// if we didn't do this, we would break under scale factors other than 1.
 			// We don't care about the horizontal dimension, so leave that as 0.
-			SizeF sizeChange = predicateEditor.ConvertSizetoView (new SizeF (0.0f, heightDifference), null);
+			SizeF sizeChange = predicateEditor.ConvertSizeToView (new SizeF (0.0f, heightDifference), null);
 			
 			// offset our status view
 			RectangleF frame = progressView.Frame;
