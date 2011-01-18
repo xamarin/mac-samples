@@ -43,7 +43,7 @@ namespace Rulers
 			if (IsLocked){
 				float xSize = (Frame.Width > 10.0f) ? 5.0f : 3.0f;
 				
-				NSBezierPath path = NSBezierPath.CreateBezierPath ();
+				NSBezierPath path = new NSBezierPath ();
 				
 				NSColor.Black.Set ();
 				path.LineWidth = 3.0f;
