@@ -12,42 +12,24 @@ namespace CustomizeAnimation
 {
 	public partial class MyView : MonoMac.AppKit.NSView
 	{
-		
-		float drawnLineWidth = 1.0f;
+		float drawnLineWidth = 1;
 		NSColor lineColor;
 		NSBezierPath path;
 		static CABasicAnimation drawnLineWidthBasicAnimation;
 
-		#region Constructors
+		public MyView (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public MyView (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public MyView (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
+		public MyView (NSCoder coder) : base(coder) {}
 		
 		[Export("initWithFrame:")]
 		public MyView (RectangleF frame) : base (frame)
 		{
 			lineColor = NSColor.Blue;
-			path = new NSBezierPath();
-			path.MoveTo(Bounds.Location);
-			path.LineTo(new PointF(Bounds.GetMaxX(),Bounds.GetMaxY()));
+			path = new NSBezierPath ();
+			path.MoveTo (Bounds.Location);
+			path.LineTo (new PointF (Bounds.GetMaxX (),Bounds.GetMaxY ()));
 		}
-		// Shared initialization code
-		void Initialize ()
-		{
-		
-		}
-		
-		#endregion
 		
 		public override void AwakeFromNib ()
 		{
@@ -56,13 +38,12 @@ namespace CustomizeAnimation
 		
 		public override void DrawRect (RectangleF dirtyRect)
 		{
-			lineColor.SetStroke();
-			path.Stroke();
+			lineColor.SetStroke ();
+			path.Stroke ();
 		}
 		
 		partial void setWidth (NSSlider sender)
-		{
-			
+		{			
 			((MyView)Animator).setLineWidth(sender.FloatValue);
 			//((MyView)Animator).DrawnLineWidth = sender.FloatValue;
 			//this.setLineWidth(sender.FloatValue);
@@ -74,25 +55,20 @@ namespace CustomizeAnimation
 		
 		public void setLineWidth(float value)
 		{
-			//Console.WriteLine((NSNumber) value);
 			SetValueForKeyPath((NSNumber) value,(NSString)"drawnLineWidth");
 		}
 		
 		[Export("drawnLineWidth")]
-		public float DrawnLineWidth
-		{
-			get 
-			{
+		public float DrawnLineWidth {
+			get {
 				return drawnLineWidth;	
 			}
-			set
-			{
-				WillChangeValue("drawnLineWidth");
+			set {
+				WillChangeValue ("drawnLineWidth");
 				drawnLineWidth = value;
 				path.LineWidth = drawnLineWidth;
 				NeedsDisplay = true;				
-				DidChangeValue("drawnLineWidth");
-				
+				DidChangeValue ("drawnLineWidth");
 			}
 		}
 		
@@ -100,16 +76,13 @@ namespace CustomizeAnimation
 		[Export ("defaultAnimationForKey:")]
 		static new NSObject DefaultAnimationFor (NSString key)
 		{
-			//Console.WriteLine("defaultAnimationFor " + key);
-			if (key == "drawnLineWidth")
-			{
+			if (key == "drawnLineWidth"){
 				if (drawnLineWidthBasicAnimation == null) {
-					drawnLineWidthBasicAnimation = new CABasicAnimation();
+					drawnLineWidthBasicAnimation = new CABasicAnimation ();
 					//drawnLineWidthBasicAnimation.Duration = 2.0f;
 				}
 				return drawnLineWidthBasicAnimation;
-			}
-			else
+			} else
 				return NSView.DefaultAnimationFor (key);
 		}
 		

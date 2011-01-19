@@ -12,36 +12,32 @@ namespace GroupAnimation
 {
 	public partial class GroupAnimationView : MonoMac.AppKit.NSView
 	{
-		
 		NSImageView mover;
 		
-		#region Constructors
-
 		[Export("initWithFrame:")]
 		public GroupAnimationView(RectangleF frame) : base(frame)
 		{
-			float xInset = 3.0f * (frame.Width / 8.0f);
-			float yInset = 3.0f * (frame.Height / 8.0f);
+			float xInset = 3 * (frame.Width / 8);
+			float yInset = 3 * (frame.Height / 8);
 			
-			RectangleF moverFrame = frame.Inset(xInset, yInset);
+			RectangleF moverFrame = frame.Inset (xInset, yInset);
 		
 			PointF location = moverFrame.Location;
-			location.X = this.Bounds.GetMidX() - moverFrame.Width / 2.0f;
-			location.Y = this.Bounds.GetMidY() - moverFrame.Height / 2.0f;
+			location.X = this.Bounds.GetMidX () - moverFrame.Width / 2;
+			location.Y = this.Bounds.GetMidY () - moverFrame.Height / 2;
 			moverFrame.Location = location;
-			mover = new NSImageView(moverFrame);
+			mover = new NSImageView (moverFrame);
 			
 			mover.ImageScaling = NSImageScale.AxesIndependently;
-			mover.Image = NSImage.ImageNamed("photo.jpg");
+			mover.Image = NSImage.ImageNamed ("photo.jpg");
 			
-			NSDictionary animations = NSDictionary.FromObjectsAndKeys(new object[] {groupAnimation(moverFrame)},
-																		new object[] {"frameRotation"});
+			NSDictionary animations = NSDictionary.FromObjectsAndKeys (
+				new object[] {GroupAnimation(moverFrame)},
+				new object[] {"frameRotation"});
 			mover.Animations = animations;	
 			
-			AddSubview(mover);
+			AddSubview (mover);
 		}
-		
-		#endregion
 		
 		public override bool AcceptsFirstResponder ()
 		{
@@ -53,35 +49,35 @@ namespace GroupAnimation
 			((NSView)mover.Animator).FrameRotation = mover.FrameRotation;
 		}
 		
-		private CAAnimationGroup groupAnimation(RectangleF frame)
+		private CAAnimationGroup GroupAnimation (RectangleF frame)
 		{
-			CAAnimationGroup animationGroup = CAAnimationGroup.CreateAnimation();	
-			animationGroup.Animations = new CAAnimation[] { frameAnimation(frame), 
-															rotationAnimation() };
-			animationGroup.Duration = 1.0f;
+			CAAnimationGroup animationGroup = CAAnimationGroup.CreateAnimation ();	
+			animationGroup.Animations = new CAAnimation[] { frameAnimation (frame), 
+															rotationAnimation () };
+			animationGroup.Duration = 1;
 			animationGroup.AutoReverses = true;
 			return animationGroup;
 		}
 		
-		private CAAnimation frameAnimation(RectangleF aniFrame)
+		private CAAnimation frameAnimation (RectangleF aniFrame)
 		{
-			CAKeyFrameAnimation frameAni = new CAKeyFrameAnimation();
+			CAKeyFrameAnimation frameAni = new CAKeyFrameAnimation ();
 			
 			frameAni.KeyPath = "frame";
 			RectangleF start = aniFrame;
-			RectangleF end = aniFrame.Inset(-start.Width * .5f, -start.Height * 0.5f);
-			frameAni.Values = new NSObject[] {NSValue.FromRectangleF(start),
-							NSValue.FromRectangleF(end)};
-				
+			RectangleF end = aniFrame.Inset (-start.Width * .5f, -start.Height * 0.5f);
+			frameAni.Values = new NSObject[] { 
+				NSValue.FromRectangleF (start),
+				NSValue.FromRectangleF (end) };
 			return frameAni;
 		}
 		
-		private CABasicAnimation rotationAnimation()
+		private CABasicAnimation rotationAnimation ()
 		{
-			CABasicAnimation rotation = new CABasicAnimation();
+			CABasicAnimation rotation = new CABasicAnimation ();
 			rotation.KeyPath = "frameRotation";
-			rotation.From = NSNumber.FromFloat(0.0f);
-			rotation.To = NSNumber.FromFloat(45.0f);
+			rotation.From = NSNumber.FromFloat (0);
+			rotation.To = NSNumber.FromFloat (45);
 			return rotation;
 		}
 	}
