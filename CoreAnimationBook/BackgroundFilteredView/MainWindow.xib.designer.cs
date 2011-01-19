@@ -19,10 +19,10 @@ namespace BackgroundFilteredView {
 		
 		#pragma warning disable 0169
 		[MonoMac.Foundation.Export("addFilter:")]
-		partial void addFilter (MonoMac.AppKit.NSButton sender);
+		partial void AddFilter (MonoMac.AppKit.NSButton sender);
 
 		[MonoMac.Foundation.Export("removeFilter:")]
-		partial void removeFilter (MonoMac.AppKit.NSButton sender);
+		partial void RemoveFilter (MonoMac.AppKit.NSButton sender);
 
 		[MonoMac.Foundation.Connect("controls")]
 		private global::MonoMac.AppKit.NSView controls {

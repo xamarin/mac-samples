@@ -13,33 +13,16 @@ namespace BackgroundFilteredView
 {
 	public partial class BackgroundFilteredView : MonoMac.AppKit.NSView
 	{
-		#region Constructors
+		public BackgroundFilteredView (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public BackgroundFilteredView (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public BackgroundFilteredView (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
-
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-		
-		#endregion
+		public BackgroundFilteredView (NSCoder coder) : base(coder) {}
 		
 		public override void AwakeFromNib ()
 		{
 			WantsLayer = true;
-			applyFilter();
-			addAnimationToTorusFilter();
+			ApplyFilter ();
+			AddAnimationToTorusFilter ();
 		}
 		
 		public override bool AcceptsFirstResponder ()
@@ -52,24 +35,25 @@ namespace BackgroundFilteredView
 			base.KeyDown (theEvent);
 		}
 		
-		private void applyFilter()
+		void ApplyFilter ()
 		{
-			CIVector center = CIVector.Create(Bounds.GetMidX(), Bounds.GetMidY());
-			CIFilter torus = CIFilter.FromName("CITorusLensDistortion");
+			CIVector center = CIVector.Create (Bounds.GetMidX (), Bounds.GetMidY ());
+			CIFilter torus = CIFilter.FromName ("CITorusLensDistortion");
 			
 			var keys = new NSString[] { CIFilter.InputCenterKey,
-											CIFilter.InputRadiusKey,
-											CIFilter.InputWidthKey,
-											CIFilter.InputRefractionKey };
+										CIFilter.InputRadiusKey,
+										CIFilter.InputWidthKey,
+										CIFilter.InputRefractionKey };
 			var values = new NSObject[] { center,
-				                                                         NSNumber.FromFloat(150.0f),
-				                                                         NSNumber.FromFloat(2.0f),
-				                                                         NSNumber.FromFloat(1.7f)};
-			torus.SetValuesForKeysWithDictionary(NSDictionary.FromObjectsAndKeys(values,keys));	                                                       
+				                          NSNumber.FromFloat (150),
+				                          NSNumber.FromFloat (2),
+				                          NSNumber.FromFloat (1.7f)};
+			
+			torus.SetValuesForKeysWithDictionary (NSDictionary.FromObjectsAndKeys (values,keys));	                                                       
 			torus.Name = "torus";
 			
 			controls.BackgroundFilters = new CIFilter[] { torus };								
-			addAnimationToTorusFilter();
+			AddAnimationToTorusFilter ();
 		}
 		
 		public override void DrawRect (RectangleF dirtyRect)
@@ -79,9 +63,8 @@ namespace BackgroundFilteredView
 			stripeSize.Width = bounds.Width / 10.0f;
 			RectangleF stripe = bounds;
 			stripe.Size = stripeSize;
-			NSColor[] colors = new NSColor[2] {NSColor.White, NSColor.Blue};
-			for (int i = 0; i < 10; i++)
-			{
+			NSColor[] colors = new NSColor[2] { NSColor.White, NSColor.Blue };
+			for (int i = 0; i < 10; i++){
 				colors[i % 2].Set();
 				NSGraphics.RectFill(stripe);
 				PointF origin = stripe.Location;
@@ -90,36 +73,35 @@ namespace BackgroundFilteredView
 			}
 		}
 		
-		private void addAnimationToTorusFilter()
+		private void AddAnimationToTorusFilter()
 		{
-			string keyPath = string.Format("backgroundFilters.torus.{0}",CIFilter.InputWidthKey.ToString());
-			CABasicAnimation animation = new CABasicAnimation();
+			string keyPath = string.Format ("backgroundFilters.torus.{0}", CIFilter.InputWidthKey.ToString ());
+			CABasicAnimation animation = new CABasicAnimation ();
 			animation.KeyPath = keyPath;
-			animation.From = NSNumber.FromFloat(50.0f);
-			animation.To = NSNumber.FromFloat(80.0f);
-			animation.Duration = 1.0f;
+			animation.From = NSNumber.FromFloat (50);
+			animation.To = NSNumber.FromFloat (80);
+			animation.Duration = 1;
 			animation.RepeatCount = float.MaxValue;
-			animation.TimingFunction = CAMediaTimingFunction.FromName(CAMediaTimingFunction.EaseInEaseOut);
+			animation.TimingFunction = CAMediaTimingFunction.FromName (CAMediaTimingFunction.EaseInEaseOut);
 			animation.AutoReverses = true;
-			controls.Layer.AddAnimation(animation, "torusAnimation");
-			
+			controls.Layer.AddAnimation (animation, "torusAnimation");
 		}
 
-		private void removeBackgroundFilter()
+		private void RemoveBackgroundFilter()
 		{
 			controls.BackgroundFilters = null;
 		}
 
-		partial void removeFilter (NSButton sender)
+		partial void RemoveFilter (NSButton sender)
 		{
 			if (controls.BackgroundFilters != null || this.BackgroundFilters.Count() > 0)
-				removeBackgroundFilter();
+				RemoveBackgroundFilter ();
 		}
 		
-		partial void addFilter (NSButton sender)
+		partial void AddFilter (NSButton sender)
 		{
 			if (controls.BackgroundFilters == null || this.BackgroundFilters.Count() == 0)
-				applyFilter();
+				ApplyFilter ();
 		}
 	}
 }
