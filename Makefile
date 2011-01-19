@@ -5,7 +5,10 @@ XDIRS = \
 	DrawerMadness GlossyClock macdoc NSTableViewBinding		\
 	PopupBindings PredicateEditorSample QTRecorder			\
 	RoundedTransparentWindow Rulers SearchField SkinnableApp	\
-	StillMotion VillainTracker WhereIsMyMac
+	StillMotion VillainTracker WhereIsMyMac				\
+	CoreAnimationBook/FilteredView 	\
+	CoreAnimationBook/BackgroundFilteredView \
+	CoreAnimationBook/QCBackground
 
 all:
 	for i in $(XDIRS); do (cd $$i; $(MDTOOL) build); done
