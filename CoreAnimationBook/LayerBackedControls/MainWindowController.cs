@@ -10,64 +10,38 @@ namespace LayerBackedControls
 {
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
-		#region Constructors
+		public MainWindowController (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public MainWindowController (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public MainWindowController (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
+		public MainWindowController (NSCoder coder) : base(coder) {}
 
-		// Call to load from the XIB/NIB file
-		public MainWindowController () : base("MainWindow")
-		{
-			Initialize ();
-		}
+		public MainWindowController () : base("MainWindow") {}
 
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-
-		#endregion
-
-		//strongly typed window accessor
-		public new MainWindow Window {
-			get { return (MainWindow)base.Window; }
-		}
-		
 		public override void AwakeFromNib ()
 		{
 			rotatingButton.Superview.WantsLayer = true;
 			// comment this line out for no shadow
-			applyShadow();
+			ApplyShadow();
 		}
 		
-		partial void rotateButton (NSButton sender)
+		partial void RotateButton (NSButton sender)
 		{
 			float rotation = rotatingButton.FrameCenterRotation;
 			rotatingButton.FrameCenterRotation = rotation + 15.0f;
 		}
 		
-		partial void beep (NSButton sender)
+		partial void Beep (NSButton sender)
 		{
-			AppKitFramework.NSBeep();		
+			AppKitFramework.NSBeep ();		
 		}
 		
-		void applyShadow()
+		void ApplyShadow ()
 		{
-			NSShadow shadoe = new NSShadow();
-			shadoe.ShadowOffset = new System.Drawing.SizeF(0.0f, -0.0f);
-			shadoe.ShadowBlurRadius = 3.0f;
-			shadoe.ShadowColor = NSColor.Red;
-			rotatingButton.Shadow = shadoe;
+			rotatingButton.Shadow = new NSShadow() {
+				ShadowOffset = new System.Drawing.SizeF (0, 0),
+				ShadowBlurRadius = 3,
+				ShadowColor = NSColor.Red
+			};
 		}
 	}
 }

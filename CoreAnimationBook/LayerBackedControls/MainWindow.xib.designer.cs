@@ -24,10 +24,10 @@ namespace LayerBackedControls {
 		
 		#pragma warning disable 0169
 		[MonoMac.Foundation.Export("beep:")]
-		partial void beep (MonoMac.AppKit.NSButton sender);
+		partial void Beep (MonoMac.AppKit.NSButton sender);
 
 		[MonoMac.Foundation.Export("rotateButton:")]
-		partial void rotateButton (MonoMac.AppKit.NSButton sender);
+		partial void RotateButton (MonoMac.AppKit.NSButton sender);
 
 		[MonoMac.Foundation.Connect("rotatingButton")]
 		private global::MonoMac.AppKit.NSButton rotatingButton {
