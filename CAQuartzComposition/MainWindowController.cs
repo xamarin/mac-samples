@@ -14,33 +14,12 @@ namespace CAQuartzComposition
 {
 	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
 	{
-		#region Constructors
+		public MainWindowController (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public MainWindowController (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public MainWindowController (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
+		public MainWindowController (NSCoder coder) : base(coder) {}
 
-		// Call to load from the XIB/NIB file
-		public MainWindowController () : base("MainWindow")
-		{
-			Initialize ();
-		}
-
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-
-		#endregion
+		public MainWindowController () : base("MainWindow") {}
 
 		//strongly typed window accessor
 		public new MainWindow Window {
@@ -50,28 +29,28 @@ namespace CAQuartzComposition
 		public override void AwakeFromNib ()
 		{
 			Window.ContentView.WantsLayer = true;
-			var path = NSBundle.MainBundle.PathForResource("VideoCube","qtz");
+			var path = NSBundle.MainBundle.PathForResource ("VideoCube","qtz");
 			//var path = NSBundle.MainBundle.PathForResource("VideoQuad","qtz");
 			
-			var layer = new QCCompositionLayer(path);
+			var layer = new QCCompositionLayer (path) {
+				Frame = Window.ContentView.Frame
+			};
 			
-			layer.Frame = Window.ContentView.Frame;
+			var text = new CATextLayer () {
+				String = "Hello MonoMac",
+				Frame = Window.ContentView.Frame
+			};
+			layer.AddSublayer (text);
 			
-			var text = new CATextLayer();
-			text.String = "Hello MonoMac";
-			text.Frame = Window.ContentView.Frame;
-			layer.AddSublayer(text);
+			var blurFilter = CIFilter.FromName ("CIGaussianBlur");
 			
-			var blurFilter = CIFilter.FromName("CIGaussianBlur");
-			
-			blurFilter.SetDefaults();
-			blurFilter.SetValueForKey((NSNumber)2.0f,(NSString)"inputRadius");
+			blurFilter.SetDefaults ();
+			blurFilter.SetValueForKey ((NSNumber)2, (NSString)"inputRadius");
 			blurFilter.Name = "blur";
 			
-			layer.Filters = new NSObject[] {blurFilter};
+			layer.Filters = new CIFilter[] { blurFilter };
 			
-			Window.ContentView.Layer.AddSublayer(layer);
-			
+			Window.ContentView.Layer.AddSublayer (layer);
 		}
 	}
 }
