@@ -20,4 +20,16 @@ namespace CAQuartzComposition {
 	[MonoMac.Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 	}
+	
+	// Should subclass MonoMac.AppKit.NSView
+	[MonoMac.Foundation.Register("MyQuartzView")]
+	public partial class MyQuartzView {
+		
+		#pragma warning disable 0169
+		[MonoMac.Foundation.Export("filterSwitch:")]
+		partial void filterSwitch (MonoMac.AppKit.NSMenuItem sender);
+
+		[MonoMac.Foundation.Export("switchView:")]
+		partial void switchView (MonoMac.AppKit.NSMenuItem sender);
+}
 }

@@ -26,32 +26,6 @@ namespace CAQuartzComposition
 			get { return (MainWindow)base.Window; }
 		}
 		
-		public override void AwakeFromNib ()
-		{
-			Window.ContentView.WantsLayer = true;
-			var path = NSBundle.MainBundle.PathForResource ("VideoCube","qtz");
-			//var path = NSBundle.MainBundle.PathForResource("VideoQuad","qtz");
-			
-			var layer = new QCCompositionLayer (path) {
-				Frame = Window.ContentView.Frame
-			};
-			
-			var text = new CATextLayer () {
-				String = "Hello MonoMac",
-				Frame = Window.ContentView.Frame
-			};
-			layer.AddSublayer (text);
-			
-			var blurFilter = CIFilter.FromName ("CIGaussianBlur");
-			
-			blurFilter.SetDefaults ();
-			blurFilter.SetValueForKey ((NSNumber)2, (NSString)"inputRadius");
-			blurFilter.Name = "blur";
-			
-			layer.Filters = new CIFilter[] { blurFilter };
-			
-			Window.ContentView.Layer.AddSublayer (layer);
-		}
 	}
 }
 
