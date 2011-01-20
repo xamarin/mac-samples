@@ -12,42 +12,23 @@ namespace CustomizeAnimation
 {
 	public partial class BaseView : MonoMac.AppKit.NSView
 	{
-		
 		NSImageView mover;
 		bool isRight;
 		PointF leftPosition;
 		PointF rightPosition;
 		
-		#region Constructors
+		public BaseView (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public BaseView (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public BaseView (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
+		public BaseView (NSCoder coder) : base(coder) {}
 
 		[Export("initWithFrame:")]
 		public BaseView (RectangleF frame) : base(frame)
 		{
-			initializeFramePositions();
-			addImageToSubview();
-			
+			InitializeFramePositions();
+			AddImageToSubview();
 		}
 
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-		
-		#endregion
-		
 		public override bool AcceptsFirstResponder ()
 		{
 			return true;
@@ -55,38 +36,31 @@ namespace CustomizeAnimation
 		
 		public override void KeyDown (NSEvent theEvent)
 		{
-			move();
+			Move ();
 		}
 		
-		private void initializeFramePositions()
+		void InitializeFramePositions ()
 		{
-			RectangleF moverRect  = Bounds.Inset(Bounds.Size.Width / 4.0f,
-			                                     Bounds.Size.Height / 4.0f);
+			RectangleF moverRect  = Bounds.Inset(Bounds.Size.Width / 4, Bounds.Size.Height / 4);
 			PointF origin = moverRect.Location;
-			origin.X = 0.0f;
+			origin.X = 0;
 			moverRect.Location = origin;
-			mover = new NSImageView(moverRect);
-			leftPosition = new PointF(0.0f, moverRect.GetMinY());
-			rightPosition = new PointF(Bounds.GetMaxX() - moverRect.Width,
-			                           moverRect.GetMinY());
+			mover = new NSImageView (moverRect);
+			leftPosition = new PointF (0, moverRect.GetMinY ());
+			rightPosition = new PointF (Bounds.GetMaxX () - moverRect.Width, moverRect.GetMinY ());
 			isRight = false;
-			                                     
 		}
 		
-		private void addImageToSubview()
+		void AddImageToSubview ()
 		{
 			mover.ImageScaling = NSImageScale.AxesIndependently;
-			mover.Image = NSImage.ImageNamed("photo.jpg");
-			AddSubview(mover);
+			mover.Image = NSImage.ImageNamed ("photo.jpg");
+			AddSubview (mover);
 		}
 		
-		private void move() 
+		void Move () 
 		{
-			PointF target;
-			if (isRight)
-				target = leftPosition;
-			else
-				target = rightPosition;
+			PointF target = isRight ? leftPosition : rightPosition;
 			((NSView)mover.Animator).SetFrameOrigin(target);
 			isRight = !isRight;
 		}

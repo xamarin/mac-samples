@@ -10,39 +10,20 @@ using MonoMac.CoreGraphics;
 
 namespace CustomAnimationTiming
 {
-	public partial class CustomAnimationTiming : MonoMac.AppKit.NSView
-	{
-		
+	public partial class CustomAnimationTiming : MonoMac.AppKit.NSView {
 		NSImageView mover;
 		CABasicAnimation moveAnimation;
 		
-		#region Constructors
+		public CustomAnimationTiming (IntPtr handle) : base(handle) {}
 
-		// Called when created from unmanaged code
-		public CustomAnimationTiming (IntPtr handle) : base(handle)
-		{
-			Initialize ();
-		}
-
-		// Called when created directly from a XIB file
 		[Export("initWithCoder:")]
-		public CustomAnimationTiming (NSCoder coder) : base(coder)
-		{
-			Initialize ();
-		}
+		public CustomAnimationTiming (NSCoder coder) : base(coder) {}
 
 		[Export("initWithFrame:")]
 		public CustomAnimationTiming (RectangleF frame) : base(frame)
 		{
-			setupMover();
+			SetupMover ();
 		}
-
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
-		
-		#endregion
 		
 		public override bool AcceptsFirstResponder ()
 		{
@@ -51,10 +32,10 @@ namespace CustomAnimationTiming
 		
 		public override void KeyDown (NSEvent theEvent)
 		{
-			move();
+			Move();
 		}
 		
-		private void setupMover()
+		void SetupMover()
 		{
 			RectangleF moverFrame = Bounds.Inset(Bounds.Width / 4.0f,
 			                                    	Bounds.Height / 4.0f);
@@ -68,23 +49,19 @@ namespace CustomAnimationTiming
 			AddSubview(mover);
 		}
 		
-		private CABasicAnimation moveItAnimation()
+		CABasicAnimation MoveItAnimation()
 		{
 			if (moveAnimation == null)
-			{
-				moveAnimation = new CABasicAnimation();
-				moveAnimation.Duration = 2.0f;
-				moveAnimation.TimingFunction = 
-					new CAMediaTimingFunction(0.5f, 1.0f, 0.5f, 0.0f);
-				
-			}
+				moveAnimation = new CABasicAnimation() {
+					Duration = 2,
+					TimingFunction = new CAMediaTimingFunction (0.5f, 1, 0.5f, 0)
+				};
 			return moveAnimation;
 		}
 		
-		private void move() 
+		void Move() 
 		{
-			NSDictionary animations = NSDictionary.FromObjectAndKey(moveItAnimation(),
-			                                                        (NSString)"frameOrigin");
+			var animations = NSDictionary.FromObjectAndKey (MoveItAnimation (), (NSString)"frameOrigin");
 			mover.Animations = animations;
 			PointF origin = mover.Frame.Location;
 			origin.X += mover.Frame.Width;
