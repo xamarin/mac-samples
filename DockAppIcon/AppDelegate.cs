@@ -10,10 +10,6 @@ namespace DockAppIcon
 	{
 		MainWindowController mainWindowController;
 
-		public AppDelegate ()
-		{
-		}
-
 		public override void FinishedLaunching (NSObject notification)
 		{
 			mainWindowController = new MainWindowController ();

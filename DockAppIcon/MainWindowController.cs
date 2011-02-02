@@ -20,17 +20,6 @@ namespace DockAppIcon
                 // Call to load from the XIB/NIB file
                 public MainWindowController () : base("MainWindow")
                 {
-                        Initialize ();
-                }
-
-                // Shared initialization code
-                void Initialize ()
-                {
-                }
-
-                //strongly typed window accessor
-                public new MainWindow Window {
-                        get { return (MainWindow)base.Window; }
                 }
 
                 public override void AwakeFromNib ()
@@ -42,15 +31,15 @@ namespace DockAppIcon
 
                 void HandleCustomFormatEditingEnded (object sender, EventArgs e)
                 {
-                        updateBadge ();
+                        UpdateBadge ();
                 }
 
                 void HandleBadgeNumberEditingEnded (object sender, EventArgs e)
                 {
-                        updateBadge ();
+                        UpdateBadge ();
                 }
 
-                private void updateBadge ()
+                private void UpdateBadge ()
                 {
                         if (isShowBadge) {
                                 if (useCustomFormat) {
@@ -66,19 +55,19 @@ namespace DockAppIcon
                 partial void stepperAction (NSStepper sender)
                 {
                         badgeNumber.StringValue = sender.StringValue;
-                        updateBadge ();
+                        UpdateBadge ();
                 }
 
                 partial void badgeCheckAction (NSButton sender)
                 {
                         isShowBadge = (badgeCheck.State == NSCellStateValue.On) ? true : false;
-                        updateBadge ();
+                        UpdateBadge ();
                 }
 
                 partial void customFormatAction (NSButton sender)
                 {
                         useCustomFormat = (formatCheck.State == NSCellStateValue.On) ? true : false;
-                        updateBadge ();
+                        UpdateBadge ();
                 }
 
                 partial void showAppBadgeAction (NSButton sender)
