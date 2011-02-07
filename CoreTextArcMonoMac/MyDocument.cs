@@ -77,7 +77,6 @@ namespace CoreTextArcMonoMac
 
                 void updateDisplay ()
                 {
-                        
                         arcView.NeedsDisplay = true;
                         
                         //Update the bold button
@@ -89,19 +88,18 @@ namespace CoreTextArcMonoMac
                         italicButton.Enabled = canToggleTrait (arcView.Font, NSFontTraitMask.Italic);
                         
                         // Update the window title
-                        foreach (var controller in WindowControllers) {
+                        foreach (var controller in WindowControllers)
                                 controller.Window.Title = DisplayName;
-                        }
-                }
+				}
 
                 private bool isFontBold (NSFont font)
                 {
-                        return (NSFontSymbolicTraits)(font.FontDescriptor.SymbolicTraits & NSFontSymbolicTraits.BoldTrait) == NSFontSymbolicTraits.BoldTrait;
+                        return font.FontDescriptor.SymbolicTraits.HasFlag (NSFontSymbolicTraits.BoldTrait);
                 }
 
                 private bool isFontItalic (NSFont font)
                 {
-                        return (NSFontSymbolicTraits)(font.FontDescriptor.SymbolicTraits & NSFontSymbolicTraits.ItalicTrait) == NSFontSymbolicTraits.ItalicTrait;
+                        return font.FontDescriptor.SymbolicTraits.HasFlag (NSFontSymbolicTraits.ItalicTrait);
                 }
 
                 private bool canToggleTrait (NSFont font, NSFontTraitMask trait)

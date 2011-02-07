@@ -33,7 +33,7 @@ This functionality can be found in the file MyDocument.cs.  Key points to make n
 Using the Sample
 ================
 
-Build and run this sample in Xcode 3.0 or later and run the resulting application.  When launched, the application will 
+Build and run this sample.  When launched, the application will 
 display a string drawn along an curve.  Click in the checkboxes in wthe window to change some font settings.  Choose the 
 "Show Fonts" menu item from the "Format" menu to open the font panel so you can change additional font settings.
 

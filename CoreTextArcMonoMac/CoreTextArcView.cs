@@ -40,12 +40,6 @@ namespace CoreTextArcMonoMac
                         
                 }
 
-                // Shared initialization code
-                void Initialize ()
-                {
-                        // Initialization code here.
-                }
-
                 static void PrepareGlyphArcInfo (CTLine line, long glyphCount, GlyphArcInfo[] glyphArcInfo)
                 {
                         var runArray = line.GetGlyphRuns ();
