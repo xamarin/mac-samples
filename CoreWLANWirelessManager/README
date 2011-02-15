@@ -1,0 +1,11 @@
+CoreWLANWirelessManager MonoMac Sample
+Copyright Ashok Gelal (http://ashokgelal.com)
+
+This is Apple's CoreWLANWirelessManager sample from Mac OS X Reference Library (http://goo.gl/YzEQy) rewritten using MonoMac. 
+The CoreWLANWirelessManager allows you to view information regarding the current interface, currently connected AcessPoint, join a new network, and 
+create a new connection. It also displays all the AccessPoints accessible to current Network Interface in a table.
+
+You are free to copy this code and distribute under the condition that you don't delete the copyright information.
+I take absolutely no guarantee for anything happening to your network, computer, network devices, and to your sanity by using this program and/or code.
+Please use it at your own risk. And please don't sue anyone - including me for using my own code.
+
