@@ -19,6 +19,11 @@ namespace SamplesButtonMadness
 			mainWindowController = new TestWindowController ();
 			mainWindowController.Window.MakeKeyAndOrderFront (this);
 		}
+		
+		public override bool ApplicationShouldTerminateAfterLastWindowClosed (NSApplication sender)
+		{
+			return true;
+		}
 	}
 }
 
