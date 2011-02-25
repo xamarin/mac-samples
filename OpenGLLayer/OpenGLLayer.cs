@@ -125,7 +125,7 @@ namespace OpenGLLayer
                         // make sure to add a null value
                         CGLPixelFormatAttribute[] attribs = new CGLPixelFormatAttribute[] { 
 							CGLPixelFormatAttribute.Accelerated, 
-							CGLPixelFormatAttribute.DoubleBuffer, CGLPixelFormatAttribute.ColorSize, (CGLPixelFormatAttribute)24, CGLPixelFormatAttribute.DepthSize, (CGLPixelFormatAttribute)16, (CGLPixelFormatAttribute)0 };
+							CGLPixelFormatAttribute.DoubleBuffer, CGLPixelFormatAttribute.ColorSize, (CGLPixelFormatAttribute)24, CGLPixelFormatAttribute.DepthSize, (CGLPixelFormatAttribute)16 };
                         
                         int numPixs = -1;
                         CGLPixelFormat pixelFormat = new CGLPixelFormat (attribs, out numPixs);
