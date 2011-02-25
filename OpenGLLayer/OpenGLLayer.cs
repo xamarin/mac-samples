@@ -120,7 +120,7 @@ namespace OpenGLLayer
 							NSOpenGLPixelFormatAttribute.DoubleBuffer, 
 							NSOpenGLPixelFormatAttribute.ColorSize, (NSOpenGLPixelFormatAttribute)24, 
 							NSOpenGLPixelFormatAttribute.DepthSize, (NSOpenGLPixelFormatAttribute)16, 
-							(NSOpenGLPixelFormatAttribute)0 };
+						};
                         
                         int numPixs = -1;
 						return new NSOpenGLPixelFormat (attribs);
