@@ -10,7 +10,6 @@ using MonoMac.CoreGraphics;
 using MonoMac.CoreVideo;
 using MonoMac.OpenGL;
 using System.Runtime.InteropServices;
-
 namespace OpenGLLayer
 {
         public partial class OpenGLLayer : MonoMac.CoreAnimation.CAOpenGLLayer
@@ -19,6 +18,7 @@ namespace OpenGLLayer
                 double previousTime;
                 double rotation;
                 bool animate;
+                //IntPtr localContext;
 
 				float[,] cube_vertices = new float[8,3] {
 					{-1, -1, 1},  // 2    0
@@ -29,6 +29,7 @@ namespace OpenGLLayer
 					{1, 1, -1},   // 4    5
 					{-1, -1, -1}, // 6    6
 					{1, -1, -1}   // 5    7
+					
 				};
 				
 				float[,] cube_face_colors = new float[6,3] {
@@ -51,6 +52,8 @@ namespace OpenGLLayer
 					{5, 7, 6, 4}  // -Z
 				};
 		
+                #region Constructors
+
                 public OpenGLLayer () : base()
                 {
                         Initialize ();
@@ -69,25 +72,29 @@ namespace OpenGLLayer
                         Initialize ();
                 }
 
+                // Shared initialization code
                 void Initialize ()
                 {
                         Animate = true;
-                        Asynchronous = true;
+                        this.Asynchronous = true;
                 }
+
+                #endregion
 
                 public bool Animate {
                         get { return animate; }
                         set { animate = value; }
                 }
-		
-				public override bool CanDrawInCGLContext (NSOpenGLContext ctx, NSOpenGLPixelFormat pf, double time, CVTimeStamp ts)
-				{
+
+                public override bool CanDrawInCGLContext (CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, CVTimeStamp timeStamp)
+                {
                         if (!animate)
                                 previousTime = 0.0;
                         return animate;
                 }
-		
-				public override void DrawInCGLContext (NSOpenGLContext ctx, NSOpenGLPixelFormat pf, double timeInterval, CVTimeStamp ts)
+
+
+                public override void DrawInCGLContext (MonoMac.OpenGL.CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, CVTimeStamp timeStamp)
                 {
                         GL.ClearColor (NSColor.Clear.UsingColorSpace (NSColorSpace.CalibratedRGB));
                         GL.Clear (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
@@ -111,19 +118,18 @@ namespace OpenGLLayer
                         
                         
                 }
-		
-				public override NSOpenGLPixelFormat CopyCGLPixelFormatForDisplayMask (uint mask)
-				{
+
+                public override CGLPixelFormat CopyCGLPixelFormatForDisplayMask (uint mask)
+                {
+                        
                         // make sure to add a null value
-                        var attribs = new NSOpenGLPixelFormatAttribute[] { 
-							NSOpenGLPixelFormatAttribute.Accelerated, 
-							NSOpenGLPixelFormatAttribute.DoubleBuffer, 
-							NSOpenGLPixelFormatAttribute.ColorSize, (NSOpenGLPixelFormatAttribute)24, 
-							NSOpenGLPixelFormatAttribute.DepthSize, (NSOpenGLPixelFormatAttribute)16, 
-							(NSOpenGLPixelFormatAttribute)0 };
+                        CGLPixelFormatAttribute[] attribs = new CGLPixelFormatAttribute[] { 
+							CGLPixelFormatAttribute.Accelerated, 
+							CGLPixelFormatAttribute.DoubleBuffer, CGLPixelFormatAttribute.ColorSize, (CGLPixelFormatAttribute)24, CGLPixelFormatAttribute.DepthSize, (CGLPixelFormatAttribute)16, (CGLPixelFormatAttribute)0 };
                         
                         int numPixs = -1;
-						return new NSOpenGLPixelFormat (attribs);
+                        CGLPixelFormat pixelFormat = new CGLPixelFormat (attribs, out numPixs);
+                        return pixelFormat;
                 }
 
 
