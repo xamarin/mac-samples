@@ -46,12 +46,7 @@ namespace GLFullScreen
 			openGLContext.MakeCurrentContext ();
 			
 			// Synchronize buffer swaps with vertical refresh rate
-			int[] swapInt = new int[] { 1 };
-			unsafe {
-				fixed (int* swapInt_ptr = &swapInt[0]) {
-					openGLContext.SetValues ((IntPtr)swapInt_ptr, NSOpenGLContextParameter.SwapInterval);
-				}
-			}
+			openGLContext.SwapInterval = true;
 			
 			SetupDisplayLink();
 			
