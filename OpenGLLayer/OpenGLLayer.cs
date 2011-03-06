@@ -14,7 +14,6 @@ namespace OpenGLLayer
 {
         public partial class OpenGLLayer : MonoMac.CoreAnimation.CAOpenGLLayer
         {
-
                 double previousTime;
                 double rotation;
                 bool animate;
@@ -52,8 +51,6 @@ namespace OpenGLLayer
 					{5, 7, 6, 4}  // -Z
 				};
 		
-                #region Constructors
-
                 public OpenGLLayer () : base()
                 {
                         Initialize ();
@@ -76,10 +73,8 @@ namespace OpenGLLayer
                 void Initialize ()
                 {
                         Animate = true;
-                        this.Asynchronous = true;
+                        Asynchronous = true;
                 }
-
-                #endregion
 
                 public bool Animate {
                         get { return animate; }
@@ -121,7 +116,6 @@ namespace OpenGLLayer
 
                 public override CGLPixelFormat CopyCGLPixelFormatForDisplayMask (uint mask)
                 {
-                        
                         // make sure to add a null value
                         CGLPixelFormatAttribute[] attribs = new CGLPixelFormatAttribute[] { 
 							CGLPixelFormatAttribute.Accelerated, 
@@ -156,8 +150,6 @@ namespace OpenGLLayer
                                         GL.Vertex3 (cube_vertices[cube_faces[f, i], 0] * fSize, cube_vertices[cube_faces[f, i], 1] * fSize, cube_vertices[cube_faces[f, i], 2] * fSize);
                                 GL.End ();
                         }
-                        
-                        
                 }
                 
         }

@@ -19,7 +19,7 @@ namespace OpenGLViewSample
 		public override void FinishedLaunching (NSObject notification)
 		{
 			mainWindowController = new MainWindowController ();
-			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new NSOpenGLPixelFormatAttribute [] {
+			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new object [] {
 										NSOpenGLPixelFormatAttribute.FullScreen,
 										NSOpenGLPixelFormatAttribute.MinimumPolicy				
 			}));
