@@ -117,12 +117,13 @@ namespace OpenGLLayer
                 public override CGLPixelFormat CopyCGLPixelFormatForDisplayMask (uint mask)
                 {
                         // make sure to add a null value
-                        CGLPixelFormatAttribute[] attribs = new CGLPixelFormatAttribute[] { 
+                        var attribs = new object [] { 
 							CGLPixelFormatAttribute.Accelerated, 
-							CGLPixelFormatAttribute.DoubleBuffer, CGLPixelFormatAttribute.ColorSize, (CGLPixelFormatAttribute)24, CGLPixelFormatAttribute.DepthSize, (CGLPixelFormatAttribute)16 };
+							CGLPixelFormatAttribute.DoubleBuffer, 
+							CGLPixelFormatAttribute.ColorSize, 24, 
+							CGLPixelFormatAttribute.DepthSize, 16 };
                         
-                        int numPixs = -1;
-                        CGLPixelFormat pixelFormat = new CGLPixelFormat (attribs, out numPixs);
+                        CGLPixelFormat pixelFormat = new CGLPixelFormat (attribs);
                         return pixelFormat;
                 }
 
