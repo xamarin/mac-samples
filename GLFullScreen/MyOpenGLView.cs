@@ -28,12 +28,12 @@ namespace GLFullScreen
 
 		public MyOpenGLView (RectangleF frame, NSOpenGLContext context) : base(frame)
 		{
-			NSOpenGLPixelFormatAttribute[] attribs = new NSOpenGLPixelFormatAttribute[] {
+			var attribs = new object [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
 				NSOpenGLPixelFormatAttribute.NoRecovery,
 				NSOpenGLPixelFormatAttribute.DoubleBuffer,
-				NSOpenGLPixelFormatAttribute.ColorSize, (NSOpenGLPixelFormatAttribute)24,
-				NSOpenGLPixelFormatAttribute.DepthSize, (NSOpenGLPixelFormatAttribute)16 };
+				NSOpenGLPixelFormatAttribute.ColorSize, 24,
+				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
 			
 			pixelFormat = new NSOpenGLPixelFormat (attribs);
 			
