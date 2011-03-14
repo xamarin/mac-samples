@@ -6,13 +6,13 @@ using MonoMac.ObjCRuntime;
 
 namespace NeHeLesson5
 {
-        class MainClass
-        {
-                static void Main (string[] args)
-                {
-                        NSApplication.Init ();
-                        NSApplication.Main (args);
-                }
-        }
+	class MainClass
+	{
+		static void Main (string[] args)
+		{
+			NSApplication.Init ();
+			NSApplication.Main (args);
+		}
+	}
 }
 

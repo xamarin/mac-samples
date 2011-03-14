@@ -46,16 +46,16 @@ namespace NeHeLesson4
 {
 	public partial class MyOpenGLView : MonoMac.AppKit.NSView
 	{
-		
+
 		NSOpenGLContext openGLContext;
 		NSOpenGLPixelFormat pixelFormat;
 
 		MainWindowController controller;
 
 		CVDisplayLink displayLink;
-		
+
 		NSObject notificationProxy;
-		
+
 		[Export("initWithFrame:")]
 		public MyOpenGLView (RectangleF frame) : this(frame, null)
 		{
@@ -63,12 +63,7 @@ namespace NeHeLesson4
 
 		public MyOpenGLView (RectangleF frame, NSOpenGLContext context) : base(frame)
 		{
-			var attribs = new object [] {
-				NSOpenGLPixelFormatAttribute.Accelerated,
-				NSOpenGLPixelFormatAttribute.NoRecovery,
-				NSOpenGLPixelFormatAttribute.DoubleBuffer,
-				NSOpenGLPixelFormatAttribute.ColorSize, 24,
-				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
+			var attribs = new object[] { NSOpenGLPixelFormatAttribute.Accelerated, NSOpenGLPixelFormatAttribute.NoRecovery, NSOpenGLPixelFormatAttribute.DoubleBuffer, NSOpenGLPixelFormatAttribute.ColorSize, 24, NSOpenGLPixelFormatAttribute.DepthSize, 16 };
 			
 			pixelFormat = new NSOpenGLPixelFormat (attribs);
 			
@@ -84,9 +79,9 @@ namespace NeHeLesson4
 			openGLContext.SwapInterval = true;
 			
 			// Initialize our newly created view.
-                        InitGL ();
-
-			SetupDisplayLink();
+			InitGL ();
+			
+			SetupDisplayLink ();
 			
 			// Look for changes in view size
 			// Note, -reshape will not be called automatically on size changes because NSView does not export it to override 
@@ -122,30 +117,30 @@ namespace NeHeLesson4
 		{
 			controller.MouseDown (theEvent);
 		}
-		
-                // All Setup For OpenGL Goes Here
-                public bool InitGL ()
-                {
-                        // Enables Smooth Shading  
-                        GL.ShadeModel (ShadingModel.Smooth);
-                        // Set background color to black     
-                        GL.ClearColor (Color.Black);
-                        
-                        // Setup Depth Testing
-                        
-                        // Depth Buffer setup
-                        GL.ClearDepth (1.0);
-                        // Enables Depth testing
-                        GL.Enable (EnableCap.DepthTest);
-                        // The type of depth testing to do
-                        GL.DepthFunc (DepthFunction.Lequal);
-                        
-                        // Really Nice Perspective Calculations
-                        GL.Hint (HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
-                        
-                        return true;
-                }
-		
+
+		// All Setup For OpenGL Goes Here
+		public bool InitGL ()
+		{
+			// Enables Smooth Shading  
+			GL.ShadeModel (ShadingModel.Smooth);
+			// Set background color to black     
+			GL.ClearColor (Color.Black);
+			
+			// Setup Depth Testing
+			
+			// Depth Buffer setup
+			GL.ClearDepth (1.0);
+			// Enables Depth testing
+			GL.Enable (EnableCap.DepthTest);
+			// The type of depth testing to do
+			GL.DepthFunc (DepthFunction.Lequal);
+			
+			// Really Nice Perspective Calculations
+			GL.Hint (HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
+			
+			return true;
+		}
+
 		private void DrawView ()
 		{
 			// This method will be called on both the main thread (through -drawRect:) and a secondary thread (through the display link rendering loop)
@@ -243,21 +238,21 @@ namespace NeHeLesson4
 			if (displayLink != null && displayLink.IsRunning)
 				displayLink.Stop ();
 		}
-		
+
 		// Clean up the notifications
-		public void DeAllocate()
+		public void DeAllocate ()
 		{
-			displayLink.Stop();
-			displayLink.SetOutputCallback(null);
+			displayLink.Stop ();
+			displayLink.SetOutputCallback (null);
 			
-			NSNotificationCenter.DefaultCenter.RemoveObserver(notificationProxy); 
+			NSNotificationCenter.DefaultCenter.RemoveObserver (notificationProxy);
 		}
-		
-                [Export("toggleFullScreen:")]
-                public void toggleFullScreen (NSObject sender)
-                {
-                        controller.toggleFullScreen (sender);
-                }		
+
+		[Export("toggleFullScreen:")]
+		public void toggleFullScreen (NSObject sender)
+		{
+			controller.toggleFullScreen (sender);
+		}
 	}
 }
 

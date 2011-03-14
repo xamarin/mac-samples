@@ -83,7 +83,7 @@ namespace NeHeLesson2
 			openGLContext.SwapInterval = true;
 			
 			// Initialize our newly created view.
-                        InitGL ();
+            InitGL ();
 
 			SetupDisplayLink();
 			
@@ -122,28 +122,28 @@ namespace NeHeLesson2
 			controller.MouseDown (theEvent);
 		}
 		
-                // All Setup For OpenGL Goes Here
-                public bool InitGL ()
-                {
-                        // Enables Smooth Shading  
-                        GL.ShadeModel (ShadingModel.Smooth);
-                        // Set background color to black     
-                        GL.ClearColor (Color.Black);
-                        
-                        // Setup Depth Testing
-                        
-                        // Depth Buffer setup
-                        GL.ClearDepth (1.0);
-                        // Enables Depth testing
-                        GL.Enable (EnableCap.DepthTest);
-                        // The type of depth testing to do
-                        GL.DepthFunc (DepthFunction.Lequal);
-                        
-                        // Really Nice Perspective Calculations
-                        GL.Hint (HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
-                        
-                        return true;
-                }
+		// All Setup For OpenGL Goes Here
+		public bool InitGL ()
+		{
+			// Enables Smooth Shading  
+			GL.ShadeModel (ShadingModel.Smooth);
+			// Set background color to black     
+			GL.ClearColor (Color.Black);
+			
+			// Setup Depth Testing
+			
+			// Depth Buffer setup
+			GL.ClearDepth (1.0);
+			// Enables Depth testing
+			GL.Enable (EnableCap.DepthTest);
+			// The type of depth testing to do
+			GL.DepthFunc (DepthFunction.Lequal);
+			
+			// Really Nice Perspective Calculations
+			GL.Hint (HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
+			
+			return true;
+		}
 		
 		private void DrawView ()
 		{
@@ -252,11 +252,11 @@ namespace NeHeLesson2
 			NSNotificationCenter.DefaultCenter.RemoveObserver(notificationProxy); 
 		}
 		
-                [Export("toggleFullScreen:")]
-                public void toggleFullScreen (NSObject sender)
-                {
-                        controller.toggleFullScreen (sender);
-                }		
+		[Export("toggleFullScreen:")]
+		public void toggleFullScreen (NSObject sender)
+		{
+			controller.toggleFullScreen (sender);
+		}		
 	}
 }
 
