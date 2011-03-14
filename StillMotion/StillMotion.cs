@@ -109,9 +109,6 @@ namespace StillMotion
 		
 		public override bool WriteToUrl (NSUrl absoluteUrl, string typeName, NSSaveOperationType saveOperation, NSUrl absoluteOriginalContentsUrl, out NSError outError)
 		{
-			var saveOptions = new QTMovieSaveOptions () {
-				Flatten = true
-			};
 			return movie.SaveTo (absoluteUrl.Path, new QTMovieSaveOptions () { Flatten = true }, out outError);
 		}
 		

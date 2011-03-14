@@ -181,7 +181,7 @@ namespace NSTableViewBinding
 																	new NSString("NSConditionallySetsEditable"),
 																	new NSString("NSRaisesForNotApplicableKeys")};
 			
-			NSDictionary valueOptionsDict = NSDictionary.FromObjectsAndKeys(enableOptionsObjects.ToArray(),enableOptionsKeys.ToArray());
+			NSDictionary valueOptionsDict = NSDictionary.FromObjectsAndKeys(valueOptionsObjects.ToArray(),valueOptionsKeys.ToArray());
 	
 			myFormFields.CellAtIndex(FIRST_NAME_IDX).Bind("value",myContentArray,"selection.firstname",valueOptionsDict);
 			myFormFields.CellAtIndex(LAST_NAME_IDX).Bind("value",myContentArray,"selection.lastname",valueOptionsDict);

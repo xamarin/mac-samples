@@ -11,9 +11,9 @@ namespace VillainTracker
 	{	
 		static readonly string[] motivations = new [] {
 			"Greed", "Revenge", "Bloodlust", "Nihilism", "Insanity"};
-		static readonly string[] powers = new[] {
-			"Strength", "Intellect", "Psionics", "Imperviousness", "Speed", "Stealth",
-			"Fighting ability", "Time control", "Cosmic consciousness", "Size", "Special weapon attack", "Leadership"};
+		//static readonly string[] powers = new[] {
+		//	"Strength", "Intellect", "Psionics", "Imperviousness", "Speed", "Stealth",
+		//	"Fighting ability", "Time control", "Cosmic consciousness", "Size", "Special weapon attack", "Leadership"};
 		
 		List<Villain> villains = new List<Villain> ();
 		Villain villain;

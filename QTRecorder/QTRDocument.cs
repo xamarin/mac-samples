@@ -83,13 +83,12 @@ namespace QTRecorder
 					return;
 				}
 				var save = NSSavePanel.SavePanel;
-				save.RequiredFileType = "mov";
+				save.AllowedFileTypes = new string[] {"mov"};
 				save.CanSelectHiddenExtension = true;
 				save.Begin (code => {
 					NSError err2;
-					if (code == (int) NSPanelButtonType.Ok){
-						var filename = save.Filename;
-						NSFileManager.DefaultManager.Move (e.OutputFileURL.Path, filename, out err2);
+					if (code == (int)NSPanelButtonType.Ok){
+						NSFileManager.DefaultManager.Move (e.OutputFileURL, save.Url, out err2);
 					} else {
 						NSFileManager.DefaultManager.Remove (e.OutputFileURL.Path, out err2);
 					}
@@ -180,7 +179,6 @@ namespace QTRecorder
 		static NSString localizedFilterKey = new NSString ("localizedName");
 		
 		// Creates descriptions that can be accessed with Key/Values
-		NSString [] videoPreviewFilterDescriptions;
 		[Export]
 		NSDictionary [] VideoPreviewFilterDescriptions {
 			get {
