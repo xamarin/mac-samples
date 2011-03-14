@@ -28,6 +28,11 @@ XDIRS = \
 	NSTableViewBinding			\
 	OpenGLLayer 				\
 	OpenGLViewSample 			\
+	OpenGL-NeHe/NeHeLesson1			\
+	OpenGL-NeHe/NeHeLesson2			\
+	OpenGL-NeHe/NeHeLesson3			\
+	OpenGL-NeHe/NeHeLesson4			\
+	OpenGL-NeHe/NeHeLesson5			\
 	PredicateEditorSample 			\
 	PopupBindings 				\
 	QTRecorder				\
