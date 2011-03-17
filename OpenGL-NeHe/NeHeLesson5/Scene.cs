@@ -39,6 +39,7 @@ using System.Drawing;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.OpenGL;
+using MonoMac.CoreGraphics;
 
 namespace NeHeLesson5
 {
@@ -48,9 +49,16 @@ namespace NeHeLesson5
 		float rtri;
 		// Angle For The Triangle ( NEW )
 		float rquad;
+		int [] textures = new int [1];
+		CGImage image;
+		
 		// Angle For The Quad     ( NEW )
 		public Scene () : base()
 		{
+			GL.GenTextures (1, textures);
+			GL.BindTexture (TextureTarget.Texture2D, textures [0]);
+			image = CGImage.FromPNG (new CGDataProvider ("/tmp/Mono.png"), null, true, CGColorRenderingIntent.Default);
+			Console.WriteLine (image);
 		}
 
 		// Resize And Initialize The GL Window 
@@ -233,6 +241,8 @@ namespace NeHeLesson5
 			rtri += 0.2f;
 			// Increase The Rotation Variable For The Triangle
 			rquad -= 0.15f;
+			
+			
 			// Decrease The Rotation Variable For The Quad 
 			return true;
 		}
