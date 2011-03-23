@@ -21,10 +21,12 @@ XDIRS = \
 	DockAppIcon				\
 	DocumentSample				\
 	DrawerMadness 				\
+	Fire 				\
 	GLFullScreen				\
 	GlossyClock 				\
 	ImageKitDemoStep1			\
 	macdoc					\
+	MonoMacGameWindow 				\
 	NSTableViewBinding			\
 	OpenGLLayer 				\
 	OpenGLViewSample 			\
