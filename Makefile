@@ -35,6 +35,10 @@ XDIRS = \
 	OpenGL-NeHe/NeHeLesson3			\
 	OpenGL-NeHe/NeHeLesson4			\
 	OpenGL-NeHe/NeHeLesson5			\
+	OpenGL-NeHe/NeHeLesson6			\
+	OpenGL-NeHe/NeHeLesson7			\
+	OpenGL-NeHe/NeHeLesson8			\
+	OpenGL-NeHe/NeHeLesson9			\
 	PredicateEditorSample 			\
 	PopupBindings 				\
 	QTRecorder				\
