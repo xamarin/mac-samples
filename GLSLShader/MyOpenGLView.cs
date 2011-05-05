@@ -24,13 +24,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Drawing;
+
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.CoreVideo;
-using MonoMac.CoreGraphics;
 using MonoMac.OpenGL;
 
 namespace GLSLShader
