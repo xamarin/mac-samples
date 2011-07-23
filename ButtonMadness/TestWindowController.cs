@@ -229,7 +229,7 @@ namespace SamplesButtonMadness
 		{
 			NSStepper stepper = sender as NSStepper;
 			
-			Console.WriteLine ("Change level: %ld", stepper.IntValue);
+			Console.WriteLine ("Change level: {0}", stepper.IntValue);
 			
 			nibBasedIndicator.IntValue = stepper.IntValue;
 			codeBasedIndicator.IntValue = stepper.IntValue;
