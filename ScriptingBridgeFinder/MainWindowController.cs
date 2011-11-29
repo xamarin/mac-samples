@@ -41,7 +41,8 @@ namespace ScriptingBridgeFinder
 			
 			List<FinderFile> currentApps = new List<FinderFile> ();
 			
-			((NSMutableArray)appTableContent.Content).RemoveAll();
+			appTableContent.Remove (NSArray.FromArray<NSObject> ((NSArray)appTableContent.Content));
+			//((NSMutableArray)appTableContent.Content).RemoveAll();
 
 			SBElementArray folders = (SBElementArray)finder.ValueForKeyPath ((NSString)"startupDisk.folders");
 			SBObject apps = (SBObject)folders.Object ("Applications");
