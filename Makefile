@@ -23,6 +23,7 @@ XDIRS = \
 	DrawerMadness 				\
 	Fire 				\
 	GLFullScreen				\
+	GLSLShader				\
 	GlossyClock 				\
 	ImageKitDemoStep1			\
 	macdoc					\
