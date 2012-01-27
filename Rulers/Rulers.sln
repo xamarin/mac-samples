@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rulers", "Rulers.csproj", "{7CCBA8AA-DE62-4016-BBE6-4F000B0479D6}"
 EndProject

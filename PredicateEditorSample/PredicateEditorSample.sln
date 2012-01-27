@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredicateEditorSample", "PredicateEditorSample.csproj", "{01CB838C-25B0-45C2-B8D6-96289BB34928}"
 EndProject

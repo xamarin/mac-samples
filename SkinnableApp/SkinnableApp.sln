@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinnableApp", "SkinnableApp.csproj", "{2DC5E381-A8FB-4D26-AE10-5918D7E088A2}"
 EndProject

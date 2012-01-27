@@ -1,5 +1,5 @@
 
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageKitDemo", "ImageKitDemo.csproj", "{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}"
 EndProject

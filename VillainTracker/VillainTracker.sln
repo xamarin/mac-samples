@@ -1,5 +1,5 @@
 
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VillainTracker", "VillainTracker.csproj", "{8A86D543-715B-42F5-868C-DF861268E8BC}"
 EndProject

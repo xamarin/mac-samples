@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereIsMyMac", "WhereIsMyMac.csproj", "{0D334024-E066-4B86-8A08-0207611205EA}"
 EndProject
