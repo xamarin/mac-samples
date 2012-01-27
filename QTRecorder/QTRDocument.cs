@@ -44,9 +44,9 @@ namespace QTRecorder
 				
 				var filter = CIFilter.FromName (selectedFilter);
 				filter.SetDefaults ();
-				filter.SetValueForKey (image, CIFilter.InputImageKey);
+				filter.SetValueForKey (image, CIFilterInputKey.Image);
 				
-				return (CIImage) filter.ValueForKey (CIFilter.OutputImageKey);
+				return (CIImage) filter.ValueForKey (CIFilterOutputKey.Image);
 			};
 		
 			// Attach outputs to session
