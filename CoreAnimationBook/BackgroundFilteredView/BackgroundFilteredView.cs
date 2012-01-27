@@ -40,14 +40,14 @@ namespace BackgroundFilteredView
 			CIVector center = CIVector.Create (Bounds.GetMidX (), Bounds.GetMidY ());
 			CIFilter torus = CIFilter.FromName ("CITorusLensDistortion");
 			
-			var keys = new NSString[] { CIFilter.InputCenterKey,
-										CIFilter.InputRadiusKey,
-										CIFilter.InputWidthKey,
-										CIFilter.InputRefractionKey };
+			var keys = new NSString[] { CIFilterInputKey.Center,
+						    CIFilterInputKey.Radius,
+						    CIFilterInputKey.Width,
+						    CIFilterInputKey.Refraction };
 			var values = new NSObject[] { center,
-				                          NSNumber.FromFloat (150),
-				                          NSNumber.FromFloat (2),
-				                          NSNumber.FromFloat (1.7f)};
+						      NSNumber.FromFloat (150),
+						      NSNumber.FromFloat (2),
+						      NSNumber.FromFloat (1.7f)};
 			
 			torus.SetValuesForKeysWithDictionary (NSDictionary.FromObjectsAndKeys (values,keys));	                                                       
 			torus.Name = "torus";
@@ -75,7 +75,7 @@ namespace BackgroundFilteredView
 		
 		private void AddAnimationToTorusFilter()
 		{
-			string keyPath = string.Format ("backgroundFilters.torus.{0}", CIFilter.InputWidthKey.ToString ());
+			string keyPath = string.Format ("backgroundFilters.torus.{0}", CIFilterInputKey.Width.ToString ());
 			CABasicAnimation animation = new CABasicAnimation ();
 			animation.KeyPath = keyPath;
 			animation.From = NSNumber.FromFloat (50);

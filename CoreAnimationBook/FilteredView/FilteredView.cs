@@ -55,8 +55,8 @@ namespace FilteredView
 			CIVector center = CIVector.Create (Bounds.GetMidX (), Bounds.GetMidY ());
 			
 			CIFilter pointalize = CIFilter.FromName ("CIPointillize");
-			pointalize.SetValueForKey (NSNumber.FromFloat (1), CIFilter.InputRadiusKey);
-			pointalize.SetValueForKey (center, CIFilter.InputCenterKey);
+			pointalize.SetValueForKey (NSNumber.FromFloat (1), CIFilterInputKey.Radius);
+			pointalize.SetValueForKey (center, CIFilterInputKey.Center);
 			
 			pointalize.Name = "pointalize";
 			controls.ContentFilters = new CIFilter[] { pointalize };
@@ -67,7 +67,7 @@ namespace FilteredView
 			if (controls.ContentFilters == null || controls.ContentFilters.Count() == 0)
 				Pointalize();	
 			
-			var path = string.Format ("contentFilters.pointalize.{0}", CIFilter.InputRadiusKey);
+			var path = string.Format ("contentFilters.pointalize.{0}", CIFilterInputKey.Radius);
 			controls.SetValueForKeyPath (NSNumber.FromFloat (1.0f), (NSString)path);
 		}
 		
@@ -76,7 +76,7 @@ namespace FilteredView
 			if (controls.ContentFilters == null || controls.ContentFilters.Count() == 0)
 				Pointalize();	
 			
-			string path = string.Format ("contentFilters.pointalize.{0}", CIFilter.InputRadiusKey);
+			string path = string.Format ("contentFilters.pointalize.{0}", CIFilterInputKey.Radius);
 			controls.SetValueForKeyPath (NSNumber.FromFloat (5), (NSString)path);
 		}
 	}
