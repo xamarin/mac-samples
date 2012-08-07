@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.Console", "AsyncTests.Console.csproj", "{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.Framework", "..\AsyncTests.Framework\AsyncTests.Framework.csproj", "{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.HttpClientAddin", "..\AsyncTests.HttpClientAddin\AsyncTests.HttpClientAddin.csproj", "{B79B0123-6502-47C6-9043-F9ED3B9FC790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.HttpClientTests", "..\AsyncTests.HttpClientTests\AsyncTests.HttpClientTests.csproj", "{1B0D227D-A57F-4112-B510-7BCA8AE0D114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Release|x86.Build.0 = Release|Any CPU
+		{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}.Debug|x86.ActiveCfg = Debug|x86
+		{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}.Debug|x86.Build.0 = Debug|x86
+		{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}.Release|x86.ActiveCfg = Release|x86
+		{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}.Release|x86.Build.0 = Release|x86
+		{B79B0123-6502-47C6-9043-F9ED3B9FC790}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B79B0123-6502-47C6-9043-F9ED3B9FC790}.Debug|x86.Build.0 = Debug|Any CPU
+		{B79B0123-6502-47C6-9043-F9ED3B9FC790}.Release|x86.ActiveCfg = Release|Any CPU
+		{B79B0123-6502-47C6-9043-F9ED3B9FC790}.Release|x86.Build.0 = Release|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Debug|x86.Build.0 = Debug|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Release|x86.ActiveCfg = Release|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AsyncTests.Console.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B0D227D-A57F-4112-B510-7BCA8AE0D114}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AsyncTests.HttpClientTests</RootNamespace>
+    <AssemblyName>AsyncTests.HttpClientTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\lib\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Test\Redirection.cs" />
+    <Compile Include="Test\ServerError.cs" />
+    <Compile Include="Test\HttpClientTests.cs" />
+    <Compile Include="Test\Authentication.cs" />
+    <Compile Include="Test\Simple.cs" />
+    <Compile Include="Test\Timeout.cs" />
+    <Compile Include="Test\LargeDownload.cs" />
+    <Compile Include="Test\Post.cs" />
+    <Compile Include="Test\WebService.cs" />
+    <Compile Include="Test\WebDav.cs" />
+    <Compile Include="Test\WebDavConfiguration.cs" />
+    <Compile Include="Test\RandomDataStream.cs" />
+    <Compile Include="Addin\HttpClientTestAttribute.cs" />
+    <Compile Include="Addin\HttpClientTestContext.cs" />
+    <Compile Include="Addin\HttpClientTestFixtureAttribute.cs" />
+    <Compile Include="Addin\HttpClientTestTarget.cs" />
+    <Compile Include="Addin\IHttpClientHandler.cs" />
+    <Compile Include="Addin\HttpClientTestFramework.cs" />
+    <Compile Include="Addin\HttpClientTestHost.cs" />
+    <Compile Include="Addin\RequestHandlerAttribute.cs" />
+    <Compile Include="Addin\Server.cs" />
+    <Compile Include="Addin\ServerContext.cs" />
+    <Compile Include="Addin\DefaultTestCategory.cs" />
+    <Compile Include="Addin\DefaultTestRunner.cs" />
+    <Compile Include="Addin\ExtensionTestRunner.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\AsyncTests.Framework\AsyncTests.Framework.csproj">
+      <Project>{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}</Project>
+      <Name>AsyncTests.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
+</Project>
