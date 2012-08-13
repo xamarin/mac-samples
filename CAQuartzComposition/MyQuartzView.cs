@@ -91,8 +91,7 @@ namespace CAQuartzComposition
 					
 			blurFilter.SetDefaults ();
 			blurFilter.SetValueForKey ((NSNumber)2, (NSString)"inputRadius");
-			blurFilter.Name = "blur";
-			
+
 			return new CIFilter[] { blurFilter };
 		}
 		

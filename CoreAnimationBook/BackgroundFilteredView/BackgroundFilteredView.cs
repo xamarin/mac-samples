@@ -49,8 +49,7 @@ namespace BackgroundFilteredView
 						      NSNumber.FromFloat (2),
 						      NSNumber.FromFloat (1.7f)};
 			
-			torus.SetValuesForKeysWithDictionary (NSDictionary.FromObjectsAndKeys (values,keys));	                                                       
-			torus.Name = "torus";
+			torus.SetValuesForKeysWithDictionary (NSDictionary.FromObjectsAndKeys (values,keys));
 			
 			controls.BackgroundFilters = new CIFilter[] { torus };								
 			AddAnimationToTorusFilter ();

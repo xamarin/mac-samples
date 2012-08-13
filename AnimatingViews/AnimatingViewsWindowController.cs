@@ -127,6 +127,7 @@ namespace AnimatingViews
 				break;
 
 			case Layout.GridLayout:
+				curPoint = new PointF(0.0f, 0.0f);
 				int viewsPerSide = (int)Math.Ceiling( Math.Sqrt(subviews.Count()) ); 
 				
 				int idx = 0;

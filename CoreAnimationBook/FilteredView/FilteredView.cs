@@ -58,7 +58,6 @@ namespace FilteredView
 			pointalize.SetValueForKey (NSNumber.FromFloat (1), CIFilterInputKey.Radius);
 			pointalize.SetValueForKey (center, CIFilterInputKey.Center);
 			
-			pointalize.Name = "pointalize";
 			controls.ContentFilters = new CIFilter[] { pointalize };
 		}
 		
