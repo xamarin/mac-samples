@@ -30,40 +30,40 @@ namespace DrawerMadness {
 		
 		#pragma warning disable 0169
 		[MonoMac.Foundation.Export("closeBottomDrawer:")]
-		partial void closeBottomDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void closeBottomDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("closeLeftDrawer:")]
-		partial void closeLeftDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void closeLeftDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("closeLowerRightDrawer:")]
-		partial void closeLowerRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void closeLowerRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("closeUpperRightDrawer:")]
-		partial void closeUpperRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void closeUpperRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("openBottomDrawer:")]
-		partial void openBottomDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void openBottomDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("openLeftDrawer:")]
-		partial void openLeftDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void openLeftDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("openLowerRightDrawer:")]
-		partial void openLowerRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void openLowerRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("openUpperRightDrawer:")]
-		partial void openUpperRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void openUpperRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("toggleBottomDrawer:")]
-		partial void toggleBottomDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void toggleBottomDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("toggleLeftDrawer:")]
-		partial void toggleLeftDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void toggleLeftDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("toggleLowerRightDrawer:")]
-		partial void toggleLowerRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void toggleLowerRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Export("toggleUpperRightDrawer:")]
-		partial void toggleUpperRightDrawer (MonoMac.AppKit.NSButtonCell sender);
+		partial void toggleUpperRightDrawer (MonoMac.Foundation.NSObject sender);
 
 		[MonoMac.Foundation.Connect("leftDrawer")]
 		private global::MonoMac.AppKit.NSDrawer leftDrawer {

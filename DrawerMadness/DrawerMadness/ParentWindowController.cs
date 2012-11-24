@@ -86,17 +86,17 @@ namespace DrawerMadness
 		}
 		
 		
-		partial void openLeftDrawer (NSButtonCell sender)
+		partial void openLeftDrawer (NSObject sender)
 		{
 			leftDrawer.OpenOnEdge(NSRectEdge.MinXEdge);
 		}
 		
-		partial void closeLeftDrawer (NSButtonCell sender)
+		partial void closeLeftDrawer (NSObject sender)
 		{
 			leftDrawer.Close(sender);
 		}
 		
-		partial void toggleLeftDrawer (NSButtonCell sender)
+		partial void toggleLeftDrawer (NSObject sender)
 		{
 			
 			NSDrawerState state = leftDrawer.State;
@@ -125,17 +125,17 @@ namespace DrawerMadness
 			};
 		}
 		
-		partial void openBottomDrawer (NSButtonCell sender)
+		partial void openBottomDrawer (NSObject sender)
 		{
 			bottomDrawer.OpenOnEdge(NSRectEdge.MinYEdge);
 		}
 		
-		partial void closeBottomDrawer (NSButtonCell sender)
+		partial void closeBottomDrawer (NSObject sender)
 		{
 			bottomDrawer.Close(sender);
 		}
 		
-		partial void toggleBottomDrawer (NSButtonCell sender)
+		partial void toggleBottomDrawer (NSObject sender)
 		{
 			var state = bottomDrawer.State;
 			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
@@ -177,17 +177,17 @@ namespace DrawerMadness
 		}
 		
 			                                                                
-		partial void openUpperRightDrawer (NSButtonCell sender)
+		partial void openUpperRightDrawer (NSObject sender)
 		{
 			upperRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
 		}
 		
-		partial void closeUpperRightDrawer (NSButtonCell sender)
+		partial void closeUpperRightDrawer (NSObject sender)
 		{
 			upperRightDrawer.Close(sender);
 		}
 		
-		partial void toggleUpperRightDrawer (NSButtonCell sender)
+		partial void toggleUpperRightDrawer (NSObject sender)
 		{
 			var state = upperRightDrawer.State;
 			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
@@ -210,17 +210,17 @@ namespace DrawerMadness
 			lowerRightDrawer.DrawerShouldClose = DrawerShouldClose;
 		}
 		
-		partial void openLowerRightDrawer (NSButtonCell sender)
+		partial void openLowerRightDrawer (NSObject sender)
 		{
 			lowerRightDrawer.OpenOnEdge(NSRectEdge.MaxXEdge);
 		}
 		
-		partial void closeLowerRightDrawer (NSButtonCell sender)
+		partial void closeLowerRightDrawer (NSObject sender)
 		{
 			lowerRightDrawer.Close(sender);
 		}
 		
-		partial void toggleLowerRightDrawer (NSButtonCell sender)
+		partial void toggleLowerRightDrawer (NSObject sender)
 		{
 			var state = lowerRightDrawer.State;
 			if (state == NSDrawerState.Opening || state == NSDrawerState.Open) 
