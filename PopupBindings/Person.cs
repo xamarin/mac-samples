@@ -34,7 +34,7 @@ namespace PopupBindings
 			}
 			
 			set {
-				personValues [NAME] = value;
+				personValues [NAME] = value ?? String.Empty;
 			}
 		}
 
@@ -54,7 +54,7 @@ namespace PopupBindings
 				return personValues [ADDRESS_STREET].ToString ();
 			}
 			set {
-				personValues [ADDRESS_STREET] = value;
+				personValues [ADDRESS_STREET] = value ?? String.Empty;
 			}
 		}
 		
@@ -64,7 +64,7 @@ namespace PopupBindings
 				return personValues [ADDRESS_CITY].ToString ();	
 			}
 			set {
-				personValues [ADDRESS_CITY] = value;
+				personValues [ADDRESS_CITY] = value ?? String.Empty;
 			}
 		}
 		
@@ -75,7 +75,7 @@ namespace PopupBindings
 			}
 			set
 			{
-				personValues [ADDRESS_STATE] = value;
+				personValues [ADDRESS_STATE] = value ?? String.Empty;
 			}
 		}
 		
@@ -85,7 +85,7 @@ namespace PopupBindings
 				return personValues [ADDRESS_ZIP].ToString ();	
 			}
 			set {
-				personValues [ADDRESS_ZIP] = value;
+				personValues [ADDRESS_ZIP] = value ?? String.Empty;
 			}
 		}
 		
