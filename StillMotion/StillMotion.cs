@@ -12,6 +12,7 @@ namespace StillMotion
 {
 	public partial class StillMotionDocument : NSDocument
 	{
+		NSWindowController windowController;
 		QTMovie movie;
 		QTCaptureSession captureSession;
 		QTCaptureDeviceInput captureInput;
@@ -33,6 +34,11 @@ namespace StillMotion
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
 			base.WindowControllerDidLoadNib (windowController);
+
+			// A reference to the window controller must be kept on the managed side
+			// to keep the object from being GC'd so that the delegates below resolve.
+			// Don't remove unless the framework is updated to track the reference.
+			this.windowController = windowController;
 
 			NSError err;
 			
