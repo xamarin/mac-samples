@@ -100,5 +100,6 @@
     <Content Include="scene.dae">
       <DependentUpon>Info.plist</DependentUpon>
     </Content>
+    <Content Include="male_large_01.png" />
   </ItemGroup>
 </Project>
