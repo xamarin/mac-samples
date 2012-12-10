@@ -43,7 +43,11 @@ namespace DockAppIcon
                 {
                         if (isShowBadge) {
                                 if (useCustomFormat) {
-                                        dockTile.BadgeLabel = string.Format (customFormat.StringValue, badgeNumber.StringValue);
+                                        try {
+                                                dockTile.BadgeLabel = string.Format (customFormat.StringValue, badgeNumber.StringValue);
+                                        } catch {
+                                                dockTile.BadgeLabel = "Invalid Custom Format";
+                                        }
                                 } else {
                                         dockTile.BadgeLabel = string.Format (defaultFormat, badgeNumber.StringValue);
                                 }
