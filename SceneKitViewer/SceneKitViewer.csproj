@@ -11,7 +11,6 @@
     <RootNamespace>SceneKitViewer</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>SceneKitViewer</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>
@@ -69,9 +68,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="XamMac">
-      <Package>xammac</Package>
-    </Reference>
+    <Reference Include="XamMac" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
