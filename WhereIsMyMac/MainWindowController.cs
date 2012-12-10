@@ -85,6 +85,12 @@ namespace WhereIsMyMac
 		{
 			CLLocation currentLocation = locationManager.Location;
 			
+			// it can take a few seconds before a location is returned
+			if (currentLocation == null) {
+				AppKitFramework.NSBeep ();
+				return;
+			}
+			
 			var urlPath = String.Format("http://maps.google.com/maps?ll={0},{1}&amp;spn={2},{3}",
 						    currentLocation.Coordinate.Latitude,currentLocation.Coordinate.Longitude,
 						    latitudeRangeForLocation (currentLocation), longitudeRangeForLocation (currentLocation));
