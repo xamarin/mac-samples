@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.Framework", "AsyncTests.Framework\AsyncTests.Framework.csproj", "{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTests.HttpClientTests", "AsyncTests.HttpClientTests\AsyncTests.HttpClientTests.csproj", "{1B0D227D-A57F-4112-B510-7BCA8AE0D114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoMac.CFNetwork.Test", "MonoMac.CFNetwork.Test.csproj", "{D7C26BE0-9517-4773-954C-4E74A53BEA09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		AppStore|Any CPU = AppStore|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0D227D-A57F-4112-B510-7BCA8AE0D114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C26BE0-9517-4773-954C-4E74A53BEA09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MonoMac.CFNetwork.Test.csproj
+	EndGlobalSection
+EndGlobal

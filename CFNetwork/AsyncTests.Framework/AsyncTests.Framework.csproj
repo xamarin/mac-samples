@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AsyncTests.Framework</RootNamespace>
+    <AssemblyName>AsyncTests.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Addins">
+      <HintPath>..\lib\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AsyncTests.Framework\TestCase.cs" />
+    <Compile Include="AsyncTests.Framework\TestContext.cs" />
+    <Compile Include="AsyncTests.Framework\TestError.cs" />
+    <Compile Include="AsyncTests.Framework\TestFixture.cs" />
+    <Compile Include="AsyncTests.Framework\TestResult.cs" />
+    <Compile Include="AsyncTests.Framework\TestResultCollection.cs" />
+    <Compile Include="AsyncTests.Framework\TestResultItem.cs" />
+    <Compile Include="AsyncTests.Framework\TestResultText.cs" />
+    <Compile Include="AsyncTests.Framework\TestSuccess.cs" />
+    <Compile Include="AsyncTests.Framework\TestSuite.cs" />
+    <Compile Include="AsyncTests.Framework\ITestFramework.cs" />
+    <Compile Include="AsyncTests.Framework\ITestHost.cs" />
+    <Compile Include="AsyncTests.Framework\AsyncTestAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\AsyncTestFixtureAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\Simple\SimpleTestContext.cs" />
+    <Compile Include="AsyncTests.Framework\Simple\SimpleTestFramework.cs" />
+    <Compile Include="AsyncTests.Framework\TestResultWithErrors.cs" />
+    <Compile Include="AsyncTests.Framework\TestErrorException.cs" />
+    <Compile Include="AsyncTests.Framework\ResultVisitor.cs" />
+    <Compile Include="AsyncTests.Framework\ITestCategory.cs" />
+    <Compile Include="AsyncTests.Framework\TestCategoryAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\AllTestsCategory.cs" />
+    <Compile Include="AsyncTests.Framework\ITestCategoryFilter.cs" />
+    <Compile Include="AsyncTests.Framework\NotWorkingAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\ExperimentalAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\DebugAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\AsyncTestSetUpAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\AsyncTestTearDownAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\ITestRunner.cs" />
+    <Compile Include="AsyncTests.Framework\Simple\SimpleTestRunner.cs" />
+    <Compile Include="AsyncTests.Framework\ProxyTestRunner.cs" />
+    <Compile Include="AsyncTests.Framework\ThreadingMode.cs" />
+    <Compile Include="AsyncTests.Framework\ThreadingModeProxyRunner.cs" />
+    <Compile Include="AsyncTests.Framework\ConfigurableTestCategoryAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\TestConfiguration.cs" />
+    <Compile Include="AsyncTests.Framework\TestWarningAttribute.cs" />
+    <Compile Include="AsyncTests.Framework\TestWarning.cs" />
+    <Compile Include="AsyncTests.Framework\TestStatus.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="Hierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="AsyncTests.Framework\" />
+  </ItemGroup>
+</Project>

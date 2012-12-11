@@ -1,0 +1,32 @@
+
+body {
+    font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#main_content  {
+    
+}
+
+p {
+    font-size: 12px;
+}
+
+#message_button {
+    font-size: 18px;
+    margin: 20px 0 0 0;
+    padding: 0 5px;
+}
+
+#message_button_jscript {
+    font-size: 18px;
+    margin: 20px 0 0 0;
+    padding: 0 5px;
+}

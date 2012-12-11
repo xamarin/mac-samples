@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7C26BE0-9517-4773-954C-4E74A53BEA09}</ProjectGuid>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MonoMac.CFNetwork.Test</RootNamespace>
+    <AssemblyName>MonoMac.CFNetwork.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <LinkMode>SdkOnly</LinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <LinkMode>Full</LinkMode>
+    <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <LinkMode>Full</LinkMode>
+    <EnablePackageSigning>true</EnablePackageSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\AsyncTests\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\AsyncTests\lib\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="MonoMac">
+      <HintPath>..\..\src\MonoMac.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMac.CFNetwork">
+      <HintPath>..\..\src\MonoMac.CFNetwork.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GetStringView.designer.cs">
+      <DependentUpon>GetStringView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadDataView.designer.cs">
+      <DependentUpon>DownloadDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckHeadersView.designer.cs">
+      <DependentUpon>CheckHeadersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\URLView.designer.cs">
+      <DependentUpon>URLView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preferences.designer.cs">
+      <DependentUpon>Preferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogViewer.designer.cs">
+      <DependentUpon>LogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnitTestRunner.designer.cs">
+      <DependentUpon>UnitTestRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CFNetworkTestAddin.cs" />
+    <Compile Include="UnitTests\UnitTestDelegate.cs" />
+    <Compile Include="UnitTests\ResultWrapper.cs" />
+    <Compile Include="UnitTests\UnitTestDataSource.cs" />
+    <Compile Include="Views\DownloadDataView.cs" />
+    <Compile Include="Views\CheckHeadersView.cs" />
+    <Compile Include="Views\CheckHeadersViewController.cs" />
+    <Compile Include="Views\DownloadDataViewController.cs" />
+    <Compile Include="Views\GetStringView.cs" />
+    <Compile Include="Views\GetStringViewController.cs" />
+    <Compile Include="Views\HeaderTableDataSource.cs" />
+    <Compile Include="Views\IAsyncViewController.cs" />
+    <Compile Include="Views\LogViewer.cs" />
+    <Compile Include="Views\LogViewerController.cs" />
+    <Compile Include="Views\Preferences.cs" />
+    <Compile Include="Views\PreferencesController.cs" />
+    <Compile Include="Views\UnitTestRunner.cs" />
+    <Compile Include="Views\UnitTestRunnerController.cs" />
+    <Compile Include="Views\URLListDataSource.cs" />
+    <Compile Include="Views\URLView.cs" />
+    <Compile Include="Views\URLViewController.cs" />
+    <Compile Include="Views\BenchmarkView.cs" />
+    <Compile Include="Views\BenchmarkViewController.cs" />
+    <Compile Include="Views\BenchmarkView.designer.cs">
+      <DependentUpon>BenchmarkView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AsyncTaskRunner.cs" />
+    <Compile Include="Models\GetStringRunner.cs" />
+    <Compile Include="Models\CheckHeadersRunner.cs" />
+    <Compile Include="Models\DownloadDataRunner.cs" />
+    <Compile Include="Models\AsyncTaskRunnerController.cs" />
+    <Compile Include="Models\BenchmarkRunner.cs" />
+    <Compile Include="Models\SimpleTaskRunner.cs" />
+    <Compile Include="Views\CategoryDataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="Views\CheckHeadersView.xib" />
+    <InterfaceDefinition Include="Views\DownloadDataView.xib" />
+    <InterfaceDefinition Include="Views\GetStringView.xib" />
+    <InterfaceDefinition Include="Views\LogViewer.xib" />
+    <InterfaceDefinition Include="Views\Preferences.xib" />
+    <InterfaceDefinition Include="Views\UnitTestRunner.xib" />
+    <InterfaceDefinition Include="Views\URLView.xib" />
+    <InterfaceDefinition Include="Views\BenchmarkView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="UnitTests\" />
+    <Folder Include="Views\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AsyncTests.Framework\AsyncTests.Framework.csproj">
+      <Project>{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}</Project>
+      <Name>AsyncTests.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="AsyncTests.HttpClientTests\AsyncTests.HttpClientTests.csproj">
+      <Project>{1B0D227D-A57F-4112-B510-7BCA8AE0D114}</Project>
+      <Name>AsyncTests.HttpClientTests</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageKitDemo", "ImageKitDemo.csproj", "{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD79A8FA-DFDB-4B85-A007-BE957D9FE882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ImageKitDemo.csproj
+	EndGlobalSection
+EndGlobal

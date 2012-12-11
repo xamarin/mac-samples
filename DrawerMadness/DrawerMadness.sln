@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawerMadness", "DrawerMadness\DrawerMadness.csproj", "{5F60F57A-CF4C-4BE1-B497-5ED6395B1A07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F60F57A-CF4C-4BE1-B497-5ED6395B1A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F60F57A-CF4C-4BE1-B497-5ED6395B1A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F60F57A-CF4C-4BE1-B497-5ED6395B1A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F60F57A-CF4C-4BE1-B497-5ED6395B1A07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = DrawerMadness\DrawerMadness.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenGLLayer", "OpenGLLayer.csproj", "{45B828B4-E5F7-484E-B5F2-22D0ED0A9B3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Documentation|Any CPU = Documentation|Any CPU
+		Nsis|Any CPU = Nsis|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45B828B4-E5F7-484E-B5F2-22D0ED0A9B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B828B4-E5F7-484E-B5F2-22D0ED0A9B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B828B4-E5F7-484E-B5F2-22D0ED0A9B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B828B4-E5F7-484E-B5F2-22D0ED0A9B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = OpenGLLayer.csproj
+	EndGlobalSection
+EndGlobal

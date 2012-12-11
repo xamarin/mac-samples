@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatingViews", "AnimatingViews.csproj", "{371C6844-72BA-41A4-9473-1469CD050C62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{371C6844-72BA-41A4-9473-1469CD050C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371C6844-72BA-41A4-9473-1469CD050C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371C6844-72BA-41A4-9473-1469CD050C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371C6844-72BA-41A4-9473-1469CD050C62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AnimatingViews.csproj
+	EndGlobalSection
+EndGlobal

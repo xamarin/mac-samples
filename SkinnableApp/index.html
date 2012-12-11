@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Skinnable App UI using WebKit and CSS</title>
+	<link rel="stylesheet" type="text/css" href="Default.css" id="ss" />
+</head>
+
+<body>
+
+<h1 id="contentTitle">Some kind of title</h1>
+
+<div id="main_content">
+
+    <p>Some content</p>
+    
+    <p>Some more content</p>
+
+</div>
+
+<div>
+    <input id="message_button" type="button" value="Show Message"/>
+</div>
+
+<div>
+    <input id="message_button_jscript" type="button" value="Show JavaScript Message" onClick="window.MainWindowController.showMessage_('Hello there...');" />
+</div>
+
+</body>
+
+</html>

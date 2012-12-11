@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereIsMyMac", "WhereIsMyMac.csproj", "{0D334024-E066-4B86-8A08-0207611205EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D334024-E066-4B86-8A08-0207611205EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D334024-E066-4B86-8A08-0207611205EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D334024-E066-4B86-8A08-0207611205EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D334024-E066-4B86-8A08-0207611205EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = WhereIsMyMac.csproj
+	EndGlobalSection
+EndGlobal

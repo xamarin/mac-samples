@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeHeLesson9", "NeHeLesson9.csproj", "{B3929838-B184-488F-8414-F80C6775EEDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3929838-B184-488F-8414-F80C6775EEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3929838-B184-488F-8414-F80C6775EEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3929838-B184-488F-8414-F80C6775EEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3929838-B184-488F-8414-F80C6775EEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = NeHeLesson9.csproj
+	EndGlobalSection
+EndGlobal

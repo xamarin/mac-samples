@@ -1,0 +1,49 @@
+
+body {
+    font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+}
+
+#main_content  {
+    border: 1px solid #999;
+    background-color: #ddd;
+}
+
+p {
+    font-size: 11px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 8px solid #666;
+}
+
+#message_button {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    padding: 3px 5px;
+    background-color: white;
+    border: 2px solid #aaa;
+}
+
+#message_button:active {
+    background-color: #bbb;
+}
+
+#message_button_jscript {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    padding: 3px 5px;
+    background-color: white;
+    border: 2px solid #aaa;
+}
+
+#message_button_jscript:active {
+    background-color: #bbb;
+}

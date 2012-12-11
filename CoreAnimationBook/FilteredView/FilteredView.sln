@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilteredView", "FilteredView.csproj", "{40996EE8-0F57-46BE-9940-13B5C5AD2AB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40996EE8-0F57-46BE-9940-13B5C5AD2AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40996EE8-0F57-46BE-9940-13B5C5AD2AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40996EE8-0F57-46BE-9940-13B5C5AD2AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40996EE8-0F57-46BE-9940-13B5C5AD2AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FilteredView.csproj
+	EndGlobalSection
+EndGlobal
