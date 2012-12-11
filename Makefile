@@ -1,6 +1,6 @@
 MDTOOL=/Applications/MonoDevelop.app/Contents/MacOS/mdtool
 
-XDIRS = \
+iDIRS = \
 	NSAlert					\
 	AnimatingViews 				\
 	ButtonMadness 				\
@@ -18,29 +18,8 @@ XDIRS = \
 	CoreAnimationBook/QCBackground		\
 	CoreTextArcMonoMac			\
 	CoreWLANWirelessManager			\
-	DatePicker				\
-	DockAppIcon				\
-	DocumentSample				\
-	DrawerMadness 				\
-	Fire 				\
-	GLFullScreen				\
-	GLSLShader				\
-	GlossyClock 				\
-	ImageKitDemoStep1			\
-	macdoc					\
-	MonoMacGameWindow 				\
-	NSTableViewBinding			\
-	OpenGLLayer 				\
-	OpenGLViewSample 			\
-	OpenGL-NeHe/NeHeLesson1			\
-	OpenGL-NeHe/NeHeLesson2			\
-	OpenGL-NeHe/NeHeLesson3			\
-	OpenGL-NeHe/NeHeLesson4			\
-	OpenGL-NeHe/NeHeLesson5			\
-	OpenGL-NeHe/NeHeLesson6			\
-	OpenGL-NeHe/NeHeLesson7			\
-	OpenGL-NeHe/NeHeLesson8			\
-	OpenGL-NeHe/NeHeLesson9			\
+
+XDIRS = \
 	PredicateEditorSample 			\
 	PopupBindings 				\
 	QTRecorder				\

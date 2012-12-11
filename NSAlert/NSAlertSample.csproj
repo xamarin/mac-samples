@@ -11,6 +11,8 @@
     <RootNamespace>NSAlertSample</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>NSAlertSample</AssemblyName>
+    <LastXamMacNagTime>12/11/2012 10:02:45 PM</LastXamMacNagTime>
+    <SuppressXamMacMigration>True</SuppressXamMacMigration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>True</DebugSymbols>

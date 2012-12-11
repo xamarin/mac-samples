@@ -11,6 +11,7 @@
     <RootNamespace>NeHeLesson7</RootNamespace>
     <AssemblyName>NeHeLesson7</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <LastXamMacNagTime>12/11/2012 10:19:03 PM</LastXamMacNagTime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

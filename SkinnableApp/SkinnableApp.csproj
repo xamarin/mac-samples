@@ -10,7 +10,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SkinnableApp</RootNamespace>
     <AssemblyName>SkinnableApp</AssemblyName>
-      </PropertyGroup>
+    <LastXamMacNagTime>12/11/2012 10:22:16 PM</LastXamMacNagTime>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>

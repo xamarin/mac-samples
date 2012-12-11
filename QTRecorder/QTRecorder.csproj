@@ -10,7 +10,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>QTRecorder</RootNamespace>
     <AssemblyName>QTRecorder</AssemblyName>
-      </PropertyGroup>
+    <LastXamMacNagTime>12/11/2012 10:21:50 PM</LastXamMacNagTime>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>

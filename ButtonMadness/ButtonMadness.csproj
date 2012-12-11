@@ -10,7 +10,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SamplesButtonMadness</RootNamespace>
     <AssemblyName>ButtonMadness</AssemblyName>
-        <StartupObject>SamplesButtonMadness.MainClass</StartupObject>
+    <StartupObject>SamplesButtonMadness.MainClass</StartupObject>
+    <LastXamMacNagTime>12/11/2012 10:03:07 PM</LastXamMacNagTime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
