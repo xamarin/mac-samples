@@ -27,6 +27,8 @@ namespace SceneKitViewer
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
 			base.WindowControllerDidLoadNib (windowController);
+			Console.WriteLine ("On callback, sleeping");
+			System.Threading.Thread.Sleep (1000);
 
 			// Enable user to manipulate the view with the built-in behavior
 			sceneView.AllowsCameraControl = true;
