@@ -79,7 +79,7 @@ namespace QTRecorder
 				Console.WriteLine ("Recorded {0} bytes duration {1}", movieFileOutput.RecordedFileSize, movieFileOutput.RecordedDuration);
 				DidChangeValue ("Recording");
 				if (e.Reason != null){
-					NSAlert.WithError (e.Reason).BeginSheet (Window);
+					NSAlert.WithError (e.Reason).BeginSheet (Window, delegate {});
 					return;
 				}
 				var save = NSSavePanel.SavePanel;
@@ -264,12 +264,12 @@ namespace QTRecorder
 				if (value != null){
 					NSError err;
 					if (!value.Open (out err)){
-						NSAlert.WithError (err).BeginSheet (Window);
+						NSAlert.WithError (err).BeginSheet (Window, delegate {});
 						return;
 					}
 					videoDeviceInput = new QTCaptureDeviceInput (value);
 					if (!session.AddInput (videoDeviceInput, out err)){
-						NSAlert.WithError (err).BeginSheet (Window);
+						NSAlert.WithError (err).BeginSheet (Window, delegate {});
 						videoDeviceInput.Dispose ();
 						videoDeviceInput = null;
 						value.Close ();
@@ -314,7 +314,7 @@ namespace QTRecorder
 				
 				// try to open
 				if (!value.Open (out err)){
-					NSAlert.WithError (err).BeginSheet (Window);
+					NSAlert.WithError (err).BeginSheet (Window, delegate {});
 					return;
 				}
 				
@@ -322,7 +322,7 @@ namespace QTRecorder
 				if (session.AddInput (audioDeviceInput, out err))
 					return;
 				
-				NSAlert.WithError (err).BeginSheet (Window);
+				NSAlert.WithError (err).BeginSheet (Window, delegate {});
 				audioDeviceInput.Dispose ();
 				audioDeviceInput = null;
 				value.Close ();
