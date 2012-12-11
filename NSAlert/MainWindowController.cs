@@ -119,7 +119,7 @@ namespace NSAlertSample
 		{
 			switch (AlertOptions.SelectedTag) {
 			case 0:
-				alert.BeginSheet (Window, response => ShowResponse (alert, response));
+				alert.BeginSheetForResponse (Window, response => ShowResponse (alert, response));
 				break;
 			case 1:
 				ShowResponse (alert, alert.RunSheetModal (Window));
