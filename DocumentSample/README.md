@@ -1,3 +1,6 @@
+DocumentSample
+==============
+
 Shows how to create a Document-based application.
 
 Document-based applications are supported by the NSDocument 
