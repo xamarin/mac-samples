@@ -1,3 +1,6 @@
+AnimatingViews
+==============
+
 The AnimatingView sample shows how to use CoreAnimation to
 animate views.   The code that does the animation lives in the
 AnimatingViewsWindowController.cs file and shows how to 
