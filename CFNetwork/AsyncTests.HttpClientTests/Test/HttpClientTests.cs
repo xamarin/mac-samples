@@ -37,7 +37,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 
 /*
  * Copied from System.Net.Http.Tests/HttpClientTests.cs
@@ -431,7 +430,7 @@ namespace AsyncTests.HttpClientTests.Test {
 				ctx.AutoDispose (response);
 				ctx.Assert (false, "#2");
 			} catch (AggregateException e) {
-				ctx.Assert (e.InnerException, Is.InstanceOfType (typeof(HttpRequestException)), "#3");
+				ctx.Assert (e.InnerException, Is.InstanceOf (typeof(HttpRequestException)), "#3");
 			} catch (HttpRequestException) {
 				;
 			}

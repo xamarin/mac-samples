@@ -35,7 +35,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 
 namespace AsyncTests.Framework {
 	public abstract class TestContext : IDisposable {
@@ -81,7 +80,7 @@ namespace AsyncTests.Framework {
 		{
 			var message = string.Format ("GetConfiguration({0})", typeof (T).FullName);
 			Assert (Configuration, Is.Not.Null, "GetConfiguration({0})", message);
-			Assert (Configuration, Is.InstanceOfType (typeof (T)), message);
+			Assert (Configuration, Is.InstanceOf (typeof (T)), message);
 			return (T)Configuration;
 		}
 
