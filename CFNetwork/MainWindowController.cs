@@ -202,7 +202,9 @@ namespace MonoMac.CFNetwork.Test {
 
 		public void Load (string url)
 		{
+#pragma warning disable 4014
 			AsyncTaskRunnerController.Instance.Run (new Uri (url));
+#pragma warning restore
 		}
 
 		public void Stop ()

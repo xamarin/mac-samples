@@ -73,7 +73,9 @@ namespace MonoMac.CFNetwork.Test {
 			Debug.AutoFlush = true;
 			Debug.Listeners.Add (new ConsoleTraceListener ());
 
+#pragma warning disable 4014
 			StartServer ();
+#pragma warning restore
 
 			RunUnitTests (this);
 		}
@@ -137,7 +139,9 @@ namespace MonoMac.CFNetwork.Test {
 
 		partial void RestartServer (NSObject sender)
 		{
+#pragma warning disable 4014
 			RestartServer ();
+#pragma warning restore
 		}
 
 		internal async Task RestartServer ()

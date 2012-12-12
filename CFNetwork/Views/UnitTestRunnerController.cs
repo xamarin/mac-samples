@@ -177,7 +177,9 @@ namespace MonoMac.CFNetwork.Test.Views {
 
 		partial void Run (NSObject sender)
 		{
+#pragma warning disable 4014
 			Run ();
+#pragma warning restore
 		}
 
 		partial void Stop (NSObject sender)
