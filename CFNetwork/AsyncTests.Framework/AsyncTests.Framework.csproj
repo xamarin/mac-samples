@@ -36,10 +36,8 @@
     <Reference Include="Mono.Addins">
       <HintPath>..\lib\Mono.Addins.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
