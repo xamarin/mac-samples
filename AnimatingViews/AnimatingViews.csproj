@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>AnimatingViews</RootNamespace>
     <AssemblyName>AnimatingViews</AssemblyName>
-    <LastXamMacNagTime>12/11/2012 10:03:00 PM</LastXamMacNagTime>
+    
     <SuppressXamMacMigration>True</SuppressXamMacMigration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
