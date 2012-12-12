@@ -13,50 +13,53 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnablePackageSigning>false</EnablePackageSigning>
-    <IncludeMonoRuntime>false</IncludeMonoRuntime>
-    <ConsolePause>false</ConsolePause>
-    <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>False</EnablePackageSigning>
+    <IncludeMonoRuntime>False</IncludeMonoRuntime>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>False</EnableCodeSigning>
+    <CreatePackage>False</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>False</UseSGen>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnablePackageSigning>false</EnablePackageSigning>
-    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>False</EnablePackageSigning>
+    <IncludeMonoRuntime>False</IncludeMonoRuntime>
     <LinkMode>Full</LinkMode>
-    <ConsolePause>false</ConsolePause>
-    <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>False</EnableCodeSigning>
+    <CreatePackage>False</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <UseSGen>False</UseSGen>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
-    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <IncludeMonoRuntime>True</IncludeMonoRuntime>
     <LinkMode>Full</LinkMode>
-    <EnablePackageSigning>true</EnablePackageSigning>
-    <ConsolePause>false</ConsolePause>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>True</EnablePackageSigning>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>True</EnableCodeSigning>
+    <CreatePackage>True</CreatePackage>
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <UseSGen>False</UseSGen>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -73,10 +76,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
     <Reference Include="MonoMac">
-      <HintPath>..\..\src\MonoMac.dll</HintPath>
+      <HintPath>\Applications\MonoDevelop.app\Contents\MacOS\lib\monodevelop\AddIns\MonoDevelop.MonoMac\MonoMac.dll</HintPath>
     </Reference>
     <Reference Include="MonoMac.CFNetwork">
-      <HintPath>..\..\src\MonoMac.CFNetwork.dll</HintPath>
+      <HintPath>\Applications\MonoDevelop.app\Contents\MacOS\lib\monodevelop\AddIns\MonoDevelop.MonoMac\MonoMac.CFNetwork.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
