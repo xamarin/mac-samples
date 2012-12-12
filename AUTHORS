@@ -1,0 +1,16 @@
+The samples on this module were contributed by the MonoMac community and
+Xamarin, and include the following contributors:
+
+	Geoff Norton (grompf@gmail.com)
+	Miguel de Icaza (miguel@gnome.org)
+	Jonathan Pryor (jpryor@novell.com)
+	Michael Hutchinson (mhutchinson@novell.com)
+	Alexander Shulgin (WebKit DOM)
+	James Clancey (AppKit contributions)
+	Kenneth Pouncey <kjpou@pt.lu> (API, samples)
+	Maxi Combina (WebKit events, sample)
+	Regan Sarwas <sarwas@gmail.com> (PdfKit, ImageKit, NSColor, NSGradient, NSBezierPath, samples)	
+	Ashok Gelal <ashokgelal@gmail.com> (CoreWlan)
+	Rolf Bjarne <rofl@xamarin.com> (engine maintenance)
+	Martin Baulig <martin.baulig@googlemail.com) (engine maintenance)
+	
