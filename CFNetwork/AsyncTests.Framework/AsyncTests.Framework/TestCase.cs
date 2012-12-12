@@ -116,7 +116,7 @@ namespace AsyncTests.Framework {
 				var attr = Method.GetCustomAttribute<ExpectedExceptionAttribute> ();
 				TestResult result;
 				if (attr != null)
-					result = await ExpectingException (context, attr.ExpectedException, cts.Token);
+					result = await ExpectingException (context, attr.ExceptionType, cts.Token);
 				else
 					result = await ExpectingSuccess (context, cts.Token);
 				if (!context.HasWarnings)

@@ -38,6 +38,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
+using NUnit.Framework.SyntaxHelpers;
 using Mono.Addins;
 
 namespace AsyncTests.HttpClientTests.Test {
