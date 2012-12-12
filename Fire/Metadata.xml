@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
-  <ID>1BE0BCEF-3B58-49AD-944F-90777084EAC9</ID>
+  <ID>19282B15-4FC2-4C5E-9A19-5D1EC36FEF79</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Advanced</Level>
-  <Tags>QuickTime, CoreImage, KVO, </Tags>
+  <Level>Intermediate</Level>
+  <Tags>CoreAnimation, Particles</Tags>
 </SampleMetadata>

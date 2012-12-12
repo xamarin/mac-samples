@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
-  <ID>1BE0BCEF-3B58-49AD-944F-90777084EAC9</ID>
+  <ID>5E686B72-9402-43A0-B25D-05A07B455AC5</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Advanced</Level>
-  <Tags>QuickTime, CoreImage, KVO, </Tags>
+  <Level>Intermediate</Level>
+  <Tags>AppKit</Tags>
 </SampleMetadata>
