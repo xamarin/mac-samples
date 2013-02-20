@@ -1,0 +1,27 @@
+override CFLAGS += -c -g -O3 -fPIC -Wall -Werror -Wsign-compare -Isundown/src -Isundown/html
+override LDFLAGS += -g -O3 -Wall -Werror -dynamiclib -undefined suppress -flat_namespace
+CC = clang
+
+LIBSUNDOWN_DYLIB = Resources/libsundown.dylib
+
+.PHONY: libsundown clean
+
+SUNDOWN_SRC=\
+	sundown/src/markdown.o \
+	sundown/src/stack.o \
+	sundown/src/buffer.o \
+	sundown/src/autolink.o \
+	sundown/html/html.o \
+	sundown/html/html_smartypants.o \
+	sundown/html/houdini_html_e.o \
+	sundown/html/houdini_href_e.o
+
+%.o: src/%.c html/%.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+$(LIBSUNDOWN_DYLIB): $(SUNDOWN_SRC)
+	$(CC) $(LDFLAGS) $^ -o $@
+
+clean::
+	rm -f sundown/src/*.o sundown/html/*.o
+	rm -f $(LIBSUNDOWN_DYLIB)

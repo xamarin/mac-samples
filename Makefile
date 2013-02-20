@@ -56,10 +56,12 @@ XDIRS = \
 	WhereIsMyMac
 
 all:
+	$(MAKE) -C MarkdownViewer MDTOOL="$(MDTOOL)"
 	for i in $(XDIRS); do (cd $$i && "$(MDTOOL)" build) || exit $$?; done
 	(cd MicroSamples; make)
 
 clean:
+	$(MAKE) -C MarkdownViewer clean MDTOOL="$(MDTOOL)"
 	-for i in $(DIRS); do (cd $$i && make clean) || exit $$?; done
 	-for i in $(XDIRS); do (cd $$i && rm -rf bin) || exit $$?; done
 	-(cd MicroSamples; rm -rf *.exe *.mdb)
