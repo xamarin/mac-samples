@@ -22,6 +22,6 @@ A small C# binding to Sundown is included.
 * [Learn Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
 * [Become familiar with classical Markdown](http://daringfireball.net/projects/markdown/syntax)
 
-# A Screenshot
+## A Screenshot
 
 ![Markdown Viewer Screenshot](https://raw.github.com/xamarin/mac-samples/master/MarkdownViewer/Screenshots/0.png)
