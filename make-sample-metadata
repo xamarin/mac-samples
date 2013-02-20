@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cat <<EOF
+<SampleMetadata>
+  <ID>$(uuidgen | tr '[:upper:]' '[:lower:]')</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Intermediate</Level>
+  <Tags></Tags>
+</SampleMetadata>
+EOF

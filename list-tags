@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+(IFS=','; for x in $(find . -name Metadata.xml | xargs grep -h '<Tags>' | sed -E 's|^.*<Tags>(.*)<\/Tags>.*$|\1|g'); do echo $x; done;) | sed -E 's/^[ \t]*//' | sed '/^$/d' | sort | uniq
