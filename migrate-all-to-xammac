@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+find . -name \*.csproj -exec migrate-to-xammac {} \;
