@@ -15,9 +15,8 @@ def migrate_guid (project):
 def migrate_reference (project):
 	xammac_added = False
 	for ref in project.getElementsByTagName ('Reference'):
-		include = ref.attributes['Include']
-		if include:
-			name = include.value.lower ()
+		if ref.hasAttribute ('Include'):
+			name = ref.attributes['Include'].value.lower ()
 			if name == 'monomac' or name.startswith ('monomac '):
 				if not xammac_added:
 					ref.attributes['Include'] = 'XamMac'
@@ -25,6 +24,51 @@ def migrate_reference (project):
 						ref.removeChild (ref.firstChild)
 					xammac_added = True
 	return xammac_added
+
+def add_linker_options (project):
+	options = {
+		'EnableCodeSigning': 'True',
+		'CodeSigningKey': 'Mac Developer',
+		'CreatePackage': 'False',
+		'EnablePackageSigning': 'False',
+		'PackageSigningKey': 'Developer ID Installer',
+		'IncludeMonoRuntime': 'True',
+		'UseSGen': 'False',
+		'LinkMode': 'Full'
+	}
+
+	options_updated = False
+
+	for node in project.getElementsByTagName ('PropertyGroup'):
+		if not node.hasAttribute ('Condition'):
+			continue
+		cond = node.attributes['Condition'].value
+		if cond == " '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " or \
+			cond == " '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ":
+			first_append_made = False
+			for key, value in options.iteritems ():
+				children = node.getElementsByTagName (key)
+				if len (children) > 0:
+					old = children[0].nodeValue
+					children[0].nodeValue = value
+					if children[0].nodeValue != old:
+						options_updated = True
+				else:
+					child = project.createElement (key)
+					child.appendChild (project.createTextNode (value))
+					if first_append_made:
+						node.appendChild (project.createTextNode ('    '))
+					else:
+						node.appendChild (project.createTextNode ('  '))
+					node.appendChild (child)
+					node.appendChild (project.createTextNode ('\n'))
+					first_append_made = True
+					options_updated = True
+			if first_append_made:
+				node.appendChild (project.createTextNode ('  '))
+
+
+	return options_updated
 
 def migrate_project (path):
 	with open (path, 'r') as fp:
@@ -34,8 +78,9 @@ def migrate_project (path):
 
 	a = migrate_guid (project)
 	b = migrate_reference (project)
+	c = add_linker_options (project)
 
-	if not a and not b:
+	if not a and not b and not c:
 		return
 
 	xml = project.toxml ('utf-8')
