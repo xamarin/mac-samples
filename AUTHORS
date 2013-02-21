@@ -9,8 +9,9 @@ Xamarin, and include the following contributors:
 	James Clancey (AppKit contributions)
 	Kenneth Pouncey <kjpou@pt.lu> (API, samples)
 	Maxi Combina (WebKit events, sample)
-	Regan Sarwas <sarwas@gmail.com> (PdfKit, ImageKit, NSColor, NSGradient, NSBezierPath, samples)	
+	Regan Sarwas <sarwas@gmail.com> (PdfKit, ImageKit, NSColor, NSGradient, NSBezierPath, samples)i
+	Aaron Bockover <abock@xamarin.com> (MarkdownViewer, FSEvents, NSAlert)
 	Ashok Gelal <ashokgelal@gmail.com> (CoreWlan)
+
 	Rolf Bjarne <rofl@xamarin.com> (engine maintenance)
-	Martin Baulig <martin.baulig@googlemail.com) (engine maintenance)
-	
+	Martin Baulig <martin.baulig@googlemail.com) (engine maintenance)	
