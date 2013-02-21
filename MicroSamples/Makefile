@@ -1,18 +1,27 @@
+include ../config.mk
+
+MONOMAC_DLL = $(MDROOT_ESCAPED)/Contents/MacOS/lib/monodevelop/AddIns/MonoDevelop.MonoMac/MonoMac.dll
+
 DEMOS = \
 	generate-pdf.exe	\
 	locator.exe		\
 	HelloCoreWlanSample.exe		
 
+.PHONY: all clean
+
 all: $(DEMOS)
 
-run1:
-	MONO_PATH=../../src/ mono generate-pdf.exe
+clean:
+	rm -f *.dll *.exe demo.pdf
 
-generate-pdf.exe: generate-pdf.cs
-	gmcs generate-pdf.cs -r:../../src/MonoMac.dll -r:System.Drawing
+MonoMac.dll: $(MONOMAC_DLL)
+	cp "$<" $@
 
-locator.exe: locator.cs
-	gmcs locator.cs -r:../../src/MonoMac.dll 
+generate-pdf.exe: MonoMac.dll generate-pdf.cs
+	gmcs generate-pdf.cs -r:MonoMac.dll -r:System.Drawing
 
-HelloCoreWlanSample.exe: HelloCoreWlanSample.cs
-	gmcs HelloCoreWlanSample.cs -r:../../src/MonoMac.dll
+locator.exe: MonoMac.dll locator.cs
+	gmcs locator.cs -r:MonoMac.dll
+
+HelloCoreWlanSample.exe: MonoMac.dll HelloCoreWlanSample.cs
+	gmcs HelloCoreWlanSample.cs -r:MonoMac.dll
