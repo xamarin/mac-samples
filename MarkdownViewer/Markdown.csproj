@@ -31,6 +31,12 @@
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <I18n />
     <LinkMode>Full</LinkMode>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="cp &quot;${SolutionDir}/sundown/bin/Debug/libsundown.dylib&quot; &quot;${SolutionDir}/Resources&quot;" />
+        <Command type="AfterClean" command="rm -f &quot;${SolutionDir}/Resources/libsundown.dylib&quot;" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
