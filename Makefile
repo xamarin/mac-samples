@@ -1,7 +1,7 @@
-MDROOT=$(shell stat -f%N "/Applications/Xamarin Studio.app" 2>/dev/null || echo "/Applications/MonoDevelop.app")
-MDTOOL=$(MDROOT)/Contents/MacOS/mdtool
+include config.mk
 
 XDIRS = \
+	MarkdownViewer				\
 	FSEvents				\
 	NSAlert					\
 	AnimatingViews 				\
@@ -29,8 +29,6 @@ XDIRS = \
 	GLSLShader				\
 	GlossyClock 				\
 	ImageKitDemoStep1			\
-	macdoc					\
-	MonoMacGameWindow 				\
 	NSTableViewBinding			\
 	OpenGLLayer 				\
 	OpenGLViewSample 			\
@@ -52,16 +50,13 @@ XDIRS = \
 	SkinnableApp				\
 	StillMotion				\
 	TwoMinuteGrowler			\
-	VillainTracker 				\
-	WhereIsMyMac
+	WhereIsMyMac				\
+	VillainTracker
 
 all:
-	$(MAKE) -C MarkdownViewer MDTOOL="$(MDTOOL)"
 	for i in $(XDIRS); do (cd $$i && "$(MDTOOL)" build) || exit $$?; done
-	(cd MicroSamples; make)
+	$(MAKE) -C MicroSamples
 
 clean:
-	$(MAKE) -C MarkdownViewer clean MDTOOL="$(MDTOOL)"
-	-for i in $(DIRS); do (cd $$i && make clean) || exit $$?; done
 	-for i in $(XDIRS); do (cd $$i && rm -rf bin) || exit $$?; done
-	-(cd MicroSamples; rm -rf *.exe *.mdb)
+	$(MAKE) -C MicroSamples clean
