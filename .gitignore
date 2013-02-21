@@ -1,4 +1,4 @@
 bin/
 obj/
+MarkdownViewer/Resources/libsundown.dylib
 *.userprefs
-
