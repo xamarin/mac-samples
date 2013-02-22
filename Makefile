@@ -53,6 +53,8 @@ XDIRS = \
 	WhereIsMyMac				\
 	VillainTracker
 
+.PHONY: all clean git-reset-all-csproj migrate-all-to-xammac copy-apps qa-bundle
+
 all:
 	for i in $(XDIRS); do (cd $$i && "$(MDTOOL)" build) || exit $$?; done
 	$(MAKE) -C MicroSamples
@@ -60,3 +62,24 @@ all:
 clean:
 	-for i in $(XDIRS); do (cd $$i && rm -rf bin) || exit $$?; done
 	$(MAKE) -C MicroSamples clean
+
+git-reset-all-csproj:
+	find . -name \*.csproj -exec git co {} \;
+
+migrate-all-to-xammac:
+	find . -name \*.csproj -exec ./migrate-to-xammac {} \;
+
+copy-apps:
+	rm -rf apps
+	mkdir apps
+	find . -type d -name \*.app -exec cp -a {} apps \;
+
+qa-bundle: clean all copy-apps
+	rm -rf qa-bundle
+	mkdir qa-bundle
+	mv apps "qa-bundle/MonoMac_From_$$(echo $$(/usr/libexec/PlistBuddy -c "Print :CFBundleName" -c "Print :CFBundleShortVersionString" "$(MDROOT)/Contents/Info.plist") | tr ' ' '_')"
+	$(MAKE) clean
+	$(MAKE) migrate-all-to-xammac
+	for i in $(XDIRS); do (cd $$i && "$(MDTOOL)" build) || { echo "$$i failed to build for XamMac"; true; }; done;
+	$(MAKE) copy-apps
+	mv apps "qa-bundle/Xamarin.Mac_$$(cat /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/Version)"
