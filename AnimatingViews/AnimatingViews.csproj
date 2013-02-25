@@ -10,8 +10,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>AnimatingViews</RootNamespace>
     <AssemblyName>AnimatingViews</AssemblyName>
-    
-    <SuppressXamMacMigration>True</SuppressXamMacMigration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
