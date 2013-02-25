@@ -188,7 +188,7 @@ namespace NeHeLesson13
 			using (NSAutoreleasePool pool = new NSAutoreleasePool ()) {
 
 				// Update the animation
-				DrawView ();
+				BeginInvokeOnMainThread (DrawView);
 			}
 
 			return CVReturn.Success;

@@ -82,7 +82,7 @@ namespace NeHeLesson13
 			NSString currentChar;
 			char currentUnichar;
 			SizeF charSize;
-			RectangleF charRect;
+			RectangleF charRect = RectangleF.Empty;
 			NSImage theImage;
 			bool retval;
 
@@ -109,8 +109,6 @@ namespace NeHeLesson13
 			attribDict.SetValueForKey (font, NSAttributedString.FontAttributeName);
 			attribDict.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
 			attribDict.SetValueForKey (blackColor, NSAttributedString.BackgroundColorAttributeName);
-
-			charRect.Location.X = charRect.Location.Y = 0;
 
 			theImage = new NSImage (new SizeF (0,0));
 			retval = true;
