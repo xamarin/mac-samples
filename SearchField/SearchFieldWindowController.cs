@@ -58,35 +58,35 @@ namespace SearchField
 				};
 				
 				var item = new NSMenuItem("Custom","",(o,e) => actionMenuItem());
-				searchMenu.InsertItematIndex(item,0);
+				searchMenu.InsertItem(item,0);
 				
 				var separator = NSMenuItem.SeparatorItem;
-				searchMenu.InsertItematIndex(separator,1);
+				searchMenu.InsertItem(separator,1);
 				
 				var recentsTitleItem = new NSMenuItem("Recent Searches","");
 				// tag this menu item so NSSearchField can use it and respond to it appropriately
 				recentsTitleItem.Tag = NSSearchFieldRecentsTitleMenuItemTag;
-				searchMenu.InsertItematIndex(recentsTitleItem,2);
+				searchMenu.InsertItem (recentsTitleItem,2);
 
 				var norecentsTitleItem = new NSMenuItem("No recent searches","");
 				// tag this menu item so NSSearchField can use it and respond to it appropriately
 				norecentsTitleItem.Tag = NSSearchFieldNoRecentsMenuItemTag;
-				searchMenu.InsertItematIndex(norecentsTitleItem,3);
+				searchMenu.InsertItem (norecentsTitleItem,3);
 				
 				var recentsItem = new NSMenuItem("Recents","");
 				// tag this menu item so NSSearchField can use it and respond to it appropriately
 				recentsItem.Tag = NSSearchFieldRecentsMenuItemTag;
-				searchMenu.InsertItematIndex(recentsItem,4);
+				searchMenu.InsertItem (recentsItem,4);
 
 				var separatorItem = NSMenuItem.SeparatorItem;
 				// tag this menu item so NSSearchField can use it, by hiding/show it appropriately:
 				separatorItem.Tag = NSSearchFieldRecentsTitleMenuItemTag;
-				searchMenu.InsertItematIndex (separatorItem,5);
+				searchMenu.InsertItem (separatorItem,5);
 
 				var clearItem = new NSMenuItem ("Clear", "");
 				// tag this menu item so NSSearchField can use it
 				clearItem.Tag = NSSearchFieldClearRecentsMenuItemTag;
-				searchMenu.InsertItematIndex (clearItem, 6);
+				searchMenu.InsertItem (clearItem, 6);
 				
 				var searchCell = searchField.Cell;
 				searchCell.MaximumRecents = 20;
