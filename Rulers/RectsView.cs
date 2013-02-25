@@ -189,7 +189,7 @@ namespace Rulers
 			for (int x = rects.Count - 1;x >= 0; x--){
 				thisRect = rects[x];
 				
-				if (MouseinRect(mouseLoc,thisRect.Frame)){
+				if (IsMouseInRect (mouseLoc,thisRect.Frame)){
 					selectedItem = thisRect;
 					break;
 				}
@@ -232,7 +232,7 @@ namespace Rulers
 					
 					moveSelectedItemWithEvent (theEvent, mouseOffset);
 					
-					if (!MouseinRect (mouseLoc, visibleRect)){
+					if (!IsMouseInRect (mouseLoc, visibleRect)){
 						if (!timerOn){
 							NSEvent.StartPeriodicEventsAfterDelay (0.1,0.1);
 							timerOn = true;
