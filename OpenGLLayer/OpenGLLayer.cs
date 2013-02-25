@@ -81,7 +81,7 @@ namespace OpenGLLayer
                         set { animate = value; }
                 }
 
-                public override bool CanDrawInCGLContext (CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, CVTimeStamp timeStamp)
+                public override bool CanDrawInCGLContext (CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, ref CVTimeStamp timeStamp)
                 {
                         if (!animate)
                                 previousTime = 0.0;
@@ -89,7 +89,7 @@ namespace OpenGLLayer
                 }
 
 
-                public override void DrawInCGLContext (MonoMac.OpenGL.CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, CVTimeStamp timeStamp)
+                public override void DrawInCGLContext (MonoMac.OpenGL.CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, ref CVTimeStamp timeStamp)
                 {
                         GL.ClearColor (NSColor.Clear.UsingColorSpace (NSColorSpace.CalibratedRGB));
                         GL.Clear (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
