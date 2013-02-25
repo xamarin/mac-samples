@@ -62,7 +62,7 @@ namespace SamplesButtonMadness
 			NSMenuItem menuItem = new NSMenuItem ("", new Selector (""), "");
 			
 			menuItem.Image = NSImage.ImageNamed ("moof.png");
-			buttonMenu.InsertItematIndex (menuItem, 0);
+			buttonMenu.InsertItem (menuItem, 0);
 			
 			nibBasedPopUpDown.Menu = buttonMenu;
 			nibBasedPopUpRight.Menu = buttonMenu;
