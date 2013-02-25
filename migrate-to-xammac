@@ -17,7 +17,7 @@ def migrate_reference (project):
 	for ref in project.getElementsByTagName ('Reference'):
 		if ref.hasAttribute ('Include'):
 			name = ref.attributes['Include'].value.lower ()
-			if name == 'monomac' or name.startswith ('monomac '):
+			if name == 'monomac' or name.startswith ('monomac ') or name.startswith('monomac,'):
 				if not xammac_added:
 					ref.attributes['Include'] = 'XamMac'
 					while ref.firstChild:
