@@ -29,7 +29,7 @@
     <ConsolePause>False</ConsolePause>
     <EnablePackageSigning>False</EnablePackageSigning>
     <CreatePackage>True</CreatePackage>
-    <CodeSigningKey>Mac Developer: Craig Dunn (PDBNK53Q8A)</CodeSigningKey>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <I18n />
     <LinkMode>SdkOnly</LinkMode>
@@ -49,8 +49,8 @@
     <ConsolePause>False</ConsolePause>
     <EnablePackageSigning>True</EnablePackageSigning>
     <CreatePackage>True</CreatePackage>
-    <CodeSigningKey>Developer ID Application: Craig Dunn</CodeSigningKey>
-    <PackageSigningKey>Developer ID Installer: Craig Dunn</PackageSigningKey>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <I18n />
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
   </PropertyGroup>
@@ -64,12 +64,12 @@
     <IncludeMonoRuntime>True</IncludeMonoRuntime>
     <PlatformTarget>x86</PlatformTarget>
     <LinkMode>SdkOnly</LinkMode>
-    <PackageSigningKey>3rd Party Mac Developer Installer: Craig Dunn</PackageSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <EnableCodeSigning>True</EnableCodeSigning>
     <ConsolePause>False</ConsolePause>
     <EnablePackageSigning>True</EnablePackageSigning>
     <CreatePackage>True</CreatePackage>
-    <CodeSigningKey>3rd Party Mac Developer Application: Craig Dunn</CodeSigningKey>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <I18n />
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
   </PropertyGroup>
