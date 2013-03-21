@@ -32,7 +32,18 @@ namespace UserNotificationExample
 		partial void NotifyMeAction (MonoMac.AppKit.NSButton sender)
 		{
 			// First we create our notification and customize as needed
-			NSUserNotification not = new NSUserNotification();
+			NSUserNotification not = null;
+
+			try {
+				not = new NSUserNotification();
+			} catch {
+				new NSAlert {
+					MessageText = "NSUserNotification Not Supported",
+					InformativeText = "This API was introduced in OS X Mountain Lion (10.8)."
+				}.RunSheetModal (this);
+				return;
+			}
+
 			not.Title = "Hello World";
 			not.InformativeText = "This is an informative text";
 			not.DeliveryDate = DateTime.Now;

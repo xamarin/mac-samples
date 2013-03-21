@@ -243,17 +243,33 @@ namespace CoreWLANWirelessManager
 		
 		public override void AwakeFromNib ()
 		{
-			// populate interfaces popup with all supported interfaces
-			supportedInterfacesPopup.RemoveAllItems ();
-			supportedInterfacesPopup.AddItems (CWInterface.SupportedInterfaces);
-			
-			// setup scan results table
-			scanResultsTable.DataSource = new ScanResultsTableDataSource (this);
-			
 			// hide progress indicators
 			refreshSpinner.Hidden = true;
 			joinSpinner.Hidden = true;
 			ibssSpinner.Hidden = true;
+
+			// quit if no wireless interfaces exist
+			var interfaces = CWInterface.SupportedInterfaces;
+			if (interfaces == null || interfaces.Length == 0) {
+				BeginInvokeOnMainThread (() => {
+					var alert = new NSAlert {
+						AlertStyle = NSAlertStyle.Critical,
+						MessageText = "No Wireless Interfaces Available",
+						InformativeText = "This application requires at least one wireless interface.",
+					};
+					alert.AddButton ("Quit");
+					alert.RunSheetModal (Window);
+					NSApplication.SharedApplication.Terminate (this);
+				});
+				return;
+			}
+
+			// populate interfaces popup with all supported interfaces
+			supportedInterfacesPopup.RemoveAllItems ();
+			supportedInterfacesPopup.AddItems (interfaces);
+
+			// setup scan results table
+			scanResultsTable.DataSource = new ScanResultsTableDataSource (this);
 			
 			NSNotificationCenter.DefaultCenter.AddObserver(CWConstants.CWBSSIDDidChangeNotification, HandleNotification);
 			NSNotificationCenter.DefaultCenter.AddObserver(CWConstants.CWCountryCodeDidChangeNotification, HandleNotification);
@@ -265,6 +281,10 @@ namespace CoreWLANWirelessManager
 		
 		private void UpdateInterfaceInfoTab ()
 		{
+			if (CurrentInterface == null) {
+				return;
+			}
+
 			bool powerState = CurrentInterface.Power;
 			powerStateControl.SetSelected (true, powerState ? 0 : 1);
 			bool isRunning = (CWInterfaceState)CurrentInterface.InterfaceState.Int32Value == CWInterfaceState.CWInterfaceStateRunning;
@@ -409,7 +429,12 @@ namespace CoreWLANWirelessManager
 		
 		partial void interfaceSelected (NSObject sender)
 		{
-			CurrentInterface = CWInterface.FromName (supportedInterfacesPopup.SelectedItem.Title);
+			if (supportedInterfacesPopup.SelectedItem != null) {
+				CurrentInterface = CWInterface.FromName (supportedInterfacesPopup.SelectedItem.Title);
+			} else {
+				CurrentInterface = null;
+			}
+
 			UpdateInterfaceInfoTab ();
 		}
 		

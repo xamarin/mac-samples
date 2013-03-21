@@ -104,7 +104,8 @@ namespace GlossyClock
 		{
 			// Create the CGImage by proxying it through an NSImage
 			string filePath = NSBundle.MainBundle.PathForResource("clock-gloss","png");
-			var glossyImage = new NSImage (filePath).AsCGImage (RectangleF.Empty, null, null);
+			var rect = RectangleF.Empty;
+			var glossyImage = new NSImage (filePath).AsCGImage (ref rect, null, null);
 
 			CALayer glossLayer = new CALayer() {
 				Opacity = 0.8f,

@@ -138,7 +138,7 @@ namespace GLFullScreen
 				controller.Scene.advanceTimeBy ((float)(current - controller.RenderTime));
 				controller.RenderTime = (float)current;
 				
-				DrawView ();
+				BeginInvokeOnMainThread (DrawView);
 			}
 			
 			return CVReturn.Success;

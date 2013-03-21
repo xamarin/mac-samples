@@ -180,7 +180,7 @@ namespace SkinnableApp
 		{
 			var document = webView.MainFrame.DomDocument;
 			var contentTitle = document.GetElementById("contentTitle");
-			titleText.StringValue = contentTitle.FirstChild.Value;
+			titleText.StringValue = contentTitle.FirstChild.TextContent;
 		}
 
 		// Install the click handler for the Show Message HTML button

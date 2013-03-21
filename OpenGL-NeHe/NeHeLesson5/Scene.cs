@@ -50,15 +50,12 @@ namespace NeHeLesson5
 		// Angle For The Triangle ( NEW )
 		float rquad;
 		int [] textures = new int [1];
-		CGImage image;
 		
 		// Angle For The Quad     ( NEW )
 		public Scene () : base()
 		{
 			GL.GenTextures (1, textures);
 			GL.BindTexture (TextureTarget.Texture2D, textures [0]);
-			image = CGImage.FromPNG (new CGDataProvider ("/tmp/Mono.png"), null, true, CGColorRenderingIntent.Default);
-			Console.WriteLine (image);
 		}
 
 		// Resize And Initialize The GL Window 
