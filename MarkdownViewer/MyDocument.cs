@@ -71,14 +71,14 @@ namespace Markdown
 
 			fsEvents.Events += (sender, e) => {
 				foreach (var evnt in e.Events) {
-					if (evnt.Path == url.Path && (evnt.Flags & FSEventStreamEventFlags.ItemModified) != 0) {
+					if (evnt.Path == url.Path && evnt.Flags.HasFlag (FSEventStreamEventFlags.ItemModified)) {
 						ReloadDocument ();
 						break;
 					}
 				}
 			};
 
-			fsEvents.ScheduleWithRunLoop (NSRunLoop.Current);
+			fsEvents.ScheduleWithRunLoop (NSRunLoop.Main);
 			fsEvents.Start ();
 
 			documentUrl = url;
