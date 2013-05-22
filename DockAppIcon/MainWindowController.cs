@@ -1,93 +1,63 @@
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 
 namespace DockAppIcon
 {
-        public partial class MainWindowController : MonoMac.AppKit.NSWindowController
-        {
+	public partial class MainWindowController : NSWindowController
+	{
+		string lastValidCustomFormat = "{0}%";
+	
+		public MainWindowController () : base ("MainWindow")
+		{
+		}
 
-                NSApplication NSApp = NSApplication.SharedApplication;
-                NSDockTile dockTile;
-                bool isShowBadge = false;
-                const string defaultFormat = "{0}%";
-                bool useCustomFormat = false;
-                NSTimer myTimer;
+		public override void AwakeFromNib ()
+		{
+			customFormat.StringValue = lastValidCustomFormat;
+		
+			badgeCheck.Activated += (sender, e) => UpdateBadge ();
+			formatCheck.Activated += (sender, e) => UpdateBadge ();
+			customFormat.Changed += (sender, e) => UpdateBadge ();
 
-                // Call to load from the XIB/NIB file
-                public MainWindowController () : base("MainWindow")
-                {
-                }
+			showAppBadgeCheck.Activated += (sender, e) =>
+				Window.DockTile.ShowsApplicationBadge = showAppBadgeCheck.State == NSCellStateValue.On;
 
-                public override void AwakeFromNib ()
-                {
-                        dockTile = NSApp.DockTile;
-                        badgeNumber.EditingEnded += HandleBadgeNumberEditingEnded;
-                        customFormat.EditingEnded += HandleCustomFormatEditingEnded;
-                }
+			stepper.Activated += (sender, e) => {
+				badgeNumber.StringValue = stepper.StringValue;
+				UpdateBadge ();
+			};
 
-                void HandleCustomFormatEditingEnded (object sender, EventArgs e)
-                {
-                        UpdateBadge ();
-                }
+			requestButton.Activated += (sender, e) => {
+				new NSAlert { MessageText = "Focus another application window, wait 3 seconds, then look at your dock!" }.BeginSheet (Window, () => {
+					var type = popupRequestType.Cell.SelectedItemIndex == 0
+						? NSRequestUserAttentionType.InformationalRequest
+						: NSRequestUserAttentionType.CriticalRequest;
 
-                void HandleBadgeNumberEditingEnded (object sender, EventArgs e)
-                {
-                        UpdateBadge ();
-                }
+					NSTimer.CreateScheduledTimer (3.0, () => NSApplication.SharedApplication.RequestUserAttention (type));
+				});
+			};
 
-                private void UpdateBadge ()
-                {
-                        if (isShowBadge) {
-                                if (useCustomFormat) {
-                                        try {
-                                                dockTile.BadgeLabel = string.Format (customFormat.StringValue, badgeNumber.StringValue);
-                                        } catch {
-                                                dockTile.BadgeLabel = "Invalid Custom Format";
-                                        }
-                                } else {
-                                        dockTile.BadgeLabel = string.Format (defaultFormat, badgeNumber.StringValue);
-                                }
-                        } else {
-                                dockTile.BadgeLabel = null;
-                        }
-                }
+			UpdateBadge ();
+		}
 
-                partial void stepperAction (NSStepper sender)
-                {
-                        badgeNumber.StringValue = sender.StringValue;
-                        UpdateBadge ();
-                }
-
-                partial void badgeCheckAction (NSButton sender)
-                {
-                        isShowBadge = (badgeCheck.State == NSCellStateValue.On) ? true : false;
-                        UpdateBadge ();
-                }
-
-                partial void customFormatAction (NSButton sender)
-                {
-                        useCustomFormat = (formatCheck.State == NSCellStateValue.On) ? true : false;
-                        UpdateBadge ();
-                }
-
-                partial void showAppBadgeAction (NSButton sender)
-                {
-                        Window.DockTile.ShowsApplicationBadge = (showAppBadgeCheck.State == NSCellStateValue.On) ? true : false;
-                }
-
-                partial void requestAction (NSButton sender)
-                {
-                        myTimer = NSTimer.CreateScheduledTimer (3.0, delegate {
-                                if (popupRequestType.Cell.SelectedItemIndex == 0)
-                                        NSApp.RequestUserAttention (NSRequestUserAttentionType.InformationalRequest);
-                                else
-                                        NSApp.RequestUserAttention (NSRequestUserAttentionType.CriticalRequest);
-                        });
-                }
-        }
+		private void UpdateBadge ()
+		{
+			var dockTile = NSApplication.SharedApplication.DockTile;
+		
+			if (badgeCheck.State == NSCellStateValue.Off) {
+				dockTile.BadgeLabel = null;
+			} else if (formatCheck.State == NSCellStateValue.On) {
+				try {
+					dockTile.BadgeLabel = String.Format (customFormat.StringValue, badgeNumber.StringValue);
+					lastValidCustomFormat = customFormat.StringValue;
+				} catch {
+					dockTile.BadgeLabel = String.Format (lastValidCustomFormat, badgeNumber.StringValue);
+				}
+			} else {
+				dockTile.BadgeLabel = badgeNumber.StringValue;
+			}
+		}
+	}
 }
-
