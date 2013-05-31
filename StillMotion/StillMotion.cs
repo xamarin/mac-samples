@@ -45,9 +45,9 @@ namespace StillMotion
 			windowController.Window.WillClose += delegate {
 				if (captureSession != null)
 					captureSession.StopRunning ();
-				var dev = captureInput.Device;
-				if (dev.IsOpen)
-					dev.Close ();
+
+				if (captureInput != null && captureInput.Device != null && captureInput.Device.IsOpen)
+					captureInput.Device.Close ();
 			};
 			
 			// Create a movie, and store the information in memory on an NSMutableData
@@ -61,15 +61,18 @@ namespace StillMotion
 			// Find video device
 			captureSession = new QTCaptureSession ();
 			var device = QTCaptureDevice.GetDefaultInputDevice (QTMediaType.Video);
-			if (!device.Open (out err)){
-				NSAlert.WithError (err).RunModal ();
+			if (device == null) {
+				new NSAlert { MessageText = "You do not have a camera connected." }.BeginSheet (windowController.Window);
+				return;
+			} else if (!device.Open (out err)){
+				NSAlert.WithError (err).BeginSheet (windowController.Window);
 				return;
 			}
 			
 			// Add device input
 			captureInput = new QTCaptureDeviceInput (device);
 			if (!captureSession.AddInput (captureInput, out err)){
-				NSAlert.WithError (err).RunModal ();
+				NSAlert.WithError (err).BeginSheet (windowController.Window);
 				return;
 			}
 			
@@ -81,7 +84,7 @@ namespace StillMotion
 				}
 			};
 			if (!captureSession.AddOutput (decompressedVideo, out err)){
-				NSAlert.WithError (err).RunModal ();
+				NSAlert.WithError (err).BeginSheet (windowController.Window);
 				return;
 			}
 			
