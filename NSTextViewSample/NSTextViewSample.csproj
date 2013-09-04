@@ -114,4 +114,8 @@
     <BundleResource Include="Resources\insertCatIcon.png" />
     <BundleResource Include="Resources\insertCatIconCustom.png" />
   </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="MainWindow.xib" />
+  </ItemGroup>
 </Project>
