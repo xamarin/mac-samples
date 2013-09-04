@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4504" systemVersion="12F33" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4504"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+            <connections>
+                <outlet property="insertCatToolbarItem" destination="oCd-kI-arS" id="zbW-Rx-bAV"/>
+                <outlet property="insertCustomCatToolbarItem" destination="JNq-tV-Bxp" id="2lo-xJ-yyz"/>
+                <outlet property="textView" destination="yDk-ag-Aqe" id="saT-2d-o4k"/>
+                <outlet property="toolbar" destination="bBY-fW-4h4" id="0xY-VI-baR"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Catpad" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="2" customClass="MainWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="74" width="1000" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="800"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="VTo-ap-O9m">
+                        <rect key="frame" x="-1" y="-1" width="1002" height="802"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="FYn-ai-mmb">
+                            <rect key="frame" x="1" y="1" width="1000" height="800"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="yDk-ag-Aqe">
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="800"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="1000" height="800"/>
+                                    <size key="maxSize" width="1000" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="1000" height="800"/>
+                                    <size key="maxSize" width="1000" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" id="Z6c-wB-OHy">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" id="qS9-XK-sSZ">
+                            <rect key="frame" x="985" y="1" width="16" height="800"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="20A8ED1C-4B1E-40E4-8A54-C46908391B70" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="bBY-fW-4h4">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="6E5EB847-39ED-496B-9228-244EB4B17C8A" label="Insert Custom Cat" paletteLabel="Insert Custom Cat" tag="-1" image="insertCatIconCustom" id="JNq-tV-Bxp"/>
+                    <toolbarItem implicitItemIdentifier="B3CD4ECE-7499-470C-B311-AEE410A974B7" explicitItemIdentifier="InsertCatToolbarItem" label="Insert Plain Cat" paletteLabel="Insert Plain Cat" tag="-1" image="insertCatIcon" id="oCd-kI-arS"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="dOv-EX-xhG"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="huj-RW-XAV"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="hJn-YP-wke"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="Q6l-qn-PIC"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="JNq-tV-Bxp"/>
+                    <toolbarItem reference="oCd-kI-arS"/>
+                    <toolbarItem reference="dOv-EX-xhG"/>
+                    <toolbarItem reference="hJn-YP-wke"/>
+                    <toolbarItem reference="Q6l-qn-PIC"/>
+                </defaultToolbarItems>
+            </toolbar>
+        </window>
+    </objects>
+    <resources>
+        <image name="insertCatIcon" width="128" height="128"/>
+        <image name="insertCatIconCustom" width="128" height="128"/>
+    </resources>
+</document>
