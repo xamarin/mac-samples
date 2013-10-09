@@ -89,7 +89,7 @@ namespace NeHeLesson1
 			
 			// Look for changes in view size
 			// Note, -reshape will not be called automatically on size changes because NSView does not export it to override 
-			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.NSViewGlobalFrameDidChangeNotification, HandleReshape);
+			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
 		public override void DrawRect (RectangleF dirtyRect)
