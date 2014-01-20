@@ -437,16 +437,16 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
 				/// </param>
 				partial void setBorderStyle(NSMatrix sender)
 				{
-					switch ((DatePickerBorderStyle)sender.SelectedCell.Tag) {
-					case DatePickerBorderStyle.Bezeled:
-								datePickerControl.Bezeled = true;
-								break;
-					case DatePickerBorderStyle.Bordered:
-								datePickerControl.Bordered = true;
-								break;
-					}
+						switch ((DatePickerBorderStyle)sender.SelectedCell.Tag) {
+						case DatePickerBorderStyle.Bezeled:
+									datePickerControl.Bezeled = true;
+									break;
+						case DatePickerBorderStyle.Bordered:
+									datePickerControl.Bordered = true;
+									break;
+						}
 
-					updateControls ();
+						updateControls ();
 				}
 
                 /// <summary>
