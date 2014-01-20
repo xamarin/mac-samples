@@ -36,6 +36,12 @@ namespace DatePicker
                         RangeDateMode
                 }
 
+				enum DatePickerBorderStyle
+				{
+					Bezeled,
+					Bordered
+				}
+
                 #region Constructors
 
                 // Called when created from unmanaged code
@@ -418,32 +424,30 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
                 /// <param name="sender">
                 /// A <see cref="NSButton"/>
                 /// </param>
-                partial void setDrawsBackground (NSButton sender)
+				partial void setDrawsBackground (NSButton sender)
                 {
                         datePickerControl.DrawsBackground = (sender.State == NSCellStateValue.On);
                 }
 
-                /// <summary>
-                /// The user checked/unchecked the "Bezeled" checkbox
-                /// </summary>
-                /// <param name="sender">
-                /// A <see cref="NSButton"/>
-                /// </param>
-                partial void setBezeled (NSButton sender)
-                {
-                        datePickerControl.Bezeled = sender.State == NSCellStateValue.On;
-                }
+				/// <summary>
+				/// The user select date picker border style
+				/// </summary>
+				/// <param name="sender">
+				/// A <see cref="NSButton"/>
+				/// </param>
+				partial void setBorderStyle(NSMatrix sender)
+				{
+					switch ((DatePickerBorderStyle)sender.SelectedCell.Tag) {
+					case DatePickerBorderStyle.Bezeled:
+								datePickerControl.Bezeled = true;
+								break;
+					case DatePickerBorderStyle.Bordered:
+								datePickerControl.Bordered = true;
+								break;
+					}
 
-                /// <summary>
-                /// The user checked/unchecked the "Bordered" checkbox
-                /// </summary>
-                /// <param name="sender">
-                /// A <see cref="NSButton"/>
-                /// </param>
-                partial void setBordered (NSButton sender)
-                {
-                        datePickerControl.Bordered = sender.State == NSCellStateValue.On;
-                }
+					updateControls ();
+				}
 
                 /// <summary>
                 /// The user chose a different background color from the "Back Color" color well
