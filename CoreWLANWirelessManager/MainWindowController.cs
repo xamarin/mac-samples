@@ -3,10 +3,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
+using System.Text;
 using MonoMac.AppKit;
 using MonoMac.CoreWlan;
-using System.Text;
+using MonoMac.Foundation;
 using MonoMac.ObjCRuntime;
 
 #endregion
@@ -62,176 +62,6 @@ namespace CoreWLANWirelessManager
 
 		#endregion
 		
-		#region Utility Methods
-		
-		private static string StringForPhyMode (NSNumber mode)
-		{
-			if (mode == null)
-				return String.Empty;
-			
-			string phyModeStr = String.Empty;
-			switch ((CWPHYMode)mode.IntValue) {
-			case CWPHYMode.CWPHYMode11A:
-				
-				{
-					phyModeStr = "802.11a";
-					break;
-				}
-
-			case CWPHYMode.CWPHYMode11B:
-				
-				{
-					phyModeStr = "802.11b";
-					break;
-				}
-
-			case CWPHYMode.CWPHYMode11G:
-				
-				{
-					phyModeStr = "802.11g";
-					break;
-				}
-
-			case CWPHYMode.CWPHYMode11N:
-				
-				{
-					phyModeStr = "802.11n";
-					break;
-				}
-
-				
-			}
-			return phyModeStr;
-		}
-
-		private static string StringForSecurityMode (NSNumber mode)
-		{
-			if (mode == null)
-				return String.Empty;
-			
-			string securityModeStr = String.Empty;
-			switch ((CWSecurityMode)mode.IntValue) {
-			case CWSecurityMode.CWSecurityModeOpen:
-				
-				{
-					securityModeStr = "Open";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWEP:
-				
-				{
-					securityModeStr = "WEP";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWPA_PSK:
-				
-				{
-					securityModeStr = "WPA Personal";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWPA_Enterprise:
-				
-				{
-					securityModeStr = "WPA Enterprise";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWPA2_PSK:
-				
-				{
-					securityModeStr = "WPA2 Personal";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWPA2_Enterprise:
-				
-				{
-					securityModeStr = "WPA2 Enterprise";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeWPS:
-				
-				{
-					securityModeStr = "WiFI Protected Setup";
-					break;
-				}
-
-			case CWSecurityMode.CWSecurityModeDynamicWEP:
-				
-				{
-					securityModeStr = "802.1X WEP";
-					break;
-				}
-
-			}
-			return securityModeStr;
-		}
-
-		private static string StringForOpMode (NSNumber mode)
-		{
-			if (mode == null)
-				return String.Empty;
-			
-			string opModeStr = String.Empty;
-			switch ((CWOpMode)mode.IntValue) {
-			case CWOpMode.CWOpModeIBSS:
-				
-				{
-					opModeStr = "IBSS";
-					break;
-				}
-
-			case CWOpMode.CWOpModeStation:
-				
-				{
-					opModeStr = "Infrastructure";
-					break;
-				}
-
-			case CWOpMode.CWOpModeHostAP:
-				
-				{
-					opModeStr = "Host Access Point";
-					break;
-				}
-
-			case CWOpMode.CWOpModeMonitorMode:
-				
-				{
-					opModeStr = "Monitor Mode";
-					break;
-				}
-
-			}
-			return opModeStr;
-		}
-
-		private static CWSecurityMode SecurityModeForString (string modeStr)
-		{
-			switch (modeStr) {
-			case "WEP":
-				return CWSecurityMode.CWSecurityModeWEP;
-			case "WPA Personal":
-				return CWSecurityMode.CWSecurityModeWPA_PSK;
-			case "WPA2 Personal":
-				return CWSecurityMode.CWSecurityModeWPA2_PSK;
-			case "WPA Enterprise":
-				return CWSecurityMode.CWSecurityModeWPA_Enterprise;
-			case "WPA2 Enterprise":
-				return CWSecurityMode.CWSecurityModeWPA2_Enterprise;
-			case "802.1X WEP":
-				return CWSecurityMode.CWSecurityModeDynamicWEP;
-			}
-			return CWSecurityMode.CWSecurityModeOpen;
-			
-		}
-		
-		#endregion
-		
 		#region Methods
 		
 		public override void WindowDidLoad ()
@@ -243,33 +73,17 @@ namespace CoreWLANWirelessManager
 		
 		public override void AwakeFromNib ()
 		{
+			// populate interfaces popup with all supported interfaces
+			supportedInterfacesPopup.RemoveAllItems ();
+			supportedInterfacesPopup.AddItems (CWInterface.InterfaceNames);
+			
+			// setup scan results table
+			scanResultsTable.DataSource = new ScanResultsTableDataSource (this);
+			
 			// hide progress indicators
 			refreshSpinner.Hidden = true;
 			joinSpinner.Hidden = true;
 			ibssSpinner.Hidden = true;
-
-			// quit if no wireless interfaces exist
-			var interfaces = CWInterface.SupportedInterfaces;
-			if (interfaces == null || interfaces.Length == 0) {
-				BeginInvokeOnMainThread (() => {
-					var alert = new NSAlert {
-						AlertStyle = NSAlertStyle.Critical,
-						MessageText = "No Wireless Interfaces Available",
-						InformativeText = "This application requires at least one wireless interface.",
-					};
-					alert.AddButton ("Quit");
-					alert.RunSheetModal (Window);
-					NSApplication.SharedApplication.Terminate (this);
-				});
-				return;
-			}
-
-			// populate interfaces popup with all supported interfaces
-			supportedInterfacesPopup.RemoveAllItems ();
-			supportedInterfacesPopup.AddItems (interfaces);
-
-			// setup scan results table
-			scanResultsTable.DataSource = new ScanResultsTableDataSource (this);
 			
 			NSNotificationCenter.DefaultCenter.AddObserver(CWConstants.CWBSSIDDidChangeNotification, HandleNotification);
 			NSNotificationCenter.DefaultCenter.AddObserver(CWConstants.CWCountryCodeDidChangeNotification, HandleNotification);
@@ -281,24 +95,20 @@ namespace CoreWLANWirelessManager
 		
 		private void UpdateInterfaceInfoTab ()
 		{
-			if (CurrentInterface == null) {
-				return;
-			}
-
-			bool powerState = CurrentInterface.Power;
+			bool powerState = CurrentInterface.PowerOn;
 			powerStateControl.SetSelected (true, powerState ? 0 : 1);
-			bool isRunning = (CWInterfaceState)CurrentInterface.InterfaceState.Int32Value == CWInterfaceState.CWInterfaceStateRunning;
+			bool isRunning = CurrentInterface.ActivePHYMode != CWPhyMode.None;
 			
 			if (isRunning)
 				disconnectButton.Enabled = true;
 			else
 				disconnectButton.Enabled = false;
 			
-			opModeField.StringValue = powerState ? StringForOpMode (CurrentInterface.OpMode) : String.Empty;
+			opModeField.StringValue = powerState ? CWHelpers.StringForOpMode (CurrentInterface.InterfaceMode) : String.Empty;
 			
-			securityModeField.StringValue = powerState ? StringForSecurityMode (CurrentInterface.SecurityMode) : String.Empty;
+			securityModeField.StringValue = powerState ? CWHelpers.StringForSecurityMode (CurrentInterface.Security) : String.Empty;
 			
-			phyModeField.StringValue = powerState ? StringForPhyMode (CurrentInterface.PhyMode) : String.Empty;
+			phyModeField.StringValue = powerState ? CWHelpers.StringForPhyMode (CurrentInterface.ActivePHYMode) : String.Empty;
 			
 			string str = CurrentInterface.Ssid;
 			ssidField.StringValue = (powerState && !String.IsNullOrEmpty (str)) ? str : String.Empty;
@@ -306,67 +116,46 @@ namespace CoreWLANWirelessManager
 			str = CurrentInterface.Bssid;
 			bssidField.StringValue = (powerState && !String.IsNullOrEmpty (str)) ? str : String.Empty;
 			
-			NSNumber num = CurrentInterface.TxRate;
+			NSNumber num = CurrentInterface.TransmitRate;
 			txRateField.StringValue = (powerState && num!=null) ? String.Format ("{0} Mbps", num) : String.Empty;
 			
-			num = CurrentInterface.Rssi;
+			num = CurrentInterface.RssiValue;
 			rssiField.StringValue = (powerState && num!=null)? String.Format ("{0} dBm", num) : String.Empty;
 			
-			num = CurrentInterface.Noise;
+			num = CurrentInterface.NoiseMeasurement;
 			noiseField.StringValue = (powerState && num!=null)? String.Format ("{0} dBm", num) : String.Empty;
 			
-			num = CurrentInterface.TxPower;
+			num = CurrentInterface.TransmitPower;
 			txPowerField.StringValue = (powerState && num!=null)? String.Format ("{0} mW", num) : String.Empty;
 			
 			str = CurrentInterface.CountryCode;
 			countryCodeField.StringValue = (powerState && !String.IsNullOrEmpty (str)) ? str : String.Empty;
 			
-			NSNumber[] supportedChannelsArray = CurrentInterface.SupportedChannels;
-			StringBuilder tempString = new StringBuilder ();
+			uint[] supportedChannelsArray = CurrentInterface.SupportedWlanChannels.Select (x => x.ChannelNumber).ToArray();
+
+			StringBuilder supportedChannelString = new StringBuilder ();
 			channelPopup.RemoveAllItems ();
 			
 			foreach (NSNumber eachChannel in supportedChannelsArray)
 			{
 				if (eachChannel.IsEqualToNumber (supportedChannelsArray.Last ()))
-					tempString.Append (eachChannel.ToString ());
+					supportedChannelString.Append (eachChannel.ToString ());
 				else
-					tempString.AppendFormat ("{0}, ", eachChannel.ToString ());
+					supportedChannelString.AppendFormat ("{0}, ", eachChannel.ToString ());
 				if (powerState)
 					channelPopup.AddItem (eachChannel.ToString ());
 			}
-			
-			supportedChannelsField.StringValue = tempString.ToString ();
-			
-			NSNumber[] supportedPhyModesArray = CurrentInterface.SupportedPhyModes;
-			tempString = new StringBuilder ("802.11");
-			
-			foreach (NSNumber eachPhyMode in supportedPhyModesArray) {
-				switch ((CWPHYMode)eachPhyMode.Int32Value)
-				{
-					case CWPHYMode.CWPHYMode11A:
-						tempString.Append("a/");
-						break;
-					case CWPHYMode.CWPHYMode11B:
-						tempString.Append("b/");
-						break;
-					case CWPHYMode.CWPHYMode11G:
-						tempString.Append("g/");
-						break;
-					case CWPHYMode.CWPHYMode11N:
-						tempString.Append("n");
-						break;
-				}
-			}
-			
-			string phymode = tempString.ToString();
-			if(phymode.EndsWith("/"))
-				phymode.Remove(phymode.Length-1);
-			if(phymode.Equals("802.11"))
-				phymode = "None";
+
+			supportedChannelsField.StringValue = supportedChannelString.ToString ();
+
+			string phyModeSuffix = CWHelpers.StringForPhyMode (CurrentInterface.ActivePHYMode);
+			string phyMode = "None";
+			if (phyModeSuffix != string.Empty)
+				phyMode = "802.11" + phyModeSuffix;
 				
-			supportedPHYModes.StringValue = phymode;
+			supportedPHYModes.StringValue = phyMode;
 			
-			channelPopup.SelectItem(CurrentInterface.Channel!=null?CurrentInterface.Channel.StringValue:String.Empty);
+			channelPopup.SelectItem(CurrentInterface.WlanChannel != null ? CurrentInterface.WlanChannel.ToString () : String.Empty);
 			if(!powerState || isRunning)
 				channelPopup.Enabled = false;
 			else
@@ -375,13 +164,11 @@ namespace CoreWLANWirelessManager
 		
 		private void UpdateScanTab ()
 		{
-			NSDictionary param = NSDictionary.FromObjectAndKey (NSNumber.FromBoolean (mergeScanResultsCheckbox.State == NSCellStateValue.On), new NSString ("true"));
 			NSError error = null;
-			ScanResults = CurrentInterface.ScanForNetworksWithParameters (param, out error);
+			ScanResults = CurrentInterface.ScanForNetworksWithName (null, out error);
 			if (error == null)
 			{
-				Array.Sort (ScanResults, delegate(CWNetwork networkA, CWNetwork networkB)
-					{
+				Array.Sort (ScanResults, delegate(CWNetwork networkA, CWNetwork networkB) {
 						return networkA.Ssid.CompareTo(networkB.Ssid);	
 				});
 			}
@@ -411,8 +198,9 @@ namespace CoreWLANWirelessManager
 			joinPassphraseField.Enabled = true;
 			
 			joinSecurityPopupButton.RemoveAllItems ();
+
 			joinSecurityPopupButton.AddItems (new[] {
-												"Open", "WEP", "WEP Personal", "WPA2 Personal",
+												"Open", "WEP", "WPA Personal", "WPA2 Personal",
 												"WPA Enterprise", "WPA2 Enterprise", "802.11X WEP"
 											});
 			
@@ -429,12 +217,7 @@ namespace CoreWLANWirelessManager
 		
 		partial void interfaceSelected (NSObject sender)
 		{
-			if (supportedInterfacesPopup.SelectedItem != null) {
-				CurrentInterface = CWInterface.FromName (supportedInterfacesPopup.SelectedItem.Title);
-			} else {
-				CurrentInterface = null;
-			}
-
+			CurrentInterface = new CWInterface (supportedInterfacesPopup.SelectedItem.Title);
 			UpdateInterfaceInfoTab ();
 		}
 		
@@ -458,14 +241,16 @@ namespace CoreWLANWirelessManager
 			bool result = CurrentInterface.SetPower (powerStateControl.SelectedSegment == 0, out error);
 			if (!result)
 				NSAlert.WithError (error).RunModal ();
-					
+
 			UpdateInterfaceInfoTab();
 		}
 		
 		partial void changeChannel (NSObject sender)
 		{
-			NSError error = null;
-			bool result = CurrentInterface.SetChannel(Convert.ToUInt32(channelPopup.SelectedItem.Title), out error);
+			NSError error;
+			uint channelNumber = uint.Parse(channelPopup.SelectedItem.Title);
+			CWChannel selectedChannel = CurrentInterface.SupportedWlanChannels.First (x => x.ChannelNumber == channelNumber);
+			bool result = CurrentInterface.SetWlanChannel (selectedChannel, out error);
 			if (!result)
 				NSAlert.WithError (error).RunModal ();
 					
@@ -576,16 +361,16 @@ namespace CoreWLANWirelessManager
 				
 				else
 					param.SetValueForKey (!String.IsNullOrEmpty (joinPassphraseField.StringValue) ? joinPassphraseField.ObjectValue: null, CWConstants.CWAssocKeyPassPhrase);
-				
+
+				string password = !string.IsNullOrEmpty(joinPassphraseField.StringValue) ? joinPassphraseField.StringValue : null;
 				NSError error = null;
-				bool result = CurrentInterface.AssociateToNetwork (SelectedNetwork, NSDictionary.FromDictionary (param), out error);
-				
+				bool result = CurrentInterface.AssociateToNetwork (SelectedNetwork, password, out error);
+
 				joinSpinner.StopAnimation (Window);
 				joinSpinner.Hidden = true;
 				
 				if (!result)
-					NSAlert.WithError (error).RunModal ();
-					
+					NSAlert.WithError (error).RunModal ();					
 				else
 					joinCancelButtonPressed(this);
 			}
@@ -604,42 +389,31 @@ namespace CoreWLANWirelessManager
 			if (index >= 0)
 			{
 				ResetDialog ();
-				
+
 				SelectedNetwork = ScanResults[index];
 				joinNetworkNameField.StringValue = SelectedNetwork.Ssid;
 				joinNetworkNameField.Enabled = false;
-				joinSecurityPopupButton.SelectItem (StringForSecurityMode (SelectedNetwork.SecurityMode));
+
+				CWSecurity security = CWHelpers.SecurityModeFromSSID (ScanResults, SelectedNetwork.Ssid);
+				joinSecurityPopupButton.SelectItem (CWHelpers.StringForSecurityMode (security));
 				joinSecurityPopupButton.Enabled = false;
 				
 				changeSecurityMode (null);
-				
-				CWWirelessProfile wProfile = SelectedNetwork.WirelessProfile;
-				CW8021XProfile xProfile = wProfile.User8021XProfile;
-				
-				switch ((CWSecurityMode)SelectedNetwork.SecurityMode.IntValue)
+							
+				if (SelectedNetwork.SupportsSecurity(CWSecurity.WPAPersonal) || SelectedNetwork.SupportsSecurity(CWSecurity.WPA2Personal) ||
+					SelectedNetwork.SupportsSecurity(CWSecurity.WEP))
 				{
-				case CWSecurityMode.CWSecurityModeWPA_PSK:
-				case CWSecurityMode.CWSecurityModeWPA2_PSK:
-				case CWSecurityMode.CWSecurityModeWEP:
-					if (!String.IsNullOrEmpty (wProfile.Passphrase))
-						joinPassphraseField.StringValue = wProfile.Passphrase;
-					break;
-				
-				case CWSecurityMode.CWSecurityModeOpen:
-					break;
-				case CWSecurityMode.CWSecurityModeWPA_Enterprise:
-				case CWSecurityMode.CWSecurityModeWPA2_Enterprise:
-					if (xProfile != null)
-					{
-						joinUser8021XProfilePopupButton.SelectItem (xProfile.UserDefinedName);
-						joinUsernameField.StringValue = xProfile.Username;
-						joinUsernameField.Enabled = false;
-						joinPassphraseField.StringValue = xProfile.Password;
-						joinPassphraseField.Enabled = false;
-					}
-					break;
+					joinPassphraseField.StringValue = "";
 				}
-				
+				else if (SelectedNetwork.SupportsSecurity(CWSecurity.WPAEnterprise) || SelectedNetwork.SupportsSecurity(CWSecurity.WPA2Enterprise))
+				{
+					joinUser8021XProfilePopupButton.SelectItem(0);
+					joinUsernameField.StringValue = "";
+					joinUsernameField.Enabled = false;
+					joinPassphraseField.StringValue = "";
+					joinPassphraseField.Enabled = false;
+				}
+
 				joinDialogWindow.MakeFirstResponder (joinNetworkNameField);
 				
 				JoinDialogContext = true;
@@ -671,25 +445,12 @@ namespace CoreWLANWirelessManager
 			ibssSpinner.Hidden = false;
 			ibssSpinner.StartAnimation (this);
 			
-			string networkName = ibssNetworkNameField.StringValue;
-			NSNumber channel = new NSNumber(Convert.ToInt32(ibssChannelPopupButton.SelectedItem.Title));
 			string passPhrase = ibssPassphraseField.StringValue;
-			
-			NSMutableDictionary ibssParams = new NSMutableDictionary ();
-			if (!(String.IsNullOrEmpty (networkName)))
-				ibssParams.SetValueForKey (ibssNetworkNameField.ObjectValue, CWConstants.CWIBSSKeySSID);
-			
-			
-			if (channel.IntValue > 0)
-				ibssParams.SetValueForKey (channel, CWConstants.CWIBSSKeyChannel);
-			
-			if (!(String.IsNullOrEmpty (passPhrase)))
-				ibssParams.SetValueForKey (ibssPassphraseField.ObjectValue, CWConstants.CWIBSSKeyPassphrase);
-			
+
 			NSError error = null;
-			
-			bool created = CurrentInterface.EnableIBSSWithParameters (NSDictionary.FromDictionary (ibssParams), out error);
-			
+
+			bool created = CurrentInterface.StartIbssModeWithSsid (null, CWIbssModeSecurity.None, uint.Parse (ibssChannelPopupButton.SelectedItem.Title), passPhrase, out error);
+
 			ibssSpinner.StopAnimation (this);
 			ibssSpinner.Hidden = true;
 			
