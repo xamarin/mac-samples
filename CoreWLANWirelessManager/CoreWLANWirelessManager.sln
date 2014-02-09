@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWLANWirelessManager", "CoreWLANWirelessManager\CoreWLANWirelessManager.csproj", "{67ED770F-C83E-4BD8-B185-8E0C7992EC60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		AppStore|Any CPU = AppStore|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67ED770F-C83E-4BD8-B185-8E0C7992EC60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CoreWLANWirelessManager\CoreWLANWirelessManager.csproj
+	EndGlobalSection
+EndGlobal
