@@ -49,7 +49,6 @@ DQ
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="networkNameTextField:" target="-2" id="1hT-vH-wym"/>
                             <outlet property="nextKeyView" destination="fpG-4x-S1D" id="PzF-Zs-KXb"/>
                         </connections>
                     </textField>
