@@ -1,3 +1,7 @@
+ImageKit Demo
+=============
+
+
 Simple demo to exercise ImageKit's ImageBrowserView.
 
 While it is largely unrecognizable from the source, this code was inspired by

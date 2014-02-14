@@ -10,5 +10,5 @@ creating a multi-document application out of the user hands.
 They take care of loading, saving, creating new instances and
 closing of windows for you.
 
-In addition to this sample, there is a template in MonoDevelop
+In addition to this sample, there is a template in Xamarin Studio
 that will create the basics for you.
