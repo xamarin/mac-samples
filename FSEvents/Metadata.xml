@@ -3,4 +3,5 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Device Features, Platform Features</Tags>
+	<Gallery>true</Gallery>
 </SampleMetadata>

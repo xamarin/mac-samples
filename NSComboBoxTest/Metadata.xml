@@ -3,4 +3,5 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginner</Level>
   <Tags>User Interface</Tags>
+	<Gallery>true</Gallery>
 </SampleMetadata>
