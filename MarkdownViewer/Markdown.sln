@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{2857B73E-F847-4B02-9238-064979017E93}") = "libsundown", "sundown\libsundown.cproj", "{9341D4F9-282A-46AE-B03E-164F1484CA57}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Markdown", "Markdown.csproj", "{C1E8C1BE-801B-46D9-B453-60DDC44DF06F}"
 EndProject
 Global
@@ -18,12 +16,6 @@ Global
 		{C1E8C1BE-801B-46D9-B453-60DDC44DF06F}.Debug|x86.Build.0 = Debug|x86
 		{C1E8C1BE-801B-46D9-B453-60DDC44DF06F}.Release|x86.ActiveCfg = Release|x86
 		{C1E8C1BE-801B-46D9-B453-60DDC44DF06F}.Release|x86.Build.0 = Release|x86
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.AppStore|x86.ActiveCfg = Debug|Any CPU
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.AppStore|x86.Build.0 = Debug|Any CPU
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.Debug|x86.Build.0 = Debug|Any CPU
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.Release|x86.ActiveCfg = Release|Any CPU
-		{9341D4F9-282A-46AE-B03E-164F1484CA57}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Markdown.csproj

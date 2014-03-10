@@ -21,7 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseSGen>False</UseSGen>
-    <IncludeMonoRuntime>True</IncludeMonoRuntime>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <EnablePackageSigning>False</EnablePackageSigning>
     <CreatePackage>False</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
@@ -29,12 +29,13 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <I18n />
-    <LinkMode>Full</LinkMode>
+    <I18n>
+    </I18n>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="cp &quot;${SolutionDir}/sundown/bin/Debug/libsundown.dylib&quot; &quot;${SolutionDir}/Resources&quot;" />
-        <Command type="AfterClean" command="rm -f &quot;${SolutionDir}/Resources/libsundown.dylib&quot;" />
+        <Command type="BeforeBuild" command="make -C &quot;${ProjectDir}/sundown/&quot;" />
+        <Command type="BeforeBuild" command="cp &quot;${ProjectDir}/sundown/libsundown.dylib&quot; &quot;${ProjectDir}/Resources&quot;" />
+        <Command type="AfterClean" command="rm -f &quot;${ProjectDir}/Resources/libsundown.dylib&quot;" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
@@ -54,7 +55,8 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <I18n />
+    <I18n>
+    </I18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
