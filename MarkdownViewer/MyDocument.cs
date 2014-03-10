@@ -33,35 +33,53 @@ namespace Markdown
 			}
 		}
 
+		class MarkdownWebPolicyDelegate : WebPolicyDelegate
+		{
+			public override void DecidePolicyForNavigation (WebView webView, NSDictionary actionInformation, NSUrlRequest request, WebFrame frame, NSObject decisionToken)
+			{
+				switch ((WebNavigationType)((NSNumber)actionInformation [WebPolicyDelegate.WebActionNavigationTypeKey]).Int32Value) {
+				case WebNavigationType.BackForward:
+				case WebNavigationType.FormResubmitted:
+				case WebNavigationType.FormSubmitted:
+					WebPolicyDelegate.DecideIgnore (decisionToken);
+					break;
+				case WebNavigationType.LinkClicked:
+					NSWorkspace.SharedWorkspace.OpenUrl (actionInformation[WebPolicyDelegate.WebActionOriginalUrlKey] as NSUrl);
+					WebPolicyDelegate.DecideIgnore (decisionToken);
+					break;
+				case WebNavigationType.Other:
+				case WebNavigationType.Reload:
+					WebPolicyDelegate.DecideUse (decisionToken);
+					break;
+				}
+			}
+		}
+
+		class MarkdownWebFrameLoadDelegate : WebFrameLoadDelegate
+		{
+			MyDocument document;
+
+			public MarkdownWebFrameLoadDelegate (MyDocument document)
+			{
+				this.document = document;
+			}
+
+			public override void FinishedLoad (WebView sender, WebFrame forFrame)
+			{
+				document.ReloadDocument ();
+			}
+		}
+
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{
 			base.WindowControllerDidLoadNib (windowController);
 
 			WebView.UIDelegate = new MarkdownWebUIDelegate ();
-			WebView.DecidePolicyForNavigation += OnDecidePolicyForNavigation;
-			WebView.FinishedLoad += (o, e) => ReloadDocument ();
+			WebView.PolicyDelegate = new MarkdownWebPolicyDelegate ();
+			WebView.FrameLoadDelegate = new MarkdownWebFrameLoadDelegate (this);
 
 			var templatePath = Path.Combine (NSBundle.MainBundle.ResourcePath, "Template.html");
 			WebView.MainFrame.LoadRequest (new NSUrlRequest (new NSUrl (templatePath)));
-		}
-
-		void OnDecidePolicyForNavigation (object sender, WebNavigationPolicyEventArgs e)
-		{
-			switch (e.NavigationType) {
-			case WebNavigationType.BackForward:
-			case WebNavigationType.FormResubmitted:
-			case WebNavigationType.FormSubmitted:
-				WebView.DecideIgnore (e.DecisionToken);
-				break;
-			case WebNavigationType.LinkClicked:
-				NSWorkspace.SharedWorkspace.OpenUrl (e.OriginalUrl);
-				WebView.DecideIgnore (e.DecisionToken);
-				break;
-			case WebNavigationType.Other:
-			case WebNavigationType.Reload:
-				WebView.DecideUse (e.DecisionToken);
-				break;
-			}
 		}
 
 		public override bool ReadFromUrl (NSUrl url, string typeName, out NSError outError)
