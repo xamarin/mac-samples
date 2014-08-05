@@ -1,7 +1,7 @@
 using System;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace DockAppIcon
 {
@@ -35,7 +35,9 @@ namespace DockAppIcon
 						? NSRequestUserAttentionType.InformationalRequest
 						: NSRequestUserAttentionType.CriticalRequest;
 
-					NSTimer.CreateScheduledTimer (3.0, () => NSApplication.SharedApplication.RequestUserAttention (type));
+					NSTimer.CreateScheduledTimer (3.0, (NSTimer obj) => {
+						NSApplication.SharedApplication.RequestUserAttention (type);
+					});
 				});
 			};
 
