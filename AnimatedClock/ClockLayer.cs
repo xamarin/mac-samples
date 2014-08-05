@@ -4,10 +4,10 @@ using System.Linq;
 using System.Drawing;
 using System.Timers;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace AnimatedClock
 {
