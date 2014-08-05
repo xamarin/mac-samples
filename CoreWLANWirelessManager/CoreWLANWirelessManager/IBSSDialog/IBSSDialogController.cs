@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreWlan;
+using Foundation;
+using AppKit;
+using CoreWlan;
 
 namespace CoreWLANWirelessManager
 {
-	public partial class IBSSDialogController : MonoMac.AppKit.NSWindowController
+	public partial class IBSSDialogController : AppKit.NSWindowController
 	{
 		public  CWInterface CurrentInterface { get; private set; }
 
@@ -24,12 +24,12 @@ namespace CoreWLANWirelessManager
 			}
 		}
 
-		partial void cancelButtonClicked (MonoMac.AppKit.NSButton sender)
+		partial void cancelButtonClicked (AppKit.NSButton sender)
 		{
 			Window.Close();
 		}
 
-		partial void okButtonClicked (MonoMac.AppKit.NSButton sender)
+		partial void okButtonClicked (AppKit.NSButton sender)
 		{
 			spinner.Hidden = false;
 			spinner.StartAnimation(this);

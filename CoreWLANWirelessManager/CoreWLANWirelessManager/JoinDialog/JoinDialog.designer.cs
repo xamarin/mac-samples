@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace CoreWLANWirelessManager
@@ -13,28 +13,28 @@ namespace CoreWLANWirelessManager
 	partial class JoinDialogController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField networkNameTextField { get; set; }
+		AppKit.NSTextField networkNameTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSSecureTextField passphraseTextField { get; set; }
+		AppKit.NSSecureTextField passphraseTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton phyModePicker { get; set; }
+		AppKit.NSPopUpButton phyModePicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton securityModePicker { get; set; }
+		AppKit.NSPopUpButton securityModePicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSProgressIndicator spinner { get; set; }
+		AppKit.NSProgressIndicator spinner { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField usernameTextField { get; set; }
+		AppKit.NSTextField usernameTextField { get; set; }
 
 		[Action ("cancelButtonClicked:")]
-		partial void cancelButtonClicked (MonoMac.Foundation.NSObject sender);
+		partial void cancelButtonClicked (Foundation.NSObject sender);
 
 		[Action ("okButtonCkicked:")]
-		partial void okButtonCkicked (MonoMac.Foundation.NSObject sender);
+		partial void okButtonCkicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

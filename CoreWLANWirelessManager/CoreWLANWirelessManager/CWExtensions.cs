@@ -1,5 +1,5 @@
 ﻿using System;
-using MonoMac.CoreWlan;
+using CoreWlan;
 
 namespace CoreWLANWirelessManager
 {

@@ -1,8 +1,8 @@
 ﻿using System;
-using MonoMac.AppKit;
+using AppKit;
 using System.Collections.Generic;
-using MonoMac.CoreWlan;
-using MonoMac.Foundation;
+using CoreWlan;
+using Foundation;
 using System.Linq;
 
 namespace CoreWLANWirelessManager
@@ -16,12 +16,12 @@ namespace CoreWLANWirelessManager
 			Networks = scanResults.Cast<CWNetwork> ().ToArray ();
 		}
 
-		public override int GetRowCount (NSTableView tableView)
+		public override nint GetRowCount (NSTableView tableView)
 		{
 			return Networks.Length;
 		}
 
-		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, int row)
+		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, nint row)
 		{
 			var valueKey = (NSString)tableColumn.Identifier.ToString ();
 			CWNetwork selectedNetwork = Networks [row];

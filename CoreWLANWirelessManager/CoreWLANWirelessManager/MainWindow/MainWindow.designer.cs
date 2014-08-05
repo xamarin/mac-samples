@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace CoreWLANWirelessManager
@@ -13,79 +13,79 @@ namespace CoreWLANWirelessManager
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField bssidTextField { get; set; }
+		AppKit.NSTextField bssidTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton channelPicker { get; set; }
+		AppKit.NSPopUpButton channelPicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField countryCodeTextField { get; set; }
+		AppKit.NSTextField countryCodeTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton createIBSSButton { get; set; }
+		AppKit.NSButton createIBSSButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton disconnectButton { get; set; }
+		AppKit.NSButton disconnectButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton interfacesPicker { get; set; }
+		AppKit.NSPopUpButton interfacesPicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton joinButton { get; set; }
+		AppKit.NSButton joinButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton mergeScanResults { get; set; }
+		AppKit.NSButton mergeScanResults { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTableView networksTable { get; set; }
+		AppKit.NSTableView networksTable { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField noiseTextField { get; set; }
+		AppKit.NSTextField noiseTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField phyModeTextField { get; set; }
+		AppKit.NSTextField phyModeTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSSegmentedControl powerState { get; set; }
+		AppKit.NSSegmentedControl powerState { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSProgressIndicator refreshSpinner { get; set; }
+		AppKit.NSProgressIndicator refreshSpinner { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField rssiTextField { get; set; }
+		AppKit.NSTextField rssiTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField securityTextField { get; set; }
+		AppKit.NSTextField securityTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField ssidTextField { get; set; }
+		AppKit.NSTextField ssidTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField supportedChannelsTextField { get; set; }
+		AppKit.NSTextField supportedChannelsTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTabView tabView { get; set; }
+		AppKit.NSTabView tabView { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField transmissionPowerTextField { get; set; }
+		AppKit.NSTextField transmissionPowerTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField transmissionRateTextField { get; set; }
+		AppKit.NSTextField transmissionRateTextField { get; set; }
 
 		[Action ("changeChannel:")]
-		partial void changeChannel (MonoMac.AppKit.NSPopUpButton sender);
+		partial void changeChannel (AppKit.NSPopUpButton sender);
 
 		[Action ("disconnectButtonClicked:")]
-		partial void disconnectButtonClicked (MonoMac.AppKit.NSButton sender);
+		partial void disconnectButtonClicked (AppKit.NSButton sender);
 
 		[Action ("interfaceSelected:")]
-		partial void interfaceSelected (MonoMac.AppKit.NSPopUpButton sender);
+		partial void interfaceSelected (AppKit.NSPopUpButton sender);
 
 		[Action ("powerStateChanged:")]
-		partial void powerStateChanged (MonoMac.AppKit.NSSegmentedControl sender);
+		partial void powerStateChanged (AppKit.NSSegmentedControl sender);
 
 		[Action ("refreshButtonClicked:")]
-		partial void refreshButtonClicked (MonoMac.AppKit.NSButton sender);
+		partial void refreshButtonClicked (AppKit.NSButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
