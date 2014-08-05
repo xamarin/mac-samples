@@ -1,13 +1,13 @@
 using System;
 using System.IO;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreServices;
+using Foundation;
+using AppKit;
+using CoreServices;
 
 namespace FSEventWatcher
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
@@ -45,7 +45,7 @@ namespace FSEventWatcher
 			Window.MakeFirstResponder (EventStreamView);
 		}
 
-		void UpdateLatency (int value, bool reinitializeEventStream = true)
+		void UpdateLatency (nint value, bool reinitializeEventStream = true)
 		{
 			eventLatency = TimeSpan.FromSeconds (value);
 			LatencyStepper.IntegerValue = value;

@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace FSEventWatcher
 {
@@ -12,37 +12,37 @@ namespace FSEventWatcher
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField LatencyTextField { get; set; }
+		AppKit.NSTextField LatencyTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSStepper LatencyStepper { get; set; }
+		AppKit.NSStepper LatencyStepper { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField WatchPathTextField { get; set; }
+		AppKit.NSTextField WatchPathTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton StartStopButton { get; set; }
+		AppKit.NSButton StartStopButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTableView EventStreamView { get; set; }
+		AppKit.NSTableView EventStreamView { get; set; }
 
 		[Action ("ShowStream:")]
-		partial void ShowStream (MonoMac.Foundation.NSObject sender);
+		partial void ShowStream (Foundation.NSObject sender);
 
 		[Action ("FlushStreamAsync:")]
-		partial void FlushStreamAsync (MonoMac.Foundation.NSObject sender);
+		partial void FlushStreamAsync (Foundation.NSObject sender);
 
 		[Action ("FlushStreamSync:")]
-		partial void FlushStreamSync (MonoMac.Foundation.NSObject sender);
+		partial void FlushStreamSync (Foundation.NSObject sender);
 
 		[Action ("ChangeWatchPath:")]
-		partial void ChangeWatchPath (MonoMac.Foundation.NSObject sender);
+		partial void ChangeWatchPath (Foundation.NSObject sender);
 
 		[Action ("RevealWatchPathInFinder:")]
-		partial void RevealWatchPathInFinder (MonoMac.Foundation.NSObject sender);
+		partial void RevealWatchPathInFinder (Foundation.NSObject sender);
 
 		[Action ("RevealWatchPathInTerminal:")]
-		partial void RevealWatchPathInTerminal (MonoMac.Foundation.NSObject sender);
+		partial void RevealWatchPathInTerminal (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
