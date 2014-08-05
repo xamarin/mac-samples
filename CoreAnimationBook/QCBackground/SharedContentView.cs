@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreImage;
-using MonoMac.QuartzComposer;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
+using CoreImage;
+using QuartzComposer;
 
 namespace QCBackground
 {
-	public partial class SharedContentView : MonoMac.AppKit.NSView
+	public partial class SharedContentView : AppKit.NSView
 	{
 		
 		NSImageView mover;
@@ -73,11 +73,11 @@ namespace QCBackground
 		private NSImageView Mover()
 		{
 			if (mover == null) {
-				float xInset = 0.25f * Bounds.Width;
-				float yInset = 0.25f * Bounds.Height;
+				var xInset = 0.25f * Bounds.Width;
+				var yInset = 0.25f * Bounds.Height;
 				
-				RectangleF moverFrame = Bounds.Inset (xInset,yInset);
-				moverFrame.Location = new PointF (Bounds.GetMidX () - moverFrame.Width / 2.0f,
+				CGRect moverFrame = Bounds.Inset (xInset,yInset);
+				moverFrame.Location = new CGPoint (Bounds.GetMidX () - moverFrame.Width / 2.0f,
 				                            Bounds.GetMidY () - moverFrame.Height / 2.0f);
 				
 				mover = new NSImageView (Bounds) {
