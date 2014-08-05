@@ -11,27 +11,27 @@
 namespace Fire {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
-		private global::MonoMac.AppKit.NSSlider __mt_gasSlider;
+		private global::AppKit.NSSlider __mt_gasSlider;
 		
-		private global::MonoMac.AppKit.NSView __mt_view;
+		private global::AppKit.NSView __mt_view;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("slidersChanged:")]
-		partial void slidersChanged (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("slidersChanged:")]
+		partial void slidersChanged (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("gasSlider")]
-		private global::MonoMac.AppKit.NSSlider gasSlider {
+		[Foundation.Connect("gasSlider")]
+		private global::AppKit.NSSlider gasSlider {
 			get {
-				this.__mt_gasSlider = ((global::MonoMac.AppKit.NSSlider)(this.GetNativeField("gasSlider")));
+				this.__mt_gasSlider = ((global::AppKit.NSSlider)(this.GetNativeField("gasSlider")));
 				return this.__mt_gasSlider;
 			}
 			set {
@@ -40,10 +40,10 @@ namespace Fire {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("view")]
-		private global::MonoMac.AppKit.NSView view {
+		[Foundation.Connect("view")]
+		private global::AppKit.NSView view {
 			get {
-				this.__mt_view = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("view")));
+				this.__mt_view = ((global::AppKit.NSView)(this.GetNativeField("view")));
 				return this.__mt_view;
 			}
 			set {
