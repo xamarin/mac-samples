@@ -4,13 +4,14 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoMac.ObjCRuntime;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using ObjCRuntime;
+using Foundation;
+using AppKit;
+using CoreGraphics;
 
 namespace SamplesButtonMadness
 {
-	public partial class TestWindowController : MonoMac.AppKit.NSWindowController
+	public partial class TestWindowController : AppKit.NSWindowController
 	{
 		#region members
 		
@@ -68,7 +69,7 @@ namespace SamplesButtonMadness
 			nibBasedPopUpRight.Menu = buttonMenu;
 		
 			// create the pull down button pointing DOWN
-			RectangleF buttonFrame = placeHolder1.Frame;
+			CGRect buttonFrame = placeHolder1.Frame;
 			codeBasedPopUpDown = new NSPopUpButton (buttonFrame, true);
 			
 			((NSPopUpButtonCell)codeBasedPopUpDown.Cell).ArrowPosition = NSPopUpArrowPosition.Bottom;
