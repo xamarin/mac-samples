@@ -1,5 +1,5 @@
 using System;
-using MonoMac.OpenGL;
+using OpenGL;
 
 namespace GLFullScreen
 {
