@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace CustomAnimationTiming
 {
-	public partial class CustomAnimationTiming : MonoMac.AppKit.NSView {
+	public partial class CustomAnimationTiming : AppKit.NSView {
 		NSImageView mover;
 		CABasicAnimation moveAnimation;
 		
@@ -20,7 +20,7 @@ namespace CustomAnimationTiming
 		public CustomAnimationTiming (NSCoder coder) : base(coder) {}
 
 		[Export("initWithFrame:")]
-		public CustomAnimationTiming (RectangleF frame) : base(frame)
+		public CustomAnimationTiming (CGRect frame) : base(frame)
 		{
 			SetupMover ();
 		}
@@ -37,9 +37,9 @@ namespace CustomAnimationTiming
 		
 		void SetupMover()
 		{
-			RectangleF moverFrame = Bounds.Inset(Bounds.Width / 4.0f,
+			CGRect moverFrame = Bounds.Inset(Bounds.Width / 4.0f,
 			                                    	Bounds.Height / 4.0f);
-			PointF origin = moverFrame.Location;
+			CGPoint origin = moverFrame.Location;
 			origin.X = 0.0f;
 			moverFrame.Location = origin;
 			
@@ -63,7 +63,7 @@ namespace CustomAnimationTiming
 		{
 			var animations = NSDictionary.FromObjectAndKey (MoveItAnimation (), (NSString)"frameOrigin");
 			mover.Animations = animations;
-			PointF origin = mover.Frame.Location;
+			CGPoint origin = mover.Frame.Location;
 			origin.X += mover.Frame.Width;
 			((NSView)mover.Animator).SetFrameOrigin(origin);
 		}
