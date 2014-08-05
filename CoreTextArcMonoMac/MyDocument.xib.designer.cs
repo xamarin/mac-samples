@@ -11,46 +11,46 @@
 namespace CoreTextArcMonoMac {
 	
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("CoreTextArcView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("CoreTextArcView")]
 	public partial class CoreTextArcView {
 	}
 	
-	// Should subclass MonoMac.Foundation.NSObject
-	[MonoMac.Foundation.Register("FirstResponder")]
+	// Should subclass Foundation.NSObject
+	[Foundation.Register("FirstResponder")]
 	public partial class FirstResponder {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("setDimsSubstitutedGlyphs:")]
-		partial void setDimsSubstitutedGlyphs (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("setDimsSubstitutedGlyphs:")]
+		partial void setDimsSubstitutedGlyphs (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("setShowsGlyphOutlines:")]
-		partial void setShowsGlyphOutlines (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("setShowsGlyphOutlines:")]
+		partial void setShowsGlyphOutlines (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("setShowsLineMetrics:")]
-		partial void setShowsLineMetrics (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("setShowsLineMetrics:")]
+		partial void setShowsLineMetrics (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("toggleBold:")]
-		partial void toggleBold (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("toggleBold:")]
+		partial void toggleBold (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("toggleItalic:")]
-		partial void toggleItalic (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("toggleItalic:")]
+		partial void toggleItalic (AppKit.NSButton sender);
 }
 	
-	// Should subclass MonoMac.AppKit.NSDocument
-	[MonoMac.Foundation.Register("MyDocument")]
+	// Should subclass AppKit.NSDocument
+	[Foundation.Register("MyDocument")]
 	public partial class MyDocument {
 		
 		private CoreTextArcView __mt_arcView;
 		
-		private global::MonoMac.AppKit.NSButton __mt_boldButton;
+		private global::AppKit.NSButton __mt_boldButton;
 		
-		private global::MonoMac.AppKit.NSButton __mt_italicButton;
+		private global::AppKit.NSButton __mt_italicButton;
 		
-		private global::MonoMac.AppKit.NSTextField __mt_txtField;
+		private global::AppKit.NSTextField __mt_txtField;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Connect("arcView")]
+		[Foundation.Connect("arcView")]
 		private CoreTextArcView arcView {
 			get {
 				this.__mt_arcView = ((CoreTextArcView)(this.GetNativeField("arcView")));
@@ -62,10 +62,10 @@ namespace CoreTextArcMonoMac {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("boldButton")]
-		private global::MonoMac.AppKit.NSButton boldButton {
+		[Foundation.Connect("boldButton")]
+		private global::AppKit.NSButton boldButton {
 			get {
-				this.__mt_boldButton = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("boldButton")));
+				this.__mt_boldButton = ((global::AppKit.NSButton)(this.GetNativeField("boldButton")));
 				return this.__mt_boldButton;
 			}
 			set {
@@ -74,10 +74,10 @@ namespace CoreTextArcMonoMac {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("italicButton")]
-		private global::MonoMac.AppKit.NSButton italicButton {
+		[Foundation.Connect("italicButton")]
+		private global::AppKit.NSButton italicButton {
 			get {
-				this.__mt_italicButton = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("italicButton")));
+				this.__mt_italicButton = ((global::AppKit.NSButton)(this.GetNativeField("italicButton")));
 				return this.__mt_italicButton;
 			}
 			set {
@@ -86,10 +86,10 @@ namespace CoreTextArcMonoMac {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("txtField")]
-		private global::MonoMac.AppKit.NSTextField txtField {
+		[Foundation.Connect("txtField")]
+		private global::AppKit.NSTextField txtField {
 			get {
-				this.__mt_txtField = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("txtField")));
+				this.__mt_txtField = ((global::AppKit.NSTextField)(this.GetNativeField("txtField")));
 				return this.__mt_txtField;
 			}
 			set {
