@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreImage;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
+using CoreImage;
 
 namespace BackgroundFilteredView
 {
-	public partial class BackgroundFilteredView : MonoMac.AppKit.NSView
+	public partial class BackgroundFilteredView : AppKit.NSView
 	{
 		public BackgroundFilteredView (IntPtr handle) : base(handle) {}
 
@@ -55,18 +55,18 @@ namespace BackgroundFilteredView
 			AddAnimationToTorusFilter ();
 		}
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
-			RectangleF bounds = Bounds;
-			SizeF stripeSize = bounds.Size;
+			CGRect bounds = Bounds;
+			CGSize stripeSize = bounds.Size;
 			stripeSize.Width = bounds.Width / 10.0f;
-			RectangleF stripe = bounds;
+			CGRect stripe = bounds;
 			stripe.Size = stripeSize;
 			NSColor[] colors = new NSColor[2] { NSColor.White, NSColor.Blue };
 			for (int i = 0; i < 10; i++){
 				colors[i % 2].Set();
 				NSGraphics.RectFill(stripe);
-				PointF origin = stripe.Location;
+				CGPoint origin = stripe.Location;
 				origin.X += stripe.Size.Width;
 				stripe.Location = origin;
 			}

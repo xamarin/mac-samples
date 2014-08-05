@@ -11,23 +11,23 @@
 namespace BackgroundFilteredView {
 	
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("BackgroundFilteredView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("BackgroundFilteredView")]
 	public partial class BackgroundFilteredView {
 		
-		private global::MonoMac.AppKit.NSView __mt_controls;
+		private global::AppKit.NSView __mt_controls;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("addFilter:")]
-		partial void AddFilter (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("addFilter:")]
+		partial void AddFilter (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("removeFilter:")]
-		partial void RemoveFilter (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("removeFilter:")]
+		partial void RemoveFilter (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("controls")]
-		private global::MonoMac.AppKit.NSView controls {
+		[Foundation.Connect("controls")]
+		private global::AppKit.NSView controls {
 			get {
-				this.__mt_controls = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("controls")));
+				this.__mt_controls = ((global::AppKit.NSView)(this.GetNativeField("controls")));
 				return this.__mt_controls;
 			}
 			set {
@@ -37,13 +37,13 @@ namespace BackgroundFilteredView {
 		}
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 	}
 }
