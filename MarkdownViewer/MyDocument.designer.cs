@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace Markdown
 {
@@ -12,7 +12,7 @@ namespace Markdown
 	partial class MyDocument
 	{
 		[Outlet]
-		MonoMac.WebKit.WebView WebView { get; set; }
+		WebKit.WebView WebView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
