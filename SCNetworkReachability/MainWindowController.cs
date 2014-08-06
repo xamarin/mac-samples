@@ -1,14 +1,14 @@
 using System;
 using System.Net;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.SystemConfiguration;
-using MonoMac.CoreWlan;
+using Foundation;
+using AppKit;
+using SystemConfiguration;
+using CoreWlan;
 
 namespace SCNetworkReachability
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		NetworkReachability hostReachability;
 		NetworkReachability networkReachability;

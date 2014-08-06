@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace SCNetworkReachability
 {
@@ -12,25 +12,25 @@ namespace SCNetworkReachability
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSImageView HostIcon { get; set; }
+		AppKit.NSImageView HostIcon { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSImageView NetworkIcon { get; set; }
+		AppKit.NSImageView NetworkIcon { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField HostTextField { get; set; }
+		AppKit.NSTextField HostTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField HostStatusTextField { get; set; }
+		AppKit.NSTextField HostStatusTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField NetworkStatusTextField { get; set; }
+		AppKit.NSTextField NetworkStatusTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton WirelessInterfaceButton { get; set; }
+		AppKit.NSPopUpButton WirelessInterfaceButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSSegmentedControl WirelessInterfaceToggleButton { get; set; }
+		AppKit.NSSegmentedControl WirelessInterfaceToggleButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
