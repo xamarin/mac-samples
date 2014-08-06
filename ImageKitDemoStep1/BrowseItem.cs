@@ -1,7 +1,7 @@
 using System;
 using System.IO;
-using MonoMac.ImageKit;
-using MonoMac.Foundation;
+using ImageKit;
+using Foundation;
 
 namespace ImageKitDemo
 {
