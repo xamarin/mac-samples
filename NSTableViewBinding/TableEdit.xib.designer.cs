@@ -11,23 +11,23 @@
 namespace NSTableViewBinding {
 	
 	
-	// Should subclass AppKit.NSWindowController
-	[Foundation.Register("EditController")]
+	// Should subclass MonoMac.AppKit.NSWindowController
+	[MonoMac.Foundation.Register("EditController")]
 	public partial class EditController {
 		
-		private global::AppKit.NSForm __mt_editForm;
+		private global::MonoMac.AppKit.NSForm __mt_editForm;
 		
 		#pragma warning disable 0169
-		[Foundation.Export("cancel:")]
-		partial void cancel (AppKit.NSButton sender);
+		[MonoMac.Foundation.Export("cancel:")]
+		partial void cancel (MonoMac.AppKit.NSButton sender);
 
-		[Foundation.Export("done:")]
-		partial void done (AppKit.NSButton sender);
+		[MonoMac.Foundation.Export("done:")]
+		partial void done (MonoMac.AppKit.NSButton sender);
 
-		[Foundation.Connect("editForm")]
-		private global::AppKit.NSForm editForm {
+		[MonoMac.Foundation.Connect("editForm")]
+		private global::MonoMac.AppKit.NSForm editForm {
 			get {
-				this.__mt_editForm = ((global::AppKit.NSForm)(this.GetNativeField("editForm")));
+				this.__mt_editForm = ((global::MonoMac.AppKit.NSForm)(this.GetNativeField("editForm")));
 				return this.__mt_editForm;
 			}
 			set {

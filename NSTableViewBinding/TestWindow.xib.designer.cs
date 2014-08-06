@@ -11,44 +11,44 @@
 namespace NSTableViewBinding {
 	
 	
-	// Should subclass AppKit.NSMatrix
-	[Foundation.Register("NSForm")]
+	// Should subclass MonoMac.AppKit.NSMatrix
+	[MonoMac.Foundation.Register("NSForm")]
 	public partial class NSForm {
 	}
 	
-	// Should subclass AppKit.NSWindow
-	[Foundation.Register("TestWindow")]
+	// Should subclass MonoMac.AppKit.NSWindow
+	[MonoMac.Foundation.Register("TestWindow")]
 	public partial class TestWindow {
 	}
 	
-	// Should subclass AppKit.NSWindowController
-	[Foundation.Register("TestWindowController")]
+	// Should subclass MonoMac.AppKit.NSWindowController
+	[MonoMac.Foundation.Register("TestWindowController")]
 	public partial class TestWindowController {
 		
-		private global::AppKit.NSButton __mt_addButton;
+		private global::MonoMac.AppKit.NSButton __mt_addButton;
 		
-		private global::AppKit.NSArrayController __mt_myContentArray;
+		private global::MonoMac.AppKit.NSArrayController __mt_myContentArray;
 		
-		private global::AppKit.NSForm __mt_myFormFields;
+		private global::MonoMac.AppKit.NSForm __mt_myFormFields;
 		
-		private global::AppKit.NSTableView __mt_myTableView;
+		private global::MonoMac.AppKit.NSTableView __mt_myTableView;
 		
-		private global::AppKit.NSButton __mt_removeButton;
+		private global::MonoMac.AppKit.NSButton __mt_removeButton;
 		
 		#pragma warning disable 0169
-		[Foundation.Export("add:")]
-		partial void add (AppKit.NSButton sender);
+		[MonoMac.Foundation.Export("add:")]
+		partial void add (MonoMac.AppKit.NSButton sender);
 
-		[Foundation.Export("inspect:")]
-		partial void inspect (Foundation.NSArray sender);
+		[MonoMac.Foundation.Export("inspect:")]
+		partial void inspect (MonoMac.Foundation.NSArray sender);
 
-		[Foundation.Export("remove:")]
-		partial void remove (AppKit.NSButton sender);
+		[MonoMac.Foundation.Export("remove:")]
+		partial void remove (MonoMac.AppKit.NSButton sender);
 
-		[Foundation.Connect("addButton")]
-		private global::AppKit.NSButton addButton {
+		[MonoMac.Foundation.Connect("addButton")]
+		private global::MonoMac.AppKit.NSButton addButton {
 			get {
-				this.__mt_addButton = ((global::AppKit.NSButton)(this.GetNativeField("addButton")));
+				this.__mt_addButton = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("addButton")));
 				return this.__mt_addButton;
 			}
 			set {
@@ -57,10 +57,10 @@ namespace NSTableViewBinding {
 			}
 		}
 		
-		[Foundation.Connect("myContentArray")]
-		private global::AppKit.NSArrayController myContentArray {
+		[MonoMac.Foundation.Connect("myContentArray")]
+		private global::MonoMac.AppKit.NSArrayController myContentArray {
 			get {
-				this.__mt_myContentArray = ((global::AppKit.NSArrayController)(this.GetNativeField("myContentArray")));
+				this.__mt_myContentArray = ((global::MonoMac.AppKit.NSArrayController)(this.GetNativeField("myContentArray")));
 				return this.__mt_myContentArray;
 			}
 			set {
@@ -69,10 +69,10 @@ namespace NSTableViewBinding {
 			}
 		}
 		
-		[Foundation.Connect("myFormFields")]
-		private global::AppKit.NSForm myFormFields {
+		[MonoMac.Foundation.Connect("myFormFields")]
+		private global::MonoMac.AppKit.NSForm myFormFields {
 			get {
-				this.__mt_myFormFields = ((global::AppKit.NSForm)(this.GetNativeField("myFormFields")));
+				this.__mt_myFormFields = ((global::MonoMac.AppKit.NSForm)(this.GetNativeField("myFormFields")));
 				return this.__mt_myFormFields;
 			}
 			set {
@@ -81,10 +81,10 @@ namespace NSTableViewBinding {
 			}
 		}
 		
-		[Foundation.Connect("myTableView")]
-		private global::AppKit.NSTableView myTableView {
+		[MonoMac.Foundation.Connect("myTableView")]
+		private global::MonoMac.AppKit.NSTableView myTableView {
 			get {
-				this.__mt_myTableView = ((global::AppKit.NSTableView)(this.GetNativeField("myTableView")));
+				this.__mt_myTableView = ((global::MonoMac.AppKit.NSTableView)(this.GetNativeField("myTableView")));
 				return this.__mt_myTableView;
 			}
 			set {
@@ -93,10 +93,10 @@ namespace NSTableViewBinding {
 			}
 		}
 		
-		[Foundation.Connect("removeButton")]
-		private global::AppKit.NSButton removeButton {
+		[MonoMac.Foundation.Connect("removeButton")]
+		private global::MonoMac.AppKit.NSButton removeButton {
 			get {
-				this.__mt_removeButton = ((global::AppKit.NSButton)(this.GetNativeField("removeButton")));
+				this.__mt_removeButton = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("removeButton")));
 				return this.__mt_removeButton;
 			}
 			set {

@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
-using Foundation;
-using AppKit;
-using ObjCRuntime;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.ObjCRuntime;
 
 namespace NSTableViewBinding
 {

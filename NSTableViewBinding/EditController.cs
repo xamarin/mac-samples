@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Foundation;
-using AppKit;
-using ObjCRuntime;
+using MonoMac.Foundation;
+using MonoMac.AppKit;
+using MonoMac.ObjCRuntime;
 
 namespace NSTableViewBinding
 {
-	public partial class EditController : AppKit.NSWindowController
+	public partial class EditController : MonoMac.AppKit.NSWindowController
 	{
 		
 		bool cancelled;
