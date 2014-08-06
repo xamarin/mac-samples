@@ -26,8 +26,8 @@
 
 using System;
 
-using MonoMac.Foundation;
-using MonoMac.CoreBluetooth;
+using Foundation;
+using CoreBluetooth;
 
 namespace Xamarin.HeartMonitor
 {
@@ -100,7 +100,7 @@ namespace Xamarin.HeartMonitor
 			}
 
 			Manager.ConnectPeripheral (Peripheral, new PeripheralConnectionOptions {
-				NotifyOnDisconnectionKey = true
+				NotifyOnDisconnection = true
 			});
 		}
 
@@ -183,7 +183,7 @@ namespace Xamarin.HeartMonitor
 			}
 			
 			OnHeartBeat ();
-			beatTimer = NSTimer.CreateScheduledTimer (60 / (double)CurrentHeartBeat.Rate, ScheduleBeatTimer);
+			beatTimer = NSTimer.CreateScheduledTimer (60 / (double)CurrentHeartBeat.Rate, delegate { ScheduleBeatTimer(); });
 		}
 		
 		unsafe void UpdateHeartRate (NSData hr)
