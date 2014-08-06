@@ -2,40 +2,40 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSTableViewBinding
 {
-	public partial class TestWindowController : MonoMac.AppKit.NSWindowController
+	public partial class TestWindowController : AppKit.NSWindowController
 	{
 		
-		internal static NSString FIRST_NAME = new NSString("firstname");
-		internal static NSString LAST_NAME = new NSString("lastname");
-		internal static NSString PHONE = new NSString("phone");
+		internal static NSString FIRST_NAME = new NSString ("firstname");
+		internal static NSString LAST_NAME = new NSString ("lastname");
+		internal static NSString PHONE = new NSString ("phone");
 		
 		EditController myEditController = null;
 		
-		internal static List<NSString> Keys = new List<NSString> { FIRST_NAME, LAST_NAME, PHONE};			
+		internal static List<NSString> Keys = new List<NSString> { FIRST_NAME, LAST_NAME, PHONE };
 		internal const int FIRST_NAME_IDX = 0;
 		internal const int LAST_NAME_IDX = 1;
 		internal const int PHONE_IDX = 2;
-		
+
 		#region Constructors
 
 		// Called when created from unmanaged code
-		public TestWindowController (IntPtr handle) : base(handle)
+		public TestWindowController (IntPtr handle) : base (handle)
 		{
 		}
 
 		// Called when created directly from a XIB file
-		[Export("initWithCoder:")]
-		public TestWindowController (NSCoder coder) : base(coder)
+		[Export ("initWithCoder:")]
+		public TestWindowController (NSCoder coder) : base (coder)
 		{
 		}
 
 		// Call to load from the XIB/NIB file
-		public TestWindowController () : base("TestWindow")
+		public TestWindowController () : base ("TestWindow")
 		{
 		}
 
@@ -45,9 +45,9 @@ namespace NSTableViewBinding
 		public new TestWindow Window {
 			get { return (TestWindow)base.Window; }
 		}
-		
+
 		#region Overrides
-		
+
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
@@ -90,14 +90,14 @@ namespace NSTableViewBinding
 				
 #if USE_BINDINGS_BY_CODE
 			
-			NSTableColumn firstNameColumn = myTableView.FindTableColumn(FIRST_NAME);
-			firstNameColumn.Bind("value",myContentArray,"arrangedObjects.firstname",null);
+			NSTableColumn firstNameColumn = myTableView.FindTableColumn (FIRST_NAME);
+			firstNameColumn.Bind ("value", myContentArray, "arrangedObjects.firstname", null);
 
-			NSTableColumn lastNameColumn = myTableView.FindTableColumn(LAST_NAME);
-			lastNameColumn.Bind("value",myContentArray,"arrangedObjects.lastname",null);
+			NSTableColumn lastNameColumn = myTableView.FindTableColumn (LAST_NAME);
+			lastNameColumn.Bind ("value", myContentArray, "arrangedObjects.lastname", null);
 
-			NSTableColumn phoneColumn = myTableView.FindTableColumn(PHONE);
-			phoneColumn.Bind("value",myContentArray,"arrangedObjects.phone",null);
+			NSTableColumn phoneColumn = myTableView.FindTableColumn (PHONE);
+			phoneColumn.Bind ("value", myContentArray, "arrangedObjects.phone", null);
 
 #endif
 			
@@ -121,18 +121,20 @@ namespace NSTableViewBinding
 #if USE_BINDINGS_BY_CODE
 	
 			
-			List<NSObject> doubleClickObjects = new List<NSObject> {new NSString("inspect:"),
-																	NSNumber.FromBoolean(true),
-																	NSNumber.FromBoolean(true)};
+			List<NSObject> doubleClickObjects = new List<NSObject> {new NSString ("inspect:"),
+				NSNumber.FromBoolean (true),
+				NSNumber.FromBoolean (true)
+			};
 			
-			List<NSString> doubleClickKeys = new List<NSString> {new NSString("NSSelectorName"),
-																	new NSString("NSConditionallySetsHidden"),
-																	new NSString("NSRaisesForNotApplicableKeys")};
+			List<NSString> doubleClickKeys = new List<NSString> {new NSString ("NSSelectorName"),
+				new NSString ("NSConditionallySetsHidden"),
+				new NSString ("NSRaisesForNotApplicableKeys")
+			};
 			
-			NSDictionary doubleClickOptionsDict = NSDictionary.FromObjectsAndKeys(doubleClickObjects.ToArray(),doubleClickKeys.ToArray());
+			NSDictionary doubleClickOptionsDict = NSDictionary.FromObjectsAndKeys (doubleClickObjects.ToArray (), doubleClickKeys.ToArray ());
 			
-			myTableView.Bind("doubleClickArgument",myContentArray,"selectedObjects",doubleClickOptionsDict);
-			myTableView.Bind("doubleClickTarget",this,"self",doubleClickOptionsDict);
+			myTableView.Bind ("doubleClickArgument", myContentArray, "selectedObjects", doubleClickOptionsDict);
+			myTableView.Bind ("doubleClickTarget", this, "self", doubleClickOptionsDict);
 			
 #endif
 			
@@ -152,13 +154,13 @@ namespace NSTableViewBinding
 			// or do bindings by code:
 #if USE_BINDINGS_BY_CODE
 			
-			List<NSObject> enableOptionsObjects = new List<NSObject> {NSNumber.FromBoolean(true)};
+			List<NSObject> enableOptionsObjects = new List<NSObject> { NSNumber.FromBoolean (true) };
 			
-			List<NSString> enableOptionsKeys = new List<NSString> {new NSString("NSRaisesForNotApplicableKeys")};
+			List<NSString> enableOptionsKeys = new List<NSString> { new NSString ("NSRaisesForNotApplicableKeys") };
 			
-			NSDictionary enableOptionsDict = NSDictionary.FromObjectsAndKeys(enableOptionsObjects.ToArray(),enableOptionsKeys.ToArray());
-			addButton.Bind("enabled",myContentArray,"canAdd",enableOptionsDict);
-			removeButton.Bind("enabled",myContentArray,"canRemove",enableOptionsDict);
+			NSDictionary enableOptionsDict = NSDictionary.FromObjectsAndKeys (enableOptionsObjects.ToArray (), enableOptionsKeys.ToArray ());
+			addButton.Bind ("enabled", myContentArray, "canAdd", enableOptionsDict);
+			removeButton.Bind ("enabled", myContentArray, "canRemove", enableOptionsDict);
 						
 #endif			
 			// the NSForm's text fields is bound to the current selection in the NSTableView's content array controller,
@@ -173,91 +175,90 @@ namespace NSTableViewBinding
 			// or do bindings by code:
 #if USE_BINDINGS_BY_CODE
 
-			List<NSObject> valueOptionsObjects = new List<NSObject> {NSNumber.FromBoolean(true),
-																		NSNumber.FromBoolean(true),
-																		NSNumber.FromBoolean(true)};
+			List<NSObject> valueOptionsObjects = new List<NSObject> {NSNumber.FromBoolean (true),
+				NSNumber.FromBoolean (true),
+				NSNumber.FromBoolean (true)
+			};
 			
-			List<NSString> valueOptionsKeys = new List<NSString> {new NSString("NSAllowsEditingMultipleValuesSelection"),
-																	new NSString("NSConditionallySetsEditable"),
-																	new NSString("NSRaisesForNotApplicableKeys")};
+			List<NSString> valueOptionsKeys = new List<NSString> {new NSString ("NSAllowsEditingMultipleValuesSelection"),
+				new NSString ("NSConditionallySetsEditable"),
+				new NSString ("NSRaisesForNotApplicableKeys")
+			};
 			
-			NSDictionary valueOptionsDict = NSDictionary.FromObjectsAndKeys(valueOptionsObjects.ToArray(),valueOptionsKeys.ToArray());
+			NSDictionary valueOptionsDict = NSDictionary.FromObjectsAndKeys (valueOptionsObjects.ToArray (), valueOptionsKeys.ToArray ());
 	
-			myFormFields.CellAtIndex(FIRST_NAME_IDX).Bind("value",myContentArray,"selection.firstname",valueOptionsDict);
-			myFormFields.CellAtIndex(LAST_NAME_IDX).Bind("value",myContentArray,"selection.lastname",valueOptionsDict);
-			myFormFields.CellAtIndex(PHONE_IDX).Bind("value",myContentArray,"selection.phone",valueOptionsDict);
+			myFormFields.CellAtIndex (FIRST_NAME_IDX).Bind ("value", myContentArray, "selection.firstname", valueOptionsDict);
+			myFormFields.CellAtIndex (LAST_NAME_IDX).Bind ("value", myContentArray, "selection.lastname", valueOptionsDict);
+			myFormFields.CellAtIndex (PHONE_IDX).Bind ("value", myContentArray, "selection.phone", valueOptionsDict);
 			
 					
 #endif
 			// start listening for selection changes in our NSTableView's array controller
-			myContentArray.AddObserver(this,new NSString("selectionIndexes"),NSKeyValueObservingOptions.New,IntPtr.Zero);
+			myContentArray.AddObserver (this, new NSString ("selectionIndexes"), NSKeyValueObservingOptions.New, IntPtr.Zero);
 			
 			// finally, add the first record in the table as a default value.
 			//
 			// note: to allow the external NSForm fields to alter the table view selection through the "value" bindings,
 			// added objects to the content array needs to be an "NSMutableDictionary" -
 			//
-			List<NSString> objects = new List<NSString> {new NSString("John"),
-														new NSString("Doe"),
-														new NSString("(333) 333-3333)")};
+			List<NSString> objects = new List<NSString> {new NSString ("John"),
+				new NSString ("Doe"),
+				new NSString ("(333) 333-3333)")
+			};
 
-			var dict = NSMutableDictionary.FromObjectsAndKeys(objects.ToArray(), Keys.ToArray());
-			myContentArray.AddObject(dict);
+			var dict = NSMutableDictionary.FromObjectsAndKeys (objects.ToArray (), Keys.ToArray ());
+			myContentArray.AddObject (dict);
 			
 		}
-		
+
 		#endregion
-		
-		// 
+
+		//
 		// Inspect our selected objects (user double-clicked them).
-		// 
+		//
 		// Note: this method will not get called until you make all columns in the table
 		// as "non-editable".  So long as they are editable, double clicking a row will
 		// cause the current cell to be editied.
-		// 
+		//
 		partial void inspect (NSArray sender)
 		{
 			NSArray selectedObjects = sender;
-			Console.WriteLine("inspect");
-			
-			int index;
-			uint numItems = selectedObjects.Count;
-			for (index = 0; index < numItems; index++)
-			{
-				NSDictionary objectDict =  new NSDictionary(selectedObjects.ValueAt(0));
+			Console.WriteLine ("inspect");
 
-				if (objectDict != null)
-				{
-					Console.WriteLine(string.Format("inspector item: [ {0} {1}, {2} ]",
-					                                (NSString)objectDict[FIRST_NAME].ToString(),
-					                                (NSString)objectDict[LAST_NAME].ToString(),
-					                                (NSString)objectDict[PHONE].ToString()));
+			var numItems = selectedObjects.Count;
+			for (nuint index = 0; index < numItems; index++) {
+				NSDictionary objectDict = new NSDictionary (selectedObjects.ValueAt (0));
+
+				if (objectDict != null) {
+					Console.WriteLine (string.Format ("inspector item: [ {0} {1}, {2} ]",
+						(NSString)objectDict [FIRST_NAME].ToString (),
+						(NSString)objectDict [LAST_NAME].ToString (),
+						(NSString)objectDict [PHONE].ToString ()));
 				}
 				
 				// setup the edit sheet controller if one hasn't been setup already
 				if (myEditController == null)
-					myEditController = new EditController();
+					myEditController = new EditController ();
 				
 				// remember which selection index we are changing
 				int savedSelectionIndex = myContentArray.SelectionIndex;
 				
-				NSDictionary editItem =  new NSDictionary(selectedObjects.ValueAt(0));
+				NSDictionary editItem = new NSDictionary (selectedObjects.ValueAt (0));
 				
 				// get the current selected object and start the edit sheet
-				NSMutableDictionary newValues = myEditController.edit(editItem, this);
+				NSMutableDictionary newValues = myEditController.edit (editItem, this);
 
-				if (!myEditController.Cancelled)
-				{
+				if (!myEditController.Cancelled) {
 					// remove the current selection and replace it with the newly edited one
 					var currentObjects = myContentArray.SelectedObjects;
-					myContentArray.Remove(currentObjects);
+					myContentArray.Remove (currentObjects);
 					
 					// make sure to add the new entry at the same selection location as before
-					myContentArray.Insert(newValues,savedSelectionIndex);
+					myContentArray.Insert (newValues, savedSelectionIndex);
 				}
 			}
 		}
-		
+
 		/// <summary>
 		/// This method demonstrates how to observe selection changes in our NSTableView's array controller
 		/// </summary>
@@ -273,16 +274,15 @@ namespace NSTableViewBinding
 		/// <param name="context">
 		/// A <see cref="IntPtr"/>
 		/// </param>
-		[Export("observeValueForKeyPath:ofObject:change:context:")]
-		private void observeValueForKeyPath(NSString keyPath, NSArrayController ofObject, NSDictionary change, IntPtr context)
+		[Export ("observeValueForKeyPath:ofObject:change:context:")]
+		private void observeValueForKeyPath (NSString keyPath, NSArrayController ofObject, NSDictionary change, IntPtr context)
 		{
-			Console.Write(String.Format("Table selection changed: keyPath = {0} : ",
-			                                keyPath.ToString()));
-			for(uint idx = 0; idx < ofObject.SelectionIndexes.Count; idx++)
-			{
-				Console.Write(ofObject.SelectionIndexes.IndexGreaterThanOrEqual(idx) + " ");
+			Console.Write (String.Format ("Table selection changed: keyPath = {0} : ",
+				keyPath.ToString ()));
+			for (uint idx = 0; idx < ofObject.SelectionIndexes.Count; idx++) {
+				Console.Write (ofObject.SelectionIndexes.IndexGreaterThanOrEqual (idx) + " ");
 			}
-			Console.WriteLine();
+			Console.WriteLine ();
 		}
 
 		/// <summary>
@@ -293,20 +293,19 @@ namespace NSTableViewBinding
 		/// </param>
 		partial void add (NSButton sender)
 		{
-				// setup the edit sheet controller if one hasn't been setup already
-				if (myEditController == null)
-					myEditController = new EditController();
+			// setup the edit sheet controller if one hasn't been setup already
+			if (myEditController == null)
+				myEditController = new EditController ();
 				
-				// ask our edit sheet for information on the record we want to add
-				NSMutableDictionary newValues = myEditController.edit(null, this);
+			// ask our edit sheet for information on the record we want to add
+			NSMutableDictionary newValues = myEditController.edit (null, this);
 
-				if (!myEditController.Cancelled)
-				{
-					// add the new entry
-					myContentArray.AddObject(newValues);
-				}			
+			if (!myEditController.Cancelled) {
+				// add the new entry
+				myContentArray.AddObject (newValues);
+			}			
 		}
-		
+
 		/// <summary>
 		/// Remove an entry.
 		/// </summary>
@@ -315,7 +314,7 @@ namespace NSTableViewBinding
 		/// </param>
 		partial void remove (NSButton sender)
 		{
-			myContentArray.RemoveAt(myContentArray.SelectionIndex);
+			myContentArray.RemoveAt (myContentArray.SelectionIndex);
 		}
 	}
 }

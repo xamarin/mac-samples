@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSTableViewBinding
 {
-	public partial class TestWindow : MonoMac.AppKit.NSWindow
+	public partial class TestWindow : AppKit.NSWindow
 	{
 		// Called when created from unmanaged code
 		public TestWindow (IntPtr handle) : base(handle)
