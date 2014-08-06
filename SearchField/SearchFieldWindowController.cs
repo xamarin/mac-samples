@@ -2,13 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+using Foundation;
+using AppKit;
+using ObjCRuntime;
 
 namespace SearchField
 {
-	public partial class SearchFieldWindowController : MonoMac.AppKit.NSWindowController
+	public partial class SearchFieldWindowController : AppKit.NSWindowController
 	{
 		
 		// Search menu template tags. Special items in the search menu are tagged so when the actual dynamic search menu is constructed, we know which items to show or hide.
