@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace NSTextViewSample
@@ -13,16 +13,16 @@ namespace NSTextViewSample
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSToolbarItem insertCatToolbarItem { get; set; }
+		AppKit.NSToolbarItem insertCatToolbarItem { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSToolbarItem insertCustomCatToolbarItem { get; set; }
+		AppKit.NSToolbarItem insertCustomCatToolbarItem { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextView textView { get; set; }
+		AppKit.NSTextView textView { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSToolbar toolbar { get; set; }
+		AppKit.NSToolbar toolbar { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
