@@ -36,10 +36,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreGraphics;
+using OpenGL;
 
 namespace NeHeLesson8
 {
@@ -50,7 +50,7 @@ namespace NeHeLesson8
 		// Storage for 3 textures
 		int[] pboId = new int[3];
 		byte[] data;
-		int width, height;
+		nint width, height;
 
 		private Texture () : base()
 		{
@@ -72,7 +72,7 @@ namespace NeHeLesson8
 
 			src = new NSImage (path);
 
-			var rect = RectangleF.Empty;
+			var rect = CGRect.Empty;
 			image = src.AsCGImage (ref rect, null, null);
 			width = image.Width;
 			height = image.Height;
@@ -81,7 +81,7 @@ namespace NeHeLesson8
 
 			CGImageAlphaInfo ai = CGImageAlphaInfo.PremultipliedLast;
 
-			context = new CGBitmapContext (data, width, height, 8, 4 * width, image.ColorSpace, ai);
+			context = new CGBitmapContext (data, (int)width, (int)height, 8, 4 * (int)width, image.ColorSpace, ai);
 
 			// Core Graphics referential is upside-down compared to OpenGL referential
 			// Flip the Core Graphics context here
@@ -93,7 +93,7 @@ namespace NeHeLesson8
 			// This avoids unnecessary blending.
 			context.SetBlendMode (CGBlendMode.Copy);
 
-			context.DrawImage (new RectangleF (0, 0, width, height), image);
+			context.DrawImage (new CGRect (0, 0, width, height), image);
 		}
 
 		void LoadTexture0 ()
@@ -119,7 +119,7 @@ namespace NeHeLesson8
 
 			// OpenGL likes the GL_BGRA + GL_UNSIGNED_INT_8_8_8_8_REV combination
 			// Use offset instead of pointer to indictate that we want to use data copied from a PBO 
-			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
+			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, (int)width, (int)height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
 			//data = null;
 
 			GL.BindTexture (TextureTarget.Texture2D, 0);
@@ -147,7 +147,7 @@ namespace NeHeLesson8
 
 			// OpenGL likes the GL_BGRA + GL_UNSIGNED_INT_8_8_8_8_REV combination
 			// Use offset instead of pointer to indictate that we want to use data copied from a PBO 
-			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
+			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, (int)width, (int)height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
 			//data = null;
 
 			GL.BindTexture (TextureTarget.Texture2D, texId [1]);
@@ -176,7 +176,7 @@ namespace NeHeLesson8
 
 			// OpenGL likes the GL_BGRA + GL_UNSIGNED_INT_8_8_8_8_REV combination
 			// Use offset instead of pointer to indictate that we want to use data copied from a PBO 
-			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
+			GL.TexImage2D (TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, (int)width, (int)height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, IntPtr.Zero);
 			data = null;
 
 			GL.BindTexture (TextureTarget.Texture2D, texId [2]);

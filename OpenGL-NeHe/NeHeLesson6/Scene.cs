@@ -32,32 +32,39 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
+using System.Collections.Generic;
+
+using AppKit;
+using OpenGL;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson6
 {
 	public class Scene : NSObject
 	{
 
-		Texture texture;		// Texture ( NEW )
-		int textureName;		// Texture Id ( NEW )
+		Texture texture;
+		// Texture ( NEW )
+		int textureName;
+		// Texture Id ( NEW )
 
-		float	xrot;			// X Rotation ( NEW )
-		float	yrot;			// Y Rotation ( NEW )
-		float	zrot;			// Z Rotation ( NEW )
+		float	xrot;
+		// X Rotation ( NEW )
+		float	yrot;
+		// Y Rotation ( NEW )
+		float	zrot;
+		// Z Rotation ( NEW )
 
-		public Scene () : base()
+		public Scene () : base ()
 		{
 		}
 
-		// Resize And Initialize The GL Window 
+		// Resize And Initialize The GL Window
 		//      - See also the method in the MyOpenGLView Constructor about the NSView.NSViewGlobalFrameDidChangeNotification
-		public void ResizeGLScene (RectangleF bounds)
+		public void ResizeGLScene (CGRect bounds)
 		{
 			// Reset The Current Viewport
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);
@@ -81,7 +88,8 @@ namespace NeHeLesson6
 		public static void Perspective (double fovY, double aspectRatio, double front, double back)
 		{
 			const
-			double DEG2RAD = Math.PI / 180 ; 
+			double
+			DEG2RAD = Math.PI / 180; 
 
 			// tangent of half fovY
 			double tangent = Math.Tan (fovY / 2 * DEG2RAD);
@@ -98,7 +106,7 @@ namespace NeHeLesson6
 
 		// This method renders our scene.
 		// The main thing to note is that we've factored the drawing code out of the NSView subclass so that
-		// the full-screen and non-fullscreen views share the same states for rendering 
+		// the full-screen and non-fullscreen views share the same states for rendering
 		public bool DrawGLScene ()
 		{
 			// Clear The Screen And The Depth Buffer
@@ -128,60 +136,60 @@ namespace NeHeLesson6
 			GL.BindTexture (TextureTarget.Texture2D, textureName);
 
 			GL.Begin (BeginMode.Quads);				// Start Drawing Cube
-				// Front Face
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Left Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (1.0f, 1.0f, 1.0f);	// Top Right Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (-1.0f, 1.0f, 1.0f);	// Top Left Of The Texture and Quad
-				// Back Face
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Bottom Right Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Right Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Left Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Bottom Left Of The Texture and Quad
-				// Top Face
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Left Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (-1.0f, 1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (1.0f, 1.0f, 1.0f);		// Bottom Right Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Right Of The Texture and Quad
-				// Bottom Face
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Top Right Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Top Left Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (1.0f, -1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
-				// Right face
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Bottom Right Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Right Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (1.0f, 1.0f, 1.0f);		// Top Left Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (1.0f, -1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
-				// Left Face
-				GL.TexCoord2 (0.0f, 0.0f);
-				GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Bottom Left Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 0.0f);
-				GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
-				GL.TexCoord2 (1.0f, 1.0f);
-				GL.Vertex3 (-1.0f, 1.0f, 1.0f);		// Top Right Of The Texture and Quad
-				GL.TexCoord2 (0.0f, 1.0f);
-				GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Left Of The Texture and Quad			
+			// Front Face
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Left Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (1.0f, 1.0f, 1.0f);	// Top Right Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (-1.0f, 1.0f, 1.0f);	// Top Left Of The Texture and Quad
+			// Back Face
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Bottom Right Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Right Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Left Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Bottom Left Of The Texture and Quad
+			// Top Face
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Left Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (-1.0f, 1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (1.0f, 1.0f, 1.0f);		// Bottom Right Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Right Of The Texture and Quad
+			// Bottom Face
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Top Right Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Top Left Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (1.0f, -1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
+			// Right face
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (1.0f, -1.0f, -1.0f);	// Bottom Right Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (1.0f, 1.0f, -1.0f);		// Top Right Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (1.0f, 1.0f, 1.0f);		// Top Left Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (1.0f, -1.0f, 1.0f);		// Bottom Left Of The Texture and Quad
+			// Left Face
+			GL.TexCoord2 (0.0f, 0.0f);
+			GL.Vertex3 (-1.0f, -1.0f, -1.0f);	// Bottom Left Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 0.0f);
+			GL.Vertex3 (-1.0f, -1.0f, 1.0f);	// Bottom Right Of The Texture and Quad
+			GL.TexCoord2 (1.0f, 1.0f);
+			GL.Vertex3 (-1.0f, 1.0f, 1.0f);		// Top Right Of The Texture and Quad
+			GL.TexCoord2 (0.0f, 1.0f);
+			GL.Vertex3 (-1.0f, 1.0f, -1.0f);	// Top Left Of The Texture and Quad			
 
 			GL.End ();						// Done Drawing the Cube
 

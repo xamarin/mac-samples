@@ -34,9 +34,10 @@
 using System;
 using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
+using AppKit;
+using OpenGL;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson9
 {
@@ -84,7 +85,7 @@ namespace NeHeLesson9
 		float spin;
 		Random rng = new Random ((int)DateTime.Now.Ticks);
 
-		public Scene () : base()
+		public Scene () : base ()
 		{
 			InitStars ();
 		}
@@ -97,9 +98,9 @@ namespace NeHeLesson9
 				stars [loop] = new star (nc, ((float)loop / num) * 5, 0);
 			}
 		}
-		// Resize And Initialize The GL Window 
+		// Resize And Initialize The GL Window
 		//      - See also the method in the MyOpenGLView Constructor about the NSView.NSViewGlobalFrameDidChangeNotification
-		public void ResizeGLScene (RectangleF bounds)
+		public void ResizeGLScene (CGRect bounds)
 		{
 			// Reset The Current Viewport
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);
@@ -123,7 +124,8 @@ namespace NeHeLesson9
 		public static void Perspective (double fovY, double aspectRatio, double front, double back)
 		{
 			const
-			double DEG2RAD = Math.PI / 180 ; 
+			double
+			DEG2RAD = Math.PI / 180; 
 
 			// tangent of half fovY
 			double tangent = Math.Tan (fovY / 2 * DEG2RAD);
@@ -140,7 +142,7 @@ namespace NeHeLesson9
 
 		// This method renders our scene and where all of your drawing code will go.
 		// The main thing to note is that we've factored the drawing code out of the NSView subclass so that
-		// the full-screen and non-fullscreen views share the same states for rendering 
+		// the full-screen and non-fullscreen views share the same states for rendering
 		public bool DrawGLScene ()
 		{
 			// Clear The Screen And The Depth Buffer
@@ -200,14 +202,14 @@ namespace NeHeLesson9
 
 				GL.Begin (BeginMode.Quads);
 
-					GL.TexCoord2 (0.0f, 0.0f);
-					GL.Vertex3 (-1.0f, -1.0f, 0.0f);
-					GL.TexCoord2 (1.0f, 0.0f);
-					GL.Vertex3 (1.0f, -1.0f, 0.0f);
-					GL.TexCoord2 (1.0f, 1.0f);
-					GL.Vertex3 (1.0f, 1.0f, 0.0f);
-					GL.TexCoord2 (0.0f, 1.0f);
-					GL.Vertex3 (-1.0f, 1.0f, 0.0f);
+				GL.TexCoord2 (0.0f, 0.0f);
+				GL.Vertex3 (-1.0f, -1.0f, 0.0f);
+				GL.TexCoord2 (1.0f, 0.0f);
+				GL.Vertex3 (1.0f, -1.0f, 0.0f);
+				GL.TexCoord2 (1.0f, 1.0f);
+				GL.Vertex3 (1.0f, 1.0f, 0.0f);
+				GL.TexCoord2 (0.0f, 1.0f);
+				GL.Vertex3 (-1.0f, 1.0f, 0.0f);
 
 				GL.End ();
 

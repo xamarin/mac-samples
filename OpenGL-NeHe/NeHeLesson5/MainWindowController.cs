@@ -1,40 +1,39 @@
-
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson5
 {
-        public partial class MainWindowController : MonoMac.AppKit.NSWindowController
-        {
+	public partial class MainWindowController : AppKit.NSWindowController
+	{
+		bool isInFullScreenMode;
 
-                bool isInFullScreenMode;
+		// full-screen mode
+		NSWindow fullScreenWindow;
+		MyOpenGLView fullScreenView;
 
-                // full-screen mode
-                NSWindow fullScreenWindow;
-                MyOpenGLView fullScreenView;
-
-                Scene scene;
+		Scene scene;
 		bool isAnimating;
 
-                #region Constructors
+		#region Constructors
 
-                // Call to load from the XIB/NIB file
-                public MainWindowController () : base("MainWindow")
-                {
+		// Call to load from the XIB/NIB file
+		public MainWindowController () : base ("MainWindow")
+		{
  
-                }
+		}
 
-                #endregion
+		#endregion
 
-                //strongly typed window accessor
-                public new MainWindow Window {
-                        get { return (MainWindow)base.Window; }
-                }
+		//strongly typed window accessor
+		public new MainWindow Window {
+			get { return (MainWindow)base.Window; }
+		}
 
 		public override void AwakeFromNib ()
 		{
@@ -60,8 +59,8 @@ namespace NeHeLesson5
 			// Pause the non-fullscreen view
 			openGLView.StopAnimation ();
 			
-			RectangleF mainDisplayRect;
-			RectangleF viewRect;
+			CGRect mainDisplayRect;
+			CGRect viewRect;
 			
 			// Create a screen-sized window on the display you want to take over
 			// Note, mainDisplayRect has a non-zero origin if the key window is on a secondary display
@@ -79,7 +78,7 @@ namespace NeHeLesson5
 			// Create a view with a double-buffered OpenGL context and attach it to the window
 			// By specifying the non-fullscreen context as the shareContext, we automatically inherit the 
 			// OpenGL objects (textures, etc) it has defined
-			viewRect = new RectangleF (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
+			viewRect = new CGRect (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
 			
 			fullScreenView = new MyOpenGLView (viewRect, openGLView.OpenGLContext);
 			fullScreenWindow.ContentView = fullScreenView;
@@ -153,36 +152,36 @@ namespace NeHeLesson5
 			isAnimating = false;
 		}
 
-                public override void KeyDown (NSEvent theEvent)
-                {
-                        var c = theEvent.CharactersIgnoringModifiers[0];
+		public override void KeyDown (NSEvent theEvent)
+		{
+			var c = theEvent.CharactersIgnoringModifiers [0];
                         
-                        switch (c) {
+			switch (c) {
                         
-                        // [Esc] exits full-screen mode
-                        case (char)27:
-                                if (isInFullScreenMode)
-                                        goWindow ();
-                                break;
-                        default:
-                                break;
+			// [Esc] exits full-screen mode
+			case (char)27:
+				if (isInFullScreenMode)
+					goWindow ();
+				break;
+			default:
+				break;
                                 
-                        }
-                }
+			}
+		}
   
-                // Accessor property for our scene object
-                public Scene Scene {
-                        get { return scene; }
-                }
-                
-                public void toggleFullScreen ( NSObject sender )
-                {
-                        if (!isInFullScreenMode)
-                                goFullScreen(sender);
-                        else
-                                goWindow();
-                }
+		// Accessor property for our scene object
+		public Scene Scene {
+			get { return scene; }
+		}
 
-        }
+		public void toggleFullScreen (NSObject sender)
+		{
+			if (!isInFullScreenMode)
+				goFullScreen (sender);
+			else
+				goWindow ();
+		}
+
+	}
 }
 
