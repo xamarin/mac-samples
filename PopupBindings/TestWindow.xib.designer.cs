@@ -11,24 +11,24 @@
 namespace PopupBindings {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("TestWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("TestWindow")]
 	public partial class TestWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("TestWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("TestWindowController")]
 	public partial class TestWindowController {
 		
-		private global::MonoMac.AppKit.NSArrayController __mt_arrayController;
+		private global::AppKit.NSArrayController __mt_arrayController;
 		
-		private global::MonoMac.Foundation.NSObject __mt_name;
+		private global::Foundation.NSObject __mt_name;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Connect("arrayController")]
-		private global::MonoMac.AppKit.NSArrayController arrayController {
+		[Foundation.Connect("arrayController")]
+		private global::AppKit.NSArrayController arrayController {
 			get {
-				this.__mt_arrayController = ((global::MonoMac.AppKit.NSArrayController)(this.GetNativeField("arrayController")));
+				this.__mt_arrayController = ((global::AppKit.NSArrayController)(this.GetNativeField("arrayController")));
 				return this.__mt_arrayController;
 			}
 			set {
@@ -37,10 +37,10 @@ namespace PopupBindings {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("name")]
-		private global::MonoMac.Foundation.NSObject name {
+		[Foundation.Connect("name")]
+		private global::Foundation.NSObject name {
 			get {
-				this.__mt_name = ((global::MonoMac.Foundation.NSObject)(this.GetNativeField("name")));
+				this.__mt_name = ((global::Foundation.NSObject)(this.GetNativeField("name")));
 				return this.__mt_name;
 			}
 			set {
