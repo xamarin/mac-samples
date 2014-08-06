@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreLocation;
-using MonoMac.WebKit;
+using Foundation;
+using AppKit;
+using CoreLocation;
+using WebKit;
 using System.IO;
 
 namespace WhereIsMyMac
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController {		   
+	public partial class MainWindowController : AppKit.NSWindowController {		   
 		CLLocationManager locationManager;
 		
 		// Called when created from unmanaged code
@@ -37,7 +37,7 @@ namespace WhereIsMyMac
 			locationManager.StartUpdatingLocation();
 		}
 
-		void HandleLocationManagerFailed (object sender, MonoMac.Foundation.NSErrorEventArgs e)
+		void HandleLocationManagerFailed (object sender, Foundation.NSErrorEventArgs e)
 		{
 			Console.WriteLine ("Failed");
 		}
