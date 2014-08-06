@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace OutlineView
 {
@@ -12,10 +12,10 @@ namespace OutlineView
 	partial class AppDelegate
 	{
 		[Action ("OpenFile:")]
-		partial void OpenFile (MonoMac.AppKit.NSMenuItem sender);
+		partial void OpenFile (AppKit.NSMenuItem sender);
 
 		[Action ("TestOutlineViewWindow:")]
-		partial void TestOutlineViewWindow (MonoMac.AppKit.NSMenuItem sender);
+		partial void TestOutlineViewWindow (AppKit.NSMenuItem sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
