@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
+using Foundation;
+using AppKit;
+using SceneKit;
 
 namespace SceneKitViewer {
 	[Register ("SceneView")]
@@ -40,9 +40,7 @@ namespace SceneKitViewer {
 
 		public void LoadScene (string path)
 		{
-			NSError error;
-
-			Scene = SCNScene.FromUrl (new NSUrl ("file://" + path), null, out error);
+			Scene = SCNScene.FromFile ("scene");
 		}
 	}
 }
