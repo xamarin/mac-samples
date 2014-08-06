@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace Test_Hello_Mac
 {
@@ -12,10 +12,10 @@ namespace Test_Hello_Mac
 	partial class MainWindow
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField OutputLabel { get; set; }
+		AppKit.NSTextField OutputLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton ClickMeButton { get; set; }
+		AppKit.NSButton ClickMeButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
