@@ -1,9 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using System.Collections.Generic;
+
+using AppKit;
+using Foundation;
+using CoreGraphics;
 
 namespace Rulers
 {
@@ -11,7 +12,7 @@ namespace Rulers
 	/// <summary>
 	/// RectsView is the ruler view's client in this test app. It tries to handle most ruler operations.
 	/// </summary>
-	public partial class RectsView : MonoMac.AppKit.NSView
+	public partial class RectsView : AppKit.NSView
 	{
 		// First time control variable
 		static bool beenHere = false;
@@ -77,15 +78,15 @@ namespace Rulers
 			
 			// Moved from the initWithFrame constructor because it was giving a 
 			// not initialized correctly message.
-			RectangleF aRect;
+			CGRect aRect;
 			ColorRect firstRect;
 			
-			SetBoundsOrigin (new PointF (-108.0f,-108.0f));
+			SetBoundsOrigin (new CGPoint (-108.0f,-108.0f));
 			
 			rects = new List<ColorRect> ();
 			selectedItem = null;
 			
-			aRect = new RectangleF (30.0f, 45.0f, 57.0f, 118.0f);
+			aRect = new CGRect (30.0f, 45.0f, 57.0f, 118.0f);
 			firstRect = new ColorRect (aRect, NSColor.Blue);
 			rects.Add (firstRect);                          
 
@@ -150,7 +151,7 @@ namespace Rulers
 			}
 		}
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			NSColor.White.Set ();
 			NSGraphics.RectFill (dirtyRect);
@@ -162,16 +163,16 @@ namespace Rulers
 			
 			// draw a little cross in our view
 			NSColor.Black.Set ();
-			NSBezierPath.StrokeLine (new PointF (-10.0f,0.0f), new PointF (10.0f,0.0f));
-			NSBezierPath.StrokeLine (new PointF (0.0f,-10.0f), new PointF (0.0f,10.0f));
+			NSBezierPath.StrokeLine (new CGPoint (-10.0f,0.0f), new CGPoint (10.0f,0.0f));
+			NSBezierPath.StrokeLine (new CGPoint (0.0f,-10.0f), new CGPoint (0.0f,10.0f));
 		}		
 		
 		public override void MouseDown (NSEvent theEvent)
 		{
 			ColorRect oldSelectedItem = selectedItem;
 			ColorRect thisRect;
-			PointF mouseLoc = PointF.Empty;
-			PointF mouseOffset = PointF.Empty;
+			CGPoint mouseLoc = CGPoint.Empty;
+			CGPoint mouseOffset = CGPoint.Empty;
 			NSEventMask eventMask;
 			bool dragged = false;
 			bool timerOn = false;
@@ -214,7 +215,7 @@ namespace Rulers
 						| NSEventMask.Periodic;
 			
 			while (theEvent != null) {
-				RectangleF visibleRect = VisibleRect ();
+				CGRect visibleRect = VisibleRect ();
 				
 				switch (theEvent.Type){					
 				case NSEventType.Periodic:
@@ -285,8 +286,8 @@ namespace Rulers
 		
 		partial void zoomIn (NSObject sender)
 		{
-			RectangleF tempRect;
-			RectangleF oldBounds;
+			CGRect tempRect;
+			CGRect oldBounds;
 			NSScrollView scrollView = this.EnclosingScrollView;
 			
 			oldBounds = Bounds;
@@ -308,8 +309,8 @@ namespace Rulers
 		
 		partial void zoomOut (NSObject sender)
 		{
-			RectangleF tempRect;
-			RectangleF oldBounds;
+			CGRect tempRect;
+			CGRect oldBounds;
 			NSScrollView scrollView = EnclosingScrollView;
 			
 			oldBounds = Bounds;
@@ -353,16 +354,16 @@ namespace Rulers
 			if (Superview is NestleView)
 				enclosingScrollView.DocumentView = this;
 			else {
-				RectangleF nFrame, rFrame;
+				CGRect nFrame, rFrame;
 				NestleView nestleView;
 				
 				rFrame = Frame;
-				nFrame = new RectangleF(0.0f, 0.0f, rFrame.Width + 64.0f, rFrame.Height + 64.0f);
+				nFrame = new CGRect(0.0f, 0.0f, rFrame.Width + 64.0f, rFrame.Height + 64.0f);
 				
 				nestleView = new NestleView (nFrame);
 
 				nestleView.AddSubview (this);
-				rFrame.Location = new PointF (32.0f, 32.0f);
+				rFrame.Location = new CGPoint (32.0f, 32.0f);
 				Frame = rFrame;
 				enclosingScrollView.DocumentView = nestleView;
 				
@@ -377,16 +378,16 @@ namespace Rulers
 		
 		#region Worker Methods
 		
-		private void moveSelectedItemWithEvent (NSEvent theEvent, PointF mouseOffset)
+		private void moveSelectedItemWithEvent (NSEvent theEvent, CGPoint mouseOffset)
 		{
-			RectangleF oldRect, newRect, bounds;
-			PointF mouseLoc;
+			CGRect oldRect, newRect, bounds;
+			CGPoint mouseLoc;
 			
 			mouseLoc = ConvertPointFromView (theEvent.LocationInWindow, null);
 			
 			bounds = Bounds;
 			oldRect = newRect = selectedItem.Frame;
-			newRect.Location = new PointF (mouseLoc.X - mouseOffset.X, mouseLoc.Y - mouseOffset.Y);
+			newRect.Location = new CGPoint (mouseLoc.X - mouseOffset.X, mouseLoc.Y - mouseOffset.Y);
 			
 			if (MinX (newRect) < MinX (bounds))
 				newRect.Location = setOriginX (newRect, MinX (bounds));
@@ -403,13 +404,13 @@ namespace Rulers
 			SetNeedsDisplayInRect (newRect);
 		}
 		
-		private void updateRulerLinesWithOldRect (RectangleF oldRect, RectangleF newRect)
+		private void updateRulerLinesWithOldRect (CGRect oldRect, CGRect newRect)
 		{
 			NSScrollView scrollView = EnclosingScrollView;
 			NSRulerView horizRuler;
 			NSRulerView vertRuler;
-			RectangleF convOldRect;
-			RectangleF convNewRect;
+			CGRect convOldRect;
+			CGRect convNewRect;
 			
 			if (scrollView == null) 
 				return;
@@ -434,7 +435,7 @@ namespace Rulers
 			}
 		}
 		
-		private void eraseRulerLinesWithRect (RectangleF aRect)
+		private void eraseRulerLinesWithRect (CGRect aRect)
 		{
 			NSScrollView scrollView = EnclosingScrollView;
 			NSRulerView horizRuler;
@@ -453,12 +454,12 @@ namespace Rulers
 				vertRuler.NeedsDisplay = true;
 		}
 		
-		private void drawRulerLinesWithRect(RectangleF aRect)
+		private void drawRulerLinesWithRect(CGRect aRect)
 		{
 			NSScrollView scrollView = EnclosingScrollView;
 			NSRulerView horizRuler;
 			NSRulerView vertRuler;
-			RectangleF convRect;
+			CGRect convRect;
 			
 			if (scrollView == null) 
 				return;
@@ -488,7 +489,7 @@ namespace Rulers
 			NSRulerView vertRuler;
 			NSView docView;
 			NSView clientView;
-			PointF zero = PointF.Empty;
+			CGPoint zero = CGPoint.Empty;
 			
 			docView = (NSView)scrollView.DocumentView;
 			clientView = this;
@@ -537,9 +538,9 @@ namespace Rulers
 			}
 			
 			leftMarker = new NSRulerMarker (horizRuler, MinX(selectedItem.Frame), 
-			                                leftImage, Point.Empty);
+			                                leftImage, CGPoint.Empty);
 			rightMarker = new NSRulerMarker (horizRuler, MaxX(selectedItem.Frame),
-			                                 rightImage, new PointF(7.0f,0.0f));
+			                                 rightImage, new CGPoint(7.0f,0.0f));
 			horizRuler.Markers = new NSRulerMarker[] { leftMarker, rightMarker };
 			
 			leftMarker.Removable = true;
@@ -554,8 +555,8 @@ namespace Rulers
 			
 			NSScrollView scrollView;
 			NSRulerView vertRuler = null;
-			PointF thePoint; 	/* Just a temporary scratch variable */
-			float location;
+			CGPoint thePoint; 	/* Just a temporary scratch variable */
+			nfloat location;
 			NSRulerMarker topMarker;
 			NSRulerMarker bottomMarker;
 			
@@ -582,7 +583,7 @@ namespace Rulers
 			else
 				location = MinY (selectedItem.Frame);	
 			
-			thePoint = new PointF (8.0f, 1.0f);
+			thePoint = new CGPoint (8.0f, 1.0f);
 			bottomMarker = new NSRulerMarker (vertRuler, location, bottomImage, thePoint);
 			bottomMarker.Removable = true;
 			bottomMarker.RepresentedObject = STR_BOTTOM_OBJ;
@@ -592,7 +593,7 @@ namespace Rulers
 			else
 				location = MaxY (selectedItem.Frame);	
 
-			thePoint = new PointF (8.0f, 8.0f);
+			thePoint = new CGPoint (8.0f, 8.0f);
 			
 			topMarker = new NSRulerMarker (vertRuler, location, topImage, thePoint);
 			topMarker.Removable = true;
@@ -626,8 +627,8 @@ namespace Rulers
 			NSRulerView horizRuler;
 			NSRulerView vertRuler;
 			NSRulerMarker[] markers;
-			float m1Loc, m2Loc;
-			RectangleF newRect = RectangleF.Empty;
+			nfloat m1Loc, m2Loc;
+			CGRect newRect = CGRect.Empty;
 			
 			if (selectedItem == null) 
 				return;
@@ -675,50 +676,50 @@ namespace Rulers
 		
 		#region Static Rectangle Manipulation Methods
 		
-		static float MinX (RectangleF rect)
+		static nfloat MinX (CGRect rect)
 		{
-			return Math.Min (rect.X, rect.Right);	
+			return (nfloat)Math.Min (rect.X, rect.Right);	
 		}
 		
-		static float MaxX (RectangleF rect)
+		static nfloat MaxX (CGRect rect)
 		{
-			return Math.Max (rect.X, rect.Right);	
+			return (nfloat)Math.Max (rect.X, rect.Right);	
 		}
 
-		static float MinY (RectangleF rect)
+		static nfloat MinY (CGRect rect)
 		{
-			return Math.Min (rect.Y, rect.Bottom);	
+			return (nfloat)Math.Min (rect.Y, rect.Bottom);	
 		}
 
-		static float MaxY (RectangleF rect)
+		static nfloat MaxY (CGRect rect)
 		{
-			return Math.Max (rect.Y, rect.Bottom);	
+			return (nfloat)Math.Max (rect.Y, rect.Bottom);	
 		}
 		
-		static SizeF setRectWidth (RectangleF rect, float width)
+		static CGSize setRectWidth (CGRect rect, nfloat width)
 		{
-			SizeF size = rect.Size;
+			CGSize size = rect.Size;
 			size.Width = width;
 			return size;
 		}
 		
-		static SizeF setRectHeight (RectangleF rect, float height)
+		static CGSize setRectHeight (CGRect rect, nfloat height)
 		{
-			SizeF size = rect.Size;
+			CGSize size = rect.Size;
 			size.Height = height;
 			return size;
 		}
 		
-		static PointF setOriginX (RectangleF rect, float newOrigX)
+		static CGPoint setOriginX (CGRect rect, nfloat newOrigX)
 		{
-			PointF orig = rect.Location;
+			CGPoint orig = rect.Location;
 			orig.X = newOrigX;
 			return orig;
 		}
 		
-		static PointF setOriginY (RectangleF rect, float newOrigY)
+		static CGPoint setOriginY (CGRect rect, nfloat newOrigY)
 		{
-			PointF orig = rect.Location;
+			CGPoint orig = rect.Location;
 			orig.Y = newOrigY;
 			return orig;
 		}
@@ -741,11 +742,11 @@ namespace Rulers
 		}
 		
 		[Export("rulerView:willMoveMarker:toLocation:")]
-		public float rulerViewWillMoveMarker(NSRulerView aRulerView, NSRulerMarker aMarker, float location)
+		public nfloat rulerViewWillMoveMarker(NSRulerView aRulerView, NSRulerMarker aMarker, nfloat location)
 		{
 			NSEvent currentEvent;
 			bool shifted;
-			RectangleF rect, dirtyRect;
+			CGRect rect, dirtyRect;
 			NSString theEdge = (NSString)aMarker.RepresentedObject;
 			
 			if (selectedItem == null) 
@@ -899,8 +900,8 @@ namespace Rulers
 		[Export("rulerView:didAddMarker:")]
 		public void rulerViewDidAddMarker (NSRulerView aRulerView, NSRulerMarker aMarker)
 		{
-			float theOtherCoord;
-			RectangleF newRect;
+			nfloat theOtherCoord;
+			CGRect newRect;
 			NSColor newColor;
 			ColorRect newColorRect;
 			
@@ -910,14 +911,14 @@ namespace Rulers
 			
 			if (aRulerView.Orientation == NSRulerOrientation.Horizontal){
 				theOtherCoord = MaxY (visibleRect) - 165.0f;
-				newRect = new RectangleF (aMarker.MarkerLocation, theOtherCoord, 115.0f, 115.0f);
+				newRect = new CGRect (aMarker.MarkerLocation, theOtherCoord, 115.0f, 115.0f);
 			} else {
 				if (IsFlipped) {
 					theOtherCoord = MinX (visibleRect) + 50.0f;
-					newRect = new RectangleF(theOtherCoord, aMarker.MarkerLocation, 115.0f, 115.0f);
+					newRect = new CGRect(theOtherCoord, aMarker.MarkerLocation, 115.0f, 115.0f);
 				} else {
 					theOtherCoord = MinX(visibleRect) + 50.0f;
-					newRect = new RectangleF (theOtherCoord, aMarker.MarkerLocation - 115.0f, 115.0f, 115.0f);
+					newRect = new CGRect (theOtherCoord, aMarker.MarkerLocation - 115.0f, 115.0f, 115.0f);
 				}
 			}
 				
@@ -936,9 +937,9 @@ namespace Rulers
 			NSRulerMarker newMarker;
 			
 			if (aRulerView.Orientation == NSRulerOrientation.Horizontal)
-				newMarker = new NSRulerMarker (aRulerView, 0.0f, leftImage, PointF.Empty);
+				newMarker = new NSRulerMarker (aRulerView, 0.0f, leftImage, CGPoint.Empty);
 			else
-				newMarker = new NSRulerMarker (aRulerView, 0.0f, topImage, new PointF (8.0f,8.0f));
+				newMarker = new NSRulerMarker (aRulerView, 0.0f, topImage, new CGPoint (8.0f,8.0f));
 			
 			aRulerView.TrackMarker (newMarker, theEvent);
 		}	
