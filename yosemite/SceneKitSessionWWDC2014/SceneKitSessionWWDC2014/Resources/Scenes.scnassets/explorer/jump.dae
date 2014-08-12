@@ -1,0 +1,2327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>silvermeat</author>
+      <authoring_tool>OpenCOLLADA for 3ds Max;  Version: 1.4.1;  Revision: exported;  Platform: x64;  Configuration: Release_Max2013_static</authoring_tool>
+      <source_data>file:///D:/projects/bananas/characters/explorer/anims/jump_anim_only_02.max</source_data>
+    </contributor>
+    <created>2014-03-12T09:36:42</created>
+    <modified>2014-03-12T09:36:42</modified>
+    <unit name="inch" meter="0.0254"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_lights>
+    <light id="EnvironmentAmbientLight" name="EnvironmentAmbientLight">
+      <technique_common>
+        <ambient>
+          <color>0 0 0</color>
+        </ambient>
+      </technique_common>
+    </light>
+  </library_lights>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node name="EnvironmentAmbientLight">
+        <instance_light url="#EnvironmentAmbientLight"/>
+      </node>
+      <node id="node-Bip001_Pelvis" name="Bip001_Pelvis">
+        <translate sid="translation">7.5189e-7 4.568398 52.4763</translate>
+        <rotate sid="rotationZ">0 0 1 -66.32033</rotate>
+        <rotate sid="rotationY">0 1 0 -60.6129</rotate>
+        <rotate sid="rotationX">1 0 0 -140.2137</rotate>
+        <node id="node-Bip001_Spine" name="Bip001_Spine">
+          <translate sid="translation">9.60561 -1.132025 -2.214216</translate>
+          <rotate sid="rotationZ">0 0 1 5.182272</rotate>
+          <rotate sid="rotationY">0 1 0 8.501629</rotate>
+          <rotate sid="rotationX">1 0 0 1.082103</rotate>
+          <node id="node-Bip001_Spine1" name="Bip001_Spine1">
+            <translate>28.68499 -0.02279854 -1.04904e-5</translate>
+            <rotate sid="rotationZ">0 0 1 29.04365</rotate>
+            <rotate sid="rotationY">0 1 0 -8.79689</rotate>
+            <rotate sid="rotationX">1 0 0 6.846725</rotate>
+            <node id="node-Bip001_R_UpperArm" name="Bip001_R_UpperArm">
+              <translate sid="translation">20.3707 -5.571114 -19.34526</translate>
+              <rotate sid="rotationZ">0 0 1 -161.2017</rotate>
+              <rotate sid="rotationY">0 1 0 46.0104</rotate>
+              <rotate sid="rotationX">1 0 0 -23.57543</rotate>
+              <node id="node-Bip001_R_Forearm" name="Bip001_R_Forearm">
+                <translate>27.57621 7.62939e-6 4.95911e-5</translate>
+                <rotate sid="rotationZ">0 0 1 -14.07271</rotate>
+                <rotate>0 1 0 -6.72347e-5</rotate>
+                <rotate>1 0 0 3.32972e-5</rotate>
+                <node id="node-Bip001_R_Hand" name="Bip001_R_Hand">
+                  <translate>26.59835 -2.28882e-5 7.62939e-6</translate>
+                  <rotate sid="rotationZ">0 0 1 -7.401712</rotate>
+                  <rotate sid="rotationY">0 1 0 39.03503</rotate>
+                  <rotate sid="rotationX">1 0 0 77.11934</rotate>
+                  <node id="node-Bip001_R_Finger1" name="Bip001_R_Finger1">
+                    <translate>9.816996 9.53674e-6 1.52588e-5</translate>
+                    <rotate sid="rotationZ">0 0 1 -13.9651</rotate>
+                    <rotate sid="rotationY">0 1 0 1.339592</rotate>
+                    <rotate sid="rotationX">1 0 0 3.607513</rotate>
+                    <extra>
+                      <technique profile="OpenCOLLADA">
+                        <cast_shadows>1</cast_shadows>
+                        <primary_visibility>1</primary_visibility>
+                        <receive_shadows>1</receive_shadows>
+                        <secondary_visibility>1</secondary_visibility>
+                      </technique>
+                    </extra>
+                  </node>
+                  <node id="node-Bip001_R_Finger0" name="Bip001_R_Finger0">
+                    <translate>3.711683 2.343041 5.048515</translate>
+                    <rotate sid="rotationZ">0 0 1 39.6627</rotate>
+                    <rotate sid="rotationY">0 1 0 -15.07599</rotate>
+                    <rotate sid="rotationX">1 0 0 -142.709</rotate>
+                    <extra>
+                      <technique profile="OpenCOLLADA">
+                        <cast_shadows>1</cast_shadows>
+                        <primary_visibility>1</primary_visibility>
+                        <receive_shadows>1</receive_shadows>
+                        <secondary_visibility>1</secondary_visibility>
+                      </technique>
+                    </extra>
+                  </node>
+                  <extra>
+                    <technique profile="OpenCOLLADA">
+                      <cast_shadows>1</cast_shadows>
+                      <primary_visibility>1</primary_visibility>
+                      <receive_shadows>1</receive_shadows>
+                      <secondary_visibility>1</secondary_visibility>
+                    </technique>
+                  </extra>
+                </node>
+                <extra>
+                  <technique profile="OpenCOLLADA">
+                    <cast_shadows>1</cast_shadows>
+                    <primary_visibility>1</primary_visibility>
+                    <receive_shadows>1</receive_shadows>
+                    <secondary_visibility>1</secondary_visibility>
+                  </technique>
+                </extra>
+              </node>
+              <extra>
+                <technique profile="OpenCOLLADA">
+                  <cast_shadows>1</cast_shadows>
+                  <primary_visibility>1</primary_visibility>
+                  <receive_shadows>1</receive_shadows>
+                  <secondary_visibility>1</secondary_visibility>
+                </technique>
+              </extra>
+            </node>
+            <node id="node-Bip001_Head" name="Bip001_Head">
+              <translate>37.34945 2.440975 -2.09808e-5</translate>
+              <rotate sid="rotationZ">0 0 1 -48.61723</rotate>
+              <rotate sid="rotationY">0 1 0 11.46699</rotate>
+              <rotate sid="rotationX">1 0 0 15.52734</rotate>
+              <extra>
+                <technique profile="OpenCOLLADA">
+                  <cast_shadows>1</cast_shadows>
+                  <primary_visibility>1</primary_visibility>
+                  <receive_shadows>1</receive_shadows>
+                  <secondary_visibility>1</secondary_visibility>
+                </technique>
+              </extra>
+            </node>
+            <node id="node-Bip001_L_UpperArm" name="Bip001_L_UpperArm">
+              <translate sid="translation">19.28494 -4.462143 17.20301</translate>
+              <rotate sid="rotationZ">0 0 1 -123.8467</rotate>
+              <rotate sid="rotationY">0 1 0 5.674548</rotate>
+              <rotate sid="rotationX">1 0 0 -55.49748</rotate>
+              <node id="node-Bip001_L_Forearm" name="Bip001_L_Forearm">
+                <translate>27.57626 1.52588e-5 -9.91821e-5</translate>
+                <rotate sid="rotationZ">0 0 1 -11.90741</rotate>
+                <rotate>0 1 0 2.73207e-5</rotate>
+                <rotate>1 0 0 2.04906e-5</rotate>
+                <node id="node-Bip001_L_Hand" name="Bip001_L_Hand">
+                  <translate>26.5984 -3.05176e-5 -4.57764e-5</translate>
+                  <rotate sid="rotationZ">0 0 1 5.176027</rotate>
+                  <rotate sid="rotationY">0 1 0 -16.81751</rotate>
+                  <rotate sid="rotationX">1 0 0 -83.70182</rotate>
+                  <node id="node-Bip001_L_Finger1" name="Bip001_L_Finger1">
+                    <translate>9.817009 -2.28882e-5 7.62939e-6</translate>
+                    <rotate sid="rotationZ">0 0 1 16.67535</rotate>
+                    <rotate sid="rotationY">0 1 0 0.6887012</rotate>
+                    <rotate sid="rotationX">1 0 0 -3.785814</rotate>
+                    <extra>
+                      <technique profile="OpenCOLLADA">
+                        <cast_shadows>1</cast_shadows>
+                        <primary_visibility>1</primary_visibility>
+                        <receive_shadows>1</receive_shadows>
+                        <secondary_visibility>1</secondary_visibility>
+                      </technique>
+                    </extra>
+                  </node>
+                  <node id="node-Bip001_L_Finger0" name="Bip001_L_Finger0">
+                    <translate>3.711678 2.343014 -5.048519</translate>
+                    <rotate sid="rotationZ">0 0 1 39.66267</rotate>
+                    <rotate sid="rotationY">0 1 0 15.07601</rotate>
+                    <rotate sid="rotationX">1 0 0 142.709</rotate>
+                    <extra>
+                      <technique profile="OpenCOLLADA">
+                        <cast_shadows>1</cast_shadows>
+                        <primary_visibility>1</primary_visibility>
+                        <receive_shadows>1</receive_shadows>
+                        <secondary_visibility>1</secondary_visibility>
+                      </technique>
+                    </extra>
+                  </node>
+                  <extra>
+                    <technique profile="OpenCOLLADA">
+                      <cast_shadows>1</cast_shadows>
+                      <primary_visibility>1</primary_visibility>
+                      <receive_shadows>1</receive_shadows>
+                      <secondary_visibility>1</secondary_visibility>
+                    </technique>
+                  </extra>
+                </node>
+                <extra>
+                  <technique profile="OpenCOLLADA">
+                    <cast_shadows>1</cast_shadows>
+                    <primary_visibility>1</primary_visibility>
+                    <receive_shadows>1</receive_shadows>
+                    <secondary_visibility>1</secondary_visibility>
+                  </technique>
+                </extra>
+              </node>
+              <extra>
+                <technique profile="OpenCOLLADA">
+                  <cast_shadows>1</cast_shadows>
+                  <primary_visibility>1</primary_visibility>
+                  <receive_shadows>1</receive_shadows>
+                  <secondary_visibility>1</secondary_visibility>
+                </technique>
+              </extra>
+            </node>
+            <extra>
+              <technique profile="OpenCOLLADA">
+                <cast_shadows>1</cast_shadows>
+                <primary_visibility>1</primary_visibility>
+                <receive_shadows>1</receive_shadows>
+                <secondary_visibility>1</secondary_visibility>
+              </technique>
+            </extra>
+          </node>
+          <extra>
+            <technique profile="OpenCOLLADA">
+              <cast_shadows>1</cast_shadows>
+              <primary_visibility>1</primary_visibility>
+              <receive_shadows>1</receive_shadows>
+              <secondary_visibility>1</secondary_visibility>
+            </technique>
+          </extra>
+        </node>
+        <node id="node-Bip001_R_Thigh" name="Bip001_R_Thigh">
+          <translate>-2.67029e-5 -7.62939e-6 -10.7261</translate>
+          <rotate sid="rotationZ">0 0 1 124.1442</rotate>
+          <rotate sid="rotationY">0 1 0 17.7594</rotate>
+          <rotate sid="rotationX">1 0 0 -165.0994</rotate>
+          <node id="node-Bip001_R_Calf" name="Bip001_R_Calf">
+            <translate>37.31354 -2.28882e-5 3.8147e-5</translate>
+            <rotate sid="rotationZ">0 0 1 -107.4793</rotate>
+            <rotate>0 1 0 -6.23255e-5</rotate>
+            <rotate sid="rotationX">1 0 0 1.45142e-4</rotate>
+            <node id="node-Bip001_R_Foot" name="Bip001_R_Foot">
+              <translate>44.58315 2.86102e-6 0</translate>
+              <rotate sid="rotationZ">0 0 1 58.918</rotate>
+              <rotate sid="rotationY">0 1 0 25.32071</rotate>
+              <rotate sid="rotationX">1 0 0 -13.3897</rotate>
+              <extra>
+                <technique profile="OpenCOLLADA">
+                  <cast_shadows>1</cast_shadows>
+                  <primary_visibility>1</primary_visibility>
+                  <receive_shadows>1</receive_shadows>
+                  <secondary_visibility>1</secondary_visibility>
+                </technique>
+              </extra>
+            </node>
+            <extra>
+              <technique profile="OpenCOLLADA">
+                <cast_shadows>1</cast_shadows>
+                <primary_visibility>1</primary_visibility>
+                <receive_shadows>1</receive_shadows>
+                <secondary_visibility>1</secondary_visibility>
+              </technique>
+            </extra>
+          </node>
+          <extra>
+            <technique profile="OpenCOLLADA">
+              <cast_shadows>1</cast_shadows>
+              <primary_visibility>1</primary_visibility>
+              <receive_shadows>1</receive_shadows>
+              <secondary_visibility>1</secondary_visibility>
+            </technique>
+          </extra>
+        </node>
+        <node id="node-Bip001_L_Thigh" name="Bip001_L_Thigh">
+          <translate>1.90735e-5 1.52588e-5 10.7261</translate>
+          <rotate sid="rotationZ">0 0 1 46.96458</rotate>
+          <rotate sid="rotationY">0 1 0 -23.86492</rotate>
+          <rotate sid="rotationX">1 0 0 -146.7654</rotate>
+          <node id="node-Bip001_L_Calf" name="Bip001_L_Calf">
+            <translate>37.31357 -3.8147e-6 2.76566e-5</translate>
+            <rotate sid="rotationZ">0 0 1 -120.5654</rotate>
+            <rotate sid="rotationY">0 1 0 1.30841e-4</rotate>
+            <rotate sid="rotationX">1 0 0 -1.48877e-4</rotate>
+            <node id="node-Bip001_L_Foot" name="Bip001_L_Foot">
+              <translate>44.58325 -2.47955e-5 1.62125e-5</translate>
+              <rotate sid="rotationZ">0 0 1 20.10221</rotate>
+              <rotate sid="rotationY">0 1 0 -3.125171</rotate>
+              <rotate sid="rotationX">1 0 0 3.788498</rotate>
+              <extra>
+                <technique profile="OpenCOLLADA">
+                  <cast_shadows>1</cast_shadows>
+                  <primary_visibility>1</primary_visibility>
+                  <receive_shadows>1</receive_shadows>
+                  <secondary_visibility>1</secondary_visibility>
+                </technique>
+              </extra>
+            </node>
+            <extra>
+              <technique profile="OpenCOLLADA">
+                <cast_shadows>1</cast_shadows>
+                <primary_visibility>1</primary_visibility>
+                <receive_shadows>1</receive_shadows>
+                <secondary_visibility>1</secondary_visibility>
+              </technique>
+            </extra>
+          </node>
+          <extra>
+            <technique profile="OpenCOLLADA">
+              <cast_shadows>1</cast_shadows>
+              <primary_visibility>1</primary_visibility>
+              <receive_shadows>1</receive_shadows>
+              <secondary_visibility>1</secondary_visibility>
+            </technique>
+          </extra>
+        </node>
+        <extra>
+          <technique profile="OpenCOLLADA">
+            <cast_shadows>1</cast_shadows>
+            <primary_visibility>1</primary_visibility>
+            <receive_shadows>1</receive_shadows>
+            <secondary_visibility>1</secondary_visibility>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <library_animations>
+    <animation>
+      <source id="node-Bip001_Pelvis_translation.X-input">
+        <float_array id="node-Bip001_Pelvis_translation.X-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.X-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.X-output">
+        <float_array id="node-Bip001_Pelvis_translation.X-output-array" count="28">7.5189e-7 1.22353e-4 2.73414e-7 9.0049e-4 0.003127861 0.003753433 -7.5189e-7 -0.002816716 0.004467353 0.01032603 0 -0.005771847 -0.009453141 -0.01203581 -0.01371594 -0.01449732 -0.01429031 -0.01293906 -0.01023517 -0.005944987 -3.41768e-8 0.002177814 -4.86609e-4 0.002071251 8.99328e-4 -5.21948e-4 -1.03932e-4 0.001541613</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.X-output-array" count="28" stride="1">
+            <param name="X" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.X-interpolation">
+        <Name_array id="node-Bip001_Pelvis_translation.X-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.X-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Y-input">
+        <float_array id="node-Bip001_Pelvis_translation.Y-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Y-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Y-output">
+        <float_array id="node-Bip001_Pelvis_translation.Y-output-array" count="28">4.568398 0.4948318 -3.649334 -2.01797 1.243187 4.341965 5.485891 4.744671 3.619874 2.336265 1.284889 0.9404257 0.6765353 0.4566956 0.2726856 0.123469 0.01228821 -0.05274284 -0.05474377 0.04581785 0.3936317 3.729352 8.412251 12.75656 16.74111 18.32151 13.571 8.570864</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Y-output-array" count="28" stride="1">
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Y-interpolation">
+        <Name_array id="node-Bip001_Pelvis_translation.Y-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Y-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Z-input">
+        <float_array id="node-Bip001_Pelvis_translation.Z-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Z-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Z-output">
+        <float_array id="node-Bip001_Pelvis_translation.Z-output-array" count="28">52.4763 66.49847 82.46641 86.00896 88.64198 90.44418 91.4949 92.04891 92.42938 92.71011 92.8447 92.85117 92.8649 92.88216 92.90072 92.91853 92.9334 92.94275 92.94302 92.92876 92.88809 73.17585 53.69575 59.0458 69.98826 79.55373 84.79401 86.70366</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Z-output-array" count="28" stride="1">
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_translation.Z-interpolation">
+        <Name_array id="node-Bip001_Pelvis_translation.Z-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_translation.Z-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_Pelvis_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_Pelvis_rotationZ.ANGLE-output-array" count="28">-66.32034 -52.03529 -34.65072 -40.83787 -53.1129 -69.34966 -85.34087 -106.2288 -148.604 -190.0948 -208.6725 -212.0236 -215.9033 -221.2722 -228.0996 -234.6028 -236.501 -231.5434 -221.9188 -208.9514 -189.568 -131.8227 -110.1237 -106.329 -106.3825 -107.6925 -109.5438 -118.4696</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Pelvis_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_Pelvis_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_Pelvis_rotationY.ANGLE-output-array" count="28">-60.6129 -63.55202 -64.90417 -65.5107 -67.80627 -70.32015 -72.96312 -77.28089 -79.89791 -77.14646 -73.43127 -73.28021 -74.61485 -76.63365 -78.63489 -80.05225 -80.52325 -80.69626 -81.17469 -81.7039 -82.34151 -80.05976 -74.05076 -71.45481 -71.93928 -74.06424 -77.79579 -82.5892</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Pelvis_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_Pelvis_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_Pelvis_rotationX.ANGLE-output-array" count="28">-140.2137 -141.2796 -145.4005 -140.0881 -130.6989 -118.6669 -106.9401 -89.95686 -51.65692 -14.32178 1.88619e-4 -1.627121 -3.54133 -4.063335 -2.454776 0.313894 0.799232 -3.097964 -10.00555 -19.2242 -34.46501 -85.12759 -101.6722 -105.1515 -104.843 -103.0483 -100.1742 -90.52139</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Pelvis_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Pelvis_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Pelvis_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.X-input">
+        <float_array id="node-Bip001_Spine_translation.X-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.X-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.X-output">
+        <float_array id="node-Bip001_Spine_translation.X-output-array" count="28">9.60561 9.653484 9.449509 9.551445 9.742599 9.869675 9.886803 9.829857 9.698021 9.539284 9.448196 9.471054 9.555046 9.65213 9.726875 9.764282 9.763634 9.729927 9.676956 9.623894 9.599472 9.655914 9.721313 9.738087 9.743904 9.755516 9.790955 9.814331</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.X-output-array" count="28" stride="1">
+            <param name="X" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.X-interpolation">
+        <Name_array id="node-Bip001_Spine_translation.X-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.X-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Y-input">
+        <float_array id="node-Bip001_Spine_translation.Y-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Y-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Y-output">
+        <float_array id="node-Bip001_Spine_translation.Y-output-array" count="28">-1.132025 -0.05309296 0.8642445 0.9053097 0.9516754 0.8903866 0.69491 0.3777943 -0.0863533 -0.6321988 -1.132025 -1.51945 -1.783787 -1.879079 -1.834408 -1.751234 -1.767327 -1.942949 -2.190902 -2.414818 -2.508256 -2.249147 -1.905201 -1.814838 -1.782288 -1.717083 -1.503771 -1.346189</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Y-output-array" count="28" stride="1">
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Y-interpolation">
+        <Name_array id="node-Bip001_Spine_translation.Y-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Y-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Z-input">
+        <float_array id="node-Bip001_Spine_translation.Z-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Z-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Z-output">
+        <float_array id="node-Bip001_Spine_translation.Z-output-array" count="28">-2.214214 -2.293362 -2.900352 -2.53026 -1.621162 -0.4989634 0.4692736 1.297483 2.095901 2.655977 2.811024 2.538181 1.992683 1.325735 0.6892052 0.2098284 -0.01338768 -0.073102 -0.09339619 -0.03628349 0.1035957 0.3957152 0.5642376 0.5729475 0.5759926 0.5773888 0.5724907 0.5644832</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Z-output-array" count="28" stride="1">
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_translation.Z-interpolation">
+        <Name_array id="node-Bip001_Spine_translation.Z-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_translation.Z-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_Spine_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_Spine_rotationZ.ANGLE-output-array" count="28">5.182271 5.710713 4.135898 4.380514 4.675254 4.408653 3.427285 1.764179 -0.7618911 -3.842044 -6.696571 -8.855114 -10.25627 -10.67545 -10.33396 -9.837855 -9.991668 -11.17233 -12.86569 -14.45879 -15.25659 -1.837189 14.09115 14.34146 13.41966 12.10689 9.646317 7.797638</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_Spine_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_Spine_rotationY.ANGLE-output-array" count="28">8.501627 13.41649 18.79044 16.57882 11.23334 4.742514 -0.8233718 -5.605224 -10.27385 -13.60592 -14.54732 -12.89357 -9.581029 -5.542444 -1.677293 1.275819 2.726811 3.218613 3.468077 3.217068 2.410057 -8.293345 -15.52459 -15.0795 -14.44226 -13.47311 -11.27191 -9.682363</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_Spine_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_Spine_rotationX.ANGLE-output-array" count="28">1.082103 -11.54366 -24.62262 -23.9157 -22.03092 -19.28066 -16.0943 -12.53602 -8.185184 -3.232685 1.748405 6.952907 12.56429 17.94753 22.57005 25.84307 27.07931 26.0549 23.42071 19.79979 15.79636 6.959835 -0.9053408 -1.447945 -1.350584 -1.186672 -1.037387 -0.9006948</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_Spine1_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_Spine1_rotationZ.ANGLE-output-array" count="28">29.04366 19.89525 8.328392 4.554752 2.410017 1.147999 0.02241213 -1.047061 -1.701989 -2.030411 -2.120315 -1.482632 0.1115719 2.184038 4.256495 5.850696 6.488377 4.911971 1.443845 -2.024256 -3.600672 9.772732 23.14614 22.72086 21.55558 19.81602 16.0597 13.28908</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine1_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_Spine1_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_Spine1_rotationY.ANGLE-output-array" count="28">-8.79689 -3.36661 2.063631 1.950609 1.680395 1.356142 1.080945 0.9476454 0.8793879 0.7251213 0.3335891 -0.417621 -1.431591 -2.530226 -3.535447 -4.269163 -4.553328 -3.661857 -1.700686 0.2604987 1.151945 -1.463656 -4.079269 -3.76246 -3.174166 -2.857368 -3.644724 -4.432045</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine1_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_Spine1_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_Spine1_rotationX.ANGLE-output-array" count="28">6.846725 16.46913 26.09154 23.31443 16.67183 8.696826 1.922551 -3.96084 -9.975886 -14.65855 -16.5448 -16.54137 -16.53287 -16.52179 -16.51072 -16.5022 -16.4988 -16.52454 -16.58119 -16.63782 -16.66357 -2.290428 12.08274 11.09536 8.584188 5.225821 -1.126014 -5.699621</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Spine1_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Spine1_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Spine1_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.X-input">
+        <float_array id="node-Bip001_R_UpperArm_translation.X-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.X-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.X-output">
+        <float_array id="node-Bip001_R_UpperArm_translation.X-output-array" count="28">20.3707 20.37069 20.37068 20.38976 20.43533 20.49004 20.53649 20.57668 20.61777 20.64969 20.66258 20.66258 20.66255 20.66258 20.66257 20.66258 20.66257 20.66257 20.66258 20.66258 20.66256 20.66257 20.6626 20.66259 20.66259 20.6626 20.58962 20.51664</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.X-output-array" count="28" stride="1">
+            <param name="X" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.X-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_translation.X-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.X-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Y-input">
+        <float_array id="node-Bip001_R_UpperArm_translation.Y-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Y-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Y-output">
+        <float_array id="node-Bip001_R_UpperArm_translation.Y-output-array" count="28">-5.571114 -5.57111 -5.571114 -5.55418 -5.51371 -5.465137 -5.42392 -5.388205 -5.351745 -5.323384 -5.31196 -5.311961 -5.311954 -5.311955 -5.311956 -5.31196 -5.311962 -5.31196 -5.311956 -5.311958 -5.311962 -5.311962 -5.311951 -5.311958 -5.311958 -5.311958 -5.376747 -5.441532</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Y-output-array" count="28" stride="1">
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Y-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_translation.Y-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Y-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Z-input">
+        <float_array id="node-Bip001_R_UpperArm_translation.Z-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Z-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Z-output">
+        <float_array id="node-Bip001_R_UpperArm_translation.Z-output-array" count="28">-19.34526 -19.34526 -19.34528 -19.41276 -19.57415 -19.76783 -19.9322 -20.0746 -20.21999 -20.33308 -20.37861 -20.3786 -20.3786 -20.3786 -20.37859 -20.3786 -20.3786 -20.3786 -20.3786 -20.3786 -20.3786 -20.3786 -20.3786 -20.37859 -20.3786 -20.37861 -20.12027 -19.86194</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Z-output-array" count="28" stride="1">
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_translation.Z-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_translation.Z-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_translation.Z-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_UpperArm_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_UpperArm_rotationZ.ANGLE-output-array" count="28">-161.2017 -162.8336 -170.9518 -187.7265 -212.4789 -234.3227 -246.257 -250.7805 -247.7257 -230.8881 -198.2505 -165.8758 -143.0233 -131.2852 -126.6011 -126.3998 -129.3029 -134.2945 -140.1637 -145.2105 -147.3587 -58.61403 -74.11344 -76.33831 -78.13306 -65.18434 -36.92171 -6.091705</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_UpperArm_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_UpperArm_rotationY.ANGLE-output-array" count="28">46.0104 21.81485 9.365911 9.34185 9.623103 1.093059 -5.514925 3.319355 25.31311 50.05364 64.65351 68.166 66.96276 65.1814 64.30103 64.4501 65.32512 66.50057 67.57478 68.28471 68.53322 132.366 185.8664 186.8137 162.203 138.6713 132.9587 143.1535</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_UpperArm_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_UpperArm_rotationX.ANGLE-output-array" count="28">-23.57543 1.7377 22.84253 31.33662 23.70369 12.53036 8.44263 8.654284 6.12717 7.00988 23.43116 46.22974 63.70113 74.12608 80.97253 85.91581 89.27813 90.97081 91.1243 90.41203 89.92613 166.0995 104.1185 98.0126 116.474 132.7383 148.7155 163.2915</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_UpperArm_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_UpperArm_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_UpperArm_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Forearm_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Forearm_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Forearm_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Forearm_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Forearm_rotationZ.ANGLE-output-array" count="28">-14.07271 -14.54602 -17.85921 -25.573 -35.85516 -46.45589 -55.12559 -61.90742 -67.78682 -71.92764 -73.49371 -73.42425 -73.22615 -72.91487 -72.50573 -72.01423 -71.45576 -71.06583 -70.68359 -69.72987 -67.62558 -49.03857 -30.98524 -29.71484 -29.24682 -29.17997 -37.52545 -45.87095</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Forearm_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Forearm_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Forearm_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Forearm_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Hand_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Hand_rotationZ.ANGLE-output-array" count="28">-7.401711 -7.158092 -5.517963 -2.090719 1.805225 5.251184 7.782895 9.64881 11.2182 12.31017 12.72221 12.27614 11.09786 9.410244 7.410482 5.298154 3.328085 1.123353 -1.558251 -3.974562 -5.045318 16.43817 36.41721 26.06287 4.813664 -7.401737 -7.401736 -7.401724</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Hand_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_Hand_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_Hand_rotationY.ANGLE-output-array" count="28">39.03503 38.75028 36.73231 31.88708 25.1807 18.05891 12.13072 7.451949 3.378131 0.5039951 -0.5833809 0.5937847 3.693484 8.061857 13.036 17.954 22.17394 26.45497 31.0502 34.66176 36.11662 34.72464 29.93641 33.63978 38.27547 39.03505 39.03504 39.03505</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Hand_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Hand_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Hand_rotationX.ANGLE-output-array" count="28">77.11933 77.33844 78.7879 81.63903 84.46342 86.40739 87.37513 87.7813 87.89822 87.85289 87.80856 87.85592 87.8968 87.74512 87.26137 86.42926 85.39964 84.00999 82.05519 80.10534 79.19653 87.59097 93.23745 90.82971 82.86594 77.11935 77.11934 77.11932</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Hand_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Hand_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Hand_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger1_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger1_rotationZ.ANGLE-output-array" count="28">-13.9651 -13.96509 -13.9651 -13.9651 -13.96512 -13.9651 -13.9651 -13.9651 -13.9651 -13.96511 -13.9651 -15.84902 -20.76677 -27.6179 -35.30154 -42.71462 -48.75161 -53.89205 -58.72776 -62.31874 -63.7247 -38.82203 -13.9651 -13.96511 -13.96511 -13.96511 -13.9651 -13.9651</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger1_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger1_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger1_rotationY.ANGLE-output-array" count="28">1.339592 1.339593 1.339574 1.339588 1.33959 1.339593 1.339592 1.339602 1.339585 1.339591 1.339592 1.457584 1.757793 2.153839 2.560974 2.910092 3.158619 3.34271 3.491357 3.585733 3.618868 2.732493 1.339597 1.339586 1.339592 1.339596 1.339591 1.339595</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger1_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger1_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger1_rotationX.ANGLE-output-array" count="28">3.607512 3.607504 3.6075 3.607521 3.607509 3.607506 3.607514 3.607505 3.607514 3.607515 3.60751 3.561532 3.423467 3.189378 2.872846 2.51857 2.198701 1.907029 1.618612 1.396923 1.308571 2.710238 3.607509 3.607502 3.607515 3.607491 3.607506 3.607517</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger1_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger1_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger1_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger0_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger0_rotationZ.ANGLE-output-array" count="28">39.6627 39.6627 39.66272 39.66269 39.66273 39.66275 39.6627 39.66267 39.66267 39.66269 39.6627 38.14814 34.09361 28.16123 21.02776 13.55554 6.96162 0.9371877 -5.105273 -9.83973 -11.75174 17.55857 39.66269 39.66267 39.66269 39.66272 39.66271 39.66269</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger0_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger0_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger0_rotationY.ANGLE-output-array" count="28">-15.07599 -15.07599 -15.07598 -15.07601 -15.076 -15.07602 -15.07602 -15.07602 -15.07604 -15.07605 -15.07602 -16.44391 -19.96302 -24.72298 -29.82229 -34.44477 -37.94364 -40.6974 -43.06686 -44.66896 -45.25628 -32.05806 -15.07603 -15.076 -15.076 -15.076 -15.07598 -15.07601</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger0_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Finger0_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Finger0_rotationX.ANGLE-output-array" count="28">-142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709 -140.3341 -133.9948 -124.7988 -113.9175 -102.7643 -93.13882 -84.51604 -76.0195 -69.4587 -66.83102 -108.7069 -142.709 -142.709 -142.709 -142.709 -142.709 -142.709</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Finger0_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Finger0_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Finger0_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_Head_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_Head_rotationZ.ANGLE-output-array" count="28">-48.61723 -54.37353 -56.88908 -51.72004 -42.60899 -30.91982 -18.99318 -6.027562 7.067973 17.75265 24.38271 25.59875 25.58534 24.95682 24.18158 23.67219 23.80757 25.68784 29.0753 32.05979 31.81515 4.533113 -26.56659 -30.97761 -32.99594 -32.3312 -26.65738 -19.6046</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Head_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_Head_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_Head_rotationY.ANGLE-output-array" count="28">11.467 6.097113 -0.2744243 2.748513 7.432617 10.41043 9.77884 4.996741 -3.797007 -13.76772 -20.10828 -20.77598 -20.68874 -20.24497 -19.73338 -19.43014 -19.60288 -21.22786 -23.97685 -26.15676 -25.90558 -5.5618 1.028733 2.760188 4.988286 7.346128 10.92223 11.47199</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Head_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_Head_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_Head_rotationX.ANGLE-output-array" count="28">15.52734 10.60681 5.052294 5.315096 9.770646 17.3762 24.9827 31.78615 37.71469 40.88889 41.32679 41.28104 41.48322 41.76338 41.9897 42.08167 41.99092 41.35672 40.02137 38.58795 38.46762 31.23249 16.56523 17.60839 19.72148 22.38874 27.61725 32.25247</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_Head_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_Head_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_Head_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.X-input">
+        <float_array id="node-Bip001_L_UpperArm_translation.X-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.X-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.X-output">
+        <float_array id="node-Bip001_L_UpperArm_translation.X-output-array" count="28">19.28493 19.28493 19.28493 19.37491 19.59007 19.84832 20.06745 20.2573 20.45113 20.60188 20.66261 20.66261 20.6626 20.6626 20.66261 20.66261 20.66261 20.6626 20.66258 20.6626 20.66259 20.66263 20.66263 20.66261 20.66262 20.66263 20.3182 19.97379</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.X-output-array" count="28" stride="1">
+            <param name="X" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.X-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_translation.X-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.X-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Y-input">
+        <float_array id="node-Bip001_L_UpperArm_translation.Y-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Y-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Y-output">
+        <float_array id="node-Bip001_L_UpperArm_translation.Y-output-array" count="28">-4.462143 -4.462135 -4.462143 -4.517689 -4.650547 -4.809978 -4.945282 -5.0625 -5.182165 -5.275255 -5.312741 -5.312738 -5.312738 -5.312739 -5.312742 -5.312742 -5.312741 -5.31274 -5.312738 -5.312742 -5.312737 -5.312752 -5.312744 -5.312737 -5.312752 -5.312744 -5.100082 -4.88744</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Y-output-array" count="28" stride="1">
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Y-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_translation.Y-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Y-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Z-input">
+        <float_array id="node-Bip001_L_UpperArm_translation.Z-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Z-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Z-output">
+        <float_array id="node-Bip001_L_UpperArm_translation.Z-output-array" count="28">17.20301 17.20301 17.20301 17.4104 17.90633 18.5015 19.00658 19.44418 19.89091 20.23842 20.37833 20.37833 20.37833 20.37833 20.37833 20.37833 20.37833 20.37833 20.37833 20.37834 20.37833 20.37832 20.37833 20.37833 20.37833 20.37833 19.58451 18.79067</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Z-output-array" count="28" stride="1">
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_translation.Z-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_translation.Z-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_translation.Z-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_UpperArm_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_UpperArm_rotationZ.ANGLE-output-array" count="28">-123.8467 -160.2507 -186.2507 -202.8426 -219.1696 -237.3231 -248.266 -237.8535 -197.6825 -156.0362 -136.5281 -126.9959 -121.0248 -117.3637 -115.4106 -114.7619 -115.1045 -116.2136 -117.9806 -120.4538 -123.8682 -41.82907 -82.21152 -85.21468 -80.66725 -65.09428 -41.04713 -16.9391</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_UpperArm_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_UpperArm_rotationY.ANGLE-output-array" count="28">5.674542 -7.496281 -10.45495 -14.90757 -25.71038 -36.63031 -44.61999 -54.22049 -60.64645 -51.0519 -38.07786 -30.64341 -26.79035 -26.17794 -28.24887 -32.40203 -38.04228 -44.5883 -51.46801 -58.11065 -63.93443 -111.1658 -148.9278 -152.5882 -137.6487 -125.0886 -124.7193 -133.4733</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_UpperArm_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_UpperArm_rotationX.ANGLE-output-array" count="28">-55.49747 -79.26337 -80.55997 -63.79901 -32.519 0.6155486 19.50261 11.33686 -26.51083 -65.44279 -81.58664 -88.0354 -92.07195 -95.25403 -98.24056 -101.2501 -104.2552 -107.0769 -109.4134 -110.8214 -110.6886 -183.1609 -117.347 -112.2321 -126.5868 -142.934 -155.2093 -162.5204</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_UpperArm_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_UpperArm_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_UpperArm_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Forearm_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Forearm_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Forearm_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Forearm_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Forearm_rotationZ.ANGLE-output-array" count="28">-11.90741 -12.54695 -17.02373 -27.44661 -41.33981 -55.66355 -67.37805 -76.54163 -84.48584 -90.08089 -92.19701 -92.15862 -92.05005 -91.8811 -91.66158 -91.40128 -91.10999 -90.90881 -90.71475 -90.23129 -89.16206 -64.74696 -39.68215 -37.73959 -37.0239 -36.92168 -48.99985 -61.07808</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Forearm_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Forearm_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Forearm_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Forearm_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Hand_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Hand_rotationZ.ANGLE-output-array" count="28">5.176025 5.241351 5.695297 6.729424 8.065935 9.404932 10.47899 11.31043 12.02755 12.53165 12.72227 12.51591 11.97216 11.20261 10.3167 9.424192 8.639325 7.924247 7.188637 6.47535 5.83078 5.354757 5.176013 5.175994 5.175998 5.176027 5.17599 5.176021</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Hand_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Hand_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Hand_rotationY.ANGLE-output-array" count="28">-16.81751 -16.68098 -15.72399 -13.48683 -10.48814 -7.380959 -4.831357 -2.833408 -1.099783 0.1216022 0.5835831 0.08348116 -1.233865 -3.093355 -5.219165 -7.33562 -9.168838 -10.81127 -12.46942 -14.04356 -15.43536 -16.44339 -16.81753 -16.81751 -16.81752 -16.8175 -16.81751 -16.81752</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Hand_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Hand_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Hand_rotationX.ANGLE-output-array" count="28">-83.70181 -83.75269 -84.10009 -84.85051 -85.72771 -86.49017 -87.00972 -87.35215 -87.60395 -87.75632 -87.80856 -87.75189 -87.58601 -87.31077 -86.93674 -86.50021 -86.06915 -85.64002 -85.16424 -84.67166 -84.20171 -83.84046 -83.70179 -83.70183 -83.70181 -83.70178 -83.7018 -83.70181</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Hand_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Hand_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Hand_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger1_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger1_rotationZ.ANGLE-output-array" count="28">16.67535 16.67535 16.67535 16.67535 16.67533 16.67536 16.67535 16.67535 16.67534 16.67533 16.67535 14.79233 9.87821 3.035082 -4.636057 -12.03446 -18.05812 -23.18679 -28.0114 -31.59437 -32.99722 -8.14983 16.67535 16.67534 16.67535 16.67535 16.67535 16.67535</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger1_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger1_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger1_rotationY.ANGLE-output-array" count="28">0.6887011 0.6886959 0.6886976 0.6886858 0.6886891 0.6887011 0.6886958 0.688707 0.6886986 0.6887021 0.6886967 0.5637545 0.2351432 -0.2248444 -0.7363214 -1.21713 -1.59387 -1.900837 -2.17566 -2.369817 -2.443343 -0.9667173 0.6886976 0.6886925 0.6887011 0.6886894 0.6886856 0.6887044</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger1_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger1_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger1_rotationX.ANGLE-output-array" count="28">-3.785813 -3.785817 -3.785795 -3.78582 -3.785821 -3.785806 -3.78581 -3.785815 -3.785795 -3.785809 -3.785821 -3.80638 -3.840656 -3.841289 -3.776838 -3.650571 -3.502673 -3.346179 -3.174483 -3.032348 -2.97344 -3.724602 -3.785815 -3.785812 -3.785802 -3.785812 -3.785801 -3.785814</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger1_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger1_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger1_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger0_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger0_rotationZ.ANGLE-output-array" count="28">39.66268 39.66266 39.66266 39.66266 39.66267 39.66269 39.66269 39.66269 39.66266 39.66269 39.66268 38.14811 34.09358 28.16119 21.02781 13.55559 6.961679 0.9372752 -5.10522 -9.839669 -11.75169 17.55857 39.66265 39.6627 39.66267 39.66269 39.66267 39.66268</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger0_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger0_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger0_rotationY.ANGLE-output-array" count="28">15.076 15.07599 15.076 15.07599 15.07601 15.07601 15.07603 15.07602 15.07603 15.07601 15.07605 16.44394 19.96299 24.72297 29.82212 34.44464 37.9436 40.69739 43.06683 44.66894 45.25632 32.05791 15.07597 15.07601 15.07598 15.07601 15.076 15.07598</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger0_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Finger0_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Finger0_rotationX.ANGLE-output-array" count="28">142.709 142.709 142.709 142.709 142.709 142.709 142.709 142.709 142.709 142.709 142.709 140.3342 133.9948 124.7988 113.9175 102.7644 93.13883 84.51611 76.01955 69.45877 66.83109 108.707 142.709 142.709 142.709 142.709 142.709 142.709</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Finger0_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Finger0_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Finger0_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Thigh_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Thigh_rotationZ.ANGLE-output-array" count="28">-55.85585 -24.37358 15.03503 9.541167 -4.58464 -17.21739 -25.7492 -30.01668 -30.1559 -24.31791 -17.85248 -17.0113 -15.50198 -13.25879 -10.65965 -8.336914 -6.967559 -10.29176 -16.51892 -20.90219 -20.9256 -46.98915 -70.24738 -71.47419 -63.66153 -51.54132 -36.22796 -23.84236</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Thigh_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_Thigh_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_Thigh_rotationY.ANGLE-output-array" count="28">162.2406 172.5783 196.6661 196.0545 189.8792 183.4392 179.2409 176.3368 174.0985 172.4002 170.8997 171.9302 174.0855 176.1685 177.3053 176.9913 175.073 173.7924 170.434 162.6571 157.0384 157.9043 158.3474 164.6415 169.8156 171.822 169.1814 165.3455</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Thigh_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Thigh_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Thigh_rotationX.ANGLE-output-array" count="28">14.90063 22.42833 16.52449 16.99928 19.15507 18.23974 15.54402 12.91624 10.32053 7.77359 4.537292 -1.134201 -8.74559 -17.27887 -25.46059 -31.68771 -34.15036 -30.51648 -20.3604 -6.28659 4.450409 -1.720169 -7.205794 -1.951721 2.308975 4.217926 5.881134 7.489563</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Thigh_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Thigh_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Thigh_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Calf_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Calf_rotationZ.ANGLE-output-array" count="28">-107.4793 -77.58613 -16.12825 -19.64316 -36.56088 -50.31918 -58.88298 -60.84434 -53.97095 -39.97651 -30.02821 -28.66655 -27.07662 -25.4908 -23.96444 -22.49671 -21.22596 -28.24057 -39.4062 -46.84524 -47.647 -86.12469 -114.897 -107.9984 -89.56524 -69.45849 -54.23851 -46.09728</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Calf_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Calf_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Calf_rotationX.ANGLE-output-array" count="28">1.45142e-4 2.21981e-5 -4.18349e-5 -3.84198e-5 -3.07358e-5 1.28066e-6 -1.94233e-5 1.89965e-5 8.53774e-7 -2.2625e-5 -3.58585e-5 -3.41509e-5 -2.89216e-5 -2.20914e-5 -5.13865e-5 -3.35373e-5 -3.51982e-5 -2.35321e-5 -2.60401e-5 -2.2625e-5 -3.84198e-6 3.32972e-5 3.24434e-5 1.36604e-5 3.15896e-5 2.17712e-5 1.15259e-5 -8.11085e-6</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Calf_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Calf_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Calf_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_R_Foot_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_R_Foot_rotationZ.ANGLE-output-array" count="28">58.918 32.51858 -11.12512 -8.203828 1.532106 9.473104 13.94635 12.82701 5.850252 -3.539892 -9.215121 -11.61543 -16.32645 -22.13024 -27.69266 -31.59704 -32.41795 -25.40618 -13.56085 -2.951941 2.901283 35.00941 58.62286 52.70552 42.0523 32.35121 28.46204 27.49477</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Foot_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_R_Foot_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_R_Foot_rotationY.ANGLE-output-array" count="28">25.32071 18.62033 18.70476 17.85299 16.31272 14.32215 12.18956 9.184655 5.35644 2.338634 1.312944 1.059854 0.5558438 0.5337759 1.252723 2.41833 3.527385 3.354533 2.046103 2.346952 6.962451 16.57208 21.40941 15.31937 9.852272 7.61999 9.478045 11.82028</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Foot_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_R_Foot_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_R_Foot_rotationX.ANGLE-output-array" count="28">-13.3897 -13.43522 -2.677922 0.8521616 5.423089 10.16823 13.75913 16.37902 18.62181 19.94816 20.24269 19.14602 16.38479 12.44289 7.9124 3.735427 1.213417 1.061889 -0.3812462 -6.491229 -12.31154 -12.77479 -11.21385 -8.068003 -5.415884 -4.363985 -5.238543 -6.356423</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_R_Foot_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_R_Foot_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_R_Foot_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Thigh_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Thigh_rotationZ.ANGLE-output-array" count="28">46.96457 95.20712 163.9838 181.1233 188.3547 191.6884 192.2568 178.8479 165.7492 156.151 152.51 150.763 150.5891 151.6752 153.3563 154.5722 154.0115 153.3358 155.0527 159.1015 166.3171 117.2503 66.46092 70.64426 91.37782 113.5598 129.309 139.5725</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Thigh_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Thigh_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Thigh_rotationY.ANGLE-output-array" count="28">-23.86492 -40.88551 -46.63154 -37.74835 -24.31835 -10.64942 -1.240909 -3.406393 -6.011332 -10.42175 -15.81416 -22.44697 -30.42608 -38.2562 -44.62894 -48.56097 -49.39879 -45.85786 -37.92967 -26.8584 -13.03637 -40.97161 -39.38392 -38.71038 -37.69071 -32.83517 -27.3476 -23.40155</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Thigh_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Thigh_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Thigh_rotationX.ANGLE-output-array" count="28">-146.7654 -162.1045 -195.4679 -206.9674 -211.1426 -212.5617 -213.4415 -215.0488 -219.3324 -226.3672 -233.0325 -236.8203 -238.9509 -239.6188 -239.1421 -237.7393 -235.4539 -233.6595 -233.0966 -232.5836 -231.4663 -202.9576 -169.8688 -173.4854 -186.7223 -199.2018 -205.7124 -208.9023</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Thigh_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Thigh_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Thigh_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Calf_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Calf_rotationZ.ANGLE-output-array" count="28">-120.5654 -107.2262 -55.83271 -35.35601 -19.05568 -6.982372 -5.752298 -40.45754 -71.81808 -93.29664 -101.962 -103.5829 -104.748 -105.1068 -104.1778 -101.5369 -96.82808 -86.21494 -67.80477 -43.13308 -10.25663 -78.30984 -112.0945 -100.4112 -77.18583 -52.53252 -41.53764 -39.51401</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Calf_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Calf_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Calf_rotationY.ANGLE-output-array" count="28">1.30841e-4 1.02453e-4 6.14717e-5 5.12264e-5 1.70755e-5 -1.53679e-5 -9.39151e-6 5.6776e-5 1.05228e-4 1.21102e-4 8.04682e-5 6.31793e-5 8.81521e-5 4.54634e-5 1.18194e-4 1.25078e-4 1.00318e-4 1.52399e-4 7.34245e-5 5.07995e-5 7.68396e-6 1.1718e-4 1.31268e-4 1.2892e-4 1.36604e-4 7.52388e-5 6.76616e-5 1.01172e-4</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Calf_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Calf_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Calf_rotationX.ANGLE-output-array" count="28">-1.48877e-4 -1.05868e-4 -6.83019e-5 -4.35425e-5 -3.07359e-5 -2.21981e-5 -2.13443e-5 -3.92736e-5 -8.36698e-5 -1.24277e-4 -1.09283e-4 -1.02026e-4 -7.87606e-5 -4.37559e-5 -1.37351e-4 -1.25505e-4 -1.26145e-4 -1.33189e-4 -6.60607e-5 -3.4311e-5 -2.71073e-5 -9.4342e-5 -1.70755e-4 -1.36257e-4 -8.98997e-5 -5.98642e-5 -3.22566e-5 -4.44504e-5</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Calf_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Calf_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Calf_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationZ.ANGLE-input">
+        <float_array id="node-Bip001_L_Foot_rotationZ.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationZ.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationZ.ANGLE-output">
+        <float_array id="node-Bip001_L_Foot_rotationZ.ANGLE-output-array" count="28">20.10221 37.74381 24.52722 10.10208 -5.226274 -18.9169 -25.55687 -15.17263 -8.355467 -7.634236 -11.56124 -15.72704 -18.6806 -20.36033 -20.73797 -19.81926 -17.61911 -9.801536 2.856351 11.47311 5.21206 22.85129 18.0281 12.29256 4.872039 -3.228022 -3.201961 -0.1060671</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationZ.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationZ.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Foot_rotationZ.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationZ.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationY.ANGLE-input">
+        <float_array id="node-Bip001_L_Foot_rotationY.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationY.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationY.ANGLE-output">
+        <float_array id="node-Bip001_L_Foot_rotationY.ANGLE-output-array" count="28">-3.125171 -2.109818 1.666712 3.04752 4.171479 4.156574 3.242573 2.295578 2.097174 3.232017 4.843711 5.827438 6.577237 6.731606 6.029368 4.423191 2.170246 -1.01329 -3.672177 -4.384092 -3.948724 -3.477383 -2.631588 -1.909013 -1.315941 -1.056138 -1.267352 -1.56187</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationY.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationY.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Foot_rotationY.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationY.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationX.ANGLE-input">
+        <float_array id="node-Bip001_L_Foot_rotationX.ANGLE-input-array" count="28">0 0.03333334 0.06666667 0.1 0.1333333 0.1666667 0.2 0.2333333 0.2666667 0.3 0.3333333 0.3666667 0.4 0.4333333 0.4666667 0.5 0.5333334 0.5666667 0.6 0.6333333 0.6666667 0.7 0.7333333 0.7666667 0.8 0.8333333 0.8666667 0.9</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationX.ANGLE-input-array" count="28" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationX.ANGLE-output">
+        <float_array id="node-Bip001_L_Foot_rotationX.ANGLE-output-array" count="28">3.788497 14.96316 24.80007 24.47454 21.58184 17.44087 13.96732 10.92792 6.819277 2.238152 -0.8858708 -1.426445 -0.2588717 2.182245 5.182782 7.819867 9.259215 9.693084 9.592796 9.82946 10.18275 7.007565 3.244469 2.449139 1.797233 1.511849 1.743844 2.067488</float_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationX.ANGLE-output-array" count="28" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="node-Bip001_L_Foot_rotationX.ANGLE-interpolation">
+        <Name_array id="node-Bip001_L_Foot_rotationX.ANGLE-interpolation-array" count="28">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#node-Bip001_L_Foot_rotationX.ANGLE-interpolation-array" count="28" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="node-Bip001_Pelvis_translation.X-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_translation.X-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_translation.X-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_translation.X-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Pelvis_translation.Y-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_translation.Y-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_translation.Y-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_translation.Y-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Pelvis_translation.Z-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_translation.Z-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_translation.Z-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_translation.Z-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Pelvis_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Pelvis_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Pelvis_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Pelvis_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Pelvis_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Pelvis_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_translation.X-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_translation.X-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_translation.X-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_translation.X-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_translation.Y-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_translation.Y-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_translation.Y-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_translation.Y-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_translation.Z-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_translation.Z-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_translation.Z-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_translation.Z-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine1_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine1_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine1_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine1_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine1_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine1_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine1_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine1_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Spine1_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Spine1_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Spine1_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Spine1_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_translation.X-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_translation.X-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_translation.X-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_translation.X-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_translation.Y-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_translation.Y-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_translation.Y-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_translation.Y-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_translation.Z-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_translation.Z-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_translation.Z-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_translation.Z-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_UpperArm_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_UpperArm_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_UpperArm_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_UpperArm_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Forearm_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Forearm_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Forearm_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Forearm_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Hand_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Hand_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Hand_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Hand_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Hand_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Hand_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Hand_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Hand_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Hand_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Hand_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Hand_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Hand_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger1_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger1_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger1_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger1_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger1_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger1_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger1_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger1_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger1_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger1_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger1_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger1_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger0_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger0_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger0_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger0_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger0_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger0_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger0_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger0_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Finger0_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Finger0_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Finger0_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Finger0_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Head_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Head_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Head_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Head_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Head_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Head_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Head_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Head_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_Head_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_Head_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_Head_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_Head_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_translation.X-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_translation.X-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_translation.X-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_translation.X-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_translation.Y-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_translation.Y-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_translation.Y-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_translation.Y-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_translation.Z-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_translation.Z-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_translation.Z-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_translation.Z-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_UpperArm_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_UpperArm_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_UpperArm_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_UpperArm_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Forearm_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Forearm_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Forearm_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Forearm_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Hand_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Hand_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Hand_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Hand_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Hand_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Hand_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Hand_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Hand_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Hand_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Hand_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Hand_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Hand_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger1_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger1_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger1_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger1_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger1_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger1_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger1_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger1_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger1_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger1_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger1_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger1_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger0_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger0_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger0_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger0_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger0_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger0_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger0_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger0_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Finger0_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Finger0_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Finger0_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Finger0_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Thigh_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Thigh_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Thigh_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Thigh_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Thigh_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Thigh_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Thigh_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Thigh_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Thigh_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Thigh_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Thigh_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Thigh_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Calf_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Calf_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Calf_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Calf_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Calf_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Calf_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Calf_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Calf_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Foot_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Foot_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Foot_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Foot_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Foot_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Foot_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Foot_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Foot_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_R_Foot_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_R_Foot_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_R_Foot_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_R_Foot_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Thigh_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Thigh_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Thigh_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Thigh_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Thigh_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Thigh_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Thigh_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Thigh_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Thigh_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Thigh_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Thigh_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Thigh_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Calf_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Calf_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Calf_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Calf_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Calf_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Calf_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Calf_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Calf_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Calf_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Calf_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Calf_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Calf_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Foot_rotationZ.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Foot_rotationZ.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Foot_rotationZ.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Foot_rotationZ.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Foot_rotationY.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Foot_rotationY.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Foot_rotationY.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Foot_rotationY.ANGLE-interpolation"/>
+      </sampler>
+      <sampler id="node-Bip001_L_Foot_rotationX.ANGLE-sampler">
+        <input semantic="INPUT" source="#node-Bip001_L_Foot_rotationX.ANGLE-input"/>
+        <input semantic="OUTPUT" source="#node-Bip001_L_Foot_rotationX.ANGLE-output"/>
+        <input semantic="INTERPOLATION" source="#node-Bip001_L_Foot_rotationX.ANGLE-interpolation"/>
+      </sampler>
+      <channel source="#node-Bip001_Pelvis_translation.X-sampler" target="node-Bip001_Pelvis/translation.X"/>
+      <channel source="#node-Bip001_Pelvis_translation.Y-sampler" target="node-Bip001_Pelvis/translation.Y"/>
+      <channel source="#node-Bip001_Pelvis_translation.Z-sampler" target="node-Bip001_Pelvis/translation.Z"/>
+      <channel source="#node-Bip001_Pelvis_rotationZ.ANGLE-sampler" target="node-Bip001_Pelvis/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_Pelvis_rotationY.ANGLE-sampler" target="node-Bip001_Pelvis/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_Pelvis_rotationX.ANGLE-sampler" target="node-Bip001_Pelvis/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_Spine_translation.X-sampler" target="node-Bip001_Spine/translation.X"/>
+      <channel source="#node-Bip001_Spine_translation.Y-sampler" target="node-Bip001_Spine/translation.Y"/>
+      <channel source="#node-Bip001_Spine_translation.Z-sampler" target="node-Bip001_Spine/translation.Z"/>
+      <channel source="#node-Bip001_Spine_rotationZ.ANGLE-sampler" target="node-Bip001_Spine/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_Spine_rotationY.ANGLE-sampler" target="node-Bip001_Spine/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_Spine_rotationX.ANGLE-sampler" target="node-Bip001_Spine/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_Spine1_rotationZ.ANGLE-sampler" target="node-Bip001_Spine1/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_Spine1_rotationY.ANGLE-sampler" target="node-Bip001_Spine1/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_Spine1_rotationX.ANGLE-sampler" target="node-Bip001_Spine1/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_UpperArm_translation.X-sampler" target="node-Bip001_R_UpperArm/translation.X"/>
+      <channel source="#node-Bip001_R_UpperArm_translation.Y-sampler" target="node-Bip001_R_UpperArm/translation.Y"/>
+      <channel source="#node-Bip001_R_UpperArm_translation.Z-sampler" target="node-Bip001_R_UpperArm/translation.Z"/>
+      <channel source="#node-Bip001_R_UpperArm_rotationZ.ANGLE-sampler" target="node-Bip001_R_UpperArm/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_UpperArm_rotationY.ANGLE-sampler" target="node-Bip001_R_UpperArm/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_UpperArm_rotationX.ANGLE-sampler" target="node-Bip001_R_UpperArm/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Forearm_rotationZ.ANGLE-sampler" target="node-Bip001_R_Forearm/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Hand_rotationZ.ANGLE-sampler" target="node-Bip001_R_Hand/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Hand_rotationY.ANGLE-sampler" target="node-Bip001_R_Hand/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_Hand_rotationX.ANGLE-sampler" target="node-Bip001_R_Hand/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger1_rotationZ.ANGLE-sampler" target="node-Bip001_R_Finger1/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger1_rotationY.ANGLE-sampler" target="node-Bip001_R_Finger1/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger1_rotationX.ANGLE-sampler" target="node-Bip001_R_Finger1/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger0_rotationZ.ANGLE-sampler" target="node-Bip001_R_Finger0/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger0_rotationY.ANGLE-sampler" target="node-Bip001_R_Finger0/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_Finger0_rotationX.ANGLE-sampler" target="node-Bip001_R_Finger0/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_Head_rotationZ.ANGLE-sampler" target="node-Bip001_Head/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_Head_rotationY.ANGLE-sampler" target="node-Bip001_Head/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_Head_rotationX.ANGLE-sampler" target="node-Bip001_Head/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_UpperArm_translation.X-sampler" target="node-Bip001_L_UpperArm/translation.X"/>
+      <channel source="#node-Bip001_L_UpperArm_translation.Y-sampler" target="node-Bip001_L_UpperArm/translation.Y"/>
+      <channel source="#node-Bip001_L_UpperArm_translation.Z-sampler" target="node-Bip001_L_UpperArm/translation.Z"/>
+      <channel source="#node-Bip001_L_UpperArm_rotationZ.ANGLE-sampler" target="node-Bip001_L_UpperArm/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_UpperArm_rotationY.ANGLE-sampler" target="node-Bip001_L_UpperArm/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_UpperArm_rotationX.ANGLE-sampler" target="node-Bip001_L_UpperArm/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Forearm_rotationZ.ANGLE-sampler" target="node-Bip001_L_Forearm/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Hand_rotationZ.ANGLE-sampler" target="node-Bip001_L_Hand/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Hand_rotationY.ANGLE-sampler" target="node-Bip001_L_Hand/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Hand_rotationX.ANGLE-sampler" target="node-Bip001_L_Hand/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger1_rotationZ.ANGLE-sampler" target="node-Bip001_L_Finger1/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger1_rotationY.ANGLE-sampler" target="node-Bip001_L_Finger1/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger1_rotationX.ANGLE-sampler" target="node-Bip001_L_Finger1/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger0_rotationZ.ANGLE-sampler" target="node-Bip001_L_Finger0/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger0_rotationY.ANGLE-sampler" target="node-Bip001_L_Finger0/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Finger0_rotationX.ANGLE-sampler" target="node-Bip001_L_Finger0/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Thigh_rotationZ.ANGLE-sampler" target="node-Bip001_R_Thigh/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Thigh_rotationY.ANGLE-sampler" target="node-Bip001_R_Thigh/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_Thigh_rotationX.ANGLE-sampler" target="node-Bip001_R_Thigh/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Calf_rotationZ.ANGLE-sampler" target="node-Bip001_R_Calf/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Calf_rotationX.ANGLE-sampler" target="node-Bip001_R_Calf/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_R_Foot_rotationZ.ANGLE-sampler" target="node-Bip001_R_Foot/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_R_Foot_rotationY.ANGLE-sampler" target="node-Bip001_R_Foot/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_R_Foot_rotationX.ANGLE-sampler" target="node-Bip001_R_Foot/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Thigh_rotationZ.ANGLE-sampler" target="node-Bip001_L_Thigh/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Thigh_rotationY.ANGLE-sampler" target="node-Bip001_L_Thigh/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Thigh_rotationX.ANGLE-sampler" target="node-Bip001_L_Thigh/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Calf_rotationZ.ANGLE-sampler" target="node-Bip001_L_Calf/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Calf_rotationY.ANGLE-sampler" target="node-Bip001_L_Calf/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Calf_rotationX.ANGLE-sampler" target="node-Bip001_L_Calf/rotationX.ANGLE"/>
+      <channel source="#node-Bip001_L_Foot_rotationZ.ANGLE-sampler" target="node-Bip001_L_Foot/rotationZ.ANGLE"/>
+      <channel source="#node-Bip001_L_Foot_rotationY.ANGLE-sampler" target="node-Bip001_L_Foot/rotationY.ANGLE"/>
+      <channel source="#node-Bip001_L_Foot_rotationX.ANGLE-sampler" target="node-Bip001_L_Foot/rotationX.ANGLE"/>
+    </animation>
+  </library_animations>
+  <scene>
+    <instance_visual_scene url="#MaxScene"/>
+  </scene>
+</COLLADA>

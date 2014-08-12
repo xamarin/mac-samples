@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+ <asset>
+  <contributor>
+   <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
+  </contributor>
+  <created>2014-05-11T17:37:10Z</created>
+  <modified>2014-05-11T17:37:10Z</modified>
+  <unit meter="0.010000"/>
+  <up_axis>Y_UP</up_axis>
+ </asset>
+ <library_materials>
+  <material id="Blue" name="Blue">
+   <instance_effect url="#effect_Blue"/>
+  </material>
+ </library_materials>
+ <library_effects>
+  <effect id="effect_Blue">
+   <profile_COMMON>
+    <technique sid="common">
+     <phong>
+      <ambient>
+       <color>0 0 0 1</color>
+      </ambient>
+      <diffuse>
+       <color>1 0.152444 0 1</color>
+      </diffuse>
+      <specular>
+       <color>0.994931 0.990035 1 1</color>
+      </specular>
+      <shininess>
+       <float>100</float>
+      </shininess>
+      <transparent opaque="A_ONE">
+       <color>0 0 0 1</color>
+      </transparent>
+      <transparency>
+       <float>1</float>
+      </transparency>
+      <index_of_refraction>
+       <float>1</float>
+      </index_of_refraction>
+     </phong>
+    </technique>
+   </profile_COMMON>
+   <extra>
+    <technique profile="SceneKit">
+     <litPerPixel>1</litPerPixel>
+     <ambient_diffuse_lock>1</ambient_diffuse_lock>
+    </technique>
+   </extra>
+  </effect>
+ </library_effects>
+ <library_geometries>
+  <geometry id="box-lib" name="box">
+   <mesh>
+    <source id="box-lib-positions">
+     <float_array id="ID1-array" count="72">-50 50 50 -50 -50 50 50 -50 50 50 50 50 -50 50 50 50 50 50 50 50 -50 -50 50 -50 -50 -50 -50 50 -50 -50 50 -50 50 -50 -50 50 -50 50 50 -50 50 -50 -50 -50 -50 -50 -50 50 50 -50 50 50 -50 -50 50 50 -50 50 50 50 50 50 -50 50 -50 -50 -50 -50 -50 -50 50 -50 </float_array>
+     <technique_common>
+      <accessor source="#ID1-array" count="24" stride="3">
+       <param name="X" type="float"/>
+       <param name="Y" type="float"/>
+       <param name="Z" type="float"/>
+      </accessor>
+     </technique_common>
+    </source>
+    <source id="box-lib-normals">
+     <float_array id="ID2-array" count="72">0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 </float_array>
+     <technique_common>
+      <accessor source="#ID2-array" count="24" stride="3">
+       <param name="X" type="float"/>
+       <param name="Y" type="float"/>
+       <param name="Z" type="float"/>
+      </accessor>
+     </technique_common>
+    </source>
+    <vertices id="box-lib-positions-vertices">
+     <input semantic="POSITION" source="#box-lib-positions"/>
+    </vertices>
+    <triangles count="12" material="geometryElement3">
+     <input semantic="VERTEX" offset="0" source="#box-lib-positions-vertices"/>
+     <input semantic="NORMAL" offset="0" source="#box-lib-normals"/>
+     <p>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 12 13 14 12 14 15 16 17 18 16 18 19 20 21 22 20 22 23 </p>
+    </triangles>
+   </mesh>
+  </geometry>
+ </library_geometries>
+ <library_visual_scenes>
+  <visual_scene id="scene4">
+   <node id="Box" name="Box">
+    <instance_geometry url="#box-lib">
+     <bind_material>
+      <technique_common>
+       <instance_material symbol="geometryElement3" target="#Blue"/>
+      </technique_common>
+     </bind_material>
+    </instance_geometry>
+   </node>
+  </visual_scene>
+ </library_visual_scenes>
+ <scene>
+  <instance_visual_scene url="#scene4"/>
+ </scene>
+</COLLADA>

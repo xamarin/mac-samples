@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{B853DB38-57D2-41E1-85A8-52C486BE37EF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SceneKitSessionWWDC2013</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>Scene Kit Session WWDC 2013</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>Full</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>Full</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="XamMac" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Scene Kit Presentation Slides\" />
+    <Folder Include="Presentation Engine\" />
+    <Folder Include="Scene Kit Presentation Slides\Slides\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Engine\Slide.cs" />
+    <Compile Include="Presentation Engine\SlideTextManager.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter1.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter2.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter3.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter4.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter5.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideChapter6.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideIntroduction.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideArchitecture.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideAllNew.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideOutline.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideSceneGraph.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideGeometry.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideLight.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCamera.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideSceneGraphSummary.cs" />
+    <Compile Include="Presentation Engine\PresentationViewController.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideRenderers.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideInterfaceBuilder.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCreateAScene.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCreatingGeometries.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCreateAScene2.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideLoadingDae.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideDaeOnOSX.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideEditor.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideSampleLoadingDae.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideRenderAScene.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideManipulation.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideManipulation2.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideManipulation3.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideManipulation4.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideImplicitAnimations.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideExplicitAnimations.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMaterials.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMaterialProperties.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMaterialConfigure.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMaterialLayer.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideExtendingOutline.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideDelegateRendering.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideNodeDelegate.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCustomProgram.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideShaderModifiers.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMorphing.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideSkinning.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideDOF.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCoreImage.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideConstraints.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideAnimationEvents.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideStatistics.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideFlattening.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideCloning.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideLighting.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideTexturing.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideLOD.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideMoreInfo.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideLabs.cs" />
+    <Compile Include="Scene Kit Presentation Slides\Slides\SlideEnd.cs" />
+    <Compile Include="Presentation Engine\IPresentation.cs" />
+    <Compile Include="Presentation Engine\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="Resources\MainWindow.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\Contacts\contact.dae" />
+    <BundleResource Include="Resources\Contacts\contact0.jpg" />
+    <BundleResource Include="Resources\Contacts\contact10.jpg" />
+    <BundleResource Include="Resources\Contacts\contact11.jpg" />
+    <BundleResource Include="Resources\Contacts\contact12.jpg" />
+    <BundleResource Include="Resources\Contacts\contact13.jpg" />
+    <BundleResource Include="Resources\Contacts\contact14.jpg" />
+    <BundleResource Include="Resources\Contacts\contact15.jpg" />
+    <BundleResource Include="Resources\Contacts\contact16.jpg" />
+    <BundleResource Include="Resources\Contacts\contact17.jpg" />
+    <BundleResource Include="Resources\Contacts\contact18.jpg" />
+    <BundleResource Include="Resources\Contacts\contact19.jpg" />
+    <BundleResource Include="Resources\Contacts\contact2.jpg" />
+    <BundleResource Include="Resources\Contacts\contact20.jpg" />
+    <BundleResource Include="Resources\Contacts\contact21.jpg" />
+    <BundleResource Include="Resources\Contacts\contact22.jpg" />
+    <BundleResource Include="Resources\Contacts\contact23.jpg" />
+    <BundleResource Include="Resources\Contacts\contact24.jpg" />
+    <BundleResource Include="Resources\Contacts\contact25.jpg" />
+    <BundleResource Include="Resources\Contacts\contact26.jpg" />
+    <BundleResource Include="Resources\Contacts\contact27.jpg" />
+    <BundleResource Include="Resources\Contacts\contact28.jpg" />
+    <BundleResource Include="Resources\Contacts\contact29.jpg" />
+    <BundleResource Include="Resources\Contacts\contact3.jpg" />
+    <BundleResource Include="Resources\Contacts\contact30.jpg" />
+    <BundleResource Include="Resources\Contacts\contact31.jpg" />
+    <BundleResource Include="Resources\Contacts\contact32.jpg" />
+    <BundleResource Include="Resources\Contacts\contact33.jpg" />
+    <BundleResource Include="Resources\Contacts\contact34.jpg" />
+    <BundleResource Include="Resources\Contacts\contact35.jpg" />
+    <BundleResource Include="Resources\Contacts\contact36.jpg" />
+    <BundleResource Include="Resources\Contacts\contact37.jpg" />
+    <BundleResource Include="Resources\Contacts\contact38.jpg" />
+    <BundleResource Include="Resources\Contacts\contact39.jpg" />
+    <BundleResource Include="Resources\Contacts\contact4.jpg" />
+    <BundleResource Include="Resources\Contacts\contact40.jpg" />
+    <BundleResource Include="Resources\Contacts\contact41.jpg" />
+    <BundleResource Include="Resources\Contacts\contact42.jpg" />
+    <BundleResource Include="Resources\Contacts\contact43.jpg" />
+    <BundleResource Include="Resources\Contacts\contact5.jpg" />
+    <BundleResource Include="Resources\Contacts\contact6.jpg" />
+    <BundleResource Include="Resources\Contacts\contact7.jpg" />
+    <BundleResource Include="Resources\Contacts\contact8.jpg" />
+    <BundleResource Include="Resources\Contacts\contact9.jpg" />
+    <BundleResource Include="Resources\Images\renderers\Interface Builder.png" />
+    <BundleResource Include="Resources\Images\renderers\renderer-framebuffer.png" />
+    <BundleResource Include="Resources\Images\renderers\renderer-layer.png" />
+    <BundleResource Include="Resources\Images\renderers\renderer-window.png" />
+    <BundleResource Include="Resources\Images\renderers\teapot.tiff" />
+    <BundleResource Include="Resources\Images\statistics\control-panel.png" />
+    <BundleResource Include="Resources\Images\statistics\statistics.png" />
+    <BundleResource Include="Resources\Images\statistics\statistics-button.png" />
+    <BundleResource Include="Resources\Images\statistics\statistics-detail.png" />
+    <BundleResource Include="Resources\Images\statistics\statistics-fps.png" />
+    <BundleResource Include="Resources\Images\dae file icon.png" />
+    <BundleResource Include="Resources\Images\editor.png" />
+    <BundleResource Include="Resources\Images\flattening.png" />
+    <BundleResource Include="Resources\Images\hole.png" />
+    <BundleResource Include="Resources\Images\light-off.tiff" />
+    <BundleResource Include="Resources\Images\light-on.tiff" />
+    <BundleResource Include="Resources\Images\new.png" />
+    <BundleResource Include="Resources\Movies\movie1.mov" />
+    <BundleResource Include="Resources\Movies\movie2.mov" />
+    <BundleResource Include="Resources\Scenes\chess\boardshadow.png" />
+    <BundleResource Include="Resources\Scenes\chess\checker.png" />
+    <BundleResource Include="Resources\Scenes\chess\chess.dae" />
+    <BundleResource Include="Resources\Scenes\chess\wood_antiaris.jpg" />
+    <BundleResource Include="Resources\Scenes\cornell-box\cornell-box.dae" />
+    <BundleResource Include="Resources\Scenes\cornell-box\cornellLM.JPG" />
+    <BundleResource Include="Resources\Scenes\earth\cloudsTransparency.png" />
+    <BundleResource Include="Resources\Scenes\earth\cloudsTransparency-mini.png" />
+    <BundleResource Include="Resources\Scenes\earth\Credit.txt" />
+    <BundleResource Include="Resources\Scenes\earth\earth-bump.png" />
+    <BundleResource Include="Resources\Scenes\earth\earth-diffuse.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-diffuse-mini.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-emissive.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-emissive-mini.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-emissive-mini2.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-reflective.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-specular.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\earth-specular-mini.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\moon.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\orbit.png" />
+    <BundleResource Include="Resources\Scenes\earth\sun.jpg" />
+    <BundleResource Include="Resources\Scenes\earth\sun-halo.png" />
+    <BundleResource Include="Resources\Scenes\frames\floor-frames.jpg" />
+    <BundleResource Include="Resources\Scenes\frames\frame.png" />
+    <BundleResource Include="Resources\Scenes\frames\frames.dae" />
+    <BundleResource Include="Resources\Scenes\frames\gloss.png" />
+    <BundleResource Include="Resources\Scenes\frames\leather.jpg" />
+    <BundleResource Include="Resources\Scenes\frames\leather-bump.jpg" />
+    <BundleResource Include="Resources\Scenes\frames\photo-horizontal.jpg" />
+    <BundleResource Include="Resources\Scenes\frames\photo-vertical.jpg" />
+    <BundleResource Include="Resources\Scenes\hero\attack.dae" />
+    <BundleResource Include="Resources\Scenes\hero\death.dae" />
+    <BundleResource Include="Resources\Scenes\hero\hero.dae" />
+    <BundleResource Include="Resources\Scenes\hero\male_large_01.png" />
+    <BundleResource Include="Resources\Scenes\hero\walk.dae" />
+    <BundleResource Include="Resources\Scenes\intersection\directions.png" />
+    <BundleResource Include="Resources\Scenes\intersection\intersection.dae" />
+    <BundleResource Include="Resources\Scenes\intersection\Plane01ShadowsMap.tga" />
+    <BundleResource Include="Resources\Scenes\intersection\signBShadowsMap.tga" />
+    <BundleResource Include="Resources\Scenes\lod\lod.dae" />
+    <BundleResource Include="Resources\Scenes\lod\lod_envmap.jpg" />
+    <BundleResource Include="Resources\Scenes\lod\Plane01CompleteMap.tga" />
+    <BundleResource Include="Resources\Scenes\map\foldingMap.dae" />
+    <BundleResource Include="Resources\Scenes\map\mapFloor.png" />
+    <BundleResource Include="Resources\Scenes\map\mapImage.png" />
+    <BundleResource Include="Resources\Scenes\map\shadow.png" />
+    <BundleResource Include="Resources\Scenes\pool\pool.dae" />
+    <BundleResource Include="Resources\Scenes\pool\pool_8.png" />
+    <BundleResource Include="Resources\Scenes\pool\poolFloor.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture15.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture16.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture17.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture18.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture19.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture20.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture21.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture22.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture23.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture24.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture25.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture26.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture27.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture28.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture29.png" />
+    <BundleResource Include="Resources\Scenes\skinning\export_0_texture30.png" />
+    <BundleResource Include="Resources\Scenes\skinning\skinning.dae" />
+    <BundleResource Include="Resources\Scenes\teapots\teapot.dae" />
+    <BundleResource Include="Resources\Scenes\teapots\teapotLowRes.dae" />
+    <BundleResource Include="Resources\Scenes\teapots\teapotMaterial.dae" />
+    <BundleResource Include="Resources\Scenes\teapots\teapotNormal.png" />
+    <BundleResource Include="Resources\Scenes\teapots\teapotSpec.png" />
+    <BundleResource Include="Resources\Scenes\teapots\UVs.png" />
+    <BundleResource Include="Resources\Scenes\torus\torus.dae" />
+    <BundleResource Include="Resources\Scenes\bunny.dae" />
+    <BundleResource Include="Resources\Scenes\newBadge.dae" />
+    <BundleResource Include="Resources\Shaders\carPaint.shader" />
+    <BundleResource Include="Resources\Shaders\character.shader" />
+    <BundleResource Include="Resources\Shaders\characterLighting.shader" />
+    <BundleResource Include="Resources\Shaders\CustomProgram.fsh" />
+    <BundleResource Include="Resources\Shaders\CustomProgram.vsh" />
+    <BundleResource Include="Resources\Shaders\explode.shader" />
+    <BundleResource Include="Resources\Shaders\floor.shader" />
+    <BundleResource Include="Resources\Shaders\mapFragment.shader" />
+    <BundleResource Include="Resources\Shaders\mapGeometry.shader" />
+    <BundleResource Include="Resources\Shaders\mapLighting.shader" />
+    <BundleResource Include="Resources\Shaders\NodeDelegate.fsh" />
+    <BundleResource Include="Resources\Shaders\NodeDelegate.vsh" />
+    <BundleResource Include="Resources\Shaders\ParticleSystem.fsh" />
+    <BundleResource Include="Resources\Shaders\ParticleSystem.gsh" />
+    <BundleResource Include="Resources\Shaders\ParticleSystem.vsh" />
+    <BundleResource Include="Resources\Shaders\SceneDelegate.fsh" />
+    <BundleResource Include="Resources\Shaders\SceneDelegate.vsh" />
+    <BundleResource Include="Resources\Shaders\sm_frag.shader" />
+    <BundleResource Include="Resources\Shaders\sm_geom.shader" />
+    <BundleResource Include="Resources\Shaders\sm_light.shader" />
+    <BundleResource Include="Resources\Shaders\sm_surf.shader" />
+    <BundleResource Include="Resources\Shaders\toon.shader" />
+    <BundleResource Include="Resources\Shaders\wave.shader" />
+    <BundleResource Include="Resources\Shaders\xRay.shader" />
+    <BundleResource Include="Resources\SharedTextures\box_wireframe.png" />
+    <BundleResource Include="Resources\SharedTextures\chrome.jpg" />
+    <BundleResource Include="Resources\SharedTextures\color_envmap.png" />
+    <BundleResource Include="Resources\SharedTextures\envmap.jpg" />
+    <BundleResource Include="Resources\SharedTextures\envmap2.jpg" />
+    <BundleResource Include="Resources\SharedTextures\envmap3.jpg" />
+    <BundleResource Include="Resources\SharedTextures\floor2.png" />
+    <BundleResource Include="Resources\SharedTextures\gradient1.png" />
+    <BundleResource Include="Resources\SharedTextures\gradient2.tiff" />
+    <BundleResource Include="Resources\SharedTextures\moebius.png" />
+    <BundleResource Include="Resources\SharedTextures\noise.png" />
+    <BundleResource Include="Resources\SharedTextures\ramp_fire.png" />
+    <BundleResource Include="Resources\SharedTextures\ramp_smoke.png" />
+    <BundleResource Include="Resources\SharedTextures\ramp_water.png" />
+    <BundleResource Include="Resources\SharedTextures\shapeMap.png" />
+    <BundleResource Include="Resources\SharedTextures\tex_fire.png" />
+    <BundleResource Include="Resources\SharedTextures\tex_smoke.png" />
+    <BundleResource Include="Resources\SharedTextures\titleBg.png" />
+    <BundleResource Include="Resources\SharedTextures\wireframe.png" />
+    <BundleResource Include="Resources\SharedTextures\wood.jpg" />
+    <BundleResource Include="Resources\Sounds\attack.wav" />
+    <BundleResource Include="Resources\Sounds\death.wav" />
+    <BundleResource Include="Resources\Sounds\emptySound.m4a" />
+    <BundleResource Include="Resources\Sounds\swipe.wav" />
+    <BundleResource Include="Resources\Sounds\sword.wav" />
+    <BundleResource Include="Resources\Sounds\walk.wav" />
+    <BundleResource Include="Resources\icon.icns" />
+    <BundleResource Include="Resources\Scene Kit Presentation.xml" />
+    <BundleResource Include="Resources\SharedTextures\floor-frames.jpg" />
+    <BundleResource Include="Resources\Contacts\contact1.jpg" />
+    <BundleResource Include="Resources\SharedTextures\poolFloor.png" />
+  </ItemGroup>
+</Project>

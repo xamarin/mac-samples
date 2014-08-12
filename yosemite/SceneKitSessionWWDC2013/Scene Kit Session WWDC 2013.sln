@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scene Kit Session WWDC 2013", "SceneKitSessionWWDC2013\Scene Kit Session WWDC 2013.csproj", "{B853DB38-57D2-41E1-85A8-52C486BE37EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		AppStore|Any CPU = AppStore|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.AppStore|Any CPU.ActiveCfg = AppStore|Any CPU
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.AppStore|Any CPU.Build.0 = AppStore|Any CPU
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B853DB38-57D2-41E1-85A8-52C486BE37EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = SceneKitSessionWWDC2013\Scene Kit Session WWDC 2013.csproj
+	EndGlobalSection
+EndGlobal
