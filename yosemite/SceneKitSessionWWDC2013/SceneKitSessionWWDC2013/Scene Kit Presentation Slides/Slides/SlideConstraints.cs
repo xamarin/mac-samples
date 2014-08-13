@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreFoundation;
+
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
+using CoreFoundation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -240,7 +241,7 @@ namespace SceneKitSessionWWDC2013
 			arrowContainer.Name = "arrowContainer";
 			intermediateNode.AddChildNode (arrowContainer);
 
-			var arrowPath = Utils.SCArrowBezierPath (new SizeF (6, 2), new SizeF (3, 5), 0.5f, false);
+			var arrowPath = Utils.SCArrowBezierPath (new CGSize (6, 2), new CGSize (3, 5), 0.5f, false);
 			// Create the arrows
 			for (var i = 0; i < 11; i++) {
 				var arrowNode = SCNNode.Create ();

@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.CoreMedia;
-using MonoMac.Foundation;
-using MonoMac.ObjCRuntime;
-using MonoMac.AVFoundation;
-using MonoMac.CoreAnimation;
+
+using AppKit;
+using SceneKit;
+using CoreMedia;
+using Foundation;
+using ObjCRuntime;
+using AVFoundation;
+using CoreGraphics;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -76,14 +77,14 @@ namespace SceneKitSessionWWDC2013
 			// Set an arbitrary frame. This frame will be the size of our movie texture so if it is too small it will appear scaled up and blurry, and if it is too big it will be slow
 			var playerLayer = new AVPlayerLayer ();
 			playerLayer.Player = player;
-			playerLayer.VideoGravity = AVPlayerLayer.GravityResizeAspectFill;
-			playerLayer.Frame = new RectangleF (0, 0, 600, 800);
+			playerLayer.ContentsGravity = AVPlayerLayer.GravityResizeAspectFill;
+			playerLayer.Frame = new CGRect (0, 0, 600, 800);
 
 			// Use a parent layer with a background color set to black
 			// That way if the movie is stil loading and the frame is transparent, we won't see holes in the model
 			var backgroundLayer = CALayer.Create ();
 			backgroundLayer.BackgroundColor = NSColor.Black.CGColor; 
-			backgroundLayer.Frame = new RectangleF (0, 0, 600, 800);
+			backgroundLayer.Frame = new CGRect (0, 0, 600, 800);
 			backgroundLayer.AddSublayer (playerLayer);
 
 			var frameNode = GroundNode.FindChildNode (hostingNodeName, true);

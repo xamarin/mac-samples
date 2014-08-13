@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.Foundation;
-using MonoMac.ObjCRuntime;
+using AppKit;
+using Foundation;
+using ObjCRuntime;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -62,7 +62,7 @@ namespace SceneKitSessionWWDC2013
 		{
 			var item = sender as NSMenuItem;
 			var index = (NSNumber)(item.RepresentedObject);
-			PresentationViewController.GoToSlide (index.IntValue);
+			PresentationViewController.GoToSlide (index.Int32Value);
 		}
 
 		partial void ToogleCursor (NSObject sender)

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+using AppKit;
+using OpenGL;
+using SceneKit;
+using Foundation;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -57,7 +57,7 @@ namespace SceneKitSessionWWDC2013
 
 				TextManager.AddEmptyLine ();
 				TextManager.AddCode ("#aMaterial.#ShaderModifiers# = new SCNShaderModifiers { \n"
-				+ "     EntryPointFragment = \n"
+				+ "     EntryCGPointragment = \n"
 				+ "     new Vector3 (1.0f) - #output#.Color.GetRgb () \n"
 				+ "};#");
 

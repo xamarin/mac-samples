@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Collections;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -35,7 +35,7 @@ namespace SceneKitSessionWWDC2013
 					cameraNodes.Add (child);
 			}
 
-			for (var i = 0; i < cameraNodes.Count; i++) {
+			for (nuint i = 0; i < cameraNodes.Count; i++) {
 				var cameraNode = new SCNNode (cameraNodes.ValueAt ((uint)i));
 				var previousWorldTransform = cameraNode.WorldTransform;
 				intermediateNode.AddChildNode (cameraNode); // re-parent

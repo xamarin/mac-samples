@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -113,7 +114,7 @@ namespace SceneKitSessionWWDC2013
 
 				// "Scene"
 				var blue = NSColor.FromDeviceRgba (49.0f / 255.0f, 80.0f / 255.0f, 201.0f / 255.0f, 1);
-				var box = Utils.SCBoxNode ("Scene", new RectangleF (-53.5f, -25, 107, 50), blue, 10, true);
+				var box = Utils.SCBoxNode ("Scene", new CGRect (-53.5f, -25, 107, 50), blue, 10, true);
 				box.Name = "scene";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (5.4f, 4.8f, 0);
@@ -123,7 +124,7 @@ namespace SceneKitSessionWWDC2013
 				// Arrow from "Scene" to "Root Node"
 				var arrowNode = new SCNNode {
 					Name = "sceneArrow",
-					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (3, 0.2f), new SizeF (0.5f, 0.7f), 0.2f, false), 0),
+					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (3, 0.2f), new CGSize (0.5f, 0.7f), 0.2f, false), 0),
 					Scale = new SCNVector3 (20, 20, 1),
 					Position = new SCNVector3 (-5, 0, 8),
 					Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2))
@@ -134,7 +135,7 @@ namespace SceneKitSessionWWDC2013
 
 				// "Root Node"
 				var green = NSColor.FromDeviceRgba (154.0f / 255.0f, 197.0f / 255.0f, 58.0f / 255.0f, 1);
-				box = Utils.SCBoxNode ("Root Node", new RectangleF (-40, -36, 80, 72), green, 10, true);
+				box = Utils.SCBoxNode ("Root Node", new CGRect (-40, -36, 80, 72), green, 10, true);
 				box.Name = "rootNode";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (5.405f, 1.8f, 0);
@@ -144,7 +145,7 @@ namespace SceneKitSessionWWDC2013
 				// Arrows from "Root Node" to child nodes
 				arrowNode = arrowNode.Clone ();
 				arrowNode.Name = "nodeArrow1";
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (5.8f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, true), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (5.8f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, true), 0);
 				arrowNode.Position = new SCNVector3 (0, -30, 8);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.85f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = green;
@@ -158,7 +159,7 @@ namespace SceneKitSessionWWDC2013
 
 				arrowNode = arrowNode.Clone ();
 				arrowNode.Name = "nodeArrow3";
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.6f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, true), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.6f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, true), 0);
 				arrowNode.Position = new SCNVector3 (-4, -38, 8);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.5f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = green;
@@ -166,7 +167,7 @@ namespace SceneKitSessionWWDC2013
 
 
 				// Multiple "Child Node"
-				box = Utils.SCBoxNode ("Child Node", new RectangleF (-40, -36, 80, 72), green, 10, true);
+				box = Utils.SCBoxNode ("Child Node", new CGRect (-40, -36, 80, 72), green, 10, true);
 				box.Name = "child1";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (2.405f, -2, 0);
@@ -185,7 +186,7 @@ namespace SceneKitSessionWWDC2013
 
 				// "Light"
 				var purple = NSColor.FromDeviceRgba (190.0f / 255.0f, 56.0f / 255.0f, 243.0f / 255.0f, 1);
-				box = Utils.SCBoxNode ("Light", new RectangleF (-40, -20, 80, 40), purple, 10, true);
+				box = Utils.SCBoxNode ("Light", new CGRect (-40, -20, 80, 40), purple, 10, true);
 				box.Name = "light";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (2.405f, -4.8f, 0);
@@ -195,7 +196,7 @@ namespace SceneKitSessionWWDC2013
 				// Arrow to "Light"
 				arrowNode = new SCNNode {
 					Name = "lightArrow",
-					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.0f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, false), 0),
+					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.0f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, false), 0),
 					Position = new SCNVector3 (-5, 60, 8),
 					Scale = new SCNVector3 (20, 20, 1),
 					Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2))
@@ -205,7 +206,7 @@ namespace SceneKitSessionWWDC2013
 
 
 				// "Camera"
-				box = Utils.SCBoxNode ("Camera", new RectangleF (-45, -20, 90, 40), purple, 10, true);
+				box = Utils.SCBoxNode ("Camera", new CGRect (-45, -20, 90, 40), purple, 10, true);
 				box.Name = "camera";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (5.25f, -4.8f, 0);
@@ -220,7 +221,7 @@ namespace SceneKitSessionWWDC2013
 
 
 				// "Geometry"
-				box = Utils.SCBoxNode ("Geometry", new RectangleF (-55, -20, 110, 40), purple, 10, true);
+				box = Utils.SCBoxNode ("Geometry", new CGRect (-55, -20, 110, 40), purple, 10, true);
 				box.Name = "geometry";
 				box.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				box.Position = new SCNVector3 (8.6f, -4.8f, 0);
@@ -235,7 +236,7 @@ namespace SceneKitSessionWWDC2013
 
 				arrowNode = arrowNode.Clone ();
 				arrowNode.Name = "geometryArrow2";
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (5.0f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, false), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (5.0f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, false), 0);
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = purple;
 				arrowNode.Position = new SCNVector3 (-105, 53, 8);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 8));
@@ -245,13 +246,13 @@ namespace SceneKitSessionWWDC2013
 				// Multiple "Material"
 				var redColor = NSColor.FromDeviceRgba (168.0f / 255.0f, 21.0f / 255.0f, 0.0f / 255.0f, 1);
 
-				var materialsBox = Utils.SCBoxNode (null, new RectangleF (-151, -25, 302, 50), NSColor.LightGray, 2, true);
+				var materialsBox = Utils.SCBoxNode (null, new CGRect (-151, -25, 302, 50), NSColor.LightGray, 2, true);
 				materialsBox.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 				materialsBox.Name = "materials";
 				materialsBox.Position = new SCNVector3 (8.7f, -7.1f, -0.2f);
 				DiagramNode.AddChildNode (materialsBox);
 
-				box = Utils.SCBoxNode ("Material", new RectangleF (-45, -20, 90, 40), redColor, 0, true);
+				box = Utils.SCBoxNode ("Material", new CGRect (-45, -20, 90, 40), redColor, 0, true);
 				box.Position = new SCNVector3 (-100, 0, 0.2f);
 				materialsBox.AddChildNode (box);
 
@@ -265,7 +266,7 @@ namespace SceneKitSessionWWDC2013
 
 				// Arrow from "Geometry" to the materials
 				arrowNode = new SCNNode {
-					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.0f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, false), 0),
+					Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.0f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, false), 0),
 					Position = new SCNVector3 (-6, 65, 8),
 					Scale = new SCNVector3 (20, 20, 1),
 					Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2))

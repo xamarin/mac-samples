@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Drawing;
 using System.Globalization;
 using System.Collections.Generic;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
+
+using AppKit;
+using OpenGL;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -37,22 +38,19 @@ namespace SceneKitSessionWWDC2013
 			if (scale != 0) {
 				// Rescale based on the current bounding box and the desired scale
 				// Align the node to 0 on the Y axis
-				var scn_min = new SCNVector3 ();
-				var scn_max = new SCNVector3 ();
-				node.GetBoundingBox (ref scn_min, ref scn_max);
+				var min = new SCNVector3 ();
+				var max = new SCNVector3 ();
+				node.GetBoundingBox (ref min, ref max);
 
-				var min = new Vector3 (scn_min.X, scn_min.Y, scn_min.Z);
-				var max = new Vector3 (scn_max.X, scn_max.Y, scn_max.Z);
-
-				var mid = Vector3.Add (min, max);
-				mid = Vector3.Multiply (mid, 0.5f);
+				var mid = SCNVector3.Add (min, max);
+				mid = SCNVector3.Multiply (mid, 0.5f);
 				mid.Y = min.Y; // Align on bottom
 
-				var size = Vector3.Subtract (max, min);
-				var maxSize = Math.Max (Math.Max (size.X, size.Y), size.Z);
+				var size = SCNVector3.Subtract (max, min);
+				var maxSize = (float)Math.Max (Math.Max (size.X, size.Y), size.Z);
 
 				scale = scale / maxSize;
-				mid = Vector3.Multiply (mid, scale);
+				mid = SCNVector3.Multiply (mid, scale);
 				mid = -mid;
 
 				node.Scale = new SCNVector3 (scale, scale, scale);
@@ -65,7 +63,7 @@ namespace SceneKitSessionWWDC2013
 			return node;
 		}
 
-		public static SCNNode SCBoxNode (string title, RectangleF frame, NSColor color, float cornerRadius, bool centered)
+		public static SCNNode SCBoxNode (string title, CGRect frame, NSColor color, float cornerRadius, bool centered)
 		{
 			NSMutableDictionary titleAttributes = null;
 			NSMutableDictionary centeredTitleAttributes = null;
@@ -81,16 +79,16 @@ namespace SceneKitSessionWWDC2013
 			node.Geometry = shape;
 
 			// create an image and fill with the color and text
-			var textureSize = new SizeF ();
+			var textureSize = new CGSize ();
 			textureSize.Width = (float)Math.Ceiling ((double)frame.Size.Width * 1.5);
 			textureSize.Height = (float)Math.Ceiling ((double)frame.Size.Height * 1.5);
 
 			var texture = new NSImage (textureSize);
 			texture.LockFocus ();
 
-			var drawFrame = new RectangleF (0, 0, textureSize.Width, textureSize.Height);
+			var drawFrame = new CGRect (0, 0, textureSize.Width, textureSize.Height);
 
-			float hue, saturation, brightness, alpha;
+			nfloat hue, saturation, brightness, alpha;
 
 			(color.UsingColorSpace (NSColorSpace.DeviceRGBColorSpace)).GetHsba (out hue, out saturation, out brightness, out alpha);
 			var lightColor = NSColor.FromDeviceHsba (hue, saturation - 0.2f, brightness + 0.3f, alpha);
@@ -124,7 +122,7 @@ namespace SceneKitSessionWWDC2013
 					var font = NSFont.FromFontName ("Myriad Set Semibold", 34) != null ? NSFont.FromFontName ("Myriad Set Semibold", 34) : NSFont.FromFontName ("Avenir Medium", 34);
 
 					var shadow = new NSShadow ();
-					shadow.ShadowOffset = new SizeF (0, -2);
+					shadow.ShadowOffset = new CGSize (0, -2);
 					shadow.ShadowBlurRadius = 4;
 					shadow.ShadowColor = NSColor.FromDeviceWhite (0.0f, 0.5f);
 
@@ -162,7 +160,7 @@ namespace SceneKitSessionWWDC2013
 				//center vertically
 				var dy = (drawFrame.Size.Height - textSize.Height) * 0.5f;
 				var drawFrameHeight = drawFrame.Size.Height;
-				drawFrame.Size = new SizeF (drawFrame.Size.Width, drawFrame.Size.Height - dy);
+				drawFrame.Size = new CGSize (drawFrame.Size.Width, drawFrame.Size.Height - dy);
 				attrString.DrawString (drawFrame);
 			}
 
@@ -187,11 +185,11 @@ namespace SceneKitSessionWWDC2013
 			return node;
 		}
 
-		public static SCNNode SCPlaneNodeWithImage (NSImage image, float size, bool isLit)
+		public static SCNNode SCPlaneNodeWithImage (NSImage image, nfloat size, bool isLit)
 		{
 			var node = SCNNode.Create ();
 
-			var factor = size / (Math.Max (image.Size.Width, image.Size.Height));
+			var factor = size / (nfloat)(Math.Max (image.Size.Width, image.Size.Height));
 
 			node.Geometry = SCNPlane.Create (image.Size.Width * factor, image.Size.Height * factor);
 			node.Geometry.FirstMaterial.Diffuse.Contents = image;
@@ -263,12 +261,12 @@ namespace SceneKitSessionWWDC2013
 			return gaugeGroup;
 		}
 
-		public static NSBezierPath SCArrowBezierPath (SizeF baseSize, SizeF tipSize, float hollow, bool twoSides)
+		public static NSBezierPath SCArrowBezierPath (CGSize baseSize, CGSize tipSize, nfloat hollow, bool twoSides)
 		{
 			var arrow = new NSBezierPath ();
 
-			var h = new float[5];
-			var w = new float[4];
+			var h = new nfloat[5];
+			var w = new nfloat[4];
 
 			w [0] = 0;
 			w [1] = baseSize.Width - tipSize.Width - hollow;
@@ -282,21 +280,21 @@ namespace SceneKitSessionWWDC2013
 			h [4] = tipSize.Height;
 
 			if (twoSides) {
-				arrow.MoveTo (new PointF (tipSize.Width, h [1]));
-				arrow.LineTo (new PointF (tipSize.Width + hollow, h [0]));
-				arrow.LineTo (new PointF (0, h [2]));
-				arrow.LineTo (new PointF (tipSize.Width + hollow, h [4]));
-				arrow.LineTo (new PointF (tipSize.Width, h [3]));
+				arrow.MoveTo (new CGPoint (tipSize.Width, h [1]));
+				arrow.LineTo (new CGPoint (tipSize.Width + hollow, h [0]));
+				arrow.LineTo (new CGPoint (0, h [2]));
+				arrow.LineTo (new CGPoint (tipSize.Width + hollow, h [4]));
+				arrow.LineTo (new CGPoint (tipSize.Width, h [3]));
 			} else {
-				arrow.MoveTo (new PointF (0, h [1]));
-				arrow.LineTo (new PointF (0, h [3]));
+				arrow.MoveTo (new CGPoint (0, h [1]));
+				arrow.LineTo (new CGPoint (0, h [3]));
 			}
 
-			arrow.LineTo (new PointF (w [2], h [3]));
-			arrow.LineTo (new PointF (w [1], h [4]));
-			arrow.LineTo (new PointF (w [3], h [2]));
-			arrow.LineTo (new PointF (w [1], h [0]));
-			arrow.LineTo (new PointF (w [2], h [1]));
+			arrow.LineTo (new CGPoint (w [2], h [3]));
+			arrow.LineTo (new CGPoint (w [1], h [4]));
+			arrow.LineTo (new CGPoint (w [3], h [2]));
+			arrow.LineTo (new CGPoint (w [1], h [0]));
+			arrow.LineTo (new CGPoint (w [2], h [1]));
 
 			arrow.ClosePath ();
 
@@ -322,7 +320,7 @@ namespace SceneKitSessionWWDC2013
 
 		private static NSImage SCCopyWithResolution (NSImage image, float size)
 		{
-			var imageRep = image.BestRepresentation (new RectangleF (0, 0, size, size), null, null);
+			var imageRep = image.BestRepresentation (new CGRect (0, 0, size, size), null, null);
 			if (imageRep != null) {
 				return new NSImage (imageRep.CGImage, imageRep.Size);
 			}

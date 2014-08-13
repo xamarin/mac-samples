@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace SceneKitSessionWWDC2013
@@ -13,19 +13,19 @@ namespace SceneKitSessionWWDC2013
 	partial class AppDelegate
 	{
 		[Outlet]
-		MonoMac.AppKit.NSMenu GoMenu { get; set; }
+		AppKit.NSMenu GoMenu { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSWindow MainWindow { get; set; }
+		AppKit.NSWindow MainWindow { get; set; }
 
 		[Action ("NextSlide:")]
-		partial void NextSlide (MonoMac.Foundation.NSObject sender);
+		partial void NextSlide (Foundation.NSObject sender);
 
 		[Action ("PreviousSlide:")]
-		partial void PreviousSlide (MonoMac.Foundation.NSObject sender);
+		partial void PreviousSlide (Foundation.NSObject sender);
 
 		[Action ("ToogleCursor:")]
-		partial void ToogleCursor (MonoMac.Foundation.NSObject sender);
+		partial void ToogleCursor (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

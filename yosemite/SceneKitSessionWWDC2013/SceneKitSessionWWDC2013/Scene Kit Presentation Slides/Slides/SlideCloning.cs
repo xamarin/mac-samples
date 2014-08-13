@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
+
+using AppKit;
+using SceneKit;
+using CoreGraphics;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -43,7 +44,7 @@ namespace SceneKitSessionWWDC2013
 				break;
 			case 1:
 				// New "Node B" box
-				var nodeB = Utils.SCBoxNode ("Node B", new RectangleF (-55, -36, 110, 50), GreenColor, 10, true);
+				var nodeB = Utils.SCBoxNode ("Node B", new CGRect (-55, -36, 110, 50), GreenColor, 10, true);
 				nodeB.Name = "nodeB";
 				nodeB.Position = new SCNVector3 (140, 0, 0);
 				nodeB.Opacity = 0;
@@ -53,7 +54,7 @@ namespace SceneKitSessionWWDC2013
 
 				// Arrow from "Root Node" to "Node B"
 				var arrowNode = SCNNode.Create ();
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (140, 3), new SizeF (10, 14), 4, true), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (140, 3), new CGSize (10, 14), 4, true), 0);
 				arrowNode.Position = new SCNVector3 (-130, 60, 0);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.12f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = GreenColor;
@@ -62,7 +63,7 @@ namespace SceneKitSessionWWDC2013
 				// Arrow from "Node B" to the shared geometry
 				arrowNode = SCNNode.Create ();
 				arrowNode.Name = "arrow-shared-geometry";
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (140, 3), new SizeF (10, 14), 4, false), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (140, 3), new CGSize (10, 14), 4, false), 0);
 				arrowNode.Position = new SCNVector3 (0, -28, 0);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, (float)(Math.PI * 1.12f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = PurpleColor;
@@ -83,14 +84,14 @@ namespace SceneKitSessionWWDC2013
 				var oldArrowNode = ContentNode.FindChildNode ("arrow-shared-geometry", true);
 
 				// New "Geometry" box
-				var geometryNodeB = Utils.SCBoxNode ("Geometry", new RectangleF (-55, -20, 110, 40), PurpleColor, 10, true);
+				var geometryNodeB = Utils.SCBoxNode ("Geometry", new CGRect (-55, -20, 110, 40), PurpleColor, 10, true);
 				geometryNodeB.Position = new SCNVector3 (140, 0, 0);
 				geometryNodeB.Opacity = 0;
 				geometryNodeA.AddChildNode (geometryNodeB);
 
 				// Arrow from "Node B" to the new geometry
 				arrowNode = SCNNode.Create ();
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (55, 3), new SizeF (10, 14), 4, false), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (55, 3), new CGSize (10, 14), 4, false), 0);
 				arrowNode.Position = new SCNVector3 (0, 75, 0);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.5f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = PurpleColor;
@@ -99,7 +100,7 @@ namespace SceneKitSessionWWDC2013
 				// Arrow from the new geometry to "Material"
 				arrowNode = SCNNode.Create ();
 				arrowNode.Name = "arrow-shared-material";
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (140, 3), new SizeF (10, 14), 4, true), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (140, 3), new CGSize (10, 14), 4, true), 0);
 				arrowNode.Position = new SCNVector3 (-130, -80, 0);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, (float)(Math.PI * 0.12f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = RedColor;
@@ -122,14 +123,14 @@ namespace SceneKitSessionWWDC2013
 				oldArrowNode = ContentNode.FindChildNode ("arrow-shared-material", true);
 
 				// New "Material" box
-				var materialBNode = Utils.SCBoxNode ("Material", new RectangleF (-55, -20, 110, 40), NSColor.Orange, 10, true);
+				var materialBNode = Utils.SCBoxNode ("Material", new CGRect (-55, -20, 110, 40), NSColor.Orange, 10, true);
 				materialBNode.Position = new SCNVector3 (140, 0, 0);
 				materialBNode.Opacity = 0;
 				materialANode.AddChildNode (materialBNode);
 
 				// Arrow from the unshared geometry to the new material
 				arrowNode = SCNNode.Create ();
-				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (55, 3), new SizeF (10, 14), 4, false), 0);
+				arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (55, 3), new CGSize (10, 14), 4, false), 0);
 				arrowNode.Position = new SCNVector3 (0, 75, 0);
 				arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.5f));
 				arrowNode.Geometry.FirstMaterial.Diffuse.Contents = NSColor.Orange;
@@ -168,35 +169,35 @@ namespace SceneKitSessionWWDC2013
 			diagramNode.Position = new SCNVector3 (7, 9, 3);
 
 			// "Scene" box
-			var sceneNode = Utils.SCBoxNode ("Scene", new RectangleF (-53.5f, -25, 107, 50), BlueColor, 10, true);
+			var sceneNode = Utils.SCBoxNode ("Scene", new CGRect (-53.5f, -25, 107, 50), BlueColor, 10, true);
 			sceneNode.Name = "scene";
 			sceneNode.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 			sceneNode.Position = new SCNVector3 (0, 4.8f, 0);
 			diagramNode.AddChildNode (sceneNode);
 
 			// "Root node" box
-			var rootNode = Utils.SCBoxNode ("Root Node", new RectangleF (-40, -36, 80, 72), GreenColor, 10, true);
+			var rootNode = Utils.SCBoxNode ("Root Node", new CGRect (-40, -36, 80, 72), GreenColor, 10, true);
 			rootNode.Name = "rootNode";
 			rootNode.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 			rootNode.Position = new SCNVector3 (0.05f, 1.8f, 0);
 			diagramNode.AddChildNode (rootNode);
 
 			// "Node A" box
-			var nodeA = Utils.SCBoxNode ("Node A", new RectangleF (-55, -36, 110, 50), GreenColor, 10, true);
+			var nodeA = Utils.SCBoxNode ("Node A", new CGRect (-55, -36, 110, 50), GreenColor, 10, true);
 			nodeA.Name = "nodeA";
 			nodeA.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 			nodeA.Position = new SCNVector3 (0, -1.4f, 0);
 			diagramNode.AddChildNode (nodeA);
 
 			// "Geometry" box
-			var geometryNode = Utils.SCBoxNode ("Geometry", new RectangleF (-55, -20, 110, 40), PurpleColor, 10, true);
+			var geometryNode = Utils.SCBoxNode ("Geometry", new CGRect (-55, -20, 110, 40), PurpleColor, 10, true);
 			geometryNode.Name = "geometry";
 			geometryNode.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 			geometryNode.Position = new SCNVector3 (0, -4.7f, 0);
 			diagramNode.AddChildNode (geometryNode);
 
 			// "Material" box
-			var materialNode = Utils.SCBoxNode ("Material", new RectangleF (-55, -20, 110, 40), RedColor, 10, true);
+			var materialNode = Utils.SCBoxNode ("Material", new CGRect (-55, -20, 110, 40), RedColor, 10, true);
 			materialNode.Name = "material";
 			materialNode.Scale = new SCNVector3 (0.03f, 0.03f, 0.03f);
 			materialNode.Position = new SCNVector3 (0, -7.5f, 0);
@@ -205,7 +206,7 @@ namespace SceneKitSessionWWDC2013
 			// Arrow from "Scene" to "Root Node"
 			var arrowNode = SCNNode.Create ();
 			arrowNode.Name = "sceneArrow";
-			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (3, 0.2f), new SizeF (0.5f, 0.7f), 0.2f, false), 0);
+			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (3, 0.2f), new CGSize (0.5f, 0.7f), 0.2f, false), 0);
 			arrowNode.Scale = new SCNVector3 (20, 20, 1);
 			arrowNode.Position = new SCNVector3 (-5, 0, 8);
 			arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2));
@@ -215,7 +216,7 @@ namespace SceneKitSessionWWDC2013
 			// Arrow from "Root Node" to "Node A"
 			arrowNode = arrowNode.Clone ();
 			arrowNode.Name = "arrow";
-			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.6f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, true), 0);
+			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.6f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, true), 0);
 			arrowNode.Position = new SCNVector3 (-6, -38, 8);
 			arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI * 0.5f));
 			arrowNode.Geometry.FirstMaterial.Diffuse.Contents = GreenColor;
@@ -223,7 +224,7 @@ namespace SceneKitSessionWWDC2013
 
 			// Arrow from "Node A" to "Geometry"
 			arrowNode = arrowNode.Clone ();
-			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.6f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, false), 0);
+			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.6f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, false), 0);
 			arrowNode.Position = new SCNVector3 (-5, 74, 8);
 			arrowNode.Scale = new SCNVector3 (20, 20, 1);
 			arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2));
@@ -232,7 +233,7 @@ namespace SceneKitSessionWWDC2013
 
 			// Arrow from "Geometry" to "Material"
 			arrowNode = arrowNode.Clone ();
-			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new SizeF (2.7f, 0.15f), new SizeF (0.5f, 0.7f), 0.2f, false), 0);
+			arrowNode.Geometry = SCNShape.Create (Utils.SCArrowBezierPath (new CGSize (2.7f, 0.15f), new CGSize (0.5f, 0.7f), 0.2f, false), 0);
 			arrowNode.Position = new SCNVector3 (-6, 74, 8);
 			arrowNode.Scale = new SCNVector3 (20, 20, 1);
 			arrowNode.Rotation = new SCNVector4 (0, 0, 1, -(float)(Math.PI / 2));

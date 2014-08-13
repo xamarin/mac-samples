@@ -1,9 +1,9 @@
 ﻿using System;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.ObjCRuntime;
-using MonoMac.CoreAnimation;
+using AppKit;
+using SceneKit;
+using Foundation;
+using ObjCRuntime;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
