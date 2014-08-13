@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Collections;
-using MonoMac.OpenAL;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.ObjCRuntime;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreFoundation;
+using OpenAL;
+using SceneKit;
+using Foundation;
+using ObjCRuntime;
+using CoreAnimation;
+using CoreFoundation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -24,7 +24,7 @@ namespace SceneKitSessionWWDC2013
 
 		public override int NumberOfSteps ()
 		{
-			return 7;
+			return 5;
 		}
 
 		public override void SetupSlide (PresentationViewController presentationViewController)
@@ -184,7 +184,7 @@ namespace SceneKitSessionWWDC2013
 			ApplyGhostEffect (show, CharacterNode);
 		}
 
-		private void VisualizeBones (bool show, SCNNode node, float scale)
+		private void VisualizeBones (bool show, SCNNode node, nfloat scale)
 		{
 			// We propagate an inherited scale so that the boxes
 			// representing the bones will be of the same size

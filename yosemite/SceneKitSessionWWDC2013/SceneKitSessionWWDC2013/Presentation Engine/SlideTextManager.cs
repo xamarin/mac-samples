@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -71,7 +71,7 @@ namespace SceneKitSessionWWDC2013
 			return type == TextType.Chapter ? 10.0f : TEXT_DEPTH;
 		}
 
-		private float FontSizeForTextType (TextType type, int level)
+		private float FontCGSizeorTextType (TextType type, int level)
 		{
 			float fontSize = 0;
 			switch (type) {
@@ -99,7 +99,7 @@ namespace SceneKitSessionWWDC2013
 
 		private NSFont FontForTextType (TextType type, int level)
 		{
-			var fontSize = FontSizeForTextType (type, level);
+			var fontSize = FontCGSizeorTextType (type, level);
 			var font = NSFont.FromFontName ("Myriad Set Semibold", fontSize) != null ? NSFont.FromFontName ("Myriad Set", fontSize) : NSFont.FromFontName ("Avenir Medium", fontSize);
 			;
 

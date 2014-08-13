@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -25,29 +26,29 @@ namespace SceneKitSessionWWDC2013
 			Materials = new SCNMaterial[] { frontAndBackMaterial, sideMaterial, frontAndBackMaterial };
 
 			// Add different features to the word cloud
-			PlaceFeature ("Export to DAE", new PointF (10, -8), 0);
-			PlaceFeature ("OpenGL Core Profile", new PointF (-16, -7), 0.05f);
-			PlaceFeature ("Warmup", new PointF (-12, -10), 0.1f);
-			PlaceFeature ("Constraints", new PointF (-10, 6), 0.15f);
-			PlaceFeature ("Custom projection", new PointF (4, 9), 0.2f);
-			PlaceFeature ("Skinning", new PointF (-4, 8), 0.25f);
-			PlaceFeature ("Morphing", new PointF (-3, -8), 0.3f);
-			PlaceFeature ("Performance Statistics", new PointF (-1, 6), 0.35f);
-			PlaceFeature ("CIFilters", new PointF (1, 5), 0.85f);
-			PlaceFeature ("GLKit Math", new PointF (3, -10), 0.45f);
-			PlaceFeature ("Depth of Field", new PointF (-0.5f, 0), 0.47f);
-			PlaceFeature ("Animation Events", new PointF (5, 3), 0.50f);
-			PlaceFeature ("Shader Modifiers", new PointF (7, 2), 0.95f);
-			PlaceFeature ("GOBO", new PointF (-10, 1), 0.60f);
-			PlaceFeature ("Ray testing", new PointF (-8, 0), 0.65f);
-			PlaceFeature ("Skybox", new PointF (8, -1), 0.7f);
-			PlaceFeature ("Fresnel", new PointF (6, -2), 0.75f);
-			PlaceFeature ("SCNShape", new PointF (-6, -3), 0.8f);
-			PlaceFeature ("Levels of detail", new PointF (-11, 3), 0.9f);
-			PlaceFeature ("Animation blending", new PointF (-2, -5), 1);
+			PlaceFeature ("Export to DAE", new CGPoint (10, -8), 0);
+			PlaceFeature ("OpenGL Core Profile", new CGPoint (-16, -7), 0.05f);
+			PlaceFeature ("Warmup", new CGPoint (-12, -10), 0.1f);
+			PlaceFeature ("Constraints", new CGPoint (-10, 6), 0.15f);
+			PlaceFeature ("Custom projection", new CGPoint (4, 9), 0.2f);
+			PlaceFeature ("Skinning", new CGPoint (-4, 8), 0.25f);
+			PlaceFeature ("Morphing", new CGPoint (-3, -8), 0.3f);
+			PlaceFeature ("Performance Statistics", new CGPoint (-1, 6), 0.35f);
+			PlaceFeature ("CIFilters", new CGPoint (1, 5), 0.85f);
+			PlaceFeature ("GLKit Math", new CGPoint (3, -10), 0.45f);
+			PlaceFeature ("Depth of Field", new CGPoint (-0.5f, 0), 0.47f);
+			PlaceFeature ("Animation Events", new CGPoint (5, 3), 0.50f);
+			PlaceFeature ("Shader Modifiers", new CGPoint (7, 2), 0.95f);
+			PlaceFeature ("GOBO", new CGPoint (-10, 1), 0.60f);
+			PlaceFeature ("Ray testing", new CGPoint (-8, 0), 0.65f);
+			PlaceFeature ("Skybox", new CGPoint (8, -1), 0.7f);
+			PlaceFeature ("Fresnel", new CGPoint (6, -2), 0.75f);
+			PlaceFeature ("SCNShape", new CGPoint (-6, -3), 0.8f);
+			PlaceFeature ("Levels of detail", new CGPoint (-11, 3), 0.9f);
+			PlaceFeature ("Animation blending", new CGPoint (-2, -5), 1);
 		}
 
-		private void PlaceFeature (string message, PointF p, float offset)
+		private void PlaceFeature (string message, CGPoint p, float offset)
 		{
 			// Create and configure a node with a text geometry, and add it to the scene
 			var text = SCNText.Create (message, 5);

@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
+
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -286,10 +287,10 @@ namespace SceneKitSessionWWDC2013
 		private NSBezierPath TextChamferProfile ()
 		{
 			var profile = new NSBezierPath ();
-			profile.MoveTo (new PointF (0, 1));
-			profile.LineTo (new PointF (1.5f, 1));
-			profile.LineTo (new PointF (1.5f, 0));
-			profile.LineTo (new PointF (1, 0));
+			profile.MoveTo (new CGPoint (0, 1));
+			profile.LineTo (new CGPoint (1.5f, 1));
+			profile.LineTo (new CGPoint (1.5f, 0));
+			profile.LineTo (new CGPoint (1, 0));
 			return profile;
 		}
 
@@ -333,7 +334,7 @@ namespace SceneKitSessionWWDC2013
 				min = new SCNVector3 (0, 0, 0);
 				if (letterNode.GetBoundingBox (ref min, ref max)) {
 					letterNode.Position = new SCNVector3 (positionX - min.X + (max.X + min.X) * 0.5f, -min.Y, 0);
-					positionX += max.X;
+					positionX += (float)max.X;
 				} else {
 					// if we have no bounding box, it is probably because of the "space" character. In that case, move to the right a little bit.
 					positionX += 50.0f;
@@ -444,35 +445,35 @@ namespace SceneKitSessionWWDC2013
 		{
 			var path = new NSBezierPath ();
 
-			path.MoveTo (new PointF (69, 0));
-			path.LineTo (new PointF (69, -107));
-			path.LineTo (new PointF (0, -107));
-			path.LineTo (new PointF (0, -480));
-			path.LineTo (new PointF (104, -480));
-			path.LineTo (new PointF (104, -500));
-			path.LineTo (new PointF (184, -480));
-			path.LineTo (new PointF (226, -480));
-			path.LineTo (new PointF (226, -500));
-			path.LineTo (new PointF (306, -480));
-			path.LineTo (new PointF (348, -480));
-			path.LineTo (new PointF (348, -500));
-			path.LineTo (new PointF (428, -480));
-			path.LineTo (new PointF (470, -480));
-			path.LineTo (new PointF (470, -500));
-			path.LineTo (new PointF (550, -480));
-			path.LineTo (new PointF (592, -480));
-			path.LineTo (new PointF (592, -505));
-			path.LineTo (new PointF (752.548776f, -460.046343f));
-			path.CurveTo (new PointF (767.32333f, -440.999893f), new PointF (760.529967f, -457.811609f), new PointF (767.218912f, -449.292876f));
-			path.CurveTo (new PointF (700, 0), new PointF (767.32333f, -440.999893f), new PointF (776, -291));
-			path.LineTo (new PointF (69, 0));
+			path.MoveTo (new CGPoint (69, 0));
+			path.LineTo (new CGPoint (69, -107));
+			path.LineTo (new CGPoint (0, -107));
+			path.LineTo (new CGPoint (0, -480));
+			path.LineTo (new CGPoint (104, -480));
+			path.LineTo (new CGPoint (104, -500));
+			path.LineTo (new CGPoint (184, -480));
+			path.LineTo (new CGPoint (226, -480));
+			path.LineTo (new CGPoint (226, -500));
+			path.LineTo (new CGPoint (306, -480));
+			path.LineTo (new CGPoint (348, -480));
+			path.LineTo (new CGPoint (348, -500));
+			path.LineTo (new CGPoint (428, -480));
+			path.LineTo (new CGPoint (470, -480));
+			path.LineTo (new CGPoint (470, -500));
+			path.LineTo (new CGPoint (550, -480));
+			path.LineTo (new CGPoint (592, -480));
+			path.LineTo (new CGPoint (592, -505));
+			path.LineTo (new CGPoint (752.548776f, -460.046343f));
+			path.CurveTo (new CGPoint (767.32333f, -440.999893f), new CGPoint (760.529967f, -457.811609f), new CGPoint (767.218912f, -449.292876f));
+			path.CurveTo (new CGPoint (700, 0), new CGPoint (767.32333f, -440.999893f), new CGPoint (776, -291));
+			path.LineTo (new CGPoint (69, 0));
 
-			path.MoveTo (new PointF (676, -238));
-			path.LineTo (new PointF (676, -348));
-			path.LineTo (new PointF (710, -348));
-			path.LineTo (new PointF (710, -238));
-			path.LineTo (new PointF (676, -238));
-			path.LineTo (new PointF (676, -238));
+			path.MoveTo (new CGPoint (676, -238));
+			path.LineTo (new CGPoint (676, -348));
+			path.LineTo (new CGPoint (710, -348));
+			path.LineTo (new CGPoint (710, -238));
+			path.LineTo (new CGPoint (676, -238));
+			path.LineTo (new CGPoint (676, -238));
 
 			return path;
 		}
@@ -481,49 +482,49 @@ namespace SceneKitSessionWWDC2013
 		{
 			var path = new NSBezierPath ();
 
-			path.MoveTo (new PointF (553, -387));
-			path.LineTo (new PointF (426, -387));
-			path.LineTo (new PointF (426, -383));
-			path.LineTo (new PointF (549, -383));
-			path.LineTo (new PointF (549, -194));
-			path.LineTo (new PointF (357, -194));
-			path.LineTo (new PointF (357, -383));
-			path.LineTo (new PointF (411, -383));
-			path.LineTo (new PointF (411, -387));
-			path.LineTo (new PointF (255, -387));
-			path.LineTo (new PointF (255, -383));
-			path.LineTo (new PointF (353, -383));
-			path.LineTo (new PointF (353, -194));
-			path.LineTo (new PointF (175, -194));
-			path.LineTo (new PointF (175, -383));
-			path.LineTo (new PointF (240, -383));
-			path.LineTo (new PointF (240, -387));
-			path.LineTo (new PointF (171, -387));
-			path.LineTo (new PointF (171, -190));
-			path.LineTo (new PointF (553, -190));
-			path.LineTo (new PointF (553, -387));
+			path.MoveTo (new CGPoint (553, -387));
+			path.LineTo (new CGPoint (426, -387));
+			path.LineTo (new CGPoint (426, -383));
+			path.LineTo (new CGPoint (549, -383));
+			path.LineTo (new CGPoint (549, -194));
+			path.LineTo (new CGPoint (357, -194));
+			path.LineTo (new CGPoint (357, -383));
+			path.LineTo (new CGPoint (411, -383));
+			path.LineTo (new CGPoint (411, -387));
+			path.LineTo (new CGPoint (255, -387));
+			path.LineTo (new CGPoint (255, -383));
+			path.LineTo (new CGPoint (353, -383));
+			path.LineTo (new CGPoint (353, -194));
+			path.LineTo (new CGPoint (175, -194));
+			path.LineTo (new CGPoint (175, -383));
+			path.LineTo (new CGPoint (240, -383));
+			path.LineTo (new CGPoint (240, -387));
+			path.LineTo (new CGPoint (171, -387));
+			path.LineTo (new CGPoint (171, -190));
+			path.LineTo (new CGPoint (553, -190));
+			path.LineTo (new CGPoint (553, -387));
 
-			path.MoveTo (new PointF (474, -141));
-			path.LineTo (new PointF (474, -14));
-			path.LineTo (new PointF (294, -14));
-			path.LineTo (new PointF (294, -141));
-			path.LineTo (new PointF (407, -141));
-			path.LineTo (new PointF (407, -145));
-			path.LineTo (new PointF (172, -145));
-			path.LineTo (new PointF (172, -141));
-			path.LineTo (new PointF (290, -141));
-			path.LineTo (new PointF (290, -14));
-			path.LineTo (new PointF (124, -14));
-			path.LineTo (new PointF (124, -141));
-			path.LineTo (new PointF (157, -141));
-			path.LineTo (new PointF (157, -145));
-			path.LineTo (new PointF (120, -145));
-			path.LineTo (new PointF (120, -10));
-			path.LineTo (new PointF (478, -10));
-			path.LineTo (new PointF (478, -145));
-			path.LineTo (new PointF (422, -145));
-			path.LineTo (new PointF (422, -141));
-			path.LineTo (new PointF (474, -141));
+			path.MoveTo (new CGPoint (474, -141));
+			path.LineTo (new CGPoint (474, -14));
+			path.LineTo (new CGPoint (294, -14));
+			path.LineTo (new CGPoint (294, -141));
+			path.LineTo (new CGPoint (407, -141));
+			path.LineTo (new CGPoint (407, -145));
+			path.LineTo (new CGPoint (172, -145));
+			path.LineTo (new CGPoint (172, -141));
+			path.LineTo (new CGPoint (290, -141));
+			path.LineTo (new CGPoint (290, -14));
+			path.LineTo (new CGPoint (124, -14));
+			path.LineTo (new CGPoint (124, -141));
+			path.LineTo (new CGPoint (157, -141));
+			path.LineTo (new CGPoint (157, -145));
+			path.LineTo (new CGPoint (120, -145));
+			path.LineTo (new CGPoint (120, -10));
+			path.LineTo (new CGPoint (478, -10));
+			path.LineTo (new CGPoint (478, -145));
+			path.LineTo (new CGPoint (422, -145));
+			path.LineTo (new CGPoint (422, -141));
+			path.LineTo (new CGPoint (474, -141));
 
 			return path;
 		}
@@ -531,8 +532,8 @@ namespace SceneKitSessionWWDC2013
 		private NSBezierPath OutlineChamferProfilePath ()
 		{
 			var path = new NSBezierPath ();
-			path.MoveTo (new PointF (1, 1));
-			path.LineTo (new PointF (1, 0));
+			path.MoveTo (new CGPoint (1, 1));
+			path.LineTo (new CGPoint (1, 0));
 			return path;
 		}
 	}

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Drawing;
 using System.Collections.Generic;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreFoundation;
 using Newtonsoft.Json;
+
+using AppKit;
+using SceneKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
+using CoreFoundation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -147,7 +148,7 @@ namespace SceneKitSessionWWDC2013
 			floorMaterial.ShaderModifiers = new SCNShaderModifiers { EntryPointSurface = surfaceModifier };
 
 			// Set the scene to the view
-			View = new SCNView (RectangleF.Empty);
+			View = new SCNView (CGRect.Empty);
 			((SCNView)View).Scene = Scene;
 			((SCNView)View).BackgroundColor = NSColor.Black;
 

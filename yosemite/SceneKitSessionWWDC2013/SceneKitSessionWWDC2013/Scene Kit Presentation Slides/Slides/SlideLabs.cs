@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.CoreFoundation;
+
+using AppKit;
+using SceneKit;
+using CoreGraphics;
+using CoreFoundation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -14,7 +15,7 @@ namespace SceneKitSessionWWDC2013
 			TextManager.SetTitle ("Labs");
 
 			// Add two labs
-			var lab1TitleNode = Utils.SCBoxNode ("Scene Kit Lab", new RectangleF (-375, -35, 750, 70), NSColor.FromCalibratedWhite (0.15f, 1.0f), 0.0f, false);
+			var lab1TitleNode = Utils.SCBoxNode ("Scene Kit Lab", new CGRect (-375, -35, 750, 70), NSColor.FromCalibratedWhite (0.15f, 1.0f), 0.0f, false);
 			lab1TitleNode.Scale = new SCNVector3 (0.02f, 0.02f, 0.02f);
 			lab1TitleNode.Position = new SCNVector3 (-2.8f, 30.7f, 10.0f);
 			lab1TitleNode.Rotation = new SCNVector4 (1, 0, 0, (float)(Math.PI));
@@ -44,14 +45,14 @@ namespace SceneKitSessionWWDC2013
 
 		private SCNNode AddLabInfoNode (string title, float yPosition)
 		{
-			var labInfoNode = Utils.SCBoxNode (title, new RectangleF (0, 0, 293.33f, 93.33f), NSColor.FromDeviceRgba (31 / 255, 31 / 255, 31 / 255, 1), 0.0f, false);
+			var labInfoNode = Utils.SCBoxNode (title, new CGRect (0, 0, 293.33f, 93.33f), NSColor.FromDeviceRgba (31 / 255, 31 / 255, 31 / 255, 1), 0.0f, false);
 			labInfoNode.Scale = new SCNVector3 (0.015f, 0.015f, 0.015f);
 			labInfoNode.Pivot = SCNMatrix4.CreateTranslation (new SCNVector3 (145.33f, 46.66f, 5));
 			labInfoNode.Position = new SCNVector3 (6.9f, yPosition, 10.0f);
 			labInfoNode.Rotation = new SCNVector4 (0, 1, 0, (float)(Math.PI));
 			labInfoNode.Opacity = 0.0f;
 
-			var colorBox = Utils.SCBoxNode (null, new RectangleF (293.33f, 0, 40, 93.33f), NSColor.FromDeviceRgba (1, 214 / 255, 37 / 255, 1), 0.0f, false);
+			var colorBox = Utils.SCBoxNode (null, new CGRect (293.33f, 0, 40, 93.33f), NSColor.FromDeviceRgba (1, 214 / 255, 37 / 255, 1), 0.0f, false);
 			colorBox.Geometry.FirstMaterial.LightingModelName = SCNLightingModel.Constant;
 
 			ContentNode.AddChildNode (labInfoNode);

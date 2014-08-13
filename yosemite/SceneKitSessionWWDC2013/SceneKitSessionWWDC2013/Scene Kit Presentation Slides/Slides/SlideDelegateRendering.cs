@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
-using MonoMac.SceneKit;
+using AppKit;
+using OpenGL;
+using SceneKit;
 
 namespace SceneKitSessionWWDC2013
 {

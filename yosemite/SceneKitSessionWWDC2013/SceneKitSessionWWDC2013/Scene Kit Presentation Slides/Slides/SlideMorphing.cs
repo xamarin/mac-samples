@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using MonoMac.SceneKit;
-using MonoMac.Foundation;
+using SceneKit;
+using Foundation;
 
 namespace SceneKitSessionWWDC2013
 {

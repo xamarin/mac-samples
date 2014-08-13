@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
-using MonoMac.CoreImage;
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreFoundation;
+
+using AppKit;
+using SceneKit;
+using CoreImage;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
+using CoreFoundation;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -20,7 +21,7 @@ namespace SceneKitSessionWWDC2013
 
 		private SCNNode HeroNode { get; set; }
 
-		private SizeF ViewportSize { get; set; }
+		private CGSize ViewportSize { get; set; }
 
 		public override int NumberOfSteps ()
 		{
@@ -246,7 +247,7 @@ namespace SceneKitSessionWWDC2013
 			// Compute the screenspace position of this node because the glow filter needs this info
 			var worldPosition = contactNode.ConvertPositionToNode (new SCNVector3 (0, 0, 0), null);
 			var screenPosition = ((SCNView)presentationViewController.View).ProjectPoint (worldPosition);
-			var screenPositionInPixels = ((SCNView)presentationViewController.View).ConvertPointToBacking (new PointF (screenPosition.X, screenPosition.Y));
+			var screenPositionInPixels = ((SCNView)presentationViewController.View).ConvertPointToBacking (new CGPoint (screenPosition.X, screenPosition.Y));
 
 			glowFilter.CenterX = screenPositionInPixels.X;
 			glowFilter.CenterY = screenPositionInPixels.Y;
@@ -274,9 +275,9 @@ namespace SceneKitSessionWWDC2013
 
 		public NSNumber InputRadius { get; set; }
 
-		public float CenterX { get; set; }
+		public nfloat CenterX { get; set; }
 
-		public float CenterY { get; set; }
+		public nfloat CenterY { get; set; }
 
 		public CIImage OutputImage ()
 		{
