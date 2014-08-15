@@ -11,17 +11,17 @@
 namespace AnimatingViews {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("AnimatingViewsWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("AnimatingViewsWindow")]
 	public partial class AnimatingViewsWindow {
 		
-		private global::MonoMac.AppKit.NSView __mt_simpleLayoutView;
+		private global::AppKit.NSView __mt_simpleLayoutView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Connect("simpleLayoutView")]
-		private global::MonoMac.AppKit.NSView simpleLayoutView {
+		[Foundation.Connect("simpleLayoutView")]
+		private global::AppKit.NSView simpleLayoutView {
 			get {
-				this.__mt_simpleLayoutView = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("simpleLayoutView")));
+				this.__mt_simpleLayoutView = ((global::AppKit.NSView)(this.GetNativeField("simpleLayoutView")));
 				return this.__mt_simpleLayoutView;
 			}
 			set {
@@ -31,28 +31,28 @@ namespace AnimatingViews {
 		}
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("AnimatingViewsWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("AnimatingViewsWindowController")]
 	public partial class AnimatingViewsWindowController {
 		
-		private global::MonoMac.AppKit.NSColorWell __mt_colorWell;
+		private global::AppKit.NSColorWell __mt_colorWell;
 		
-		private global::MonoMac.AppKit.NSView __mt_simpleView;
+		private global::AppKit.NSView __mt_simpleView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("addABox:")]
-		partial void addABox (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("addABox:")]
+		partial void addABox (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("changeLayout:")]
-		partial void changeLayout (MonoMac.AppKit.NSMatrix sender);
+		[Foundation.Export("changeLayout:")]
+		partial void changeLayout (AppKit.NSMatrix sender);
 
-		[MonoMac.Foundation.Export("removeLastBox:")]
-		partial void removeLastBox (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("removeLastBox:")]
+		partial void removeLastBox (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("colorWell")]
-		private global::MonoMac.AppKit.NSColorWell colorWell {
+		[Foundation.Connect("colorWell")]
+		private global::AppKit.NSColorWell colorWell {
 			get {
-				this.__mt_colorWell = ((global::MonoMac.AppKit.NSColorWell)(this.GetNativeField("colorWell")));
+				this.__mt_colorWell = ((global::AppKit.NSColorWell)(this.GetNativeField("colorWell")));
 				return this.__mt_colorWell;
 			}
 			set {
@@ -61,10 +61,10 @@ namespace AnimatingViews {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("simpleView")]
-		private global::MonoMac.AppKit.NSView simpleView {
+		[Foundation.Connect("simpleView")]
+		private global::AppKit.NSView simpleView {
 			get {
-				this.__mt_simpleView = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("simpleView")));
+				this.__mt_simpleView = ((global::AppKit.NSView)(this.GetNativeField("simpleView")));
 				return this.__mt_simpleView;
 			}
 			set {

@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ImageKit;
+using Foundation;
+using AppKit;
+using ImageKit;
 
 namespace ImageKitDemo
 {
@@ -38,7 +38,7 @@ namespace ImageKitDemo
 			//indexes will change, but I will put the items in after the item at destination
 			//FIXME - missing methods on NSIndexSet
 			//FIXME make an extension method on List<>
-			int destination = destinationIndex - indexes.Where (x => x < destinationIndex).Count ();
+			var destination = destinationIndex - indexes.Where (x => x < (nuint)destinationIndex).Count ();
 			List<BrowseItem> movingImages = new List<BrowseItem> ();
 			foreach (int index in indexes)
 				movingImages.Add (images[index]);
@@ -88,7 +88,7 @@ namespace ImageKitDemo
 			AddImages (path, -1);
 		}
 
-		public void AddImages (NSUrl uri, int index)
+		public void AddImages (NSUrl uri, nint index)
 		{
 			if (uri.IsFileUrl)
 			{
@@ -109,14 +109,14 @@ namespace ImageKitDemo
 			}
 		}
 
-		private void AddImageFile (string path, int index)
+		private void AddImageFile (string path, nint index)
 		{
 			string name = Path.GetFileNameWithoutExtension (path);
 			//Skip .* files
 			if (name.IndexOf ('.') != 0)
 			{
 				if (-1 < index && index < images.Count)
-					images.Insert (index, new BrowseItem (NSUrl.FromFilename (path)));
+					images.Insert ((int)index, new BrowseItem (NSUrl.FromFilename (path)));
 				else
 					images.Add (new BrowseItem (NSUrl.FromFilename (path)));
 			}

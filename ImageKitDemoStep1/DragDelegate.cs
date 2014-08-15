@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using MonoMac.ObjCRuntime;
-using MonoMac.AppKit;
-using MonoMac.ImageKit;
-using MonoMac.Foundation;
+using ObjCRuntime;
+using AppKit;
+using ImageKit;
+using Foundation;
 
 namespace ImageKitDemo
 {
@@ -57,7 +57,7 @@ namespace ImageKitDemo
 			if (pb.Types.Contains (NSPasteboard.NSFilenamesType))
 				data = pb.GetPropertyListForType (NSPasteboard.NSFilenamesType) as NSArray;
 			if (data != null) {
-				for (int i = 0; i < data.Count; i++) {
+				for (nuint i = 0; i < data.Count; i++) {
 					string path = (string)NSString.FromHandle (data.ValueAt ((uint)i));
 					Console.WriteLine ("From pasteboard Item {0} = {1}", i, path);
 					((BrowseData)browserView.DataSource).AddImages (

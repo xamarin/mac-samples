@@ -11,31 +11,31 @@
 namespace ImageKitDemo {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
-		private global::MonoMac.ImageKit.IKImageBrowserView __mt_browserView;
+		private global::ImageKit.IKImageBrowserView __mt_browserView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("AddButtonClicked:")]
-		partial void AddButtonClicked (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("AddButtonClicked:")]
+		partial void AddButtonClicked (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("SearchTextChanged:")]
-		partial void SearchTextChanged (MonoMac.AppKit.NSSearchField sender);
+		[Foundation.Export("SearchTextChanged:")]
+		partial void SearchTextChanged (AppKit.NSSearchField sender);
 
-		[MonoMac.Foundation.Export("SliderChanged:")]
-		partial void SliderChanged (MonoMac.AppKit.NSSlider sender);
+		[Foundation.Export("SliderChanged:")]
+		partial void SliderChanged (AppKit.NSSlider sender);
 
-		[MonoMac.Foundation.Connect("browserView")]
-		private global::MonoMac.ImageKit.IKImageBrowserView browserView {
+		[Foundation.Connect("browserView")]
+		private global::ImageKit.IKImageBrowserView browserView {
 			get {
-				this.__mt_browserView = ((global::MonoMac.ImageKit.IKImageBrowserView)(this.GetNativeField("browserView")));
+				this.__mt_browserView = ((global::ImageKit.IKImageBrowserView)(this.GetNativeField("browserView")));
 				return this.__mt_browserView;
 			}
 			set {

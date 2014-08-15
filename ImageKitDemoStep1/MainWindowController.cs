@@ -3,13 +3,13 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ImageKit;
+using Foundation;
+using AppKit;
+using ImageKit;
 
 namespace ImageKitDemo
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		#region Constructors
 
@@ -80,7 +80,7 @@ namespace ImageKitDemo
 			panel.CanChooseDirectories = true;
 			panel.CanChooseFiles = true;
 			//FIXME - create enum for open/save panel return code
-			int i = panel.RunModal ();
+			var i = panel.RunModal ();
 			if (i == 1 && panel.Urls != null) {
 				foreach (NSUrl url in panel.Urls) {
 					browseData.AddImages (url);

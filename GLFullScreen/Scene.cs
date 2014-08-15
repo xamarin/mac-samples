@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.OpenGL;
+using AppKit;
+using OpenGL;
+using CoreVideo;
+using Foundation;
+using CoreGraphics;
 
 namespace GLFullScreen
 {
@@ -17,9 +18,9 @@ namespace GLFullScreen
 
 		Sphere sphere;
 
-		float animationPhase;
-		float rollAngle;
-		float sunAngle;
+		nfloat animationPhase;
+		nfloat rollAngle;
+		nfloat sunAngle;
 		bool wireFrame;
 
 		static float[] lightDirection = new float[] { -0.7071f, 0.0f, 0.7071f, 0.0f };
@@ -36,12 +37,12 @@ namespace GLFullScreen
 			wireFrame = false;
 		}
 
-		public float RollAngle {
+		public nfloat RollAngle {
 			get { return rollAngle; }
 			set { rollAngle = value; }
 		}
 
-		public float SunAngle {
+		public nfloat SunAngle {
 			get { return sunAngle; }
 			set { sunAngle = value; }
 		}
@@ -60,7 +61,7 @@ namespace GLFullScreen
 			wireFrame = !wireFrame;
 		}
 
-		public void setViewportRect (RectangleF bounds)
+		public void setViewportRect (CGRect bounds)
 		{
 			
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);

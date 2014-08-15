@@ -34,11 +34,10 @@
 using System;
 using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
-
-using MonoMac.OpenGL;
+using AppKit;
+using OpenGL;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson13
 {
@@ -52,12 +51,12 @@ namespace NeHeLesson13
 		// Base display list for the font set
 		int baseDL;
 
-		public BitmapFont (string fontName,float fontSize)
+		public BitmapFont (string fontName, float fontSize)
 		{
 			this.fontName = fontName;
 			this.fontSize = fontSize;
 			
-			BuildFont();
+			BuildFont ();
 		}
 
 		void BuildFont ()
@@ -81,8 +80,8 @@ namespace NeHeLesson13
 			int dListNum;
 			NSString currentChar;
 			char currentUnichar;
-			SizeF charSize;
-			RectangleF charRect = RectangleF.Empty;
+			CGSize charSize;
+			CGRect charRect = CGRect.Empty;
 			NSImage theImage;
 			bool retval;
 
@@ -110,7 +109,7 @@ namespace NeHeLesson13
 			attribDict.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
 			attribDict.SetValueForKey (blackColor, NSAttributedString.BackgroundColorAttributeName);
 
-			theImage = new NSImage (new SizeF (0,0));
+			theImage = new NSImage (new CGSize (0, 0));
 			retval = true;
 
 			for (dListNum = baseDL, currentUnichar = first; currentUnichar < first + count; 
@@ -130,7 +129,7 @@ namespace NeHeLesson13
 					currentChar.DrawString (charRect, attribDict);
 					theImage.UnlockFocus ();
 
-					if (!MakeDisplayList(dListNum, theImage)) {
+					if (!MakeDisplayList (dListNum, theImage)) {
 						retval = false;
 						break;
 					}
@@ -145,12 +144,12 @@ namespace NeHeLesson13
 		{
 
 			NSBitmapImageRep bitmap;
-			int bytesPerRow, pixelsHigh, pixelsWide, samplesPerPixel;
+			nint bytesPerRow, pixelsHigh, pixelsWide, samplesPerPixel;
 			byte currentBit, byteValue;
 			byte[] newBuffer;
-			int rowIndex, colIndex;
+			nint rowIndex, colIndex;
 
-			bitmap = new NSBitmapImageRep ( theImage.AsTiff (NSTiffCompression.None, 0) );
+			bitmap = new NSBitmapImageRep (theImage.AsTiff (NSTiffCompression.None, 0));
 
 			pixelsHigh = bitmap.PixelsHigh;
 			pixelsWide = bitmap.PixelsWide;
@@ -161,7 +160,7 @@ namespace NeHeLesson13
 			newBuffer = new byte[(int)Math.Ceiling ((float)bytesPerRow / 8.0) * pixelsHigh];
 
 			byte[] bitmapBytesArray = new byte[(pixelsWide * pixelsHigh) * samplesPerPixel];
-			System.Runtime.InteropServices.Marshal.Copy (bitmap.BitmapData, bitmapBytesArray, 0, (pixelsWide * pixelsHigh) * samplesPerPixel);
+			System.Runtime.InteropServices.Marshal.Copy (bitmap.BitmapData, bitmapBytesArray, 0, (int)(pixelsWide * pixelsHigh * samplesPerPixel));
 			
 			int curIdx = 0;
 			
@@ -191,14 +190,14 @@ namespace NeHeLesson13
 				* must start on a new byte
 				*/
 				if (currentBit != 0x80)
-					newBuffer[curIdx++] = byteValue;				
+					newBuffer [curIdx++] = byteValue;				
 			}
 			
-			GL.NewList( listNum, ListMode.Compile);
-			GL.Bitmap(pixelsWide, pixelsHigh, 0, 0, pixelsWide, 0, newBuffer);
-			GL.EndList();
+			GL.NewList (listNum, ListMode.Compile);
+			GL.Bitmap ((int)pixelsWide, (int)pixelsHigh, 0, 0, (int)pixelsWide, 0, newBuffer);
+			GL.EndList ();
 			return true;
-		}	
+		}
 		
 		// Writes a text string out based on this objects font settings.
 		public void RenderText (string text)
@@ -206,10 +205,10 @@ namespace NeHeLesson13
 			// Pushes the display list bits
 			GL.PushAttrib (AttribMask.ListBit);
 			// Sets the base character to space ' '
-			GL.ListBase (baseDL -' ');
+			GL.ListBase (baseDL - ' ');
 			
 			// Convert our string into a byte array for CallLists
-			System.Text.UTF8Encoding  encoding = new System.Text.UTF8Encoding ();
+			System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding ();
 			byte[] textBytes = encoding.GetBytes (text);
 			
 			// Draws the display list text
@@ -218,7 +217,7 @@ namespace NeHeLesson13
 			// Pops the display list bits
 			GL.PopAttrib ();
 
-		}		
+		}
 	}
 }
 

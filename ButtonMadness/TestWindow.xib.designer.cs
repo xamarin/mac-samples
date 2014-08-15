@@ -11,111 +11,111 @@
 namespace SamplesButtonMadness {
 	
 	
-	// Should subclass MonoMac.AppKit.NSButton
-	[MonoMac.Foundation.Register("DropDownButton")]
+	// Should subclass AppKit.NSButton
+	[Foundation.Register("DropDownButton")]
 	public partial class DropDownButton {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("TestWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("TestWindow")]
 	public partial class TestWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("TestWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("TestWindowController")]
 	public partial class TestWindowController {
 		
-		private global::MonoMac.AppKit.NSBox __mt_buttonBox;
+		private global::AppKit.NSBox __mt_buttonBox;
 		
-		private global::MonoMac.AppKit.NSMenu __mt_buttonMenu;
+		private global::AppKit.NSMenu __mt_buttonMenu;
 		
-		private global::MonoMac.AppKit.NSBox __mt_colorBox;
+		private global::AppKit.NSBox __mt_colorBox;
 		
 		private DropDownButton __mt_dropDownButton;
 		
-		private global::MonoMac.AppKit.NSBox __mt_indicatorBox;
+		private global::AppKit.NSBox __mt_indicatorBox;
 		
-		private global::MonoMac.AppKit.NSStepper __mt_levelAdjuster;
+		private global::AppKit.NSStepper __mt_levelAdjuster;
 		
-		private global::MonoMac.AppKit.NSBox __mt_matrixBox;
+		private global::AppKit.NSBox __mt_matrixBox;
 		
-		private global::MonoMac.AppKit.NSButton __mt_nibBasedButtonRound;
+		private global::AppKit.NSButton __mt_nibBasedButtonRound;
 		
-		private global::MonoMac.AppKit.NSButton __mt_nibBasedButtonSquare;
+		private global::AppKit.NSButton __mt_nibBasedButtonSquare;
 		
-		private global::MonoMac.AppKit.NSColorWell __mt_nibBasedColorWell;
+		private global::AppKit.NSColorWell __mt_nibBasedColorWell;
 		
-		private global::MonoMac.AppKit.NSLevelIndicator __mt_nibBasedIndicator;
+		private global::AppKit.NSLevelIndicator __mt_nibBasedIndicator;
 		
-		private global::MonoMac.AppKit.NSMatrix __mt_nibBasedMatrix;
+		private global::AppKit.NSMatrix __mt_nibBasedMatrix;
 		
-		private global::MonoMac.AppKit.NSPopUpButton __mt_nibBasedPopUpDown;
+		private global::AppKit.NSPopUpButton __mt_nibBasedPopUpDown;
 		
-		private global::MonoMac.AppKit.NSPopUpButton __mt_nibBasedPopUpRight;
+		private global::AppKit.NSPopUpButton __mt_nibBasedPopUpRight;
 		
-		private global::MonoMac.AppKit.NSSegmentedControl __mt_nibBasedSegControl;
+		private global::AppKit.NSSegmentedControl __mt_nibBasedSegControl;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder1;
+		private global::AppKit.NSView __mt_placeHolder1;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder2;
+		private global::AppKit.NSView __mt_placeHolder2;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder3;
+		private global::AppKit.NSView __mt_placeHolder3;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder4;
+		private global::AppKit.NSView __mt_placeHolder4;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder5;
+		private global::AppKit.NSView __mt_placeHolder5;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder6;
+		private global::AppKit.NSView __mt_placeHolder6;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder7;
+		private global::AppKit.NSView __mt_placeHolder7;
 		
-		private global::MonoMac.AppKit.NSView __mt_placeHolder8;
+		private global::AppKit.NSView __mt_placeHolder8;
 		
-		private global::MonoMac.AppKit.NSBox __mt_popupBox;
+		private global::AppKit.NSBox __mt_popupBox;
 		
-		private global::MonoMac.AppKit.NSBox __mt_segmentBox;
+		private global::AppKit.NSBox __mt_segmentBox;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("buttonAction:")]
-		partial void buttonAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("buttonAction:")]
+		partial void buttonAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("colorAction:")]
-		partial void colorAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("colorAction:")]
+		partial void colorAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("dropDownAction:")]
-		partial void dropDownAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("dropDownAction:")]
+		partial void dropDownAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("levelAction:")]
-		partial void levelAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("levelAction:")]
+		partial void levelAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("levelAdjustAction:")]
-		partial void levelAdjustAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("levelAdjustAction:")]
+		partial void levelAdjustAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("matrixAction:")]
-		partial void matrixAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("matrixAction:")]
+		partial void matrixAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("popupAction:")]
-		partial void popupAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("popupAction:")]
+		partial void popupAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("pullsDownAction:")]
-		partial void pullsDownAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("pullsDownAction:")]
+		partial void pullsDownAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("segmentAction:")]
-		partial void segmentAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("segmentAction:")]
+		partial void segmentAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("setStyleAction:")]
-		partial void setStyleAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("setStyleAction:")]
+		partial void setStyleAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("unselectAction:")]
-		partial void unselectAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("unselectAction:")]
+		partial void unselectAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("useIconAction:")]
-		partial void useIconAction (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("useIconAction:")]
+		partial void useIconAction (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("buttonBox")]
-		private global::MonoMac.AppKit.NSBox buttonBox {
+		[Foundation.Connect("buttonBox")]
+		private global::AppKit.NSBox buttonBox {
 			get {
-				this.__mt_buttonBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("buttonBox")));
+				this.__mt_buttonBox = ((global::AppKit.NSBox)(this.GetNativeField("buttonBox")));
 				return this.__mt_buttonBox;
 			}
 			set {
@@ -124,10 +124,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("buttonMenu")]
-		private global::MonoMac.AppKit.NSMenu buttonMenu {
+		[Foundation.Connect("buttonMenu")]
+		private global::AppKit.NSMenu buttonMenu {
 			get {
-				this.__mt_buttonMenu = ((global::MonoMac.AppKit.NSMenu)(this.GetNativeField("buttonMenu")));
+				this.__mt_buttonMenu = ((global::AppKit.NSMenu)(this.GetNativeField("buttonMenu")));
 				return this.__mt_buttonMenu;
 			}
 			set {
@@ -136,10 +136,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("colorBox")]
-		private global::MonoMac.AppKit.NSBox colorBox {
+		[Foundation.Connect("colorBox")]
+		private global::AppKit.NSBox colorBox {
 			get {
-				this.__mt_colorBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("colorBox")));
+				this.__mt_colorBox = ((global::AppKit.NSBox)(this.GetNativeField("colorBox")));
 				return this.__mt_colorBox;
 			}
 			set {
@@ -148,7 +148,7 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("dropDownButton")]
+		[Foundation.Connect("dropDownButton")]
 		private DropDownButton dropDownButton {
 			get {
 				this.__mt_dropDownButton = ((DropDownButton)(this.GetNativeField("dropDownButton")));
@@ -160,10 +160,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("indicatorBox")]
-		private global::MonoMac.AppKit.NSBox indicatorBox {
+		[Foundation.Connect("indicatorBox")]
+		private global::AppKit.NSBox indicatorBox {
 			get {
-				this.__mt_indicatorBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("indicatorBox")));
+				this.__mt_indicatorBox = ((global::AppKit.NSBox)(this.GetNativeField("indicatorBox")));
 				return this.__mt_indicatorBox;
 			}
 			set {
@@ -172,10 +172,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("levelAdjuster")]
-		private global::MonoMac.AppKit.NSStepper levelAdjuster {
+		[Foundation.Connect("levelAdjuster")]
+		private global::AppKit.NSStepper levelAdjuster {
 			get {
-				this.__mt_levelAdjuster = ((global::MonoMac.AppKit.NSStepper)(this.GetNativeField("levelAdjuster")));
+				this.__mt_levelAdjuster = ((global::AppKit.NSStepper)(this.GetNativeField("levelAdjuster")));
 				return this.__mt_levelAdjuster;
 			}
 			set {
@@ -184,10 +184,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("matrixBox")]
-		private global::MonoMac.AppKit.NSBox matrixBox {
+		[Foundation.Connect("matrixBox")]
+		private global::AppKit.NSBox matrixBox {
 			get {
-				this.__mt_matrixBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("matrixBox")));
+				this.__mt_matrixBox = ((global::AppKit.NSBox)(this.GetNativeField("matrixBox")));
 				return this.__mt_matrixBox;
 			}
 			set {
@@ -196,10 +196,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedButtonRound")]
-		private global::MonoMac.AppKit.NSButton nibBasedButtonRound {
+		[Foundation.Connect("nibBasedButtonRound")]
+		private global::AppKit.NSButton nibBasedButtonRound {
 			get {
-				this.__mt_nibBasedButtonRound = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("nibBasedButtonRound")));
+				this.__mt_nibBasedButtonRound = ((global::AppKit.NSButton)(this.GetNativeField("nibBasedButtonRound")));
 				return this.__mt_nibBasedButtonRound;
 			}
 			set {
@@ -208,10 +208,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedButtonSquare")]
-		private global::MonoMac.AppKit.NSButton nibBasedButtonSquare {
+		[Foundation.Connect("nibBasedButtonSquare")]
+		private global::AppKit.NSButton nibBasedButtonSquare {
 			get {
-				this.__mt_nibBasedButtonSquare = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("nibBasedButtonSquare")));
+				this.__mt_nibBasedButtonSquare = ((global::AppKit.NSButton)(this.GetNativeField("nibBasedButtonSquare")));
 				return this.__mt_nibBasedButtonSquare;
 			}
 			set {
@@ -220,10 +220,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedColorWell")]
-		private global::MonoMac.AppKit.NSColorWell nibBasedColorWell {
+		[Foundation.Connect("nibBasedColorWell")]
+		private global::AppKit.NSColorWell nibBasedColorWell {
 			get {
-				this.__mt_nibBasedColorWell = ((global::MonoMac.AppKit.NSColorWell)(this.GetNativeField("nibBasedColorWell")));
+				this.__mt_nibBasedColorWell = ((global::AppKit.NSColorWell)(this.GetNativeField("nibBasedColorWell")));
 				return this.__mt_nibBasedColorWell;
 			}
 			set {
@@ -232,10 +232,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedIndicator")]
-		private global::MonoMac.AppKit.NSLevelIndicator nibBasedIndicator {
+		[Foundation.Connect("nibBasedIndicator")]
+		private global::AppKit.NSLevelIndicator nibBasedIndicator {
 			get {
-				this.__mt_nibBasedIndicator = ((global::MonoMac.AppKit.NSLevelIndicator)(this.GetNativeField("nibBasedIndicator")));
+				this.__mt_nibBasedIndicator = ((global::AppKit.NSLevelIndicator)(this.GetNativeField("nibBasedIndicator")));
 				return this.__mt_nibBasedIndicator;
 			}
 			set {
@@ -244,10 +244,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedMatrix")]
-		private global::MonoMac.AppKit.NSMatrix nibBasedMatrix {
+		[Foundation.Connect("nibBasedMatrix")]
+		private global::AppKit.NSMatrix nibBasedMatrix {
 			get {
-				this.__mt_nibBasedMatrix = ((global::MonoMac.AppKit.NSMatrix)(this.GetNativeField("nibBasedMatrix")));
+				this.__mt_nibBasedMatrix = ((global::AppKit.NSMatrix)(this.GetNativeField("nibBasedMatrix")));
 				return this.__mt_nibBasedMatrix;
 			}
 			set {
@@ -256,10 +256,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedPopUpDown")]
-		private global::MonoMac.AppKit.NSPopUpButton nibBasedPopUpDown {
+		[Foundation.Connect("nibBasedPopUpDown")]
+		private global::AppKit.NSPopUpButton nibBasedPopUpDown {
 			get {
-				this.__mt_nibBasedPopUpDown = ((global::MonoMac.AppKit.NSPopUpButton)(this.GetNativeField("nibBasedPopUpDown")));
+				this.__mt_nibBasedPopUpDown = ((global::AppKit.NSPopUpButton)(this.GetNativeField("nibBasedPopUpDown")));
 				return this.__mt_nibBasedPopUpDown;
 			}
 			set {
@@ -268,10 +268,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedPopUpRight")]
-		private global::MonoMac.AppKit.NSPopUpButton nibBasedPopUpRight {
+		[Foundation.Connect("nibBasedPopUpRight")]
+		private global::AppKit.NSPopUpButton nibBasedPopUpRight {
 			get {
-				this.__mt_nibBasedPopUpRight = ((global::MonoMac.AppKit.NSPopUpButton)(this.GetNativeField("nibBasedPopUpRight")));
+				this.__mt_nibBasedPopUpRight = ((global::AppKit.NSPopUpButton)(this.GetNativeField("nibBasedPopUpRight")));
 				return this.__mt_nibBasedPopUpRight;
 			}
 			set {
@@ -280,10 +280,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nibBasedSegControl")]
-		private global::MonoMac.AppKit.NSSegmentedControl nibBasedSegControl {
+		[Foundation.Connect("nibBasedSegControl")]
+		private global::AppKit.NSSegmentedControl nibBasedSegControl {
 			get {
-				this.__mt_nibBasedSegControl = ((global::MonoMac.AppKit.NSSegmentedControl)(this.GetNativeField("nibBasedSegControl")));
+				this.__mt_nibBasedSegControl = ((global::AppKit.NSSegmentedControl)(this.GetNativeField("nibBasedSegControl")));
 				return this.__mt_nibBasedSegControl;
 			}
 			set {
@@ -292,10 +292,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder1")]
-		private global::MonoMac.AppKit.NSView placeHolder1 {
+		[Foundation.Connect("placeHolder1")]
+		private global::AppKit.NSView placeHolder1 {
 			get {
-				this.__mt_placeHolder1 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder1")));
+				this.__mt_placeHolder1 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder1")));
 				return this.__mt_placeHolder1;
 			}
 			set {
@@ -304,10 +304,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder2")]
-		private global::MonoMac.AppKit.NSView placeHolder2 {
+		[Foundation.Connect("placeHolder2")]
+		private global::AppKit.NSView placeHolder2 {
 			get {
-				this.__mt_placeHolder2 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder2")));
+				this.__mt_placeHolder2 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder2")));
 				return this.__mt_placeHolder2;
 			}
 			set {
@@ -316,10 +316,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder3")]
-		private global::MonoMac.AppKit.NSView placeHolder3 {
+		[Foundation.Connect("placeHolder3")]
+		private global::AppKit.NSView placeHolder3 {
 			get {
-				this.__mt_placeHolder3 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder3")));
+				this.__mt_placeHolder3 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder3")));
 				return this.__mt_placeHolder3;
 			}
 			set {
@@ -328,10 +328,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder4")]
-		private global::MonoMac.AppKit.NSView placeHolder4 {
+		[Foundation.Connect("placeHolder4")]
+		private global::AppKit.NSView placeHolder4 {
 			get {
-				this.__mt_placeHolder4 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder4")));
+				this.__mt_placeHolder4 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder4")));
 				return this.__mt_placeHolder4;
 			}
 			set {
@@ -340,10 +340,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder5")]
-		private global::MonoMac.AppKit.NSView placeHolder5 {
+		[Foundation.Connect("placeHolder5")]
+		private global::AppKit.NSView placeHolder5 {
 			get {
-				this.__mt_placeHolder5 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder5")));
+				this.__mt_placeHolder5 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder5")));
 				return this.__mt_placeHolder5;
 			}
 			set {
@@ -352,10 +352,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder6")]
-		private global::MonoMac.AppKit.NSView placeHolder6 {
+		[Foundation.Connect("placeHolder6")]
+		private global::AppKit.NSView placeHolder6 {
 			get {
-				this.__mt_placeHolder6 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder6")));
+				this.__mt_placeHolder6 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder6")));
 				return this.__mt_placeHolder6;
 			}
 			set {
@@ -364,10 +364,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder7")]
-		private global::MonoMac.AppKit.NSView placeHolder7 {
+		[Foundation.Connect("placeHolder7")]
+		private global::AppKit.NSView placeHolder7 {
 			get {
-				this.__mt_placeHolder7 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder7")));
+				this.__mt_placeHolder7 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder7")));
 				return this.__mt_placeHolder7;
 			}
 			set {
@@ -376,10 +376,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("placeHolder8")]
-		private global::MonoMac.AppKit.NSView placeHolder8 {
+		[Foundation.Connect("placeHolder8")]
+		private global::AppKit.NSView placeHolder8 {
 			get {
-				this.__mt_placeHolder8 = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("placeHolder8")));
+				this.__mt_placeHolder8 = ((global::AppKit.NSView)(this.GetNativeField("placeHolder8")));
 				return this.__mt_placeHolder8;
 			}
 			set {
@@ -388,10 +388,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("popupBox")]
-		private global::MonoMac.AppKit.NSBox popupBox {
+		[Foundation.Connect("popupBox")]
+		private global::AppKit.NSBox popupBox {
 			get {
-				this.__mt_popupBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("popupBox")));
+				this.__mt_popupBox = ((global::AppKit.NSBox)(this.GetNativeField("popupBox")));
 				return this.__mt_popupBox;
 			}
 			set {
@@ -400,10 +400,10 @@ namespace SamplesButtonMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("segmentBox")]
-		private global::MonoMac.AppKit.NSBox segmentBox {
+		[Foundation.Connect("segmentBox")]
+		private global::AppKit.NSBox segmentBox {
 			get {
-				this.__mt_segmentBox = ((global::MonoMac.AppKit.NSBox)(this.GetNativeField("segmentBox")));
+				this.__mt_segmentBox = ((global::AppKit.NSBox)(this.GetNativeField("segmentBox")));
 				return this.__mt_segmentBox;
 			}
 			set {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreWlan;
+using Foundation;
+using AppKit;
+using CoreWlan;
 
 namespace CoreWLANWirelessManager
 {
-	public partial class JoinDialogController : MonoMac.AppKit.NSWindowController
+	public partial class JoinDialogController : AppKit.NSWindowController
 	{
 		public  CWNetwork NetworkToJoin { get; private set; }
 
@@ -46,12 +46,12 @@ namespace CoreWLANWirelessManager
 			securityModePicker.Enabled = false;
 		}
 
-		partial void cancelButtonClicked (MonoMac.Foundation.NSObject sender)
+		partial void cancelButtonClicked (Foundation.NSObject sender)
 		{
 			Window.Close ();
 		}
 
-		partial void okButtonCkicked (MonoMac.Foundation.NSObject sender)
+		partial void okButtonCkicked (Foundation.NSObject sender)
 		{
 			spinner.Hidden = false;
 			spinner.StartAnimation (this);

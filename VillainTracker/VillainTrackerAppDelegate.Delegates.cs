@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace VillainTracker
 {
 	partial class VillainTrackerAppDelegate
 	{
-		private class DataSource : MonoMac.AppKit.NSTableViewDataSource
+		private class DataSource : AppKit.NSTableViewDataSource
 		{
 			private VillainTrackerAppDelegate _app;
 			public DataSource(VillainTrackerAppDelegate app)
@@ -15,15 +15,15 @@ namespace VillainTracker
 				_app = app;
 			}
 			
-			public override int GetRowCount (MonoMac.AppKit.NSTableView tableView)
+			public override nint GetRowCount (AppKit.NSTableView tableView)
 			{
 				return _app == null ? 0 : _app.villains.Count;
 			}
 			
-			public override MonoMac.Foundation.NSObject GetObjectValue (MonoMac.AppKit.NSTableView tableView, MonoMac.AppKit.NSTableColumn tableColumn, int rowIndex)
+			public override Foundation.NSObject GetObjectValue (AppKit.NSTableView tableView, AppKit.NSTableColumn tableColumn, nint rowIndex)
 			{
 				var valueKey = (string)(NSString)tableColumn.Identifier;
-				var dataRow = _app.villains[rowIndex];
+				var dataRow = _app.villains[(int)rowIndex];
 				
 				switch((string)valueKey)
 				{
@@ -38,10 +38,10 @@ namespace VillainTracker
 				throw new Exception(string.Format("Incorrect value requested '{0}'", (string)valueKey));
 			}
 			
-			public override void SetObjectValue (NSTableView tableView, NSObject theObject, NSTableColumn tableColumn, int rowIndex)
+			public override void SetObjectValue (NSTableView tableView, NSObject theObject, NSTableColumn tableColumn, nint rowIndex)
 			{
 				var valueKey = (string)(NSString)tableColumn.Identifier;
-				var dataRow = _app.villains[rowIndex];
+				var dataRow = _app.villains[(int)rowIndex];
 	
 				switch((string)valueKey)
 				{
@@ -60,7 +60,7 @@ namespace VillainTracker
 			}
 		}
 		
-		private class VillainsTableViewDelegate : MonoMac.AppKit.NSTableViewDelegate
+		private class VillainsTableViewDelegate : AppKit.NSTableViewDelegate
 		{
 			private VillainTrackerAppDelegate _app;
 			public VillainsTableViewDelegate(VillainTrackerAppDelegate app)
@@ -72,7 +72,7 @@ namespace VillainTracker
 			{
 				if(_app != null && _app.villainsTableView.SelectedRow >= 0)
 				{
-					_app.villain = _app.villains[_app.villainsTableView.SelectedRow];
+					_app.villain = _app.villains[(int)_app.villainsTableView.SelectedRow];
 					_app.UpdateDetailViews();
 				}
 			}

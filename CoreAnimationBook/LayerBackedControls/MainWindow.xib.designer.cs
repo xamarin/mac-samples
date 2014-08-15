@@ -11,28 +11,28 @@
 namespace LayerBackedControls {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
-		private global::MonoMac.AppKit.NSButton __mt_rotatingButton;
+		private global::AppKit.NSButton __mt_rotatingButton;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("beep:")]
-		partial void Beep (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("beep:")]
+		partial void Beep (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("rotateButton:")]
-		partial void RotateButton (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("rotateButton:")]
+		partial void RotateButton (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("rotatingButton")]
-		private global::MonoMac.AppKit.NSButton rotatingButton {
+		[Foundation.Connect("rotatingButton")]
+		private global::AppKit.NSButton rotatingButton {
 			get {
-				this.__mt_rotatingButton = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("rotatingButton")));
+				this.__mt_rotatingButton = ((global::AppKit.NSButton)(this.GetNativeField("rotatingButton")));
 				return this.__mt_rotatingButton;
 			}
 			set {

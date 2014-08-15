@@ -11,22 +11,22 @@
 namespace GLSLShader {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
 		private MyOpenGLView __mt_openGLView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("goFullScreen:")]
-		partial void goFullScreen (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("goFullScreen:")]
+		partial void goFullScreen (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("openGLView")]
+		[Foundation.Connect("openGLView")]
 		private MyOpenGLView openGLView {
 			get {
 				this.__mt_openGLView = ((MyOpenGLView)(this.GetNativeField("openGLView")));
@@ -39,8 +39,8 @@ namespace GLSLShader {
 		}
 	}
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("MyOpenGLView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("MyOpenGLView")]
 	public partial class MyOpenGLView {
 	}
 }

@@ -1,14 +1,13 @@
 using System;
-using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson13
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
-
 		bool isInFullScreenMode;
 
 		// full-screen mode
@@ -18,7 +17,7 @@ namespace NeHeLesson13
 		bool isAnimating;
 
 		// Call to load from the XIB/NIB file
-		public MainWindowController () : base("MainWindow")
+		public MainWindowController () : base ("MainWindow")
 		{
 
 		}
@@ -52,8 +51,8 @@ namespace NeHeLesson13
 			// Pause the non-fullscreen view
 			openGLView.StopAnimation ();
 
-			RectangleF mainDisplayRect;
-			RectangleF viewRect;
+			CGRect mainDisplayRect;
+			CGRect viewRect;
 
 			// Create a screen-sized window on the display you want to take over
 			// Note, mainDisplayRect has a non-zero origin if the key window is on a secondary display
@@ -71,7 +70,7 @@ namespace NeHeLesson13
 			// Create a view with a double-buffered OpenGL context and attach it to the window
 			// By specifying the non-fullscreen context as the shareContext, we automatically inherit the 
 			// OpenGL objects (textures, etc) it has defined
-			viewRect = new RectangleF (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
+			viewRect = new CGRect (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
 
 			fullScreenView = new MyOpenGLView (viewRect, openGLView.OpenGLContext);
 			fullScreenWindow.ContentView = fullScreenView;

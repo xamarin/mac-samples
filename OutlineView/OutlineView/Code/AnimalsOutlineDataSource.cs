@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using MonoMac.AppKit;
-using MonoMac.Foundation;
+using AppKit;
+using Foundation;
 
 namespace OutlineView
 {
@@ -15,7 +15,7 @@ namespace OutlineView
 			this.animalsTree = animalsTree;
 		}
 		
-		public override int GetChildrenCount (NSOutlineView outlineView, NSObject item)
+		public override nint GetChildrenCount (NSOutlineView outlineView, NSObject item)
 		{
 			Console.Write ("GetChildrenCount called on " + animalsTree.ToString() + ", ");
 			
@@ -73,16 +73,16 @@ namespace OutlineView
 			}
 		}
 		
-		public override NSObject GetChild (NSOutlineView outlineView, int childIndex, NSObject ofItem)
+		public override NSObject GetChild (NSOutlineView outlineView, nint childIndex, NSObject ofItem)
 		{
 			Console.Write ("GetChild called on " + animalsTree.ToString () + ", ");
 			// null means it's asking for the root
 			if (ofItem == null) {
-				Console.WriteLine ("asked for root, returning " + animalsTree.Children [childIndex].ToString ());
-				return animalsTree.Children [childIndex];
+				Console.WriteLine ("asked for root, returning " + animalsTree.Children [(int)childIndex].ToString ());
+				return animalsTree.Children [(int)childIndex];
 			} else {
-				Console.WriteLine ("asked for child, returning " + ((ofItem as Animal).Children [childIndex]).ToString() );
-				return (NSObject)((ofItem as Animal).Children [childIndex]);
+				Console.WriteLine ("asked for child, returning " + ((ofItem as Animal).Children [(int)childIndex]).ToString() );
+				return (NSObject)((ofItem as Animal).Children [(int)childIndex]);
 			}
 		}
 	}

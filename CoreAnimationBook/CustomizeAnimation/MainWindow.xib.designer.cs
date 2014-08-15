@@ -11,25 +11,25 @@
 namespace CustomizeAnimation {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
-		private global::MonoMac.AppKit.NSSlider __mt_slider;
+		private global::AppKit.NSSlider __mt_slider;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("setWidth:")]
-		partial void setWidth (MonoMac.AppKit.NSSlider sender);
+		[Foundation.Export("setWidth:")]
+		partial void setWidth (AppKit.NSSlider sender);
 
-		[MonoMac.Foundation.Connect("slider")]
-		private global::MonoMac.AppKit.NSSlider slider {
+		[Foundation.Connect("slider")]
+		private global::AppKit.NSSlider slider {
 			get {
-				this.__mt_slider = ((global::MonoMac.AppKit.NSSlider)(this.GetNativeField("slider")));
+				this.__mt_slider = ((global::AppKit.NSSlider)(this.GetNativeField("slider")));
 				return this.__mt_slider;
 			}
 			set {
@@ -39,20 +39,20 @@ namespace CustomizeAnimation {
 		}
 	}
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("MyView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("MyView")]
 	public partial class MyView {
 		
-		private global::MonoMac.AppKit.NSSlider __mt_slider;
+		private global::AppKit.NSSlider __mt_slider;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("setWidth:")]
-		partial void setWidth (MonoMac.AppKit.NSSlider sender);
+		[Foundation.Export("setWidth:")]
+		partial void setWidth (AppKit.NSSlider sender);
 
-		[MonoMac.Foundation.Connect("slider")]
-		private global::MonoMac.AppKit.NSSlider slider {
+		[Foundation.Connect("slider")]
+		private global::AppKit.NSSlider slider {
 			get {
-				this.__mt_slider = ((global::MonoMac.AppKit.NSSlider)(this.GetNativeField("slider")));
+				this.__mt_slider = ((global::AppKit.NSSlider)(this.GetNativeField("slider")));
 				return this.__mt_slider;
 			}
 			set {

@@ -11,8 +11,8 @@
 namespace GLFullScreen {
 	
 	
-	// Should subclass MonoMac.AppKit.NSResponder
-	[MonoMac.Foundation.Register("AppDelegate")]
+	// Should subclass AppKit.NSResponder
+	[Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 	}
 }

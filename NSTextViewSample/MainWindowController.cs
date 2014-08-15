@@ -28,8 +28,8 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSTextViewSample
 {

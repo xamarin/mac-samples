@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreWlan;
+using Foundation;
+using AppKit;
+using CoreWlan;
 
 namespace CoreWLANWirelessManager
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		private CWNetwork[] networks;
 
@@ -77,7 +77,7 @@ namespace CoreWLANWirelessManager
 			UpdateInfo ();
 		}
 
-		partial void powerStateChanged (MonoMac.AppKit.NSSegmentedControl sender)
+		partial void powerStateChanged (AppKit.NSSegmentedControl sender)
 		{
 			NSError error;
 			CurrentInterface.SetPower(powerState.SelectedSegment == 0, out error);
@@ -100,19 +100,19 @@ namespace CoreWLANWirelessManager
 			new IBSSDialogController (CurrentInterface).ShowWindow (this);
 		}
 
-		partial void disconnectButtonClicked (MonoMac.AppKit.NSButton sender)
+		partial void disconnectButtonClicked (AppKit.NSButton sender)
 		{
 			CurrentInterface.Disassociate();
 			UpdateInfoTab();
 		}
 
-		partial void interfaceSelected (MonoMac.AppKit.NSPopUpButton sender)
+		partial void interfaceSelected (AppKit.NSPopUpButton sender)
 		{
 			CurrentInterface = new CWInterface(interfacesPicker.SelectedItem.Title);
 			UpdateInfoTab();
 		}
 
-		partial void changeChannel (MonoMac.AppKit.NSPopUpButton sender)
+		partial void changeChannel (AppKit.NSPopUpButton sender)
 		{
 			var previousChannel = CurrentInterface.WlanChannel;
 			var selectedChannel = CurrentInterface.SupportedWlanChannels.Where(channel => 
@@ -128,7 +128,7 @@ namespace CoreWLANWirelessManager
 			}
 		}
 
-		partial void refreshButtonClicked (MonoMac.AppKit.NSButton sender)
+		partial void refreshButtonClicked (AppKit.NSButton sender)
 		{
 			UpdateInfo();
 		}

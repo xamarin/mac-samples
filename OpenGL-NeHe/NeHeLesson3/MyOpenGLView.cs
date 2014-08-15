@@ -36,15 +36,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreVideo;
+using CoreGraphics;
+using OpenGL;
 
 namespace NeHeLesson3
 {
-	public partial class MyOpenGLView : MonoMac.AppKit.NSView
+	public partial class MyOpenGLView : AppKit.NSView
 	{
 		
 		NSOpenGLContext openGLContext;
@@ -57,11 +57,11 @@ namespace NeHeLesson3
 		NSObject notificationProxy;
 		
 		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		public MyOpenGLView (CGRect frame) : this(frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame, NSOpenGLContext context) : base(frame)
+		public MyOpenGLView (CGRect frame, NSOpenGLContext context) : base(frame)
 		{
 			var attribs = new object [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
@@ -93,7 +93,7 @@ namespace NeHeLesson3
 			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			// Ignore if the display link is still running
 			if (!displayLink.IsRunning && controller != null)

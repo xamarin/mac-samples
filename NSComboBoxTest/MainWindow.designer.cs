@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace NSComboBoxTest
 {
@@ -12,7 +12,7 @@ namespace NSComboBoxTest
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSComboBox comboBox { get; set; }
+		AppKit.NSComboBox comboBox { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

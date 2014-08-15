@@ -11,29 +11,29 @@
 namespace WhereIsMyMac {
 	
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
-		private global::MonoMac.AppKit.NSTextField __mt_accuracyLabel;
+		private global::AppKit.NSTextField __mt_accuracyLabel;
 		
-		private global::MonoMac.AppKit.NSTextField __mt_locationLabel;
+		private global::AppKit.NSTextField __mt_locationLabel;
 		
-		private global::MonoMac.WebKit.WebView __mt_webView;
+		private global::WebKit.WebView __mt_webView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("openInDefaultBrowser:")]
-		partial void openInDefaultBrowser (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("openInDefaultBrowser:")]
+		partial void openInDefaultBrowser (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("accuracyLabel")]
-		private global::MonoMac.AppKit.NSTextField accuracyLabel {
+		[Foundation.Connect("accuracyLabel")]
+		private global::AppKit.NSTextField accuracyLabel {
 			get {
-				this.__mt_accuracyLabel = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("accuracyLabel")));
+				this.__mt_accuracyLabel = ((global::AppKit.NSTextField)(this.GetNativeField("accuracyLabel")));
 				return this.__mt_accuracyLabel;
 			}
 			set {
@@ -42,10 +42,10 @@ namespace WhereIsMyMac {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("locationLabel")]
-		private global::MonoMac.AppKit.NSTextField locationLabel {
+		[Foundation.Connect("locationLabel")]
+		private global::AppKit.NSTextField locationLabel {
 			get {
-				this.__mt_locationLabel = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("locationLabel")));
+				this.__mt_locationLabel = ((global::AppKit.NSTextField)(this.GetNativeField("locationLabel")));
 				return this.__mt_locationLabel;
 			}
 			set {
@@ -54,10 +54,10 @@ namespace WhereIsMyMac {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("webView")]
-		private global::MonoMac.WebKit.WebView webView {
+		[Foundation.Connect("webView")]
+		private global::WebKit.WebView webView {
 			get {
-				this.__mt_webView = ((global::MonoMac.WebKit.WebView)(this.GetNativeField("webView")));
+				this.__mt_webView = ((global::WebKit.WebView)(this.GetNativeField("webView")));
 				return this.__mt_webView;
 			}
 			set {

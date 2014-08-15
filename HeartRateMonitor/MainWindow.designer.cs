@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace Xamarin.HeartMonitor
@@ -13,40 +13,40 @@ namespace Xamarin.HeartMonitor
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSButton chooseDeviceButton { get; set; }
+		AppKit.NSButton chooseDeviceButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton connectButton { get; set; }
+		AppKit.NSButton connectButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSArrayController deviceListController { get; set; }
+		AppKit.NSArrayController deviceListController { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSProgressIndicator deviceListScanningProgressIndicator { get; set; }
+		AppKit.NSProgressIndicator deviceListScanningProgressIndicator { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSWindow deviceListSheet { get; set; }
+		AppKit.NSWindow deviceListSheet { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField deviceNameLabel { get; set; }
+		AppKit.NSTextField deviceNameLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTableView deviceTableView { get; set; }
+		AppKit.NSTableView deviceTableView { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton dismissDeviceListButton { get; set; }
+		AppKit.NSButton dismissDeviceListButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSImageView heartImage { get; set; }
+		AppKit.NSImageView heartImage { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField heartRateLabel { get; set; }
+		AppKit.NSTextField heartRateLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField heartRateUnitLabel { get; set; }
+		AppKit.NSTextField heartRateUnitLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField statusLabel { get; set; }
+		AppKit.NSTextField statusLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

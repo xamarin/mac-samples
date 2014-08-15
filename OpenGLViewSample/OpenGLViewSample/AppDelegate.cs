@@ -1,9 +1,11 @@
 using System;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
-using MonoMac.OpenGL;
+
+using AppKit;
+using OpenGL;
+using Foundation;
+using ObjCRuntime;
+using CoreGraphics;
 
 namespace OpenGLViewSample
 {
@@ -11,7 +13,7 @@ namespace OpenGLViewSample
 	{
 		MainWindowController mainWindowController;
 		GLView view;
-		
+
 		public AppDelegate ()
 		{
 		}
@@ -20,20 +22,21 @@ namespace OpenGLViewSample
 		{
 			mainWindowController = new MainWindowController ();
 			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new object [] {
-										NSOpenGLPixelFormatAttribute.FullScreen,
-										NSOpenGLPixelFormatAttribute.MinimumPolicy				
+				NSOpenGLPixelFormatAttribute.FullScreen,
+				NSOpenGLPixelFormatAttribute.MinimumPolicy				
 			}));
 			
 			mainWindowController.Window.ContentView = view;
- 			mainWindowController.Window.MakeKeyAndOrderFront (this);
+			mainWindowController.Window.MakeKeyAndOrderFront (this);
 		}
 	}
-	
+
 	public class GLView : NSOpenGLView
 	{
-		public GLView (RectangleF rect, NSOpenGLPixelFormat format) : base (rect, format) {
+		public GLView (CGRect rect, NSOpenGLPixelFormat format) : base (rect, format)
+		{
 		}
-		
+
 		static void DrawTriangle ()
 		{
 			GL.Color3 (1.0f, 0.85f, 0.35f);
@@ -41,19 +44,19 @@ namespace OpenGLViewSample
 			
 			GL.Vertex3 (0.0, 0.6, 0.0);
 			GL.Vertex3 (-0.2, -0.3, 0.0);
-			GL.Vertex3 (0.2, -0.3 ,0.0);
+			GL.Vertex3 (0.2, -0.3, 0.0);
 			
 			GL.End ();
 		}
-		
-		public override void DrawRect (RectangleF dirtyRect)
+
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			OpenGLContext.MakeCurrentContext ();
 			
-			GL.ClearColor(Color.Brown);
+			GL.ClearColor (Color.Brown);
 	
 			GL.ClearColor (0, 0, 0, 0);
-			GL.Clear(ClearBufferMask.ColorBufferBit);
+			GL.Clear (ClearBufferMask.ColorBufferBit);
  
 			DrawTriangle ();
 			

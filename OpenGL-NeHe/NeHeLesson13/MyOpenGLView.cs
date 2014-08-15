@@ -32,17 +32,17 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
+
+using AppKit;
+using OpenGL;
+using CoreVideo;
+using Foundation;
+using CoreGraphics;
 using System.Drawing;
-
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-
-using MonoMac.OpenGL;
 
 namespace NeHeLesson13
 {
-	public partial class MyOpenGLView : MonoMac.AppKit.NSView
+	public partial class MyOpenGLView : AppKit.NSView
 	{
 
 		NSOpenGLContext openGLContext;
@@ -51,19 +51,22 @@ namespace NeHeLesson13
 		CVDisplayLink displayLink;
 		NSObject notificationProxy;
 
-		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		[Export ("initWithFrame:")]
+		public MyOpenGLView (CGRect frame) : this (frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame,NSOpenGLContext context) : base(frame)
+		public MyOpenGLView (CGRect frame, NSOpenGLContext context) : base (frame)
 		{
-			var attribs = new object [] {
+			var attribs = new NSOpenGLPixelFormatAttribute [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
 				NSOpenGLPixelFormatAttribute.NoRecovery,
 				NSOpenGLPixelFormatAttribute.DoubleBuffer,
-				NSOpenGLPixelFormatAttribute.ColorSize, 24,
-				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
+				NSOpenGLPixelFormatAttribute.ColorSize, 
+				(NSOpenGLPixelFormatAttribute)24,
+				NSOpenGLPixelFormatAttribute.DepthSize, 
+				(NSOpenGLPixelFormatAttribute)16
+			};
 
 			pixelFormat = new NSOpenGLPixelFormat (attribs);
 
@@ -88,7 +91,7 @@ namespace NeHeLesson13
 			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			// Ignore if the display link is still running
 			if (!displayLink.IsRunning && controller != null)
@@ -246,11 +249,11 @@ namespace NeHeLesson13
 			NSNotificationCenter.DefaultCenter.RemoveObserver (notificationProxy); 
 		}
 
-		[Export("toggleFullScreen:")]
+		[Export ("toggleFullScreen:")]
 		public void toggleFullScreen (NSObject sender)
 		{
 			controller.toggleFullScreen (sender);
-		}		
+		}
 	}
 }
 

@@ -26,8 +26,8 @@
 
 using System;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace Xamarin.HeartMonitor
 {

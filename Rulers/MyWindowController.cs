@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace Rulers
 {
-	public partial class MyWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MyWindowController : AppKit.NSWindowController
 	{
 		#region Constructors
 

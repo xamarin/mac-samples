@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace OutlineView
 {
@@ -12,7 +12,7 @@ namespace OutlineView
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSOutlineView MainOutlineView { get; set; }
+		AppKit.NSOutlineView MainOutlineView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

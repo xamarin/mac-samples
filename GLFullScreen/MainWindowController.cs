@@ -1,11 +1,12 @@
 
 using System;
 using System.Drawing;
-using MonoMac.AppKit;
+using AppKit;
+using CoreGraphics;
 
 namespace GLFullScreen
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		bool isInFullScreenMode;
 
@@ -47,8 +48,8 @@ namespace GLFullScreen
 			// Pause the non-fullscreen view
 			openGLView.StopAnimation ();
 			
-			RectangleF mainDisplayRect;
-			RectangleF viewRect;
+			CGRect mainDisplayRect;
+			CGRect viewRect;
 			
 			// Create a screen-sized window on the display you want to take over
 			// Note, mainDisplayRect has a non-zero origin if the key window is on a secondary display
@@ -66,7 +67,7 @@ namespace GLFullScreen
 			// Create a view with a double-buffered OpenGL context and attach it to the window
 			// By specifying the non-fullscreen context as the shareContext, we automatically inherit the 
 			// OpenGL objects (textures, etc) it has defined
-			viewRect = new RectangleF (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
+			viewRect = new CGRect (0, 0, mainDisplayRect.Size.Width, mainDisplayRect.Size.Height);
 			
 			fullScreenView = new MyOpenGLView (viewRect, openGLView.OpenGLContext);
 			fullScreenWindow.ContentView = fullScreenView;
@@ -185,10 +186,10 @@ namespace GLFullScreen
 		public override void MouseDown (NSEvent theEvent)
 		{
 			bool dragging = true;
-			PointF windowPoint;
-			PointF lastWindowPoint = theEvent.LocationInWindow;
+			CGPoint windowPoint;
+			CGPoint lastWindowPoint = theEvent.LocationInWindow;
 			
-			float dx, dy;
+			nfloat dx, dy;
 			bool wasAnimating = isAnimating;
 			
 			if (wasAnimating) 

@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSComboBoxTest
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base (handle)
 		{

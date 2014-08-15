@@ -32,13 +32,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using System.Collections.Generic;
 
-using MonoMac.OpenGL;
+using AppKit;
+using OpenGL;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson1
 {
@@ -50,7 +50,7 @@ namespace NeHeLesson1
 
 		// Resize And Initialize The GL Window 
 		//      - See also the method in the MyOpenGLView Constructor about the NSView.NSViewGlobalFrameDidChangeNotification
-		public void ResizeGLScene (RectangleF bounds)
+		public void ResizeGLScene (CGRect bounds)
 		{
 			// Reset The Current Viewport
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);

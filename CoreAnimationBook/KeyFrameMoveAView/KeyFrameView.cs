@@ -3,25 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace KeyFrameMoveAView
 {
-	public partial class KeyFrameView : MonoMac.AppKit.NSView
+	public partial class KeyFrameView : AppKit.NSView
 	{
 		NSImageView mover;
 		CGPath heartPath;
 		
 		[Export("initWithFrame:")]
-		public KeyFrameView(RectangleF frame) : base(frame)
+		public KeyFrameView(CGRect frame) : base(frame)
 		{
-			float xInset = 3 * (frame.Width / 8);
-			float yInset = 3 * (frame.Height / 8);
+			var xInset = 3 * (frame.Width / 8);
+			var yInset = 3 * (frame.Height / 8);
 			
-			RectangleF moverFrame = frame.Inset (xInset, yInset);
+			CGRect moverFrame = frame.Inset (xInset, yInset);
 
 			mover = new NSImageView (moverFrame);
 			
@@ -41,7 +41,7 @@ namespace KeyFrameMoveAView
 			bounce ();
 		}
 		
-		public override void SetFrameOrigin (PointF newOrigin)
+		public override void SetFrameOrigin (CGPoint newOrigin)
 		{
 			Console.WriteLine ("setting new origin");
 			base.SetFrameOrigin (newOrigin);
@@ -49,7 +49,7 @@ namespace KeyFrameMoveAView
 		
 		private void bounce()
 		{
-			RectangleF rect = mover.Frame;
+			CGRect rect = mover.Frame;
 			((NSView)mover.Animator).SetFrameOrigin (rect.Location);
 		}
 		
@@ -70,10 +70,10 @@ namespace KeyFrameMoveAView
 		
 		private CGPath HeartPath {
 			get {
-				RectangleF frame = mover.Frame;
+				CGRect frame = mover.Frame;
 				if (heartPath == null) {	
-					float minX = frame.GetMinX ();
-					float minY = frame.GetMinY ();
+					var minX = frame.GetMinX ();
+					var minY = frame.GetMinY ();
 					
 					heartPath = new CGPath ();
 					
@@ -88,7 +88,7 @@ namespace KeyFrameMoveAView
 			}	
 		}		
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			CGContext ctx = NSGraphicsContext.CurrentContext.GraphicsPort;
 			

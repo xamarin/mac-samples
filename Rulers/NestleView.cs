@@ -1,9 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using System.Collections.Generic;
+
+using AppKit;
+using Foundation;
+using CoreGraphics;
 
 namespace Rulers
 {
@@ -14,7 +15,7 @@ namespace Rulers
 	/// to the coordinate mapping when the client isn't the scroll view's
 	/// document view.
 	/// </summary>
-	public partial class NestleView : MonoMac.AppKit.NSView
+	public partial class NestleView : AppKit.NSView
 	{
 		#region Constructors
 
@@ -30,7 +31,7 @@ namespace Rulers
 		}
 		
 		[Export("initWithFrame:")]
-		public NestleView (RectangleF frame) : base(frame)
+		public NestleView (CGRect frame) : base(frame)
 		{
 		}
 		#endregion

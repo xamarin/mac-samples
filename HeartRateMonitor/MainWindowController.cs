@@ -25,16 +25,16 @@
 // THE SOFTWARE.
 
 using System;
-using System.Drawing;
 
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreBluetooth;
-using MonoMac.Foundation;
+using AppKit;
+using Foundation;
+using CoreGraphics;
+using CoreAnimation;
+using CoreBluetooth;
 
 namespace Xamarin.HeartMonitor
 {	
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		CBCentralManager manager = new CBCentralManager ();
 		HeartRateMonitor monitor;
@@ -109,8 +109,8 @@ namespace Xamarin.HeartMonitor
 			NSAnimationContext.CurrentContext.Duration = 0f;
 			
 			heartImage.WantsLayer = true;
-			heartImage.Layer.AnchorPoint = new PointF (0.5f, 0.5f);
-			heartImage.Layer.Position = new PointF (
+			heartImage.Layer.AnchorPoint = new CGPoint (0.5f, 0.5f);
+			heartImage.Layer.Position = new CGPoint (
 				heartImage.Layer.Frame.Size.Width / 2,
 				heartImage.Layer.Frame.Size.Height / 2
 			);

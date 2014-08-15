@@ -35,15 +35,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreVideo;
+using CoreGraphics;
+using OpenGL;
 
 namespace NeHeLesson17
 {
-	public partial class MyOpenGLView : MonoMac.AppKit.NSView
+	public partial class MyOpenGLView : AppKit.NSView
 	{
 
 		NSOpenGLContext openGLContext;
@@ -52,19 +52,22 @@ namespace NeHeLesson17
 		CVDisplayLink displayLink;
 		NSObject notificationProxy;
 
-		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		[Export ("initWithFrame:")]
+		public MyOpenGLView (CGRect frame) : this (frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame,NSOpenGLContext context) : base(frame)
+		public MyOpenGLView (CGRect frame, NSOpenGLContext context) : base (frame)
 		{
-			var attribs = new object [] {
+			var attribs = new NSOpenGLPixelFormatAttribute [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
 				NSOpenGLPixelFormatAttribute.NoRecovery,
 				NSOpenGLPixelFormatAttribute.DoubleBuffer,
-				NSOpenGLPixelFormatAttribute.ColorSize, 24,
-				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
+				NSOpenGLPixelFormatAttribute.ColorSize, 
+				(NSOpenGLPixelFormatAttribute)24,
+				NSOpenGLPixelFormatAttribute.DepthSize, 
+				(NSOpenGLPixelFormatAttribute)16
+			};
 
 			pixelFormat = new NSOpenGLPixelFormat (attribs);
 
@@ -89,7 +92,7 @@ namespace NeHeLesson17
 			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			// Ignore if the display link is still running
 			if (!displayLink.IsRunning && controller != null)
@@ -126,7 +129,7 @@ namespace NeHeLesson17
 			// Enables Smooth Shading  
 			GL.ShadeModel (ShadingModel.Smooth);
 			// Set background color to black     
-			GL.ClearColor(Color.Black);
+			GL.ClearColor (Color.Black);
 
 			// Setup Depth Testing
 
@@ -137,7 +140,7 @@ namespace NeHeLesson17
 			// The type of depth testing to do
 			GL.DepthFunc (DepthFunction.Lequal);
 			
-			GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.One);
+			GL.BlendFunc (BlendingFactorSrc.SrcAlpha, BlendingFactorDest.One);
 			// Really Nice Perspective Calculations
 			GL.Hint (HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
 
@@ -251,7 +254,7 @@ namespace NeHeLesson17
 			NSNotificationCenter.DefaultCenter.RemoveObserver (notificationProxy); 
 		}
 
-		[Export("toggleFullScreen:")]
+		[Export ("toggleFullScreen:")]
 		public void toggleFullScreen (NSObject sender)
 		{
 			controller.toggleFullScreen (sender);

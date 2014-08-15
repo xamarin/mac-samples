@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace AnimatingViews
 {
-	public partial class AnimatingViewsWindow : MonoMac.AppKit.NSWindow
+	public partial class AnimatingViewsWindow : AppKit.NSWindow
 	{
 		// Called when created from unmanaged code
 		public AnimatingViewsWindow (IntPtr handle) : base(handle)

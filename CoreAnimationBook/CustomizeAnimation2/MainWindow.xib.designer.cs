@@ -11,33 +11,33 @@
 namespace CustomizeAnimation {
 	
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("BaseView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("BaseView")]
 	public partial class BaseView {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 		
 		private BaseView __mt_myView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("makeDefault:")]
-		partial void makeDefault (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("makeDefault:")]
+		partial void makeDefault (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("makeFast:")]
-		partial void makeFast (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("makeFast:")]
+		partial void makeFast (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("makeSlow:")]
-		partial void makeSlow (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("makeSlow:")]
+		partial void makeSlow (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("myView")]
+		[Foundation.Connect("myView")]
 		private BaseView myView {
 			get {
 				this.__mt_myView = ((BaseView)(this.GetNativeField("myView")));

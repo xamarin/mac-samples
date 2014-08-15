@@ -33,12 +33,14 @@
 // 
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.OpenGL;
+using System.Collections.Generic;
+
+using AppKit;
+using OpenGL;
+using Foundation;
+using CoreGraphics;
 
 namespace NeHeLesson4
 {
@@ -49,13 +51,13 @@ namespace NeHeLesson4
 		// Angle For The Triangle ( NEW )
 		float rquad;
 		// Angle For The Quad     ( NEW )
-		public Scene () : base()
+		public Scene () : base ()
 		{
 		}
 
-		// Resize And Initialize The GL Window 
+		// Resize And Initialize The GL Window
 		//      - See also the method in the MyOpenGLView Constructor about the NSView.NSViewGlobalFrameDidChangeNotification
-		public void ResizeGLScene (RectangleF bounds)
+		public void ResizeGLScene (CGRect bounds)
 		{
 			// Reset The Current Viewport
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);
@@ -95,7 +97,7 @@ namespace NeHeLesson4
 
 		// This method renders our scene.
 		// The main thing to note is that we've factored the drawing code out of the NSView subclass so that
-		// the full-screen and non-fullscreen views share the same states for rendering 
+		// the full-screen and non-fullscreen views share the same states for rendering
 		public bool DrawGLScene ()
 		{
 			// Clear The Screen And The Depth Buffer

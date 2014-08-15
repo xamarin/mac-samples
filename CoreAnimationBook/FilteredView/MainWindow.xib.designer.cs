@@ -11,26 +11,26 @@
 namespace FilteredView {
 	
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("FilteredView")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("FilteredView")]
 	public partial class FilteredView {
 		
-		private global::MonoMac.AppKit.NSView __mt_controls;
+		private global::AppKit.NSView __mt_controls;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("heavyPointalize:")]
-		partial void heavyPointalize (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("heavyPointalize:")]
+		partial void heavyPointalize (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("lightPointalize:")]
-		partial void lightPointalize (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("lightPointalize:")]
+		partial void lightPointalize (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("noPointalize:")]
-		partial void noPointalize (MonoMac.AppKit.NSMenuItem sender);
+		[Foundation.Export("noPointalize:")]
+		partial void noPointalize (AppKit.NSMenuItem sender);
 
-		[MonoMac.Foundation.Connect("controls")]
-		private global::MonoMac.AppKit.NSView controls {
+		[Foundation.Connect("controls")]
+		private global::AppKit.NSView controls {
 			get {
-				this.__mt_controls = ((global::MonoMac.AppKit.NSView)(this.GetNativeField("controls")));
+				this.__mt_controls = ((global::AppKit.NSView)(this.GetNativeField("controls")));
 				return this.__mt_controls;
 			}
 			set {
@@ -40,13 +40,13 @@ namespace FilteredView {
 		}
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 	}
 }

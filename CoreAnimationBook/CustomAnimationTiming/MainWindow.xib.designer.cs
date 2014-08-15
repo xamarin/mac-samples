@@ -11,18 +11,18 @@
 namespace CustomAnimationTiming {
 	
 	
-	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("CustomAnimationTiming")]
+	// Should subclass AppKit.NSView
+	[Foundation.Register("CustomAnimationTiming")]
 	public partial class CustomAnimationTiming {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	// Should subclass AppKit.NSWindow
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 	
-	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	// Should subclass AppKit.NSWindowController
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 	}
 }

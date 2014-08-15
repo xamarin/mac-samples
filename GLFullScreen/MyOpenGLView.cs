@@ -1,16 +1,16 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
+using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.OpenGL;
+using AppKit;
+using OpenGL;
+using CoreVideo;
+using Foundation;
+using CoreGraphics;
 
 namespace GLFullScreen
 {
-	public partial class MyOpenGLView : MonoMac.AppKit.NSView
+	public partial class MyOpenGLView : AppKit.NSView
 	{
 		NSOpenGLContext openGLContext;
 		NSOpenGLPixelFormat pixelFormat;
@@ -22,19 +22,22 @@ namespace GLFullScreen
 		NSObject notificationProxy;
 		
 		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		public MyOpenGLView (CGRect frame) : this(frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame, NSOpenGLContext context) : base(frame)
+		public MyOpenGLView (CGRect frame, NSOpenGLContext context) : base(frame)
 		{
-			var attribs = new object [] {
+			var attribs = new NSOpenGLPixelFormatAttribute [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
 				NSOpenGLPixelFormatAttribute.NoRecovery,
 				NSOpenGLPixelFormatAttribute.DoubleBuffer,
-				NSOpenGLPixelFormatAttribute.ColorSize, 24,
-				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
-			
+				NSOpenGLPixelFormatAttribute.ColorSize, 
+				(NSOpenGLPixelFormatAttribute)24,
+				NSOpenGLPixelFormatAttribute.DepthSize,
+				(NSOpenGLPixelFormatAttribute)16 
+			};
+
 			pixelFormat = new NSOpenGLPixelFormat (attribs);
 			
 			if (pixelFormat == null)
@@ -52,10 +55,10 @@ namespace GLFullScreen
 			
 			// Look for changes in view size
 			// Note, -reshape will not be called automatically on size changes because NSView does not export it to override 
-			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.NSViewGlobalFrameDidChangeNotification, HandleReshape);
+			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			// Ignore if the display link is still running
 			if (!displayLink.IsRunning && controller != null)

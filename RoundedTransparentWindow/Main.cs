@@ -1,14 +1,15 @@
-using MonoMac.AppKit;
-using MonoMac.Foundation;
 using System;
-using System.Drawing;
+
+using AppKit;
+using Foundation;
+using CoreGraphics;
 
 namespace RoundedTransparentWindow {
 	public partial class CustomWindow : NSWindow {
 
 		// Override the constructor that takes a rectangle and a style, and change the style to bordeless
 		[Export ("initWithContentRect:styleMask:backing:defer:")]
-		public CustomWindow (RectangleF rect, NSWindowStyle style, NSBackingStore backing, bool defer)
+		public CustomWindow (CGRect rect, NSWindowStyle style, NSBackingStore backing, bool defer)
 			: base (rect, NSWindowStyle.Borderless, backing, defer) 
 		{
 			// Go transparent
@@ -36,7 +37,7 @@ namespace RoundedTransparentWindow {
 			}
 		}
 		
-		PointF start;
+		CGPoint start;
 		// Track potential drag operations
 		public override void MouseDown (NSEvent theEvent)
 		{
@@ -78,13 +79,13 @@ namespace RoundedTransparentWindow {
 			NeedsDisplay = true;
 		}
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			NSColor.Clear.Set ();
 			NSGraphics.RectFill (Frame);
 
 			var image = Window.AlphaValue > 0.7 ? circle : pentagon;
-			image.Draw (new PointF (0, 0), Frame, NSCompositingOperation.SourceOver, 1);
+			image.Draw (new CGPoint (0, 0), Frame, NSCompositingOperation.SourceOver, 1);
 			NeedsDisplay = true;
 			Window.InvalidateShadow ();
 		}

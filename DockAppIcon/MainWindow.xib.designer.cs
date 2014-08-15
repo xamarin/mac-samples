@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace DockAppIcon
 {
@@ -12,28 +12,28 @@ namespace DockAppIcon
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSButton badgeCheck { get; set; }
+		AppKit.NSButton badgeCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField badgeNumber { get; set; }
+		AppKit.NSTextField badgeNumber { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField customFormat { get; set; }
+		AppKit.NSTextField customFormat { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton formatCheck { get; set; }
+		AppKit.NSButton formatCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton popupRequestType { get; set; }
+		AppKit.NSPopUpButton popupRequestType { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton showAppBadgeCheck { get; set; }
+		AppKit.NSButton showAppBadgeCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton requestButton { get; set; }
+		AppKit.NSButton requestButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSStepper stepper { get; set; }
+		AppKit.NSStepper stepper { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

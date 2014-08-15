@@ -11,17 +11,17 @@
 namespace RoundedTransparentWindow {
 	
 	
-	// Should subclass MonoMac.Foundation.NSObject
-	[MonoMac.Foundation.Register("CustomWindow")]
+	// Should subclass Foundation.NSObject
+	[Foundation.Register("CustomWindow")]
 	public partial class CustomWindow {
 		
-		private global::MonoMac.AppKit.NSSlider __mt_slider;
+		private global::AppKit.NSSlider __mt_slider;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Connect("slider")]
-		private global::MonoMac.AppKit.NSSlider slider {
+		[Foundation.Connect("slider")]
+		private global::AppKit.NSSlider slider {
 			get {
-				this.__mt_slider = ((global::MonoMac.AppKit.NSSlider)(this.GetNativeField("slider")));
+				this.__mt_slider = ((global::AppKit.NSSlider)(this.GetNativeField("slider")));
 				return this.__mt_slider;
 			}
 			set {

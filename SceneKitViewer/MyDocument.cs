@@ -4,23 +4,18 @@
 //   * Loads the startup scene
 //
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using System.Collections.Generic;
+
+using AppKit;
+using Foundation;
 
 namespace SceneKitViewer
 {
-	public partial class MyDocument : MonoMac.AppKit.NSDocument
+	public partial class MyDocument : AppKit.NSDocument
 	{
 		// Called when created from unmanaged code
 		public MyDocument (IntPtr handle) : base (handle)
-		{
-		}
-		
-		// Called when created directly from a XIB file
-		[Export ("initWithCoder:")]
-		public MyDocument (NSCoder coder) : base (coder)
 		{
 		}
 
@@ -45,8 +40,7 @@ namespace SceneKitViewer
 			// Background color
 			sceneView.BackgroundColor = NSColor.Black;
 
-			var url = NSBundle.MainBundle.PathForResource ("scene", "dae");
-			sceneView.LoadScene (url);
+			sceneView.LoadScene ("scene");
 		}
 		
 

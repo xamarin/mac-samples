@@ -33,10 +33,10 @@
 // 
 using System;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreGraphics;
+using OpenGL;
 
 namespace NeHeLesson17
 {

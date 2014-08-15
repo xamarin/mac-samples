@@ -11,22 +11,22 @@
 namespace QTRecorder {
 	
 	
-	// Should subclass MonoMac.AppKit.NSDocument
-	[MonoMac.Foundation.Register("QTRDocument")]
+	// Should subclass AppKit.NSDocument
+	[Foundation.Register("QTRDocument")]
 	public partial class QTRDocument {
 		
-		private global::MonoMac.AppKit.NSLevelIndicator __mt_audioLevelIndicator;
+		private global::AppKit.NSLevelIndicator __mt_audioLevelIndicator;
 		
-		private global::MonoMac.QTKit.QTCaptureView __mt_captureView;
+		private global::QTKit.QTCaptureView __mt_captureView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("StopDevice:")]
-		partial void StopDevice (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("StopDevice:")]
+		partial void StopDevice (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("audioLevelIndicator")]
-		private global::MonoMac.AppKit.NSLevelIndicator audioLevelIndicator {
+		[Foundation.Connect("audioLevelIndicator")]
+		private global::AppKit.NSLevelIndicator audioLevelIndicator {
 			get {
-				this.__mt_audioLevelIndicator = ((global::MonoMac.AppKit.NSLevelIndicator)(this.GetNativeField("audioLevelIndicator")));
+				this.__mt_audioLevelIndicator = ((global::AppKit.NSLevelIndicator)(this.GetNativeField("audioLevelIndicator")));
 				return this.__mt_audioLevelIndicator;
 			}
 			set {
@@ -35,10 +35,10 @@ namespace QTRecorder {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("captureView")]
-		private global::MonoMac.QTKit.QTCaptureView captureView {
+		[Foundation.Connect("captureView")]
+		private global::QTKit.QTCaptureView captureView {
 			get {
-				this.__mt_captureView = ((global::MonoMac.QTKit.QTCaptureView)(this.GetNativeField("captureView")));
+				this.__mt_captureView = ((global::QTKit.QTCaptureView)(this.GetNativeField("captureView")));
 				return this.__mt_captureView;
 			}
 			set {

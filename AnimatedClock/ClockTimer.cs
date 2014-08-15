@@ -3,9 +3,9 @@
 using System;
 using System.Timers;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
+using Foundation;
+using AppKit;
+using CoreAnimation;
 
 namespace AnimatedClock
 {
