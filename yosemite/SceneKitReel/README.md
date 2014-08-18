@@ -1,11 +1,16 @@
-SceneKit State of the Union demo
+SceneKit State of the Union Demo
 ================================
 
-Shows the latest features of Scene Kit using Xamarin.Mac Unified APIs.
+This application render a 3D environment and presents a series of slides with `SceneKit` objects. It shows the latest features of `SceneKit` using Xamarin.Mac Unified APIs.
 
-Converted to Mono and C# by: Vincent Dondain 08-14-2014
+Instructions
+------------
 
-You can interact with some slides to use Scene Kit amazing effects. 
-Drag balls on the Physics Fields slide and click on the globe on the Shaders slide.
+* You can interact with some slides to use `SceneKit` amazing effects. 
+* Drag balls on the Physics Fields slide and click on the globe on the Shaders slide.
 
-For a full description of the program please watch the WWDC 2014 State of the Union presentation.
+Author
+------
+
+Copyright (C) 2014 Apple Inc. All rights reserved.  
+Ported to Xamarin.Mac by Vincent Dondain.
