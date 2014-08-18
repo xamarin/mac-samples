@@ -17,5 +17,7 @@ Build Requirements
 
 Author
 ------
-    Copyright (C) 2014 Apple Inc. All rights reserved.
-    Ported to Xamarin.Mac by Vincent Dondain.
+
+Copyright (C) 2014 Apple Inc. All rights reserved.
+
+Ported to Xamarin.Mac by Vincent Dondain.

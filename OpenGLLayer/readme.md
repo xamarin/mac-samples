@@ -1,15 +1,14 @@
 OpenGLLayer
 ===========
 
-Converted to Mono and C# by:  Kenneth J. Pouncey 2011/02/25
-
 For a full description of the program you will have to buy the book:
 
-Core Animation for Mac OS X and the iPhone: Creating Compelling Dynamic User Interfaces
+[Core Animation for Mac OS X and the iPhone]: Creating Compelling Dynamic User Interfaces by Bill Dudney.
 
-by Bill Dudney
+Author
+------
 
-You can purchase your copy here:
+Ported to Xamarin.Mac by Kenneth J. Pouncey.
 
-http://www.pragprog.com/titles/bdcora/core-animation-for-mac-os-x-and-the-iphone
-http://www.pragprog.com
+
+[Core Animation for Mac OS X and the iPhone]:http://www.pragprog.com/titles/bdcora/core-animation-for-mac-os-x-and-the-iphone

@@ -4,7 +4,8 @@ SceneKitViewer
 This is a Xamarin.Mac version of Apple's simple SceneKitViewer.
 
 Sample Data License
-===================
+-------------------
+
 The data files included in this sample are covered by the following
 license:
 

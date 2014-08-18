@@ -1,11 +1,7 @@
 PopupBindings
 =============
 
-Converted to Mono and C# by Kenneth J. Pouncey 2010/11/18 from Apple's
-Sample project of the same name (Copyright (C) 2010 Apple Inc. All
-rights reserved.).
-
-"PopupBindings" is a Mono C# sample application that demonstrates how
+"PopupBindings" is a Xamarin.Mac sample application that demonstrates how
 to use the bindings to manage the contents and selection of the
 NSPopupButton class.  It uses the NSArrayController class to hold the
 data and track the selection.
@@ -44,11 +40,9 @@ like:
 	Controller Key: selection
 	Model Key Path: addressStreet
 
+Author
+------ 
 
-Sample Requirements
+Copyright (C) 2014 Apple Inc. All rights reserved.
 
-The supplied solution requires MonoMac bindings from the Mono Project.
-
-
-Changes from Previous Versions
-n/a
+Ported to Xamarin.Mac by Kenneth J. Pouncey.

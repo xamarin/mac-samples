@@ -1,14 +1,21 @@
 CAQuartzComposition
 ===================
 
-Shows the use of the Core Animation and Quartz Composition QCCompositionLayer.
+Shows the use of the Core Animation and Quartz Composition QCCompositionLayer.  
+For a full description of the program and the original article point your browser here: 
+[Core Animation Tutorial]
 
-Converted to Mono and C# by:  Kenneth J. Pouncey 2011/01/19
+Instructions
+------------
 
 There are two menu options you can access from the View menu item.
 
-Switch View - which will switch between the to Quartz Compositions
-Use Filters - which toggles the use of filters being applied to the layer or not.
+* Switch View - which will switch between the to Quartz Compositions
+* Use Filters - which toggles the use of filters being applied to the layer or not.
 
-For a full description of the program and the original article point your browser here:
-http://www.cimgf.com/2008/09/24/core-animation-tutorial-core-animation-and-quartz-composer-qccompositionlayer/#more-289
+Author
+------
+
+Ported to Xamarin.Mac by Kenneth J. Pouncey.
+
+[Core Animation Tutorial]:http://www.cimgf.com/2008/09/24/core-animation-tutorial-core-animation-and-quartz-composer-qccompositionlayer/#more-289

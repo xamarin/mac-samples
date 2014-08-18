@@ -1,4 +1,4 @@
 Fire
 ====
 
-Fire sample for MonoMac.
+Fire sample for Xamarin.Mac.

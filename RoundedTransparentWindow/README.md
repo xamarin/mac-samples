@@ -1,13 +1,11 @@
-A port of the RoundedDisplayWindow sample:
+RoundedDisplayWindow Sample
+===========================
 
-http://developer.apple.com/library/mac/#samplecode/RoundTransparentWindow/Introduction/Intro.html
+The [original sample] was slightly updated to avoid using deprecated APIs.
 
-Slightly updated to avoid using the deprecated APIs in the sample.
+There are the two classes needed:
 
-There are two classes needed:
+* CustomWindow - Configures the Window.
+* CustomView - The view contained in the window.
 
-	* CustomWindow - Configures the Window
-
-	* CustomView - The view contained in the window
-
-
+[original sample]:http://developer.apple.com/library/mac/#samplecode/RoundTransparentWindow/Introduction/Intro.html

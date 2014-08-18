@@ -1,4 +1,4 @@
 DrawerMadness
 =============
 
-DrawerMadness MonoMac sample.
+DrawerMadness Xamarin.Mac sample.

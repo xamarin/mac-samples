@@ -1,4 +1,5 @@
-# MonoMac.SystemConfiguration.NetworkReachability
+SystemConfiguration.NetworkReachability
+=======================================
 
 The `NetworkReachability` programming interface allows an application to
 determine the status of a system's current network configuration and the
@@ -14,5 +15,3 @@ can schedule the `NetworkReachability` object on the `CFRunLoop` of a client
 object’s thread. The client implements a callback function (`SetNotification`)
 to receive notifications when the reachability status of a given remote host
 changes.
-
-![Screenshot of Sample Application](Screenshots/0.png)
