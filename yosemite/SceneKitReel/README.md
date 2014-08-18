@@ -9,6 +9,12 @@ Instructions
 * You can interact with some slides to use `SceneKit` amazing effects. 
 * Drag balls on the Physics Fields slide and click on the globe on the Shaders slide.
 
+Build Requirements
+------------------
+
+* Xcode 6.0 and OS X v10.10.
+* Xamarin.Mac v1.12 or later.
+
 Author
 ------
 
