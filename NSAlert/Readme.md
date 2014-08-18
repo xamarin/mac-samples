@@ -1,4 +1,4 @@
 NSAlert
 =======
 
-NSAlert sample for mac.
+`NSAlert` sample for mac.

@@ -1,11 +1,10 @@
 AnimatedClock
-============
+=============
 
-Shows the use of custom property animations for CALayers in the CoreAnimation Layers API.
-
+Shows the use of custom property animations for `CALayers` in the `CoreAnimation` Layers API.  
 This is based on the GlossyClock sample.
 
-Authors
--------
+Author
+------
 
-Rolf Bjarne Kvinge (rolf@xamarin.com)
+Ported to Xamarin.Mac by Rolf Bjarne Kvinge.

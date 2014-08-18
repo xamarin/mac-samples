@@ -1,8 +1,8 @@
 GlossyClock
-============
+===========
 
-Shows the use of the CoreAnimation Layers API and KVO bindings.  
-For a full description of the program and the original article point your browser here:
+Shows the use of the `CoreAnimation` Layers API and KVO bindings.  
+For a full description of the program and the original article point your browser here:  
 [Core Animation Layered Clock]
 
 Author

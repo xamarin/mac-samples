@@ -1,9 +1,8 @@
 OpenGLLayer
 ===========
 
-For a full description of the program you will have to buy the book:
-
-[Core Animation for Mac OS X and the iPhone]: Creating Compelling Dynamic User Interfaces by Bill Dudney.
+For a full description of the program you will have to buy the book:  
+[Core Animation for Mac OS X and the iPhone] - Creating Compelling Dynamic User Interfaces by Bill Dudney.
 
 Author
 ------

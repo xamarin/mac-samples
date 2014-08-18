@@ -1,8 +1,8 @@
 CAQuartzComposition
 ===================
 
-Shows the use of the Core Animation and Quartz Composition QCCompositionLayer.  
-For a full description of the program and the original article point your browser here: 
+Shows the use of the `CoreAnimation` and `QuartzComposition` `QCCompositionLayer`.  
+For a full description of the program and the original article point your browser here:  
 [Core Animation Tutorial]
 
 Instructions
@@ -10,7 +10,7 @@ Instructions
 
 There are two menu options you can access from the View menu item.
 
-* Switch View - which will switch between the to Quartz Compositions
+* Switch View - which will switch between the to Quartz Compositions.
 * Use Filters - which toggles the use of filters being applied to the layer or not.
 
 Author

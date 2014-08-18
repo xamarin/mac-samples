@@ -1,16 +1,16 @@
 ImageKit Demo
 =============
 
-Simple demo to exercise ImageKit's ImageBrowserView.
+Simple demo to exercise ImageKit's `ImageBrowserView`.
 
 While it is largely unrecognizable from the source, this code was inspired by and modeled after step 1 of Apple's ImageKit Demo.
 
 This demo illustrates:
 
-* IKImageBrowserView
-* IKImageBrowserDataSource
-* IKImageBrowserItem
-* drag and drop support
+* IKImageBrowserView.
+* IKImageBrowserDataSource.
+* IKImageBrowserItem.
+* Drag and drop support.
 	
 Instructions
 ------------

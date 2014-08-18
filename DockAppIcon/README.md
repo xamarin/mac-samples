@@ -1,7 +1,7 @@
 DockAppIcon
-============
+===========
 
-Shows the use of the NSDockTile.
+Shows the use of the `NSDockTile`.
 
 * Adding a badge to the icon in the Dock provides a setting to add a custom format.
 * Manipulating the Application Badge.

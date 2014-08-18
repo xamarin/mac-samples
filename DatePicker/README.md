@@ -1,7 +1,7 @@
 DatePicker
 ==========
 
-Shows the use of the NSDatePicker control with Xamarin.Mac.
+Shows the use of the `NSDatePicker` control with Xamarin.Mac.
 
 Author
 ------

@@ -1,4 +1,4 @@
 CFNetwork
 =========
 
-CFNetwork MonoMac sample.
+CFNetwork Xamarin.Mac sample.
