@@ -1,5 +1,5 @@
-Github Flavored Markdown Viewer
-===============================
+MarkdownViewer
+==============
 
 This Mac sample is quite useful for authoring and viewing __Markdown__ files,
 but also offers a little insight into building a hybrid web and native Mac

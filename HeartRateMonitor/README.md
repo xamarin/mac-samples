@@ -1,5 +1,5 @@
-CoreBluetooth
-=============
+HeartRateMonitor
+================
 
 The `CoreBluetooth` framework provides the classes needed for your iOS and Mac apps to communicate with devices that are equipped with Bluetooth low energy wireless technology, such as heart rate monitors, cycling cadence sensors, and temperature monitors.
 

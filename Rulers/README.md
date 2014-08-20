@@ -1,5 +1,5 @@
-NSRulerView Client Example
-==========================
+Rulers
+======
 
 This project demonstrates many of the interactions between an `NSRulerView` and its client view. 
 It should give you an idea how to go about this when creating a view subclass that really does something.
