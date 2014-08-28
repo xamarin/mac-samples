@@ -180,7 +180,7 @@ namespace SceneKitSessionWWDC2013
 			var rotationAnimation = CABasicAnimation.FromKeyPath ("rotation");
 			rotationAnimation.Duration = 40.0f;
 			rotationAnimation.RepeatCount = float.MaxValue;
-			rotationAnimation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, (float)Math.PI * 2));
+			rotationAnimation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, NMath.PI * 2));
 			CarouselNode.AddAnimation (rotationAnimation, new NSString ("rotationAnimation"));
 
 			// A material shared by all the primitives
@@ -251,8 +251,8 @@ namespace SceneKitSessionWWDC2013
 
 		private void AddPrimitive (SCNGeometry geometry, float yPos, CABasicAnimation rotationAnimation, SCNMaterial sharedMaterial)
 		{
-			var xPos = 13.0f * (float)Math.Sin ((float)Math.PI * 2 * PrimitiveIndex / 9.0f);
-			var zPos = 13.0f * (float)Math.Cos ((float)Math.PI * 2 * PrimitiveIndex / 9.0f);
+			var xPos = 13.0f * NMath.Sin (NMath.PI * 2 * PrimitiveIndex / 9.0f);
+			var zPos = 13.0f * NMath.Cos (NMath.PI * 2 * PrimitiveIndex / 9.0f);
 
 			var node = SCNNode.Create ();
 			node.Position = new SCNVector3 (xPos, yPos, zPos);

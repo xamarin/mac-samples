@@ -21,7 +21,7 @@ namespace SceneKitSessionWWDC2013
 			Large = 4
 		}
 
-		public static SCNNode SCAddChildNode (SCNNode container, string name, string path, float scale)
+		public static SCNNode SCAddChildNode (SCNNode container, string name, string path, nfloat scale)
 		{
 			// Load the scene from the specified file
 			var scene = SCNScene.FromFile (path);
@@ -47,7 +47,7 @@ namespace SceneKitSessionWWDC2013
 				mid.Y = min.Y; // Align on bottom
 
 				var size = SCNVector3.Subtract (max, min);
-				var maxSize = (float)Math.Max (Math.Max (size.X, size.Y), size.Z);
+				var maxSize = NMath.Max (NMath.Max (size.X, size.Y), size.Z);
 
 				scale = scale / maxSize;
 				mid = SCNVector3.Multiply (mid, scale);
@@ -80,8 +80,8 @@ namespace SceneKitSessionWWDC2013
 
 			// create an image and fill with the color and text
 			var textureSize = new CGSize ();
-			textureSize.Width = (float)Math.Ceiling ((double)frame.Size.Width * 1.5);
-			textureSize.Height = (float)Math.Ceiling ((double)frame.Size.Height * 1.5);
+			textureSize.Width = NMath.Ceiling (frame.Size.Width * 1.5f);
+			textureSize.Height = NMath.Ceiling (frame.Size.Height * 1.5f);
 
 			var texture = new NSImage (textureSize);
 			texture.LockFocus ();

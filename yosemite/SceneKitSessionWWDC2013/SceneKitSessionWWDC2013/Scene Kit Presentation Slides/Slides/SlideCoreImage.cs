@@ -125,7 +125,7 @@ namespace SceneKitSessionWWDC2013
 					var animation = CABasicAnimation.FromKeyPath ("rotation");
 					animation.Duration = 4.0f;
 					animation.From = NSValue.FromVector (new SCNVector4 (0, 1, 0, 0));
-					animation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, (float)Math.PI * 2));
+					animation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, NMath.PI * 2));
 					animation.TimingFunction = CAMediaTimingFunction.FromName (CAMediaTimingFunction.EaseInEaseOut);
 					animation.RepeatCount = float.MaxValue;
 
@@ -180,8 +180,8 @@ namespace SceneKitSessionWWDC2013
 
 					// Curved layout
 					var angle = 0.12f * ((ColumnCount - 1) / 2.0f - i);
-					var x = (float)Math.Cos (angle + (float)(Math.PI / 2)) * 500.0f;
-					var z = (float)Math.Sin (angle + (float)(Math.PI / 2)) * 500.0f;
+					var x = NMath.Cos (angle + (float)(Math.PI / 2)) * 500.0f;
+					var z = NMath.Sin (angle + (float)(Math.PI / 2)) * 500.0f;
 					container.Position = new SCNVector3 (x, j * 60, -z + 400);
 					container.Rotation = new SCNVector4 (0, 1, 0, angle);
 

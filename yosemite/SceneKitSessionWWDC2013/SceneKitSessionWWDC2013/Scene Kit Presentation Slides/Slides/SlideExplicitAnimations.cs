@@ -25,7 +25,7 @@ namespace SceneKitSessionWWDC2013
 			+ "animation = #CABasicAnimation#.FromKeyPath (\"rotation\"); \n\n"
 			+ "// Configure the animation \n"
 			+ "animation.#Duration# = 2.0f; \n"
-			+ "animation.#To# = NSValue.FromVector (new SCNVector4 (0, 1, 0, (float)Math.PI * 2)); \n"
+			+ "animation.#To# = NSValue.FromVector (new SCNVector4 (0, 1, 0, NMath.PI * 2)); \n"
 			+ "animation.#RepeatCount# = float.MaxValue; \n\n"
 			+ "// Play the animation \n"
 			+ "aNode.#AddAnimation #(animation, \"myAnimation\");#");

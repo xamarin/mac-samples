@@ -188,7 +188,7 @@ namespace SceneKitSessionWWDC2014
 				boxNode.Position = new SCNVector3 (0, 5, MIDDLE_Z);
 				boxNode.Geometry.FirstMaterial.Emission.Contents = NSColor.DarkGray;
 				boxNode.PhysicsBody = SCNPhysicsBody.CreateKinematicBody ();
-				boxNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, 0, (nfloat)Math.PI * 2, 2.0)));
+				boxNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, 0, NMath.PI * 2, 2.0)));
 				GroundNode.AddChildNode (boxNode);
 				KinematicItems.Add (boxNode);
 
@@ -352,7 +352,7 @@ namespace SceneKitSessionWWDC2014
 				var force = (nfloat)25.0f;
 				var distance = dir.Length;
 
-				dir = SCNVector3.Multiply (dir, force / (nfloat)Math.Max (0.01, distance));
+				dir = SCNVector3.Multiply (dir, force / NMath.Max (0.01f, distance));
 
 				node.PhysicsBody.ApplyForce (dir, new SCNVector3 (RandFloat (-0.2, 0.2), RandFloat (-0.2, 0.2), RandFloat (-0.2, 0.2)), true);
 
@@ -504,7 +504,7 @@ namespace SceneKitSessionWWDC2014
 			for (int i = 0; i < count; ++i) {
 				var model = SCNNode.Create ();
 				model.Position = GroundNode.ConvertPositionToNode (new SCNVector3 (RandFloat (-1, 1), RandFloat (30, 50), RandFloat (-1, 1)), null);
-				model.EulerAngles = new SCNVector3 (RandFloat (0, (nfloat)Math.PI * 2), RandFloat (0, (nfloat)Math.PI * 2), RandFloat (0, (nfloat)Math.PI * 2));
+				model.EulerAngles = new SCNVector3 (RandFloat (0, NMath.PI * 2), RandFloat (0, NMath.PI * 2), RandFloat (0, NMath.PI * 2));
 
 				var size = new SCNVector3 (RandFloat (1.0, 1.5), RandFloat (1.0, 1.5), RandFloat (1.0, 1.5));
 				var random = new Random ((int)DateTime.Now.Ticks);
@@ -529,7 +529,7 @@ namespace SceneKitSessionWWDC2014
 					model.Geometry = SCNCapsule.Create (size.X, size.Y + 2 * size.X);
 					break;
 				case 6: // Torus
-					model.Geometry = SCNTorus.Create (size.X, (nfloat)Math.Min (size.X, size.Y) / 2);
+					model.Geometry = SCNTorus.Create (size.X, NMath.Min (size.X, size.Y) / 2);
 					break;
 				default:
 					break;

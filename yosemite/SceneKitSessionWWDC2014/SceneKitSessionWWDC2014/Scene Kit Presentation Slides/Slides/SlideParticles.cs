@@ -214,8 +214,8 @@ namespace SceneKitSessionWWDC2014
 				ps.ColliderNodes = new SCNNode[] { FloorNode, boxNode };
 
 				animation = CABasicAnimation.FromKeyPath ("eulerAngles");
-				animation.From = NSValue.FromVector (new SCNVector3 (0, 0, (nfloat)Math.PI / 4 * 1.7f));
-				animation.To = NSValue.FromVector (new SCNVector3 (0, 0, -(nfloat)Math.PI / 4 * 1.7f));
+				animation.From = NSValue.FromVector (new SCNVector3 (0, 0, NMath.PI / 4 * 1.7f));
+				animation.To = NSValue.FromVector (new SCNVector3 (0, 0, -NMath.PI / 4 * 1.7f));
 				animation.BeginTime = CAAnimation.CurrentMediaTime () + 0.5;
 				animation.Duration = 2;
 				animation.AutoReverses = true;
@@ -410,7 +410,7 @@ namespace SceneKitSessionWWDC2014
 
 				var node = SCNNode.Create ();
 				node.Position = new SCNVector3 (3, 6, HOLE_Z);
-				node.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy ((float)Math.PI * 2, new SCNVector3 (0.3f, 1, 0), 8)));
+				node.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (NMath.PI * 2, new SCNVector3 (0.3f, 1, 0), 8)));
 				GroundNode.AddChildNode (node);
 				Bokeh = ps;
 

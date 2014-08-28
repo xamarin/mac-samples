@@ -95,7 +95,7 @@ namespace SceneKitSessionWWDC2014
 			lightNode.Light = SCNLight.Create ();
 			lightNode.Light.LightType = SCNLightType.Directional;
 			lightNode.Light.CastsShadow = true;
-			lightHandleNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, -(float)Math.PI * 2, 0, 12)));
+			lightHandleNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, -NMath.PI * 2, 0, 12)));
 			lightHandleNode.AddChildNode (lightNode);
 
 			EarthNode.AddChildNode (lightHandleNode);

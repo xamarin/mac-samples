@@ -132,7 +132,7 @@ namespace SceneKitSessionWWDC2014
 				positionIndicator.Geometry = SCNCylinder.Create (0.5f, 0.01f);
 				positionIndicator.Geometry.FirstMaterial.Diffuse.Contents = NSColor.Red;
 				positionIndicator.Geometry.FirstMaterial.LightingModelName = SCNLightingModel.Constant;
-				positionIndicator.EulerAngles = new SCNVector3 ((float)Math.PI / 2, 0, 0);
+				positionIndicator.EulerAngles = new SCNVector3 (NMath.PI / 2, 0, 0);
 				positionIndicator.Position = new SCNVector3 (0, 0, cubeSize * 0.5f);
 				actionNode.AddChildNode (positionIndicator);
 

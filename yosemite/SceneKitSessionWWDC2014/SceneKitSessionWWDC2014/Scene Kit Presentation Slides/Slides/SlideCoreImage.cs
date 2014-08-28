@@ -26,7 +26,7 @@ namespace SceneKitSessionWWDC2014
 			var banana = Utils.SCAddChildNode (ContentNode, "banana", "Scenes.scnassets/banana/banana", 5);
 			banana.Rotation = new SCNVector4 (1, 0, 0, -(float)(Math.PI / 2));
 
-			banana.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, (float)Math.PI * 2, 0, 1.5f)));
+			banana.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, NMath.PI * 2, 0, 1.5f)));
 			banana.Position = new SCNVector3 (2.5f, 5, 10);
 			var gaussianBlurFilter = new CIGaussianBlur () { Radius = 10 };
 			gaussianBlurFilter.SetDefaults ();

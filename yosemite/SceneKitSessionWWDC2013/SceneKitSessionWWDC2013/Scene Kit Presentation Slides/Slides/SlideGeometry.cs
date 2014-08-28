@@ -222,7 +222,7 @@ namespace SceneKitSessionWWDC2013
 				var normalVec = new Vector3 (normalBuffer [i * 3], normalBuffer [i * 3 + 1], normalBuffer [i * 3 + 2]);
 				var axis = Vector3.Normalize (Vector3.Cross (up, normalVec));
 				var dotProduct = Vector3.Dot (up, normalVec);
-				normalNode.Rotation = new SCNVector4 (axis.X, axis.Y, axis.Z, (float)Math.Acos (dotProduct));
+				normalNode.Rotation = new SCNVector4 (axis.X, axis.Y, axis.Z, NMath.Acos (dotProduct));
 
 				// Add the nodes to their parent
 				positionVisualizationNode.AddChildNode (vertexNode);

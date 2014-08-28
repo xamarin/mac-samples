@@ -51,19 +51,19 @@ namespace SceneKitSessionWWDC2014
 			var scenery = Utils.SCAddChildNode (sceneryHolder, "scenery", "Scenes.scnassets/banana/level", 130);
 			scenery.Position = new SCNVector3 (-291.374969f, 1.065581f, -30.519293f);
 			scenery.Scale = new SCNVector3 (0.044634f, 0.044634f, 0.044634f);
-			scenery.Rotation = new SCNVector4 (1, 0, 0, -(nfloat)Math.PI / 2);
+			scenery.Rotation = new SCNVector4 (1, 0, 0, -NMath.PI / 2);
 
 			PalmTree = Utils.SCAddChildNode (GroundNode, "PalmTree", "Scenes.scnassets/palmTree/palm_tree", 15);
 
 			PalmTree.Position = new SCNVector3 (3, -1, 7);
-			PalmTree.Rotation = new SCNVector4 (1, 0, 0, -(nfloat)Math.PI / 2);
+			PalmTree.Rotation = new SCNVector4 (1, 0, 0, -NMath.PI / 2);
 
 			foreach (var child in PalmTree.ChildNodes)
 				child.CastsShadow = false;
 
 			//add a static shadow
 			var shadowPlane = SCNNode.FromGeometry (SCNPlane.Create (15, 15));
-			shadowPlane.EulerAngles = new SCNVector3 (-(float)Math.PI / 2, (float)(Math.PI / 4) * 0.5f, 0);
+			shadowPlane.EulerAngles = new SCNVector3 (-NMath.PI / 2, (float)(Math.PI / 4) * 0.5f, 0);
 			shadowPlane.Position = new SCNVector3 (0.5f, 0.1f, 2);
 			shadowPlane.Geometry.FirstMaterial.Diffuse.Contents = new NSImage (NSBundle.MainBundle.PathForResource ("Images/staticShadow", "tiff"));
 			GroundNode.AddChildNode (shadowPlane);
@@ -76,7 +76,7 @@ namespace SceneKitSessionWWDC2014
 			var animatedNode = animScene.RootNode.FindChildNode ("Bip001_Pelvis", true);
 			character.AddAnimation (animatedNode.GetAnimation (animatedNode.GetAnimationKeys () [0]), new NSString ("idle"));
 
-			character.EulerAngles = new SCNVector3 (0, (nfloat)Math.PI / 2, (nfloat)Math.PI / 2);
+			character.EulerAngles = new SCNVector3 (0, NMath.PI / 2, NMath.PI / 2);
 			character.Position = new SCNVector3 (20, 0, 7);
 			Character = character;
 		}
@@ -101,7 +101,7 @@ namespace SceneKitSessionWWDC2014
 				break;
 			case 2:
 				//move the tree
-				PalmTree.RunAction (SCNAction.RotateBy (0, (nfloat)Math.PI * 4, 0, 8));
+				PalmTree.RunAction (SCNAction.RotateBy (0, NMath.PI * 4, 0, 8));
 				break;
 			case 3:
 				TextManager.FadesIn = true;
@@ -174,7 +174,7 @@ namespace SceneKitSessionWWDC2014
 				lightModel.Geometry.FirstMaterial.Emission.Contents = NSColor.Yellow;
 				lightHandle.Position = new SCNVector3 (spot.Position.X * DIST, spot.Position.Y * DIST, spot.Position.Z * DIST);
 				lightModel.CastsShadow = false;
-				lightModel.EulerAngles = new SCNVector3 ((nfloat)Math.PI / 2, 0, 0);
+				lightModel.EulerAngles = new SCNVector3 (NMath.PI / 2, 0, 0);
 				lightHandle.AddChildNode (lightModel);
 				lightHandle.Constraints = new SCNConstraint[] { SCNLookAtConstraint.Create (Character) };
 				lightPivot.AddChildNode (lightHandle);

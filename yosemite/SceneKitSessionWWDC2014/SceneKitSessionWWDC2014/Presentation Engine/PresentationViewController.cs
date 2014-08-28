@@ -128,7 +128,7 @@ namespace SceneKitSessionWWDC2014
 			var floorMaterial = new SCNMaterial ();
 			floorMaterial.Ambient.Contents = NSColor.Black;
 			floorMaterial.Diffuse.Contents = new NSImage (NSBundle.MainBundle.PathForResource ("SharedTextures/floor", "png"));
-			floorMaterial.Diffuse.ContentsTransform = SCNMatrix4.CreateFromAxisAngle (new SCNVector3 (0, 0, 1), (float)Math.PI / 4);
+			floorMaterial.Diffuse.ContentsTransform = SCNMatrix4.CreateFromAxisAngle (new SCNVector3 (0, 0, 1), NMath.PI / 4);
 			floorMaterial.Specular.WrapS = 
 				floorMaterial.Specular.WrapT = 
 					floorMaterial.Diffuse.WrapS = 

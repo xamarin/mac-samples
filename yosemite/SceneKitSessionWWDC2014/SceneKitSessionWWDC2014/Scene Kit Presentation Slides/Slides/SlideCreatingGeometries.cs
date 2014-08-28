@@ -96,7 +96,7 @@ namespace SceneKitSessionWWDC2014
 				StarOutline = SCNNode.Create ();
 				StarOutline.Geometry = shape;
 				StarOutline.Position = new SCNVector3 (0, 5, 30);
-				StarOutline.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, (float)Math.PI * 2, 0, 10.0)));
+				StarOutline.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, NMath.PI * 2, 0, 10.0)));
 
 				GroundNode.AddChildNode (StarOutline);
 
@@ -141,7 +141,7 @@ namespace SceneKitSessionWWDC2014
 				StarOutline.ParentNode.AddChildNode (StarNode);
 
 				StarNode.EulerAngles = StarOutline.EulerAngles;
-				StarNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, (float)Math.PI * 2, 0, 10.0)));
+				StarNode.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (0, NMath.PI * 2, 0, 10.0)));
 
 				SCNTransaction.Begin ();
 				SCNTransaction.AnimationDuration = 1.0f;
@@ -197,8 +197,8 @@ namespace SceneKitSessionWWDC2014
 				label.Scale = new SCNVector3 (0.3f, 0.3f, 0.001f);
 				level1.AddChildNode (label);
 
-				level0.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy ((float)Math.PI * 2, new SCNVector3 (0, 1, 0), 45.0)));
-				level1.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy ((float)Math.PI * 2, new SCNVector3 (0, 1, 0), 45.0)));
+				level0.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (NMath.PI * 2, new SCNVector3 (0, 1, 0), 45.0)));
+				level1.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (NMath.PI * 2, new SCNVector3 (0, 1, 0), 45.0)));
 
 				SCNTransaction.Begin ();
 				SCNTransaction.AnimationDuration = 1;
@@ -208,7 +208,7 @@ namespace SceneKitSessionWWDC2014
 
 				// move the camera back to its previous position
 				presentationViewController.CameraNode.Position = new SCNVector3 (0, 0, 0);
-				presentationViewController.CameraPitch.Rotation = new SCNVector4 (1, 0, 0, Pitch * (float)Math.PI / 180.0f);
+				presentationViewController.CameraPitch.Rotation = new SCNVector4 (1, 0, 0, Pitch * NMath.PI / 180.0f);
 
 				StarNode.Position = new SCNVector3 (StarNode.Position.X, StarNode.Position.Y, StarNode.Position.Z - 30);
 				StarOutline.Position = new SCNVector3 (StarOutline.Position.X, StarOutline.Position.Y, StarOutline.Position.Z - 30);
@@ -248,7 +248,7 @@ namespace SceneKitSessionWWDC2014
 			var rotationAnimation = CABasicAnimation.FromKeyPath ("rotation");
 			rotationAnimation.Duration = 40.0f;
 			rotationAnimation.RepeatCount = float.MaxValue;
-			rotationAnimation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, (float)Math.PI * 2));
+			rotationAnimation.To = NSValue.FromVector (new SCNVector4 (0, 1, 0, NMath.PI * 2));
 			CarouselNode.AddAnimation (rotationAnimation, new NSString ("rotationAnimation"));
 
 			// A material shared by all the primitives
@@ -319,8 +319,8 @@ namespace SceneKitSessionWWDC2014
 
 		private void AddPrimitive (SCNGeometry geometry, float yPos, CABasicAnimation rotationAnimation, SCNMaterial sharedMaterial)
 		{
-			var xPos = 13.0f * (float)Math.Sin ((float)Math.PI * 2 * PrimitiveIndex / 9.0f);
-			var zPos = 13.0f * (float)Math.Cos ((float)Math.PI * 2 * PrimitiveIndex / 9.0f);
+			var xPos = 13.0f * NMath.Sin (NMath.PI * 2 * PrimitiveIndex / 9.0f);
+			var zPos = 13.0f * NMath.Cos (NMath.PI * 2 * PrimitiveIndex / 9.0f);
 
 			var node = SCNNode.Create ();
 			node.Position = new SCNVector3 (xPos, yPos, zPos);
@@ -451,20 +451,20 @@ namespace SceneKitSessionWWDC2014
 		private NSBezierPath StarPath (float innerRadius, float outerRadius)
 		{
 			var raysCount = 5;
-			var delta = 2.0f * (float)Math.PI / raysCount;
+			var delta = 2.0f * NMath.PI / raysCount;
 
 			var path = new NSBezierPath ();
 
 			for (var i = 0; i < raysCount; ++i) {
-				var alpha = i * delta + (float)Math.PI / 2;
+				var alpha = i * delta + NMath.PI / 2;
 
 				if (i == 0)
-					path.MoveTo (new CGPoint (outerRadius * (float)Math.Cos (alpha), outerRadius * (float)Math.Sin (alpha)));
+					path.MoveTo (new CGPoint (outerRadius * NMath.Cos (alpha), outerRadius * NMath.Sin (alpha)));
 				else
-					path.LineTo (new CGPoint (outerRadius * (float)Math.Cos (alpha), outerRadius * (float)Math.Sin (alpha)));
+					path.LineTo (new CGPoint (outerRadius * NMath.Cos (alpha), outerRadius * NMath.Sin (alpha)));
 
 				alpha += 0.5f * delta;
-				path.LineTo (new CGPoint (innerRadius * (float)Math.Cos (alpha), innerRadius * (float)Math.Sin (alpha)));
+				path.LineTo (new CGPoint (innerRadius * NMath.Cos (alpha), innerRadius * NMath.Sin (alpha)));
 			}
 
 			return path;

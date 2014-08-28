@@ -26,7 +26,7 @@ namespace SceneKitSessionWWDC2014
 			+ "// Change properties \n"
 			+ "aNode.#Opacity# = 1.0f; \n"
 			+ "aNode.#Rotation# = \n"
-			+ " new SCNVector4 (0, 1, 0, (float)Math.PI * 4); \n\n"
+			+ " new SCNVector4 (0, 1, 0, NMath.PI * 4); \n\n"
 			+ "// Commit the transaction \n"
 			+ "SCNTransaction.#Commit ()#;#");
 

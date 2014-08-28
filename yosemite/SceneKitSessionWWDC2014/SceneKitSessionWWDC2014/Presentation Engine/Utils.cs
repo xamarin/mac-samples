@@ -46,7 +46,7 @@ namespace SceneKitSessionWWDC2014
 				mid.Y = min.Y; // Align on bottom
 
 				var size = SCNVector3.Subtract (max, min);
-				var maxSize = (nfloat)Math.Max (Math.Max (size.X, size.Y), size.Z);
+				var maxSize = NMath.Max (NMath.Max (size.X, size.Y), size.Z);
 
 				scale = scale / maxSize;
 				mid = SCNVector3.Multiply (mid, scale);
@@ -79,8 +79,8 @@ namespace SceneKitSessionWWDC2014
 
 			// create an image and fill with the color and text
 			var textureSize = new CGSize ();
-			textureSize.Width = (float)Math.Ceiling ((double)frame.Size.Width * 1.5);
-			textureSize.Height = (float)Math.Ceiling ((double)frame.Size.Height * 1.5);
+			textureSize.Width = NMath.Ceiling (frame.Size.Width * 1.5f);
+			textureSize.Height = NMath.Ceiling (frame.Size.Height * 1.5f);
 
 			var texture = new NSImage (textureSize);
 			texture.LockFocus ();

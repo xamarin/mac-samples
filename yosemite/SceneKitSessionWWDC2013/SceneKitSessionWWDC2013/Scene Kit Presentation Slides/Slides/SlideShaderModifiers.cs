@@ -92,7 +92,7 @@ namespace SceneKitSessionWWDC2013
 				plane.FirstMaterial.Diffuse.WrapS = SCNWrapMode.Mirror;
 				plane.FirstMaterial.Diffuse.WrapT = SCNWrapMode.Mirror;
 				plane.FirstMaterial.Diffuse.Contents = new NSImage ("/Library/Desktop Pictures/Circles.jpg");
-				plane.FirstMaterial.Diffuse.ContentsTransform = SCNMatrix4.CreateFromAxisAngle (new SCNVector3 (0, 0, 1), (float)Math.PI / 4);
+				plane.FirstMaterial.Diffuse.ContentsTransform = SCNMatrix4.CreateFromAxisAngle (new SCNVector3 (0, 0, 1), NMath.PI / 4);
 				plane.FirstMaterial.Specular.Contents = NSColor.White;
 				plane.FirstMaterial.Reflective.Contents = new NSImage (NSBundle.MainBundle.PathForResource ("SharedTextures/envmap", "jpg"));
 				plane.FirstMaterial.Reflective.Intensity = 0.0f;

@@ -97,7 +97,7 @@ namespace SceneKitSessionWWDC2014
 
 				var surfaceModifier = File.ReadAllText (NSBundle.MainBundle.PathForResource ("Shaders/sm_surf", "shader"));
 
-				node.Rotation = new SCNVector4 (1, 0, 0, -(float)Math.PI / 4);
+				node.Rotation = new SCNVector4 (1, 0, 0, -NMath.PI / 4);
 				node.Geometry.FirstMaterial = (SCNMaterial)node.Geometry.FirstMaterial.Copy ();
 				node.Geometry.FirstMaterial.LightingModelName = SCNLightingModel.Lambert;
 				node.Geometry.ShaderModifiers = new SCNShaderModifiers { EntryPointSurface = surfaceModifier };

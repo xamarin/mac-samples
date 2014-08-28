@@ -43,7 +43,7 @@ namespace SceneKitSessionWWDC2014
 			//load the hero
 			Hero = Utils.SCAddChildNode (GroundNode, "heroGroup", "Scenes.scnassets/hero/hero", 12);
 			Hero.Position = new SCNVector3 (0, 0, 5);
-			Hero.Rotation = new SCNVector4 (1, 0, 0, -(nfloat)Math.PI / 2);
+			Hero.Rotation = new SCNVector4 (1, 0, 0, -NMath.PI / 2);
 
 			//hide the sword
 			var sword = Hero.FindChildNode ("sword", true);
@@ -96,18 +96,18 @@ namespace SceneKitSessionWWDC2014
 		{
 			if (IkActive) {
 				// update the influence factor of the IK constraint based on the animation progress
-				var currProgress = (float)(Attack.Speed * (timeInSeconds - AnimationStartTime) / AnimationDuration);
+				var currProgress = (nfloat)(Attack.Speed * (timeInSeconds - AnimationStartTime) / AnimationDuration);
 
 				//clamp
-				currProgress = (float)Math.Max (0, currProgress);
-				currProgress = (float)Math.Min (1, currProgress);
+				currProgress = NMath.Max (0, currProgress);
+				currProgress = NMath.Min (1, currProgress);
 
 				if (currProgress >= 1) {
 					IkActive = false;
 				}
 
 				float middle = 0.5f;
-				float f;
+				nfloat f;
 
 				// smoothly increate from 0% to 50% then smoothly decrease from 50% to 100%
 				if (currProgress > middle) {

@@ -239,7 +239,7 @@ namespace SceneKitSessionWWDC2014
 			// Create the arrows
 			for (var i = 0; i < 11; i++) {
 				var arrowNode = SCNNode.Create ();
-				arrowNode.Position = new SCNVector3 ((float)Math.Cos (Math.PI * i / 10.0f) * 20.0f, 3 + 18.5f * (float)Math.Sin (Math.PI * i / 10.0f), 0);
+				arrowNode.Position = new SCNVector3 (NMath.Cos (NMath.PI * i / 10.0f) * 20.0f, 3 + 18.5f * NMath.Sin (NMath.PI * i / 10.0f), 0);
 
 				var arrowGeometry = SCNShape.Create (arrowPath, 1);
 				arrowGeometry.ChamferRadius = 0.2f;

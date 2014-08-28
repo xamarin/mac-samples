@@ -47,7 +47,7 @@ namespace SceneKitSessionWWDC2014
 
 			node.Position = new SCNVector3 (8, 11, 0);
 			ContentNode.AddChildNode (node);
-			node.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy ((float)Math.PI * 2, new SCNVector3 (0.4f, 1, 0), 4)));
+			node.RunAction (SCNAction.RepeatActionForever (SCNAction.RotateBy (NMath.PI * 2, new SCNVector3 (0.4f, 1, 0), 4)));
 
 			MaterialLayerSlideReference = this;
 		}
@@ -119,7 +119,7 @@ namespace SceneKitSessionWWDC2014
 
 				Object.Geometry = SCNTorus.Create (W * 0.5f, W * 0.2f);
 				Material = Object.Geometry.FirstMaterial;
-				Object.Rotation = new SCNVector4 (1, 0, 0, (float)Math.PI / 2);
+				Object.Rotation = new SCNVector4 (1, 0, 0, NMath.PI / 2);
 
 				SCNTransaction.Begin ();
 				SCNTransaction.AnimationDuration = 1;
