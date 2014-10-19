@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{CFDC4C7E-92F4-4BB6-A311-0317BA4586AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SceneKitReel</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>SceneKitReelMac</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <XamMacArch>x86_64</XamMacArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="assets.scnassets\models\" />
+    <Folder Include="assets.scnassets\particles\" />
+    <Folder Include="assets.scnassets\textures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameView.cs" />
+    <Compile Include="GameView.designer.cs">
+      <DependentUpon>GameView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="..\SceneKitReelShared\SceneKitReelShared.projitems" Label="Shared" Condition="Exists('..\SceneKitReelShared\SceneKitReelShared.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\images\cubemap\back.jpg" />
+    <BundleResource Include="Resources\images\cubemap\bottom.jpg" />
+    <BundleResource Include="Resources\images\cubemap\front.jpg" />
+    <BundleResource Include="Resources\images\cubemap\left.jpg" />
+    <BundleResource Include="Resources\images\cubemap\right.jpg" />
+    <BundleResource Include="Resources\images\cubemap\top.jpg" />
+    <BundleResource Include="Resources\images\earth\Credit.txt" />
+    <BundleResource Include="Resources\images\earth\earth-diffuse.jpg" />
+    <BundleResource Include="Resources\images\earth\earth-specular.jpg" />
+    <BundleResource Include="Resources\images\back.png" />
+    <BundleResource Include="Resources\images\ball.jpg" />
+    <BundleResource Include="Resources\images\baseboard.jpg" />
+    <BundleResource Include="Resources\images\color_envmap.png" />
+    <BundleResource Include="Resources\images\cubeTexture.png" />
+    <BundleResource Include="Resources\images\envmap.jpg" />
+    <BundleResource Include="Resources\images\glossy.png" />
+    <BundleResource Include="Resources\images\icon.png" />
+    <BundleResource Include="Resources\images\krStar.png" />
+    <BundleResource Include="Resources\images\launch.png" />
+    <BundleResource Include="Resources\images\next.png" />
+    <BundleResource Include="Resources\images\SceneKit.png" />
+    <BundleResource Include="Resources\images\splash.png" />
+    <BundleResource Include="Resources\images\starBurst.skn" />
+    <BundleResource Include="Resources\images\wallPaper copy.jpg" />
+    <BundleResource Include="Resources\images\wallPaper.png" />
+    <BundleResource Include="Resources\images\wood.png" />
+    <BundleResource Include="Resources\images\WoodCubeA.jpg" />
+    <BundleResource Include="Resources\images\WoodCubeB.jpg" />
+    <BundleResource Include="Resources\images\WoodCubeC.jpg" />
+    <BundleResource Include="Resources\images\wood-normal.png" />
+    <BundleResource Include="Resources\shaders\sm_frag.shader" />
+    <BundleResource Include="Resources\shaders\sm_geom.shader" />
+    <BundleResource Include="Resources\shaders\sm_light.shader" />
+    <BundleResource Include="Resources\shaders\sm_surf.shader" />
+    <BundleResource Include="Resources\icon.icns" />
+  </ItemGroup>
+  <ItemGroup>
+    <SceneKitAsset Include="assets.scnassets\models\bac.dae" />
+    <SceneKitAsset Include="assets.scnassets\models\firetruck.dae" />
+    <SceneKitAsset Include="assets.scnassets\models\globe.dae" />
+    <SceneKitAsset Include="assets.scnassets\models\ship.dae" />
+    <SceneKitAsset Include="assets.scnassets\models\train_flat.dae" />
+    <SceneKitAsset Include="assets.scnassets\particles\bokeh.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\bubbles.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\fire.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\fire2.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\plok.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\plop.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\reactor.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\smoke.scnp" />
+    <SceneKitAsset Include="assets.scnassets\particles\sparks.scnp" />
+    <SceneKitAsset Include="assets.scnassets\textures\bokeh.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\envmap.jpg" />
+    <SceneKitAsset Include="assets.scnassets\textures\fire.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\fire2.tiff" />
+    <SceneKitAsset Include="assets.scnassets\textures\fire3.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\frontTruck.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\plok.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\sideTruck.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\smoke.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\spark.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\train_wood.jpg" />
+    <SceneKitAsset Include="assets.scnassets\textures\tspark.png" />
+    <SceneKitAsset Include="assets.scnassets\textures\water2.png" />
+  </ItemGroup>
+</Project>
