@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{A9ADFC73-2679-4092-BFD7-93AC667B5D29}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Bananas</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>Bananas</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG; MAC;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <XamMacArch>x86_64</XamMacArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <DefineConstants>MAC;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="SceneView.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Characters\MonkeyCharacter.cs" />
+    <Compile Include="Characters\PlayerCharacter.cs" />
+    <Compile Include="Characters\SkinnedCharacter.cs" />
+    <Compile Include="Game\Coconut.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\GameLevel.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\GameSimulation.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\IGameUIState.cs" />
+    <Compile Include="Game\MathUtils.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpriteKit Overlay UI\InGameScene.cs" />
+    <Compile Include="SpriteKit Overlay UI\MainMenu.cs" />
+    <Compile Include="SpriteKit Overlay UI\PauseMenu.cs" />
+    <Compile Include="SpriteKit Overlay UI\PostGameMenu.cs" />
+    <Compile Include="App &amp; View\SharedAppDelegate.cs" />
+    <Compile Include="App &amp; View\SharedSceneView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <SceneKitAsset Include="art.scnassets\techniques\blobShadow.jpg" />
+    <SceneKitAsset Include="art.scnassets\techniques\desaturation.fsh" />
+    <SceneKitAsset Include="art.scnassets\techniques\desaturation.plist" />
+    <SceneKitAsset Include="art.scnassets\techniques\desaturation.vsh" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\bored.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\explorer.png" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\explorer_skinned.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\hit.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\idle.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\jump_falling.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\jump_land.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\jump_start.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\run.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\run_start.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\run_stop.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\swing.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\explorer\walk.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\coconut.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\coconut_no_translation.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey.png" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_get_coconut.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_hold_coconut.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_palm_tree.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_skinned.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_throw_coconut.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_tree_hang.dae" />
+    <SceneKitAsset Include="art.scnassets\characters\monkey\monkey_tree_hang_taunt.dae" />
+    <SceneKitAsset Include="art.scnassets\level\banana.dae" />
+    <SceneKitAsset Include="art.scnassets\level\torch.dae" />
+    <SceneKitAsset Include="art.scnassets\level\volcano_effects.dae" />
+    <SceneKitAsset Include="art.scnassets\level\effects\effects_additive.png" />
+    <SceneKitAsset Include="art.scnassets\level\effects\effects_transparent.png" />
+    <SceneKitAsset Include="art.scnassets\level\effects\spark.png" />
+    <SceneKitAsset Include="art.scnassets\level\effects\sparkle.scnp" />
+    <SceneKitAsset Include="art.scnassets\level\effects\torch.scnp" />
+    <SceneKitAsset Include="art.scnassets\level\effects\volcano_effects.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\banana.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\foliage.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\foliage_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\ground.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\ground_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\lava.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\lava_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\rocks.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\rocks_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\sky.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\temple.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\temple_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\temple_normal.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\terrain.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\terrain_lightmap.png" />
+    <SceneKitAsset Include="art.scnassets\level\images\volcano.png" />
+    <SceneKitAsset Include="art.scnassets\level\level.dae" />
+    <SceneKitAsset Include="art.scnassets\level\effects\dust.scnp" />
+    <SceneKitAsset Include="art.scnassets\level\effects\dustWalking.scnp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="art.scnassets\characters\" />
+    <Folder Include="art.scnassets\characters\explorer\" />
+    <Folder Include="art.scnassets\characters\monkey\" />
+    <Folder Include="art.scnassets\level\" />
+    <Folder Include="Sounds\" />
+    <Folder Include="Characters\" />
+    <Folder Include="SpriteKit Overlay UI\" />
+    <Folder Include="App &amp; View\" />
+    <Folder Include="Game\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Sounds\music.caf" />
+    <BundleResource Include="Sounds\night.caf" />
+    <BundleResource Include="Sounds\rightstep.caf" />
+    <BundleResource Include="Sounds\leftstep.caf" />
+    <BundleResource Include="Sounds\Land.wav" />
+    <BundleResource Include="Sounds\deposit.caf" />
+    <BundleResource Include="Sounds\coconuthit.caf" />
+    <BundleResource Include="Sounds\ack.caf" />
+    <BundleResource Include="art.scnassets\level\interface\logo_bananas.png" />
+    <BundleResource Include="Resources\icons.icns" />
+  </ItemGroup>
+</Project>
