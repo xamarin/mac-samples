@@ -103,7 +103,7 @@ namespace SceneKitSessionWWDC2014
 			// and then split the group in 3 different animation groups.
 			// We could also have used three DAEs (one per animation).
 
-			var animationIDs = sceneSource.IdentifiersOfEntriesWithClass (new Class ("CAAnimation"));
+			var animationIDs = sceneSource.GetIdentifiersOfEntries (new Class ("CAAnimation"));
 
 			var animationCount = animationIDs.Length;
 			var longAnimations = new CAAnimation [animationCount];

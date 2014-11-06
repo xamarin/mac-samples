@@ -57,7 +57,7 @@ namespace SceneKitSessionWWDC2014
 			PresentationViewController.GoToNextSlideStep ();
 		}
 
-		[Export ("GoTo")] 
+		[Export ("GoTo:")]
 		public void GoTo (NSMenuItem item)
 		{
 			var index = (NSNumber)(item.RepresentedObject);
