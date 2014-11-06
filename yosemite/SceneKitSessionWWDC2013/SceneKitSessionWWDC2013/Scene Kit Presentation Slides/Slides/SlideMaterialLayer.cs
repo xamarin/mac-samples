@@ -94,7 +94,7 @@ namespace SceneKitSessionWWDC2013
 			return playerLayer;
 		}
 
-		[Export ("PlayerItemDidReachEnd")] 
+		[Export ("PlayerItemDidReachEnd:")]
 		private void PlayerItemDidReachEnd (NSNotification notification)
 		{
 			var playerItem = (AVPlayerItem)notification.Object;
