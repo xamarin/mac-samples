@@ -169,7 +169,7 @@ namespace DatePicker
                 /// that is called as the user interacts with the control.
                 /// </summary>
                 [Export("datePickerAction:")]
-                private void datePickerAction ()
+		 private void datePickerAction (NSDatePicker picker)
                 {
                         updateDateResult ();
                 }
