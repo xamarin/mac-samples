@@ -56,7 +56,6 @@ namespace FileCards
 			              | NSDirectoryEnumerationOptions.SkipsPackageDescendants
 			              | NSDirectoryEnumerationOptions.SkipsSubdirectoryDescendants;
 
-			// TODO: chech for unnecessary null check
 			NSDirectoryEnumerator itr = DefaultManager.GetEnumerator (dirUrl, keys, options, null);
 			DirectoryEnumerable enumerableDir = new DirectoryEnumerable (itr);
 
