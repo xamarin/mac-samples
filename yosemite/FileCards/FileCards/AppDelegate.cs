@@ -45,14 +45,12 @@ namespace FileCards
 
 		IEnumerable<NSUrl> GetFileUrls (NSUrl dirUrl)
 		{
-			// TODO: https://trello.com/c/JwTHO5Jc
-			var keys = new NSMutableArray ();
-			keys.AddObjects (new NSString[] {
+			var keys = new NSString[] {
 				NSUrl.LocalizedLabelKey,
 				NSUrl.EffectiveIconKey,
 				NSUrl.IsDirectoryKey,
 				NSUrl.TypeIdentifierKey
-			});
+			};
 
 			var options = NSDirectoryEnumerationOptions.SkipsHiddenFiles
 			              | NSDirectoryEnumerationOptions.SkipsPackageDescendants
