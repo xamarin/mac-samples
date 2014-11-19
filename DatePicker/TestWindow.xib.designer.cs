@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace DatePicker
@@ -13,112 +13,112 @@ namespace DatePicker
 	partial class TestWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSColorWell backColorWell { get; set; }
+		AppKit.NSColorWell backColorWell { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton bezeledCheck { get; set; }
+		AppKit.NSButton bezeledCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton borderedCheck { get; set; }
+		AppKit.NSButton borderedCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSMatrix dateElementChecks { get; set; }
+		AppKit.NSMatrix dateElementChecks { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSMatrix datePickerModeRadios { get; set; }
+		AppKit.NSMatrix datePickerModeRadios { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField dateResult1 { get; set; }
+		AppKit.NSTextField dateResult1 { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField dateResult2 { get; set; }
+		AppKit.NSTextField dateResult2 { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField dateResult3 { get; set; }
+		AppKit.NSTextField dateResult3 { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField dateResult4 { get; set; }
+		AppKit.NSTextField dateResult4 { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField dateResult5 { get; set; }
+		AppKit.NSTextField dateResult5 { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton drawsBackgroundCheck { get; set; }
+		AppKit.NSButton drawsBackgroundCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton fontSizePopup { get; set; }
+		AppKit.NSPopUpButton fontSizePopup { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSDatePicker maxDatePicker { get; set; }
+		AppKit.NSDatePicker maxDatePicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSDatePicker minDatePicker { get; set; }
+		AppKit.NSDatePicker minDatePicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSBox outerBox { get; set; }
+		AppKit.NSBox outerBox { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSDatePicker overrideDate { get; set; }
+		AppKit.NSDatePicker overrideDate { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton overrideDateCheck { get; set; }
+		AppKit.NSButton overrideDateCheck { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton pickerStylePopup { get; set; }
+		AppKit.NSPopUpButton pickerStylePopup { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField secondsRangeEdit { get; set; }
+		AppKit.NSTextField secondsRangeEdit { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField secondsRangeEditLabel { get; set; }
+		AppKit.NSTextField secondsRangeEditLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSColorWell textColorWell { get; set; }
+		AppKit.NSColorWell textColorWell { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSMatrix timeElementChecks { get; set; }
+		AppKit.NSMatrix timeElementChecks { get; set; }
 
 		[Action ("dateOverrideAction:")]
-		partial void dateOverrideAction (MonoMac.AppKit.NSButton sender);
+		partial void dateOverrideAction (AppKit.NSButton sender);
 
 		[Action ("dateOverrideChange:")]
-		partial void dateOverrideChange (MonoMac.AppKit.NSDatePicker sender);
+		partial void dateOverrideChange (AppKit.NSDatePicker sender);
 
 		[Action ("setBackgroundColor:")]
-		partial void setBackgroundColor (MonoMac.AppKit.NSColorWell sender);
+		partial void setBackgroundColor (AppKit.NSColorWell sender);
 
 		[Action ("setBorderStyle:")]
-		partial void setBorderStyle (MonoMac.AppKit.NSMatrix sender);
+		partial void setBorderStyle (AppKit.NSMatrix sender);
 
 		[Action ("setDateElementFlags:")]
-		partial void setDateElementFlags (MonoMac.AppKit.NSMatrix sender);
+		partial void setDateElementFlags (AppKit.NSMatrix sender);
 
 		[Action ("setDatePickerMode:")]
-		partial void setDatePickerMode (MonoMac.AppKit.NSMatrix sender);
+		partial void setDatePickerMode (AppKit.NSMatrix sender);
 
 		[Action ("setDrawsBackground:")]
-		partial void setDrawsBackground (MonoMac.AppKit.NSButton sender);
+		partial void setDrawsBackground (AppKit.NSButton sender);
 
 		[Action ("setFontSize:")]
-		partial void setFontSize (MonoMac.AppKit.NSPopUpButton sender);
+		partial void setFontSize (AppKit.NSPopUpButton sender);
 
 		[Action ("setMaxDate:")]
-		partial void setMaxDate (MonoMac.AppKit.NSDatePicker sender);
+		partial void setMaxDate (AppKit.NSDatePicker sender);
 
 		[Action ("setMinDate:")]
-		partial void setMinDate (MonoMac.AppKit.NSDatePicker sender);
+		partial void setMinDate (AppKit.NSDatePicker sender);
 
 		[Action ("setPickerStyle:")]
-		partial void setPickerStyle (MonoMac.AppKit.NSPopUpButton sender);
+		partial void setPickerStyle (AppKit.NSPopUpButton sender);
 
 		[Action ("setTextColor:")]
-		partial void setTextColor (MonoMac.AppKit.NSColorWell sender);
+		partial void setTextColor (AppKit.NSColorWell sender);
 
 		[Action ("setTimeElementFlags:")]
-		partial void setTimeElementFlags (MonoMac.AppKit.NSMatrix sender);
+		partial void setTimeElementFlags (AppKit.NSMatrix sender);
 
 		[Action ("setToToday:")]
-		partial void setToToday (MonoMac.AppKit.NSButton sender);
+		partial void setToToday (AppKit.NSButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

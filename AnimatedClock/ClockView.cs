@@ -2,17 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
+using CoreGraphics;
 using System.Timers;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
 
 namespace AnimatedClock
 {
-	public partial class ClockView : MonoMac.AppKit.NSView
+	public partial class ClockView : AppKit.NSView
 	{
 		ClockLayer backgroundLayer;
 		CATextLayer clockFaceLayer;
@@ -94,7 +94,7 @@ namespace AnimatedClock
 		{
 			CALayer borderLayer = CALayer.Create();
 			
-			RectangleF borderRect = Frame.Inset (8, 8);
+			CGRect borderRect = Frame.Inset (8, 8);
 			borderLayer.CornerRadius = 12;
 			borderLayer.BorderColor = new CGColor (1, 1, 1, 1);
 			borderLayer.BorderWidth = 2;
