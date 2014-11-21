@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace MonoMacGameView
 {
-	public partial class MonoMacGameWindow : MonoMac.AppKit.NSWindow
+	public partial class MonoMacGameWindow : AppKit.NSWindow
 	{
 		#region Constructors
 

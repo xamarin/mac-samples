@@ -26,26 +26,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoreGraphics;
 using System.Drawing;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreVideo;
+using CoreGraphics;
+using OpenGL;
 
 namespace MonoMacGameView
 {
-	public partial class MyOpenGLView : MonoMac.OpenGL.MonoMacGameView
+	public partial class MyOpenGLView : OpenGL.MonoMacGameView
 	{
 		Scene scene;
 		
 		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		public MyOpenGLView (CGRect frame) : this(frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame, NSOpenGLContext context) : base(frame, context)
+		public MyOpenGLView (CGRect frame, NSOpenGLContext context) : base(frame, context)
 		{
 			scene = new Scene();
 			
