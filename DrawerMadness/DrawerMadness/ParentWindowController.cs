@@ -2,13 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using CoreGraphics;
+using Foundation;
+using AppKit;
 
 namespace DrawerMadness
 {
-	public partial class ParentWindowController : MonoMac.AppKit.NSWindowController
+	public partial class ParentWindowController : AppKit.NSWindowController
 		
 	{
 		
@@ -81,8 +81,8 @@ namespace DrawerMadness
 		/* Our left drawer is a simple drawer, created in IB, with nothing more than a minimum and maximum size. */
 		private void setupLeftDrawer() 
 		{
-			leftDrawer.MinContentSize = new SizeF(100,100);
-			leftDrawer.MaxContentSize = new SizeF(400,400);
+			leftDrawer.MinContentSize = new CGSize(100,100);
+			leftDrawer.MaxContentSize = new CGSize(400,400);
 		}
 		
 		
@@ -117,7 +117,7 @@ namespace DrawerMadness
 		
 		private void setupBottomDrawer() 
 		{
-			SizeF contentSize = new SizeF(100,100);
+			CGSize contentSize = new CGSize(100,100);
 			bottomDrawer = new NSDrawer(contentSize,NSRectEdge.MinYEdge) {
 				ParentWindow = myParentWindow,
 				MinContentSize = contentSize,
@@ -146,11 +146,11 @@ namespace DrawerMadness
 		
 		private void setBottomDrawerOffsets() 
 		{
-			SizeF frameSize = ((NSWindow)myParentWindow).Frame.Size;
+			CGSize frameSize = ((NSWindow)myParentWindow).Frame.Size;
 			bottomDrawer.LeadingOffset = 50;
 			// we want a bottomDrawer width of approximately 220 unscaled.  
 			//	Figure out an offset to accomplish that size.
-			float bottomDrawerWidth = 220 * myParentWindow.UserSpaceScaleFactor;
+			float bottomDrawerWidth = 220 * (float)myParentWindow.UserSpaceScaleFactor;
 			bottomDrawer.TrailingOffset = frameSize.Width - bottomDrawerWidth - 50;
     
 		}
@@ -165,7 +165,7 @@ namespace DrawerMadness
 		*/
 		
 		private void setupUpperRightDrawer() {
-			SizeF contentSize = new SizeF(150,150);
+			CGSize contentSize = new CGSize(150,150);
 			upperRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge) {
 				ParentWindow = myParentWindow,
 				MinContentSize = contentSize
@@ -199,10 +199,10 @@ namespace DrawerMadness
 		/****************** Lower right drawer ******************/
 		private void setupLowerRightDrawer()
 		{
-			SizeF contentSize = new SizeF(150,150);
+			CGSize contentSize = new CGSize(150,150);
 			lowerRightDrawer = new NSDrawer(contentSize,NSRectEdge.MaxXEdge) {
 				ParentWindow = myParentWindow,
-				MinContentSize = new SizeF(50,50)
+				MinContentSize = new CGSize(50,50)
 			};
 			
 			// Attach our delegate methods
@@ -231,7 +231,7 @@ namespace DrawerMadness
 		
 		private void setRightDrawerOffsets() 
 		{
-			SizeF frameSize = myParentWindow.Frame.Size;
+			CGSize frameSize = myParentWindow.Frame.Size;
 			uint halfHeight = (uint)frameSize.Height / 2, remainder = (uint)frameSize.Height - 2 * halfHeight;
 			upperRightDrawer.LeadingOffset = 50;
 			upperRightDrawer.TrailingOffset = halfHeight;
@@ -242,7 +242,7 @@ namespace DrawerMadness
 		
 		#region Drawer Helper Delegate Methods
 		
-		private SizeF DrawerWillResizeContents (NSDrawer sender, SizeF contentSize)
+		private CGSize DrawerWillResizeContents (NSDrawer sender, CGSize contentSize)
 		{
 			Console.WriteLine("Drawer Resize");
 			contentSize.Width = 10 * (float)Math.Ceiling(contentSize.Width / 10);
@@ -251,10 +251,10 @@ namespace DrawerMadness
 			if (contentSize.Width > 250) 
 				contentSize.Width = 250;
 			if (sender == upperRightDrawer)
-				lowerRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
+				lowerRightDrawer.ContentSize = new CGSize(300 - contentSize.Width, 
 									 lowerRightDrawer.ContentSize.Height);
 			else if (sender == lowerRightDrawer) 
-				upperRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
+				upperRightDrawer.ContentSize = new CGSize(300 - contentSize.Width, 
 									 upperRightDrawer.ContentSize.Height);
 			return contentSize;
 			

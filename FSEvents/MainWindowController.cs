@@ -1,13 +1,13 @@
 using System;
 using System.IO;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreServices;
+using Foundation;
+using AppKit;
+using CoreServices;
 
 namespace FSEventWatcher
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
@@ -31,8 +31,8 @@ namespace FSEventWatcher
 			WatchPathTextField.Changed += OnWatchPathChanged;
 			StartStopButton.Activated += (sender, e) => ToggleFSEventStream ();
 
-			LatencyStepper.Activated += (sender, e) => UpdateLatency (LatencyStepper.IntegerValue);
-			LatencyTextField.Changed += (sender, e) => UpdateLatency (LatencyTextField.IntegerValue);
+			LatencyStepper.Activated += (sender, e) => UpdateLatency ((int)LatencyStepper.IntegerValue);
+			LatencyTextField.Changed += (sender, e) => UpdateLatency ((int)LatencyTextField.IntegerValue);
 			
 			UpdateLatency (5, reinitializeEventStream: false);
 

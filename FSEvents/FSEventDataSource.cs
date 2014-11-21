@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreServices;
+using Foundation;
+using AppKit;
+using CoreServices;
 
 namespace FSEventWatcher
 {
@@ -31,14 +31,14 @@ namespace FSEventWatcher
 			}
 		}
 
-		public override int GetRowCount (NSTableView tableView)
+		public override nint GetRowCount (NSTableView tableView)
 		{
 			return rows.Count;
 		}
 
-		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, int rowIndex)
+		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, nint rowIndex)
 		{
-			var row = rows[rowIndex];
+			var row = rows[(int)rowIndex];
 
 			switch (tableColumn.DataCell.Tag) {
 			case 0:

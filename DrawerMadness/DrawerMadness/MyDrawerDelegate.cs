@@ -1,6 +1,6 @@
 using System;
-using System.Drawing;
-using MonoMac.AppKit;
+using CoreGraphics;
+using AppKit;
 
 namespace DrawerMadness
 {
@@ -50,7 +50,7 @@ namespace DrawerMadness
 //			Console.WriteLine("Drawer Will Close");
 //		}
 		
-		public override SizeF DrawerWillResizeContents (NSDrawer sender, SizeF contentSize)
+		public override CGSize DrawerWillResizeContents (NSDrawer sender, CGSize contentSize)
 		{
 			Console.WriteLine("Drawer Resize from MyDrawerDelegate");
 			contentSize.Width = 10 * (float)Math.Ceiling(contentSize.Width / 10);
@@ -59,11 +59,11 @@ namespace DrawerMadness
 			if (contentSize.Width > 250) 
 				contentSize.Width = 250;
 			if (sender == controller.upperRightDrawer) {
-				controller.lowerRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
+				controller.lowerRightDrawer.ContentSize = new CGSize(300 - contentSize.Width, 
 				                                                    controller.lowerRightDrawer.ContentSize.Height);
 			} 
 			else if (sender == controller.lowerRightDrawer) {
-				controller.upperRightDrawer.ContentSize = new SizeF(300 - contentSize.Width, 
+				controller.upperRightDrawer.ContentSize = new CGSize(300 - contentSize.Width, 
 				                                                    controller.upperRightDrawer.ContentSize.Height);
 				
 			}

@@ -27,8 +27,8 @@
 using System;
 using System.Collections.Generic;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace Xamarin.HeartMonitor
 {
@@ -41,13 +41,13 @@ namespace Xamarin.HeartMonitor
 			heartRateMonitors.Add (peripheral);
 		}
 
-		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, int row)
+		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, nint row)
 		{
-			var peripheral = heartRateMonitors [row];
+			var peripheral = heartRateMonitors [(int)row];
 			return new NSString (peripheral.Name);
 		}
 
-		public override int GetRowCount (NSTableView tableView)
+		public override nint GetRowCount (NSTableView tableView)
 		{
 			return heartRateMonitors.Count;
 		}

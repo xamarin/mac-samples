@@ -1,14 +1,14 @@
 using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
-using MonoMac.AppKit;
+using Foundation;
+using CoreAnimation;
+using CoreGraphics;
+using AppKit;
 
 namespace Fire
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		// Root layer and the two paricle emitters
 		CALayer rootLayer;
@@ -31,7 +31,7 @@ namespace Fire
 		public override void AwakeFromNib ()
 		{
 			// center our fire horizontally on the view and 15px from the bottom
-			var firePosition = new PointF (view.Bounds.Width / 2, 15);
+			var firePosition = new CGPoint (view.Bounds.Width / 2, 15);
 
 			rootLayer = new CALayer {
 				BackgroundColor = new CGColor (0, 0, 0)
@@ -42,7 +42,7 @@ namespace Fire
 				Mode = CAEmitterLayer.ModeOutline,
 				Shape = CAEmitterLayer.ShapeLine,
 				RenderMode = CAEmitterLayer.RenderAdditive,
-				Size = SizeF.Empty,
+				Size = CGSize.Empty,
 				Cells = new [] {
 					new CAEmitterCell {
 						Name = "fire", // name the cell so that it can be animated later using keypaths
@@ -103,7 +103,7 @@ namespace Fire
 			fireEmitter.SetValueForKeyPath ((NSNumber)(gas * 1000), (NSString)"emitterCells.fire.birthRate");
 			fireEmitter.SetValueForKeyPath ((NSNumber)gas, (NSString)"emitterCells.fire.lifetime");
 			fireEmitter.SetValueForKeyPath ((NSNumber)(gas * 0.35), (NSString)"emitterCells.fire.lifetimeRange");
-			fireEmitter.Size = new SizeF (50 * gas, 0);
+			fireEmitter.Size = new CGSize (50 * gas, 0);
 
 			var color = new CGColor (1, 1, 1, gas * 0.3f);
 			smokeEmitter.SetValueForKeyPath ((NSNumber)(gas * 4), (NSString)"emitterCells.smoke.lifetime");

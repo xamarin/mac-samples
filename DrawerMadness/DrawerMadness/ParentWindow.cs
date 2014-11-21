@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace DrawerMadness
 {
-	public partial class ParentWindow : MonoMac.AppKit.NSWindow
+	public partial class ParentWindow : AppKit.NSWindow
 	{
 		#region Constructors
 

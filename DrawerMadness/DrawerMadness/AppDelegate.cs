@@ -1,8 +1,8 @@
 using System;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using ObjCRuntime;
 
 namespace DrawerMadness
 {
@@ -14,7 +14,7 @@ namespace DrawerMadness
 		{
 		}
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			parentWindowController = new ParentWindowController ();
 			parentWindowController.Window.MakeKeyAndOrderFront (this);

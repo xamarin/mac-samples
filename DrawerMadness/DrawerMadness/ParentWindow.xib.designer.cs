@@ -12,63 +12,63 @@ namespace DrawerMadness {
 	
 	
 	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("ParentWindow")]
+	[Foundation.Register("ParentWindow")]
 	public partial class ParentWindow {
 	}
 	
 	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("ParentWindowController")]
+	[Foundation.Register("ParentWindowController")]
 	public partial class ParentWindowController {
 		
-		private global::MonoMac.AppKit.NSDrawer __mt_leftDrawer;
+		private global::AppKit.NSDrawer __mt_leftDrawer;
 		
-		private global::MonoMac.AppKit.NSButton __mt_lowerRightAllowClose;
+		private global::AppKit.NSButton __mt_lowerRightAllowClose;
 		
-		private global::MonoMac.AppKit.NSWindow __mt_myParentWindow;
+		private global::AppKit.NSWindow __mt_myParentWindow;
 		
-		private global::MonoMac.AppKit.NSButton __mt_upperRightAllowClose;
+		private global::AppKit.NSButton __mt_upperRightAllowClose;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("closeBottomDrawer:")]
-		partial void closeBottomDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("closeBottomDrawer:")]
+		partial void closeBottomDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("closeLeftDrawer:")]
-		partial void closeLeftDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("closeLeftDrawer:")]
+		partial void closeLeftDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("closeLowerRightDrawer:")]
-		partial void closeLowerRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("closeLowerRightDrawer:")]
+		partial void closeLowerRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("closeUpperRightDrawer:")]
-		partial void closeUpperRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("closeUpperRightDrawer:")]
+		partial void closeUpperRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("openBottomDrawer:")]
-		partial void openBottomDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("openBottomDrawer:")]
+		partial void openBottomDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("openLeftDrawer:")]
-		partial void openLeftDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("openLeftDrawer:")]
+		partial void openLeftDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("openLowerRightDrawer:")]
-		partial void openLowerRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("openLowerRightDrawer:")]
+		partial void openLowerRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("openUpperRightDrawer:")]
-		partial void openUpperRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("openUpperRightDrawer:")]
+		partial void openUpperRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("toggleBottomDrawer:")]
-		partial void toggleBottomDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("toggleBottomDrawer:")]
+		partial void toggleBottomDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("toggleLeftDrawer:")]
-		partial void toggleLeftDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("toggleLeftDrawer:")]
+		partial void toggleLeftDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("toggleLowerRightDrawer:")]
-		partial void toggleLowerRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("toggleLowerRightDrawer:")]
+		partial void toggleLowerRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("toggleUpperRightDrawer:")]
-		partial void toggleUpperRightDrawer (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("toggleUpperRightDrawer:")]
+		partial void toggleUpperRightDrawer (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("leftDrawer")]
-		private global::MonoMac.AppKit.NSDrawer leftDrawer {
+		[Foundation.Connect("leftDrawer")]
+		private global::AppKit.NSDrawer leftDrawer {
 			get {
-				this.__mt_leftDrawer = ((global::MonoMac.AppKit.NSDrawer)(this.GetNativeField("leftDrawer")));
+				this.__mt_leftDrawer = ((global::AppKit.NSDrawer)(this.GetNativeField("leftDrawer")));
 				return this.__mt_leftDrawer;
 			}
 			set {
@@ -77,10 +77,10 @@ namespace DrawerMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("lowerRightAllowClose")]
-		private global::MonoMac.AppKit.NSButton lowerRightAllowClose {
+		[Foundation.Connect("lowerRightAllowClose")]
+		private global::AppKit.NSButton lowerRightAllowClose {
 			get {
-				this.__mt_lowerRightAllowClose = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("lowerRightAllowClose")));
+				this.__mt_lowerRightAllowClose = ((global::AppKit.NSButton)(this.GetNativeField("lowerRightAllowClose")));
 				return this.__mt_lowerRightAllowClose;
 			}
 			set {
@@ -89,10 +89,10 @@ namespace DrawerMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("myParentWindow")]
-		private global::MonoMac.AppKit.NSWindow myParentWindow {
+		[Foundation.Connect("myParentWindow")]
+		private global::AppKit.NSWindow myParentWindow {
 			get {
-				this.__mt_myParentWindow = ((global::MonoMac.AppKit.NSWindow)(this.GetNativeField("myParentWindow")));
+				this.__mt_myParentWindow = ((global::AppKit.NSWindow)(this.GetNativeField("myParentWindow")));
 				return this.__mt_myParentWindow;
 			}
 			set {
@@ -101,10 +101,10 @@ namespace DrawerMadness {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("upperRightAllowClose")]
-		private global::MonoMac.AppKit.NSButton upperRightAllowClose {
+		[Foundation.Connect("upperRightAllowClose")]
+		private global::AppKit.NSButton upperRightAllowClose {
 			get {
-				this.__mt_upperRightAllowClose = ((global::MonoMac.AppKit.NSButton)(this.GetNativeField("upperRightAllowClose")));
+				this.__mt_upperRightAllowClose = ((global::AppKit.NSButton)(this.GetNativeField("upperRightAllowClose")));
 				return this.__mt_upperRightAllowClose;
 			}
 			set {

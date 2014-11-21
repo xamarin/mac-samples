@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreVideo;
+using OpenGL;
 
 namespace GLFullScreen
 {
@@ -60,7 +60,7 @@ namespace GLFullScreen
 			wireFrame = !wireFrame;
 		}
 
-		public void setViewportRect (RectangleF bounds)
+		public void setViewportRect (CGRect bounds)
 		{
 			
 			GL.Viewport (0, 0, (int)bounds.Size.Width, (int)bounds.Size.Height);

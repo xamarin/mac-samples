@@ -26,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-using MonoMac.OpenGL;
+using OpenGL;
 
 namespace GLFullScreen
 {
