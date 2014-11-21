@@ -14,5 +14,7 @@
 	<string>NSApplication</string>
 	<key>CFBundleIconFile</key>
 	<string>grumpycat</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.NSImageName</string>
 </dict>
 </plist>

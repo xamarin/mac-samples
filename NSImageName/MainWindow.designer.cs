@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace NSImageNameSample
 {
@@ -12,16 +12,16 @@ namespace NSImageNameSample
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField imageLabel { get; set; }
+		AppKit.NSTextField imageLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSImageView image { get; set; }
+		AppKit.NSImageView image { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton previousButton { get; set; }
+		AppKit.NSButton previousButton { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSButton nextButton { get; set; }
+		AppKit.NSButton nextButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

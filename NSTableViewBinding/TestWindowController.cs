@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSTableViewBinding
 {
-	public partial class TestWindowController : MonoMac.AppKit.NSWindowController
+	public partial class TestWindowController : AppKit.NSWindowController
 	{
 		
 		internal static NSString FIRST_NAME = new NSString("firstname");
@@ -221,7 +221,7 @@ namespace NSTableViewBinding
 			Console.WriteLine("inspect");
 			
 			int index;
-			uint numItems = selectedObjects.Count;
+			uint numItems = (uint)selectedObjects.Count;
 			for (index = 0; index < numItems; index++)
 			{
 				NSDictionary objectDict =  new NSDictionary(selectedObjects.ValueAt(0));

@@ -1,11 +1,11 @@
 using System;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NSImageNameSample
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		NSImageName [] imageNameValues = (NSImageName [])Enum.GetValues (typeof (NSImageName));
 		int currentImageNameIndex;
