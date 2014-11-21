@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace CoreWLANWirelessManager
@@ -13,22 +13,22 @@ namespace CoreWLANWirelessManager
 	partial class IBSSDialogController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSPopUpButton channelPicker { get; set; }
+		AppKit.NSPopUpButton channelPicker { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField nameTextField { get; set; }
+		AppKit.NSTextField nameTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSSecureTextField passwordTextField { get; set; }
+		AppKit.NSSecureTextField passwordTextField { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSProgressIndicator spinner { get; set; }
+		AppKit.NSProgressIndicator spinner { get; set; }
 
 		[Action ("cancelButtonClicked:")]
-		partial void cancelButtonClicked (MonoMac.AppKit.NSButton sender);
+		partial void cancelButtonClicked (AppKit.NSButton sender);
 
 		[Action ("okButtonClicked:")]
-		partial void okButtonClicked (MonoMac.AppKit.NSButton sender);
+		partial void okButtonClicked (AppKit.NSButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

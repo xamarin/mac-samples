@@ -1,5 +1,5 @@
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace DockAppIcon
 {
@@ -7,7 +7,7 @@ namespace DockAppIcon
 	{
 		MainWindowController mainWindowController;
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			mainWindowController = new MainWindowController ();
 			mainWindowController.Window.MakeKeyAndOrderFront (this);
