@@ -25,10 +25,10 @@
 // THE SOFTWARE.
 
 using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.AppKit;
-using MonoMac.Foundation;
+using AppKit;
+using Foundation;
 
 namespace NSTextViewSample
 {
@@ -44,25 +44,25 @@ namespace NSTextViewSample
 			borderColor = NSColor.FromDeviceHsba ((float)random.NextDouble (), 1f, 1f, 1f);
 		}
 
-		public override RectangleF CellFrameForTextContainer (NSTextContainer textContainer, RectangleF lineFrag, PointF position, uint charIndex)
+		public override CGRect CellFrameForTextContainer (NSTextContainer textContainer, CGRect lineFrag, CGPoint position, nuint charIndex)
 		{
 			var rect = base.CellFrameForTextContainer (textContainer, lineFrag, position, charIndex);
 
-			return new RectangleF (
+			return new CGRect (
 				rect.Location,
-				new SizeF (
+				new CGSize (
 					rect.Width + padding * 2,
 					rect.Height + padding * 2
 				)
 			);
 		}
 
-		public override void DrawWithFrame (RectangleF cellFrame, NSView inView)
+		public override void DrawWithFrame (CGRect cellFrame, NSView inView)
 		{
 			borderColor.SetFill ();
 
 			NSGraphics.RectFill (
-				new RectangleF (
+				new CGRect (
 					cellFrame.X + padding / 2,
 					cellFrame.Y + padding / 2,
 					cellFrame.Width - padding,
