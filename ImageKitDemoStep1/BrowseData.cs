@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ImageKit;
+using Foundation;
+using AppKit;
+using ImageKit;
 
 namespace ImageKitDemo
 {
@@ -38,7 +38,7 @@ namespace ImageKitDemo
 			//indexes will change, but I will put the items in after the item at destination
 			//FIXME - missing methods on NSIndexSet
 			//FIXME make an extension method on List<>
-			int destination = destinationIndex - indexes.Where (x => x < destinationIndex).Count ();
+			int destination = (int) destinationIndex - (int)indexes.Where (x =>(int) x <(int) destinationIndex).Count ();
 			List<BrowseItem> movingImages = new List<BrowseItem> ();
 			foreach (int index in indexes)
 				movingImages.Add (images[index]);
