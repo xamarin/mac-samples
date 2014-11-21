@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace NSAlertSample
 {
@@ -12,31 +12,31 @@ namespace NSAlertSample
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField ResultLabel { get; set; }
+		AppKit.NSTextField ResultLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSMatrix AlertOptions { get; set; }
+		AppKit.NSMatrix AlertOptions { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField ModalCounter { get; set; }
+		AppKit.NSTextField ModalCounter { get; set; }
 
 		[Action ("NSAlertWithMessage:")]
-		partial void NSAlertWithMessage (MonoMac.Foundation.NSObject sender);
+		partial void NSAlertWithMessage (Foundation.NSObject sender);
 
 		[Action ("NSAlertWithError:")]
-		partial void NSAlertWithError (MonoMac.Foundation.NSObject sender);
+		partial void NSAlertWithError (Foundation.NSObject sender);
 
 		[Action ("CustomButtons:")]
-		partial void CustomButtons (MonoMac.Foundation.NSObject sender);
+		partial void CustomButtons (Foundation.NSObject sender);
 
 		[Action ("CustomImage:")]
-		partial void CustomImage (MonoMac.Foundation.NSObject sender);
+		partial void CustomImage (Foundation.NSObject sender);
 
 		[Action ("DefaultSuppression:")]
-		partial void DefaultSuppression (MonoMac.Foundation.NSObject sender);
+		partial void DefaultSuppression (Foundation.NSObject sender);
 
 		[Action ("CustomSuppression:")]
-		partial void CustomSuppression (MonoMac.Foundation.NSObject sender);
+		partial void CustomSuppression (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
