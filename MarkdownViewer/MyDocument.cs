@@ -1,15 +1,15 @@
 using System;
 using System.IO;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.WebKit;
-using MonoMac.CoreServices;
+using Foundation;
+using AppKit;
+using WebKit;
+using CoreServices;
 
 namespace Markdown
 {
-	public partial class MyDocument : MonoMac.AppKit.NSDocument
+	public partial class MyDocument : AppKit.NSDocument
 	{
 		NSUrl documentUrl;
 		NSData documentData;
@@ -19,10 +19,10 @@ namespace Markdown
 		{
 		}
 
-		[Export ("initWithCoder:")]
+	/*	[Export ("initWithCoder:")]
 		public MyDocument (NSCoder coder) : base (coder)
 		{
-		}
+		}*/
 
 		class MarkdownWebUIDelegate : WebUIDelegate
 		{

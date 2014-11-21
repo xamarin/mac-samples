@@ -1,7 +1,7 @@
 using System;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using CoreGraphics;
+using Foundation;
+using AppKit;
 
 namespace Markdown
 {
@@ -11,7 +11,7 @@ namespace Markdown
 		{
 		}
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 		}
 

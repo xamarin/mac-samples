@@ -38,5 +38,7 @@
 	</array>
 	<key>CFBundleIconFile</key>
 	<string>Markdown.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.Markdown</string>
 </dict>
 </plist>
