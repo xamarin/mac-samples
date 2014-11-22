@@ -1,6 +1,6 @@
 using System;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace NeHeLesson17
 {
@@ -8,7 +8,7 @@ namespace NeHeLesson17
 	{
 		MainWindowController mainWindowController;
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			mainWindowController = new MainWindowController ();
 			mainWindowController.Window.MakeKeyAndOrderFront (this);

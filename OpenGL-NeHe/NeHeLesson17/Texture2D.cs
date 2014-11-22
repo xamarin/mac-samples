@@ -32,12 +32,12 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreGraphics;
+using OpenGL;
 
 namespace NeHeLesson17
 {
@@ -61,14 +61,14 @@ namespace NeHeLesson17
 
 			src = new NSImage (path);
 
-			var rect = RectangleF.Empty;
+			var rect = CGRect.Empty;
 			image = src.AsCGImage (ref rect, null, null);
-			width = image.Width;
-			height = image.Height;
+			width = (int)image.Width;
+			height = (int)image.Height;
 
-			int bytesPerRow = image.BytesPerRow;
-			int bitsPerPixel = image.BitsPerPixel;
-			int bitsPerComponent = image.BitsPerComponent;
+			int bytesPerRow = (int)image.BytesPerRow;
+			int bitsPerPixel = (int)image.BitsPerPixel;
+			int bitsPerComponent = (int) image.BitsPerComponent;
 
 			data = new byte[bytesPerRow * height * 4];
 			
@@ -87,7 +87,7 @@ namespace NeHeLesson17
 			// This avoids unnecessary blending.
 			context.SetBlendMode (CGBlendMode.Copy);
 
-			context.DrawImage (new RectangleF (0, 0, width, height), image);
+			context.DrawImage (new CGRect (0, 0, width, height), image);
 		}
 
 		void LoadTexture ()

@@ -32,13 +32,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreGraphics;
 
-using MonoMac.OpenGL;
+using OpenGL;
 
 namespace NeHeLesson13
 {
@@ -81,8 +81,8 @@ namespace NeHeLesson13
 			int dListNum;
 			NSString currentChar;
 			char currentUnichar;
-			SizeF charSize;
-			RectangleF charRect = RectangleF.Empty;
+			CGSize charSize;
+			CGRect charRect = CGRect.Empty;
 			NSImage theImage;
 			bool retval;
 
@@ -110,7 +110,7 @@ namespace NeHeLesson13
 			attribDict.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
 			attribDict.SetValueForKey (blackColor, NSAttributedString.BackgroundColorAttributeName);
 
-			theImage = new NSImage (new SizeF (0,0));
+			theImage = new NSImage (new CGSize (0,0));
 			retval = true;
 
 			for (dListNum = baseDL, currentUnichar = first; currentUnichar < first + count; 
@@ -152,11 +152,11 @@ namespace NeHeLesson13
 
 			bitmap = new NSBitmapImageRep ( theImage.AsTiff (NSTiffCompression.None, 0) );
 
-			pixelsHigh = bitmap.PixelsHigh;
-			pixelsWide = bitmap.PixelsWide;
+			pixelsHigh = (int)bitmap.PixelsHigh;
+			pixelsWide = (int)bitmap.PixelsWide;
 
-			bytesPerRow = bitmap.BytesPerRow;
-			samplesPerPixel = bitmap.SamplesPerPixel;
+			bytesPerRow = (int)bitmap.BytesPerRow;
+			samplesPerPixel = (int) bitmap.SamplesPerPixel;
 
 			newBuffer = new byte[(int)Math.Ceiling ((float)bytesPerRow / 8.0) * pixelsHigh];
 

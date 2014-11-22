@@ -12,16 +12,16 @@ namespace NeHeLesson2 {
 	
 	
 	// Should subclass MonoMac.AppKit.NSResponder
-	[MonoMac.Foundation.Register("AppDelegate")]
+	[Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 	}
 	
 	// Should subclass MonoMac.Foundation.NSObject
-	[MonoMac.Foundation.Register("FirstResponder")]
+	[Foundation.Register("FirstResponder")]
 	public partial class FirstResponder {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("toggleFullScreen:")]
-		partial void toggleFullScreen (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("toggleFullScreen:")]
+		partial void toggleFullScreen (Foundation.NSObject sender);
 }
 }
