@@ -1,9 +1,10 @@
 using System;
 using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
-using MonoMac.OpenGL;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using ObjCRuntime;
+using OpenGL;
 
 namespace OpenGLViewSample
 {
@@ -16,7 +17,7 @@ namespace OpenGLViewSample
 		{
 		}
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			mainWindowController = new MainWindowController ();
 			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new object [] {
@@ -31,7 +32,7 @@ namespace OpenGLViewSample
 	
 	public class GLView : NSOpenGLView
 	{
-		public GLView (RectangleF rect, NSOpenGLPixelFormat format) : base (rect, format) {
+		public GLView (CGRect rect, NSOpenGLPixelFormat format) : base (rect, format) {
 		}
 		
 		static void DrawTriangle ()
@@ -46,11 +47,11 @@ namespace OpenGLViewSample
 			GL.End ();
 		}
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			OpenGLContext.MakeCurrentContext ();
 			
-			GL.ClearColor(Color.Brown);
+			GL.ClearColor (Color.Brown);
 	
 			GL.ClearColor (0, 0, 0, 0);
 			GL.Clear(ClearBufferMask.ColorBufferBit);

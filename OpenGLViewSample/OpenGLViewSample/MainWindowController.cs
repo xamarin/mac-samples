@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace OpenGLViewSample
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		// Called when created from unmanaged code
 		public MainWindowController (IntPtr handle) : base (handle)

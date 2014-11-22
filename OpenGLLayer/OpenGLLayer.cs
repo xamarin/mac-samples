@@ -1,18 +1,19 @@
 
 using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreVideo;
-using MonoMac.OpenGL;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
+using CoreGraphics;
+using CoreVideo;
+using OpenGL;
 using System.Runtime.InteropServices;
 namespace OpenGLLayer
 {
-        public partial class OpenGLLayer : MonoMac.CoreAnimation.CAOpenGLLayer
+        public partial class OpenGLLayer : CoreAnimation.CAOpenGLLayer
         {
                 double previousTime;
                 double rotation;
@@ -89,7 +90,7 @@ namespace OpenGLLayer
                 }
 
 
-                public override void DrawInCGLContext (MonoMac.OpenGL.CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, ref CVTimeStamp timeStamp)
+                public override void DrawInCGLContext (OpenGL.CGLContext glContext, CGLPixelFormat pixelFormat, double timeInterval, ref CVTimeStamp timeStamp)
                 {
                         GL.ClearColor (NSColor.Clear.UsingColorSpace (NSColorSpace.CalibratedRGB));
                         GL.Clear (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
