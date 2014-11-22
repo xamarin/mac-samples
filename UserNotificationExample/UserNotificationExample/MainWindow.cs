@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace UserNotificationExample
 {
-	public partial class MainWindow : MonoMac.AppKit.NSWindow
+	public partial class MainWindow : AppKit.NSWindow
 	{
 		#region Constructors
 		
@@ -29,7 +29,7 @@ namespace UserNotificationExample
 		{
 		}
 
-		partial void NotifyMeAction (MonoMac.AppKit.NSButton sender)
+		partial void NotifyMeAction (AppKit.NSButton sender)
 		{
 			// First we create our notification and customize as needed
 			NSUserNotification not = null;
@@ -72,7 +72,7 @@ namespace UserNotificationExample
 		}
 
 		// This will only reset colors to red
-		partial void ResetAction (MonoMac.AppKit.NSButton sender)
+		partial void ResetAction (AppKit.NSButton sender)
 		{
 			DeliveredColorWell.Color = NSColor.Red;
 			TouchedColorWell.Color = NSColor.Red;

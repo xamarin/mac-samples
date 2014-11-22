@@ -2,16 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.QTKit;
+using Foundation;
+using AppKit;
+using QTKit;
 using System.IO;
-using MonoMac.CoreImage;
+using CoreImage;
 using System.Text;
 
 namespace QTRecorder
 {
-	public partial class QTRDocument : MonoMac.AppKit.NSDocument
+	public partial class QTRDocument : AppKit.NSDocument
 	{
 		QTCaptureSession session;
 		QTCaptureDeviceInput videoDeviceInput, audioDeviceInput;
@@ -22,10 +22,10 @@ namespace QTRecorder
 		{
 		}
 
-		[Export("initWithCoder:")]
+	/*	[Export("initWithCoder:")]
 		public QTRDocument (NSCoder coder) : base(coder)
 		{
-		}
+		}*/
 
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{

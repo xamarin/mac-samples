@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace UserNotificationExample
 {
@@ -12,16 +12,16 @@ namespace UserNotificationExample
 	partial class MainWindow
 	{
 		[Outlet]
-		MonoMac.AppKit.NSColorWell DeliveredColorWell { get; set; }
+		AppKit.NSColorWell DeliveredColorWell { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSColorWell TouchedColorWell { get; set; }
+		AppKit.NSColorWell TouchedColorWell { get; set; }
 
 		[Action ("NotifyMeAction:")]
-		partial void NotifyMeAction (MonoMac.AppKit.NSButton sender);
+		partial void NotifyMeAction (AppKit.NSButton sender);
 
 		[Action ("ResetAction:")]
-		partial void ResetAction (MonoMac.AppKit.NSButton sender);
+		partial void ResetAction (AppKit.NSButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

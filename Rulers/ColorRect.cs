@@ -1,7 +1,7 @@
 using System;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using CoreGraphics;
+using Foundation;
+using AppKit;
 
 namespace Rulers
 {
@@ -16,17 +16,17 @@ namespace Rulers
 
 	public class ColorRect : NSObject
 	{
-		public ColorRect (RectangleF frame, NSColor color) 
+		public ColorRect (CGRect frame, NSColor color) 
 		{
 			Frame = frame;
 			Color = color;
 		}
 		
-		public RectangleF Frame { get; set; }
+		public CGRect Frame { get; set; }
 		public NSColor Color { get; set; }
 		public bool IsLocked { get; set; }
 		
-		public void DrawRect(RectangleF aRect, bool selected)
+		public void DrawRect(CGRect aRect, bool selected)
 		{
 			NSGraphics.RectClip (aRect);
 			
@@ -47,24 +47,24 @@ namespace Rulers
 				
 				NSColor.Black.Set ();
 				path.LineWidth = 3.0f;
-				path.MoveTo (new PointF (MidX (Frame) - xSize, MidY (Frame) - xSize));
-				path.LineTo (new PointF (MidX (Frame) + xSize, MidY (Frame) + xSize));
-				path.MoveTo (new PointF (MidX (Frame) - xSize, MidY (Frame) + xSize));
-				path.LineTo (new PointF (MidX (Frame) + xSize, MidY (Frame) - xSize));
+				path.MoveTo (new CGPoint (MidX (Frame) - xSize, MidY (Frame) - xSize));
+				path.LineTo (new CGPoint (MidX (Frame) + xSize, MidY (Frame) + xSize));
+				path.MoveTo (new CGPoint (MidX (Frame) - xSize, MidY (Frame) + xSize));
+				path.LineTo (new CGPoint (MidX (Frame) + xSize, MidY (Frame) - xSize));
 				path.Stroke ();
 				
 			}
 	
 		}
 		
-		static float MidX (RectangleF rect)
+		static float MidX (CGRect rect)
 		{
-			return rect.X + (rect.Width / 2);	
+			return (float)rect.X + ((float)rect.Width / 2);	
 		}
 		
-		static float MidY (RectangleF rect)
+		static float MidY (CGRect rect)
 		{
-			return rect.Y + (rect.Height / 2);	
+			return (float)rect.Y + ((float)rect.Height / 2);	
 		}		
 	}
 }

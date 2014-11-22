@@ -12,26 +12,26 @@ namespace SearchField {
 	
 	
 	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("SearchFieldWindow")]
+	[Foundation.Register("SearchFieldWindow")]
 	public partial class SearchFieldWindow {
 	}
 	
 	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("SearchFieldWindowController")]
+	[Foundation.Register("SearchFieldWindowController")]
 	public partial class SearchFieldWindowController {
 		
-		private global::MonoMac.AppKit.NSSearchField __mt_searchField;
+		private global::AppKit.NSSearchField __mt_searchField;
 		
-		private global::MonoMac.AppKit.NSWindow __mt_simpleSheet;
+		private global::AppKit.NSWindow __mt_simpleSheet;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("sheetDone:")]
-		partial void sheetDone (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("sheetDone:")]
+		partial void sheetDone (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("searchField")]
-		private global::MonoMac.AppKit.NSSearchField searchField {
+		[Foundation.Connect("searchField")]
+		private global::AppKit.NSSearchField searchField {
 			get {
-				this.__mt_searchField = ((global::MonoMac.AppKit.NSSearchField)(this.GetNativeField("searchField")));
+				this.__mt_searchField = ((global::AppKit.NSSearchField)(this.GetNativeField("searchField")));
 				return this.__mt_searchField;
 			}
 			set {
@@ -40,10 +40,10 @@ namespace SearchField {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("simpleSheet")]
-		private global::MonoMac.AppKit.NSWindow simpleSheet {
+		[Foundation.Connect("simpleSheet")]
+		private global::AppKit.NSWindow simpleSheet {
 			get {
-				this.__mt_simpleSheet = ((global::MonoMac.AppKit.NSWindow)(this.GetNativeField("simpleSheet")));
+				this.__mt_simpleSheet = ((global::AppKit.NSWindow)(this.GetNativeField("simpleSheet")));
 				return this.__mt_simpleSheet;
 			}
 			set {

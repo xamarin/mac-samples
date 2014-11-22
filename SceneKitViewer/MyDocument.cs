@@ -6,12 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace SceneKitViewer
 {
-	public partial class MyDocument : MonoMac.AppKit.NSDocument
+	public partial class MyDocument : AppKit.NSDocument
 	{
 		// Called when created from unmanaged code
 		public MyDocument (IntPtr handle) : base (handle)
@@ -19,10 +19,11 @@ namespace SceneKitViewer
 		}
 		
 		// Called when created directly from a XIB file
-		[Export ("initWithCoder:")]
+	/*	[Export ("initWithCoder:")]
 		public MyDocument (NSCoder coder) : base (coder)
 		{
 		}
+		*/
 
 		public override void WindowControllerDidLoadNib (NSWindowController windowController)
 		{

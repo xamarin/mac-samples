@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace PopupBindings
 {
-	public partial class TestWindowController : MonoMac.AppKit.NSWindowController {
+	public partial class TestWindowController : AppKit.NSWindowController {
 		// Called when created from unmanaged code
 		public TestWindowController (IntPtr handle) : base(handle)
 		{

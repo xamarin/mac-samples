@@ -23,9 +23,9 @@
 
 using System;
 using System.IO;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.WebKit;
+using Foundation;
+using AppKit;
+using WebKit;
 
 namespace SkinnableApp
 {
@@ -44,7 +44,7 @@ namespace SkinnableApp
 		}
 	}
 
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		private System.Collections.Generic.List<NSMenuItem> nsItemList = new System.Collections.Generic.List<NSMenuItem>(); // Workaround bug #661500
 		
@@ -131,7 +131,7 @@ namespace SkinnableApp
 		// The user just clicked the Add Content NSButton, so we'll add a new P tag
 		// and a new I tag to the HTML, with some default content.
 		// This shows you how to add content into an HTML document without reloading the page.
-		partial void addContent (MonoMac.AppKit.NSButton sender)
+		partial void addContent (AppKit.NSButton sender)
 		{
 			var document = webView.MainFrameDocument;
 			var paraBlock = document.GetElementById("main_content");
@@ -155,7 +155,7 @@ namespace SkinnableApp
 		// the titleText NSTextField and replace the current content of the 'contentTitle'
 		// H1 tag in the HTML with the new text. This shows you how to replace some HTML
 		// content with new content.
-		partial void setTitle (MonoMac.AppKit.NSButton sender)
+		partial void setTitle (AppKit.NSButton sender)
 		{
 			var document = webView.MainFrame.DomDocument;
 			DomText newText = document.CreateTextNode(titleText.StringValue);
@@ -166,7 +166,7 @@ namespace SkinnableApp
 
 		// The user just chose a theme in the NSPopUpButton, so we replace the HTML
 		// document's CSS file using JavaScript.
-		partial void changeTheme (MonoMac.AppKit.NSPopUpButton sender)
+		partial void changeTheme (AppKit.NSPopUpButton sender)
 		{
 			WebScriptObject scriptObject = webView.WindowScriptObject;
 			NSString theme = (NSString) themeChooser.SelectedItem.RepresentedObject;
@@ -194,7 +194,7 @@ namespace SkinnableApp
 		// This shows you how to expose an Objective-C function that is not present.
 		// The function isSelectorExcludedFromWebScript: is part of the WebScripting Protocol
 		[Export ("isSelectorExcludedFromWebScript:")]
-		public static bool IsSelectorExcludedFromWebScript(MonoMac.ObjCRuntime.Selector aSelector)
+		public static bool IsSelectorExcludedFromWebScript(ObjCRuntime.Selector aSelector)
 		{
 			// For security, you must explicitly allow a selector to be called from JavaScript.
 			if (aSelector.Name == "showMessage:")
@@ -207,7 +207,7 @@ namespace SkinnableApp
 
 		[Export("showMessage:")]
 		public void ShowMessage(NSString message){
-			MonoMac.AppKit.NSAlert alert = new MonoMac.AppKit.NSAlert();
+			AppKit.NSAlert alert = new AppKit.NSAlert();
 			alert.MessageText = "Message from JavaScript";
 			alert.InformativeText = (String) message;
 			alert.RunModal();

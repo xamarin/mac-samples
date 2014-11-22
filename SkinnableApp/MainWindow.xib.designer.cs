@@ -12,34 +12,34 @@ namespace SkinnableApp {
 
 
 	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MainWindow")]
+	[Foundation.Register("MainWindow")]
 	public partial class MainWindow {
 	}
 
 	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MainWindowController")]
+	[Foundation.Register("MainWindowController")]
 	public partial class MainWindowController {
 
-		private global::MonoMac.AppKit.NSPopUpButton __mt_themeChooser;
+		private global::AppKit.NSPopUpButton __mt_themeChooser;
 
-		private global::MonoMac.AppKit.NSTextField __mt_titleText;
+		private global::AppKit.NSTextField __mt_titleText;
 
-		private global::MonoMac.WebKit.WebView __mt_webView;
+		private global::WebKit.WebView __mt_webView;
 
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("addContent:")]
-		partial void addContent (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("addContent:")]
+		partial void addContent (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Export("changeTheme:")]
-		partial void changeTheme (MonoMac.AppKit.NSPopUpButton sender);
+		[Foundation.Export("changeTheme:")]
+		partial void changeTheme (AppKit.NSPopUpButton sender);
 
-		[MonoMac.Foundation.Export("setTitle:")]
-		partial void setTitle (MonoMac.AppKit.NSButton sender);
+		[Foundation.Export("setTitle:")]
+		partial void setTitle (AppKit.NSButton sender);
 
-		[MonoMac.Foundation.Connect("themeChooser")]
-		private global::MonoMac.AppKit.NSPopUpButton themeChooser {
+		[Foundation.Connect("themeChooser")]
+		private global::AppKit.NSPopUpButton themeChooser {
 			get {
-				this.__mt_themeChooser = ((global::MonoMac.AppKit.NSPopUpButton)(this.GetNativeField("themeChooser")));
+				this.__mt_themeChooser = ((global::AppKit.NSPopUpButton)(this.GetNativeField("themeChooser")));
 				return this.__mt_themeChooser;
 			}
 			set {
@@ -48,10 +48,10 @@ namespace SkinnableApp {
 			}
 		}
 
-		[MonoMac.Foundation.Connect("titleText")]
-		private global::MonoMac.AppKit.NSTextField titleText {
+		[Foundation.Connect("titleText")]
+		private global::AppKit.NSTextField titleText {
 			get {
-				this.__mt_titleText = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("titleText")));
+				this.__mt_titleText = ((global::AppKit.NSTextField)(this.GetNativeField("titleText")));
 				return this.__mt_titleText;
 			}
 			set {
@@ -60,10 +60,10 @@ namespace SkinnableApp {
 			}
 		}
 
-		[MonoMac.Foundation.Connect("webView")]
-		private global::MonoMac.WebKit.WebView webView {
+		[Foundation.Connect("webView")]
+		private global::WebKit.WebView webView {
 			get {
-				this.__mt_webView = ((global::MonoMac.WebKit.WebView)(this.GetNativeField("webView")));
+				this.__mt_webView = ((global::WebKit.WebView)(this.GetNativeField("webView")));
 				return this.__mt_webView;
 			}
 			set {

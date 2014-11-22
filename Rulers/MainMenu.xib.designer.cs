@@ -12,25 +12,25 @@ namespace Rulers {
 	
 	
 	// Should subclass MonoMac.AppKit.NSResponder
-	[MonoMac.Foundation.Register("AppDelegate")]
+	[Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 	}
 	
 	// Should subclass MonoMac.Foundation.NSObject
-	[MonoMac.Foundation.Register("FirstResponder")]
+	[Foundation.Register("FirstResponder")]
 	public partial class FirstResponder {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("lockSelectedItem:")]
-		partial void lockSelectedItem (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("lockSelectedItem:")]
+		partial void lockSelectedItem (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("nestle:")]
-		partial void nestle (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("nestle:")]
+		partial void nestle (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("zoomIn:")]
-		partial void zoomIn (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("zoomIn:")]
+		partial void zoomIn (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("zoomOut:")]
-		partial void zoomOut (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("zoomOut:")]
+		partial void zoomOut (Foundation.NSObject sender);
 }
 }

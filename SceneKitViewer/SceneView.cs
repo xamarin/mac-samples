@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.SceneKit;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using SceneKit;
 
 namespace SceneKitViewer {
 	[Register ("SceneView")]
@@ -27,7 +27,7 @@ namespace SceneKitViewer {
 		}
 
 		// Called if you want to create this programatically
-		public SceneView (RectangleF rect) : base (rect) 
+		public SceneView (CGRect rect) : base (rect) 
 		{
 			RegisterDND ();
 		}

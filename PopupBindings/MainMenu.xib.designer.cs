@@ -12,11 +12,11 @@ namespace PopupBindings {
 	
 	
 	// Should subclass MonoMac.AppKit.NSResponder
-	[MonoMac.Foundation.Register("AppDelegate")]
+	[Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("openReadMe:")]
-		partial void openReadMe (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("openReadMe:")]
+		partial void openReadMe (Foundation.NSObject sender);
 }
 }

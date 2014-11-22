@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace VillainTracker
 {
@@ -148,14 +148,14 @@ namespace VillainTracker
 			villains.Remove (villain);
 			villainsTableView.ReloadData ();
 			
-			selectedRow = Math.Min (selectedRow, villains.Count - 1);
+			selectedRow = Math.Min ((int)selectedRow, villains.Count - 1);
 			if (selectedRow < 0)
 				return;
 			
 			// deselect all rows to ensure that the table view see the selection
 			// as "changed", even though it might still have the same row index
 			villainsTableView.DeselectAll (null);
-			villainsTableView.SelectRow (selectedRow, false);
+				villainsTableView.SelectRow ((int)selectedRow, false);
 			UpdateDetailViews ();
 		}
 		

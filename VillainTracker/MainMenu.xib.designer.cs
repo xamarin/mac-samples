@@ -12,71 +12,71 @@ namespace VillainTracker {
 	
 	
 	// Should subclass MonoMac.AppKit.NSApplicationDelegate
-	[MonoMac.Foundation.Register("VillainTrackerAppDelegate")]
+	[Foundation.Register("VillainTrackerAppDelegate")]
 	public partial class VillainTrackerAppDelegate {
 		
-		private global::MonoMac.AppKit.NSLevelIndicator __mt_evilnessView;
+		private global::AppKit.NSLevelIndicator __mt_evilnessView;
 		
-		private global::MonoMac.AppKit.NSTextField __mt_lastKnownLocationView;
+		private global::AppKit.NSTextField __mt_lastKnownLocationView;
 		
-		private global::MonoMac.AppKit.NSDatePicker __mt_lastSeenDateView;
+		private global::AppKit.NSDatePicker __mt_lastSeenDateView;
 		
-		private global::MonoMac.AppKit.NSImageView __mt_mugshotView;
+		private global::AppKit.NSImageView __mt_mugshotView;
 		
-		private global::MonoMac.AppKit.NSTextField __mt_nameView;
+		private global::AppKit.NSTextField __mt_nameView;
 		
-		private global::MonoMac.AppKit.NSTextView __mt_notesView;
+		private global::AppKit.NSTextView __mt_notesView;
 		
-		private global::MonoMac.AppKit.NSPopUpButton __mt_powerSourceView;
+		private global::AppKit.NSPopUpButton __mt_powerSourceView;
 		
-		private global::MonoMac.AppKit.NSMatrix __mt_powersView;
+		private global::AppKit.NSMatrix __mt_powersView;
 		
-		private global::MonoMac.AppKit.NSMatrix __mt_primaryMotivationView;
+		private global::AppKit.NSMatrix __mt_primaryMotivationView;
 		
-		private global::MonoMac.AppKit.NSComboBox __mt_swornEnemyView;
+		private global::AppKit.NSComboBox __mt_swornEnemyView;
 		
-		private global::MonoMac.AppKit.NSTableView __mt_villainsTableView;
+		private global::AppKit.NSTableView __mt_villainsTableView;
 		
-		private global::MonoMac.AppKit.NSWindow __mt_window;
+		private global::AppKit.NSWindow __mt_window;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("deleteVillain:")]
-		partial void deleteVillain (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("deleteVillain:")]
+		partial void deleteVillain (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("newVillain:")]
-		partial void newVillain (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("newVillain:")]
+		partial void newVillain (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeEvilness:")]
-		partial void takeEvilness (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeEvilness:")]
+		partial void takeEvilness (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeLastKnownLocation:")]
-		partial void takeLastKnownLocation (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeLastKnownLocation:")]
+		partial void takeLastKnownLocation (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeLastSeenDate:")]
-		partial void takeLastSeenDate (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeLastSeenDate:")]
+		partial void takeLastSeenDate (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeMugshot:")]
-		partial void takeMugshot (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeMugshot:")]
+		partial void takeMugshot (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeName:")]
-		partial void takeName (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeName:")]
+		partial void takeName (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takePowerSource:")]
-		partial void takePowerSource (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takePowerSource:")]
+		partial void takePowerSource (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takePowers:")]
-		partial void takePowers (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takePowers:")]
+		partial void takePowers (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takePrimaryMotivation:")]
-		partial void takePrimaryMotivation (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takePrimaryMotivation:")]
+		partial void takePrimaryMotivation (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("takeSwornEnemy:")]
-		partial void takeSwornEnemy (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("takeSwornEnemy:")]
+		partial void takeSwornEnemy (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("evilnessView")]
-		private global::MonoMac.AppKit.NSLevelIndicator evilnessView {
+		[Foundation.Connect("evilnessView")]
+		private global::AppKit.NSLevelIndicator evilnessView {
 			get {
-				this.__mt_evilnessView = ((global::MonoMac.AppKit.NSLevelIndicator)(this.GetNativeField("evilnessView")));
+				this.__mt_evilnessView = ((global::AppKit.NSLevelIndicator)(this.GetNativeField("evilnessView")));
 				return this.__mt_evilnessView;
 			}
 			set {
@@ -85,10 +85,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("lastKnownLocationView")]
-		private global::MonoMac.AppKit.NSTextField lastKnownLocationView {
+		[Foundation.Connect("lastKnownLocationView")]
+		private global::AppKit.NSTextField lastKnownLocationView {
 			get {
-				this.__mt_lastKnownLocationView = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("lastKnownLocationView")));
+				this.__mt_lastKnownLocationView = ((global::AppKit.NSTextField)(this.GetNativeField("lastKnownLocationView")));
 				return this.__mt_lastKnownLocationView;
 			}
 			set {
@@ -97,10 +97,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("lastSeenDateView")]
-		private global::MonoMac.AppKit.NSDatePicker lastSeenDateView {
+		[Foundation.Connect("lastSeenDateView")]
+		private global::AppKit.NSDatePicker lastSeenDateView {
 			get {
-				this.__mt_lastSeenDateView = ((global::MonoMac.AppKit.NSDatePicker)(this.GetNativeField("lastSeenDateView")));
+				this.__mt_lastSeenDateView = ((global::AppKit.NSDatePicker)(this.GetNativeField("lastSeenDateView")));
 				return this.__mt_lastSeenDateView;
 			}
 			set {
@@ -109,10 +109,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("mugshotView")]
-		private global::MonoMac.AppKit.NSImageView mugshotView {
+		[Foundation.Connect("mugshotView")]
+		private global::AppKit.NSImageView mugshotView {
 			get {
-				this.__mt_mugshotView = ((global::MonoMac.AppKit.NSImageView)(this.GetNativeField("mugshotView")));
+				this.__mt_mugshotView = ((global::AppKit.NSImageView)(this.GetNativeField("mugshotView")));
 				return this.__mt_mugshotView;
 			}
 			set {
@@ -121,10 +121,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("nameView")]
-		private global::MonoMac.AppKit.NSTextField nameView {
+		[Foundation.Connect("nameView")]
+		private global::AppKit.NSTextField nameView {
 			get {
-				this.__mt_nameView = ((global::MonoMac.AppKit.NSTextField)(this.GetNativeField("nameView")));
+				this.__mt_nameView = ((global::AppKit.NSTextField)(this.GetNativeField("nameView")));
 				return this.__mt_nameView;
 			}
 			set {
@@ -133,10 +133,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("notesView")]
-		private global::MonoMac.AppKit.NSTextView notesView {
+		[Foundation.Connect("notesView")]
+		private global::AppKit.NSTextView notesView {
 			get {
-				this.__mt_notesView = ((global::MonoMac.AppKit.NSTextView)(this.GetNativeField("notesView")));
+				this.__mt_notesView = ((global::AppKit.NSTextView)(this.GetNativeField("notesView")));
 				return this.__mt_notesView;
 			}
 			set {
@@ -145,10 +145,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("powerSourceView")]
-		private global::MonoMac.AppKit.NSPopUpButton powerSourceView {
+		[Foundation.Connect("powerSourceView")]
+		private global::AppKit.NSPopUpButton powerSourceView {
 			get {
-				this.__mt_powerSourceView = ((global::MonoMac.AppKit.NSPopUpButton)(this.GetNativeField("powerSourceView")));
+				this.__mt_powerSourceView = ((global::AppKit.NSPopUpButton)(this.GetNativeField("powerSourceView")));
 				return this.__mt_powerSourceView;
 			}
 			set {
@@ -157,10 +157,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("powersView")]
-		private global::MonoMac.AppKit.NSMatrix powersView {
+		[Foundation.Connect("powersView")]
+		private global::AppKit.NSMatrix powersView {
 			get {
-				this.__mt_powersView = ((global::MonoMac.AppKit.NSMatrix)(this.GetNativeField("powersView")));
+				this.__mt_powersView = ((global::AppKit.NSMatrix)(this.GetNativeField("powersView")));
 				return this.__mt_powersView;
 			}
 			set {
@@ -169,10 +169,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("primaryMotivationView")]
-		private global::MonoMac.AppKit.NSMatrix primaryMotivationView {
+		[Foundation.Connect("primaryMotivationView")]
+		private global::AppKit.NSMatrix primaryMotivationView {
 			get {
-				this.__mt_primaryMotivationView = ((global::MonoMac.AppKit.NSMatrix)(this.GetNativeField("primaryMotivationView")));
+				this.__mt_primaryMotivationView = ((global::AppKit.NSMatrix)(this.GetNativeField("primaryMotivationView")));
 				return this.__mt_primaryMotivationView;
 			}
 			set {
@@ -181,10 +181,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("swornEnemyView")]
-		private global::MonoMac.AppKit.NSComboBox swornEnemyView {
+		[Foundation.Connect("swornEnemyView")]
+		private global::AppKit.NSComboBox swornEnemyView {
 			get {
-				this.__mt_swornEnemyView = ((global::MonoMac.AppKit.NSComboBox)(this.GetNativeField("swornEnemyView")));
+				this.__mt_swornEnemyView = ((global::AppKit.NSComboBox)(this.GetNativeField("swornEnemyView")));
 				return this.__mt_swornEnemyView;
 			}
 			set {
@@ -193,10 +193,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("villainsTableView")]
-		private global::MonoMac.AppKit.NSTableView villainsTableView {
+		[Foundation.Connect("villainsTableView")]
+		private global::AppKit.NSTableView villainsTableView {
 			get {
-				this.__mt_villainsTableView = ((global::MonoMac.AppKit.NSTableView)(this.GetNativeField("villainsTableView")));
+				this.__mt_villainsTableView = ((global::AppKit.NSTableView)(this.GetNativeField("villainsTableView")));
 				return this.__mt_villainsTableView;
 			}
 			set {
@@ -205,10 +205,10 @@ namespace VillainTracker {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("window")]
-		private global::MonoMac.AppKit.NSWindow window {
+		[Foundation.Connect("window")]
+		private global::AppKit.NSWindow window {
 			get {
-				this.__mt_window = ((global::MonoMac.AppKit.NSWindow)(this.GetNativeField("window")));
+				this.__mt_window = ((global::AppKit.NSWindow)(this.GetNativeField("window")));
 				return this.__mt_window;
 			}
 			set {

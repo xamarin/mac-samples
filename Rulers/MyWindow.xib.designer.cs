@@ -12,18 +12,18 @@ namespace Rulers {
 	
 	
 	// Should subclass MonoMac.AppKit.NSWindow
-	[MonoMac.Foundation.Register("MyWindow")]
+	[Foundation.Register("MyWindow")]
 	public partial class MyWindow {
 	}
 	
 	// Should subclass MonoMac.AppKit.NSWindowController
-	[MonoMac.Foundation.Register("MyWindowController")]
+	[Foundation.Register("MyWindowController")]
 	public partial class MyWindowController {
 		
 		private RectsView __mt_rectsView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Connect("rectsView")]
+		[Foundation.Connect("rectsView")]
 		private RectsView rectsView {
 			get {
 				this.__mt_rectsView = ((RectsView)(this.GetNativeField("rectsView")));
@@ -37,20 +37,20 @@ namespace Rulers {
 	}
 	
 	// Should subclass MonoMac.AppKit.NSView
-	[MonoMac.Foundation.Register("RectsView")]
+	[Foundation.Register("RectsView")]
 	public partial class RectsView {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("lockSelectedItem:")]
-		partial void lockSelectedItem (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("lockSelectedItem:")]
+		partial void lockSelectedItem (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("nestle:")]
-		partial void nestle (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("nestle:")]
+		partial void nestle (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("zoomIn:")]
-		partial void zoomIn (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("zoomIn:")]
+		partial void zoomIn (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Export("zoomOut:")]
-		partial void zoomOut (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("zoomOut:")]
+		partial void zoomOut (Foundation.NSObject sender);
 }
 }

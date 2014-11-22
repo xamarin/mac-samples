@@ -12,21 +12,21 @@ namespace StillMotion {
 	
 	
 	// Should subclass MonoMac.AppKit.NSDocument
-	[MonoMac.Foundation.Register("StillMotionDocument")]
+	[Foundation.Register("StillMotionDocument")]
 	public partial class StillMotionDocument {
 		
-		private global::MonoMac.QTKit.QTCaptureView __mt_captureView;
+		private global::QTKit.QTCaptureView __mt_captureView;
 		
-		private global::MonoMac.QTKit.QTMovieView __mt_movieView;
+		private global::QTKit.QTMovieView __mt_movieView;
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("addFrame:")]
-		partial void addFrame (MonoMac.Foundation.NSObject sender);
+		[Foundation.Export("addFrame:")]
+		partial void addFrame (Foundation.NSObject sender);
 
-		[MonoMac.Foundation.Connect("captureView")]
-		private global::MonoMac.QTKit.QTCaptureView captureView {
+		[Foundation.Connect("captureView")]
+		private global::QTKit.QTCaptureView captureView {
 			get {
-				this.__mt_captureView = ((global::MonoMac.QTKit.QTCaptureView)(this.GetNativeField("captureView")));
+				this.__mt_captureView = ((global::QTKit.QTCaptureView)(this.GetNativeField("captureView")));
 				return this.__mt_captureView;
 			}
 			set {
@@ -35,10 +35,10 @@ namespace StillMotion {
 			}
 		}
 		
-		[MonoMac.Foundation.Connect("movieView")]
-		private global::MonoMac.QTKit.QTMovieView movieView {
+		[Foundation.Connect("movieView")]
+		private global::QTKit.QTMovieView movieView {
 			get {
-				this.__mt_movieView = ((global::MonoMac.QTKit.QTMovieView)(this.GetNativeField("movieView")));
+				this.__mt_movieView = ((global::QTKit.QTMovieView)(this.GetNativeField("movieView")));
 				return this.__mt_movieView;
 			}
 			set {

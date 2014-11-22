@@ -3,16 +3,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+using Foundation;
+using AppKit;
+using ObjCRuntime;
 
 namespace PredicateEditorSample
 {
 	
-	public partial class MyWindowController : MonoMac.AppKit.NSWindowController {
+	public partial class MyWindowController : AppKit.NSWindowController {
 		NSMetadataQuery query;
 		int previousRowCount = 0;
 		
@@ -203,27 +203,27 @@ namespace PredicateEditorSample
 			bool growing = (newRowCount > previousRowCount);
 			
 			// if growing, figure out by how much.  Sizes must contain nonnegative values, which is why we avoid negative floats here.
-			float heightDifference = Math.Abs (predicateEditor.RowHeight * (newRowCount - previousRowCount));
+			float heightDifference = Math.Abs ((float)predicateEditor.RowHeight * (newRowCount - previousRowCount));
 			
 			// convert the size to window coordinates -
 			// if we didn't do this, we would break under scale factors other than 1.
 			// We don't care about the horizontal dimension, so leave that as 0.
-			SizeF sizeChange = predicateEditor.ConvertSizeToView (new SizeF (0.0f, heightDifference), null);
+			CGSize sizeChange = predicateEditor.ConvertSizeToView (new CGSize (0.0f, heightDifference), null);
 			
 			// offset our status view
-			RectangleF frame = progressView.Frame;
-			progressView.SetFrameOrigin (new PointF (frame.Location.X, frame.Location.Y - predicateEditor.RowHeight * (newRowCount - previousRowCount)));
+			CGRect frame = progressView.Frame;
+			progressView.SetFrameOrigin (new CGPoint (frame.Location.X, frame.Location.Y - predicateEditor.RowHeight * (newRowCount - previousRowCount)));
 			
 			// change the window frame size:
 			// - if we're growing, the height goes up and the origin goes down (corresponding to growing down).
 			// - if we're shrinking, the height goes down and the origin goes up.
-			RectangleF windowFrame = this.Window.Frame;
+			CGRect windowFrame = this.Window.Frame;
 			
-			SizeF size = windowFrame.Size;
+			CGSize size = windowFrame.Size;
 			size.Height += growing ? sizeChange.Height : -sizeChange.Height;
 			windowFrame.Size = size;
 			
-			PointF origin = windowFrame.Location;
+			CGPoint origin = windowFrame.Location;
 			origin.Y -= growing ? sizeChange.Height : -sizeChange.Height;
 			windowFrame.Location = origin;
 
@@ -233,7 +233,7 @@ namespace PredicateEditorSample
 			tableScrollView.AutoresizingMask = oldOutlineViewMask;
 			predicateEditorScrollView.AutoresizingMask = oldPredicateEditorViewMask;
 	   
-			previousRowCount = newRowCount; // save our new row count
+			previousRowCount = (int)newRowCount; // save our new row count
 
 		}
 		
