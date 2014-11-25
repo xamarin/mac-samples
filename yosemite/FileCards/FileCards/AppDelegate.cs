@@ -11,8 +11,7 @@ namespace FileCards
 {
 	public partial class AppDelegate : NSApplicationDelegate, INSPageControllerDelegate
 	{
-		const string kNibName = "FileCard";
-		const string kImageNibname = "ImageCard";
+		PageControllerDelegate pageDelegate;
 
 		NSFileManager DefaultManager {
 			get {
@@ -32,6 +31,9 @@ namespace FileCards
 
 		public override void DidFinishLaunching (NSNotification notification)
 		{
+			pageDelegate = new PageControllerDelegate (this);
+			PageController.Delegate = pageDelegate;
+
 			// load all the file card URLs by enumerating through the user's Document folder
 			IEnumerable<NSUrl> fileUrls = GetFileUrls (DocumentDirectory);
 			FileObject[] data = fileUrls.Where (url => !url.IsDir ()).Select (url => new FileObject (url)).ToArray ();
@@ -88,44 +90,6 @@ namespace FileCards
 			NSAnimationContext.RunAnimation ((NSAnimationContext context) => {
 				((NSPageController)PageController.Animator).SelectedIndex = selectedIndex;
 			}, PageController.CompleteTransition);
-		}
-
-		// Required method for BookUI mode of NSPageController
-		// We have different cards for image files and everything else.
-		// Therefore, we have different identifiers
-		// TODO: https://trello.com/c/kUzddDwf
-		[Export ("pageController:identifierForObject:")]
-		string GetIdentifier (NSPageController pv, NSObject obj)
-		{
-			var fileObj = (FileObject)obj;
-
-			return UTType.ConformsTo (fileObj.UtiType, UTType.Image) ? kImageNibname : kNibName;
-		}
-
-		// Required method for BookUI mode of NSPageController
-		// TODO: https://trello.com/c/kUzddDwf
-		[Export ("pageController:viewControllerForIdentifier:")]
-		NSViewController GetViewControllerForIdentifier (NSPageController pageController, string identifier)
-		{
-			return new NSViewController (identifier, null);
-		}
-
-		// Optional delegate method. This method is used to inset the card a little bit from it's parent view
-		// TODO: https://trello.com/c/kUzddDwf
-		[Export ("pageController:frameForObject:")]
-		CGRect GetFrameForObject (NSPageController pageController, NSObject obj)
-		{
-			return pageController.View.Bounds.Inset (5, 5);
-		}
-
-		[Export ("pageControllerDidEndLiveTransition:")]
-		void DidEndLiveTransition (NSPageController pageController)
-		{
-			// Update the NSTableView selection
-			TableView.SelectRows (NSIndexSet.FromIndex (PageController.SelectedIndex), false);
-
-			// tell page controller to complete the transition and display the updated file card
-			PageController.CompleteTransition ();
 		}
 	}
 }

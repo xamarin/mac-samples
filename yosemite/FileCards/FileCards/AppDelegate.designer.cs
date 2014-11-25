@@ -10,9 +10,9 @@ namespace FileCards
 		NSWindow Window { get; set; }
 
 		[Outlet]
-		NSPageController PageController { get; set; }
+		public NSPageController PageController { get; set; }
 
 		[Outlet]
-		NSTableView TableView { get; set; }
+		public NSTableView TableView { get; set; }
 	}
 }
