@@ -30,7 +30,7 @@ namespace FileCards
 			}
 		}
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			// load all the file card URLs by enumerating through the user's Document folder
 			IEnumerable<NSUrl> fileUrls = GetFileUrls (DocumentDirectory);
