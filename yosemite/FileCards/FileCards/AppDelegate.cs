@@ -99,9 +99,7 @@ namespace FileCards
 		{
 			var fileObj = (FileObject)obj;
 
-			// TODO: https://trello.com/c/iy0Pm1WI
-			var uti = new UTType ();
-			return uti.ConformsTo (fileObj.UtiType, UTType.Image) ? kImageNibname : kNibName;
+			return UTType.ConformsTo (fileObj.UtiType, UTType.Image) ? kImageNibname : kNibName;
 		}
 
 		// Required method for BookUI mode of NSPageController
