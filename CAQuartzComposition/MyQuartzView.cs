@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.QuartzComposer;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreImage;
-using MonoMac.CoreAnimation;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using QuartzComposer;
+using CoreImage;
+using CoreAnimation;
 
 namespace CAQuartzComposition
 {
-	public partial class MyQuartzView : MonoMac.AppKit.NSView
+	public partial class MyQuartzView : AppKit.NSView
 	{
 		QCCompositionLayer cubeLayer;
 		QCCompositionLayer quadLayer;

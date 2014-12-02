@@ -2,17 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.QuartzComposer;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreImage;
-using MonoMac.CoreAnimation;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using QuartzComposer;
+using CoreImage;
+using CoreAnimation;
 
 namespace CAQuartzComposition
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base(handle) {}
 

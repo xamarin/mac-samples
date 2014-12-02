@@ -12,19 +12,19 @@ namespace CAQuartzComposition {
 	
 	
 	// Should subclass MonoMac.AppKit.NSResponder
-	[MonoMac.Foundation.Register("AppDelegate")]
+	[Foundation.Register("AppDelegate")]
 	public partial class AppDelegate {
 	}
 	
 	// Should subclass MonoMac.Foundation.NSObject
-	[MonoMac.Foundation.Register("FirstResponder")]
+	[Foundation.Register("FirstResponder")]
 	public partial class FirstResponder {
 		
 		#pragma warning disable 0169
-		[MonoMac.Foundation.Export("filterSwitch:")]
-		partial void filterSwitch (MonoMac.AppKit.NSMenuItem sender);
+		[Foundation.Export("filterSwitch:")]
+		partial void filterSwitch (AppKit.NSMenuItem sender);
 
-		[MonoMac.Foundation.Export("switchView:")]
-		partial void switchView (MonoMac.AppKit.NSMenuItem sender);
+		[Foundation.Export("switchView:")]
+		partial void switchView (AppKit.NSMenuItem sender);
 }
 }
