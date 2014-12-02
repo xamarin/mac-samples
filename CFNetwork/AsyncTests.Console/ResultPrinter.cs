@@ -56,6 +56,11 @@ namespace AsyncTests.ConsoleRunner {
 			;
 		}
 
+		public override void Visit (TestWarning node)
+		{
+			;
+		}
+
 		public override void Visit (TestError node)
 		{
 			writer.WriteLine ("{0}) {1}\n{2}\n", ++id, GetName (), node.Error);

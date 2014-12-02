@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7FF093FE-C185-4BD9-9C56-F5EF8F8F2CBA}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -48,10 +48,7 @@
     <Reference Include="nunit.framework">
       <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <Private>False</Private>
-      <Package>/work/export/addins/Mono.Addins.dll</Package>
-    </Reference>
+    <Reference Include="Mono.Addins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,10 +69,6 @@
     <ProjectReference Include="..\AsyncTests.Framework\AsyncTests.Framework.csproj">
       <Project>{BEC2B807-EF3B-4013-B828-B3BB2AC1620D}</Project>
       <Name>AsyncTests.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AsyncTests.HttpClientAddin\AsyncTests.HttpClientAddin.csproj">
-      <Project>{B79B0123-6502-47C6-9043-F9ED3B9FC790}</Project>
-      <Name>AsyncTests.HttpClientAddin</Name>
     </ProjectReference>
     <ProjectReference Include="..\AsyncTests.HttpClientTests\AsyncTests.HttpClientTests.csproj">
       <Project>{1B0D227D-A57F-4112-B510-7BCA8AE0D114}</Project>

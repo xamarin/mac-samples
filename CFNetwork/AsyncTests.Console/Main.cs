@@ -1,12 +1,13 @@
 using System;
-using System.IO;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
-using AsyncTests.HttpClientAddin;
+using AsyncTests.HttpClientTests.Addin;
+using AsyncTests.HttpClientTests.Test;
 using NDesk.Options;
 
 namespace AsyncTests.ConsoleRunner
@@ -29,11 +30,11 @@ namespace AsyncTests.ConsoleRunner
 					Add ("xml", v => xml = true);
 			p.Parse (args);
 
-			var asm = typeof(AsyncTests.HttpClientTests.Simple).Assembly;
+			var asm = typeof(Simple).Assembly;
 
 			if (server) {
 				Server.Start (asm, prefix).Wait ();
-				Thread.Sleep (Timeout.Infinite);
+				Thread.Sleep (System.Threading.Timeout.Infinite);
 				return;
 			}
 
