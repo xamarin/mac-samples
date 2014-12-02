@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreGraphics;
-using MonoMac.CoreText;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreGraphics;
+using CoreText;
 
 namespace CoreTextArcMonoMac
 {
-        public partial class CoreTextArcView : MonoMac.AppKit.NSView
+        public partial class CoreTextArcView : AppKit.NSView
         {
                 NSFont _font;
                 string _string;
@@ -32,7 +32,7 @@ namespace CoreTextArcMonoMac
                 }
 
                 [Export("initWithFrame:")]
-                public CoreTextArcView (RectangleF frame) : base(frame)
+                public CoreTextArcView (CGRect frame) : base(frame)
                 {
                         Font = NSFont.FromFontName (ARCVIEW_DEFAULT_FONT_NAME, ARCVIEW_DEFAULT_FONT_SIZE);
                         Title = "Curvaceous MonoMac";
@@ -47,9 +47,9 @@ namespace CoreTextArcMonoMac
                         // Examine each run in the line, updating glyphOffset to track how far along the run is 
                         // in terms of glyphCount.
                         long glyphOffset = 0;
-                        float ascent = 0;
-                        float descent = 0;
-                        float leading = 0;
+                        nfloat ascent = 0;
+                        nfloat descent = 0;
+                        nfloat leading = 0;
                         foreach (var run in runArray) {
                                 var runGlyphCount = run.GlyphCount;
                                 
@@ -82,7 +82,7 @@ namespace CoreTextArcMonoMac
                         }
                 }
 
-                public override void DrawRect (RectangleF dirtyRect)
+                public override void DrawRect (CGRect dirtyRect)
                 {
                         // Don't draw if we don't have a font or a title.
                         if (Font == null || Title == string.Empty)
@@ -99,7 +99,7 @@ namespace CoreTextArcMonoMac
                         //CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)self.attributedString);
                         CTLine line = new CTLine (AttributedString);
                         
-                        int glyphCount = line.GlyphCount;
+			int glyphCount = (int)line.GlyphCount;
                         if (glyphCount == 0)
                                 return;
                         
@@ -113,7 +113,7 @@ namespace CoreTextArcMonoMac
                         // Stroke the arc in red for verification.
                         context.BeginPath ();
                         context.AddArc (0, 0, Radius, (float)Math.PI, 0, true);
-                        context.SetRGBStrokeColor (1, 0, 0, 1);
+                        context.SetStrokeColor (1, 0, 0, 1);
                         context.StrokePath ();
                         
                         // Rotate the context 90 degrees counterclockwise.
@@ -123,7 +123,7 @@ namespace CoreTextArcMonoMac
                         //      glyph has already been calculated; with that information in hand, draw those glyphs 
                         //      overstruck and centered over one another, making sure to rotate the context after each 
                         //      glyph so the glyphs are spread along a semicircular path.
-                        PointF textPosition = new PointF (0, Radius);
+                        CGPoint textPosition = new CGPoint (0, Radius);
                         context.TextPosition = textPosition;
                         
                         var runArray = line.GetGlyphRuns ();
@@ -154,7 +154,7 @@ namespace CoreTextArcMonoMac
                                         // Center this glyph by moving left by half its width.
                                         var glyphWidth = glyphArcInfo[runGlyphIndex + glyphOffset].width;
                                         var halfGlyphWidth = glyphWidth / 2.0;
-                                        var positionForThisGlyph = new PointF (textPosition.X - (float)halfGlyphWidth, textPosition.Y);
+                                        var positionForThisGlyph = new CGPoint (textPosition.X - (float)halfGlyphWidth, textPosition.Y);
                                         
                                         // Glyphs are positioned relative to the text position for the line, so offset text position leftwards by this glyph's 
                                         //      width in preparation for the next glyph.
@@ -179,7 +179,7 @@ namespace CoreTextArcMonoMac
                                                 
                                                 context.SetFont (cgFont);
                                                 context.SetFontSize (runFont.Size);
-                                                context.SetRGBFillColor (0.25f, 0.25f, 0.25f, 1);
+                                                context.SetFillColor (0.25f, 0.25f, 0.25f, 1);
                                                 context.ShowGlyphsAtPositions (glyph, position, 1);
                                                 
                                         }
@@ -188,31 +188,31 @@ namespace CoreTextArcMonoMac
                                         if (ShowsGlyphBounds) {
                                                 
                                                 var glyphBounds = run.GetImageBounds (context, glyphRange);
-                                                context.SetRGBStrokeColor (0, 0, 1, 1);
+                                                context.SetStrokeColor (0, 0, 1, 1);
                                                 context.StrokeRect (glyphBounds);
                                         }
                                         
                                         // Draw the bounding boxes defined by the line metrics
                                         if (ShowsLineMetrics) {
                                                 
-                                                var lineMetrics = new RectangleF ();
-                                                float ascent = 0;
-                                                float descent = 0;
-                                                float leading = 0;
+                                                var lineMetrics = new CGRect ();
+                                                nfloat ascent = 0;
+                                                nfloat descent = 0;
+                                                nfloat leading = 0;
                                                 
                                                 run.GetTypographicBounds (glyphRange, out ascent, out descent, out leading);
                                                 
                                                 // The glyph is centered around the y-axis
-                                                lineMetrics.Location = new PointF (-(float)halfGlyphWidth, positionForThisGlyph.Y - descent);
-                                                lineMetrics.Size = new SizeF (glyphWidth, ascent + descent);
-                                                context.SetRGBStrokeColor (0, 1, 0, 1);
+                                                lineMetrics.Location = new CGPoint (-(float)halfGlyphWidth, positionForThisGlyph.Y - descent);
+                                                lineMetrics.Size = new CGSize (glyphWidth, ascent + descent);
+                                                context.SetStrokeColor (0, 1, 0, 1);
                                                 context.StrokeRect (lineMetrics);
                                         }
                                         
                                         
                                 }
                                 
-                                glyphOffset += runGlyphCount;
+				glyphOffset += (int)runGlyphCount;
                         }
                         
                         context.RestoreState ();
