@@ -10,23 +10,23 @@ namespace VillainTracker
 		private class DataSource : AppKit.NSTableViewDataSource
 		{
 			private VillainTrackerAppDelegate _app;
-			public DataSource(VillainTrackerAppDelegate app)
+
+			public DataSource (VillainTrackerAppDelegate app)
 			{
 				_app = app;
 			}
-			
+
 			public override nint GetRowCount (NSTableView tableView)
 			{
 				return _app == null ? 0 : _app.villains.Count;
 			}
-			
+
 			public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, nint rowIndex)
 			{
 				var valueKey = (string)(NSString)tableColumn.Identifier;
-				var dataRow = _app.villains[(int)rowIndex];
+				var dataRow = _app.villains [(int)rowIndex];
 				
-				switch((string)valueKey)
-				{
+				switch ((string)valueKey) {
 				case "name":
 					return (NSString)dataRow.Name;
 				case "mugshot":
@@ -35,16 +35,15 @@ namespace VillainTracker
 					return (NSDate)dataRow.LastSeenDate;
 				}
 			
-				throw new Exception(string.Format("Incorrect value requested '{0}'", (string)valueKey));
+				throw new Exception (string.Format ("Incorrect value requested '{0}'", (string)valueKey));
 			}
-			
+
 			public override void SetObjectValue (NSTableView tableView, NSObject theObject, NSTableColumn tableColumn, nint rowIndex)
 			{
 				var valueKey = (string)(NSString)tableColumn.Identifier;
-				var dataRow = _app.villains[(int)rowIndex];
+				var dataRow = _app.villains [(int)rowIndex];
 	
-				switch((string)valueKey)
-				{
+				switch ((string)valueKey) {
 				case "name":
 					dataRow.Name = (string)(NSString)theObject;
 					break;
@@ -52,28 +51,28 @@ namespace VillainTracker
 					dataRow.Mugshot = (NSImage)theObject;
 					break;
 				case "lastSeenDate":
-					dataRow.LastSeenDate = (NSDate)theObject;
+					dataRow.LastSeenDate = (DateTime)(NSDate)theObject;
 					break;
 				}
 		
-				_app.UpdateDetailViews();
+				_app.UpdateDetailViews ();
 			}
 		}
-		
+
 		private class VillainsTableViewDelegate : AppKit.NSTableViewDelegate
 		{
 			private VillainTrackerAppDelegate _app;
-			public VillainsTableViewDelegate(VillainTrackerAppDelegate app)
+
+			public VillainsTableViewDelegate (VillainTrackerAppDelegate app)
 			{
 				_app = app;
 			}
-			
+
 			public override void SelectionDidChange (NSNotification notification)
 			{
-				if(_app != null && _app.villainsTableView.SelectedRow >= 0)
-				{
-					_app.villain = _app.villains[(int)_app.villainsTableView.SelectedRow];
-					_app.UpdateDetailViews();
+				if (_app != null && _app.villainsTableView.SelectedRow >= 0) {
+					_app.villain = _app.villains [(int)_app.villainsTableView.SelectedRow];
+					_app.UpdateDetailViews ();
 				}
 			}
 		}
