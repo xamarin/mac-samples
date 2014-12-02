@@ -118,7 +118,7 @@ namespace Earthquakes
 							break;
 						}
 
-						var result = featuresBatchArray.GetItem <NSDictionary> (k);
+						var result = featuresBatchArray.GetItem <NSDictionary> ((nuint)k);
 						var quakeDictionary = (NSDictionary)result.ObjectForKey ((NSString)"properties");
 						quake.UpdateFromDictionary (quakeDictionary);
 					}
@@ -182,8 +182,8 @@ namespace Earthquakes
 		public static NSArray SubarrayWithRange (this NSArray array, NSRange range)
 		{
 			var result = new object[range.Length];
-			for (nint i = range.Location, j = 0; j < (nint)range.Length; i++, j++)
-				result [j] = array.GetItem<NSObject> (i);
+			for (nint i = range.Location, j = 0; j < range.Length; i++, j++)
+				result [j] = array.GetItem<NSObject> ((nuint)i);
 
 			return NSArray.FromObjects (result);
 		}
