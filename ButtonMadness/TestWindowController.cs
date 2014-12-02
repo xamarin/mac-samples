@@ -1,16 +1,16 @@
 
 using System;
-using System.Drawing;
+using CoreGraphics;
 using System.Collections.Generic;
 using System.Linq;
 
-using MonoMac.ObjCRuntime;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using ObjCRuntime;
+using Foundation;
+using AppKit;
 
 namespace SamplesButtonMadness
 {
-	public partial class TestWindowController : MonoMac.AppKit.NSWindowController
+	public partial class TestWindowController : AppKit.NSWindowController
 	{
 		#region members
 		
@@ -68,7 +68,7 @@ namespace SamplesButtonMadness
 			nibBasedPopUpRight.Menu = buttonMenu;
 		
 			// create the pull down button pointing DOWN
-			RectangleF buttonFrame = placeHolder1.Frame;
+			CGRect buttonFrame = placeHolder1.Frame;
 			codeBasedPopUpDown = new NSPopUpButton (buttonFrame, true);
 			
 			((NSPopUpButtonCell)codeBasedPopUpDown.Cell).ArrowPosition = NSPopUpArrowPosition.Bottom;
@@ -85,10 +85,10 @@ namespace SamplesButtonMadness
 			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).PreferredEdge = NSRectEdge.MaxXEdge;
 			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).BezelStyle = NSBezelStyle.Circular;
 			codeBasedPopUpRight.Menu = buttonMenu;
-			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).HighlightsBy = (int)NSCellMask.ChangeGrayCell;
+			((NSPopUpButtonCell)codeBasedPopUpRight.Cell).HighlightsBy = (nint)(int)NSCellStyleMask.ChangeGrayCell;
 			popupBox.AddSubview (codeBasedPopUpRight);
 			placeHolder2.RemoveFromSuperview ();
-			
+
 			#endregion
 			
 			#region second two buttons
@@ -160,17 +160,17 @@ namespace SamplesButtonMadness
 			
 			// add icons to each segment (applied to both nib-based and code-based)
 			NSImage segmentIcon1 = NSWorkspace.SharedWorkspace.IconForFileType(NSFileTypeForHFSTypeCode.ComputerIcon);
-			segmentIcon1.Size = new SizeF(16, 16);
+			segmentIcon1.Size = new CGSize(16, 16);
 			nibBasedSegControl.SetImage (segmentIcon1, 0);
 			codeBasedSegmentControl.SetImage (segmentIcon1, 0);
 			
 			NSImage segmentIcon2 = NSWorkspace.SharedWorkspace.IconForFileType (NSFileTypeForHFSTypeCode.DesktopIcon);
-			segmentIcon2.Size = new SizeF (16, 16);
+			segmentIcon2.Size = new CGSize (16, 16);
 			nibBasedSegControl.SetImage (segmentIcon2, 1);
 			codeBasedSegmentControl.SetImage (segmentIcon2, 1);
 			
 			NSImage segmentIcon3 = NSWorkspace.SharedWorkspace.IconForFileType (NSFileTypeForHFSTypeCode.FinderIcon);
-			segmentIcon3.Size = new SizeF (16, 16);
+			segmentIcon3.Size = new CGSize (16, 16);
 			nibBasedSegControl.SetImage (segmentIcon3, 2);
 			codeBasedSegmentControl.SetImage (segmentIcon3, 2);
 		
