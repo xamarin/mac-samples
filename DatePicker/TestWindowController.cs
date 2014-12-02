@@ -94,8 +94,8 @@ namespace DatePicker
                         
                         datePickerControl.DatePickerElements = flags;
                         
-                        minDatePicker.DateValue = DateTime.Now;
-                        maxDatePicker.DateValue = NSDate.DistantFuture;
+						minDatePicker.DateValue = (NSDate)DateTime.Now;
+						maxDatePicker.DateValue = (NSDate)NSDate.DistantFuture;
                         
                         secondsRangeEdit.EditingEnded += SecondsRangeEditingEnded;
                         
@@ -146,7 +146,7 @@ namespace DatePicker
                         datePickerControl.BackgroundColor = backColorWell.Color;
                         
                         // always set the date/time to TODAY
-                        datePickerControl.DateValue = DateTime.Now;
+						datePickerControl.DateValue = (NSDate)DateTime.Now;
                         
                         datePickerControl.NeedsDisplay = true;
                         updateControls ();
@@ -349,7 +349,7 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
 
                 partial void setToToday (NSButton sender)
                 {
-                        datePickerControl.DateValue = DateTime.Now;
+						datePickerControl.DateValue = (NSDate)DateTime.Now;
                 }
 
                 partial void dateOverrideAction (NSButton sender)
@@ -359,7 +359,7 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
                                 datePickerControl.DateValue = overrideDate.DateValue;
                         } else {
                                 datePickerControl.Delegate = null;
-                                datePickerControl.DateValue = DateTime.Now;
+								datePickerControl.DateValue = (NSDate)DateTime.Now;
                         }
                         
                 }
