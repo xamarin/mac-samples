@@ -179,7 +179,7 @@ namespace QTRecorder
 		static NSString localizedFilterKey = new NSString ("localizedName");
 		
 		// Creates descriptions that can be accessed with Key/Values
-		[Export]
+		[Export("VideoPreviewFilterDescriptions")]
 		NSDictionary [] VideoPreviewFilterDescriptions {
 			get {
 				return (from name in filterNames 
@@ -190,7 +190,8 @@ namespace QTRecorder
 		}
 				
 		NSDictionary videoPreviewFilterDescription;
-		[Export]
+
+		[Export("VideoPreviewFilterDescription")]
 		NSDictionary VideoPreviewFilterDescription {
 			get {
 				return videoPreviewFilterDescription;
@@ -229,14 +230,14 @@ namespace QTRecorder
 		//
 		// Binding support
 		//
-		[Export]
+		[Export("AudioPreviewOutput")]
 		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
 			get {
 				return audioPreviewOutput;
 			}
 		}
 		
-		[Export]
+		[Export("VideoDevices")]
 		public QTCaptureDevice [] VideoDevices {
 			get {
 				if (videoDevices == null)
@@ -248,7 +249,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("SelectedVideoDevice")]
 		public QTCaptureDevice SelectedVideoDevice { 
 			get {
 				return videoDeviceInput == null ? null : videoDeviceInput.Device;
@@ -283,7 +284,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("AudioDevices")]
 		public QTCaptureDevice [] AudioDevices {
 			get {
 				if (audioDevices == null)
@@ -292,7 +293,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("SelectedAudioDevice")]
 		public QTCaptureDevice SelectedAudioDevice { 
 			get {
 				if (audioDeviceInput == null)
@@ -329,7 +330,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("MediaFormatSummary")]
 		public string MediaFormatSummary {
 			get {
 				var sb = new StringBuilder ();
@@ -354,15 +355,14 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("HasRecordingDevice")]
 		public bool HasRecordingDevice {
-		
 			get {
 				return videoDeviceInput != null || audioDeviceInput != null;
 			}
 		}
 		
-		[Export]
+		[Export("Recording")]
 		public bool Recording {
 			get {
 				if (movieFileOutput == null) return false;
@@ -381,7 +381,7 @@ namespace QTRecorder
 		}
 		
 		// UI controls
-		[Export]
+		[Export("ControllableDevice")]
 		public QTCaptureDevice ControllableDevice {
 			get {
 				if (SelectedVideoDevice == null)
@@ -396,7 +396,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("DevicePlaying")]
 		public bool DevicePlaying {
 			get {
 				var device = ControllableDevice;
@@ -455,7 +455,7 @@ namespace QTRecorder
 				device.AvcTransportControl = control;
 		}
 		
-		[Export]
+		[Export("DeviceRewinding")]
 		public bool DeviceRewinding {
 			get {
 				return GetDeviceSpeed (x => x < QTCaptureDeviceControlsSpeed.Stopped);
@@ -465,7 +465,7 @@ namespace QTRecorder
 			}
 		}
 		
-		[Export]
+		[Export("DeviceFastForwarding")]
 		public bool DeviceFastForwarding {
 			get {
 				return GetDeviceSpeed (x => x > QTCaptureDeviceControlsSpeed.Stopped);
@@ -476,7 +476,7 @@ namespace QTRecorder
 		}
 		
 		// Link any co-dependent keys
-		[Export]
+		[Export("keyPathsForValuesAffectingHasRecordingDevice")]
 		public static NSSet keyPathsForValuesAffectingHasRecordingDevice ()
 		{
 			// With MonoMac 0.4:
@@ -486,7 +486,7 @@ namespace QTRecorder
 			//return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
 		}
 		
-		[Export]
+		[Export("keyPathsForValuesAffectingControllableDevice")]
 		public static NSSet keyPathsForValuesAffectingControllableDevice ()
 		{
 			// With MonoMac 0.4:
@@ -496,7 +496,7 @@ namespace QTRecorder
 			//return new NSSet ("SelectedVideoDevice");
 		}
 		
-		[Export]
+		[Export("keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio")]
 		public static NSSet keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio ()
 		{
 			// With MonoMac 0.4:
