@@ -82,6 +82,7 @@
     <Compile Include="FileObject.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="CardBackgroundView.cs" />
+    <Compile Include="PageControllerDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
