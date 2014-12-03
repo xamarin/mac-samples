@@ -522,7 +522,7 @@ namespace QTRecorder
 			var owner = ((QTCaptureConnection)n.Object).Owner;
 			Console.WriteLine (owner);
 			if (owner == videoDeviceInput || owner == audioDeviceInput)
-				WillChangeValue ("mediaFormatSummary");
+				WillChangeValue ("MediaFormatSummary");
 		}
 		
 		void FormatDidChange (NSNotification n)
@@ -530,7 +530,7 @@ namespace QTRecorder
 			var owner = ((QTCaptureConnection)n.Object).Owner;
 			Console.WriteLine (owner);
 			if (owner == videoDeviceInput || owner == audioDeviceInput)
-				DidChangeValue ("mediaFormatSummary");
+				DidChangeValue ("MediaFormatSummary");
 		}
 
 		public override string WindowNibName {
