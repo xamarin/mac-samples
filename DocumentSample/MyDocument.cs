@@ -15,12 +15,6 @@ namespace DocumentSample
 		{
 		}
 
-		// Called when created directly from a XIB file
-		[Export("initWithCoder:")]
-		public MyDocument (NSCoder coder) : base(coder)
-		{
-		}
-		
 		// Override returning the nib file name of the document
 		// If you need to use a subclass of NSWindowController or if your document supports
 		// multiple NSWindowControllers remove this method and override MakeWindowControllers
