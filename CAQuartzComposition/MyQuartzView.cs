@@ -8,9 +8,24 @@ using MonoMac.QuartzComposer;
 using MonoMac.CoreGraphics;
 using MonoMac.CoreImage;
 using MonoMac.CoreAnimation;
+using MonoMac.ObjCRuntime;
 
 namespace CAQuartzComposition
 {
+	// These are in 1.11 (alpha branch) but not on stable yet.
+	public static class NSViewExtentions
+	{
+		public static bool GetLayerUsesCoreImageFilters (this NSView view)
+		{
+			return MonoMac.ObjCRuntime.Messaging.bool_objc_msgSend (view.Handle, Selector.GetHandle ("layerUsesCoreImageFilters"));
+		}
+
+		public static void SetLayerUsesCoreImageFilters (this NSView view, bool v)
+		{
+			MonoMac.ObjCRuntime.Messaging.void_objc_msgSend_bool (view.Handle, Selector.GetHandle ("setLayerUsesCoreImageFilters:"), v);
+		}
+	}
+
 	public partial class MyQuartzView : MonoMac.AppKit.NSView
 	{
 		QCCompositionLayer cubeLayer;
@@ -30,6 +45,8 @@ namespace CAQuartzComposition
 		public override void AwakeFromNib ()
 		{
 			WantsLayer = true;
+			this.SetLayerUsesCoreImageFilters (true);
+
 			Layer.AddSublayer (CubeComposition);
 		}
 		
