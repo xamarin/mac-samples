@@ -1,4 +1,5 @@
 DrawerMadness
 =============
 
-DrawerMadness Xamarin.Mac sample.
+This sample demonstrates several ways to use NSDrawer objects.
+
