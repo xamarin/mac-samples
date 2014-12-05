@@ -630,7 +630,9 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
                                 // set the date range by start date (here we use the current date in the date picker control), 
                                 // and time interval (in seconds)
                                 string secsStr = secondsRangeEdit.StringValue;
-                                int numSeconds = Int32.Parse (secsStr);
+                                int numSeconds;
+                                if (!Int32.TryParse (secsStr, out numSeconds))
+                                    numSeconds = 0;
                                 datePickerControl.TimeInterval = numSeconds;
                                 break;
                         }
