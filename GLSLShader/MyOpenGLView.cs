@@ -24,16 +24,16 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // 
 using System;
-using System.Drawing;
+using CoreGraphics;
 
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreVideo;
-using MonoMac.OpenGL;
+using Foundation;
+using AppKit;
+using CoreVideo;
+using OpenGL;
 
 namespace GLSLShader
 {
-	public partial class MyOpenGLView : MonoMac.AppKit.NSView
+	public partial class MyOpenGLView : AppKit.NSView
 	{
 
 		NSOpenGLContext openGLContext;
@@ -43,11 +43,11 @@ namespace GLSLShader
 		NSObject notificationProxy;
 
 		[Export("initWithFrame:")]
-		public MyOpenGLView (RectangleF frame) : this(frame, null)
+		public MyOpenGLView (CGRect frame) : this(frame, null)
 		{
 		}
 
-		public MyOpenGLView (RectangleF frame,NSOpenGLContext context) : base(frame)
+		public MyOpenGLView (CGRect frame,NSOpenGLContext context) : base(frame)
 		{
 			var attribs = new object [] {
 				NSOpenGLPixelFormatAttribute.Accelerated,
@@ -76,10 +76,10 @@ namespace GLSLShader
 
 			// Look for changes in view size
 			// Note, -reshape will not be called automatically on size changes because NSView does not export it to override 
-			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.NSViewGlobalFrameDidChangeNotification, HandleReshape);
+			notificationProxy = NSNotificationCenter.DefaultCenter.AddObserver (NSView.GlobalFrameChangedNotification, HandleReshape);
 		}
 
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			// Ignore if the display link is still running
 			if (!displayLink.IsRunning && controller != null)
@@ -115,7 +115,7 @@ namespace GLSLShader
 			// Enables Smooth Shading  
 			GL.ShadeModel (ShadingModel.Smooth);
 			// Set background color to black     
-			GL.ClearColor (Color.Black);
+			GL.ClearColor (NSColor.Black);
 
 			// Setup Depth Testing
 
