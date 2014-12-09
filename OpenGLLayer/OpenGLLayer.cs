@@ -7,10 +7,12 @@ using CoreGraphics;
 using Foundation;
 using AppKit;
 using CoreAnimation;
-using CoreGraphics;
 using CoreVideo;
 using OpenGL;
 using System.Runtime.InteropServices;
+using OpenTK.Graphics.OpenGL;
+
+
 namespace OpenGLLayer
 {
         public partial class OpenGLLayer : CoreAnimation.CAOpenGLLayer
