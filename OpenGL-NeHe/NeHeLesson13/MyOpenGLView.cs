@@ -39,6 +39,7 @@ using AppKit;
 using CoreVideo;
 
 using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace NeHeLesson13
 {
