@@ -39,8 +39,8 @@ using CoreGraphics;
 using Foundation;
 using AppKit;
 using CoreVideo;
-using CoreGraphics;
 using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace NeHeLesson6
 {
