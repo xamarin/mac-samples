@@ -38,6 +38,7 @@ using CoreGraphics;
 using Foundation;
 using AppKit;
 using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace MonoMacGameView
 {

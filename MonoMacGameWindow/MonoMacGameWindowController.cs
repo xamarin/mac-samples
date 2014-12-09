@@ -6,6 +6,7 @@ using CoreGraphics;
 using Foundation;
 using AppKit;
 using OpenGL;
+using OpenTK;
 
 namespace MonoMacGameView
 {

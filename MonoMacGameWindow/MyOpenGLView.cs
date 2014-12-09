@@ -32,12 +32,13 @@ using System.Drawing;
 using Foundation;
 using AppKit;
 using CoreVideo;
-using CoreGraphics;
 using OpenGL;
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
 
 namespace MonoMacGameView
 {
-	public partial class MyOpenGLView : OpenGL.MonoMacGameView
+	public partial class MyOpenGLView : OpenTK.Platform.MacOS.MonoMacGameView
 	{
 		Scene scene;
 		
