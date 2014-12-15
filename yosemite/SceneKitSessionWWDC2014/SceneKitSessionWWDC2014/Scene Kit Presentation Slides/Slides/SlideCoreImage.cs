@@ -42,9 +42,9 @@ namespace SceneKitSessionWWDC2014
 			banana = (SCNNode)banana.Copy ();
 			ContentNode.AddChildNode (banana);
 			banana.Position = new SCNVector3 (9.5f, 5, 10);
-			var filter = CIFilter.FromName ("CIEdgeWork");
-			filter.SetDefaults ();
-			banana.Filters = new CIFilter[] { filter };
+			var edgeWorkFilter = new CIEdgeWork ();
+			edgeWorkFilter.SetDefaults ();
+			banana.Filters = new CIFilter[] { edgeWorkFilter };
 		}
 
 		public override void PresentStep (int index, PresentationViewController presentationViewController)
