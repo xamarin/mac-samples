@@ -4,6 +4,7 @@ using OpenGL;
 using SceneKit;
 using Foundation;
 using CoreAnimation;
+using OpenTK;
 
 namespace SceneKitSessionWWDC2014
 {
