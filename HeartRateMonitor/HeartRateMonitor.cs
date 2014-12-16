@@ -117,7 +117,7 @@ namespace Xamarin.HeartMonitor
 			}
 		}
 
-		public override void DiscoverCharacteristic (CBPeripheral peripheral, CBService service, NSError error)
+		public override void DiscoveredCharacteristic (CBPeripheral peripheral, CBService service, NSError error)
 		{
 			if (disposed) {
 				return;
