@@ -41,7 +41,7 @@ namespace SceneKitSessionWWDC2014
 				var slideName = PresentationViewController.ClassOfSlide (i).ToString();
 				var splitedString = slideName.Split ('.');
 				var title = i + " " + splitedString[1].Substring(5);
-				var item = new NSMenuItem (title, new Selector("GoTo"), "");
+				var item = new NSMenuItem (title, GoTo);
 				item.RepresentedObject = new NSNumber (i);
 				GoMenu.AddItem (item);
 			}
@@ -57,11 +57,11 @@ namespace SceneKitSessionWWDC2014
 			PresentationViewController.GoToNextSlideStep ();
 		}
 
-		[Export ("GoTo:")]
-		public void GoTo (NSMenuItem item)
+		public void GoTo (object sender, EventArgs e)
 		{
+			var item = sender as NSMenuItem;
 			var index = (NSNumber)(item.RepresentedObject);
-			PresentationViewController.GoToSlide (index.Int16Value);
+			PresentationViewController.GoToSlide (index.Int32Value);
 		}
 
 		partial void ToogleCursor (NSObject sender)
