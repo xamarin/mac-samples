@@ -41,8 +41,7 @@ namespace SceneKitViewer {
 		public void LoadScene (string path)
 		{
 			NSError error;
-
-			Scene = SCNScene.FromUrl (new NSUrl ("file://" + path), null, out error);
+			Scene = SCNScene.FromUrl (new NSUrl ("file://" + path), (SCNSceneLoadingOptions)null, out error);
 		}
 	}
 }
