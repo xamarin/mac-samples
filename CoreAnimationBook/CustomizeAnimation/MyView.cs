@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
 
 namespace CustomizeAnimation
 {
-	public partial class MyView : MonoMac.AppKit.NSView
+	public partial class MyView : AppKit.NSView
 	{
 		float drawnLineWidth = 1;
 		NSColor lineColor;
@@ -23,12 +22,12 @@ namespace CustomizeAnimation
 		public MyView (NSCoder coder) : base(coder) {}
 		
 		[Export("initWithFrame:")]
-		public MyView (RectangleF frame) : base (frame)
+		public MyView (CGRect frame) : base (frame)
 		{
 			lineColor = NSColor.Blue;
 			path = new NSBezierPath ();
 			path.MoveTo (Bounds.Location);
-			path.LineTo (new PointF (Bounds.GetMaxX (),Bounds.GetMaxY ()));
+			path.LineTo (new CGPoint (Bounds.GetMaxX (),Bounds.GetMaxY ()));
 		}
 		
 		public override void AwakeFromNib ()
@@ -36,7 +35,7 @@ namespace CustomizeAnimation
 			slider.FloatValue = DrawnLineWidth;
 		}
 		
-		public override void DrawRect (RectangleF dirtyRect)
+		public override void DrawRect (CGRect dirtyRect)
 		{
 			lineColor.SetStroke ();
 			path.Stroke ();
