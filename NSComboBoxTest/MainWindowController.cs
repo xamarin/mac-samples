@@ -35,19 +35,19 @@ namespace NSComboBoxTest
 				return countries.Find (n => n.StartsWith (uncompletedString, StringComparison.InvariantCultureIgnoreCase));
 			}
 
-			public override int IndexOfItem (NSComboBox comboBox, string value)
+			public override nint IndexOfItem (NSComboBox comboBox, string value)
 			{
 				return countries.FindIndex (n => n.Equals (value, StringComparison.InvariantCultureIgnoreCase));
 			}
 
-			public override int ItemCount (NSComboBox comboBox)
+			public override nint ItemCount (NSComboBox comboBox)
 			{
 				return countries.Count;
 			}
 
-			public override NSObject ObjectValueForItem (NSComboBox comboBox, int index)
+			public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 			{
-				return NSObject.FromObject (countries [index]);
+				return NSObject.FromObject (countries [(int)index]);
 			}
 
 			List<string> countries = new List<string> {
