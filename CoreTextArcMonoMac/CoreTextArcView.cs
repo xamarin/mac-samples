@@ -140,7 +140,8 @@ namespace CoreTextArcMonoMac
                                 
                                 // Determine if we need to draw substituted glyphs manually. Do so if the runFont is not 
                                 //      the same as the overall font.
-                                NSFont rrunFont = new NSFont (runFont.Handle);
+								var description = NSFontDescriptor.FromNameSize (runFont.FamilyName, runFont.Size);
+								NSFont rrunFont = NSFont.FromDescription (description, runFont.Size);
                                 // used for comparison
                                 if (DimsSubstitutedGlyphs && Font != rrunFont) {
                                         drawSubstitutedGlyphsManually = true;
