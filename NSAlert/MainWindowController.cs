@@ -77,7 +77,7 @@ namespace NSAlertSample
 			}
 		}
 
-		void ShowResponse (NSAlert alert, int response)
+		void ShowResponse (NSAlert alert, nint response)
 		{
 			string message;
 
@@ -105,7 +105,7 @@ namespace NSAlertSample
 						"\"{0}\"\n\nButton Index: {1}\nResult (NSAlertButtonReturn): {2}\nResult (int): {3}",
 						alert.Buttons [buttonIndex].Title,
 						buttonIndex,
-						(NSAlertButtonReturn)response,
+						(NSAlertButtonReturn)(int)response,
 						response);
 			}
 
