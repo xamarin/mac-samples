@@ -27,6 +27,8 @@ using System.Collections.Generic;
 using System.Text;
 
 using OpenGL;
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
 
 namespace GLFullScreen
 {

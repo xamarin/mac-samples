@@ -1,5 +1,6 @@
 using System;
 using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace GLFullScreen
 {
