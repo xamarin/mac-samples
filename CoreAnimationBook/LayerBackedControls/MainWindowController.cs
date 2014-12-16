@@ -1,14 +1,13 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+using Foundation;
+using AppKit;
+using ObjCRuntime;
 
 namespace LayerBackedControls
 {
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController
+	public partial class MainWindowController : AppKit.NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base(handle) {}
 
@@ -26,7 +25,7 @@ namespace LayerBackedControls
 		
 		partial void RotateButton (NSButton sender)
 		{
-			float rotation = rotatingButton.FrameCenterRotation;
+			nfloat rotation = rotatingButton.FrameCenterRotation;
 			rotatingButton.FrameCenterRotation = rotation + 15.0f;
 		}
 		
@@ -38,7 +37,7 @@ namespace LayerBackedControls
 		void ApplyShadow ()
 		{
 			rotatingButton.Shadow = new NSShadow() {
-				ShadowOffset = new System.Drawing.SizeF (0, 0),
+				ShadowOffset = new CoreGraphics.CGSize (0, 0),
 				ShadowBlurRadius = 3,
 				ShadowColor = NSColor.Red
 			};
