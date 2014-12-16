@@ -31,8 +31,8 @@ namespace FSEventWatcher
 			WatchPathTextField.Changed += OnWatchPathChanged;
 			StartStopButton.Activated += (sender, e) => ToggleFSEventStream ();
 
-			LatencyStepper.Activated += (sender, e) => UpdateLatency ((int)LatencyStepper.IntegerValue);
-			LatencyTextField.Changed += (sender, e) => UpdateLatency ((int)LatencyTextField.IntegerValue);
+			LatencyStepper.Activated += (sender, e) => UpdateLatency ((int)LatencyStepper.IntValue);
+			LatencyTextField.Changed += (sender, e) => UpdateLatency ((int)LatencyTextField.IntValue);
 			
 			UpdateLatency (5, reinitializeEventStream: false);
 
@@ -48,8 +48,8 @@ namespace FSEventWatcher
 		void UpdateLatency (int value, bool reinitializeEventStream = true)
 		{
 			eventLatency = TimeSpan.FromSeconds (value);
-			LatencyStepper.IntegerValue = value;
-			LatencyTextField.IntegerValue = value;
+			LatencyStepper.IntValue = value;
+			LatencyTextField.IntValue = value;
 
 			if (reinitializeEventStream) {
 				InitializeFSEventStream ();
