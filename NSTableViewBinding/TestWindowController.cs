@@ -224,7 +224,7 @@ namespace NSTableViewBinding
 			uint numItems = (uint)selectedObjects.Count;
 			for (index = 0; index < numItems; index++)
 			{
-				NSDictionary objectDict =  new NSDictionary(selectedObjects.ValueAt(0));
+				NSDictionary objectDict = selectedObjects.GetItem<NSDictionary> (0);
 
 				if (objectDict != null)
 				{
@@ -239,9 +239,9 @@ namespace NSTableViewBinding
 					myEditController = new EditController();
 				
 				// remember which selection index we are changing
-				int savedSelectionIndex = myContentArray.SelectionIndex;
+				nint savedSelectionIndex = (nint)myContentArray.SelectionIndex;
 				
-				NSDictionary editItem =  new NSDictionary(selectedObjects.ValueAt(0));
+				NSDictionary editItem = selectedObjects.GetItem<NSDictionary> (0);
 				
 				// get the current selected object and start the edit sheet
 				NSMutableDictionary newValues = myEditController.edit(editItem, this);
@@ -315,7 +315,7 @@ namespace NSTableViewBinding
 		/// </param>
 		partial void remove (NSButton sender)
 		{
-			myContentArray.RemoveAt(myContentArray.SelectionIndex);
+			myContentArray.RemoveAt((nint)myContentArray.SelectionIndex);
 		}
 	}
 }
