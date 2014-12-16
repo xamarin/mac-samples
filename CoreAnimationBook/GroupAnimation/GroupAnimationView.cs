@@ -1,28 +1,26 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
 
 namespace GroupAnimation
 {
-	public partial class GroupAnimationView : MonoMac.AppKit.NSView
+	public partial class GroupAnimationView : AppKit.NSView
 	{
 		NSImageView mover;
 		
 		[Export("initWithFrame:")]
-		public GroupAnimationView(RectangleF frame) : base(frame)
+		public GroupAnimationView(CGRect frame) : base(frame)
 		{
-			float xInset = 3 * (frame.Width / 8);
-			float yInset = 3 * (frame.Height / 8);
+			nfloat xInset = 3 * (frame.Width / 8);
+			nfloat yInset = 3 * (frame.Height / 8);
 			
-			RectangleF moverFrame = frame.Inset (xInset, yInset);
+			CGRect moverFrame = frame.Inset (xInset, yInset);
 		
-			PointF location = moverFrame.Location;
+			CGPoint location = moverFrame.Location;
 			location.X = this.Bounds.GetMidX () - moverFrame.Width / 2;
 			location.Y = this.Bounds.GetMidY () - moverFrame.Height / 2;
 			moverFrame.Location = location;
@@ -49,7 +47,7 @@ namespace GroupAnimation
 			((NSView)mover.Animator).FrameRotation = mover.FrameRotation;
 		}
 		
-		private CAAnimationGroup GroupAnimation (RectangleF frame)
+		private CAAnimationGroup GroupAnimation (CGRect frame)
 		{
 			CAAnimationGroup animationGroup = CAAnimationGroup.CreateAnimation ();	
 			animationGroup.Animations = new CAAnimation[] { frameAnimation (frame), 
@@ -59,16 +57,17 @@ namespace GroupAnimation
 			return animationGroup;
 		}
 		
-		private CAAnimation frameAnimation (RectangleF aniFrame)
+		private CAAnimation frameAnimation (CGRect aniFrame)
 		{
 			CAKeyFrameAnimation frameAni = new CAKeyFrameAnimation ();
 			
 			frameAni.KeyPath = "frame";
-			RectangleF start = aniFrame;
-			RectangleF end = aniFrame.Inset (-start.Width * .5f, -start.Height * 0.5f);
+			CGRect start = aniFrame;
+			CGRect end = aniFrame.Inset (-start.Width * .5f, -start.Height * 0.5f);
 			frameAni.Values = new NSObject[] { 
-				NSValue.FromRectangleF (start),
-				NSValue.FromRectangleF (end) };
+				NSValue.FromCGRect (start),
+				NSValue.FromCGRect (end)
+			};
 			return frameAni;
 		}
 		
