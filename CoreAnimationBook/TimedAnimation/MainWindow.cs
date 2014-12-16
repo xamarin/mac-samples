@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
 namespace TimedAnimation
 {
-	public partial class MainWindow : MonoMac.AppKit.NSWindow
+	public partial class MainWindow : AppKit.NSWindow
 	{
 		// Called when created from unmanaged code
 		public MainWindow (IntPtr handle) : base(handle) {}

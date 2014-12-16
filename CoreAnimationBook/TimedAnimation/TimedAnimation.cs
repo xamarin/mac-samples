@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreAnimation;
-using MonoMac.CoreGraphics;
+using CoreGraphics;
+using Foundation;
+using AppKit;
+using CoreAnimation;
 
 namespace TimedAnimation {
 
-	public partial class TimedAnimation : MonoMac.AppKit.NSView {
+	public partial class TimedAnimation : AppKit.NSView {
 		NSImageView photo1;
 		NSImageView photo2;
 		
@@ -19,15 +18,15 @@ namespace TimedAnimation {
 		public TimedAnimation (NSCoder coder) : base(coder) {}
 		
 		[Export("initWithFrame:")]
-		public TimedAnimation (RectangleF frame) : base(frame)
+		public TimedAnimation (CGRect frame) : base(frame)
 		{
-			float xInset = frame.Width / 3;
-			float yInset = frame.Height / 3;
+			nfloat xInset = frame.Width / 3;
+			nfloat yInset = frame.Height / 3;
 			
-			RectangleF aniFrame = frame.Inset (xInset, yInset);
+			CGRect aniFrame = frame.Inset (xInset, yInset);
 			
 			// photo1 starts and the left edge
-			PointF origin = frame.Location;
+			CGPoint origin = frame.Location;
 			origin.X = 0.0f;
 			origin.Y = Bounds.GetMidY () - aniFrame.Height / 2;
 			aniFrame.Location = origin;
@@ -72,7 +71,7 @@ namespace TimedAnimation {
 		void right () 
 		{
 			// photo1 is going to move to where photo2 is
-			PointF newOrigin = photo2.Frame.Location;
+			CGPoint newOrigin = photo2.Frame.Location;
 			CABasicAnimation animation = basicAnimationNamed ("photo1",1.0f);
 			animation.AnimationStopped += HandleAnimationStopped;
 			photo1.Animations = NSDictionary.FromObjectAndKey (animation, (NSString)"frameOrigin");
@@ -85,8 +84,8 @@ namespace TimedAnimation {
 			photo1.Animations = new NSDictionary ();
 			photo2.Animations = new NSDictionary ();
 			
-			PointF newPhoto1Origin = new PointF (0, Frame.GetMidY () - photo1.Bounds.Height / 2);
-			PointF newPhoto2Origin = new PointF (Frame.GetMidX () - photo2.Bounds.Width / 2,
+			CGPoint newPhoto1Origin = new CGPoint (0, Frame.GetMidY () - photo1.Bounds.Height / 2);
+			CGPoint newPhoto2Origin = new CGPoint (Frame.GetMidX () - photo2.Bounds.Width / 2,
 			                                     Frame.GetMidY () - photo1.Bounds.Height / 2);
 			((NSView)photo1.Animator).SetFrameOrigin (newPhoto1Origin);
 			((NSView)photo2.Animator).SetFrameOrigin (newPhoto2Origin);
@@ -100,7 +99,7 @@ namespace TimedAnimation {
 			if (e.Finished && animationValue == "photo1"){
 				CABasicAnimation photo2Animation = basicAnimationNamed ("photo2", (float)animation.Duration);
 				photo2.Animations = NSDictionary.FromObjectAndKey (photo2Animation, (NSString)"frameOrigin");
-				PointF newPhoto2Origin = new PointF(Frame.GetMaxX () - photo2.Frame.Size.Width, photo2.Frame.Location.Y);
+				CGPoint newPhoto2Origin = new CGPoint(Frame.GetMaxX () - photo2.Frame.Size.Width, photo2.Frame.Location.Y);
 				((NSView)photo2.Animator).SetFrameOrigin(newPhoto2Origin);
 			}
 		}
