@@ -116,7 +116,7 @@ namespace GLSLShader
 			// Enables Smooth Shading  
 			GL.ShadeModel (ShadingModel.Smooth);
 			// Set background color to black     
-			GL.ClearColor (NSColor.Black);
+			GL.ClearColor (Color4.Black);
 
 			// Setup Depth Testing
 
