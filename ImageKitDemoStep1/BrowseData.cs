@@ -17,22 +17,22 @@ namespace ImageKitDemo
 		List<BrowseItem> images = new List<BrowseItem>();
 
 		# region Required IKImageBrowserDataSource methods
-		public override int ItemCount (IKImageBrowserView aBrowser)
+		public override nint ItemCount (IKImageBrowserView aBrowser)
 		{
 			//Console.WriteLine ("DataSource: Image Count was requested");
 			return images.Count;
 		}
 		
-		public override IKImageBrowserItem GetItem (IKImageBrowserView aBrowser, int index)
+		public override IKImageBrowserItem GetItem (IKImageBrowserView aBrowser, nint index)
 		{
 			//Console.WriteLine ("DataSource: Returning image at {0}, named {1}", index, images[index].ImageTitle);
-			return images[index];
+			return images[(int)index];
 		}
 		#endregion
 		
 		#region optional IKImageBrowserDataSource methods
 		
-		public override bool MoveItems (IKImageBrowserView aBrowser, NSIndexSet indexes, int destinationIndex)
+		public override bool MoveItems (IKImageBrowserView aBrowser, NSIndexSet indexes, nint destinationIndex)
 		{
 			//indexes are not sequential, and may be on both sides of destinationIndex.
 			//indexes will change, but I will put the items in after the item at destination
