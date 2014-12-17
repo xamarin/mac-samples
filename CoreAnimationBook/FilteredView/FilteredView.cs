@@ -54,9 +54,10 @@ namespace FilteredView
 			CIVector center = CIVector.Create (Bounds.GetMidX (), Bounds.GetMidY ());
 			
 			CIFilter pointalize = CIFilter.FromName ("CIPointillize");
-			pointalize.SetValueForKey (NSNumber.FromFloat (1), CIFilterInputKey.Radius);
+			pointalize.SetValueForKey (NSNumber.FromFloat (1.0f), CIFilterInputKey.Radius);
 			pointalize.SetValueForKey (center, CIFilterInputKey.Center);
-			
+
+			pointalize.Name = "pointalize";
 			controls.ContentFilters = new CIFilter[] { pointalize };
 		}
 		
@@ -72,10 +73,10 @@ namespace FilteredView
 		partial void heavyPointalize (NSButton sender)
 		{
 			if (controls.ContentFilters == null || controls.ContentFilters.Count() == 0)
-				Pointalize();	
-			
-			string path = string.Format ("contentFilters.pointalize.{0}", CIFilterInputKey.Radius);
-			controls.SetValueForKeyPath (NSNumber.FromFloat (5), (NSString)path);
+				Pointalize();
+
+			var path = string.Format ("contentFilters.pointalize.{0}", CIFilterInputKey.Radius);
+			controls.SetValueForKeyPath (NSNumber.FromFloat (5.0f), (NSString)path);
 		}
 	}
 }
