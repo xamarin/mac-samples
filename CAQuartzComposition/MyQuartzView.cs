@@ -30,6 +30,7 @@ namespace CAQuartzComposition
 		{
 			WantsLayer = true;
 			Layer.AddSublayer (CubeComposition);
+			LayerUsesCoreImageFilters = true;
 		}
 		
 		private QCCompositionLayer SwitchLayers()
@@ -108,8 +109,8 @@ namespace CAQuartzComposition
 				CubeComposition.Filters = CompositionFilters(); 
 				QuadComposition.Filters = CompositionFilters();
 			} else {
-				CubeComposition.Filters = null;
-				QuadComposition.Filters = null;
+				CubeComposition.Filters = new CIFilter[0];
+				QuadComposition.Filters = new CIFilter[0];
 			}
 		}
 		
