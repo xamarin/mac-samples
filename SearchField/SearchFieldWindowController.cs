@@ -137,7 +137,7 @@ namespace SearchField
 		//	NSSearchField's default feature.
 		// -------------------------------------------------------------------------------		
 		//public string[] FilterCompletions (NSControl control, NSTextView textView, string [] words, NSRange charRange, int index)
-		string[] handleFilterCompletions (NSControl control, NSTextView textView, string[] words, NSRange charRange, int index) 
+		string[] handleFilterCompletions (NSControl control, NSTextView textView, string[] words, NSRange charRange, ref nint index)
 		{
 			
 			var partialString = textView.Value;
