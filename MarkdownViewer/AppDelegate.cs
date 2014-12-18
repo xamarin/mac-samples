@@ -11,8 +11,9 @@ namespace Markdown
 		{
 		}
 
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
+
 		}
 
 		public override bool ApplicationShouldOpenUntitledFile (NSApplication sender)

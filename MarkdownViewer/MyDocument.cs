@@ -106,7 +106,7 @@ namespace Markdown
 
 		void ReloadDocument ()
 		{
-			documentData = NSData.FromUrl (documentUrl);
+			documentData = documentUrl == null ? new NSData () : NSData.FromUrl (documentUrl);
 
 			var document = WebView.MainFrame.DomDocument;
 			var container = document.GetElementById ("markdown-container");
