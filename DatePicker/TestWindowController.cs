@@ -98,6 +98,9 @@ namespace DatePicker
 						maxDatePicker.DateValue = (NSDate)NSDate.DistantFuture;
                         
                         secondsRangeEdit.EditingEnded += SecondsRangeEditingEnded;
+						secondsRangeEdit.Formatter = new NSNumberFormatter () {
+							NumberStyle = NSNumberFormatterStyle.Decimal
+						};
                         
                         updateControls ();
                         // force update of all UI elements and the picker itself
@@ -629,9 +632,15 @@ formatter.DateStyle = NSDateFormatterStyle.Short;
                                 
                                 // set the date range by start date (here we use the current date in the date picker control), 
                                 // and time interval (in seconds)
-                                string secsStr = secondsRangeEdit.StringValue;
-                                int numSeconds = Int32.Parse (secsStr);
-                                datePickerControl.TimeInterval = numSeconds;
+								string secsStr = secondsRangeEdit.StringValue;
+
+								try {
+									double numSeconds = Double.Parse (secsStr);
+									datePickerControl.TimeInterval = numSeconds;
+								} catch {
+									secondsRangeEdit.StringValue = string.Empty;
+								}
+
                                 break;
                         }
                 }
