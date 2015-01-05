@@ -3,7 +3,7 @@
 	<ID>3986c99a-7682-45b6-a59c-8faf566593cd</ID>
 	<IsFullApplication>true</IsFullApplication>
 	<Level>Advanced</Level>
-	<Tags>Games, Graphics, Yosemite</Tags>
-    <LicenseRequirement>Indie</LicenseRequirement>
+	<Tags>Games, Graphics, SceneKit, Yosemite</Tags>
+	<LicenseRequirement>Indie</LicenseRequirement>
 	<Gallery>true</Gallery>
 </SampleMetadata>
