@@ -95,7 +95,7 @@ namespace PredicateEditorSample
 		[Export ("inspect:")]
 		private void inspect (NSArray selectedObjects)
 		{
-			NSDictionary objectDict = new NSDictionary (selectedObjects.ValueAt (0));
+			var objectDict = selectedObjects.GetItem<NSDictionary> (0);
 			
 			if (objectDict != null) {
 				NSString sss = new NSString ("url");
@@ -121,7 +121,7 @@ namespace PredicateEditorSample
 				
 				NSArray phoneNumbers = (NSArray)item.ValueForAttribute ("kMDItemPhoneNumbers");
 				// grab only the first phone number
-				var phoneStr = phoneNumbers == null ? null : new NSString (phoneNumbers.ValueAt (0));
+				var phoneStr = phoneNumbers == null ? null : phoneNumbers.GetItem<NSString> (0);
 				var storePath = (NSString) item.ValueForAttribute ("kMDItemPath");
 				
 				// create a dictionary entry to be added to our search results array
