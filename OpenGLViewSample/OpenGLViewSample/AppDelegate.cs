@@ -5,6 +5,7 @@ using Foundation;
 using AppKit;
 using ObjCRuntime;
 using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace OpenGLViewSample
 {
