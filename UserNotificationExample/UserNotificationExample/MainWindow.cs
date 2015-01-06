@@ -46,7 +46,7 @@ namespace UserNotificationExample
 
 			not.Title = "Hello World";
 			not.InformativeText = "This is an informative text";
-			not.DeliveryDate = DateTime.Now;
+			not.DeliveryDate = (NSDate)DateTime.Now;
 			not.SoundName = NSUserNotification.NSUserNotificationDefaultSoundName;
 
 			// We get the Default notification Center
