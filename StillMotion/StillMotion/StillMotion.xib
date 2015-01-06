@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
+	<data>
+		<int key="IBDocument.SystemTarget">101000</int>
+		<string key="IBDocument.SystemVersion">14A361c</string>
+		<string key="IBDocument.InterfaceBuilderVersion">6724</string>
+		<string key="IBDocument.AppKitVersion">1339</string>
+		<string key="IBDocument.HIToolboxVersion">755.00</string>
+		<dictionary class="NSMutableDictionary" key="IBDocument.PluginVersions">
+			<string key="com.apple.InterfaceBuilder.CocoaPlugin">6724</string>
+			<string key="com.apple.QTKitIBPlugin">6724</string>
+		</dictionary>
+		<array key="IBDocument.IntegratedClassDependencies">
+			<string>NSBox</string>
+			<string>NSButton</string>
+			<string>NSButtonCell</string>
+			<string>NSCustomObject</string>
+			<string>NSView</string>
+			<string>NSWindowTemplate</string>
+			<string>QTCaptureView</string>
+			<string>QTMovieView</string>
+		</array>
+		<array key="IBDocument.PluginDependencies">
+			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string>com.apple.QTKitIBPlugin</string>
+		</array>
+		<dictionary class="NSMutableDictionary" key="IBDocument.Metadata"/>
+		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+			<object class="NSCustomObject" id="1001">
+				<string key="NSClassName">MyDocument</string>
+			</object>
+			<object class="NSCustomObject" id="1003">
+				<string key="NSClassName">FirstResponder</string>
+			</object>
+			<object class="NSCustomObject" id="1004">
+				<string key="NSClassName">NSApplication</string>
+			</object>
+			<object class="NSWindowTemplate" id="750800766">
+				<int key="NSWindowStyleMask">271</int>
+				<int key="NSWindowBacking">2</int>
+				<string key="NSWindowRect">{{133, 319}, {668, 329}}</string>
+				<int key="NSWTFlags">1886912512</int>
+				<string key="NSWindowTitle">StillMotion</string>
+				<string key="NSWindowClass">NSWindow</string>
+				<string key="NSViewClass">View</string>
+				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMinSize">{94, 86}</string>
+				<object class="NSView" key="NSWindowView" id="145566278">
+					<nil key="NSNextResponder"/>
+					<int key="NSvFlags">256</int>
+					<array class="NSMutableArray" key="NSSubviews">
+						<object class="QTCaptureView" id="1011390022">
+							<reference key="NSNextResponder" ref="145566278"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{0, 74}, {320, 240}}</string>
+							<reference key="NSSuperview" ref="145566278"/>
+							<reference key="NSNextKeyView" ref="483526596"/>
+							<object class="NSColor" key="kQTCaptureViewCoderFillColor" id="379484029">
+								<int key="NSColorSpace">3</int>
+								<bytes key="NSWhite">MAA</bytes>
+							</object>
+							<bool key="kQTCaptureViewCoderPreservesAspectRatio">YES</bool>
+						</object>
+						<object class="NSBox" id="483526596">
+							<reference key="NSNextResponder" ref="145566278"/>
+							<int key="NSvFlags">12</int>
+							<string key="NSFrame">{{332, 74}, {5, 240}}</string>
+							<reference key="NSSuperview" ref="145566278"/>
+							<reference key="NSNextKeyView" ref="344044240"/>
+							<string key="NSOffsets">{0, 0}</string>
+							<object class="NSTextFieldCell" key="NSTitleCell">
+								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags2">0</int>
+								<string key="NSContents">Box</string>
+								<object class="NSFont" key="NSSupport" id="808107203">
+									<bool key="IBIsSystemFont">YES</bool>
+									<double key="NSSize">13</double>
+									<int key="NSfFlags">1044</int>
+								</object>
+								<object class="NSColor" key="NSBackgroundColor">
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">textBackgroundColor</string>
+									<object class="NSColor" key="NSColor">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MQA</bytes>
+									</object>
+								</object>
+								<object class="NSColor" key="NSTextColor">
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">labelColor</string>
+									<reference key="NSColor" ref="379484029"/>
+								</object>
+							</object>
+							<int key="NSBorderType">3</int>
+							<int key="NSBoxType">2</int>
+							<int key="NSTitlePosition">0</int>
+							<bool key="NSTransparent">NO</bool>
+						</object>
+						<object class="NSButton" id="718097513">
+							<reference key="NSNextResponder" ref="145566278"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{280, 17}, {109, 32}}</string>
+							<reference key="NSSuperview" ref="145566278"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="156448268">
+								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags2">134217728</int>
+								<string key="NSContents">Add Frame</string>
+								<reference key="NSSupport" ref="808107203"/>
+								<reference key="NSControlView" ref="718097513"/>
+								<int key="NSButtonFlags">-2038284288</int>
+								<int key="NSButtonFlags2">129</int>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						</object>
+						<object class="QTMovieView" id="344044240">
+							<reference key="NSNextResponder" ref="145566278"/>
+							<int key="NSvFlags">268</int>
+							<set class="NSMutableSet" key="NSDragTypes">
+								<string>Apple URL pasteboard type</string>
+								<string>CorePasteboardFlavorType 0x6D6F6F76</string>
+								<string>NSFilenamesPboardType</string>
+								<string>QTMoviePasteboardType</string>
+							</set>
+							<string key="NSFrame">{{348, 74}, {320, 240}}</string>
+							<reference key="NSSuperview" ref="145566278"/>
+							<reference key="NSNextKeyView" ref="718097513"/>
+							<reference key="kCoderFillColor" ref="379484029"/>
+							<boolean value="YES" key="kCoderControllerVisible"/>
+							<boolean value="NO" key="kCoderPreservesAspectRatio"/>
+							<nil key="kCoderMovie"/>
+							<boolean value="NO" key="kCoderEditable"/>
+						</object>
+					</array>
+					<string key="NSFrameSize">{668, 329}</string>
+					<reference key="NSNextKeyView" ref="1011390022"/>
+				</object>
+				<string key="NSScreenRect">{{0, 0}, {1280, 777}}</string>
+				<string key="NSMinSize">{94, 108}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<bool key="NSWindowIsRestorable">YES</bool>
+			</object>
+		</array>
+		<object class="IBObjectContainer" key="IBDocument.Objects">
+			<array key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">captureView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1011390022"/>
+					</object>
+					<int key="connectionID">14</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">movieView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="344044240"/>
+					</object>
+					<int key="connectionID">15</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">AddFrame:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="718097513"/>
+					</object>
+					<int key="connectionID">16</int>
+				</object>
+			</array>
+			<object class="IBMutableOrderedSet" key="objectRecords">
+				<array key="orderedObjects">
+					<object class="IBObjectRecord">
+						<int key="objectID">0</int>
+						<array key="object" id="0"/>
+						<reference key="children" ref="1000"/>
+						<nil key="parent"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-2</int>
+						<reference key="object" ref="1001"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File's Owner</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-1</int>
+						<reference key="object" ref="1003"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">First Responder</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-3</int>
+						<reference key="object" ref="1004"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Application</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">7</int>
+						<reference key="object" ref="750800766"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="145566278"/>
+						</array>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Window</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">8</int>
+						<reference key="object" ref="145566278"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="344044240"/>
+							<reference ref="718097513"/>
+							<reference ref="483526596"/>
+							<reference ref="1011390022"/>
+						</array>
+						<reference key="parent" ref="750800766"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">9</int>
+						<reference key="object" ref="344044240"/>
+						<reference key="parent" ref="145566278"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">10</int>
+						<reference key="object" ref="718097513"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="156448268"/>
+						</array>
+						<reference key="parent" ref="145566278"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">11</int>
+						<reference key="object" ref="483526596"/>
+						<reference key="parent" ref="145566278"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="1011390022"/>
+						<reference key="parent" ref="145566278"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">13</int>
+						<reference key="object" ref="156448268"/>
+						<reference key="parent" ref="718097513"/>
+					</object>
+				</array>
+			</object>
+			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="12.IBPluginDependency">com.apple.QTKitIBPlugin</string>
+				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="7.IBWindowTemplateEditedContentRect">{{38, 236}, {668, 329}}</string>
+				<boolean value="YES" key="7.NSWindowTemplate.visibleAtLaunch"/>
+				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="9.IBPluginDependency">com.apple.QTKitIBPlugin</string>
+			</dictionary>
+			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
+			<nil key="activeLocalization"/>
+			<dictionary class="NSMutableDictionary" key="localizations"/>
+			<nil key="sourceID"/>
+			<int key="maxID">16</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">NO</bool>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
+			<integer value="4600" key="NS.object.0"/>
+		</object>
+		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+	</data>
+</archive>
