@@ -2,6 +2,7 @@
 using System.Drawing;
 using AppKit;
 using OpenGL;
+using OpenTK;
 using SceneKit;
 using Foundation;
 using CoreAnimation;

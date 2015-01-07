@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Collections;
+using System.Collections.Generic;
 using AppKit;
 using SceneKit;
 using Foundation;
@@ -29,14 +30,14 @@ namespace SceneKitSessionWWDC2013
 
 			// Re-parent every node that holds a camera otherwise they would inherit the scale from the "sign" model.
 			// This is not a problem except that the scale affects the zRange of cameras and so it would be harder to get the transition from one camera to another right
-			var cameraNodes = new NSMutableArray ();
+			var cameraNodes = new List<SCNNode> ();
 			foreach (SCNNode child in signNode) {
 				if (child.Camera != null)
 					cameraNodes.Add (child);
 			}
 
-			for (nuint i = 0; i < cameraNodes.Count; i++) {
-				var cameraNode = new SCNNode (cameraNodes.ValueAt ((uint)i));
+			for (var i = 0; i < cameraNodes.Count; i++) {
+				var cameraNode = cameraNodes [i];
 				var previousWorldTransform = cameraNode.WorldTransform;
 				intermediateNode.AddChildNode (cameraNode); // re-parent
 				cameraNode.Transform = intermediateNode.ConvertTransformFromNode (previousWorldTransform, null);
