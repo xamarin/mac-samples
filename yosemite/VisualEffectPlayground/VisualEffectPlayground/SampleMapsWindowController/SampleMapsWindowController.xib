@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238w" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SampleMapsWindowController">
+            <connections>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Sample Maps" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="907" height="551"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="907" height="551"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-Sk-IRL">
+                        <rect key="frame" x="-1" y="-1" width="909" height="553"/>
+                        <clipView key="contentView" id="jMC-ym-UTo">
+                            <rect key="frame" x="1" y="1" width="166" height="79"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="400" verticalCompressionResistancePriority="400" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lu8-r6-o98">
+                                    <rect key="frame" x="0.0" y="0.0" width="907" height="551"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="map" id="0Tx-Lj-aaQ"/>
+                                </imageView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="iXu-7o-1ud">
+                            <rect key="frame" x="1" y="80" width="166" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="BTB-i8-S8d">
+                            <rect key="frame" x="167" y="1" width="15" height="79"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-FL-3OD">
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="551"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5B-Xi-tHo">
+                                <rect key="frame" x="59" y="510" width="156" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NSVisualEffectView" id="WhE-Fr-Hip">
+                                    <font key="font" metaFont="system" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilC-f5-j0F">
+                                <rect key="frame" x="51" y="440" width="173" height="34"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="h8e-mf-Qer">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">This text color is 
+secondaryLabelColor</string>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3E-27-gxE">
+                                <rect key="frame" x="51" y="482" width="173" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This text color is labelColor" id="G9d-Wm-ZUJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="275" id="AFy-SX-QV5"/>
+                        </constraints>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Csc-Sk-IRL" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="-1" id="6UM-z3-yuY"/>
+                    <constraint firstAttribute="trailing" secondItem="Csc-Sk-IRL" secondAttribute="trailing" constant="-1" id="Ec3-dR-deP"/>
+                    <constraint firstAttribute="bottom" secondItem="Z8V-FL-3OD" secondAttribute="bottom" id="Gaw-D2-Mgc"/>
+                    <constraint firstItem="Z8V-FL-3OD" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="HwA-qt-jEU"/>
+                    <constraint firstItem="Z8V-FL-3OD" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="UvD-Ba-9fK"/>
+                    <constraint firstItem="Csc-Sk-IRL" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="-1" id="XOH-xk-9KG"/>
+                    <constraint firstAttribute="bottom" secondItem="Csc-Sk-IRL" secondAttribute="bottom" constant="-1" id="aT9-cl-3Ak"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="1F55560E-619D-4ACE-A677-2A68C4D279C3" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="QqK-Q4-Q2O">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="pUu-H8-zqw"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="oUe-Kk-cxg"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="tJy-X5-OEQ"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="HNp-4B-Bzn"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="VMV-ZW-8Xr"/>
+                    <toolbarItem implicitItemIdentifier="F1E203C8-0288-4F0E-8D3F-A6E7898AE834" label="Custom View" paletteLabel="Custom View" id="GMG-7f-AtR">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="82" height="32"/>
+                        <size key="maxSize" width="114" height="43"/>
+                        <button key="view" verticalHuggingPriority="750" id="hkX-Mu-T1Y">
+                            <rect key="frame" x="0.0" y="14" width="114" height="43"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Directions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8KV-pN-DCg">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="3179D31F-920D-4565-8DE1-30BEDDFCA64D" label="Custom View" paletteLabel="Custom View" id="QPC-No-fMN">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="104" height="28"/>
+                        <size key="maxSize" width="187" height="28"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="b1C-MK-DTj">
+                            <rect key="frame" x="0.0" y="14" width="154" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="SKm-wk-YJh">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment label="Standard"/>
+                                    <segment label="Satellite" selected="YES" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="GMG-7f-AtR"/>
+                    <toolbarItem reference="VMV-ZW-8Xr"/>
+                    <toolbarItem reference="QPC-No-fMN"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="364.5" y="429.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="map" width="907" height="551"/>
+    </resources>
+</document>

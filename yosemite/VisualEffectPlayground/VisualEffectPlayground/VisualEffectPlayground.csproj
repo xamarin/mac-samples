@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{5D10B573-1073-4D28-8E40-9DA543C69B1C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VisualEffectPlayground</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>VisualEffectPlayground</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="TestLauncherViewController\" />
+    <Folder Include="BasicSideViewController\" />
+    <Folder Include="CustomViews\" />
+    <Folder Include="VibrantControlsViewController\" />
+    <Folder Include="DemoFaceTimeWindowController\" />
+    <Folder Include="SampleMapsWindowController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestLauncherViewController\TestLauncherViewController.cs" />
+    <Compile Include="TestLauncherViewController\TestLauncherViewController.designer.cs">
+      <DependentUpon>TestLauncherViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyKeyWindow.cs" />
+    <Compile Include="BasicSideViewController\BasicSidebarViewController.cs" />
+    <Compile Include="BasicSideViewController\BasicSidebarViewController.designer.cs">
+      <DependentUpon>BasicSidebarViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\CustomView.cs" />
+    <Compile Include="VibrantControlsViewController\VibrantControlsViewController.cs" />
+    <Compile Include="VibrantControlsViewController\VibrantControlsViewController.designer.cs">
+      <DependentUpon>VibrantControlsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\SystemColorView.cs" />
+    <Compile Include="CustomViews\BasicVibrantView.cs" />
+    <Compile Include="CustomViews\WindowMovableImageView.cs" />
+    <Compile Include="DemoFaceTimeWindowController\DemoFaceTimeWindowController.cs" />
+    <Compile Include="DemoFaceTimeWindowController\DemoFaceTimeWindowController.designer.cs">
+      <DependentUpon>DemoFaceTimeWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleMapsWindowController\SampleMapsWindowController.cs" />
+    <Compile Include="SampleMapsWindowController\SampleMapsWindowController.designer.cs">
+      <DependentUpon>SampleMapsWindowController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="TestLauncherViewController\TestLauncherViewController.xib" />
+    <InterfaceDefinition Include="BasicSideViewController\BasicSidebarViewController.xib" />
+    <InterfaceDefinition Include="BasicSideViewController\BasicSidebarViewControllerImageDemo.xib" />
+    <InterfaceDefinition Include="BasicSideViewController\BasicSidebarViewControllerCustomVibrancyDemo.xib" />
+    <InterfaceDefinition Include="BasicSideViewController\BasicSidebarViewControllerCustomVibrancyDemo2.xib" />
+    <InterfaceDefinition Include="VibrantControlsViewController\VibrantColorsViewController.xib" />
+    <InterfaceDefinition Include="VibrantControlsViewController\VibrantControlsCaveatsBehindWindow.xib" />
+    <InterfaceDefinition Include="VibrantControlsViewController\VibrantControlsCaveatsInWindow.xib" />
+    <InterfaceDefinition Include="VibrantControlsViewController\VibrantControlsViewController.xib" />
+    <InterfaceDefinition Include="MaskExampleViewController.xib" />
+    <InterfaceDefinition Include="PerformanceExampleViewController.xib" />
+    <InterfaceDefinition Include="DemoFaceTimeWindowController\DemoFaceTimeWindowController.xib" />
+    <InterfaceDefinition Include="SampleMapsWindowController\SampleMapsWindowController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\map.png" />
+  </ItemGroup>
+</Project>

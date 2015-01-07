@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6246" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BasicSidebarViewController">
+            <connections>
+                <outlet property="CustomView" destination="Hz6-mo-xeY" id="urj-c9-mj8"/>
+                <outlet property="SideImageView" destination="wWB-Ls-KgS" id="tmZ-dE-oBB"/>
+                <outlet property="SideVisualEffectView" destination="jSy-hy-Xt2" id="Dac-yo-dHk"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="GdY-ru-tA2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="733" height="519"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-Ls-KgS">
+                    <rect key="frame" x="117" y="204" width="339" height="178"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="map" id="PT8-rN-mhF"/>
+                </imageView>
+                <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="jSy-hy-Xt2">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="519"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-wn-I8d">
+                            <rect key="frame" x="59" y="478" width="156" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NSVisualEffectView" id="WnU-Wp-ewT">
+                                <font key="font" metaFont="system" size="17"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kh-Q5-Tr4">
+                            <rect key="frame" x="51" y="408" width="173" height="34"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="zZm-Uz-BQS">
+                                <font key="font" metaFont="system"/>
+                                <string key="title">This text color is 
+secondaryLabelColor</string>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-Mg-jTb">
+                            <rect key="frame" x="51" y="450" width="173" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This text color is labelColor" id="ezQ-C9-PuY">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="275" id="Xq0-Ho-rS3"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="oI8-Iz-WaC"/>
+                    </constraints>
+                </visualEffectView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jSy-hy-Xt2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Xdt-Ud-dCs"/>
+                <constraint firstItem="jSy-hy-Xt2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="YJD-pU-lRJ"/>
+                <constraint firstAttribute="bottom" secondItem="jSy-hy-Xt2" secondAttribute="bottom" id="lxL-01-WZ1"/>
+            </constraints>
+            <point key="canvasLocation" x="455.5" y="286.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="map" width="907" height="551"/>
+    </resources>
+</document>
