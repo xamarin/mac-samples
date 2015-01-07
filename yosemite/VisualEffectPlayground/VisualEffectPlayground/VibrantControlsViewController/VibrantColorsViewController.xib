@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6246" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VibrantControlsViewController">
+            <connections>
+                <outlet property="TopImageView" destination="aZc-28-NK2" id="KtR-KW-puZ"/>
+                <outlet property="view" destination="Bem-0Z-eHf" id="ERK-R0-4Uf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView wantsLayer="YES" id="Bem-0Z-eHf">
+            <rect key="frame" x="0.0" y="0.0" width="726" height="373"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="240" verticalHuggingPriority="240" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-28-NK2">
+                    <rect key="frame" x="0.0" y="0.0" width="726" height="373"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="NSStopProgressTemplate" id="2vo-za-zS1"/>
+                </imageView>
+                <visualEffectView appearanceType="vibrantDark" blendingMode="withinWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-St-2G6">
+                    <rect key="frame" x="539" y="0.0" width="187" height="345"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="ux7-EJ-deF" customClass="SystemColorView">
+                            <rect key="frame" x="20" y="0.0" width="147" height="345"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ux7-EJ-deF" firstAttribute="leading" secondItem="LaU-St-2G6" secondAttribute="leading" constant="20" id="UvQ-ya-zdp"/>
+                        <constraint firstAttribute="width" constant="187" id="fjc-fp-E1B"/>
+                        <constraint firstAttribute="bottom" secondItem="ux7-EJ-deF" secondAttribute="bottom" id="iov-lq-LM8"/>
+                        <constraint firstItem="ux7-EJ-deF" firstAttribute="top" secondItem="LaU-St-2G6" secondAttribute="top" id="mZO-JX-aZD"/>
+                        <constraint firstAttribute="trailing" secondItem="ux7-EJ-deF" secondAttribute="trailing" constant="20" id="w2b-XG-9KK"/>
+                    </constraints>
+                </visualEffectView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kze-u8-Zhu">
+                    <rect key="frame" x="558" y="349" width="159" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vibrant Dark Appearance" id="VS7-31-ZbK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-ke-PHY">
+                    <rect key="frame" x="365" y="349" width="161" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vibrant Light Appearance" id="PPf-PR-Fel">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Bri-rb-pGS" customClass="SystemColorView">
+                    <rect key="frame" x="192" y="0.0" width="147" height="347"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="147" id="WHb-zu-VUf"/>
+                    </constraints>
+                </customView>
+                <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-mf-3OK">
+                    <rect key="frame" x="352" y="0.0" width="187" height="345"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="YIs-BY-5B6" customClass="SystemColorView">
+                            <rect key="frame" x="20" y="0.0" width="147" height="345"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="YIs-BY-5B6" firstAttribute="leading" secondItem="NcX-mf-3OK" secondAttribute="leading" constant="20" id="11N-gK-MgX"/>
+                        <constraint firstAttribute="trailing" secondItem="YIs-BY-5B6" secondAttribute="trailing" constant="20" id="Hii-c9-0Fu"/>
+                        <constraint firstAttribute="bottom" secondItem="YIs-BY-5B6" secondAttribute="bottom" id="XkH-Sr-FJN"/>
+                        <constraint firstAttribute="width" constant="187" id="fMb-J8-6sv"/>
+                        <constraint firstItem="YIs-BY-5B6" firstAttribute="top" secondItem="NcX-mf-3OK" secondAttribute="top" id="mFZ-W7-eTC"/>
+                    </constraints>
+                </visualEffectView>
+                <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-cT-Km2">
+                    <rect key="frame" x="0.0" y="0.0" width="178" height="346"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="09K-W8-ymO" customClass="SystemColorView">
+                            <rect key="frame" x="0.0" y="0.0" width="164" height="346"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="drawTitles" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="drawColors" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="09K-W8-ymO" secondAttribute="trailing" constant="14" id="If4-Io-wQK"/>
+                        <constraint firstItem="09K-W8-ymO" firstAttribute="top" secondItem="TwR-cT-Km2" secondAttribute="top" id="K7d-a3-spp"/>
+                        <constraint firstAttribute="width" constant="178" id="Z14-k3-jVM"/>
+                        <constraint firstItem="09K-W8-ymO" firstAttribute="leading" secondItem="TwR-cT-Km2" secondAttribute="leading" id="eGM-kx-ZzK"/>
+                        <constraint firstItem="09K-W8-ymO" firstAttribute="top" secondItem="TwR-cT-Km2" secondAttribute="top" id="gIT-rr-yxI"/>
+                        <constraint firstAttribute="bottom" secondItem="09K-W8-ymO" secondAttribute="bottom" id="suY-Oh-J8B"/>
+                    </constraints>
+                </visualEffectView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8s-0P-mqK">
+                    <rect key="frame" x="190" y="349" width="114" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aqua Appearance" id="I9k-03-C0e">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Bri-rb-pGS" firstAttribute="leading" secondItem="TwR-cT-Km2" secondAttribute="trailing" constant="14" id="0hH-fH-HJl"/>
+                <constraint firstAttribute="bottom" secondItem="NcX-mf-3OK" secondAttribute="bottom" id="319-lG-nMf"/>
+                <constraint firstItem="TwR-cT-Km2" firstAttribute="leading" secondItem="Bem-0Z-eHf" secondAttribute="leading" id="5N5-Bb-sJI"/>
+                <constraint firstAttribute="bottom" secondItem="TwR-cT-Km2" secondAttribute="bottom" id="5Oc-4v-vfq"/>
+                <constraint firstItem="Bri-rb-pGS" firstAttribute="top" secondItem="Bem-0Z-eHf" secondAttribute="top" constant="26" id="AsB-MD-ZCW"/>
+                <constraint firstAttribute="bottom" secondItem="Bri-rb-pGS" secondAttribute="bottom" id="AtO-yM-Dr4"/>
+                <constraint firstItem="LaU-St-2G6" firstAttribute="top" secondItem="Bem-0Z-eHf" secondAttribute="top" constant="28" id="DE6-Gx-Dyg"/>
+                <constraint firstItem="aZc-28-NK2" firstAttribute="leading" secondItem="Bem-0Z-eHf" secondAttribute="leading" id="Ehy-bo-zQ9"/>
+                <constraint firstItem="LaU-St-2G6" firstAttribute="leading" secondItem="NcX-mf-3OK" secondAttribute="trailing" id="Rbi-kB-xcS"/>
+                <constraint firstAttribute="bottom" secondItem="aZc-28-NK2" secondAttribute="bottom" id="SB7-mu-sCE"/>
+                <constraint firstItem="TwR-cT-Km2" firstAttribute="top" secondItem="Bem-0Z-eHf" secondAttribute="top" constant="27" id="UI5-fX-dqG"/>
+                <constraint firstItem="NcX-mf-3OK" firstAttribute="top" secondItem="Bem-0Z-eHf" secondAttribute="top" constant="28" id="Xzz-zG-8Mp"/>
+                <constraint firstAttribute="trailing" secondItem="aZc-28-NK2" secondAttribute="trailing" id="Z64-YX-hdC"/>
+                <constraint firstItem="NcX-mf-3OK" firstAttribute="leading" secondItem="Bem-0Z-eHf" secondAttribute="leading" constant="352" id="cff-zI-3qe"/>
+                <constraint firstAttribute="bottom" secondItem="LaU-St-2G6" secondAttribute="bottom" id="e0n-K5-awV"/>
+                <constraint firstItem="aZc-28-NK2" firstAttribute="top" secondItem="Bem-0Z-eHf" secondAttribute="top" id="wED-Tm-dhQ"/>
+            </constraints>
+            <point key="canvasLocation" x="341" y="393.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSStopProgressTemplate" width="11" height="11"/>
+    </resources>
+</document>

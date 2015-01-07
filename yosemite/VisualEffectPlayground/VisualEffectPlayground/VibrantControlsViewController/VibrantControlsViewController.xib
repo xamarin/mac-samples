@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6246" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VibrantControlsViewController">
+            <connections>
+                <outlet property="TopImageView" destination="t4t-N3-z4s" id="fGr-qi-iUa"/>
+                <outlet property="view" destination="c22-O7-iKe" id="P1W-6o-Fpu"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView wantsLayer="YES" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="t4t-N3-z4s">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="379"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="NSStatusAvailable" id="BIS-A0-vTf"/>
+                </imageView>
+                <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="withinWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="36k-hp-7PA">
+                    <rect key="frame" x="29" y="85" width="261" height="250"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nFZ-0E-9KT">
+                            <rect key="frame" x="104" y="213" width="52" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Primary" id="49n-gs-Omh">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBo-eU-oKv">
+                            <rect key="frame" x="95" y="188" width="70" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Secondary" id="z5t-lZ-tDT">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-Wu-CwN">
+                            <rect key="frame" x="156" y="147" width="82" height="32"/>
+                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fev-6q-USd">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-kN-spP">
+                            <rect key="frame" x="87" y="116" width="96" height="21"/>
+                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Tc6-nX-mOh"/>
+                        </slider>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BB-jo-h9b">
+                            <rect key="frame" x="72" y="7" width="117" height="96"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSHomeTemplate" id="Kja-Se-2oi"/>
+                        </imageView>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fel-eS-vIF">
+                            <rect key="frame" x="53" y="156" width="62" height="18"/>
+                            <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="u4E-0I-kX4">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                </visualEffectView>
+                <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="withinWindow" material="appearanceBased" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-FE-tMK">
+                    <rect key="frame" x="330" y="85" width="261" height="250"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-SJ-DRC">
+                            <rect key="frame" x="104" y="213" width="52" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Primary" id="RQ3-8Z-nat">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6w-dQ-Nfn">
+                            <rect key="frame" x="95" y="188" width="70" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Secondary" id="keU-ae-bFW">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSh-Nk-02M">
+                            <rect key="frame" x="156" y="147" width="82" height="32"/>
+                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Rq-Aa-Nwj">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B9P-u1-vgu">
+                            <rect key="frame" x="87" y="116" width="96" height="21"/>
+                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="vrI-rf-9Cj"/>
+                        </slider>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMk-gP-n1A">
+                            <rect key="frame" x="72" y="7" width="117" height="96"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSHomeTemplate" id="xaR-G0-DGQ"/>
+                        </imageView>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOj-Ci-04a">
+                            <rect key="frame" x="53" y="156" width="62" height="18"/>
+                            <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4VV-Rz-ZwR">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                </visualEffectView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="t4t-N3-z4s" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="DhA-Es-krR"/>
+                <constraint firstItem="t4t-N3-z4s" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="RwQ-Aq-waV"/>
+                <constraint firstAttribute="bottom" secondItem="t4t-N3-z4s" secondAttribute="bottom" id="Zck-44-dbH"/>
+                <constraint firstAttribute="trailing" secondItem="t4t-N3-z4s" secondAttribute="trailing" id="Zdo-TV-GlI"/>
+            </constraints>
+            <point key="canvasLocation" x="298" y="395.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSHomeTemplate" width="14" height="14"/>
+        <image name="NSStatusAvailable" width="16" height="16"/>
+    </resources>
+</document>

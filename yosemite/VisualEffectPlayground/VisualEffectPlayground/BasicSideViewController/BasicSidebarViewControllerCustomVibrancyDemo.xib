@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6246" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BasicSidebarViewController">
+            <connections>
+                <outlet property="SideVisualEffectView" destination="jSy-hy-Xt2" id="zMY-2B-D1L"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="v7e-Vk-XSZ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="555" height="519"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="jSy-hy-Xt2">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="519"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-wn-I8d">
+                            <rect key="frame" x="59" y="478" width="156" height="21"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NSVisualEffectView" id="WnU-Wp-ewT">
+                                <font key="font" metaFont="system" size="17"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7h-gA-Y9i">
+                            <rect key="frame" x="28" y="255" width="226" height="34"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="CustomView + No Vibrancy" id="Z7D-Rv-7Fo">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdq-mW-2Bl" customClass="CustomView">
+                            <rect key="frame" x="61" y="148" width="162" height="111"/>
+                        </customView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kh-Q5-Tr4">
+                            <rect key="frame" x="28" y="428" width="218" height="34"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="CustomView + Vibrancy" id="zZm-Uz-BQS">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMe-mw-NrW" customClass="CustomView">
+                            <rect key="frame" x="60" y="323" width="162" height="111"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="275" id="Xq0-Ho-rS3"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="oI8-Iz-WaC"/>
+                    </constraints>
+                </visualEffectView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irG-Ux-QOf">
+                    <rect key="frame" x="298" y="427" width="218" height="34"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="CustomView + No Vibrancy" id="LJs-hI-fDB">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAj-fM-8Ke" customClass="CustomView">
+                    <rect key="frame" x="330" y="322" width="162" height="111"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jSy-hy-Xt2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Xdt-Ud-dCs"/>
+                <constraint firstItem="jSy-hy-Xt2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="YJD-pU-lRJ"/>
+                <constraint firstAttribute="bottom" secondItem="jSy-hy-Xt2" secondAttribute="bottom" id="lxL-01-WZ1"/>
+            </constraints>
+            <point key="canvasLocation" x="366.5" y="286.5"/>
+        </customView>
+    </objects>
+</document>
