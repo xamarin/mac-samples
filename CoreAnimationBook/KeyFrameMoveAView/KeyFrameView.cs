@@ -48,22 +48,25 @@ namespace KeyFrameMoveAView
 		
 		private void bounce()
 		{
-			CGRect rect = mover.Frame;
-			((NSView)mover.Animator).SetFrameOrigin (rect.Location);
+			NSAnimationContext.RunAnimation ((context) => {
+				var newFrame = mover.Frame;
+				newFrame.Offset (1, 0);
+				((NSView)mover.Animator).SetFrameOrigin (newFrame.Location);
+			}, () => {});
 		}
 		
 		private void addBounceAnimation ()
 		{
-			mover.Animations = NSDictionary.FromObjectsAndKeys (new object[] { OriginAnimation }, new object[] {(NSString)"frameOrigin"});	
+			mover.Animations = NSDictionary.FromObjectAndKey (OriginAnimation, (NSString)"frameOrigin");
 		}
 		
 		private CAKeyFrameAnimation OriginAnimation {
 			get {
-				CAKeyFrameAnimation originAnimation = new CAKeyFrameAnimation ();
-				originAnimation.Path = HeartPath;
-				originAnimation.Duration = 2.0f;
-				originAnimation.CalculationMode = CAAnimation.AnimationPaced;
-				return originAnimation;
+				return new CAKeyFrameAnimation {
+					Path = HeartPath,
+					Duration = 2.0f,
+					CalculationMode = CAAnimation.AnimationPaced
+				};
 			}
 		}
 		
