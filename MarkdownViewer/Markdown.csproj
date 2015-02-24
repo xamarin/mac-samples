@@ -31,8 +31,6 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <I18n>
-    </I18n>
     <CustomCommands>
       <CustomCommands>
         <Command type="BeforeBuild" command="make -C &quot;${ProjectDir}/sundown/&quot;" />
@@ -41,6 +39,7 @@
       </CustomCommands>
     </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
+    <XamMacArch>i386</XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
