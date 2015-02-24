@@ -77,7 +77,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="XamMac" />
     <Reference Include="XamMac.CFNetwork">
-      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.Mac.framework\Versions\1.12.0.4\lib\mono\XamMac.CFNetwork.dll</HintPath>
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.Mac.framework\Versions\Current\lib\mono\XamMac.CFNetwork.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
