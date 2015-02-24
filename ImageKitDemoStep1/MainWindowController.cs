@@ -79,6 +79,7 @@ namespace ImageKitDemo
 			panel.FloatingPanel = true;
 			panel.CanChooseDirectories = true;
 			panel.CanChooseFiles = true;
+			panel.AllowedFileTypes = new string[] { "tiff", "jpeg", "jpg", "gif", "png" };
 			//FIXME - create enum for open/save panel return code
 			int i = (int)panel.RunModal ();
 			if (i == 1 && panel.Urls != null) {
