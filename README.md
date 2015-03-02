@@ -94,7 +94,6 @@ However, because the sample galleries are powered by the github sample repos, ea
 		* **Getting Started**
 		* **Async**
 		* **Extension**
-		* **Keyboard**
 		* **SceneKit**
 		* **FSharp**
 
