@@ -16,18 +16,19 @@ namespace ImageKitDemo
 		
 		List<BrowseItem> images = new List<BrowseItem>();
 
-		# region Required IKImageBrowserDataSource methods
+		#region Required IKImageBrowserDataSource methods
+
 		public override nint ItemCount (IKImageBrowserView aBrowser)
 		{
 			//Console.WriteLine ("DataSource: Image Count was requested");
 			return images.Count;
 		}
-		
-		public override IKImageBrowserItem GetItem (IKImageBrowserView aBrowser, nint index)
+
+		public override IIKImageBrowserItem GetItem (IKImageBrowserView aBrowser, nint index)
 		{
-			//Console.WriteLine ("DataSource: Returning image at {0}, named {1}", index, images[index].ImageTitle);
 			return images[(int)index];
 		}
+
 		#endregion
 		
 		#region optional IKImageBrowserDataSource methods
