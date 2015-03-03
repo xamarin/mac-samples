@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
   <ID>FFD5B679-BF48-402A-AD8E-02DE48730E3D</ID>
+  <Brief>This is a Xamarin.Mac version of Apple's simple SceneKitViewer.</Brief>
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Games, SceneKit</Tags>

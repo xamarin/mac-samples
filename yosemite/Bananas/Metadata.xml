@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <SampleMetadata>
 	<ID>3986c99a-7682-45b6-a59c-8faf566593cd</ID>
+	<Brief>This sample shows how to build a basic game using Scene Kit.</Brief>
 	<IsFullApplication>true</IsFullApplication>
 	<Level>Advanced</Level>
 	<Tags>Games, Graphics, SceneKit, Yosemite</Tags>
