@@ -4,253 +4,233 @@ using System.Linq;
 using CoreGraphics;
 using Foundation;
 using AppKit;
-using CoreGraphics;
 using CoreText;
 
 namespace CoreTextArcMonoMac
 {
-        public partial class CoreTextArcView : AppKit.NSView
-        {
-                NSFont _font;
-                string _string;
-                float _radius;
-                const double PI_2 = Math.PI / 2;
-                const string ARCVIEW_DEFAULT_FONT_NAME = "Didot";
-                const float ARCVIEW_DEFAULT_FONT_SIZE = 64;
-                const float ARCVIEW_DEFAULT_RADIUS = 150;
+	public partial class CoreTextArcView : AppKit.NSView
+	{
+		NSFont _font;
+		string _string;
+		float _radius;
+		const double PI_2 = Math.PI / 2;
+		const string ARCVIEW_DEFAULT_FONT_NAME = "Didot";
+		const float ARCVIEW_DEFAULT_FONT_SIZE = 64;
+		const float ARCVIEW_DEFAULT_RADIUS = 150;
 
-                struct GlyphArcInfo
-                {
-                        public float width;
-                        public float angle;
-                        // in radians
-                        public GlyphArcInfo (float w, float a)
-                        {
-                                width = w;
-                                angle = a;
-                        }
-                }
+		struct GlyphArcInfo
+		{
+			public float width;
+			public float angle;
+			// in radians
+			public GlyphArcInfo (float w, float a)
+			{
+				width = w;
+				angle = a;
+			}
+		}
 
-                [Export("initWithFrame:")]
-                public CoreTextArcView (CGRect frame) : base(frame)
-                {
-                        Font = NSFont.FromFontName (ARCVIEW_DEFAULT_FONT_NAME, ARCVIEW_DEFAULT_FONT_SIZE);
-                        Title = "Curvaceous MonoMac";
-                        Radius = ARCVIEW_DEFAULT_RADIUS;
-                        
-                }
+		[Export ("initWithFrame:")]
+		public CoreTextArcView (CGRect frame) : base (frame)
+		{
+			Font = NSFont.FromFontName (ARCVIEW_DEFAULT_FONT_NAME, ARCVIEW_DEFAULT_FONT_SIZE);
+			Title = "Curvaceous MonoMac";
+			Radius = ARCVIEW_DEFAULT_RADIUS;
+		}
 
-                static void PrepareGlyphArcInfo (CTLine line, long glyphCount, GlyphArcInfo[] glyphArcInfo)
-                {
-                        var runArray = line.GetGlyphRuns ();
-                        
-                        // Examine each run in the line, updating glyphOffset to track how far along the run is 
-                        // in terms of glyphCount.
-                        long glyphOffset = 0;
-                        nfloat ascent = 0;
-                        nfloat descent = 0;
-                        nfloat leading = 0;
-                        foreach (var run in runArray) {
-                                var runGlyphCount = run.GlyphCount;
+		static void PrepareGlyphArcInfo (CTLine line, long glyphCount, GlyphArcInfo[] glyphArcInfo)
+		{
+			var runArray = line.GetGlyphRuns ();
+			// Examine each run in the line, updating glyphOffset to track how far along the run is
+			// in terms of glyphCount.
+			long glyphOffset = 0;
+			nfloat ascent = 0;
+			nfloat descent = 0;
+			nfloat leading = 0;
+			foreach (var run in runArray) {
+				var runGlyphCount = run.GlyphCount;
                                 
-                                // Ask for the width of each glyph in turn.
-                                var runGlyphIndex = 0;
-                                for (; runGlyphIndex < runGlyphCount; runGlyphIndex++) {
-                                        glyphArcInfo[runGlyphIndex + glyphOffset].width = (float)run.GetTypographicBounds (new NSRange (runGlyphIndex, 1), out ascent, out descent, out leading);
-                                        
-                                }
-                                
-                                glyphOffset += runGlyphCount;
-                                
-                        }
-                        
-                        var lineLength = line.GetTypographicBounds (out ascent, out descent, out leading);
-                        
-                        var prevHalfWidth = glyphArcInfo[0].width / 2.0;
-                        glyphArcInfo[0].angle = (float)((prevHalfWidth / lineLength) * Math.PI);
-                        
-                        var lineGlyphIndex = 1;
-                        for (; lineGlyphIndex < glyphCount; lineGlyphIndex++) {
-                                
-                                var halfWidth = glyphArcInfo[lineGlyphIndex].width / 2.0;
-                                var prevCenterToCenter = prevHalfWidth + halfWidth;
-                                
-                                glyphArcInfo[lineGlyphIndex].angle = (float)((prevCenterToCenter / lineLength) * Math.PI);
-                                
-                                prevHalfWidth = halfWidth;
-                                
-                        }
-                }
+				// Ask for the width of each glyph in turn.
+				var runGlyphIndex = 0;
+				for (; runGlyphIndex < runGlyphCount; runGlyphIndex++) {
+					glyphArcInfo [runGlyphIndex + glyphOffset].width = (float)run.GetTypographicBounds (new NSRange (runGlyphIndex, 1), out ascent, out descent, out leading);
+				}
 
-                public override void DrawRect (CGRect dirtyRect)
-                {
-                        // Don't draw if we don't have a font or a title.
-                        if (Font == null || Title == string.Empty)
-                                return;
-                        
-                        // Initialize the text matrix to a known value
-                        CGContext context = NSGraphicsContext.CurrentContext.GraphicsPort;
-                        context.TextMatrix = CGAffineTransform.MakeIdentity ();
-                        
-                        // Draw a white background
-                        NSColor.White.Set ();
-                        context.FillRect (dirtyRect);
-                        
-                        //CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)self.attributedString);
-                        CTLine line = new CTLine (AttributedString);
-                        
+				glyphOffset += runGlyphCount;
+			}
+
+			var lineLength = line.GetTypographicBounds (out ascent, out descent, out leading);
+
+			var prevHalfWidth = glyphArcInfo [0].width / 2.0;
+			glyphArcInfo [0].angle = (float)((prevHalfWidth / lineLength) * Math.PI);
+
+			var lineGlyphIndex = 1;
+			for (; lineGlyphIndex < glyphCount; lineGlyphIndex++) {
+				var halfWidth = glyphArcInfo [lineGlyphIndex].width / 2.0;
+				var prevCenterToCenter = prevHalfWidth + halfWidth;
+				glyphArcInfo [lineGlyphIndex].angle = (float)((prevCenterToCenter / lineLength) * Math.PI);
+				prevHalfWidth = halfWidth;
+			}
+		}
+
+		public override void DrawRect (CGRect dirtyRect)
+		{
+			// Don't draw if we don't have a font or a title.
+			if (Font == null || Title == string.Empty)
+				return;
+
+			// Initialize the text matrix to a known value
+			CGContext context = NSGraphicsContext.CurrentContext.GraphicsPort;
+			context.TextMatrix = CGAffineTransform.MakeIdentity ();
+
+			// Draw a white background
+			NSColor.White.Set ();
+			context.FillRect (dirtyRect);
+			CTLine line = new CTLine (AttributedString);
+
 			int glyphCount = (int)line.GlyphCount;
-                        if (glyphCount == 0)
-                                return;
-                        
-                        GlyphArcInfo[] glyphArcInfo = new GlyphArcInfo[glyphCount];
-                        PrepareGlyphArcInfo (line, glyphCount, glyphArcInfo);
-                        
-                        // Move the origin from the lower left of the view nearer to its center.
-                        context.SaveState ();
-                        context.TranslateCTM (dirtyRect.GetMidX (), dirtyRect.GetMidY () - Radius / 2);
-                        
-                        // Stroke the arc in red for verification.
-                        context.BeginPath ();
-                        context.AddArc (0, 0, Radius, (float)Math.PI, 0, true);
-                        context.SetStrokeColor (1, 0, 0, 1);
-                        context.StrokePath ();
-                        
-                        // Rotate the context 90 degrees counterclockwise.
-                        context.RotateCTM ((float)PI_2);
-                        
-                        // Now for the actual drawing. The angle offset for each glyph relative to the previous 
-                        //      glyph has already been calculated; with that information in hand, draw those glyphs 
-                        //      overstruck and centered over one another, making sure to rotate the context after each 
-                        //      glyph so the glyphs are spread along a semicircular path.
-                        CGPoint textPosition = new CGPoint (0, Radius);
-                        context.TextPosition = textPosition;
-                        
-                        var runArray = line.GetGlyphRuns ();
-                        var runCount = runArray.Count ();
-                        
-                        var glyphOffset = 0;
-                        var runIndex = 0;
-                        
-                        for (; runIndex < runCount; runIndex++) {
-                                var run = runArray[runIndex];
-                                var runGlyphCount = run.GlyphCount;
-                                bool drawSubstitutedGlyphsManually = false;
-                                CTFont runFont = run.GetAttributes ().Font;
+			if (glyphCount == 0)
+				return;
+
+			GlyphArcInfo[] glyphArcInfo = new GlyphArcInfo[glyphCount];
+			PrepareGlyphArcInfo (line, glyphCount, glyphArcInfo);
+
+			// Move the origin from the lower left of the view nearer to its center.
+			context.SaveState ();
+			context.TranslateCTM (dirtyRect.GetMidX (), dirtyRect.GetMidY () - Radius / 2);
+
+			// Stroke the arc in red for verification.
+			context.BeginPath ();
+			context.AddArc (0, 0, Radius, (float)Math.PI, 0, true);
+			context.SetStrokeColor (1, 0, 0, 1);
+			context.StrokePath ();
+
+			// Rotate the context 90 degrees counterclockwise.
+			context.RotateCTM ((float)PI_2);
+
+			/*
+			 	Now for the actual drawing. The angle offset for each glyph relative to the previous
+				glyph has already been calculated; with that information in hand, draw those glyphs
+			 	overstruck and centered over one another, making sure to rotate the context after each
+			 	glyph so the glyphs are spread along a semicircular path.
+			*/
+			CGPoint textPosition = new CGPoint (0, Radius);
+			context.TextPosition = textPosition;
+			var runArray = line.GetGlyphRuns ();
+			var runCount = runArray.Count ();
+
+			var glyphOffset = 0;
+			var runIndex = 0;
+
+			for (; runIndex < runCount; runIndex++) {
+				var run = runArray [runIndex];
+				var runGlyphCount = run.GlyphCount;
+				bool drawSubstitutedGlyphsManually = false;
+				CTFont runFont = run.GetAttributes ().Font;
                                 
-                                // Determine if we need to draw substituted glyphs manually. Do so if the runFont is not 
-                                //      the same as the overall font.
-								var description = NSFontDescriptor.FromNameSize (runFont.FamilyName, runFont.Size);
-								NSFont rrunFont = NSFont.FromDescription (description, runFont.Size);
-                                // used for comparison
-                                if (DimsSubstitutedGlyphs && Font != rrunFont) {
-                                        drawSubstitutedGlyphsManually = true;
-                                }
+				// Determine if we need to draw substituted glyphs manually. Do so if the runFont is not
+				//      the same as the overall font.
+				var description = NSFontDescriptor.FromNameSize (runFont.FamilyName, runFont.Size);
+				NSFont rrunFont = NSFont.FromDescription (description, runFont.Size);
+				// used for comparison
+				if (DimsSubstitutedGlyphs && Font != rrunFont) {
+					drawSubstitutedGlyphsManually = true;
+				}
                                 
-                                var runGlyphIndex = 0;
-                                for (; runGlyphIndex < runGlyphCount; runGlyphIndex++) {
-                                        var glyphRange = new NSRange (runGlyphIndex, 1);
-                                        context.RotateCTM (-(glyphArcInfo[runGlyphIndex + glyphOffset].angle));
+				var runGlyphIndex = 0;
+				for (; runGlyphIndex < runGlyphCount; runGlyphIndex++) {
+					var glyphRange = new NSRange (runGlyphIndex, 1);
+					context.RotateCTM (-(glyphArcInfo [runGlyphIndex + glyphOffset].angle));
                                         
-                                        // Center this glyph by moving left by half its width.
-                                        var glyphWidth = glyphArcInfo[runGlyphIndex + glyphOffset].width;
-                                        var halfGlyphWidth = glyphWidth / 2.0;
-                                        var positionForThisGlyph = new CGPoint (textPosition.X - (float)halfGlyphWidth, textPosition.Y);
+					// Center this glyph by moving left by half its width.
+					var glyphWidth = glyphArcInfo [runGlyphIndex + glyphOffset].width;
+					var halfGlyphWidth = glyphWidth / 2.0;
+					var positionForThisGlyph = new CGPoint (textPosition.X - (float)halfGlyphWidth, textPosition.Y);
                                         
-                                        // Glyphs are positioned relative to the text position for the line, so offset text position leftwards by this glyph's 
-                                        //      width in preparation for the next glyph.
-                                        textPosition.X -= glyphWidth;
+					// Glyphs are positioned relative to the text position for the line, so offset text position leftwards by this glyph's
+					//      width in preparation for the next glyph.
+					textPosition.X -= glyphWidth;
                                         
-                                        CGAffineTransform textMatrix = run.TextMatrix;
-                                        textMatrix.x0 = positionForThisGlyph.X;
-                                        textMatrix.y0 = positionForThisGlyph.Y;
-                                        context.TextMatrix = textMatrix;
+					CGAffineTransform textMatrix = run.TextMatrix;
+					textMatrix.x0 = positionForThisGlyph.X;
+					textMatrix.y0 = positionForThisGlyph.Y;
+					context.TextMatrix = textMatrix;
                                         
-                                        if (!drawSubstitutedGlyphsManually)
-                                                run.Draw (context, glyphRange);
-                                        else {
-                                                
-                                                // We need to draw the glyphs manually in this case because we are effectively applying a graphics operation by 
-                                                //      setting the context fill color. Normally we would use kCTForegroundColorAttributeName, but this does not apply 
-                                                // as we don't know the ranges for the colors in advance, and we wanted demonstrate how to manually draw.
-                                                var cgFont = runFont.ToCGFont ();
-                                                
-                                                var glyph = run.GetGlyphs (glyphRange);
-                                                var position = run.GetPositions (glyphRange);
-                                                
-                                                context.SetFont (cgFont);
-                                                context.SetFontSize (runFont.Size);
-                                                context.SetFillColor (0.25f, 0.25f, 0.25f, 1);
-                                                context.ShowGlyphsAtPositions (glyph, position, 1);
-                                                
-                                        }
-                                        
-                                        // Draw the glyph bounds 
-                                        if (ShowsGlyphBounds) {
-                                                
-                                                var glyphBounds = run.GetImageBounds (context, glyphRange);
-                                                context.SetStrokeColor (0, 0, 1, 1);
-                                                context.StrokeRect (glyphBounds);
-                                        }
-                                        
-                                        // Draw the bounding boxes defined by the line metrics
-                                        if (ShowsLineMetrics) {
-                                                
-                                                var lineMetrics = new CGRect ();
-                                                nfloat ascent = 0;
-                                                nfloat descent = 0;
-                                                nfloat leading = 0;
-                                                
-                                                run.GetTypographicBounds (glyphRange, out ascent, out descent, out leading);
-                                                
-                                                // The glyph is centered around the y-axis
-                                                lineMetrics.Location = new CGPoint (-(float)halfGlyphWidth, positionForThisGlyph.Y - descent);
-                                                lineMetrics.Size = new CGSize (glyphWidth, ascent + descent);
-                                                context.SetStrokeColor (0, 1, 0, 1);
-                                                context.StrokeRect (lineMetrics);
-                                        }
-                                        
-                                        
-                                }
-                                
+					if (!drawSubstitutedGlyphsManually) {
+						run.Draw (context, glyphRange);
+					} else {
+						// We need to draw the glyphs manually in this case because we are effectively applying a graphics operation by
+						//      setting the context fill color. Normally we would use kCTForegroundColorAttributeName, but this does not apply
+						// as we don't know the ranges for the colors in advance, and we wanted demonstrate how to manually draw.
+						var cgFont = runFont.ToCGFont ();
+						var glyph = run.GetGlyphs (glyphRange);
+						var position = run.GetPositions (glyphRange);
+						context.SetFont (cgFont);
+						context.SetFontSize (runFont.Size);
+						context.SetFillColor (0.25f, 0.25f, 0.25f, 1);
+						context.ShowGlyphsAtPositions (glyph, position, 1);
+					}
+
+					// Draw the glyph bounds
+					if (ShowsGlyphBounds) {
+						var glyphBounds = run.GetImageBounds (context, glyphRange);
+						context.SetStrokeColor (0, 0, 1, 1);
+						context.StrokeRect (glyphBounds);
+					}
+
+					// Draw the bounding boxes defined by the line metrics
+					if (ShowsLineMetrics) {
+						var lineMetrics = new CGRect ();
+						nfloat ascent = 0;
+						nfloat descent = 0;
+						nfloat leading = 0;
+
+						run.GetTypographicBounds (glyphRange, out ascent, out descent, out leading);
+
+						// The glyph is centered around the y-axis
+						lineMetrics.Location = new CGPoint (-(float)halfGlyphWidth, positionForThisGlyph.Y - descent);
+						lineMetrics.Size = new CGSize (glyphWidth, ascent + descent);
+						context.SetStrokeColor (0, 1, 0, 1);
+						context.StrokeRect (lineMetrics);
+					}
+				}
+
 				glyphOffset += (int)runGlyphCount;
-                        }
-                        
-                        context.RestoreState ();
-                }
+			}
 
-                public NSFont Font {
-                        get { return _font; }
-                        set { _font = value; }
-                }
+			context.RestoreState ();
+		}
 
-                public string Title {
-                        get { return _string; }
-                        set { _string = value; }
-                }
+		public NSFont Font {
+			get { return _font; }
+			set { _font = value; }
+		}
 
-                public float Radius {
-                        get { return _radius; }
-                        set { _radius = value; }
-                }
+		public string Title {
+			get { return _string; }
+			set { _string = value; }
+		}
 
-                private NSAttributedString AttributedString {
-                        get {
-                                var objects = new NSObject[] { Font, (NSNumber)0 };
-								var keys = new NSObject[] { NSStringAttributeKey.Font, NSStringAttributeKey.Ligature };
-                                NSDictionary attributes = NSDictionary.FromObjectsAndKeys (objects, keys);
-                                
-                                NSAttributedString attrString = new NSAttributedString (Title, attributes);
-                                return attrString;
-                        }
-                }
+		public float Radius {
+			get { return _radius; }
+			set { _radius = value; }
+		}
 
-                public bool ShowsGlyphBounds { get; set; }
+		private NSAttributedString AttributedString {
+			get {
+				var objects = new NSObject[] { Font, (NSNumber)0 };
+				var keys = new NSObject[] { NSStringAttributeKey.Font, NSStringAttributeKey.Ligature };
+				NSDictionary attributes = NSDictionary.FromObjectsAndKeys (objects, keys);
+				NSAttributedString attrString = new NSAttributedString (Title, attributes);
+				return attrString;
+			}
+		}
 
-                public bool ShowsLineMetrics { get; set; }
+		public bool ShowsGlyphBounds { get; set; }
 
-                public bool DimsSubstitutedGlyphs { get; set; }
-                
-        }
+		public bool ShowsLineMetrics { get; set; }
+
+		public bool DimsSubstitutedGlyphs { get; set; }
+	}
 }
 
