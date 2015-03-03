@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CoreGraphics;
-using Foundation;
+using System.Text;
 using AppKit;
 using CoreAnimation;
+using CoreGraphics;
+using Foundation;
 
 namespace TimedAnimation {
 
@@ -52,9 +53,11 @@ namespace TimedAnimation {
 		
 		public override void KeyDown (NSEvent theEvent)
 		{
-			if ((NSKey)(theEvent.Characters [0]) == NSKey.RightArrow)
+			ulong code = DecodeFromUnicode (theEvent.Characters);
+
+			if (code == 63235)
 				right ();
-			else if (theEvent.Characters [0] == 'r')
+			else if (code == 114)
 				reset ();
 			else
 				base.KeyDown (theEvent);
@@ -102,6 +105,19 @@ namespace TimedAnimation {
 				CGPoint newPhoto2Origin = new CGPoint(Frame.GetMaxX () - photo2.Frame.Size.Width, photo2.Frame.Location.Y);
 				((NSView)photo2.Animator).SetFrameOrigin(newPhoto2Origin);
 			}
+		}
+
+		ulong DecodeFromUnicode (string utf8String)
+		{
+			byte[] bytes = Encoding.Unicode.GetBytes (utf8String);
+			ulong code = 0;
+			var length = bytes.Length;
+			for (int i = 0; i < length; ++i) {
+				code = code << 8;
+				code = code | bytes [length - i - 1];
+			}
+
+			return code;
 		}
 	}
 }
