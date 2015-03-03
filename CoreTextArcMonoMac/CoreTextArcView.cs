@@ -236,8 +236,8 @@ namespace CoreTextArcMonoMac
 
                 private NSAttributedString AttributedString {
                         get {
-                                NSObject[] objects = new NSObject[] { Font, (NSNumber)0 };
-                                NSObject[] keys = new NSObject[] { NSAttributedString.FontAttributeName, NSAttributedString.LigatureAttributeName };
+                                var objects = new NSObject[] { Font, (NSNumber)0 };
+								var keys = new NSObject[] { NSStringAttributeKey.Font, NSStringAttributeKey.Ligature };
                                 NSDictionary attributes = NSDictionary.FromObjectsAndKeys (objects, keys);
                                 
                                 NSAttributedString attrString = new NSAttributedString (Title, attributes);
