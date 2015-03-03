@@ -53,11 +53,9 @@ namespace TimedAnimation {
 		
 		public override void KeyDown (NSEvent theEvent)
 		{
-			ulong code = DecodeFromUnicode (theEvent.Characters);
-
-			if (code == 63235)
+			if ((NSKey)theEvent.KeyCode == NSKey.RightArrow)
 				right ();
-			else if (code == 114)
+			else if ((NSKey)theEvent.KeyCode == NSKey.R)
 				reset ();
 			else
 				base.KeyDown (theEvent);
@@ -105,19 +103,6 @@ namespace TimedAnimation {
 				CGPoint newPhoto2Origin = new CGPoint(Frame.GetMaxX () - photo2.Frame.Size.Width, photo2.Frame.Location.Y);
 				((NSView)photo2.Animator).SetFrameOrigin(newPhoto2Origin);
 			}
-		}
-
-		ulong DecodeFromUnicode (string utf8String)
-		{
-			byte[] bytes = Encoding.Unicode.GetBytes (utf8String);
-			ulong code = 0;
-			var length = bytes.Length;
-			for (int i = 0; i < length; ++i) {
-				code = code << 8;
-				code = code | bytes [length - i - 1];
-			}
-
-			return code;
 		}
 	}
 }
