@@ -19,7 +19,7 @@ namespace QTRecorder
 		QTCaptureMovieFileOutput movieFileOutput;
 		QTCaptureAudioPreviewOutput audioPreviewOutput;
 
-		QTCaptureDevice [] videoDevices, audioDevices;
+		QTCaptureDevice[] videoDevices, audioDevices;
 
 		NSTimer audioLevelTimer;
 
@@ -30,26 +30,26 @@ namespace QTRecorder
 		}
 
 		// Link any co-dependent keys
-		[Export("keyPathsForValuesAffectingHasRecordingDevice")]
+		[Export ("keyPathsForValuesAffectingHasRecordingDevice")]
 		public static NSSet keyPathsForValuesAffectingHasRecordingDevice ()
 		{
 			return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
 		}
 
-		[Export("keyPathsForValuesAffectingControllableDevice")]
+		[Export ("keyPathsForValuesAffectingControllableDevice")]
 		public static NSSet keyPathsForValuesAffectingControllableDevice ()
 		{
 			return new NSSet ("SelectedVideoDevice");
 		}
 
-		[Export("keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio")]
+		[Export ("keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio")]
 		public static NSSet keyPathsForValuesAffectingSelectedVideoDeviceProvidesAudio ()
 		{
 			return new NSSet ("SelectedVideoDevice");
 		}
 
-		[Export("keyPathsForValuesAffectingMediaFormatSummary")]
-		public static NSSet keyPathsForValuesAffectingMediaFormatSummary()
+		[Export ("keyPathsForValuesAffectingMediaFormatSummary")]
+		public static NSSet keyPathsForValuesAffectingMediaFormatSummary ()
 		{
 			return new NSSet ("SelectedVideoDevice", "SelectedAudioDevice");
 		}
@@ -103,7 +103,7 @@ namespace QTRecorder
 			AddObserver (QTCaptureDevice.AttributeWillChangeNotification, AttributeWillChange);
 			AddObserver (QTCaptureDevice.AttributeDidChangeNotification, AttributeDidChange);
 
-			audioLevelTimer = NSTimer.CreateRepeatingScheduledTimer(0.1, UpdateAudioLevels);
+			audioLevelTimer = NSTimer.CreateRepeatingScheduledTimer (0.1, UpdateAudioLevels);
 		}
 
 		#region Device selection
@@ -130,20 +130,16 @@ namespace QTRecorder
 				SelectedAudioDevice = null;
 		}
 
-		[Export("VideoDevices")]
+		[Export ("VideoDevices")]
 		public QTCaptureDevice [] VideoDevices {
 			get {
 				if (videoDevices == null)
 					RefreshDevices ();
 				return videoDevices;
 			}
-			// TODO: Remove setter
-			set {
-				videoDevices = value;
-			}
 		}
 
-		[Export("AudioDevices")]
+		[Export ("AudioDevices")]
 		public QTCaptureDevice [] AudioDevices {
 			get {
 				if (audioDevices == null)
@@ -152,7 +148,7 @@ namespace QTRecorder
 			}
 		}
 
-		[Export("SelectedVideoDevice")]
+		[Export ("SelectedVideoDevice")]
 		public QTCaptureDevice SelectedVideoDevice { 
 			get {
 				return videoDeviceInput != null ? videoDeviceInput.Device : null;
@@ -169,15 +165,17 @@ namespace QTRecorder
 				if (value != null) {
 					NSError err;
 					if (!value.Open (out err)) {
-						NSAlert.WithError (err).BeginSheet (Window, ()=>{});
+						NSAlert.WithError (err).BeginSheet (Window, () => {
+						});
 						return;
 					}
 
 					// Create a device input for the device and add it to the session
 					videoDeviceInput = new QTCaptureDeviceInput (value);
 
-					if (!session.AddInput (videoDeviceInput, out err)){
-						NSAlert.WithError (err).BeginSheet (Window, ()=>{});
+					if (!session.AddInput (videoDeviceInput, out err)) {
+						NSAlert.WithError (err).BeginSheet (Window, () => {
+						});
 						videoDeviceInput.Dispose ();
 						videoDeviceInput = null;
 						value.Close ();
@@ -191,13 +189,13 @@ namespace QTRecorder
 			}
 		}
 
-		[Export("SelectedAudioDevice")]
+		[Export ("SelectedAudioDevice")]
 		public QTCaptureDevice SelectedAudioDevice { 
 			get {
 				return audioDeviceInput != null ? audioDeviceInput.Device : null;
 			}
 			set {
-				if (audioDeviceInput != null){
+				if (audioDeviceInput != null) {
 					session.RemoveInput (audioDeviceInput);
 					audioDeviceInput.Device.Close ();
 					audioDeviceInput.Dispose ();
@@ -211,7 +209,8 @@ namespace QTRecorder
 
 				// try to open
 				if (!value.Open (out err)) {
-					NSAlert.WithError (err).BeginSheet (Window, ()=>{});
+					NSAlert.WithError (err).BeginSheet (Window, () => {
+					});
 					return;
 				}
 
@@ -220,7 +219,8 @@ namespace QTRecorder
 				if (session.AddInput (audioDeviceInput, out err))
 					return;
 
-				NSAlert.WithError (err).BeginSheet (Window, ()=>{});
+				NSAlert.WithError (err).BeginSheet (Window, () => {
+				});
 				audioDeviceInput.Dispose ();
 				audioDeviceInput = null;
 				value.Close ();
@@ -241,21 +241,21 @@ namespace QTRecorder
 
 		#region Capture and recording
 
-		[Export("AudioPreviewOutput")]
+		[Export ("AudioPreviewOutput")]
 		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
 			get {
 				return audioPreviewOutput;
 			}
 		}
 
-		[Export("HasRecordingDevice")]
+		[Export ("HasRecordingDevice")]
 		public bool HasRecordingDevice {
 			get {
 				return videoDeviceInput != null || audioDeviceInput != null;
 			}
 		}
 
-		[Export("Recording")]
+		[Export ("Recording")]
 		public bool Recording {
 			get {
 				return movieFileOutput != null && movieFileOutput.OutputFileUrl != null;
@@ -306,7 +306,7 @@ namespace QTRecorder
 			// TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=27691
 			IntPtr library = Dlfcn.dlopen ("/System/Library/Frameworks/QTKit.framework/QTKit", 0);
 			var key = Dlfcn.GetStringConstant (library, "QTCaptureConnectionAttributeWillChangeNotification");
-			if (e.Reason != null && !((NSNumber)e.Reason.UserInfo[key]).BoolValue) {
+			if (e.Reason != null && !((NSNumber)e.Reason.UserInfo [key]).BoolValue) {
 				NSAlert.WithError (e.Reason).BeginSheet (Window, () => {
 				});
 				return;
@@ -318,10 +318,10 @@ namespace QTRecorder
 			save.BeginSheet (WindowForSheet, code => {
 				NSError err2;
 				if (code == (int)NSPanelButtonType.Ok) {
-					if(NSFileManager.DefaultManager.Move (e.OutputFileURL, save.Url, out err2))
-						NSWorkspace.SharedWorkspace.OpenUrl(save.Url);
+					if (NSFileManager.DefaultManager.Move (e.OutputFileURL, save.Url, out err2))
+						NSWorkspace.SharedWorkspace.OpenUrl (save.Url);
 					else
-						save.OrderOut(this);
+						save.OrderOut (this);
 				} else {
 					NSFileManager.DefaultManager.Remove (e.OutputFileURL.Path, out err2);
 				}
@@ -333,7 +333,7 @@ namespace QTRecorder
 		#region Video preview filter
 
 		// Not available until we bind CIFilter
-		readonly string [] filterNames = new string [] {
+		readonly string[] filterNames = new string [] {
 			"CIKaleidoscope", "CIGaussianBlur",	"CIZoomBlur",
 			"CIColorInvert", "CISepiaTone", "CIBumpDistortion",
 			"CICircularWrap", "CIHoleDistortion", "CITorusLensDistortion",
@@ -346,9 +346,9 @@ namespace QTRecorder
 		static NSString localizedFilterKey = new NSString ("localizedName");
 
 		// Creates descriptions that can be accessed with Key/Values
-		NSDictionary [] descriptions;
+		NSDictionary[] descriptions;
 
-		[Export("VideoPreviewFilterDescriptions")]
+		[Export ("VideoPreviewFilterDescriptions")]
 		NSDictionary [] VideoPreviewFilterDescriptions {
 			get {
 				descriptions = descriptions ?? filterNames.Select (name => new NSDictionary (filterNameKey, name, localizedFilterKey, CIFilter.FilterLocalizedName (name)))
@@ -359,7 +359,7 @@ namespace QTRecorder
 
 		NSDictionary description;
 
-		[Export("VideoPreviewFilterDescription")]
+		[Export ("VideoPreviewFilterDescription")]
 		NSDictionary VideoPreviewFilterDescription {
 			get {
 				return description;
@@ -390,7 +390,7 @@ namespace QTRecorder
 
 		#region Media format summary
 
-		[Export("MediaFormatSummary")]
+		[Export ("MediaFormatSummary")]
 		public string MediaFormatSummary {
 			get {
 				var sb = new StringBuilder ();
@@ -429,7 +429,7 @@ namespace QTRecorder
 
 		#region UI updating
 
-		void UpdateAudioLevels(NSTimer timer)
+		void UpdateAudioLevels (NSTimer timer)
 		{
 			// Get the mean audio level from the movie file output's audio connections
 			float totalDecibels = 0f;
@@ -471,7 +471,7 @@ namespace QTRecorder
 
 		#region Device controls
 
-		[Export("ControllableDevice")]
+		[Export ("ControllableDevice")]
 		public QTCaptureDevice ControllableDevice {
 			get {
 				if (SelectedVideoDevice == null)
@@ -487,7 +487,7 @@ namespace QTRecorder
 			}
 		}
 
-		[Export("DevicePlaying")]
+		[Export ("DevicePlaying")]
 		public bool DevicePlaying {
 			get {
 				var device = ControllableDevice;
@@ -524,7 +524,7 @@ namespace QTRecorder
 			};
 		}
 
-		[Export("DeviceRewinding")]
+		[Export ("DeviceRewinding")]
 		public bool DeviceRewinding {
 			get {
 				return GetDeviceSpeed (x => x < QTCaptureDeviceControlsSpeed.Stopped);
@@ -534,7 +534,7 @@ namespace QTRecorder
 			}
 		}
 
-		[Export("DeviceFastForwarding")]
+		[Export ("DeviceFastForwarding")]
 		public bool DeviceFastForwarding {
 			get {
 				return GetDeviceSpeed (x => x > QTCaptureDeviceControlsSpeed.Stopped);
@@ -602,6 +602,7 @@ namespace QTRecorder
 		#endregion
 
 		List<NSObject> notifications = new List<NSObject> ();
+
 		void AddObserver (NSString key, Action<NSNotification> notification)
 		{
 			notifications.Add (NSNotificationCenter.DefaultCenter.AddObserver (key, notification));
