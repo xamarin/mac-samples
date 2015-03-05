@@ -241,6 +241,13 @@ namespace QTRecorder
 
 		#region Capture and recording
 
+		[Export("AudioPreviewOutput")]
+		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
+			get {
+				return audioPreviewOutput;
+			}
+		}
+
 		[Export("HasRecordingDevice")]
 		public bool HasRecordingDevice {
 			get {
@@ -608,44 +615,11 @@ namespace QTRecorder
 
 		protected override void Dispose (bool disposing)
 		{
-			if (disposing){
+			if (disposing) {
 				NSNotificationCenter.DefaultCenter.RemoveObservers (notifications);
 				notifications = null;
 			}
 			base.Dispose (disposing);
-		}
-
-		// 
-		// Save support:
-		//    Override one of GetAsData, GetAsFileWrapper, or WriteToUrl.
-		//
-
-		// This method should store the contents of the document using the given typeName
-		// on the return NSData value.
-		public override NSData GetAsData (string documentType, out NSError outError)
-		{
-			outError = NSError.FromDomain (NSError.OsStatusErrorDomain, -4);
-			return null;
-		}
-
-		// 
-		// Load support:
-		//    Override one of ReadFromData, ReadFromFileWrapper or ReadFromUrl
-		//
-		public override bool ReadFromData (NSData data, string typeName, out NSError outError)
-		{
-			outError = NSError.FromDomain (NSError.OsStatusErrorDomain, -4);
-			return false;
-		}
-
-		//
-		// Binding support
-		//
-		[Export("AudioPreviewOutput")]
-		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
-			get {
-				return audioPreviewOutput;
-			}
 		}
 	}
 }
