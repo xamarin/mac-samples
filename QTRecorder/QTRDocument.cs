@@ -8,6 +8,7 @@ using QTKit;
 using System.IO;
 using CoreImage;
 using System.Text;
+using ObjCRuntime;
 
 namespace QTRecorder
 {
@@ -62,17 +63,7 @@ namespace QTRecorder
 
 			// Attach preview to session
 			captureView.CaptureSession = session;
-			captureView.WillDisplayImage = (view, image) => {
-				if (videoPreviewFilterDescription == null)
-					return image;
-				var selectedFilter = (NSString) videoPreviewFilterDescription [filterNameKey];
-
-				var filter = CIFilter.FromName (selectedFilter);
-				filter.SetDefaults ();
-				filter.SetValueForKey (image, CIFilterInputKey.Image);
-
-				return (CIImage) filter.ValueForKey (CIFilterOutputKey.Image);
-			};
+			captureView.WillDisplayImage = WillDisplayImage;
 
 			// Attach outputs to session
 			movieFileOutput = new QTCaptureMovieFileOutput ();
@@ -248,42 +239,38 @@ namespace QTRecorder
 
 		#endregion
 
+		#region Capture and recording
+
+		[Export("HasRecordingDevice")]
+		public bool HasRecordingDevice {
+			get {
+				return videoDeviceInput != null || audioDeviceInput != null;
+			}
+		}
+
+		[Export("Recording")]
+		public bool Recording {
+			get {
+				return movieFileOutput != null && movieFileOutput.OutputFileUrl != null;
+			}
+			set {
+				if (value == Recording)
+					return;
+
+				var tempName = string.Format ("{0}.mov", Path.GetTempFileName ());
+				NSUrl url = value ? NSUrl.FromFilename (tempName) : null;
+				movieFileOutput.RecordToOutputFile (url);
+			}
+		}
+
 		void WillStartRecording (object sender, QTCaptureFileUrlEventArgs e)
 		{
 			Console.WriteLine ("Will start recording");
 		}
 
-		void DidFinishRecording (object sender, QTCaptureFileErrorEventArgs e)
-		{
-			Console.WriteLine ("Recorded {0} bytes duration {1}", movieFileOutput.RecordedFileSize, movieFileOutput.RecordedDuration);
-			DidChangeValue ("Recording");
-
-			if (e.Reason != null) {
-				NSAlert.WithError (e.Reason).BeginSheet (Window, () => {
-				});
-				return;
-			}
-
-			var save = NSSavePanel.SavePanel;
-			save.AllowedFileTypes = new string[] { "mov" };
-			save.CanSelectHiddenExtension = true;
-			save.Begin (code => {
-				NSError err2;
-				if (code == (int)NSPanelButtonType.Ok)
-					NSFileManager.DefaultManager.Move (e.OutputFileURL, save.Url, out err2);
-				else
-					NSFileManager.DefaultManager.Remove (e.OutputFileURL.Path, out err2);
-			});
-		}
-
 		void DidStartRecording (object sender, QTCaptureFileUrlEventArgs e)
 		{
 			Console.WriteLine ("Started Recording");
-		}
-
-		void MustChangeOutputFile (object sender, QTCaptureFileErrorEventArgs e)
-		{
-			Console.WriteLine ("Must change file due to error");
 		}
 
 		bool ShouldChangeOutputFile (QTCaptureFileOutput captureOutput, NSUrl outputFileURL, QTCaptureConnection[] connections, NSError reason)
@@ -293,11 +280,188 @@ namespace QTRecorder
 			return false;
 		}
 
+		void MustChangeOutputFile (object sender, QTCaptureFileErrorEventArgs e)
+		{
+			Console.WriteLine ("Must change file due to error");
+		}
+
 		void WillFinishRecording (object sender, QTCaptureFileErrorEventArgs e)
 		{
-			Console.WriteLine ("Will finish recording");
+			Console.WriteLine ("Will finish recording to {0} due to error {1}", e.OutputFileURL.Description, e.Reason);
 			InvokeOnMainThread (() => WillChangeValue ("Recording"));
 		}
+
+		void DidFinishRecording (object sender, QTCaptureFileErrorEventArgs e)
+		{
+			Console.WriteLine ("Recorded {0} bytes duration {1}", movieFileOutput.RecordedFileSize, movieFileOutput.RecordedDuration);
+			DidChangeValue ("Recording");
+
+			// TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=27691
+			IntPtr library = Dlfcn.dlopen ("/System/Library/Frameworks/QTKit.framework/QTKit", 0);
+			var key = Dlfcn.GetStringConstant (library, "QTCaptureConnectionAttributeWillChangeNotification");
+			if (e.Reason != null && !((NSNumber)e.Reason.UserInfo[key]).BoolValue) {
+				NSAlert.WithError (e.Reason).BeginSheet (Window, () => {
+				});
+				return;
+			}
+
+			var save = NSSavePanel.SavePanel;
+			save.AllowedFileTypes = new string[] { "mov" };
+			save.CanSelectHiddenExtension = true;
+			save.BeginSheet (WindowForSheet, code => {
+				NSError err2;
+				if (code == (int)NSPanelButtonType.Ok) {
+					if(NSFileManager.DefaultManager.Move (e.OutputFileURL, save.Url, out err2))
+						NSWorkspace.SharedWorkspace.OpenUrl(save.Url);
+					else
+						save.OrderOut(this);
+				} else {
+					NSFileManager.DefaultManager.Remove (e.OutputFileURL.Path, out err2);
+				}
+			});
+		}
+
+		#endregion
+
+		#region Video preview filter
+
+		// Not available until we bind CIFilter
+		readonly string [] filterNames = new string [] {
+			"CIKaleidoscope", "CIGaussianBlur",	"CIZoomBlur",
+			"CIColorInvert", "CISepiaTone", "CIBumpDistortion",
+			"CICircularWrap", "CIHoleDistortion", "CITorusLensDistortion",
+			"CITwirlDistortion", "CIVortexDistortion", "CICMYKHalftone",
+			"CIColorPosterize", "CIDotScreen", "CIHatchedScreen",
+			"CIBloom", "CICrystallize", "CIEdges",
+			"CIEdgeWork", "CIGloom", "CIPixellate",
+		};
+		static NSString filterNameKey = new NSString ("filterName");
+		static NSString localizedFilterKey = new NSString ("localizedName");
+
+		// Creates descriptions that can be accessed with Key/Values
+		NSDictionary [] descriptions;
+
+		[Export("VideoPreviewFilterDescriptions")]
+		NSDictionary [] VideoPreviewFilterDescriptions {
+			get {
+				descriptions = descriptions ?? filterNames.Select (name => new NSDictionary (filterNameKey, name, localizedFilterKey, CIFilter.FilterLocalizedName (name)))
+						.ToArray ();
+				return descriptions;
+			}
+		}
+
+		NSDictionary description;
+
+		[Export("VideoPreviewFilterDescription")]
+		NSDictionary VideoPreviewFilterDescription {
+			get {
+				return description;
+			}
+			set {
+				if (value == description)
+					return;
+				description = value;
+				captureView.NeedsDisplay = true;
+			}
+		}
+
+		CIImage WillDisplayImage (QTCaptureView view, CIImage image)
+		{
+			if (description == null)
+				return image;
+			
+			var selectedFilter = (NSString)description [filterNameKey];
+
+			var filter = CIFilter.FromName (selectedFilter);
+			filter.SetDefaults ();
+			filter.Image = image;
+
+			return filter.OutputImage;
+		}
+
+		#endregion
+
+		#region Media format summary
+
+		[Export("MediaFormatSummary")]
+		public string MediaFormatSummary {
+			get {
+				var sb = new StringBuilder ();
+
+				if (videoDeviceInput != null) {
+					foreach (var c in videoDeviceInput.Connections)
+						sb.AppendLine (c.FormatDescription.LocalizedFormatSummary);
+				}
+
+				if (audioDeviceInput != null) {
+					foreach (var c in audioDeviceInput.Connections)
+						sb.AppendLine (c.FormatDescription.LocalizedFormatSummary);
+				}
+
+				return sb.ToString ();
+			}
+		}
+
+		void FormatWillChange (NSNotification n)
+		{
+			var owner = ((QTCaptureConnection)n.Object).Owner;
+			Console.WriteLine (owner);
+			if (owner == videoDeviceInput || owner == audioDeviceInput)
+				WillChangeValue ("MediaFormatSummary");
+		}
+
+		void FormatDidChange (NSNotification n)
+		{
+			var owner = ((QTCaptureConnection)n.Object).Owner;
+			Console.WriteLine (owner);
+			if (owner == videoDeviceInput || owner == audioDeviceInput)
+				DidChangeValue ("MediaFormatSummary");
+		}
+
+		#endregion
+
+		#region UI updating
+
+		void UpdateAudioLevels(NSTimer timer)
+		{
+			// Get the mean audio level from the movie file output's audio connections
+			float totalDecibels = 0f;
+
+			QTCaptureConnection connection = null;
+			int i = 0;
+			int numberOfPowerLevels = 0;	// Keep track of the total number of power levels in order to take the mean
+
+			// TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=27702
+			IntPtr library = Dlfcn.dlopen ("/System/Library/Frameworks/QTKit.framework/QTKit", 0);
+			NSString soundType = Dlfcn.GetStringConstant (library, "QTMediaTypeSound");
+
+			var connections = movieFileOutput.Connections;
+			for (i = 0; i < connections.Length; i++) {
+				connection = connections [i];
+
+				if (connection.MediaType == soundType) {
+					// TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=27708 Use typed property
+					NSArray powerLevelsNative = (NSArray)connection.GetAttribute (QTCaptureConnection.AudioAveragePowerLevelsAttribute);
+					NSNumber[] powerLevels = NSArray.FromArray<NSNumber> (powerLevelsNative);
+
+					int j = 0;
+					int powerLevelCount = powerLevels.Length;
+
+					for (j = 0; j < powerLevelCount; j++) {
+						totalDecibels += powerLevels [j].FloatValue;
+						numberOfPowerLevels++;
+					}
+				}
+			}
+
+			if (numberOfPowerLevels > 0)
+				audioLevelIndicator.FloatValue = 20 * (float)Math.Pow (10, 0.05 * (totalDecibels / numberOfPowerLevels));
+			else
+				audioLevelIndicator.FloatValue = 0;
+		}
+
+		#endregion
+
 
 		List<NSObject> notifications = new List<NSObject> ();
 		void AddObserver (NSString key, Action<NSNotification> notification)
@@ -343,45 +507,6 @@ namespace QTRecorder
 			return false;
 		}
 
-		// Not available until we bind CIFilter
-		string [] filterNames = new string [] {
-			"CIKaleidoscope", "CIGaussianBlur",	"CIZoomBlur",
-			"CIColorInvert", "CISepiaTone", "CIBumpDistortion",
-			"CICircularWrap", "CIHoleDistortion", "CITorusLensDistortion",
-			"CITwirlDistortion", "CIVortexDistortion", "CICMYKHalftone",
-			"CIColorPosterize", "CIDotScreen", "CIHatchedScreen",
-			"CIBloom", "CICrystallize", "CIEdges",
-			"CIEdgeWork", "CIGloom", "CIPixellate",
-		};
-		static NSString filterNameKey = new NSString ("filterName");
-		static NSString localizedFilterKey = new NSString ("localizedName");
-
-		// Creates descriptions that can be accessed with Key/Values
-		[Export("VideoPreviewFilterDescriptions")]
-		NSDictionary [] VideoPreviewFilterDescriptions {
-			get {
-				return (from name in filterNames 
-					select NSDictionary.FromObjectsAndKeys (
-						new NSObject [] { new NSString (name), new NSString (CIFilter.FilterLocalizedName (name)) },
-						new NSObject [] { filterNameKey, localizedFilterKey })).ToArray ();
-			}
-		}
-
-		NSDictionary videoPreviewFilterDescription;
-
-		[Export("VideoPreviewFilterDescription")]
-		NSDictionary VideoPreviewFilterDescription {
-			get {
-				return videoPreviewFilterDescription;
-			}
-			set {
-				if (value == videoPreviewFilterDescription)
-					return;
-				videoPreviewFilterDescription = value;
-				captureView.NeedsDisplay = true;
-			}
-		}
-
 		//
 		// Binding support
 		//
@@ -389,46 +514,6 @@ namespace QTRecorder
 		public QTCaptureAudioPreviewOutput AudioPreviewOutput {
 			get {
 				return audioPreviewOutput;
-			}
-		}
-
-		[Export("MediaFormatSummary")]
-		public string MediaFormatSummary {
-			get {
-				var sb = new StringBuilder ();
-				
-				if (videoDeviceInput != null)
-					foreach (var c in videoDeviceInput.Connections)
-						sb.AppendFormat ("{0}\n", c.FormatDescription.LocalizedFormatSummary);
-				if (audioDeviceInput != null)
-					foreach (var c in audioDeviceInput.Connections)
-						sb.AppendFormat ("{0}\n", c.FormatDescription.LocalizedFormatSummary);
-
-				return sb.ToString ();
-			}
-		}
-
-		[Export("HasRecordingDevice")]
-		public bool HasRecordingDevice {
-			get {
-				return videoDeviceInput != null || audioDeviceInput != null;
-			}
-		}
-
-		[Export("Recording")]
-		public bool Recording {
-			get {
-				return movieFileOutput != null && movieFileOutput.OutputFileUrl != null;
-			}
-			set {
-				if (value == Recording)
-					return;
-				if (value){
-					var tempName = string.Format ("{0}.mov", Path.GetTempFileName ());
-					movieFileOutput.RecordToOutputFile (NSUrl.FromFilename (tempName));
-				} else {
-					movieFileOutput.RecordToOutputFile (null);
-				}
 			}
 		}
 
@@ -536,59 +621,6 @@ namespace QTRecorder
 		void AttributeDidChange (NSNotification n)
 		{
 		}
-
-		void FormatWillChange (NSNotification n)
-		{
-			var owner = ((QTCaptureConnection)n.Object).Owner;
-			Console.WriteLine (owner);
-			if (owner == videoDeviceInput || owner == audioDeviceInput)
-				WillChangeValue ("MediaFormatSummary");
-		}
-
-		void FormatDidChange (NSNotification n)
-		{
-			var owner = ((QTCaptureConnection)n.Object).Owner;
-			Console.WriteLine (owner);
-			if (owner == videoDeviceInput || owner == audioDeviceInput)
-				DidChangeValue ("MediaFormatSummary");
-		}
-
-		#region UI updating
-
-		void UpdateAudioLevels(NSTimer timer)
-		{
-			throw new NotImplementedException ();
-			// Get the mean audio level from the movie file output's audio connections
-
-//			float totalDecibels = 0.0;
-//
-//			QTCaptureConnection *connection = nil;
-//			NSUInteger i = 0;
-//			NSUInteger numberOfPowerLevels = 0;	// Keep track of the total number of power levels in order to take the mean
-//
-//			for (i = 0; i < [[movieFileOutput connections] count]; i++) {
-//				connection = [[movieFileOutput connections] objectAtIndex:i];
-//
-//				if ([[connection mediaType] isEqualToString:QTMediaTypeSound]) {
-//					NSArray *powerLevels = [connection attributeForKey:QTCaptureConnectionAudioAveragePowerLevelsAttribute];
-//					NSUInteger j, powerLevelCount = [powerLevels count];
-//
-//					for (j = 0; j < powerLevelCount; j++) {
-//						NSNumber *decibels = [powerLevels objectAtIndex:j];
-//						totalDecibels += [decibels floatValue];
-//						numberOfPowerLevels++;
-//					}
-//				}
-//			}
-//
-//			if (numberOfPowerLevels > 0) {
-//				[audioLevelMeter setFloatValue:(pow(10., 0.05 * (totalDecibels / (float)numberOfPowerLevels)) * 20.0)];
-//			} else {
-//				[audioLevelMeter setFloatValue:0];
-//			}
-		}
-
-		#endregion
 	}
 }
 
