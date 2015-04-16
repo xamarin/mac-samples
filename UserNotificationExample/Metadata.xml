@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>User notification example for Mac.</Brief>
 </SampleMetadata>

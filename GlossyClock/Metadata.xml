@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Graphics</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates the use of the `CoreAnimation` Layers API and KVO bindings.</Brief>
 </SampleMetadata>

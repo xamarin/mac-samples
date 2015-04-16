@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Media</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to capture live video from the system camera, and recording individual frames to create a new movie file that can then be played back.</Brief>
 </SampleMetadata>

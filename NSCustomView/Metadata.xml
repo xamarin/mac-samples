@@ -3,5 +3,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginner</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates the creation of two custom `NSView`s, which each paint themself via different mechanisms.</Brief>
 </SampleMetadata>

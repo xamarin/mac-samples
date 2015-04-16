@@ -3,5 +3,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Platform Features, Device Features</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>This Mac sample is quite useful for authoring and viewing __Markdown__ files.</Brief>
 </SampleMetadata>

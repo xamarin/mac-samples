@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>Getting Started, User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to build your first Xamarin.Mac application.</Brief>
 </SampleMetadata>

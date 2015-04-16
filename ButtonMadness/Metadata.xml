@@ -3,5 +3,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>This is a button sample for mac.</Brief>
 </SampleMetadata>

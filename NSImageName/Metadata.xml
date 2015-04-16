@@ -3,5 +3,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginner</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>A simple sample application demoing the `NSImageName` enum for `NSImage.ImageNamed`.</Brief>
 </SampleMetadata>

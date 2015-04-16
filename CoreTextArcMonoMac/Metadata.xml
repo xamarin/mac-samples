@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Graphics, User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use `CoreText` to draw text along an arc in a Xamarin.Mac application.</Brief>
 </SampleMetadata>

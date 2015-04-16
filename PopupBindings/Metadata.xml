@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Binding + Interop</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use the bindings to manage the contents and selection of the `NSPopupButton` class.</Brief>
 </SampleMetadata>

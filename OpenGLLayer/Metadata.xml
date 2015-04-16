@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Graphics</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>OpenGLLayer sample for Mac.</Brief>
 </SampleMetadata>

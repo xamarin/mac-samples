@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Device Features, Graphics</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates discovering, connecting to, and retrieving heart rate data from Bluetooth LE heart rate monitors.</Brief>
 </SampleMetadata>

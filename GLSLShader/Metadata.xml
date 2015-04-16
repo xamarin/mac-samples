@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Graphics</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Simple GLSL shader harness program that does nothing more than draw a line on the screen.</Brief>
 </SampleMetadata>

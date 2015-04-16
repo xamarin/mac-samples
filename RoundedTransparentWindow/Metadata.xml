@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to create windows with custom shapes, no title bar, and transparent content.</Brief>
 </SampleMetadata>

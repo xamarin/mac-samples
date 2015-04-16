@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>Platform Features</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>`NSAlert` sample for mac.</Brief>
 </SampleMetadata>

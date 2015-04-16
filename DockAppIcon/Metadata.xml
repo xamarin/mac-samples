@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates the use of the `NSDockTile`.</Brief>
 </SampleMetadata>

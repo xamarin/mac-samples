@@ -3,5 +3,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Cloud</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>CFNetwork Xamarin.Mac sample.</Brief>
 </SampleMetadata>

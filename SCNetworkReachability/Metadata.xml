@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Web, Device Features</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>SCNetworkReachability sample for Mac.</Brief>
 </SampleMetadata>

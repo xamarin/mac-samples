@@ -6,4 +6,5 @@
 	<Tags>Yosemite, User Interface</Tags>
 	<Gallery>true</Gallery>
 	<MinimumLicenseRequirement>Starter</MinimumLicenseRequirement>
+	<Brief>Demonstrates the use of `NSPageController`.</Brief>
 </SampleMetadata>

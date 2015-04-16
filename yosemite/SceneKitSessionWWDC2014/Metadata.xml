@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
   <ID>3b3889a9-ffa2-4bae-9c68-a340cfa294ac</ID>
-  <Brief>This application render a 3D environment and presents a series of slides with Scene Kit objects.</Brief>
+  <Brief>Demonstrates rendering a 3D environment and presenting a series of slides with Scene Kit objects.</Brief>
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Games, Graphics, SceneKit, Yosemite</Tags>

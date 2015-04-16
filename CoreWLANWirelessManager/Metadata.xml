@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Cloud</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>An example application which utilizes the `CoreWLAN` Framework.</Brief>
 </SampleMetadata>

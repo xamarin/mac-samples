@@ -4,5 +4,6 @@
   <IsFullApplication>true</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>Media, Graphics</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates IKImageBrowserView, IKImageBrowserDataSource, IKImageBrowserItem, and drag and drop support.</Brief>
 </SampleMetadata>
