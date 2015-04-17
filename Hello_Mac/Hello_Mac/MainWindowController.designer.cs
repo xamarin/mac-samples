@@ -9,21 +9,12 @@ using System.CodeDom.Compiler;
 
 namespace Hello_Mac
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("MainWindowController")]
+	partial class MainWindowController
 	{
-		[Outlet]
-		AppKit.NSTextField ClickedLabel { get; set; }
-
-		[Action ("ClickedButton:")]
-		partial void ClickedButton (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (ClickedLabel != null) {
-				ClickedLabel.Dispose ();
-				ClickedLabel = null;
-			}
 		}
 	}
 }

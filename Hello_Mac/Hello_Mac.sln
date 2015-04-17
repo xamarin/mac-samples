@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMac", "Hello_Mac\HelloMac.csproj", "{F1965778-15D8-4D80-8247-BF6E11802641}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello_Mac", "Hello_Mac\Hello_Mac.csproj", "{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,14 +10,11 @@ Global
 		AppStore|x86 = AppStore|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F1965778-15D8-4D80-8247-BF6E11802641}.AppStore|x86.ActiveCfg = AppStore|x86
-		{F1965778-15D8-4D80-8247-BF6E11802641}.AppStore|x86.Build.0 = AppStore|x86
-		{F1965778-15D8-4D80-8247-BF6E11802641}.Debug|x86.ActiveCfg = Debug|x86
-		{F1965778-15D8-4D80-8247-BF6E11802641}.Debug|x86.Build.0 = Debug|x86
-		{F1965778-15D8-4D80-8247-BF6E11802641}.Release|x86.ActiveCfg = Release|x86
-		{F1965778-15D8-4D80-8247-BF6E11802641}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Hello_Mac\HelloMac.csproj
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.AppStore|x86.Build.0 = Debug|Any CPU
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Debug|x86.Build.0 = Debug|Any CPU
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Release|x86.ActiveCfg = Release|Any CPU
+		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

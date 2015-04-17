@@ -1,15 +1,14 @@
-using System;
-using CoreGraphics;
+﻿using System;
+
 using Foundation;
 using AppKit;
-using ObjCRuntime;
 
-namespace Test_Hello_Mac
+namespace Hello_Mac
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{
 		MainWindowController mainWindowController;
-		
+
 		public AppDelegate ()
 		{
 		}

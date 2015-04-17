@@ -1,45 +1,43 @@
+﻿using System;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Foundation;
 using AppKit;
 
-namespace Test_Hello_Mac
+namespace Hello_Mac
 {
-	public partial class MainWindow : AppKit.NSWindow
+	public partial class MainWindow : NSWindow
 	{
-		protected int numberOfTimesClicked = 0;
+		#region Private Variables
+		private int numberOfTimesClicked = 0;
+		#endregion
 
 		#region Constructors
-		
-		// Called when created from unmanaged code
 		public MainWindow (IntPtr handle) : base (handle)
 		{
-			Initialize ();
 		}
-		
-		// Called when created directly from a XIB file
+
 		[Export ("initWithCoder:")]
 		public MainWindow (NSCoder coder) : base (coder)
 		{
-			Initialize ();
 		}
-		
-		// Shared initialization code
-		void Initialize ()
-		{
-		}
+		#endregion
 
+		#region Private Methods
+		partial void ClickedButton (Foundation.NSObject sender) {
+
+			// Update counter and label
+			ClickedLabel.StringValue = string.Format("The button has been clicked {0} time{1}.",++numberOfTimesClicked, (numberOfTimesClicked < 2) ? "" : "s");
+		}
+		#endregion
+
+		#region Override Methods
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
-			ClickMeButton.Activated += (object sender, EventArgs e) => {
-				numberOfTimesClicked++;
-				OutputLabel.StringValue = "Clicked " + numberOfTimesClicked + " times.";
-			};
+
+			// Set the initial value for the label
+			ClickedLabel.StringValue = "Button has not been clicked yet.";
 		}
 		#endregion
 	}
 }
-

@@ -1,12 +1,10 @@
-using System;
-using CoreGraphics;
-using Foundation;
-using AppKit;
-using ObjCRuntime;
+﻿using System;
 
-namespace Test_Hello_Mac
+using AppKit;
+
+namespace Hello_Mac
 {
-	class MainClass
+	static class MainClass
 	{
 		static void Main (string[] args)
 		{
@@ -14,5 +12,4 @@ namespace Test_Hello_Mac
 			NSApplication.Main (args);
 		}
 	}
-}	
-
+}

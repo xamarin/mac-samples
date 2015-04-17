@@ -1,10 +1,7 @@
-
-namespace Test_Hello_Mac
+﻿namespace Hello_Mac
 {
-	// Should subclass MonoMac.AppKit.NSResponder
-	[Foundation.Register("AppDelegate")]
+	[global::Foundation.Register ("AppDelegate")]
 	public partial class AppDelegate
 	{
 	}
 }
-
