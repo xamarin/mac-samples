@@ -77,7 +77,7 @@ namespace NeHeLesson13
 
 			int curListIndex;
 			NSColor blackColor;
-			NSMutableDictionary attribDict;
+			NSStringAttributes attribDict;
 			int dListNum;
 			NSString currentChar;
 			char currentUnichar;
@@ -105,10 +105,11 @@ namespace NeHeLesson13
 
 			blackColor = NSColor.Black;
 
-			attribDict = new NSMutableDictionary ();
-			attribDict.SetValueForKey (font, NSAttributedString.FontAttributeName);
-			attribDict.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
-			attribDict.SetValueForKey (blackColor, NSAttributedString.BackgroundColorAttributeName);
+			attribDict = new NSStringAttributes {
+				Font = font,
+				ForegroundColor = NSColor.White,
+				BackgroundColor = blackColor
+			};
 
 			theImage = new NSImage (new CGSize (0,0));
 			retval = true;
@@ -127,7 +128,7 @@ namespace NeHeLesson13
 					NSGraphicsContext.CurrentContext.ShouldAntialias = false;
 					blackColor.Set ();
 					NSBezierPath.FillRect (charRect);
-					currentChar.DrawString (charRect, attribDict);
+					currentChar.DrawString (charRect, attribDict.Dictionary);
 					theImage.UnlockFocus ();
 
 					if (!MakeDisplayList(dListNum, theImage)) {
