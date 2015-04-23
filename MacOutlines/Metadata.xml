@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>4e0abcdb-b83b-44ea-a58f-1945ed1628f8</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Outlines & Source Lists in a Xamarin.Mac application.</Brief>
+</SampleMetadata>
