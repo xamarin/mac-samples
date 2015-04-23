@@ -5,5 +5,5 @@
   <Level>Advanced</Level>
   <Tags>Graphics</Tags>
   <Gallery>true</Gallery>
-  <Brief>Demonstrates use of the `CoreAnimation` and `QuartzComposition` `QCCompositionLayer`.</Brief>
+  <Brief>Demonstrates use of the `CoreAnimation` and `QuartzComposition`.</Brief>
 </SampleMetadata>

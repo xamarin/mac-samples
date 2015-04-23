@@ -6,5 +6,5 @@
     <Tags>Backgrounding, Data, Yosemite</Tags>
     <LicenseRequirement>Indie</LicenseRequirement>
     <Gallery>true</Gallery>
-    <Brief>Demonstrates how to use a "private" persistent store coordinator when creating managed objects using data from a remote server.</Brief>
+    <Brief>Demonstrates how to use a "private" persistent store coordinator.</Brief>
 </SampleMetadata>

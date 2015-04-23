@@ -4,5 +4,5 @@
   <Level>Beginner</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
-  <Brief>This quick start guide will walk you through the programmatic creation of and use of `NSTableView`/`NSOutlineView` with Xamarin.Mac.</Brief>
+  <Brief>Demonstrates the programmatic creation of and use of `NSTableView`/`NSOutlineView`.</Brief>
 </SampleMetadata>

@@ -5,5 +5,5 @@
   <Level>Intermediate</Level>
   <Tags>Binding + Interop</Tags>
   <Gallery>true</Gallery>
-  <Brief>Demonstrates how to use the bindings to manage the contents and selection of the `NSPopupButton` class.</Brief>
+  <Brief>Demonstrates how to use the bindings to manage the contents of `NSPopupButton`.</Brief>
 </SampleMetadata>

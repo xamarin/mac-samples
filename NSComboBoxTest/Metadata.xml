@@ -4,5 +4,5 @@
   <Level>Beginner</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
-  <Brief>Demonstrates how to use an `NSComboBox` with an `NSComboBoxData` source to provide completion hints.</Brief>
+  <Brief>Demonstrates how to provide completion hints.</Brief>
 </SampleMetadata>

@@ -4,5 +4,6 @@
   <IsFullApplication>false</IsFullApplication>
   <Level>Intermediate</Level>
   <Tags>User Interface</Tags>
-	<Gallery>true</Gallery>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to populate an OutlineView using an NSViewOutlineDataSource</Brief>
 </SampleMetadata>

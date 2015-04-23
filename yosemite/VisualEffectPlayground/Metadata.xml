@@ -6,5 +6,5 @@
     <Tags>User Interface, Getting Started, Yosemite</Tags>
     <LicenseRequirement>Indie</LicenseRequirement>
     <Gallery>true</Gallery>
-    <Brief>Demonstrates how to use various options of NSVisualEffectView to do blurs, translucency and vibrancy on OS X.</Brief>
+    <Brief>Demonstrates how to use the options of NSVisualEffectView to do blurs, translucency and vibrancy.</Brief>
 </SampleMetadata>
