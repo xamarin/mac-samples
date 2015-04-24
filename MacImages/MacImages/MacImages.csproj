@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{B1553C5B-F8B0-4859-A93F-926E6D50F0F9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacImages</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacImages</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <MacOSXSdkVersion>10.10</MacOSXSdkVersion>
+    <XamMacArch>x86_64</XamMacArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="SourceLists\" />
+    <Folder Include="Enums\" />
+    <Folder Include="ProductTable\" />
+    <Folder Include="ProductOutline\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceLists\SourceListDataSource.cs" />
+    <Compile Include="SourceLists\SourceListDelegate.cs" />
+    <Compile Include="SourceLists\SourceListItem.cs" />
+    <Compile Include="SourceLists\SourceListView.cs" />
+    <Compile Include="Enums\SubviewType.cs" />
+    <Compile Include="SubviewTable.cs" />
+    <Compile Include="SubviewTableController.cs" />
+    <Compile Include="SubviewTable.designer.cs">
+      <DependentUpon>SubviewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTableController.designer.cs">
+      <DependentUpon>SubviewTableController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTable\ProductTableDataSource.cs" />
+    <Compile Include="ProductTable\ProductTableDelegate.cs" />
+    <Compile Include="SubviewOutline.cs" />
+    <Compile Include="SubviewOutlineController.cs" />
+    <Compile Include="SubviewOutline.designer.cs">
+      <DependentUpon>SubviewOutline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewOutlineController.designer.cs">
+      <DependentUpon>SubviewOutlineController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOutline\ProductOutlineDataSource.cs" />
+    <Compile Include="ProductOutline\ProductOutlineDelegate.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="SubviewImage.cs" />
+    <Compile Include="SubviewImageController.cs" />
+    <Compile Include="SubviewImage.designer.cs">
+      <DependentUpon>SubviewImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewImageController.designer.cs">
+      <DependentUpon>SubviewImageController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="SubviewTable.xib" />
+    <InterfaceDefinition Include="SubviewOutline.xib" />
+    <InterfaceDefinition Include="SubviewImage.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Temp.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\tags.png" />
+    <BundleResource Include="Resources\tags%402x.png" />
+    <BundleResource Include="Resources\calendar.png" />
+    <BundleResource Include="Resources\calendar%402x.png" />
+    <BundleResource Include="Resources\tag.png" />
+    <BundleResource Include="Resources\tag%402x.png" />
+    <BundleResource Include="Resources\mobileme.png" />
+    <BundleResource Include="Resources\person02.jpg" />
+    <BundleResource Include="Resources\person01.jpg" />
+    <BundleResource Include="Resources\person03.jpg" />
+    <BundleResource Include="Resources\film-roll.png" />
+    <BundleResource Include="Resources\film-roll%402x.png" />
+    <BundleResource Include="Resources\icon.icns" />
+  </ItemGroup>
+</Project>
