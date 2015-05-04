@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>f5bb2615-0f06-4882-9efb-75fd6fdd9013</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Standard AppKit Controls in you Xamarin.Mac Application.</Brief>
+</SampleMetadata>

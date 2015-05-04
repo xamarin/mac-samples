@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{87F4FA0E-0256-4260-9DB6-58A8A41BE8C1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacControls</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacControls</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Sourcelist\" />
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sourcelist\SourceListDataSource.cs" />
+    <Compile Include="Sourcelist\SourceListDelegate.cs" />
+    <Compile Include="Sourcelist\SourceListItem.cs" />
+    <Compile Include="Sourcelist\SourceListView.cs" />
+    <Compile Include="Enums\SubviewType.cs" />
+    <Compile Include="SubviewButtons.cs" />
+    <Compile Include="SubviewButtonsController.cs" />
+    <Compile Include="SubviewButtons.designer.cs">
+      <DependentUpon>SubviewButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewButtonsController.designer.cs">
+      <DependentUpon>SubviewButtonsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewChecksRadio.cs" />
+    <Compile Include="SubviewChecksRadioController.cs" />
+    <Compile Include="SubviewChecksRadio.designer.cs">
+      <DependentUpon>SubviewChecksRadio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewChecksRadioController.designer.cs">
+      <DependentUpon>SubviewChecksRadioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewMenuControls.cs" />
+    <Compile Include="SubviewMenuControlsController.cs" />
+    <Compile Include="SubviewMenuControls.designer.cs">
+      <DependentUpon>SubviewMenuControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewMenuControlsController.designer.cs">
+      <DependentUpon>SubviewMenuControlsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewSelectionControls.cs" />
+    <Compile Include="SubviewSelectionControlsController.cs" />
+    <Compile Include="SubviewSelectionControls.designer.cs">
+      <DependentUpon>SubviewSelectionControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewSelectionControlsController.designer.cs">
+      <DependentUpon>SubviewSelectionControlsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewIndicatorControls.cs" />
+    <Compile Include="SubviewIndicatorControlsController.cs" />
+    <Compile Include="SubviewIndicatorControls.designer.cs">
+      <DependentUpon>SubviewIndicatorControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewIndicatorControlsController.designer.cs">
+      <DependentUpon>SubviewIndicatorControlsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTextControls.cs" />
+    <Compile Include="SubviewTextControlsController.cs" />
+    <Compile Include="SubviewTextControls.designer.cs">
+      <DependentUpon>SubviewTextControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTextControlsController.designer.cs">
+      <DependentUpon>SubviewTextControlsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewContentViews.cs" />
+    <Compile Include="SubviewContentViewsController.cs" />
+    <Compile Include="SubviewContentViews.designer.cs">
+      <DependentUpon>SubviewContentViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewContentViewsController.designer.cs">
+      <DependentUpon>SubviewContentViewsController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="SubviewButtons.xib" />
+    <InterfaceDefinition Include="SubviewChecksRadio.xib" />
+    <InterfaceDefinition Include="SubviewMenuControls.xib" />
+    <InterfaceDefinition Include="SubviewSelectionControls.xib" />
+    <InterfaceDefinition Include="SubviewIndicatorControls.xib" />
+    <InterfaceDefinition Include="SubviewTextControls.xib" />
+    <InterfaceDefinition Include="SubviewContentViews.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\tag.png" />
+    <BundleResource Include="Resources\tag%402x.png" />
+  </ItemGroup>
+</Project>
