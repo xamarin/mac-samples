@@ -1,7 +1,7 @@
 MacDatabinding
 ==============
 
-Source code for the [Data Binding & Key-Value Coding](/guides/mac/application_fundamentals/Databinding/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
+Source code for the [Data Binding and Key-Value Coding](/guides/mac/application_fundamentals/databinding/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 
 Uses [Xamarin.Mac](http://xamarin.com).
 
