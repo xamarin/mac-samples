@@ -7,6 +7,7 @@ using OpenGL;
 using SceneKit;
 using Foundation;
 using CoreGraphics;
+using CoreText;
 
 namespace SceneKitSessionWWDC2013
 {
@@ -65,8 +66,8 @@ namespace SceneKitSessionWWDC2013
 
 		public static SCNNode SCBoxNode (string title, CGRect frame, NSColor color, float cornerRadius, bool centered)
 		{
-			NSMutableDictionary titleAttributes = null;
-			NSMutableDictionary centeredTitleAttributes = null;
+			NSStringAttributes titleAttributes = null;
+			NSStringAttributes centeredTitleAttributes = null;
 
 			// create and extrude a bezier path to build the box
 			var path = NSBezierPath.FromRoundedRect (frame, cornerRadius, cornerRadius);
@@ -126,20 +127,22 @@ namespace SceneKitSessionWWDC2013
 					shadow.ShadowBlurRadius = 4;
 					shadow.ShadowColor = NSColor.FromDeviceWhite (0.0f, 0.5f);
 
-					titleAttributes = new NSMutableDictionary ();
-					titleAttributes.SetValueForKey (font, NSAttributedString.FontAttributeName);
-					titleAttributes.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
-					titleAttributes.SetValueForKey (shadow, NSAttributedString.ShadowAttributeName);
-					titleAttributes.SetValueForKey (paraphStyle, NSAttributedString.ParagraphStyleAttributeName);
+					titleAttributes = new NSStringAttributes {
+						Font = font,
+						ForegroundColor = NSColor.White,
+						ParagraphStyle = paraphStyle,
+						Shadow = shadow
+					};
 
 					var centeredParaphStyle = (NSMutableParagraphStyle)paraphStyle.MutableCopy ();
 					centeredParaphStyle.Alignment = NSTextAlignment.Center;
 
-					centeredTitleAttributes = new NSMutableDictionary ();
-					centeredTitleAttributes.SetValueForKey (font, NSAttributedString.FontAttributeName);
-					centeredTitleAttributes.SetValueForKey (NSColor.White, NSAttributedString.ForegroundColorAttributeName);
-					centeredTitleAttributes.SetValueForKey (shadow, NSAttributedString.ShadowAttributeName);
-					centeredTitleAttributes.SetValueForKey (paraphStyle, NSAttributedString.ParagraphStyleAttributeName);
+					centeredTitleAttributes = new NSStringAttributes {
+						Font = font,
+						ForegroundColor = NSColor.White,
+						ParagraphStyle = paraphStyle,
+						Shadow = shadow
+					};
 				}
 
 				var attrString = new NSAttributedString (title, centered ? centeredTitleAttributes : titleAttributes);
