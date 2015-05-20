@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>92be8d4a-9a91-4e3d-ac1f-e7f08eb9a498</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how use ReactiveUI in C# code for a Xamarin.Mac application.</Brief>
+</SampleMetadata>
