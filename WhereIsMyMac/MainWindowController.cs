@@ -10,8 +10,11 @@ using System.IO;
 
 namespace WhereIsMyMac
 {
-	public partial class MainWindowController : AppKit.NSWindowController {		   
+	public partial class MainWindowController : AppKit.NSWindowController {
+
 		CLLocationManager locationManager;
+		CLLocationCoordinate2D locationCoordinate;
+		CLAuthorizationStatus status;
 		
 		// Called when created from unmanaged code
 		public MainWindowController (IntPtr handle) : base(handle)
@@ -31,39 +34,44 @@ namespace WhereIsMyMac
 
 		public override void AwakeFromNib ()
 		{
-			locationManager = new CLLocationManager();
-			locationManager.UpdatedLocation += HandleLocationManagerUpdatedLocation;
-			locationManager.Failed += HandleLocationManagerFailed;
-			locationManager.StartUpdatingLocation();
+			if (locationManager != null)
+				return;
+
+			locationManager = new CLLocationManager ();
+
+			locationManager.AuthorizationChanged += OnAuthorizationChanged;
+			locationManager.LocationsUpdated += OnLocationsUpdated;
+		}
+
+		void OnAuthorizationChanged (object sender, CLAuthorizationChangedEventArgs e)
+		{
+			Console.WriteLine ("new authorization state = {0}", e.Status);
+			status = e.Status;
+			locationManager.StartUpdatingLocation ();
+		}
+
+		void OnLocationsUpdated (object sender, CLLocationsUpdatedEventArgs e)
+		{
+			locationCoordinate = e.Locations.Last ().Coordinate;
+
+			// Load the HTML for displaying the Google map from a file and replace the
+			// format placeholders with our location data
+			string path = NSBundle.MainBundle.PathForResource ("HTMLFormatString","html");
+			var formatString = File.OpenText (path).ReadToEnd ();
+			var htmlString = String.Format (
+				formatString,
+				locationCoordinate.Latitude,locationCoordinate.Longitude,
+				latitudeRangeForLocation (e.Locations.Last ()), longitudeRangeForLocation (e.Locations.Last ()));
+		
+			webView.MainFrame.LoadHtmlString (htmlString, null);
+	
+			locationLabel.StringValue = string.Format ("{0}, {1}", locationCoordinate.Latitude, locationCoordinate.Longitude);
+			accuracyLabel.StringValue = e.Locations.Last ().HorizontalAccuracy.ToString ();
 		}
 
 		void HandleLocationManagerFailed (object sender, Foundation.NSErrorEventArgs e)
 		{
 			Console.WriteLine ("Failed");
-		}
-
-		void HandleLocationManagerUpdatedLocation (object sender, CLLocationUpdatedEventArgs e)
-		{
-			// Ignore updates where nothing we care about changed
-			if (e.OldLocation != null && e.NewLocation.Coordinate.Longitude == e.OldLocation.Coordinate.Longitude &&
-			    e.NewLocation.Coordinate.Latitude == e.OldLocation.Coordinate.Latitude &&
-			    e.NewLocation.HorizontalAccuracy == e.OldLocation.HorizontalAccuracy)
-				return;	   
-	
-			// Load the HTML for displaying the Google map from a file and replace the
-			// format placeholders with our location data
-			string path = NSBundle.MainBundle.PathForResource ("HTMLFormatString","html");
-				
-			var formatString = File.OpenText (path).ReadToEnd ();
-			var htmlString = String.Format (
-				formatString,
-				e.NewLocation.Coordinate.Latitude,e.NewLocation.Coordinate.Longitude,
-				latitudeRangeForLocation (e.NewLocation), longitudeRangeForLocation (e.NewLocation));
-		
-			webView.MainFrame.LoadHtmlString (htmlString, null);
-	
-			locationLabel.StringValue = string.Format ("{0}, {1}", e.NewLocation.Coordinate.Latitude, e.NewLocation.Coordinate.Longitude);
-			accuracyLabel.StringValue = e.NewLocation.HorizontalAccuracy.ToString();
 		}
 		
 		double latitudeRangeForLocation(CLLocation location)
