@@ -66,15 +66,13 @@ namespace VisualEffectPlayground
 		partial void BtnSampleMapsClicked (NSButton sender)
 		{
 			var wc = new SampleMapsWindowController ();
-			//TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=24174
-			wc.ShowWindow (new NSObject ());
+			wc.ShowWindow (null);
 		}
 
 		partial void BtnDemoFacetimeClicked (NSButton sender)
 		{
 			var wc = new DemoFaceTimeWindowController ();
-			//TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=24174
-			wc.ShowWindow (new NSObject ());
+			wc.ShowWindow (null);
 		}
 
 		partial void BtnVibrantControlsCaveatsBehindWindowClicked (NSButton sender)

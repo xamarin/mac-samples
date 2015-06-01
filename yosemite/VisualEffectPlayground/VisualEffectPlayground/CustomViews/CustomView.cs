@@ -70,27 +70,26 @@ namespace VisualEffectPlayground
 
 		public override void DrawRect (CGRect dirtyRect)
 		{
-			//TODO: uncomment code https://bugzilla.xamarin.com/show_bug.cgi?id=24144
-//			if (EffectiveAppearance.AllowsVibrancy) {
-//				// Vibrant drawing codepath.
-//				NSColor.LabelColor.Set ();
-//				NSBezierPath path = NSBezierPath.FromOvalInRect (Bounds.Inset (5, 5));
-//				path.LineWidth = 5;
-//				path.Stroke ();
-//
-//				NSColor.SecondaryLabelColor.Set ();
-//				path = NSBezierPath.FromOvalInRect (Bounds.Inset (10, 10));
-//				path.Fill ();
-//			} else {
-			NSColor.Red.Set ();
-			NSBezierPath path = NSBezierPath.FromOvalInRect (Bounds.Inset (5f, 5f));
-			path.LineWidth = 5;
-			path.Stroke ();
+			if (EffectiveAppearance.AllowsVibrancy) {
+				// Vibrant drawing codepath.
+				NSColor.LabelColor.Set ();
+				NSBezierPath path = NSBezierPath.FromOvalInRect (Bounds.Inset (5, 5));
+				path.LineWidth = 5;
+				path.Stroke ();
 
-			NSColor.Purple.Set ();
-			path = NSBezierPath.FromOvalInRect (Bounds.Inset (10f, 10f));
-			path.Fill ();
-//			}
+				NSColor.SecondaryLabelColor.Set ();
+				path = NSBezierPath.FromOvalInRect (Bounds.Inset (10, 10));
+				path.Fill ();
+			} else {
+				NSColor.Red.Set ();
+				NSBezierPath path = NSBezierPath.FromOvalInRect (Bounds.Inset (5f, 5f));
+				path.LineWidth = 5;
+				path.Stroke ();
+
+				NSColor.Purple.Set ();
+				path = NSBezierPath.FromOvalInRect (Bounds.Inset (10f, 10f));
+				path.Fill ();
+			}
 		}
 	}
 }

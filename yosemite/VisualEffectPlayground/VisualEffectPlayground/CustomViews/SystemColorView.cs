@@ -36,10 +36,11 @@ namespace VisualEffectPlayground
 			rect.Height = 12;
 			var style = (NSMutableParagraphStyle)NSParagraphStyle.DefaultParagraphStyle.MutableCopy ();
 			style.Alignment = NSTextAlignment.Right;
-			NSDictionary attrs = NSDictionary.FromObjectsAndKeys (
-				                     new NSObject[] { NSFont.SystemFontOfSize (8), NSColor.LabelColor, style },
-				                     new NSObject[] { NSAttributedString.FontAttributeName, NSAttributedString.ForegroundColorAttributeName, NSAttributedString.ParagraphStyleAttributeName }
-			                     );
+			var attrs = new NSStringAttributes {
+				Font = NSFont.SystemFontOfSize (8),
+				ForegroundColor = NSColor.LabelColor,
+				ParagraphStyle = style
+			};
 
 			foreach (NSString key in colors.AllKeys ()) {
 				if (DrawColors) {
@@ -49,7 +50,7 @@ namespace VisualEffectPlayground
 				}
 
 				if (DrawTitles)
-					key.DrawString (rect, attrs);
+					key.DrawString (rect, attrs.Dictionary);
 
 				rect.Y += 12;
 			}

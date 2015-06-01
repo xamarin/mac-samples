@@ -12,9 +12,7 @@ namespace VisualEffectPlayground
 
 		public override void WindowDidLoad ()
 		{
-			// TODO: https://bugzilla.xamarin.com/show_bug.cgi?id=24176
-//			self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
-
+			Window.Appearance = NSAppearance.GetAppearance (NSAppearance.NameVibrantDark);
 			Window.StyleMask = Window.StyleMask | NSWindowStyle.FullSizeContentView;
 			Window.TitleVisibility = NSWindowTitleVisibility.Hidden;
 			Window.TitlebarAppearsTransparent = true;
