@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{566D3FBF-96C1-46B9-B9B3-24AD32417F18}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacDatabase</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacDatabase</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="System.Data" />
+    <Reference Include="Mono.Data.Sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="DataModel\" />
+    <Folder Include="SourceList\" />
+    <Folder Include="Enum\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PersonModel.cs" />
+    <Compile Include="SourceList\SourceListDataSource.cs" />
+    <Compile Include="SourceList\SourceListDelegate.cs" />
+    <Compile Include="SourceList\SourceListItem.cs" />
+    <Compile Include="SourceList\SourceListView.cs" />
+    <Compile Include="Enum\SubviewType.cs" />
+    <Compile Include="SubviewSimpleBinding.cs" />
+    <Compile Include="SubviewSimpleBindingController.cs" />
+    <Compile Include="SubviewSimpleBinding.designer.cs">
+      <DependentUpon>SubviewSimpleBinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewSimpleBindingController.designer.cs">
+      <DependentUpon>SubviewSimpleBindingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTableBinding.cs" />
+    <Compile Include="SubviewTableBindingController.cs" />
+    <Compile Include="SubviewTableBinding.designer.cs">
+      <DependentUpon>SubviewTableBinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTableBindingController.designer.cs">
+      <DependentUpon>SubviewTableBindingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ActivatableItem.cs" />
+    <Compile Include="PersonEditSheet.cs" />
+    <Compile Include="PersonEditSheet.designer.cs">
+      <DependentUpon>PersonEditSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEditorSheetController.cs" />
+    <Compile Include="SubviewOutlineBinding.cs" />
+    <Compile Include="SubviewOutlineBindingController.cs" />
+    <Compile Include="SubviewOutlineBinding.designer.cs">
+      <DependentUpon>SubviewOutlineBinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewOutlineBindingController.designer.cs">
+      <DependentUpon>SubviewOutlineBindingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewCollectionView.cs" />
+    <Compile Include="SubviewCollectionViewController.cs" />
+    <Compile Include="SubviewCollectionView.designer.cs">
+      <DependentUpon>SubviewCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewCollectionViewController.designer.cs">
+      <DependentUpon>SubviewCollectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTableORM.cs" />
+    <Compile Include="SubviewTableORMController.cs" />
+    <Compile Include="SubviewTableORM.designer.cs">
+      <DependentUpon>SubviewTableORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubviewTableORMController.designer.cs">
+      <DependentUpon>SubviewTableORMController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\OccupationModel.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Classes\TableORMDatasource.cs" />
+    <Compile Include="Classes\TableORMDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainWindow.xib" />
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="SubviewSimpleBinding.xib" />
+    <InterfaceDefinition Include="SubviewTableBinding.xib" />
+    <InterfaceDefinition Include="PersonEditSheet.xib" />
+    <InterfaceDefinition Include="SubviewOutlineBinding.xib" />
+    <InterfaceDefinition Include="SubviewCollectionView.xib" />
+    <InterfaceDefinition Include="SubviewTableORM.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\shoebox.png" />
+    <BundleResource Include="Resources\shoebox%402x.png" />
+    <BundleResource Include="Resources\circle-plus.png" />
+    <BundleResource Include="Resources\circle-x%402x.png" />
+    <BundleResource Include="Resources\circle-x.png" />
+    <BundleResource Include="Resources\circle-plus%402x.png" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\info%402x.png" />
+    <BundleResource Include="Resources\group%402x.png" />
+    <BundleResource Include="Resources\group.png" />
+    <BundleResource Include="Resources\user%402x.png" />
+    <BundleResource Include="Resources\user.png" />
+  </ItemGroup>
+</Project>
