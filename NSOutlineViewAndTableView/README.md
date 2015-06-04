@@ -1,4 +1,5 @@
-# NSTableView / NSOutlineView
+NSTableView / NSOutlineView
+===========================
 
 This quick start guide will walk you through the programmatic creation of and 
 use of `NSTableView`/`NSOutlineView` with Xamarin.Mac.
