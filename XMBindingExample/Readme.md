@@ -5,6 +5,12 @@ This is a quick example, showing how to invoke `bmac` to create a binding for Xa
 
 Binding Objective-C for Xamarin.Mac is very similar to binding for Xamarin.iOS, so we highly suggest that you read our iOS [Binding Objective-C](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/) documentation before working through this sample.
 
+---
+
+**NOTE:** The Binding process will be improved in the Xamarin.Mac version 2.2 release and we will update this sample with the new, easier to use syntax when it becomes available.
+
+---
+
 ## The Objective-C Library
 
 The library that we are going to bind simply outputs **Hello, World!** when its `DoIt` method is invoked. And is defined as follows:
