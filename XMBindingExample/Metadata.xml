@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>ea41875d-f193-4658-b21e-092a64a4d955</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Advanced</Level>
+  <Tags>Advanced, Binding</Tags>
+  <Gallery>true</Gallery>
+  <Brief>This is a quick example, showing how to invoke bmac to create a binding for Xamarin.Mac Unified.</Brief>
+</SampleMetadata>
