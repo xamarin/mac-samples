@@ -88,7 +88,7 @@ namespace GlossyClock
 			};
 			clockFaceLayer.Bind ("string", clockTimer, "outputString", null);
 			
-			clockFaceLayer.SetFont ("Menlo");
+			clockFaceLayer.SetFont ("Menlo-Regular");
 			
 			// Constrain the text layer in the middle
 			var constraint = CAConstraint.Create (CAConstraintAttribute.MidX, "superlayer", CAConstraintAttribute.MidX);
