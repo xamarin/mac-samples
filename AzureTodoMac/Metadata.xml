@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>87c9214c-1606-4777-91eb-fa9a6178cec8</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Azure Data in a Xamarin.Mac application.</Brief>
+</SampleMetadata>
