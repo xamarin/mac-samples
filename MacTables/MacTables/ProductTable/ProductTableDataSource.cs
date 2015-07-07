@@ -52,10 +52,6 @@ namespace MacTables
 		public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescriptor[] oldDescriptors)
 		{
 			// Sort the data
-			Sort (oldDescriptors [0].Key, oldDescriptors [0].Ascending);
-			tableView.ReloadData ();
-		}
-		#endregion
-	}
-}
-
+			if (oldDescriptors.Length > 0) {
+				// Update sort
+				Sort (oldDescriptors [0].Key, oldDescriptors [0].Ascendi
