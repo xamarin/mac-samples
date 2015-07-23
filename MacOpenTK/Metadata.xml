@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>ea986790-eade-4bb4-acee-410f65d736a6</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, 3D Graphics, Games</Tags>
+  <Gallery>true</Gallery>
+  <Brief>An introduction to using OpenTK in a Xamarin.Mac application.</Brief>
+</SampleMetadata>
