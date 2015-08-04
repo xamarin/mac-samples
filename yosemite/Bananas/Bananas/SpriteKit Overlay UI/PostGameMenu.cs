@@ -46,7 +46,7 @@ namespace Bananas
 			bananaText = (SKLabelNode)myLabel.Copy ();
 			bananaText.Text = "Bananas";
 			bananaText.FontSize = 0.1f * menuHeight;
-			bananaText.Scale = 0.8f;
+			bananaText.SetScale(0.8f);
 			bananaLocation.X += bananaText.CalculateAccumulatedFrame ().Width * 0.5f + frameSize.Width * 0.1f;
 			bananaText.Position = new CGPoint (bananaLocation.X, -2000);
 			AddChild (bananaText);
