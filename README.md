@@ -96,6 +96,8 @@ However, because the sample galleries are powered by the github sample repos, ea
 		* **Extension**
 		* **SceneKit**
 		* **FSharp**
+		* **Yosemite**
+		* **El Capitan**
 
     * **SupportedPlatforms**: this is only for cross plat samples. It's a comma-separated list, and the valid values are iOS, Android, and Windows.
 
