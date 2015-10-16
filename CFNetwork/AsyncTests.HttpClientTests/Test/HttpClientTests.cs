@@ -36,9 +36,6 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
-
 /*
  * Copied from System.Net.Http.Tests/HttpClientTests.cs
  * 

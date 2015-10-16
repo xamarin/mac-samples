@@ -28,17 +28,12 @@
 //
 using System;
 using System.IO;
-using System.IO.Pipes;
-using System.Net;
 using System.Xml;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 using Mono.Addins;
 
 namespace AsyncTests.HttpClientTests.Test {

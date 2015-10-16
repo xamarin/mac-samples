@@ -35,7 +35,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 
 namespace AsyncTests.Framework {
 	public abstract class TestContext : IDisposable {

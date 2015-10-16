@@ -63,6 +63,7 @@ namespace MonoMac.CFNetwork.Test {
 			unitTestController.RegisterDefaults ();
 		}
 
+		[Obsolete]
 		public override void FinishedLaunching (NSObject notification)
 		{
 			preferencesController.LoadDefaults ();

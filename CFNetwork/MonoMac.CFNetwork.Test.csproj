@@ -30,6 +30,7 @@
     <LinkMode>SdkOnly</LinkMode>
     <UseSGen>False</UseSGen>
     <UseRefCounting>false</UseRefCounting>
+    <Profiling>false</Profiling>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -46,6 +47,7 @@
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <UseSGen>False</UseSGen>
     <UseRefCounting>false</UseRefCounting>
+    <Profiling>false</Profiling>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -63,6 +65,7 @@
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <UseSGen>False</UseSGen>
     <UseRefCounting>false</UseRefCounting>
+    <Profiling>false</Profiling>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,15 +73,16 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="Mono.Addins">
-      <HintPath>..\AsyncTests\lib\Mono.Addins.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Net.Http" />
     <Reference Include="XamMac.CFNetwork">
       <HintPath>\Library\Frameworks\Xamarin.Mac.framework\Versions\Current\lib\mono\XamMac.CFNetwork.dll</HintPath>
     </Reference>
     <Reference Include="XamMac" />
+    <Reference Include="Mono.Addins">
+      <HintPath>packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.cs" />
@@ -161,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />

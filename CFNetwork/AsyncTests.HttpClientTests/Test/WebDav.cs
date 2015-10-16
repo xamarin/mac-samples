@@ -27,18 +27,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.IO;
 using System.Net;
-using System.Xml;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Configuration;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 using Mono.Addins;
 
 namespace AsyncTests.HttpClientTests.Test {

@@ -35,7 +35,6 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-using NUnit.Framework.SyntaxHelpers;
 
 namespace AsyncTests.HttpClientTests.Test {
 
