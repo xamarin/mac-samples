@@ -1,4 +1,5 @@
 ﻿using System;
+
 using AppKit;
 using Foundation;
 
@@ -22,15 +23,16 @@ namespace MacCopyPaste
 		public ImageInfoDataProvider (string name, string imageType)
 		{
 			// Initialize
-			this.Name = name;
-			this.ImageType = imageType;
+			Name = name;
+			ImageType = imageType;
 		}
 
-		public ImageInfoDataProvider (NSObjectFlag t){
+		public ImageInfoDataProvider (NSObjectFlag t)
+		{
 		}
 
-		public ImageInfoDataProvider (IntPtr handle){
-
+		public ImageInfoDataProvider (IntPtr handle)
+		{
 		}
 		#endregion
 
@@ -38,13 +40,11 @@ namespace MacCopyPaste
 		[Export ("pasteboardFinishedWithDataProvider:")]
 		public override void FinishedWithDataProvider (NSPasteboard pasteboard)
 		{
-			
 		}
 
 		[Export ("pasteboard:item:provideDataForType:")]
 		public override void ProvideDataForType (NSPasteboard pasteboard, NSPasteboardItem item, string type)
 		{
-
 			// Take action based on the type
 			switch (type) {
 			case "public.text":
@@ -52,7 +52,6 @@ namespace MacCopyPaste
 				item.SetStringForType(string.Format("{0}.{1}", Name, ImageType),type);
 				break;
 			}
-
 		}
 		#endregion
 	}

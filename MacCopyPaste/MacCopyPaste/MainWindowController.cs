@@ -7,6 +7,12 @@ namespace MacCopyPaste
 {
 	public partial class MainWindowController : NSWindowController
 	{
+		#region Computed Properties
+		public new MainWindow Window {
+			get { return (MainWindow)base.Window; }
+		}
+		#endregion
+
 		#region Constructors
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
@@ -19,19 +25,6 @@ namespace MacCopyPaste
 
 		public MainWindowController () : base ("MainWindow")
 		{
-		}
-		#endregion
-
-		#region Override Methods
-		public override void AwakeFromNib ()
-		{
-			base.AwakeFromNib ();
-		}
-		#endregion
-
-		#region Computed Properties
-		public new MainWindow Window {
-			get { return (MainWindow)base.Window; }
 		}
 		#endregion
 	}

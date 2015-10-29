@@ -4,7 +4,7 @@ using Foundation;
 using ObjCRuntime;
 
 // -----------------------------------------------------------------------------------------------------
-// NOTE: This version of the ImageDocument class will not work because of this defect:
+// TODO: This version of the ImageDocument class will not work because of this defect:
 // https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 // This class has been excluded from compliation by setting its build action to None. When the version
 // of Xamarin.Mac is released with a fix for this issue, this sample will be updated to use this
@@ -82,7 +82,7 @@ namespace MacCopyPaste
 			NSPasteboard pasteboard = NSPasteboard.GeneralPasteboard;
 			Class [] classArray  = { new Class ("NSImage") };
 
-			// NOTE: Sending messages directly to the base Objective-C API because of this defect:
+			// TODO: Sending messages directly to the base Objective-C API because of this defect:
 			// https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 			// Check to see if an image is on the pasteboard
 			bool ok = pasteboard.CanReadObjectForClasses (classArray, null);

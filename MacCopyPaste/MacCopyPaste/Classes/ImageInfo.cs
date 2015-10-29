@@ -1,4 +1,5 @@
 ﻿using System;
+
 using AppKit;
 using Foundation;
 
@@ -26,11 +27,11 @@ namespace MacCopyPaste
 		}
 
 		[Export ("initWithCoder:")]
-		public ImageInfo(NSCoder decoder) {
-
+		public ImageInfo(NSCoder decoder)
+		{
 			// Decode data
-			NSString name = decoder.DecodeObject("name") as NSString;
-			NSString type = decoder.DecodeObject("imageType") as NSString;
+			var name = decoder.DecodeObject("name") as NSString;
+			var type = decoder.DecodeObject("imageType") as NSString;
 
 			// Save data
 			Name = name.ToString();
@@ -40,22 +41,23 @@ namespace MacCopyPaste
 
 		#region Public Methods
 		[Export ("encodeWithCoder:")]
-		public void EncodeTo (NSCoder encoder) {
-
+		public void EncodeTo (NSCoder encoder)
+		{
 			// Encode data
 			encoder.Encode(new NSString(Name),"name");
 			encoder.Encode(new NSString(ImageType),"imageType");
 		}
 
 		[Export ("writableTypesForPasteboard:")]
-		public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) {
+		public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard)
+		{
 			string[] writableTypes = {"com.xamarin.image-info", "public.text"};
 			return writableTypes;
 		}
 
 		[Export ("pasteboardPropertyListForType:")]
-		public virtual NSObject GetPasteboardPropertyListForType (string type) {
-
+		public virtual NSObject GetPasteboardPropertyListForType (string type)
+		{
 			// Take action based on the requested type
 			switch (type) {
 			case "com.xamarin.image-info":
@@ -69,14 +71,15 @@ namespace MacCopyPaste
 		}
 
 		[Export ("readableTypesForPasteboard:")]
-		public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard){
+		public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard)
+		{
 			string[] readableTypes = {"com.xamarin.image-info", "public.text"};
 			return readableTypes;
 		}
 
 		[Export ("readingOptionsForType:pasteboard:")]
-		public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, NSPasteboard pasteboard) {
-
+		public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, NSPasteboard pasteboard)
+		{
 			// Take action based on the requested type
 			switch (type) {
 			case "com.xamarin.image-info":
@@ -90,8 +93,8 @@ namespace MacCopyPaste
 		}
 
 		[Export ("initWithPasteboardPropertyList:ofType:")]
-		public NSObject InitWithPasteboardPropertyList (NSObject propertyList, string type) {
-
+		public NSObject InitWithPasteboardPropertyList (NSObject propertyList, string type)
+		{
 			// Take action based on the requested type
 			switch (type) {
 			case "public.text":

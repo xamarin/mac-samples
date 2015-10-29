@@ -4,7 +4,7 @@ using Foundation;
 using ObjCRuntime;
 
 // -----------------------------------------------------------------------------------------------------
-// NOTE: This version of the ImageDocument class provides a work around to this defect:
+// TODO: This version of the ImageDocument class provides a work around to this defect:
 // https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 // Once the version of Xamarin.Mac that contains the fix is released to the Alpha Channel, this
 // sample will be updated to the correct version.
@@ -15,7 +15,7 @@ namespace MacCopyPaste
 	public class ImageDocument : NSDocument
 	{
 		#region DLL Access
-		// NOTE: These routines are being defined as a work around to this defect:
+		// TODO: These routines are being defined as a work around to this defect:
 		// https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 		[System.Runtime.InteropServices.DllImport ("/usr/lib/libobjc.dylib", EntryPoint="objc_msgSend")]
 		public extern static global::System.IntPtr IntPtr_objc_msgSend_IntPtr_IntPtr (IntPtr receiver, IntPtr selector, IntPtr arg1, IntPtr arg2);
@@ -35,7 +35,7 @@ namespace MacCopyPaste
 				NSPasteboard pasteboard = NSPasteboard.GeneralPasteboard;
 				NSArray classArray = NSArray.FromObjects (new Class ("NSImage"));
 
-				// NOTE: Sending messages directly to the base Objective-C API because of this defect:
+				// TODO: Sending messages directly to the base Objective-C API because of this defect:
 				// https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 				// Check to see if an image is on the pasteboard
 				return bool_objc_msgSend_IntPtr_IntPtr (pasteboard.Handle, Selector.GetHandle ("canReadObjectForClasses:options:"), classArray.Handle, IntPtr.Zero);
@@ -81,7 +81,7 @@ namespace MacCopyPaste
 			NSPasteboard pasteboard = NSPasteboard.GeneralPasteboard;
 			NSArray classArray = NSArray.FromObjects (new Class ("NSImage"));
 
-			// NOTE: Sending messages directly to the base Objective-C API because of this defect:
+			// TODO: Sending messages directly to the base Objective-C API because of this defect:
 			// https://bugzilla.xamarin.com/show_bug.cgi?id=31760
 			// Check to see if an image is on the pasteboard
 			bool ok = bool_objc_msgSend_IntPtr_IntPtr (pasteboard.Handle, Selector.GetHandle ("canReadObjectForClasses:options:"), classArray.Handle, IntPtr.Zero);

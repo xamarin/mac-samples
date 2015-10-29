@@ -5,16 +5,9 @@ namespace MacCopyPaste
 {
 	public class EditMenuDelegate : NSMenuDelegate
 	{
-		#region Constructor
-		public EditMenuDelegate ()
-		{
-		}
-		#endregion
-
 		#region Override Methods
 		public override void MenuWillHighlightItem (NSMenu menu, NSMenuItem item)
 		{
-			
 		}
 
 		public override void NeedsUpdate (NSMenu menu)
@@ -24,8 +17,8 @@ namespace MacCopyPaste
 
 			// Get the key window and determine if the required images are available
 			var window = NSApplication.SharedApplication.KeyWindow as MainWindow;
-			var hasImage = (window == null) ? false : (window.Image != null);
-			var hasImageOnPasteboard = (window == null) ? false : window.Document.ImageAvailableOnPasteboard;
+			var hasImage = (window != null) && (window.Image != null);
+			var hasImageOnPasteboard = (window != null) && window.Document.ImageAvailableOnPasteboard;
 
 			// Process every item in the menu
 			foreach(NSMenuItem item in Items) {
