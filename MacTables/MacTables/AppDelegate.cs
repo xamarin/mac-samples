@@ -1,6 +1,4 @@
-﻿using System;
-
-using Foundation;
+﻿using Foundation;
 using AppKit;
 
 namespace MacTables
@@ -8,10 +6,6 @@ namespace MacTables
 	public partial class AppDelegate : NSApplicationDelegate
 	{
 		MainWindowController mainWindowController;
-
-		public AppDelegate ()
-		{
-		}
 
 		public override void DidFinishLaunching (NSNotification notification)
 		{

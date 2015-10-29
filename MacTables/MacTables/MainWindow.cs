@@ -41,12 +41,14 @@ namespace MacTables
 
 		#region Menu Handlers
 		[Export("selectAll:")]
-		public void SelectAll(NSObject sender) {
+		public void SelectAll(NSObject sender)
+		{
 			ProductTable.SelectAll (this);
 		}
 
 		[Export("deselectAll:")]
-		public void DeselectAll(NSObject sender) {
+		public void DeselectAll(NSObject sender)
+		{
 			ProductTable.DeselectAll (this);
 		}
 		#endregion
