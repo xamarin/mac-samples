@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
   <ID>0dd17dd0-16e3-4ad0-82eb-4766cf092427</ID>
-  <IsFullApplication>true</IsFullApplication>
+  <IsFullApplication>false</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>Getting Started, User Interface</Tags>
   <Gallery>true</Gallery>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
   <Brief>Demonstrates how to use Timer and Progress Bar in a Xamarin.Mac application.</Brief>
 </SampleMetadata>
