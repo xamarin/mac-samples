@@ -7,6 +7,10 @@ namespace DragAndDropExample
 {
 	public partial class MainWindowController : NSWindowController
 	{
+		public new MainWindow Window {
+			get { return (MainWindow)base.Window; }
+		}
+
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
 		}
@@ -18,15 +22,6 @@ namespace DragAndDropExample
 
 		public MainWindowController () : base ("MainWindow")
 		{
-		}
-
-		public override void AwakeFromNib ()
-		{
-			base.AwakeFromNib ();
-		}
-
-		public new MainWindow Window {
-			get { return (MainWindow)base.Window; }
 		}
 	}
 }
