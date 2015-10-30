@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
   <ID>0063f646-f6c7-42fa-bceb-c95eb36b67b6</ID>
-  <IsFullApplication>true</IsFullApplication>
+  <IsFullApplication>false</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>Getting Started, User Interface</Tags>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
   <Gallery>true</Gallery>
   <Brief>Demonstrates how to use Custom Fonts embedded in a Xamarin.Mac application.</Brief>
 </SampleMetadata>

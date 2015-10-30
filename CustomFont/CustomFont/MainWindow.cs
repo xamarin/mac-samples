@@ -15,10 +15,5 @@ namespace TestFont
 		public MainWindow (NSCoder coder) : base (coder)
 		{
 		}
-
-		public override void AwakeFromNib ()
-		{
-			base.AwakeFromNib ();
-		}
 	}
 }
