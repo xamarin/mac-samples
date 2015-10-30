@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
   <ID>68d0d259-a479-407c-a7e3-dafecfc00c7c</ID>
-  <IsFullApplication>true</IsFullApplication>
+  <IsFullApplication>false</IsFullApplication>
   <Level>Advanced</Level>
   <Tags>Advanced, Cross-Platform Communication</Tags>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
   <Gallery>true</Gallery>
   <Brief>This is an example showing use of NSMessagePort and CFMessagePort to send information cross process, between applications.</Brief>
 </SampleMetadata>
