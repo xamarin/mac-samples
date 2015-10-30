@@ -1,4 +1,5 @@
 ﻿using System;
+
 using AppKit;
 using Foundation;
 
@@ -10,7 +11,7 @@ namespace AzureTodo
 	public class TableDelegate: NSTableViewDelegate
 	{
 		#region Private Constants
-		private const string CellIdentifier = "ProdCell";
+		const string CellIdentifier = "ProdCell";
 		#endregion
 
 		#region Private Variables
@@ -28,7 +29,6 @@ namespace AzureTodo
 		public override bool ShouldSelectRow (NSTableView tableView, nint row)
 		{
 			return (row >= 0 && row < tableView.DataSource.GetRowCount (tableView));
-			//				return true;
 		}
 
 		public override void SelectionDidChange (NSNotification notification)
@@ -42,23 +42,22 @@ namespace AzureTodo
 				return;
 
 			// Get current values from the data source
-			var name = table.DataSource.GetObjectValue (table, new NSTableColumn("name"), row) + "";
-			var id = table.DataSource.GetObjectValue (table, new NSTableColumn("id"), row) + "";
+			var name = (NSString)table.DataSource.GetObjectValue (table, new NSTableColumn ("name"), row);
+			var id = (NSString)table.DataSource.GetObjectValue (table, new NSTableColumn ("id"), row);
 
 			// Confirm deletion of a todo item
-			var alert = new NSAlert () {
+			var alert = new NSAlert {
 				AlertStyle = NSAlertStyle.Critical,
-				InformativeText = "Do you want to delete row " + name + "?",
+				InformativeText = string.Format ("Do you want to delete row {0}?", name),
 				MessageText = "Delete Todo",
 			};
 			alert.AddButton ("Cancel");
 			alert.AddButton ("Delete");
-			alert.BeginSheetForResponse (windowController.Window, async (result) => {
+			alert.BeginSheetForResponse (windowController.Window, async result => {
 				Console.WriteLine ("Alert Result: {0}", result);
-				if (result == 1001) {
-					await windowController.Delete(id);
-				}
-				table.DeselectAll(this);
+				if (result == 1001)
+					await windowController.Delete (id);
+				table.DeselectAll (this);
 			});
 		}
 
@@ -67,18 +66,19 @@ namespace AzureTodo
 			// This pattern allows you reuse existing views when they are no-longer in use.
 			// If the returned view is null, you instance up a new view
 			// If a non-null view is returned, you modify it enough to reflect the new data
-			NSTextField view = (NSTextField)tableView.MakeView (CellIdentifier, this);
+			var view = (NSTextField)tableView.MakeView (CellIdentifier, this);
 			if (view == null) {
-				view = new NSTextField ();
-				view.Identifier = CellIdentifier;
-				view.BackgroundColor = NSColor.Clear;
-				view.Bordered = false;
-				view.Selectable = false;
-				view.Editable = false;
+				view = new NSTextField {
+					Identifier = CellIdentifier,
+					BackgroundColor = NSColor.Clear,
+					Bordered = false,
+					Selectable = false,
+					Editable = false
+				};
 			}
 
 			// Grab the data for the given table column
-			view.StringValue = tableView.DataSource.GetObjectValue (tableView, tableColumn, row) + "";
+			view.StringValue = (NSString)tableView.DataSource.GetObjectValue (tableView, tableColumn, row);
 
 			// Return the data
 			return view;

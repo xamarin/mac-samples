@@ -25,7 +25,7 @@ namespace AzureTodo
 		AppKit.NSTableView todoTable { get; set; }
 
 		[Action ("addNewTodoItem:")]
-		partial void addNewTodoItem (Foundation.NSObject sender);
+		partial void AddNewTodoItem (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

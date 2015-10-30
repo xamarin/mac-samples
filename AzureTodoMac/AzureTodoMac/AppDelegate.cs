@@ -1,7 +1,5 @@
-﻿using System;
-
+﻿using AppKit;
 using Foundation;
-using AppKit;
 
 namespace AzureTodo
 {
@@ -9,15 +7,10 @@ namespace AzureTodo
 	{
 		MainWindowController mainWindowController;
 
-		public AppDelegate ()
-		{
-		}
-
 		public override void DidFinishLaunching (NSNotification notification)
 		{
 			mainWindowController = new MainWindowController ();
 			mainWindowController.Window.MakeKeyAndOrderFront (this);
-
 		}
 	}
 }

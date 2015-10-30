@@ -1,17 +1,16 @@
 ﻿using System;
-
-using Foundation;
-using AppKit;
-using AzureTodo;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
+using AppKit;
+using Foundation;
 
 namespace AzureTodo
 {
 	public partial class MainWindowController : NSWindowController
 	{
 		#region Private Variables
-		private TodoItemManager manager;
+		TodoItemManager manager;
 		#endregion
 
 		#region Computed Properties
@@ -36,16 +35,16 @@ namespace AzureTodo
 		#endregion
 
 		#region Override Methods
-		public override void AwakeFromNib ()
-		{
-			base.AwakeFromNib ();
-		}
-
 		public override async void WindowDidLoad ()
 		{
 			base.WindowDidLoad ();
-			manager = new TodoItemManager ();
-			Reload ();
+			if (string.IsNullOrEmpty (Constants.ApplicationURL)) {
+				// No, inform user
+				ShowAlert ();
+			} else {
+				manager = new TodoItemManager ();
+				await Reload ();
+			}
 		}
 		#endregion
 
@@ -54,17 +53,22 @@ namespace AzureTodo
 		/// Adds the new todo item.
 		/// </summary>
 		/// <param name="sender">Sender.</param>
-		async partial void addNewTodoItem (Foundation.NSObject sender) {
+		async partial void AddNewTodoItem (NSObject sender)
+		{
+			if (string.IsNullOrEmpty (Constants.ApplicationURL)) {
+				// No, inform user
+				ShowAlert ();
+			} else {
+				// Create a new item and save it to Azure
+				var newTodo = new TodoItem {
+					Name = newTodoItemName.StringValue
+				};
+				await manager.SaveTodoItemAsync (newTodo);
 
-			// Create a new item and save it to Azure
-			var newTodo = new TodoItem {
-				Name = newTodoItemName.StringValue
-			};
-			await manager.SaveTodoItemAsync (newTodo);
-
-			// Update the interface
-			await Reload ();
-			newTodoItemName.StringValue = "";
+				// Update the interface
+				await Reload ();
+				newTodoItemName.StringValue = string.Empty;
+			}
 		}
 		#endregion
 
@@ -75,8 +79,8 @@ namespace AzureTodo
 		public async Task Reload ()
 		{
 			var items = await manager.GetTodoItemsAsync ();
-			Console.WriteLine ("items retrieved: " + items.Count);
-			todoTable.DataSource = new TableDataSource(items);
+			Console.WriteLine ("items retrieved: {0}", items.Count);
+			todoTable.DataSource = new TableDataSource (items);
 			todoTable.Delegate = new TableDelegate (this);
 		}
 
@@ -84,10 +88,22 @@ namespace AzureTodo
 		/// Deletes the given record from Azure.
 		/// </summary>
 		/// <param name="id">Identifier.</param>
-		public async Task Delete (string id){
-			await manager.DeleteTodoItemAsync(new TodoItem {ID = id});
-			Reload ();
+		public async Task Delete (string id)
+		{
+			await manager.DeleteTodoItemAsync (new TodoItem { ID = id });
+			await Reload ();
 		}
 		#endregion
+
+		void ShowAlert ()
+		{
+			// No, inform user
+			var alert = new NSAlert {
+				AlertStyle = NSAlertStyle.Warning,
+				InformativeText = "Before this example can be successfully run, you need to provide your developer information used to access Azure.",
+				MessageText = "Azure Not Configured"
+			};
+			alert.RunSheetModal (Window);
+		}
 	}
 }
