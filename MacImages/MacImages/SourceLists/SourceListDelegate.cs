@@ -66,7 +66,7 @@ namespace AppKit
 		/// <param name="outlineView">Outline view.</param>
 		/// <param name="tableColumn">Table column.</param>
 		/// <param name="item">Item.</param>
-		public override NSView ViewForTableColumn (NSOutlineView outlineView, NSTableColumn tableColumn, Foundation.NSObject item)
+		public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item)
 		{
 			NSTableCellView view = null;
 
