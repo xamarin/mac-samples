@@ -1,6 +1,4 @@
-﻿using System;
-
-using AppKit;
+﻿using AppKit;
 
 namespace Hello_Mac
 {

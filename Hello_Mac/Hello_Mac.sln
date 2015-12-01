@@ -1,20 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello_Mac", "Hello_Mac\Hello_Mac.csproj", "{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello_Mac", "Hello_Mac\Hello_Mac.csproj", "{F033B3F8-3C6D-456C-A942-379275590451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
-		AppStore|x86 = AppStore|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.AppStore|x86.ActiveCfg = Debug|Any CPU
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.AppStore|x86.Build.0 = Debug|Any CPU
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Debug|x86.Build.0 = Debug|Any CPU
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Release|x86.ActiveCfg = Release|Any CPU
-		{43A7E1EF-57B3-48E1-9E64-D8020A6D6A26}.Release|x86.Build.0 = Release|Any CPU
+		{F033B3F8-3C6D-456C-A942-379275590451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F033B3F8-3C6D-456C-A942-379275590451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F033B3F8-3C6D-456C-A942-379275590451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F033B3F8-3C6D-456C-A942-379275590451}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
