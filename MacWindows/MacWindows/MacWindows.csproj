@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{323039B1-CF83-40A7-9751-009D0A29B078}</ProjectGuid>
+    <ProjectGuid>{3F36589D-C11E-4EBA-9C94-7FFDE2314DF5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MacWindows</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -21,13 +21,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -37,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
@@ -51,110 +53,58 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs" />
-    <Compile Include="MainWindow.designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindowController.cs" />
-    <Compile Include="MainWindowController.designer.cs">
-      <DependentUpon>MainWindowController.cs</DependentUpon>
-    </Compile>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="AppDelegate.designer.cs">
-      <DependentUpon>AppDelegate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesWindow.cs" />
-    <Compile Include="PreferencesWindow.designer.cs">
-      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="PreferencesWindowController.cs" />
     <Compile Include="PreferencesWindowController.designer.cs">
       <DependentUpon>PreferencesWindowController.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocumentPanel.cs" />
-    <Compile Include="DocumentPanel.designer.cs">
-      <DependentUpon>DocumentPanel.cs</DependentUpon>
+    <Compile Include="Classes\ReplaceViewSegue.cs" />
+    <Compile Include="PreferencesViewController.cs" />
+    <Compile Include="PreferencesViewController.designer.cs">
+      <DependentUpon>PreferencesViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocumentPanelController.cs" />
-    <Compile Include="DocumentPanelController.designer.cs">
-      <DependentUpon>DocumentPanelController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomDialog.cs" />
-    <Compile Include="CustomDialog.designer.cs">
-      <DependentUpon>CustomDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomDialogController.cs" />
-    <Compile Include="CustomDialogController.designer.cs">
-      <DependentUpon>CustomDialogController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginSheet.cs" />
-    <Compile Include="LoginSheet.designer.cs">
-      <DependentUpon>LoginSheet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginSheetController.cs" />
-    <Compile Include="preferenceGlobal.cs" />
-    <Compile Include="preferenceGlobalController.cs" />
-    <Compile Include="preferenceGlobal.designer.cs">
-      <DependentUpon>preferenceGlobal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="preferenceGlobalController.designer.cs">
-      <DependentUpon>preferenceGlobalController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesProfile.cs" />
-    <Compile Include="PreferencesProfileController.cs" />
-    <Compile Include="PreferencesProfile.designer.cs">
-      <DependentUpon>PreferencesProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesProfileController.designer.cs">
-      <DependentUpon>PreferencesProfileController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesKeyboard.cs" />
-    <Compile Include="PreferencesKeyboardController.cs" />
-    <Compile Include="PreferencesKeyboard.designer.cs">
-      <DependentUpon>PreferencesKeyboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesKeyboardController.designer.cs">
-      <DependentUpon>PreferencesKeyboardController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesVOIP.cs" />
-    <Compile Include="PreferencesVOIPController.cs" />
-    <Compile Include="PreferencesVOIP.designer.cs">
-      <DependentUpon>PreferencesVOIP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesVOIPController.designer.cs">
-      <DependentUpon>PreferencesVOIPController.cs</DependentUpon>
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainWindow.xib" />
-    <InterfaceDefinition Include="MainMenu.xib" />
-    <InterfaceDefinition Include="PreferencesWindow.xib" />
-    <InterfaceDefinition Include="DocumentPanel.xib" />
-    <InterfaceDefinition Include="CustomDialog.xib" />
-    <InterfaceDefinition Include="LoginSheet.xib" />
-    <InterfaceDefinition Include="preferenceGlobal.xib" />
-    <InterfaceDefinition Include="PreferencesProfile.xib" />
-    <InterfaceDefinition Include="PreferencesKeyboard.xib" />
-    <InterfaceDefinition Include="PreferencesVOIP.xib" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Info.plist" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
+    <BundleResource Include="Resources\179-notepad.png" />
+    <BundleResource Include="Resources\179-notepad%402x.png" />
+    <BundleResource Include="Resources\185-printer.png" />
+    <BundleResource Include="Resources\185-printer%402x.png" />
     <BundleResource Include="Resources\292-crop.png" />
     <BundleResource Include="Resources\292-crop%402x.png" />
     <BundleResource Include="Resources\keypad.png" />
     <BundleResource Include="Resources\my-profile.png" />
     <BundleResource Include="Resources\telecom.png" />
     <BundleResource Include="Resources\voip.png" />
-    <BundleResource Include="Resources\179-notepad.png" />
-    <BundleResource Include="Resources\179-notepad%402x.png" />
-    <BundleResource Include="Resources\185-printer.png" />
-    <BundleResource Include="Resources\185-printer%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
 </Project>

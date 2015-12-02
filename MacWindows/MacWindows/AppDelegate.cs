@@ -1,39 +1,48 @@
-﻿using System;
-
+﻿using AppKit;
 using Foundation;
-using AppKit;
 using System.IO;
 
 namespace MacWindows
 {
+	[Register ("AppDelegate")]
 	public partial class AppDelegate : NSApplicationDelegate
 	{
-		MainWindowController mainWindowController;
+		#region Computed Properties
 		public int UntitledWindowCount { get; set;} =1;
-		public bool ShowSaveAsSheet { get; set;} = true;
+		#endregion
 
+		#region Constructors
 		public AppDelegate ()
 		{
 		}
+		#endregion
 
+		#region Override Methods
 		public override void DidFinishLaunching (NSNotification notification)
 		{
-			// Open main window
-			mainWindowController = new MainWindowController ();
-			mainWindowController.Window.MakeKeyAndOrderFront (this);
-			mainWindowController.Window.Title = "untitled";
-
-			// Display panel
-			var panel = new DocumentPanelController ();
-			panel.Window.MakeKeyAndOrderFront (this);
+			// Insert code here to initialize your application
 		}
 
-		#region Menu Handlers
+		public override void WillTerminate (NSNotification notification)
+		{
+			// Insert code here to tear down your application
+		}
+		#endregion
+
+
+		#region Custom Actions
 		[Export ("newDocument:")]
 		void NewDocument (NSObject sender) {
-			var newWindowController = new MainWindowController ();
-			newWindowController.Window.MakeKeyAndOrderFront (this);
-			newWindowController.Window.Title = (++UntitledWindowCount == 1) ? "untitled" : string.Format ("untitled {0}", UntitledWindowCount);
+			// Get new window
+			var storyboard = NSStoryboard.FromName ("Main", null);
+			var controller = storyboard.InstantiateControllerWithIdentifier ("MainWindow") as NSWindowController;
+
+			// Display
+			controller.ShowWindow(this);
+
+			// Set the title
+			controller.Window.Title = (++UntitledWindowCount == 1) ? "untitled" : string.Format ("untitled {0}", UntitledWindowCount);
+
 		}
 
 		[Export ("openDocument:")]
@@ -50,56 +59,25 @@ namespace MacWindows
 				if (url != null) {
 					var path = url.Path;
 
-					// Create a new window to hold the text
-					var newWindowController = new MainWindowController ();
-					newWindowController.Window.MakeKeyAndOrderFront (this);
+					// Get new window
+					var storyboard = NSStoryboard.FromName ("Main", null);
+					var controller = storyboard.InstantiateControllerWithIdentifier ("MainWindow") as NSWindowController;
+
+					// Display
+					controller.ShowWindow(this);
 
 					// Load the text into the window
-					var window = newWindowController.Window as MainWindow;
-					window.Text = File.ReadAllText(path);
-					window.SetTitleWithRepresentedFilename (Path.GetFileName(path));
-					window.RepresentedUrl = url;
+					var viewController = controller.Window.ContentViewController as ViewController;
+					viewController.Text = File.ReadAllText(path);
+					viewController.View.Window.SetTitleWithRepresentedFilename (Path.GetFileName(path));
+					viewController.View.Window.RepresentedUrl = url;
 
-				}
-			}
-
-		}
-
-		[Export("applicationPreferences:")]
-		void ShowPreferences (NSObject sender)
-		{
-			var preferences = new PreferencesWindowController ();
-			preferences.Window.MakeKeyAndOrderFront (this);
-		}
-
-		[Export("saveDocumentAs:")]
-		void ShowSaveAs (NSObject sender)
-		{
-			var dlg = new NSSavePanel ();
-			dlg.Title = "Save Text File";
-
-			if (ShowSaveAsSheet) {
-				dlg.BeginSheet(mainWindowController.Window,(result) => {
-					var alert = new NSAlert () {
-						AlertStyle = NSAlertStyle.Critical,
-						InformativeText = "We need to save the document here...",
-						MessageText = "Save Document",
-					};
-					alert.RunModal ();
-				});
-			} else {
-				if (dlg.RunModal () == 1) {
-					var alert = new NSAlert () {
-						AlertStyle = NSAlertStyle.Critical,
-						InformativeText = "We need to save the document here...",
-						MessageText = "Save Document",
-					};
-					alert.RunModal ();
 				}
 			}
 
 		}
 		#endregion
+
 	}
 }
 

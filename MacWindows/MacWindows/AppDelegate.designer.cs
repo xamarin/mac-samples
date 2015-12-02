@@ -9,11 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace MacWindows
 {
-	[Register ("AppDelegate")]
 	partial class AppDelegate
 	{
-		[Action ("applicationPreferences:")]
-		partial void applicationPreferences (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

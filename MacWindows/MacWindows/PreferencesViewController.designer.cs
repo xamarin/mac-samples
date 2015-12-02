@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace MacWindows
 {
-	[Register ("PreferencesWindowController")]
-	partial class PreferencesWindowController
+	[Register ("PreferencesViewController")]
+	partial class PreferencesViewController
 	{
 		
 		void ReleaseDesignerOutlets ()

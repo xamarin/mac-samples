@@ -9,12 +9,18 @@ using System.CodeDom.Compiler;
 
 namespace MacWindows
 {
-	[Register ("CustomDialogController")]
-	partial class CustomDialogController
+	[Register ("ViewController")]
+	partial class ViewController
 	{
+		[Outlet]
+		AppKit.NSTextView DocumentEditor { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (DocumentEditor != null) {
+				DocumentEditor.Dispose ();
+				DocumentEditor = null;
+			}
 		}
 	}
 }
