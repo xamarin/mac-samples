@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>6a897180-bf43-4a0e-8aa7-58905074885b</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Advanced</Level>
+  <Tags>Advanced Technique, Project</Tags>
+  <Gallery>true</Gallery>
+  <Brief>This sample shows you how to use msbuild to copy arbitrary files into your bundle.</Brief>
+</SampleMetadata>
