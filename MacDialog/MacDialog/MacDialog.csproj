@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{310E96FA-8D22-49D6-B2BD-977F34DC315B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacDialog</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacDialog</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialogController.cs" />
+    <Compile Include="CustomDialogController.designer.cs">
+      <DependentUpon>CustomDialogController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SheetViewController.cs" />
+    <Compile Include="SheetViewController.designer.cs">
+      <DependentUpon>SheetViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ReplaceViewSegue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\keypad.png" />
+    <BundleResource Include="Resources\my-profile.png" />
+    <BundleResource Include="Resources\telecom.png" />
+    <BundleResource Include="Resources\voip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+</Project>

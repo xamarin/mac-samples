@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>643d3366-0c8d-46d9-83f8-7e875f07f8f5</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Dialogs in a Xamarin.Mac application.</Brief>
+</SampleMetadata>

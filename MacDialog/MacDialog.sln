@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacDialog", "MacDialog\MacDialog.csproj", "{310E96FA-8D22-49D6-B2BD-977F34DC315B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{310E96FA-8D22-49D6-B2BD-977F34DC315B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310E96FA-8D22-49D6-B2BD-977F34DC315B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310E96FA-8D22-49D6-B2BD-977F34DC315B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310E96FA-8D22-49D6-B2BD-977F34DC315B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
