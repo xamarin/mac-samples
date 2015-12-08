@@ -9,34 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace MacMenus
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
 		AppKit.NSTextView documentText { get; set; }
-
-		[Outlet]
-		AppKit.NSTextField propertyLabel { get; set; }
-
-		[Action ("propertyDocument:")]
-		partial void propertyDocument (Foundation.NSObject sender);
-
-		[Action ("propertyFont:")]
-		partial void propertyFont (Foundation.NSObject sender);
-
-		[Action ("propertyText:")]
-		partial void propertyText (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (documentText != null) {
 				documentText.Dispose ();
 				documentText = null;
-			}
-
-			if (propertyLabel != null) {
-				propertyLabel.Dispose ();
-				propertyLabel = null;
 			}
 		}
 	}

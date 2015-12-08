@@ -9,20 +9,19 @@ using System.CodeDom.Compiler;
 
 namespace MacMenus
 {
-	[Register ("AppDelegate")]
 	partial class AppDelegate
 	{
-		[Action ("phraseAddress:")]
-		partial void phraseAddress (Foundation.NSObject sender);
+		[Action ("phrasesAddress:")]
+		partial void phrasesAddress (Foundation.NSObject sender);
 
-		[Action ("phraseDate:")]
-		partial void phraseDate (Foundation.NSObject sender);
+		[Action ("phrasesDate:")]
+		partial void phrasesDate (Foundation.NSObject sender);
 
-		[Action ("phraseGreeting:")]
-		partial void phraseGreeting (Foundation.NSObject sender);
+		[Action ("phrasesGreeting:")]
+		partial void phrasesGreeting (Foundation.NSObject sender);
 
-		[Action ("phraseSignature:")]
-		partial void phraseSignature (Foundation.NSObject sender);
+		[Action ("phrasesSignature:")]
+		partial void phrasesSignature (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

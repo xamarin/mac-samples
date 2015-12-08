@@ -1,16 +1,14 @@
-﻿using System;
-
+﻿using AppKit;
 using Foundation;
-using AppKit;
+using System;
 
 namespace MacMenus
 {
+	[Register ("AppDelegate")]
 	public partial class AppDelegate : NSApplicationDelegate
 	{
-		MainWindowController mainWindowController;
-
 		#region Computed Properties
-		public MainWindow textEditor { get; set;}
+		public ViewController textEditor { get; set;} = null;
 		#endregion
 
 		#region Constructors
@@ -22,12 +20,6 @@ namespace MacMenus
 		#region Override Methods
 		public override void DidFinishLaunching (NSNotification notification)
 		{
-			mainWindowController = new MainWindowController ();
-			mainWindowController.Window.MakeKeyAndOrderFront (this);
-
-			// Save access to the main window
-			textEditor = mainWindowController.Window;
-
 			// Create a Status Bar Menu
 			NSStatusBar statusBar = NSStatusBar.SystemStatusBar;
 
@@ -38,35 +30,36 @@ namespace MacMenus
 
 			var address = new NSMenuItem ("Address");
 			address.Activated += (sender, e) => {
-				PhraseAddress(address);
+				phrasesAddress(address);
 			};
 			item.Menu.AddItem (address);
 
 			var date = new NSMenuItem ("Date");
 			date.Activated += (sender, e) => {
-				PhraseDate(date);
+				phrasesDate(date);
 			};
 			item.Menu.AddItem (date);
 
 			var greeting = new NSMenuItem ("Greeting");
 			greeting.Activated += (sender, e) => {
-				PhraseGreeting(greeting);
+				phrasesGreeting(greeting);
 			};
 			item.Menu.AddItem (greeting);
 
 			var signature = new NSMenuItem ("Signature");
 			signature.Activated += (sender, e) => {
-				PhraseSignature(signature);
+				phrasesSignature(signature);
 			};
 			item.Menu.AddItem (signature);
+		}
 
+		public override void WillTerminate (NSNotification notification)
+		{
+			// Insert code here to tear down your application
 		}
 		#endregion
 
-		#region Menu Handlers
-		//
-		// File open dialog
-		//
+		#region Custom Actions
 		[Export ("openDocument:")]
 		void OpenDialog (NSObject sender)
 		{
@@ -82,30 +75,29 @@ namespace MacMenus
 				};
 				alert.RunModal ();
 			}
-
 		}
 
-		[Export ("phraseAddress:")]
-		void PhraseAddress (NSObject sender) {
+		partial void phrasesAddress (Foundation.NSObject sender) {
 
+			if (textEditor == null) return;
 			textEditor.Text += "Xamarin HQ\n394 Pacific Ave, 4th Floor\nSan Francisco CA 94111\n\n";
 		}
 
-		[Export ("phraseDate:")]
-		void PhraseDate (NSObject sender) {
+		partial void phrasesDate (Foundation.NSObject sender) {
 
+			if (textEditor == null) return;
 			textEditor.Text += DateTime.Now.ToString("D");
 		}
 
-		[Export ("phraseGreeting:")]
-		void PhraseGreeting (NSObject sender) {
+		partial void phrasesGreeting (Foundation.NSObject sender) {
 
+			if (textEditor == null) return;
 			textEditor.Text += "Dear Sirs,\n\n";
 		}
 
-		[Export ("phraseSignature:")]
-		void PhraseSignature (NSObject sender) {
+		partial void phrasesSignature (Foundation.NSObject sender) {
 
+			if (textEditor == null) return;
 			textEditor.Text += "Sincerely,\n\nKevin Mullins\nXamarin,Inc.\n";
 		}
 		#endregion

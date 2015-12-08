@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacMenus", "MacMenus\MacMenus.csproj", "{BDFC197A-8E03-4B25-9D3B-6C1DC5274500}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacMenus", "MacMenus\MacMenus.csproj", "{262990A6-5231-46EB-B2C0-25715D33F905}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BDFC197A-8E03-4B25-9D3B-6C1DC5274500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDFC197A-8E03-4B25-9D3B-6C1DC5274500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDFC197A-8E03-4B25-9D3B-6C1DC5274500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDFC197A-8E03-4B25-9D3B-6C1DC5274500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262990A6-5231-46EB-B2C0-25715D33F905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262990A6-5231-46EB-B2C0-25715D33F905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262990A6-5231-46EB-B2C0-25715D33F905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262990A6-5231-46EB-B2C0-25715D33F905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
