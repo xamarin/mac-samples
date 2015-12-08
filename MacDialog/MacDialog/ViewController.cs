@@ -45,7 +45,6 @@ namespace MacDialog
 				dialog.DialogDescription = "This is a sample dialog.";
 				dialog.DialogAccepted += (s, e) => {
 					Console.WriteLine ("Dialog accepted");
-					DismissViewController (dialog);
 				};
 				dialog.Presentor = this;
 				break;
