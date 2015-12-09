@@ -9,28 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace MacToolbar
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
 		AppKit.NSTextView documentEditor { get; set; }
-
-		[Outlet]
-		ActivatableItem trashItem { get; set; }
-
-		[Action ("trashDocument:")]
-		partial void trashDocument (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (documentEditor != null) {
 				documentEditor.Dispose ();
 				documentEditor = null;
-			}
-
-			if (trashItem != null) {
-				trashItem.Dispose ();
-				trashItem = null;
 			}
 		}
 	}
