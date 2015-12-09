@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{87F4FA0E-0256-4260-9DB6-58A8A41BE8C1}</ProjectGuid>
+    <ProjectGuid>{18BFA1E8-DC95-43FA-B736-3E4B822527F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MacControls</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -21,13 +21,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -37,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
@@ -51,101 +53,80 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Sourcelist\" />
-    <Folder Include="Enums\" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindow.cs" />
-    <Compile Include="MainWindow.designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindowController.cs" />
-    <Compile Include="MainWindowController.designer.cs">
-      <DependentUpon>MainWindowController.cs</DependentUpon>
-    </Compile>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="AppDelegate.designer.cs">
-      <DependentUpon>AppDelegate.cs</DependentUpon>
+    <Compile Include="SplitViewController.cs" />
+    <Compile Include="SplitViewController.designer.cs">
+      <DependentUpon>SplitViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Sourcelist\SourceListDataSource.cs" />
     <Compile Include="Sourcelist\SourceListDelegate.cs" />
     <Compile Include="Sourcelist\SourceListItem.cs" />
     <Compile Include="Sourcelist\SourceListView.cs" />
     <Compile Include="Enums\SubviewType.cs" />
-    <Compile Include="SubviewButtons.cs" />
-    <Compile Include="SubviewButtonsController.cs" />
-    <Compile Include="SubviewButtons.designer.cs">
-      <DependentUpon>SubviewButtons.cs</DependentUpon>
+    <Compile Include="Classes\ReplaceViewSegue.cs" />
+    <Compile Include="LeftViewController.cs" />
+    <Compile Include="LeftViewController.designer.cs">
+      <DependentUpon>LeftViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewButtonsController.designer.cs">
-      <DependentUpon>SubviewButtonsController.cs</DependentUpon>
+    <Compile Include="RightViewController.cs" />
+    <Compile Include="RightViewController.designer.cs">
+      <DependentUpon>RightViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewChecksRadio.cs" />
-    <Compile Include="SubviewChecksRadioController.cs" />
-    <Compile Include="SubviewChecksRadio.designer.cs">
-      <DependentUpon>SubviewChecksRadio.cs</DependentUpon>
+    <Compile Include="ButtonsViewController.cs" />
+    <Compile Include="ButtonsViewController.designer.cs">
+      <DependentUpon>ButtonsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewChecksRadioController.designer.cs">
-      <DependentUpon>SubviewChecksRadioController.cs</DependentUpon>
+    <Compile Include="CheckboxViewController.cs" />
+    <Compile Include="CheckboxViewController.designer.cs">
+      <DependentUpon>CheckboxViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewMenuControls.cs" />
-    <Compile Include="SubviewMenuControlsController.cs" />
-    <Compile Include="SubviewMenuControls.designer.cs">
-      <DependentUpon>SubviewMenuControls.cs</DependentUpon>
+    <Compile Include="MenuViewController.cs" />
+    <Compile Include="MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewMenuControlsController.designer.cs">
-      <DependentUpon>SubviewMenuControlsController.cs</DependentUpon>
+    <Compile Include="SelectionViewController.cs" />
+    <Compile Include="SelectionViewController.designer.cs">
+      <DependentUpon>SelectionViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewSelectionControls.cs" />
-    <Compile Include="SubviewSelectionControlsController.cs" />
-    <Compile Include="SubviewSelectionControls.designer.cs">
-      <DependentUpon>SubviewSelectionControls.cs</DependentUpon>
+    <Compile Include="IndicatorViewController.cs" />
+    <Compile Include="IndicatorViewController.designer.cs">
+      <DependentUpon>IndicatorViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewSelectionControlsController.designer.cs">
-      <DependentUpon>SubviewSelectionControlsController.cs</DependentUpon>
+    <Compile Include="TextViewController.cs" />
+    <Compile Include="TextViewController.designer.cs">
+      <DependentUpon>TextViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubviewIndicatorControls.cs" />
-    <Compile Include="SubviewIndicatorControlsController.cs" />
-    <Compile Include="SubviewIndicatorControls.designer.cs">
-      <DependentUpon>SubviewIndicatorControls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubviewIndicatorControlsController.designer.cs">
-      <DependentUpon>SubviewIndicatorControlsController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubviewTextControls.cs" />
-    <Compile Include="SubviewTextControlsController.cs" />
-    <Compile Include="SubviewTextControls.designer.cs">
-      <DependentUpon>SubviewTextControls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubviewTextControlsController.designer.cs">
-      <DependentUpon>SubviewTextControlsController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubviewContentViews.cs" />
-    <Compile Include="SubviewContentViewsController.cs" />
-    <Compile Include="SubviewContentViews.designer.cs">
-      <DependentUpon>SubviewContentViews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubviewContentViewsController.designer.cs">
-      <DependentUpon>SubviewContentViewsController.cs</DependentUpon>
+    <Compile Include="ContentViewController.cs" />
+    <Compile Include="ContentViewController.designer.cs">
+      <DependentUpon>ContentViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainWindow.xib" />
-    <InterfaceDefinition Include="MainMenu.xib" />
-    <InterfaceDefinition Include="SubviewButtons.xib" />
-    <InterfaceDefinition Include="SubviewChecksRadio.xib" />
-    <InterfaceDefinition Include="SubviewMenuControls.xib" />
-    <InterfaceDefinition Include="SubviewSelectionControls.xib" />
-    <InterfaceDefinition Include="SubviewIndicatorControls.xib" />
-    <InterfaceDefinition Include="SubviewTextControls.xib" />
-    <InterfaceDefinition Include="SubviewContentViews.xib" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Info.plist" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Sourcelist\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tag.png" />
     <BundleResource Include="Resources\tag%402x.png" />
