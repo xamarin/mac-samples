@@ -1,27 +1,34 @@
 ﻿using System;
 
-using Foundation;
 using AppKit;
+using Foundation;
 
 namespace MacOutlines
 {
-	public partial class MainWindow : NSWindow
+	public partial class ViewController : NSViewController
 	{
-		#region Constructors
-		public MainWindow (IntPtr handle) : base (handle)
-		{
+		#region Computed Properties
+		public override NSObject RepresentedObject {
+			get {
+				return base.RepresentedObject;
+			}
+			set {
+				base.RepresentedObject = value;
+				// Update the view, if already loaded.
+			}
 		}
+		#endregion
 
-		[Export ("initWithCoder:")]
-		public MainWindow (NSCoder coder) : base (coder)
+		#region Constructors
+		public ViewController (IntPtr handle) : base (handle)
 		{
 		}
 		#endregion
 
 		#region Override Methods
-		public override void AwakeFromNib ()
+		public override void ViewDidLoad ()
 		{
-			base.AwakeFromNib ();
+			base.ViewDidLoad ();
 
 			// Create data source and populate
 			var DataSource = new ProductOutlineDataSource ();
@@ -52,8 +59,8 @@ namespace MacOutlines
 			// Populate the outline
 			ProductOutline.DataSource = DataSource;
 			ProductOutline.Delegate = new ProductOutlineDelegate (DataSource);
-
 		}
 		#endregion
+
 	}
 }

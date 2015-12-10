@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace MacOutlines
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
 		AppKit.NSTableColumn DetailsColumn { get; set; }
@@ -23,9 +23,9 @@ namespace MacOutlines
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (DetailsColumn != null) {
-				DetailsColumn.Dispose ();
-				DetailsColumn = null;
+			if (ProductOutline != null) {
+				ProductOutline.Dispose ();
+				ProductOutline = null;
 			}
 
 			if (ProductColumn != null) {
@@ -33,9 +33,9 @@ namespace MacOutlines
 				ProductColumn = null;
 			}
 
-			if (ProductOutline != null) {
-				ProductOutline.Dispose ();
-				ProductOutline = null;
+			if (DetailsColumn != null) {
+				DetailsColumn.Dispose ();
+				DetailsColumn = null;
 			}
 		}
 	}

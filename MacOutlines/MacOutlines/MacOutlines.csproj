@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{88000CE8-6B9D-4FF7-9D9E-730B98D79FA4}</ProjectGuid>
+    <ProjectGuid>{5674024A-90B5-4E76-867C-A7295CB11CFF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MacOutlines</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -21,13 +21,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -37,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
     <UseRefCounting>true</UseRefCounting>
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
@@ -51,62 +53,43 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="ProductOutline\" />
-    <Folder Include="SourceLists\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MainWindow.cs" />
-    <Compile Include="MainWindow.designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindowController.cs" />
-    <Compile Include="MainWindowController.designer.cs">
-      <DependentUpon>MainWindowController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="AppDelegate.designer.cs">
-      <DependentUpon>AppDelegate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductOutline\Product.cs" />
-    <Compile Include="ProductOutline\ProductOutlineDataSource.cs" />
-    <Compile Include="ProductOutline\ProductOutlineDelegate.cs" />
-    <Compile Include="SourceLists\SourceListItem.cs" />
-    <Compile Include="SourceLists\SourceListDataSource.cs" />
-    <Compile Include="SourceLists\SourceListDelegate.cs" />
-    <Compile Include="SourceLists\SourceListView.cs" />
-    <Compile Include="RotationWindow.cs" />
-    <Compile Include="RotationWindow.designer.cs">
-      <DependentUpon>RotationWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RotationWindowController.cs" />
-    <Compile Include="RotationWindowController.designer.cs">
-      <DependentUpon>RotationWindowController.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="MainWindow.xib" />
-    <InterfaceDefinition Include="MainMenu.xib" />
-    <InterfaceDefinition Include="RotationWindow.xib" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOutline\Product.cs" />
+    <Compile Include="ProductOutline\ProductOutlineDataSource.cs" />
+    <Compile Include="ProductOutline\ProductOutlineDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\album.png" />
-    <BundleResource Include="Resources\back.png" />
-    <BundleResource Include="Resources\box.png" />
-    <BundleResource Include="Resources\cards.png" />
-    <BundleResource Include="Resources\forward.png" />
-    <BundleResource Include="Resources\group.png" />
-    <BundleResource Include="Resources\house.png" />
-    <BundleResource Include="Resources\imac.png" />
-    <BundleResource Include="Resources\ipad.png" />
-    <BundleResource Include="Resources\microphone.png" />
-    <BundleResource Include="Resources\person.png" />
-    <BundleResource Include="Resources\play.png" />
-    <BundleResource Include="Resources\redo.png" />
+    <Folder Include="ProductOutline\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tag.png" />
+    <BundleResource Include="Resources\tag%402x.png" />
+    <BundleResource Include="Resources\tags.png" />
+    <BundleResource Include="Resources\tags%402x.png" />
   </ItemGroup>
 </Project>

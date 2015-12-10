@@ -53,7 +53,7 @@ namespace MacOutlines
 			} else {
 				return ((Product)item).Products [(int)childIndex];
 			}
-				
+
 		}
 
 		public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -63,7 +63,7 @@ namespace MacOutlines
 			} else {
 				return ((Product)item).IsProductGroup;
 			}
-		
+
 		}
 
 		public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDescriptor[] oldDescriptors)

@@ -1,25 +1,23 @@
-﻿using System;
-
+﻿using AppKit;
 using Foundation;
-using AppKit;
 
 namespace MacOutlines
 {
-	public partial class AppDelegate : NSApplicationDelegate
+	[Register ("AppDelegate")]
+	public class AppDelegate : NSApplicationDelegate
 	{
-		MainWindowController mainWindowController;
-
 		public AppDelegate ()
 		{
 		}
 
 		public override void DidFinishLaunching (NSNotification notification)
 		{
-			mainWindowController = new MainWindowController ();
-			mainWindowController.Window.MakeKeyAndOrderFront (this);
+			// Insert code here to initialize your application
+		}
 
-			var rotation = new RotationWindowController ();
-			rotation.Window.MakeKeyAndOrderFront (this);
+		public override void WillTerminate (NSNotification notification)
+		{
+			// Insert code here to tear down your application
 		}
 	}
 }
