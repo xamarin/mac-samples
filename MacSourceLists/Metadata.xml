@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>fdf3f7ff-0c6a-4d2f-b63d-b3f3e1642f82</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Source Lists in a Xamarin.Mac application.</Brief>
+</SampleMetadata>
