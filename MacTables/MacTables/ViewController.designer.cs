@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace MacTables
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
 		AppKit.NSTableColumn DetailsColumn { get; set; }
@@ -20,18 +20,12 @@ namespace MacTables
 
 		[Outlet]
 		AppKit.NSTableView ProductTable { get; set; }
-
-		[Action ("deselectAll:")]
-		partial void deselectAll (Foundation.NSObject sender);
-
-		[Action ("selectAll:")]
-		partial void selectAll (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (DetailsColumn != null) {
-				DetailsColumn.Dispose ();
-				DetailsColumn = null;
+			if (ProductTable != null) {
+				ProductTable.Dispose ();
+				ProductTable = null;
 			}
 
 			if (ProductColumn != null) {
@@ -39,9 +33,9 @@ namespace MacTables
 				ProductColumn = null;
 			}
 
-			if (ProductTable != null) {
-				ProductTable.Dispose ();
-				ProductTable = null;
+			if (DetailsColumn != null) {
+				DetailsColumn.Dispose ();
+				DetailsColumn = null;
 			}
 		}
 	}
