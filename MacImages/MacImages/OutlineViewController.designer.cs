@@ -9,9 +9,15 @@ using System.CodeDom.Compiler;
 
 namespace MacImages
 {
-	[Register ("SubviewOutline")]
-	partial class SubviewOutline
+	[Register ("OutlineViewController")]
+	partial class OutlineViewController
 	{
+		[Outlet]
+		AppKit.NSTableColumn DetailsColumn { get; set; }
+
+		[Outlet]
+		AppKit.NSTableColumn ProductColumn { get; set; }
+
 		[Outlet]
 		AppKit.NSOutlineView ProductOutline { get; set; }
 		
@@ -20,6 +26,16 @@ namespace MacImages
 			if (ProductOutline != null) {
 				ProductOutline.Dispose ();
 				ProductOutline = null;
+			}
+
+			if (ProductColumn != null) {
+				ProductColumn.Dispose ();
+				ProductColumn = null;
+			}
+
+			if (DetailsColumn != null) {
+				DetailsColumn.Dispose ();
+				DetailsColumn = null;
 			}
 		}
 	}

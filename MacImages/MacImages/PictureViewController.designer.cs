@@ -9,17 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace MacImages
 {
-	[Register ("SubviewImage")]
-	partial class SubviewImage
+	[Register ("PictureViewController")]
+	partial class PictureViewController
 	{
 		[Outlet]
-		AppKit.NSImageView Photograph { get; set; }
+		AppKit.NSImageView PictureView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (Photograph != null) {
-				Photograph.Dispose ();
-				Photograph = null;
+			if (PictureView != null) {
+				PictureView.Dispose ();
+				PictureView = null;
 			}
 		}
 	}

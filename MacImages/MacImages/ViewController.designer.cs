@@ -9,25 +9,25 @@ using System.CodeDom.Compiler;
 
 namespace MacImages
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
-		AppKit.SourceListView SourceList { get; set; }
+		AppKit.NSView ContentView { get; set; }
 
 		[Outlet]
-		AppKit.NSView ViewContainer { get; set; }
+		AppKit.SourceListView SourceList { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (ContentView != null) {
+				ContentView.Dispose ();
+				ContentView = null;
+			}
+
 			if (SourceList != null) {
 				SourceList.Dispose ();
 				SourceList = null;
-			}
-
-			if (ViewContainer != null) {
-				ViewContainer.Dispose ();
-				ViewContainer = null;
 			}
 		}
 	}
