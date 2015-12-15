@@ -1,11 +1,10 @@
 ﻿using System;
-
-using AppKit;
 using Foundation;
+using AppKit;
 
 namespace MacCopyPaste
 {
-	public partial class MainWindow : NSWindow
+	public partial class ImageWindow : NSWindow
 	{
 		#region Private Variables
 		ImageDocument document;
@@ -24,23 +23,22 @@ namespace MacCopyPaste
 			}
 		}
 
+		public ViewController ImageViewController {
+			get { return ContentViewController as ViewController; }
+		}
+
 		public NSImage Image {
 			get {
-				return ImageView.Image;
+				return ImageViewController.Image;
 			}
 			set {
-				ImageView.Image = value;
+				ImageViewController.Image = value;
 			}
 		}
 		#endregion
 
-		#region Constructors
-		public MainWindow (IntPtr handle) : base (handle)
-		{
-		}
-
-		[Export ("initWithCoder:")]
-		public MainWindow (NSCoder coder) : base (coder)
+		#region Constructor
+		public ImageWindow (IntPtr handle) : base (handle)
 		{
 		}
 		#endregion
@@ -54,55 +52,55 @@ namespace MacCopyPaste
 			Document = new ImageDocument ();
 
 			// Attach to image view
-			Document.ImageView = ImageView;
+			Document.ImageView = ImageViewController.ContentView;
 		}
 		#endregion
 
-		#region Actions
-		partial void CopyImage (NSObject sender)
+		#region Public Methods
+		public void CopyImage (NSObject sender)
 		{
 			Document.CopyImage (sender);
 		}
 
-		partial void PasteImage (NSObject sender)
+		public void PasteImage (NSObject sender)
 		{
 			Document.PasteImage (sender);
 		}
 
-		partial void ImageOne (NSObject sender)
+		public void ImageOne (NSObject sender)
 		{
 			// Load image
-			ImageView.Image = NSImage.ImageNamed ("Image01.jpg");
+			Image = NSImage.ImageNamed ("Image01.jpg");
 
 			// Set image info
 			Document.Info.Name = "city";
 			Document.Info.ImageType = "jpg";
 		}
 
-		partial void ImageTwo (NSObject sender)
+		public void ImageTwo (NSObject sender)
 		{
 			// Load image
-			ImageView.Image = NSImage.ImageNamed ("Image02.jpg");
+			Image = NSImage.ImageNamed ("Image02.jpg");
 
 			// Set image info
 			Document.Info.Name = "theater";
 			Document.Info.ImageType = "jpg";
 		}
 
-		partial void ImageThree (NSObject sender)
+		public void ImageThree (NSObject sender)
 		{
 			// Load image
-			ImageView.Image = NSImage.ImageNamed ("Image03.jpg");
+			Image = NSImage.ImageNamed ("Image03.jpg");
 
 			// Set image info
 			Document.Info.Name = "keyboard";
 			Document.Info.ImageType = "jpg";
 		}
 
-		partial void ImageFour (NSObject sender)
+		public void ImageFour (NSObject sender)
 		{
 			// Load image
-			ImageView.Image = NSImage.ImageNamed ("Image04.jpg");
+			Image = NSImage.ImageNamed ("Image04.jpg");
 
 			// Set image info
 			Document.Info.Name = "trees";
@@ -111,3 +109,4 @@ namespace MacCopyPaste
 		#endregion
 	}
 }
+

@@ -9,12 +9,9 @@ using System.CodeDom.Compiler;
 
 namespace MacCopyPaste
 {
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("ImageWindowController")]
+	partial class ImageWindowController
 	{
-		[Outlet]
-		AppKit.NSImageView ImageView { get; set; }
-
 		[Action ("CopyImage:")]
 		partial void CopyImage (Foundation.NSObject sender);
 
@@ -35,10 +32,6 @@ namespace MacCopyPaste
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (ImageView != null) {
-				ImageView.Dispose ();
-				ImageView = null;
-			}
 		}
 	}
 }

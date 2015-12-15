@@ -16,7 +16,7 @@ namespace MacCopyPaste
 			NSMenuItem[] Items = menu.ItemArray ();
 
 			// Get the key window and determine if the required images are available
-			var window = NSApplication.SharedApplication.KeyWindow as MainWindow;
+			var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 			var hasImage = (window != null) && (window.Image != null);
 			var hasImageOnPasteboard = (window != null) && window.Document.ImageAvailableOnPasteboard;
 

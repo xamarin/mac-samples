@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace MacImages
+namespace MacDatabinding
 {
 	public partial class ViewController : NSViewController
 	{

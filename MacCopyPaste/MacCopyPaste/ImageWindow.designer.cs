@@ -1,4 +1,4 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Xamarin Studio to store outlets and
 // actions made in the UI designer. If it is removed, they will be lost.
@@ -9,17 +9,14 @@ using System.CodeDom.Compiler;
 
 namespace MacCopyPaste
 {
-	partial class AppDelegate
+	[Register ("ImageWindow")]
+	partial class ImageWindow
 	{
-		[Outlet]
-		AppKit.NSMenu EditMenu { get; set; }
-		
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (EditMenu != null) {
-				EditMenu.Dispose ();
-				EditMenu = null;
-			}
 		}
 	}
 }
+
+

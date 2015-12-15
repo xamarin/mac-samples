@@ -9,16 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace MacCopyPaste
 {
-	partial class AppDelegate
+	[Register ("ViewController")]
+	partial class ViewController
 	{
 		[Outlet]
-		AppKit.NSMenu EditMenu { get; set; }
+		AppKit.NSImageView ImageView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (EditMenu != null) {
-				EditMenu.Dispose ();
-				EditMenu = null;
+			if (ImageView != null) {
+				ImageView.Dispose ();
+				ImageView = null;
 			}
 		}
 	}
