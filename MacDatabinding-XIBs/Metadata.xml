@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SampleMetadata>
-  <ID>5bddea5a-423d-491c-b93f-60d17d2d3b52</ID>
+  <ID>155a99a3-777c-4488-b3ba-7df5b919aa6c</ID>
   <IsFullApplication>true</IsFullApplication>
   <Level>Beginning</Level>
   <Tags>Getting Started, User Interface</Tags>
   <Gallery>true</Gallery>
-  <Brief>Demonstrates how to use Data Binding in a Xamarin.Mac application.</Brief>
+  <Brief>Demonstrates how to use Data Binding in a Xamarin.Mac application with .xib files.</Brief>
 </SampleMetadata>

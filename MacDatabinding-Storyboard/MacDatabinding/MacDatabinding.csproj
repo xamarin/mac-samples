@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{0317DA38-93D7-4107-9C6C-EACFA2934681}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacDatabinding</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>MacDatabinding</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\AppIcon-512%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Classes\ActivatableItem.cs" />
+    <Compile Include="Datamodel\PersonModel.cs" />
+    <Compile Include="Enums\SubviewType.cs" />
+    <Compile Include="SourceList\SourceListDataSource.cs" />
+    <Compile Include="SourceList\SourceListDelegate.cs" />
+    <Compile Include="SourceList\SourceListItem.cs" />
+    <Compile Include="SourceList\SourceListView.cs" />
+    <Compile Include="Classes\ReplaceViewSegue.cs" />
+    <Compile Include="MainViewController.cs" />
+    <Compile Include="MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleViewController.cs" />
+    <Compile Include="SimpleViewController.designer.cs">
+      <DependentUpon>SimpleViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewController.cs" />
+    <Compile Include="TableViewController.designer.cs">
+      <DependentUpon>TableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutlineViewController.cs" />
+    <Compile Include="OutlineViewController.designer.cs">
+      <DependentUpon>OutlineViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionViewController.cs" />
+    <Compile Include="CollectionViewController.designer.cs">
+      <DependentUpon>CollectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEditorViewController.cs" />
+    <Compile Include="PersonEditorViewController.designer.cs">
+      <DependentUpon>PersonEditorViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\StoryboardCollectionView.cs" />
+    <Compile Include="CollectionItemController.cs" />
+    <Compile Include="CollectionItemController.designer.cs">
+      <DependentUpon>CollectionItemController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\circle-plus.png" />
+    <BundleResource Include="Resources\circle-plus%402x.png" />
+    <BundleResource Include="Resources\circle-x.png" />
+    <BundleResource Include="Resources\circle-x%402x.png" />
+    <BundleResource Include="Resources\group.png" />
+    <BundleResource Include="Resources\group%402x.png" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\info%402x.png" />
+    <BundleResource Include="Resources\shoebox.png" />
+    <BundleResource Include="Resources\shoebox%402x.png" />
+    <BundleResource Include="Resources\user.png" />
+    <BundleResource Include="Resources\user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Datamodel\" />
+    <Folder Include="Enums\" />
+    <Folder Include="SourceList\" />
+  </ItemGroup>
+</Project>
