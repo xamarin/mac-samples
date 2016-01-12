@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>b7bf0d6f-d0bc-479f-af9b-b1a8127f326d</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to create a custom UI element in a Xamarin.Mac application.</Brief>
+</SampleMetadata>
