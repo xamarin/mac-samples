@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient", "HttpClient\HttpClient.csproj", "{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Release|iPhone.Build.0 = Release|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{7D56C320-98DA-41E1-8B4A-88F4B9A0526C}.Debug|iPhone.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal

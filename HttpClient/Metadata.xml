@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SampleMetadata>
+    <ID>d04f806c-ebfa-4f00-9a71-4f9508265886</ID>
+    <Brief>Shows how to use both the .NET and Objective-C web-requests.</Brief>
+    <IsFullApplication>false</IsFullApplication>
+    <Level>Beginning</Level>
+    <Tags>Data, Getting Started</Tags>
+    <LicenseRequirement>Starter</LicenseRequirement>
+    <Gallery>true</Gallery>
+</SampleMetadata>
