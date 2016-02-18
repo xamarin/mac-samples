@@ -278,13 +278,18 @@ namespace AppKit.TextKit.Formatter
 		/// <remarks>TODO: The Text Kit <c>SetTemporaryAttributes</c> routines are handiling the format of
 		/// character strings such as HTML or XML tag incorrectly.</remarks>
 		public virtual void HighlightSyntax(string word, NSRange range) {
-			// Found a keyword?
-			KeywordDescriptor info;
-			if (Language.Keywords.TryGetValue(word,out info)) {
-				// Yes, adjust attributes
-				TextEditor.LayoutManager.SetTemporaryAttributes(new NSDictionary(NSStringAttributeKey.ForegroundColor, info.Color),range);
-			} else {
-				TextEditor.LayoutManager.RemoveTemporaryAttribute(NSStringAttributeKey.ForegroundColor,range);
+
+			try {
+				// Found a keyword?
+				KeywordDescriptor info;
+				if (Language.Keywords.TryGetValue(word,out info)) {
+					// Yes, adjust attributes
+					TextEditor.LayoutManager.SetTemporaryAttributes(new NSDictionary(NSStringAttributeKey.ForegroundColor, info.Color),range);
+				} else {
+					TextEditor.LayoutManager.RemoveTemporaryAttribute(NSStringAttributeKey.ForegroundColor,range);
+				}
+			} catch {
+				// Ignore any exceptions at this point
 			}
 
 		}
