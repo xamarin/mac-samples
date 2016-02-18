@@ -37,4 +37,4 @@ SourceWriter includes the following features:
 
 The code has been fully commented and, where available, links have be provided from key technologies or methods to relevant information in the [Xamarin.Mac Guides Documentation](https://developer.xamarin.com/guides/#mac).
 
-A [Read Me](Documentation/ReadMe.md) document has been provided with a brief description of how the app was designed and works along with complete [API Documentation](Documentation/html/index.html) for the app.
+A [Read Me](https://github.com/xamarin/mac-samples/tree/master/SourceWriter/Documentation) document has been provided with a brief description of how the app was designed and works along with complete **API Documentation** (available in `Documentation/html/index.html` when downloaded) for the app.
