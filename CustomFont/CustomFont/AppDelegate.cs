@@ -21,7 +21,7 @@ namespace TestFont
 			var lab1 = new NSTextField (new CGRect (0.0, 0.0, 300.0, 100.0)) {
 				StringValue = "This is some sample text",
 				Editable = false,
-				Font = NSFont.FromFontName ("SF Hollywood Hills", 20f)
+				Font = NSFont.FromFontName ("Lobster-Regular", 20f)
 			};
 
 			mainWindowController.Window.ContentView.AddSubview (lab1);

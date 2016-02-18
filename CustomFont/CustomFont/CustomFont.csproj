@@ -78,7 +78,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\Fonts\SF Hollywood Hills.ttf">
+    <BundleResource Include="Resources\Fonts\Lobster-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
