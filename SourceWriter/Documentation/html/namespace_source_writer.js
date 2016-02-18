@@ -1,0 +1,25 @@
+var namespace_source_writer =
+[
+    [ "AboutViewController", "class_source_writer_1_1_about_view_controller.html", "class_source_writer_1_1_about_view_controller" ],
+    [ "AboutWindowController", "class_source_writer_1_1_about_window_controller.html", "class_source_writer_1_1_about_window_controller" ],
+    [ "AppDelegate", "class_source_writer_1_1_app_delegate.html", "class_source_writer_1_1_app_delegate" ],
+    [ "AppPreferences", "class_source_writer_1_1_app_preferences.html", "class_source_writer_1_1_app_preferences" ],
+    [ "AutoCompletePrefsController", "class_source_writer_1_1_auto_complete_prefs_controller.html", "class_source_writer_1_1_auto_complete_prefs_controller" ],
+    [ "DefinitionView", "class_source_writer_1_1_definition_view.html", "class_source_writer_1_1_definition_view" ],
+    [ "DefinitionViewController", "class_source_writer_1_1_definition_view_controller.html", "class_source_writer_1_1_definition_view_controller" ],
+    [ "EditorPrefsController", "class_source_writer_1_1_editor_prefs_controller.html", "class_source_writer_1_1_editor_prefs_controller" ],
+    [ "EditorWidowDelegate", "class_source_writer_1_1_editor_widow_delegate.html", "class_source_writer_1_1_editor_widow_delegate" ],
+    [ "EditorWindowController", "class_source_writer_1_1_editor_window_controller.html", "class_source_writer_1_1_editor_window_controller" ],
+    [ "FormatsPrefsController", "class_source_writer_1_1_formats_prefs_controller.html", "class_source_writer_1_1_formats_prefs_controller" ],
+    [ "GeneralPrefsController", "class_source_writer_1_1_general_prefs_controller.html", "class_source_writer_1_1_general_prefs_controller" ],
+    [ "MainClass", "class_source_writer_1_1_main_class.html", "class_source_writer_1_1_main_class" ],
+    [ "PreferenceWidowDelegate", "class_source_writer_1_1_preference_widow_delegate.html", "class_source_writer_1_1_preference_widow_delegate" ],
+    [ "PreferenceWindowController", "class_source_writer_1_1_preference_window_controller.html", "class_source_writer_1_1_preference_window_controller" ],
+    [ "PreviewVIewController", "class_source_writer_1_1_preview_v_iew_controller.html", "class_source_writer_1_1_preview_v_iew_controller" ],
+    [ "PreviewWindowController", "class_source_writer_1_1_preview_window_controller.html", "class_source_writer_1_1_preview_window_controller" ],
+    [ "PreviewWindowDelegate", "class_source_writer_1_1_preview_window_delegate.html", "class_source_writer_1_1_preview_window_delegate" ],
+    [ "SearchPrefsController", "class_source_writer_1_1_search_prefs_controller.html", "class_source_writer_1_1_search_prefs_controller" ],
+    [ "TemplateViewController", "class_source_writer_1_1_template_view_controller.html", "class_source_writer_1_1_template_view_controller" ],
+    [ "TemplateWindowController", "class_source_writer_1_1_template_window_controller.html", "class_source_writer_1_1_template_window_controller" ],
+    [ "ViewController", "class_source_writer_1_1_view_controller.html", "class_source_writer_1_1_view_controller" ]
+];

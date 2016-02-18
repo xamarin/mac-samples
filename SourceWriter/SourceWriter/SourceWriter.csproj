@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{71DCDD86-3A5B-4C9F-AF2D-2121396F0D8E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SourceWriter</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>SourceWriter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG; __OSX__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Profiling>true</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <XamMacArch>x86_64</XamMacArch>
+    <DocumentationFile>bin\Debug\SourceWriter.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <Profiling>false</Profiling>
+    <UseRefCounting>true</UseRefCounting>
+    <UseSGen>true</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_512x512%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_512x512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_256x256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_256x256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_128x128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_128x128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_32x32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_32x32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_16x16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Notes.txt" />
+    <None Include="License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorWindowController.cs" />
+    <Compile Include="EditorWindowController.designer.cs">
+      <DependentUpon>EditorWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\EditorWidowDelegate.cs" />
+    <Compile Include="LanguageFormats\HTMLDescriptor.cs" />
+    <Compile Include="LanguageFormats\CSharpDescriptor.cs" />
+    <Compile Include="LanguageFormats\MarkDownDescriptor.cs" />
+    <Compile Include="LanguageFormats\XMLDescriptor.cs" />
+    <Compile Include="LanguageFormatter\FormatDescriptor.cs" />
+    <Compile Include="LanguageFormatter\FormatDescriptorType.cs" />
+    <Compile Include="LanguageFormatter\KeywordDescriptor.cs" />
+    <Compile Include="LanguageFormatter\KeywordType.cs" />
+    <Compile Include="LanguageFormatter\LanguageDescriptor.cs" />
+    <Compile Include="LanguageFormatter\LanguageFormatter.cs" />
+    <Compile Include="DefinitionViewController.cs" />
+    <Compile Include="DefinitionViewController.designer.cs">
+      <DependentUpon>DefinitionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefinitionView.cs" />
+    <Compile Include="DefinitionView.designer.cs">
+      <DependentUpon>DefinitionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ManualToolbarItem.cs" />
+    <Compile Include="Classes\ReplaceViewSegue.cs" />
+    <Compile Include="GeneralPrefsController.cs" />
+    <Compile Include="GeneralPrefsController.designer.cs">
+      <DependentUpon>GeneralPrefsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatsPrefsController.cs" />
+    <Compile Include="FormatsPrefsController.designer.cs">
+      <DependentUpon>FormatsPrefsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreferenceWindowController.cs" />
+    <Compile Include="PreferenceWindowController.designer.cs">
+      <DependentUpon>PreferenceWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AppPreferences.cs" />
+    <Compile Include="EditorPrefsController.cs" />
+    <Compile Include="EditorPrefsController.designer.cs">
+      <DependentUpon>EditorPrefsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPrefsController.cs" />
+    <Compile Include="SearchPrefsController.designer.cs">
+      <DependentUpon>SearchPrefsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageFormatter\LanguageClosure.cs" />
+    <Compile Include="LanguageFormatter\SourceTextView.cs" />
+    <Compile Include="Classes\PreferenceWindowDelegate.cs" />
+    <Compile Include="LanguageFormatter\SourceTextViewDelegate.cs" />
+    <Compile Include="AutoCompletePrefsController.cs" />
+    <Compile Include="AutoCompletePrefsController.designer.cs">
+      <DependentUpon>AutoCompletePrefsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateWindowController.cs" />
+    <Compile Include="TemplateWindowController.designer.cs">
+      <DependentUpon>TemplateWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateViewController.cs" />
+    <Compile Include="TemplateViewController.designer.cs">
+      <DependentUpon>TemplateViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageFormatter\LanguageFormatCommand.cs" />
+    <Compile Include="PreviewWindowController.cs" />
+    <Compile Include="PreviewWindowController.designer.cs">
+      <DependentUpon>PreviewWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewVIewController.cs" />
+    <Compile Include="PreviewVIewController.designer.cs">
+      <DependentUpon>PreviewVIewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\PreviewWindowDelegate.cs" />
+    <Compile Include="Classes\Markdown.cs" />
+    <Compile Include="AboutWindowController.cs" />
+    <Compile Include="AboutWindowController.designer.cs">
+      <DependentUpon>AboutWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutViewController.cs" />
+    <Compile Include="AboutViewController.designer.cs">
+      <DependentUpon>AboutViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="LanguageFormats\" />
+    <Folder Include="LanguageFormatter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_512x512.png" />
+    <BundleResource Include="Resources\icon.icns">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </BundleResource>
+    <BundleResource Include="Resources\About.png" />
+    <BundleResource Include="Resources\Reformat.png" />
+    <BundleResource Include="Resources\Tooltip.png" />
+    <BundleResource Include="Resources\Info.png" />
+    <BundleResource Include="Resources\Gear.png" />
+    <BundleResource Include="Resources\Properties.png" />
+    <BundleResource Include="Resources\Keyboard.png" />
+    <BundleResource Include="Resources\Search.png" />
+    <BundleResource Include="Resources\EscKey.png" />
+    <BundleResource Include="Resources\Indent.png" />
+    <BundleResource Include="Resources\Outdent.png" />
+    <BundleResource Include="Resources\Autocomplete.png" />
+    <BundleResource Include="Resources\FileCSharp.png" />
+    <BundleResource Include="Resources\FileHTML.png" />
+    <BundleResource Include="Resources\FileMarkDown.png" />
+    <BundleResource Include="Resources\FileXML.png" />
+    <BundleResource Include="Resources\IconCSharp.png" />
+    <BundleResource Include="Resources\IconHTML.png" />
+    <BundleResource Include="Resources\IconMarkDown.png" />
+    <BundleResource Include="Resources\IconXML.png" />
+    <BundleResource Include="Resources\Refresh.png" />
+    <BundleResource Include="Resources\Erase.png" />
+    <BundleResource Include="Resources\ScrollBottom.png" />
+    <BundleResource Include="Resources\ScrollTop.png" />
+    <BundleResource Include="Resources\OriginalSize.png" />
+    <BundleResource Include="Resources\ZoomIn.png" />
+    <BundleResource Include="Resources\ZoomOut.png" />
+  </ItemGroup>
+</Project>

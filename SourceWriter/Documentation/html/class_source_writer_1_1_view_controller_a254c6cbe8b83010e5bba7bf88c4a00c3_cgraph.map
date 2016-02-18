@@ -1,0 +1,6 @@
+<map id="SourceWriter.ViewController.ViewDidAppear" name="SourceWriter.ViewController.ViewDidAppear">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#a4283c707c22596ac8bf3c5f494d37dbd" title="Re&#45;run syntax highlighting for the entire text of the document. " alt="" coords="248,5,440,49"/>
+<area shape="rect" id="node3" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html#ab9dd166319b62c7b108f258b2300843d" title="Define this instance. " alt="" coords="253,73,435,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#aef0f22b451c5f26f1838c0be1bb46374" title="Configures the editor with the current user preferences. " alt="" coords="248,141,440,185"/>
+<area shape="rect" id="node5" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_formatter.html#a0833481c67a100c4f7d206dd47d39b95" title="Forces all of the text in the attached NSTextView (the TextEditor property) to have its syntax rehigh..." alt="" coords="246,209,442,253"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SourceWriter.PreviewWindowController.ZoomOut" name="SourceWriter.PreviewWindowController.ZoomOut">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_preview_v_iew_controller.html#ad384f22b23ee1ad9f91e2d4959738cf2" title="Zooms out on the document preview. " alt="" coords="251,39,429,83"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_preview_v_iew_controller.html#a7f14c8afb63f5151dc65c75b61270e8c" title="Displays the current zoom level. " alt="" coords="477,5,669,49"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_preview_v_iew_controller.html#a6e07f16afc88cc4a2ec5379eef813ae1" title="Called before the view is presented to the user. " alt="" coords="484,73,663,117"/>
+</map>

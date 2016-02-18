@@ -1,0 +1,5 @@
+<map id="SourceWriter.EditorWindowController.SaveDocument" name="SourceWriter.EditorWindowController.SaveDocument">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_window_controller.html#a9a5b71e8c5c0280d5f90d2f83a427e84" title="Prepares a given segue to be executed by initializing any needed information. " alt="" coords="238,5,426,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_editor_window_controller.html#a6242f37f4df1b4c2b244a1edc2f23ada" title="Allows the user to specify where to save the document. " alt="" coords="238,73,426,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_editor_window_controller.html#a8f13a7a8c070729514029b967232e365" title="Saves the document to its last location or allows the user to select a location if it has never been ..." alt="" coords="240,141,424,185"/>
+</map>

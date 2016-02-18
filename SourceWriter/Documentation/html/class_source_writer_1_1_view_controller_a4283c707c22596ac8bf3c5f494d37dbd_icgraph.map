@@ -1,0 +1,6 @@
+<map id="SourceWriter.ViewController.ReformatText" name="SourceWriter.ViewController.ReformatText">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_app_delegate.html#a48bf07e140a8eff51ea6c435ec311081" title="This method is called when the user selects a file from the Open Recent menu item. " alt="" coords="253,5,435,49"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_editor_window_controller.html#ae05f0f9574190316f792680e723938ce" title="Forces the entire document to be re&#45;syntax highlighted. " alt="" coords="245,73,443,117"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_view_controller.html#a47507d397d00b8cb36bf00fbf2167fda" title="This method is called before the view being handled by this View Controller is removed from the scree..." alt="" coords="248,141,440,185"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_app_delegate.html#a0a1141aeb1cbe826701426f68353789a" title="Displays the Open File dialog box allowing the user to select a file to open. " alt="" coords="491,5,674,49"/>
+</map>

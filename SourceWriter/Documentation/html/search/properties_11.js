@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['scroll',['Scroll',['../class_source_writer_1_1_preview_v_iew_controller.html#a2d775b8b64f1822eedab8cb981e734f4',1,'SourceWriter::PreviewVIewController']]],
+  ['searchtype',['SearchType',['../class_source_writer_1_1_app_preferences.html#a413168a729e04d23c0d0cf479815304b',1,'SourceWriter::AppPreferences']]],
+  ['selectafterwrap',['SelectAfterWrap',['../class_source_writer_1_1_app_preferences.html#a533a96112c1b8da67d91164c0e7b95f3',1,'SourceWriter.AppPreferences.SelectAfterWrap()'],['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_source_text_view.html#a1852ddcf9e3aacec6a8553cc2382c704',1,'AppKit.TextKit.Formatter.SourceTextView.SelectAfterWrap()']]],
+  ['selectionstatementcolor',['SelectionStatementColor',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html#a9f5bbd83054e1a4284b06ea395ef74fa',1,'AppKit::TextKit::Formatter::LanguageDescriptor']]],
+  ['smartdashes',['SmartDashes',['../class_source_writer_1_1_app_preferences.html#aa8b7ae6ea79dc3a199f464c11fb13755',1,'SourceWriter::AppPreferences']]],
+  ['smartinsertdelete',['SmartInsertDelete',['../class_source_writer_1_1_app_preferences.html#acf77aa23fc8caa34d6a7dea14574435a',1,'SourceWriter::AppPreferences']]],
+  ['smartlinks',['SmartLinks',['../class_source_writer_1_1_app_preferences.html#a3e337e83bc8ce589577cc88030334415',1,'SourceWriter::AppPreferences']]],
+  ['smartquotes',['SmartQuotes',['../class_source_writer_1_1_app_preferences.html#af062eb88d969c51a362322550c6cbb14',1,'SourceWriter::AppPreferences']]],
+  ['spellchecking',['SpellChecking',['../class_source_writer_1_1_app_preferences.html#a2795e261fc57f740792a3eb4a89f7295',1,'SourceWriter::AppPreferences']]],
+  ['startingcharacter',['StartingCharacter',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_closure.html#a9e095baf0622b06e877be7285e509717',1,'AppKit::TextKit::Formatter::LanguageClosure']]],
+  ['startswith',['StartsWith',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_format_descriptor.html#a7dd65b90a6956505df4bc5057e9f2b92',1,'AppKit::TextKit::Formatter::FormatDescriptor']]],
+  ['statementcolor',['StatementColor',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html#a8e9e1fe8786a9b76221ade792b0a2426',1,'AppKit::TextKit::Formatter::LanguageDescriptor']]],
+  ['statusbar',['StatusBar',['../class_source_writer_1_1_preview_v_iew_controller.html#a9d0f8f2e3768ca544c068a65111fcb34',1,'SourceWriter::PreviewVIewController']]],
+  ['statusdesc',['StatusDesc',['../class_source_writer_1_1_view_controller.html#a3786bd243fd31b8f15ae6430e123f97b',1,'SourceWriter::ViewController']]],
+  ['statuslanguage',['StatusLanguage',['../class_source_writer_1_1_view_controller.html#aca8f6e39bcb0601e6fcb7ddd05ea8165',1,'SourceWriter::ViewController']]],
+  ['statustext',['StatusText',['../class_source_writer_1_1_view_controller.html#af79ee130791b6d741b8424e173e44c29',1,'SourceWriter::ViewController']]],
+  ['strictbolditalic',['StrictBoldItalic',['../class_markdown_sharp_1_1_markdown_options.html#a1ceaa1629bebdc493585fa5703b7ad90',1,'MarkdownSharp.MarkdownOptions.StrictBoldItalic()'],['../class_markdown_sharp_1_1_markdown.html#a2d8b835dde059ef5d88425eebfa91cf5',1,'MarkdownSharp.Markdown.StrictBoldItalic()']]],
+  ['stringliteralcolor',['StringLiteralColor',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html#a13e7af54d330e9e60d21bc1ee87c15a6',1,'AppKit::TextKit::Formatter::LanguageDescriptor']]],
+  ['subcommands',['SubCommands',['../class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_format_command.html#a9daa5c53e871cc41474a4132967faa3c',1,'AppKit::TextKit::Formatter::LanguageFormatCommand']]]
+];

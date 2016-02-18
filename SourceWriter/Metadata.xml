@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>edffdcbc-1b04-4395-b526-ecb56bedf15c</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
+  <Gallery>true</Gallery>
+  <Brief>The SourceWriter is a full app example that includes many of the features a user would expect to find in a typical Mac app.</Brief>
+</SampleMetadata>

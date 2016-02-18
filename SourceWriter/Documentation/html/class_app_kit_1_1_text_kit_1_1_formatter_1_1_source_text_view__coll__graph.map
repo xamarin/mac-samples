@@ -1,0 +1,4 @@
+<map id="AppKit.TextKit.Formatter.SourceTextView" name="AppKit.TextKit.Formatter.SourceTextView">
+<area shape="rect" id="node3" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_formatter.html" title="The AppKit.TextKit.Formatter.LanguageFormatter class uses a AppKit.TextKit.Formatter.LanguageDescriptor to provide syntax highlighting of a NSTextField based on a set of AppKit.TextKit.Formatter.KeywordDescriptor and AppKit.TextKit.Formatter.FormatDescriptor objects.. " alt="" coords="121,195,289,239"/>
+<area shape="rect" id="node5" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html" title="The AppKit.TextKit.Formatter.LanguageDescriptor class defines how a AppKit.TextKit.Formatter.LanguageFormatter should syntax highlight text for a given language such as C#, JavaScript or Visual Basic. " alt="" coords="181,86,349,130"/>
+</map>

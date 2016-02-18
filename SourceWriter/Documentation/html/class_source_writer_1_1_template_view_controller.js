@@ -1,0 +1,26 @@
+var class_source_writer_1_1_template_view_controller =
+[
+    [ "TemplateViewController", "class_source_writer_1_1_template_view_controller.html#aadb752e48b05e32b9f919482de70daf0", null ],
+    [ "CancelNewDocument", "class_source_writer_1_1_template_view_controller.html#a63b914dff9668cd650c13f7beac3098d", null ],
+    [ "CancelNewDocument", "class_source_writer_1_1_template_view_controller.html#a63b914dff9668cd650c13f7beac3098d", null ],
+    [ "ChooseDocument", "class_source_writer_1_1_template_view_controller.html#a134711d5ba7425dbf04ad75d30903730", null ],
+    [ "ChooseDocument", "class_source_writer_1_1_template_view_controller.html#a134711d5ba7425dbf04ad75d30903730", null ],
+    [ "PrepareForSegue", "class_source_writer_1_1_template_view_controller.html#a89ae7492fe2342e596ba75f4a346a06d", null ],
+    [ "ReleaseDesignerOutlets", "class_source_writer_1_1_template_view_controller.html#ad55031ff1cba94833459a2981ef56ef5", null ],
+    [ "SelectCSharp", "class_source_writer_1_1_template_view_controller.html#a4376b5ec639e35895dcb6f2be846fa16", null ],
+    [ "SelectCSharp", "class_source_writer_1_1_template_view_controller.html#a4376b5ec639e35895dcb6f2be846fa16", null ],
+    [ "SelectHTML", "class_source_writer_1_1_template_view_controller.html#ac98a8206923ba5f4555b5aea2d19759f", null ],
+    [ "SelectHTML", "class_source_writer_1_1_template_view_controller.html#ac98a8206923ba5f4555b5aea2d19759f", null ],
+    [ "SelectMarkDown", "class_source_writer_1_1_template_view_controller.html#aee7df69d2b7d485616889a747c612573", null ],
+    [ "SelectMarkDown", "class_source_writer_1_1_template_view_controller.html#aee7df69d2b7d485616889a747c612573", null ],
+    [ "SelectXML", "class_source_writer_1_1_template_view_controller.html#ac1ab26bd85258c1188850fe2d40c38ec", null ],
+    [ "SelectXML", "class_source_writer_1_1_template_view_controller.html#ac1ab26bd85258c1188850fe2d40c38ec", null ],
+    [ "ViewWillAppear", "class_source_writer_1_1_template_view_controller.html#a8bff98551f8c6ed42ef9542a34f4dedf", null ],
+    [ "App", "class_source_writer_1_1_template_view_controller.html#a5504c9583915b60e0afa3b705b26913f", null ],
+    [ "ChooseButton", "class_source_writer_1_1_template_view_controller.html#ad7464fd1a8394de48d73f50ef12c4f47", null ],
+    [ "CSharpFile", "class_source_writer_1_1_template_view_controller.html#a23518d4e3a4485a3513dfcef339d5582", null ],
+    [ "DefaultLanguage", "class_source_writer_1_1_template_view_controller.html#ac4089f87ee26d5bba49cf647b88dbf46", null ],
+    [ "HTMLFile", "class_source_writer_1_1_template_view_controller.html#afbd7b62b8517c7df35efb30899903523", null ],
+    [ "MarkDownFile", "class_source_writer_1_1_template_view_controller.html#a74d2d9513d62cd202ff6dbf86aaa9bb3", null ],
+    [ "XMLFile", "class_source_writer_1_1_template_view_controller.html#a49d9a737020d6cfe0bbb79a2841098f4", null ]
+];

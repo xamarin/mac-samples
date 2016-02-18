@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['zoomin',['ZoomIn',['../class_source_writer_1_1_preview_v_iew_controller.html#ab005503fd80367c0f63247a6b026e710',1,'SourceWriter.PreviewVIewController.ZoomIn()'],['../class_source_writer_1_1_preview_window_controller.html#af1eddae5c85471828c9fa0bd87691e22',1,'SourceWriter.PreviewWindowController.ZoomIn(Foundation.NSObject sender)'],['../class_source_writer_1_1_preview_window_controller.html#af1eddae5c85471828c9fa0bd87691e22',1,'SourceWriter.PreviewWindowController.ZoomIn(Foundation.NSObject sender)']]],
+  ['zoomout',['ZoomOut',['../class_source_writer_1_1_preview_v_iew_controller.html#ad384f22b23ee1ad9f91e2d4959738cf2',1,'SourceWriter.PreviewVIewController.ZoomOut()'],['../class_source_writer_1_1_preview_window_controller.html#af879b01fe4515aba7c6fa4c2f3604afe',1,'SourceWriter.PreviewWindowController.ZoomOut(Foundation.NSObject sender)'],['../class_source_writer_1_1_preview_window_controller.html#af879b01fe4515aba7c6fa4c2f3604afe',1,'SourceWriter.PreviewWindowController.ZoomOut(Foundation.NSObject sender)']]]
+];

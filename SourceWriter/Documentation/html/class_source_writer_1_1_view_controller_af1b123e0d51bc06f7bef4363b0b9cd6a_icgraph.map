@@ -1,0 +1,4 @@
+<map id="SourceWriter.ViewController.SetLanguageToHTML" name="SourceWriter.ViewController.SetLanguageToHTML">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_window_controller.html#a314e75cc6a57a226f46d7ebfb2bea9df" title="Reformats the document as HTML. " alt="" coords="246,5,495,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#ac099d771f9f6e84ff6e70c563727a35c" title="Attempts to set the syntax highlighting language based on the extension of the file being opened..." alt="" coords="275,73,466,117"/>
+</map>

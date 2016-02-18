@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_about_window_controller.html" title="Controls the custom About Window that is displayed when the user selects the About SourceWriter Menu ..." alt="" coords="216,5,400,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_editor_window_controller.html" title="Defines the controller for a syntax highlighting text editor window. Syntax highlighting is provided ..." alt="" coords="216,73,400,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_preference_window_controller.html" title="Controls the User Preferences window that allows the user to set their preferences for the app..." alt="" coords="201,141,415,185"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_preview_window_controller.html" title="The SourceWriter.PreviewWindowController is responsible for controlling the Window used to present a ..." alt="" coords="210,209,406,253"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_template_window_controller.html" title="The SourceWriter.TemplateWindowController manages the Window that handles the creation of a new docum..." alt="" coords="206,277,410,321"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SourceWriter.ViewController.ViewWillAppear" name="SourceWriter.ViewController.ViewWillAppear">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#a8cf81af181e535f346113307169071e7" title="Populates the formatting menu with any additional commands defined in the language. " alt="" coords="246,5,437,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#a341e1fd6b7595b9e5f925e305e411a36" title="Recursively build a menu from the set of Language Format Commands. " alt="" coords="486,5,677,49"/>
+</map>

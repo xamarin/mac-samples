@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_about_view_controller.html" title="Handles the View that is displayed inside the SourceWriter.AboutWindowController " alt="" coords="182,5,405,33"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_auto_complete_prefs_controller.html" title="This controller handles user preferences for the automatic completion of partial words in Text Editor..." alt="" coords="200,57,387,101"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_definition_view_controller.html" title="Controls the window used to display information about the selected keyword in the editor..." alt="" coords="200,125,386,169"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_editor_prefs_controller.html" title="This controller handles user preferences for the Text Editor. " alt="" coords="209,193,377,237"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_formats_prefs_controller.html" title="This controller handles the user preferences for language syntax highlighting. " alt="" coords="202,261,384,305"/>
+<area shape="rect" id="node7" href="$class_source_writer_1_1_general_prefs_controller.html" title="This controller handles the general user preferences for the app. " alt="" coords="203,329,384,373"/>
+<area shape="rect" id="node8" href="$class_source_writer_1_1_preview_v_iew_controller.html" title="The SourceWriter.PreviewVIewController is used to present a formatted preview of the final output of ..." alt="" coords="204,397,383,441"/>
+<area shape="rect" id="node9" href="$class_source_writer_1_1_search_prefs_controller.html" title="This controller handles the search user preferences for the app. " alt="" coords="206,465,381,509"/>
+<area shape="rect" id="node10" href="$class_source_writer_1_1_template_view_controller.html" title="The SourceWriter.TemplateViewController handles the creation of a new document based on the user&#39;s se..." alt="" coords="201,533,386,577"/>
+<area shape="rect" id="node11" href="$class_source_writer_1_1_view_controller.html" title="Defines the View Controller for a syntax highlighting text editor view. " alt="" coords="199,601,387,629"/>
+</map>

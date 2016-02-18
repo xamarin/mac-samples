@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_widow_delegate.html" title="Defines a delegate for handling events on our text editor window such as asking the user to save chan..." alt="" coords="210,5,387,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_preference_widow_delegate.html" title="Defines a delegate for handling events on our preference window such updating any open windows when t..." alt="" coords="195,73,402,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_preview_window_delegate.html" title="Defines a delegate for handling events on our text editor window such as asking the user to save chan..." alt="" coords="200,141,397,185"/>
+</map>

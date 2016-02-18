@@ -1,0 +1,176 @@
+﻿CHANGING STRING ATTRIBUTES
+// If you are wanting to change attributes outside of the SetTemporaryAttributes (for example styles that
+cannot be represented via temp attributes), use the following code instead:
+
+TextEditor.TextStorage.BeginEditing();
+TextEditor.TextStorage.AddAttribute(NSStringAttributeKey.ForegroundColor, info.Color, range);
+TextEditor.TextStorage.EndEditing ();
+
+
+PRINTING
+// Details for working with priniting objects:
+// https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Printing/osxp_aboutprinting/osxp_aboutprt.html
+
+
+PATTERNS FOR HTML
+// These have been moved here because the Language Formatter currently isn't written to handle languages like 
+// HTML, XML or MarkDown correctly. It will need 
+
+			Keywords.Add("a", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Anchor Element (<a>) defines a hyperlink to a location on the same page or any other page on the Web. "));
+			Keywords.Add("abbr", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <abbr> element (or HTML Abbreviation Element) represents an abbreviation and optionally provides a full description for it."));
+			Keywords.Add("address", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <address> element supplies contact information for its nearest <article> or <body> ancestor"));
+			Keywords.Add("area", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <area> element defines a hot-spot region on an image, and optionally associates it with a hypertext link. "));
+			Keywords.Add("article", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <article> element represents a self-contained composition in a document, page, application, or site."));
+			Keywords.Add("aside", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <aside> element represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content."));
+			Keywords.Add("audio", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <audio> element is used to embed sound content in documents. "));
+			Keywords.Add("b", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <audio> element is used to make the text bold."));
+			Keywords.Add("base", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <base> element specifies the base URL to use for all relative URLs contained within a document."));
+			Keywords.Add("bdi", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <bdi> Element (or Bi-Directional Isolation Element) isolates a span of text that might be formatted in a different direction from other text outside it."));
+			Keywords.Add("bdo", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <bdo> Element (or HTML bidirectional override element) is used to override the current directionality of text. "));
+			Keywords.Add("blockquote", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <blockquote> Element (or HTML Block Quotation Element) indicates that the enclosed text is an extended quotation."));
+			Keywords.Add("body", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <body> Element represents the content of an HTML document. "));
+			Keywords.Add("br", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML element line break <br> produces a line break in text (carriage-return). "));
+			Keywords.Add("button", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <button> Element represents a clickable button."));
+			Keywords.Add("canvas", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <canvas> Element can be used to draw graphics via scripting (usually JavaScript). "));
+			Keywords.Add("caption", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <caption> Element (or HTML Table Caption Element) represents the title of a table."));
+			Keywords.Add("cite", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Citation Element (<cite>) represents a reference to a creative work."));
+			Keywords.Add("code", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Code Element (<code>) represents a fragment of computer code."));
+			Keywords.Add("col", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Table Column Element (<col>) defines a column within a table and is used for defining common semantics on all common cells."));
+			Keywords.Add("colgroup", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Table Column Group Element (<colgroup>) defines a group of columns within a table."));
+			Keywords.Add("data", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <data> Element links a given content with a machine-readable translation. "));
+			Keywords.Add("datalist", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Datalist Element (<datalist>) contains a set of <option> elements that represent the values available for other controls."));
+			Keywords.Add("dd", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <dd> element (HTML Description Element) indicates the description of a term in a description list (<dl>) element. "));
+			Keywords.Add("del", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Deleted Text Element (<del>) represents a range of text that has been deleted from a document."));
+			Keywords.Add("dfn", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Definition Element (<dfn>) represents the defining instance of a term."));
+			Keywords.Add("div", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <div> element (or HTML Document Division Element) is the generic container for flow content, which does not inherently represent anything. "));
+			Keywords.Add("dl", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <dl> element (or HTML Description List Element) encloses a list of pairs of terms and descriptions."));
+			Keywords.Add("dt", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <dt> element (or HTML Definition Term Element) identifies a term in a definition list."));
+			Keywords.Add("em", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML element emphasis  <em> marks text that has stress emphasis."));
+			Keywords.Add("embed", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <embed> Element represents an integration point for an external application or interactive content (in other words, a plug-in)."));
+			Keywords.Add("fieldset", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <fieldset> element is used to group several controls as well as labels (<label>) within a web form."));
+			Keywords.Add("figcaption", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <figcaption> element represents a caption or a legend associated with a figure."));
+			Keywords.Add("figure", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <figure> element represents self-contained content, frequently with a caption (<figcaption>), and is typically referenced as a single unit."));
+			Keywords.Add("footer", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <footer> element represents a footer for its nearest sectioning content or sectioning root element."));
+			Keywords.Add("form", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <form> element represents a document section that contains interactive controls to submit information to a web server."));
+			Keywords.Add("header", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <header> element represents a group of introductory or navigational aids. "));
+			Keywords.Add("head", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <head> element provides general information (metadata) about the document, including its title and links to/definitions of scripts and style sheets."));
+			Keywords.Add("hr", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <hr> element represents a thematic break between paragraph-level elements."));
+			Keywords.Add("html", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <html> element (or HTML root element) represents the root of an HTML document. "));
+			Keywords.Add("i", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <i> element marks italic text."));
+			Keywords.Add("iframe", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Inline Frame Element (<iframe>) represents a nested browsing context, effectively embedding another HTML page into the current page. "));
+			Keywords.Add("img", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Image Element (<img>) represents an image in the document."));
+			Keywords.Add("ins", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <ins> Element (or HTML Inserted Text) HTML represents a range of text that has been added to a document."));
+			Keywords.Add("kbd", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Keyboard Input Element (<kbd>) represents user input and produces an inline element displayed in the browser's default monospace font."));
+			Keywords.Add("label", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Label Element (<label>) represents a caption for an item in a user interface."));
+			Keywords.Add("legend", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <legend> Element (or HTML Legend Field Element) represents a caption for the content of its parent <fieldset>."));
+			Keywords.Add("li", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <li> element (or HTML List Item Element) is used to represent an item in a list. "));
+			Keywords.Add("link", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <link> element specifies relationships between the current document and an external resource."));
+			Keywords.Add("main", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <main> element represents the main content of  the <body> of a document or application. "));
+			Keywords.Add("h1", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("h2", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("h3", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("h4", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("h5", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("h6", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "Heading."));
+			Keywords.Add("map", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <map> element is used with <area> elements to define an image map (a clickable link area)."));
+			Keywords.Add("mark", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Mark Element (<mark>) represents highlighted text, i.e., a run of text marked for reference purpose, due to its relevance in a particular context. "));
+			Keywords.Add("meta", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <meta> element represents any metadata information that cannot be represented by one of the other HTML meta-related elements (<base>, <link>, <script>, <style> or <title>)."));
+			Keywords.Add("nav", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <nav> element (HTML Navigation Element) represents a section of a page that links to other pages or to parts within the page: a section with navigation links."));
+			Keywords.Add("noframes", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "<noframes> is an HTML element which is used to supporting browsers which are not able to support <frame> elements or configured to do so."));
+			Keywords.Add("noscript", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <noscript> Element defines a section of html to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser."));
+			Keywords.Add("object", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML Embedded Object Element (<object>) represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin."));
+			Keywords.Add("ol", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <ol> Element (or HTML Ordered List Element) represents an ordered list of items."));
+			Keywords.Add("p", new KeywordDescriptor(KeywordType.Keyword, KeywordColor, "The HTML <p> element (or HTML Paragraph Element) represents a paragraph of text."));
+
+			Keywords.Add("scheme", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute defines the scheme in which the metadata is described. "));
+			Keywords.Add("http-equiv", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This enumerated attribute defines the pragma that can alter servers and user-agents behavior."));
+			Keywords.Add("charset", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute declares the character encoding used of the page."));
+			Keywords.Add("seamless", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This Boolean attribute indicates that the browser should render the inline frame in a way that makes it appear to be part of the containing document."));
+			Keywords.Add("srcdoc", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The content of the page that the embedded context is to contain."));
+			Keywords.Add("marginheight", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The amount of space in pixels between the frame's content and its top and bottom margins."));
+			Keywords.Add("marginwidth", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The amount of space in pixels between the frame's content and its left and right margins."));
+			Keywords.Add("scrolling", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Enumerated attribute indicating when the browser should provide a scroll bar (or other scrolling device) for the frame."));
+			Keywords.Add("sandbox", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If specified as an empty string, this attribute enables extra restrictions on the content that can appear in the inline frame. "));
+			Keywords.Add("allowfullscreen", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute can be set to true if the frame is allowed to be placed into full screen mode."));
+			Keywords.Add("frameborder", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The value 1 (the default) tells the browser to draw a border between this frame and every other frame. "));
+			Keywords.Add("longdesc", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A URI of a long description of the frame. "));
+			Keywords.Add("manifest", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Specifies the URI of a resource manifest indicating resources that should be cached locally."));
+			Keywords.Add("version", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Specifies the version of the HTML Document Type Definition that governs the current document. "));
+			Keywords.Add("xmlns", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Specifies the XML Namespace of the document. "));
+			Keywords.Add("color", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Sets the color of the rule through color name or hexadecimal value."));
+			Keywords.Add("noshade", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Sets the rule to have no shading."));
+			Keywords.Add("profile", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The URIs of one or more metadata profiles, separated by white space."));
+			Keywords.Add("autocomplete", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Indicates whether input elements can by default have their values automatically completed by the browser. "));
+			Keywords.Add("enctype", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "When the value of the method attribute is post, enctype is the MIME type of content that is used to submit the form to the server. "));
+			Keywords.Add("method", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The HTTP method that the browser uses to submit the form."));
+			Keywords.Add("accept-charset", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A space- or comma-delimited list of character encodings that the server accepts."));
+			Keywords.Add("action", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The URI of a program that processes the form information."));
+			Keywords.Add("accept", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A comma-separated list of content types that the server accepts."));
+			Keywords.Add("datetime", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The date and time of an element."));
+			Keywords.Add("nowrap", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If the value of this attribute is set to yes, the definition text will not wrap. "));
+			Keywords.Add("id", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The unique ID of an element."));
+			Keywords.Add("valign", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute specifies the vertical alignment of the text within each cell of the column."));
+			Keywords.Add("char", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute is used to set the character to align the cells in a column on. "));
+			Keywords.Add("charoff", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute is used to indicate the number of characters to offset the column data from the alignment characters specified by the char attribute."));
+			Keywords.Add("align", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This enumerated attribute indicates how the caption must be aligned with respect to the table. "));
+			Keywords.Add("height", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The height of the coordinate space in CSS pixels. "));
+			Keywords.Add("width", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The width of the coordinate space in CSS pixels."));
+			Keywords.Add("autofocus", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This Boolean attribute lets you specify that the button should have input focus when the page loads, unless the user overrides it, for example by typing in a different control."));
+			Keywords.Add("disabled", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This Boolean attribute indicates that the user cannot interact with the button."));
+			Keywords.Add("formaction", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The URI of a program that processes the information submitted by the button."));
+			Keywords.Add("formenctype", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If the button is a submit button, this attribute specifies the type of content that is used to submit the form to the server. "));
+			Keywords.Add("formmethod", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If the button is a submit button, this attribute specifies the HTTP method that the browser uses to submit the form. "));
+			Keywords.Add("formnovalidate", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If the button is a submit button, this Boolean attribute specifies that the form is not to be validated when it is submitted."));
+			Keywords.Add("formtarget", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If the button is a submit button, this attribute is a name or keyword indicating where to display the response that is received after submitting the form."));
+			Keywords.Add("type", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The type of the button."));
+			Keywords.Add("value", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The initial value of the button."));
+			Keywords.Add("href", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The href attribute indicates the link target, either a URL or a URL fragment."));
+			Keywords.Add("title", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Use the title attribute to define the full description of the abbreviation. "));
+			Keywords.Add("alt", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A text string alternative to display on browsers that do not display images."));
+			Keywords.Add("coords", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A set of values specifying the coordinates of the hot-spot region."));
+			Keywords.Add("download", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute, if present, indicates that the author intends the hyperlink to be used for downloading a resource."));
+			Keywords.Add("hreflang", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Indicates the language of the linked resource."));
+			Keywords.Add("media", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A hint of the media for which the linked resource was designed, for example print and screen."));
+			Keywords.Add("referrerpolicy", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A string indicating which referrer to use when fetching the resource."));
+			Keywords.Add("rel", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "For anchors containing the href attribute, this attribute specifies the relationship of the target object to the link object."));
+			Keywords.Add("shape", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The shape of the associated hot spot. "));
+			Keywords.Add("target", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This attribute specifies where to display the linked resource."));
+			Keywords.Add("name", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Define a names for the clickable area so that it can be scripted by older browsers."));
+			Keywords.Add("class", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Defines the class of an atricle."));
+			Keywords.Add("autoplay", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A Boolean attribute, the audio will automatically begin playback as soon as it can do so."));
+			Keywords.Add("buffered", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "An attribute you can read to determine which time ranges of the media have been buffered. "));
+			Keywords.Add("controls", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "If this attribute is present, the browser will offer controls to allow the user to control audio playback, including volume, seeking, and pause/resume playback."));
+			Keywords.Add("loop", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A Boolean attribute; if specified, will automatically seek back to the start upon reaching the end of the audio."));
+			Keywords.Add("muted", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A Boolean attribute which indicates whether the audio will be initially silenced. "));
+			Keywords.Add("played", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "A TimeRanges object indicating all the ranges of the audio that have been played."));
+			Keywords.Add("preload", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "This enumerated attribute is intended to provide a hint to the browser about what the author thinks will lead to the best user experience."));
+			Keywords.Add("src", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The source of the media to embed."));
+			Keywords.Add("volume", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The playback volume, in the range 0.0 (silent) to 1.0 (loudest)."));
+			Keywords.Add("dir", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Define the text direction."));
+			Keywords.Add("alink", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Color of text for hyperlinks when selected. "));
+			Keywords.Add("background", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "URI of a image to use as a background."));
+			Keywords.Add("bgcolor", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Background color for the document."));
+			Keywords.Add("bottommargin", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The margin of the bottom of the body."));
+			Keywords.Add("leftmargin", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The margin of the left of the body."));
+			Keywords.Add("onafterprint", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call after the user has printed the document."));
+			Keywords.Add("onbeforeprint", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the user requests printing of the document."));
+			Keywords.Add("onbeforeunload", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document is about to be unloaded."));
+			Keywords.Add("onblur", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document loses focus."));
+			Keywords.Add("onerror", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document fails to load properly."));
+			Keywords.Add("onfocus", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document receives focus."));
+			Keywords.Add("onhashchange", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the fragment identifier part (starting with the hash ('#') character) of the document's current address has changed."));
+			Keywords.Add("onlanguagechange", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the preferred languages changed."));
+			Keywords.Add("onload", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document has finished loading."));
+			Keywords.Add("onmessage", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document has received a message."));
+			Keywords.Add("onoffline", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when network communication has failed."));
+			Keywords.Add("ononline", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when network communication has been restored."));
+			Keywords.Add("onpopstate", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the user has navigated session history."));
+			Keywords.Add("onredo", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the user has moved forward in undo transaction history."));
+			Keywords.Add("onresize", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document has been resized."));
+			Keywords.Add("onstorage", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the storage area has changed."));
+			Keywords.Add("onundo", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the user has moved backward in undo transaction history."));
+			Keywords.Add("onunload", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Function to call when the document is going away."));
+			Keywords.Add("rightmargin", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The margin of the right of the body. "));
+			Keywords.Add("text", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Foreground color of text."));
+			Keywords.Add("topmargin", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "The margin of the top of the body. "));
+			Keywords.Add("vlink", new KeywordDescriptor(KeywordType.MethodParameters, MethodParameterColor, "Color of text for visited hypertext links."));

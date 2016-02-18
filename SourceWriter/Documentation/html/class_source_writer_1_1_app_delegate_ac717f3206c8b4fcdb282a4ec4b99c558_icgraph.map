@@ -1,0 +1,8 @@
+<map id="SourceWriter.AppDelegate.UpdateWindowPreferences" name="SourceWriter.AppDelegate.UpdateWindowPreferences">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_app_delegate.html#a48bf07e140a8eff51ea6c435ec311081" title="This method is called when the user selects a file from the Open Recent menu item. " alt="" coords="238,5,421,49"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_formats_prefs_controller.html#a1e25e8a8423d1a86dd5c719db5139ea2" title="Switches the language being edited to HTML. " alt="" coords="238,73,420,117"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_formats_prefs_controller.html#acdcd70adbb78f8796df1a47b8970bf7e" title="Switches the language being edited to MarkDown. " alt="" coords="238,141,420,185"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_formats_prefs_controller.html#a9bc6ffc9b6376a0d3ba01636c0575d8f" title="Switches the language being edited to XML. " alt="" coords="238,209,420,253"/>
+<area shape="rect" id="node7" href="$class_source_writer_1_1_formats_prefs_controller.html#a139974da4c13926aabbdda1e28863d6c" title="Forces any current language formatting changes to be sent to all open windows. " alt="" coords="238,277,420,321"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_app_delegate.html#a0a1141aeb1cbe826701426f68353789a" title="Displays the Open File dialog box allowing the user to select a file to open. " alt="" coords="470,5,653,49"/>
+</map>

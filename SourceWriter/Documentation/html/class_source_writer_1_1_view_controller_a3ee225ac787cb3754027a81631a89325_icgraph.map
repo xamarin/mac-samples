@@ -1,0 +1,4 @@
+<map id="SourceWriter.ViewController.SetLanguageToMarkDown" name="SourceWriter.ViewController.SetLanguageToMarkDown">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_window_controller.html#aec18901a0de92105dd81b527eff85db5" title="Reformats the document as MarkDown. " alt="" coords="246,5,522,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#ac099d771f9f6e84ff6e70c563727a35c" title="Attempts to set the syntax highlighting language based on the extension of the file being opened..." alt="" coords="288,73,480,117"/>
+</map>

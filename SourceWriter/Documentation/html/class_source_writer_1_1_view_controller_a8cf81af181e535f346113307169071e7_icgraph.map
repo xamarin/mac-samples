@@ -1,0 +1,13 @@
+<map id="SourceWriter.ViewController.PopulateFormattingMenu" name="SourceWriter.ViewController.PopulateFormattingMenu">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_widow_delegate.html#a13a69d5f536693c9efb243de8cb98f83" title="Called when the window gains focus and becomes the active window. " alt="" coords="253,5,430,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#ad3afb598e5863c401d3a803bd7d9b215" title="This method is called just before the View being handled by this View Controller will be displayed so..." alt="" coords="246,73,437,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#a2c24fd1baaaf4060ae110427b6f591a2" title="Sets the language to C sharp. " alt="" coords="246,141,437,185"/>
+<area shape="rect" id="node7" href="$class_source_writer_1_1_view_controller.html#af1b123e0d51bc06f7bef4363b0b9cd6a" title="Sets the language to HTML. " alt="" coords="246,209,437,253"/>
+<area shape="rect" id="node9" href="$class_source_writer_1_1_view_controller.html#a3ee225ac787cb3754027a81631a89325" title="Sets the language to MarkDown. " alt="" coords="246,277,437,321"/>
+<area shape="rect" id="node11" href="$class_source_writer_1_1_view_controller.html#a4537f5ecdb12c226ca0f96f72d74fb1f" title="Sets the language to XML. " alt="" coords="246,345,437,389"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_editor_window_controller.html#a68bac745812622c76e86a5bb64260485" title="Reformats the document as C sharp. " alt="" coords="495,106,753,150"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_view_controller.html#ac099d771f9f6e84ff6e70c563727a35c" title="Attempts to set the syntax highlighting language based on the extension of the file being opened..." alt="" coords="528,242,720,286"/>
+<area shape="rect" id="node8" href="$class_source_writer_1_1_editor_window_controller.html#a314e75cc6a57a226f46d7ebfb2bea9df" title="Reformats the document as HTML. " alt="" coords="499,174,749,218"/>
+<area shape="rect" id="node10" href="$class_source_writer_1_1_editor_window_controller.html#aec18901a0de92105dd81b527eff85db5" title="Reformats the document as MarkDown. " alt="" coords="486,310,762,354"/>
+<area shape="rect" id="node12" href="$class_source_writer_1_1_editor_window_controller.html#a71edd054d65630399cc7fc39f86e94e2" title="Reformats the document as XML. " alt="" coords="504,378,744,422"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="AppKit.TextKit.Formatter.LanguageDescriptor" name="AppKit.TextKit.Formatter.LanguageDescriptor">
+<area shape="rect" id="node3" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_c_sharp_descriptor.html" title="Defines how C# should be colorized using a AppKit.TextKit.Formatter.LanguageFormatter. " alt="" coords="353,5,522,49"/>
+<area shape="rect" id="node4" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_h_t_m_l_descriptor.html" title="Defines how HTML should be colorized using a AppKit.TextKit.Formatter.LanguageFormatter. " alt="" coords="353,73,522,117"/>
+<area shape="rect" id="node5" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_mark_down_descriptor.html" title="Defines how MarkDown should be colorized using a AppKit.TextKit.Formatter.LanguageFormatter. " alt="" coords="353,141,522,185"/>
+<area shape="rect" id="node6" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_x_m_l_descriptor.html" title="Defines how XML should be colorized using a AppKit.TextKit.Formatter.LanguageFormatter. " alt="" coords="353,209,522,253"/>
+</map>

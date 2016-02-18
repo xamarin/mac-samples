@@ -1,0 +1,9 @@
+<map id="SourceWriter.ViewController.SetLanguageFromPath" name="SourceWriter.ViewController.SetLanguageFromPath">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#a2c24fd1baaaf4060ae110427b6f591a2" title="Sets the language to C sharp. " alt="" coords="246,141,437,185"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_view_controller.html#af1b123e0d51bc06f7bef4363b0b9cd6a" title="Sets the language to HTML. " alt="" coords="246,209,437,253"/>
+<area shape="rect" id="node7" href="$class_source_writer_1_1_view_controller.html#a3ee225ac787cb3754027a81631a89325" title="Sets the language to MarkDown. " alt="" coords="246,5,437,49"/>
+<area shape="rect" id="node8" href="$class_source_writer_1_1_view_controller.html#a4537f5ecdb12c226ca0f96f72d74fb1f" title="Sets the language to XML. " alt="" coords="246,73,437,117"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#a898d892bce543d840f60ce515cc573e3" title="Unpopulates the formatting menu with the previous languages extra formatting commands. " alt="" coords="486,73,677,117"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#a8cf81af181e535f346113307169071e7" title="Populates the formatting menu with any additional commands defined in the language. " alt="" coords="486,141,677,185"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_view_controller.html#a341e1fd6b7595b9e5f925e305e411a36" title="Recursively build a menu from the set of Language Format Commands. " alt="" coords="726,141,917,185"/>
+</map>

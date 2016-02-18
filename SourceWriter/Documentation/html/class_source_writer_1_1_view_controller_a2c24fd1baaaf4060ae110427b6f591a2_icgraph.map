@@ -1,0 +1,4 @@
+<map id="SourceWriter.ViewController.SetLanguageToCSharp" name="SourceWriter.ViewController.SetLanguageToCSharp">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_editor_window_controller.html#a68bac745812622c76e86a5bb64260485" title="Reformats the document as C sharp. " alt="" coords="245,5,504,49"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#ac099d771f9f6e84ff6e70c563727a35c" title="Attempts to set the syntax highlighting language based on the extension of the file being opened..." alt="" coords="279,73,470,117"/>
+</map>

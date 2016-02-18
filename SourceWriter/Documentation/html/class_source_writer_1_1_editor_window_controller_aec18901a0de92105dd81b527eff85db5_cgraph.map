@@ -1,0 +1,6 @@
+<map id="SourceWriter.EditorWindowController.ReformatDocumentAsMarkDown" name="SourceWriter.EditorWindowController.ReformatDocumentAsMarkDown">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#a3ee225ac787cb3754027a81631a89325" title="Sets the language to MarkDown. " alt="" coords="331,39,522,83"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#a898d892bce543d840f60ce515cc573e3" title="Unpopulates the formatting menu with the previous languages extra formatting commands. " alt="" coords="571,5,762,49"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#a8cf81af181e535f346113307169071e7" title="Populates the formatting menu with any additional commands defined in the language. " alt="" coords="571,73,762,117"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_view_controller.html#a341e1fd6b7595b9e5f925e305e411a36" title="Recursively build a menu from the set of Language Format Commands. " alt="" coords="811,73,1002,117"/>
+</map>

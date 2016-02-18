@@ -1,0 +1,6 @@
+<map id="SourceWriter.EditorWindowController.ReformatDocumentAsHTML" name="SourceWriter.EditorWindowController.ReformatDocumentAsHTML">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#af1b123e0d51bc06f7bef4363b0b9cd6a" title="Sets the language to HTML. " alt="" coords="304,39,496,83"/>
+<area shape="rect" id="node3" href="$class_source_writer_1_1_view_controller.html#a898d892bce543d840f60ce515cc573e3" title="Unpopulates the formatting menu with the previous languages extra formatting commands. " alt="" coords="544,5,736,49"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#a8cf81af181e535f346113307169071e7" title="Populates the formatting menu with any additional commands defined in the language. " alt="" coords="544,73,736,117"/>
+<area shape="rect" id="node5" href="$class_source_writer_1_1_view_controller.html#a341e1fd6b7595b9e5f925e305e411a36" title="Recursively build a menu from the set of Language Format Commands. " alt="" coords="784,73,976,117"/>
+</map>

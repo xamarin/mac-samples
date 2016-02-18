@@ -1,0 +1,8 @@
+<map id="SourceWriter.ViewController.ViewWillDisappear" name="SourceWriter.ViewController.ViewWillDisappear">
+<area shape="rect" id="node2" href="$class_source_writer_1_1_view_controller.html#a341e1fd6b7595b9e5f925e305e411a36" title="Recursively build a menu from the set of Language Format Commands. " alt="" coords="266,5,457,49"/>
+<area shape="rect" id="node3" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_source_text_view.html#a663c9c0501c5376fbed680631f28c2cf" title="Performs the formatting command on the currectly selected range of text. " alt="" coords="246,73,477,133"/>
+<area shape="rect" id="node4" href="$class_source_writer_1_1_view_controller.html#a4283c707c22596ac8bf3c5f494d37dbd" title="Re&#45;run syntax highlighting for the entire text of the document. " alt="" coords="266,157,457,201"/>
+<area shape="rect" id="node5" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_descriptor.html#ab9dd166319b62c7b108f258b2300843d" title="Define this instance. " alt="" coords="270,225,453,269"/>
+<area shape="rect" id="node6" href="$class_source_writer_1_1_view_controller.html#aef0f22b451c5f26f1838c0be1bb46374" title="Configures the editor with the current user preferences. " alt="" coords="266,293,457,337"/>
+<area shape="rect" id="node7" href="$class_app_kit_1_1_text_kit_1_1_formatter_1_1_language_formatter.html#a0833481c67a100c4f7d206dd47d39b95" title="Forces all of the text in the attached NSTextView (the TextEditor property) to have its syntax rehigh..." alt="" coords="263,361,459,405"/>
+</map>
