@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C31f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -62,6 +62,7 @@
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
                                                 <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <segue destination="Fzr-oB-UjP" kind="show" id="gPR-4y-KKl"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -476,6 +477,18 @@
                                                 <action selector="pasteRuler:" target="Ady-hI-5gd" id="cSh-wd-qM2"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="M2Q-Nb-wsi"/>
+                                        <menuItem title="Wrap in Double Quotes" tag="1" keyEquivalent="'" id="FKo-8E-0XH">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="wrapDoubleQuote:" target="Ady-hI-5gd" id="G0C-lf-JYj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Wrap in Single Quotes" tag="1" keyEquivalent="'" id="nmV-cP-cm3">
+                                            <connections>
+                                                <action selector="wrapSingleQuote:" target="Ady-hI-5gd" id="A2a-Ct-BZU"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -507,6 +520,38 @@
                                                 <action selector="phrasesSignature:" target="Voe-Tx-rLC" id="uYg-WT-3rB"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kvZ-TS-DSb"/>
+                                        <menuItem title="Quotes" id="EQO-ZF-W4L">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Quotes" id="vUZ-tD-k33">
+                                                <items>
+                                                    <menuItem title="Arthur C. Clarke" tag="2" id="HWS-ws-Kdm">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="quoteClarke:" target="Ady-hI-5gd" id="C4N-Mt-ifE"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Mark Twain" tag="2" id="2Nx-BO-z7t">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="quoteTwain:" target="Ady-hI-5gd" id="vBR-LU-TZI"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Mae West" tag="2" id="cLj-eF-h6J">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="quoteWest:" target="Ady-hI-5gd" id="8Fk-sf-PfT"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Martin Luther King, Jr." tag="2" id="HzH-fG-uQg">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="quoteKing:" target="Ady-hI-5gd" id="cCM-1z-ZMb"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -525,8 +570,8 @@
                                                 <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Assistant" id="pdI-Zw-BXs">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Assistant" keyEquivalent="a" id="pdI-Zw-BXs">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <segue destination="uj4-H4-4TO" kind="show" id="faW-Zl-h1H"/>
                                             </connections>
@@ -562,7 +607,77 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="81" y="-274"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="D3n-aH-0PU">
+            <objects>
+                <windowController id="Fzr-oB-UjP" customClass="EditorWindowController" sceneMemberID="viewController">
+                    <window key="window" title="Quote Editor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CA7-4W-dCa">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="sP3-RU-PZo" kind="relationship" relationship="window.shadowedContentViewController" id="2Qp-4U-UgZ"/>
+                    </connections>
+                </windowController>
+                <customObject id="fE2-cF-Mhh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-554" y="236"/>
+        </scene>
+        <!--Editor View Controller-->
+        <scene sceneID="ygf-iv-Pf6">
+            <objects>
+                <viewController id="sP3-RU-PZo" customClass="EditorViewController" sceneMemberID="viewController">
+                    <view key="view" id="2KD-Hs-ACm">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idA-gA-3kR">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <clipView key="contentView" id="qhT-ST-Ghc">
+                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="7GS-hY-WDE">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="478" height="268"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="478" height="268"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="tcR-1c-L9H">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="syY-ZT-a5C">
+                                    <rect key="frame" x="463" y="1" width="16" height="268"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="idA-gA-3kR" secondAttribute="trailing" id="8tl-zE-h9A"/>
+                            <constraint firstItem="idA-gA-3kR" firstAttribute="leading" secondItem="2KD-Hs-ACm" secondAttribute="leading" id="Btc-Hy-47W"/>
+                            <constraint firstItem="idA-gA-3kR" firstAttribute="top" secondItem="2KD-Hs-ACm" secondAttribute="top" id="I5V-g0-95y"/>
+                            <constraint firstAttribute="bottom" secondItem="idA-gA-3kR" secondAttribute="bottom" id="qjD-vY-xKz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TextEditor" destination="7GS-hY-WDE" id="oeX-jp-aIb"/>
+                    </connections>
+                </viewController>
+                <customObject id="HOK-fQ-nat" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-554" y="706"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -599,7 +714,6 @@
                                         <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Gaf-g5-H9q">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="478" height="268"/>
                                             <size key="maxSize" width="480" height="10000000"/>
@@ -608,19 +722,15 @@
                                             <size key="maxSize" width="480" height="10000000"/>
                                         </textView>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
-                                <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="03g-sM-PeL">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="vKm-hd-yuV">
                                     <rect key="frame" x="463" y="1" width="16" height="268"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                             </scrollView>
                         </subviews>
@@ -630,7 +740,6 @@
                             <constraint firstItem="tdL-Pw-xg7" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="cd9-US-ofH"/>
                             <constraint firstAttribute="trailing" secondItem="tdL-Pw-xg7" secondAttribute="trailing" id="hEi-3r-8qm"/>
                         </constraints>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="documentText" destination="Gaf-g5-H9q" id="KDo-Ic-WEU"/>
@@ -638,7 +747,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="706"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="E9y-Rq-HeO">
@@ -668,7 +777,6 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwJ-2y-ZcM">
                                 <rect key="frame" x="18" y="233" width="231" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Property" id="7FQ-uK-Sha">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -680,7 +788,6 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-wl-Lr3">
                                 <rect key="frame" x="18" y="192" width="232" height="26"/>
-                                <animations/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="DD3-Cx-ArE">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -712,7 +819,6 @@
                                 </popUpButtonCell>
                             </popUpButton>
                         </subviews>
-                        <animations/>
                     </view>
                     <connections>
                         <outlet property="propertyLabel" destination="GwJ-2y-ZcM" id="9f0-Xx-Ilp"/>

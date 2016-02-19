@@ -82,6 +82,14 @@
     <Compile Include="PanelViewController.designer.cs">
       <DependentUpon>PanelViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditorWindowController.cs" />
+    <Compile Include="EditorWindowController.designer.cs">
+      <DependentUpon>EditorWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorViewController.cs" />
+    <Compile Include="EditorViewController.designer.cs">
+      <DependentUpon>EditorViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
