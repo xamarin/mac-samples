@@ -1,4 +1,4 @@
-Abstract: CoreTextArcMonoMac sample
+Sample code project: CoreTextArcMonoMac
 Version: 1.1 
 
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
