@@ -15,8 +15,12 @@ Build Requirements
 * Xcode 5.0 and OS X v10.9 or later.
 * Xamarin.Mac v1.11.3 or later.
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------
-
-Copyright (C) 2014 Apple Inc. All rights reserved.  
+  
 Ported to Xamarin.Mac by Vincent Dondain.
