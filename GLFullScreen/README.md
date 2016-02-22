@@ -20,8 +20,12 @@ Instructions
 * Press [w]/[W] to toggle wireframe rendering.
 * Hold and drag the mouse to change the roll angle and from which the light is coming.
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------ 
 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
