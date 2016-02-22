@@ -35,8 +35,12 @@ Enhancements
 
 Hence, by implementing the `GetCompletions` delegate you now have complete control on the contents on which text-based searching is based.
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------ 
 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
