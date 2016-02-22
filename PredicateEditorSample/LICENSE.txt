@@ -1,4 +1,4 @@
-Abstract: PredicateEditorSample sample
+Sample code project: PredicateEditorSample
 Version: 1.1 
 
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
