@@ -27,7 +27,12 @@ Instructions
 * Click in the checkboxes in wthe window to change some font settings.  
 * Choose the "Show Fonts" menu item from the "Format" menu to open the font panel so you can change additional font settings.
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
------- 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
+------
+
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
