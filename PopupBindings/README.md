@@ -29,8 +29,12 @@ All four Form Cells describing the person's address is bound to the array contro
 	Controller Key: selection
 	Model Key Path: addressStreet
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------ 
 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
