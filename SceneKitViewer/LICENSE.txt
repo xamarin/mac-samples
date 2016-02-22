@@ -1,4 +1,4 @@
-Abstract: SceneKitViewer sample
+Sample code project: SceneKitViewer
 Version: 1.1
  
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
