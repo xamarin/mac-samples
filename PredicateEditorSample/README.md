@@ -29,8 +29,12 @@ address book data only. Together along with the other predicates from the `NSPre
 	// and send it off for processing...
 	query.StartQuery();
 
+Copyright
+--------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------
 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
