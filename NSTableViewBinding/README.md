@@ -43,8 +43,12 @@ Instructions
 * You can edit each person's info by changing the first, last, and phone text fields.
 * By double-clicking a row in the table can also alternately edit a given person through the use of a sheet window.
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
 ------ 
 
-Copyright (C) 2014 Apple Inc. All rights reserved.  
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
