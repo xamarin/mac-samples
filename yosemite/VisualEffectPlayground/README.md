@@ -12,8 +12,12 @@ Runtime
 ------------------
 OS X 10.10
 
+Copyright
+---------
+
+Xamarin port changes are released under the MIT license
+
 Author
------- 
-Copyright (C) 2014 Apple Inc. All rights reserved.
+------
 
 Ported to Xamarin.Mac by Oleg Demchenko
