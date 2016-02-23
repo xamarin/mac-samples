@@ -30,9 +30,21 @@
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<!--Include to allow all connections (DANGER)-->
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>tlstest.xamdev.com</key>
+			<dict>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+			</dict>
+			<key>httpbin.org</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+      			<true/>
+      			<key>NSIncludesSubdomains</key>
+      			<true/>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>

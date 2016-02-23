@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 using AppKit;
 using Foundation;
@@ -11,7 +13,8 @@ namespace HttpClient {
 			"https - WebRequest",
 			"http - NSUrlConnection",
 			"http - HttpClient",
-			"https - HttpClient"
+			"https - HttpClient",
+			"https - TLSv1.2"
 		};
 
 		public string WisdomUrl { get; } = "http://httpbin.org/ip";
@@ -51,6 +54,9 @@ namespace HttpClient {
 			case 4:
 				await new NetHttp (this).HttpSample (true);
 				break;
+			case 5:
+				RunTls12Request ();
+				break;
 			}
 		}
 
@@ -83,6 +89,27 @@ namespace HttpClient {
 		{
 			return (NSString)values[(int)row];
 		}
-	}
 
+		void RunTls12Request ()
+		{
+			var actual = ServicePointManager.SecurityProtocol;
+
+			try {
+				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+				var request = new HttpWebRequest (new Uri ("https://tlstest.xamdev.com/"));
+				ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+				var clientCertificate = new X509Certificate2 ("beowulf.home.pem");
+				request.ClientCertificates.Add (clientCertificate);
+				var msg = request.GetResponse ();
+
+				using (var stream = msg.GetResponseStream ())
+					RenderStream (stream);
+			} catch (WebException ex) {
+				Console.WriteLine (ex.Message);
+			} finally {
+				ServicePointManager.SecurityProtocol = actual;
+			}
+		}
+	}
 }
