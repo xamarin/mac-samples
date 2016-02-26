@@ -87,6 +87,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\beowulf.home.pem" />
+    <BundleResource Include="Resources\cert.pem" />
   </ItemGroup>
 </Project>

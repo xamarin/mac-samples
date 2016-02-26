@@ -32,10 +32,12 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>tlstest.xamdev.com</key>
+			<key>howsmyssl.com</key>
 			<dict>
 				<key>NSExceptionMinimumTLSVersion</key>
 				<string>TLSv1.2</string>
+				<key>NSIncludesSubdomains</key>
+      			<true/>
 			</dict>
 			<key>httpbin.org</key>
 			<dict>
