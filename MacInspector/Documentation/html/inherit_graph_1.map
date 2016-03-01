@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_mac_inspector_1_1_box_prefs_view_controller.html" title="Controls the adjustable properties of a T:MacInspector.CustomBox when displayed in an Inspector Panel..." alt="" coords="182,5,370,49"/>
+<area shape="rect" id="node3" href="$class_mac_inspector_1_1_content_view_controller.html" title="Controls the Content View displayed in the Left side of the T:MacInspector.MainSplitViewController. " alt="" coords="186,73,366,117"/>
+<area shape="rect" id="node4" href="$class_mac_inspector_1_1_doc_prefs_view_controller.html" title="Controls the adjustable properties of a T:MacInspector.DocumentProperties when displayed in an Inspec..." alt="" coords="182,141,370,185"/>
+<area shape="rect" id="node5" href="$class_mac_inspector_1_1_inspector_view_controller.html" title="Controls the Inspector Panel displayed in the right hand side of the T:MacInspector.MainSplitViewController. This controller is responsible for switching out Inspector Panels as the context changes inside of the app. " alt="" coords="182,209,370,253"/>
+</map>

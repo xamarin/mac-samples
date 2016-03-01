@@ -1,0 +1,4 @@
+<map id="MacInspector.InspectorViewController.SetInspectorPanel" name="MacInspector.InspectorViewController.SetInspectorPanel">
+<area shape="rect" id="node2" href="$class_mac_inspector_1_1_replace_inspector_panel_seque.html#aca4610149248b54a80803e3425b59dfb" title="Initializes a new instance of the T:MacInspector.ReplaceInspectorPanelSeque class. " alt="" coords="246,5,520,49"/>
+<area shape="rect" id="node3" href="$class_mac_inspector_1_1_inspector_view_controller.html#ab6cec3534ab3612088ce39decfbb31cd" title="Removes the current Inspector Panel (View Controller) from the screen. " alt="" coords="281,73,484,117"/>
+</map>

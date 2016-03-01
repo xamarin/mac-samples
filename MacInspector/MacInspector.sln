@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacInspector", "MacInspector\MacInspector.csproj", "{3A5E060E-FF0C-4F0F-BBFA-989206B80923}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A5E060E-FF0C-4F0F-BBFA-989206B80923}.Debug|x86.ActiveCfg = Debug|x86
+		{3A5E060E-FF0C-4F0F-BBFA-989206B80923}.Debug|x86.Build.0 = Debug|x86
+		{3A5E060E-FF0C-4F0F-BBFA-989206B80923}.Release|x86.ActiveCfg = Release|x86
+		{3A5E060E-FF0C-4F0F-BBFA-989206B80923}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

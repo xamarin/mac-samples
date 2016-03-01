@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>4484bfd8-1ff6-4523-99c4-eeed6e826aca</ID>
+  <IsFullApplication>false</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
+  <Gallery>true</Gallery>
+  <Brief>Shows how to work with an Inspector Panel in a Xamarin.Mac app.</Brief>
+</SampleMetadata>
