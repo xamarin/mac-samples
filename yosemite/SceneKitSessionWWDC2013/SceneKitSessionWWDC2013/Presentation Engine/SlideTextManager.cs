@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+
 using AppKit;
 using SceneKit;
 using Foundation;
-using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideTextManager
-	{
-		private const float TEXT_SCALE = 0.02f;
-		private const float TEXT_CHAMFER = 1;
-		private const float TEXT_DEPTH = 0.0f;
-		private const float TEXT_FLATNESS = 0.4f;
+namespace SceneKitSessionWWDC2013 {
+	public class SlideTextManager {
+		const float TEXT_SCALE = 0.02f;
+		const float TEXT_CHAMFER = 1;
+		const float TEXT_DEPTH = 0.0f;
+		const float TEXT_FLATNESS = 0.4f;
 
-		public enum TextType
-		{
+		public enum TextType {
 			None,
 			Chapter,
 			Title,
@@ -27,13 +22,13 @@ namespace SceneKitSessionWWDC2013
 			Count
 		}
 
-		private SCNNode[] SubGroups = new SCNNode[(int)TextType.Count];
+		SCNNode[] SubGroups = new SCNNode[(int)TextType.Count];
 
-		private TextType PreviousType { get; set; }
+		TextType PreviousType { get; set; }
 
-		private float CurrentBaseline { get; set; }
+		float CurrentBaseline { get; set; }
 
-		private float[] BaselinePerType = new float[(int)TextType.Count];
+		float[] BaselinePerType = new float[(int)TextType.Count];
 
 		public SCNNode TextNode { get; set; }
 
@@ -45,7 +40,7 @@ namespace SceneKitSessionWWDC2013
 			CurrentBaseline = 16;
 		}
 
-		private NSColor ColorForTextType (TextType type, int level)
+		NSColor ColorForTextType (TextType type, int level)
 		{
 			NSColor color = null;
 			switch (type) {
@@ -66,12 +61,12 @@ namespace SceneKitSessionWWDC2013
 			return color;
 		}
 
-		private float ExtrusionDepthForTextType (TextType type)
+		float ExtrusionDepthForTextType (TextType type)
 		{
 			return type == TextType.Chapter ? 10.0f : TEXT_DEPTH;
 		}
 
-		private float FontCGSizeorTextType (TextType type, int level)
+		float FontCGSizeorTextType (TextType type, int level)
 		{
 			float fontSize = 0;
 			switch (type) {
@@ -97,11 +92,10 @@ namespace SceneKitSessionWWDC2013
 			return fontSize;
 		}
 
-		private NSFont FontForTextType (TextType type, int level)
+		NSFont FontForTextType (TextType type, int level)
 		{
 			var fontSize = FontCGSizeorTextType (type, level);
-			var font = NSFont.FromFontName ("Myriad Set Semibold", fontSize) != null ? NSFont.FromFontName ("Myriad Set", fontSize) : NSFont.FromFontName ("Avenir Medium", fontSize);
-			;
+			var font = NSFont.FromFontName("Myriad Set Semibold", fontSize) != null ? NSFont.FromFontName("Myriad Set", fontSize) : NSFont.FromFontName("Avenir Medium", fontSize);
 
 			switch (type) {
 			case TextType.Code:
@@ -144,7 +138,7 @@ namespace SceneKitSessionWWDC2013
 			return lineHeight;
 		}
 
-		private SCNNode TextContainerForType (TextType type)
+		SCNNode TextContainerForType (TextType type)
 		{
 			if (type == TextType.Chapter)
 				return TextNode.ParentNode;
@@ -167,7 +161,7 @@ namespace SceneKitSessionWWDC2013
 		}
 
 
-		private SCNNode NodeWithText (string message, TextType type, int level)
+		SCNNode NodeWithText (string message, TextType type, int level)
 		{
 			var textNode = SCNNode.Create ();
 
@@ -200,7 +194,7 @@ namespace SceneKitSessionWWDC2013
 			var layoutManager = new NSLayoutManager ();
 			var leading = layoutManager.DefaultLineHeightForFont (text.Font);
 			var descender = text.Font.Descender;
-			int newlineCount = ((string[])(((string)text.String.ToString ()).Split ('\n'))).Length;
+			int newlineCount = (((text.String.ToString ()).Split ('\n'))).Length;
 			textNode.Pivot = SCNMatrix4.CreateTranslation (0, -descender + newlineCount * leading, 0);
 
 			if (type == TextType.Chapter) {

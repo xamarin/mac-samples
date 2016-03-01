@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 using AppKit;
 using SceneKit;
@@ -9,19 +8,17 @@ using CoreGraphics;
 using CoreAnimation;
 using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideCoreImage : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideCoreImage : Slide {
 		const int ContactImageCount = 44;
 		const int RowCount = 4;
 		const int ColumnCount = 11;
 
-		private SCNNode GroupNode { get; set; }
+		SCNNode GroupNode { get; set; }
 
-		private SCNNode HeroNode { get; set; }
+		SCNNode HeroNode { get; set; }
 
-		private CGSize ViewportSize { get; set; }
+		CGSize ViewportSize { get; set; }
 
 		public override int NumberOfSteps ()
 		{
@@ -71,7 +68,7 @@ namespace SceneKitSessionWWDC2013
 
 				// Successively select items
 				for (var i = 0; i < 5; ++i) {
-					var popTime = new DispatchTime (DispatchTime.Now, (Int64)(i * 0.2 * Utils.NSEC_PER_SEC));
+						var popTime = new DispatchTime (DispatchTime.Now, (long)(i * 0.2 * Utils.NSEC_PER_SEC));
 					DispatchQueue.MainQueue.DispatchAfter (popTime, () => {
 						SCNTransaction.Begin ();
 						SCNTransaction.AnimationDuration = 0.2f;

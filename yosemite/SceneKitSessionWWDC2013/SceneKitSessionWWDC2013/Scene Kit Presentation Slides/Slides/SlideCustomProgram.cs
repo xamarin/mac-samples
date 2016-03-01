@@ -3,11 +3,9 @@ using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideCustomProgram : Slide
-	{
-		private SCNNode TorusNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideCustomProgram : Slide {
+		SCNNode TorusNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{

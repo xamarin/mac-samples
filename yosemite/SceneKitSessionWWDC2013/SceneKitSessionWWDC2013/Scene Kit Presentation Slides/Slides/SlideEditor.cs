@@ -2,10 +2,8 @@
 using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideEditor : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideEditor : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Scene Kit Editor");

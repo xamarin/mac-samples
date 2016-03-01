@@ -1,13 +1,7 @@
-﻿using System;
-using System.Drawing;
-using Foundation;
-using AppKit;
-using ObjCRuntime;
+﻿using AppKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	class MainClass
-	{
+namespace SceneKitSessionWWDC2013 {
+	class MainClass {
 		static void Main (string[] args)
 		{
 			NSApplication.Init ();

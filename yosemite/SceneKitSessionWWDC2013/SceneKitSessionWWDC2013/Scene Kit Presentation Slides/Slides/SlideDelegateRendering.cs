@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using AppKit;
-using OpenGL;
-using SceneKit;
+﻿using SceneKit;
 
 namespace SceneKitSessionWWDC2013
 {

@@ -9,13 +9,11 @@ using AVFoundation;
 using CoreGraphics;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMaterialLayer : Slide
-	{
-		private AVPlayerLayer PlayerLayer1 { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideMaterialLayer : Slide {
+		AVPlayerLayer PlayerLayer1 { get; set; }
 
-		private AVPlayerLayer PlayerLayer2 { get; set; }
+		AVPlayerLayer PlayerLayer2 { get; set; }
 
 		public override int NumberOfSteps ()
 		{
@@ -65,7 +63,7 @@ namespace SceneKitSessionWWDC2013
 		}
 
 		// Load movies and display movie layers
-		private AVPlayerLayer ConfigurePlayer (string movieName, string hostingNodeName)
+		AVPlayerLayer ConfigurePlayer (string movieName, string hostingNodeName)
 		{
 			var player = AVPlayer.FromUrl (NSUrl.FromFilename (movieName));
 			player.ActionAtItemEnd = AVPlayerActionAtItemEnd.None; // loop
@@ -95,7 +93,7 @@ namespace SceneKitSessionWWDC2013
 		}
 
 		[Export ("PlayerItemDidReachEnd:")]
-		private void PlayerItemDidReachEnd (NSNotification notification)
+		void PlayerItemDidReachEnd (NSNotification notification)
 		{
 			var playerItem = (AVPlayerItem)notification.Object;
 			playerItem.Seek (CMTime.Zero);
@@ -108,9 +106,6 @@ namespace SceneKitSessionWWDC2013
 
 			PlayerLayer1.Player.Pause ();
 			PlayerLayer2.Player.Pause ();
-
-			//playerLayer1.Player = null;
-			//playerLayer2.Player = null;
 
 			// Stop playing scene animations, restore the original point of view and restore the default spot light mode
 			((SCNView)presentationViewController.View).Playing = false;

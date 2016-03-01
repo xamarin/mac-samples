@@ -1,9 +1,6 @@
-﻿using System;
-using System.Drawing;
-using AppKit;
+﻿using AppKit;
 using SceneKit;
 using Foundation;
-using CoreAnimation;
 
 namespace SceneKitSessionWWDC2013
 {

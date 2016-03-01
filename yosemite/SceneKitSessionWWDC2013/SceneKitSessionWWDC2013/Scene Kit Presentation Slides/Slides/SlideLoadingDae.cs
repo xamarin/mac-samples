@@ -1,11 +1,8 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideLoadingDae : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideLoadingDae : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			// Add some text

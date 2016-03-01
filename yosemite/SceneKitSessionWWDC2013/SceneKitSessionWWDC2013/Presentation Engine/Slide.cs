@@ -1,14 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using AppKit;
-using SceneKit;
+﻿using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class Slide : NSObject
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class Slide : NSObject {
 		public SCNNode ContentNode { get; set; }
 
 		public SCNNode GroundNode { get; set; }

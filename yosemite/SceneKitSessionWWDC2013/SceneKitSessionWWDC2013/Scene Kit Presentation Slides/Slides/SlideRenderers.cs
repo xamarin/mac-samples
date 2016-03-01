@@ -2,10 +2,8 @@
 using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideRenderers : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideRenderers : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Renderers");

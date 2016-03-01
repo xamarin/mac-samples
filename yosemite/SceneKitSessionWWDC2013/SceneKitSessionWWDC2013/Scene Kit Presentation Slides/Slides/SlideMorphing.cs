@@ -3,14 +3,12 @@ using System.IO;
 using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMorphing : Slide
-	{
-		private SCNNode MapNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideMorphing : Slide {
+		SCNNode MapNode { get; set; }
 
-		private SCNNode GaugeANode, GaugeAProgressNode;
-		private SCNNode GaugeBNode, GaugeBProgressNode;
+		SCNNode GaugeANode, GaugeAProgressNode;
+		SCNNode GaugeBNode, GaugeBProgressNode;
 
 		public override int NumberOfSteps ()
 		{

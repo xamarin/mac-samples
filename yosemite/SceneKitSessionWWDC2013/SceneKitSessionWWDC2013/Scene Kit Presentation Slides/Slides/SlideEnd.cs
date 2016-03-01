@@ -1,10 +1,7 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideEnd : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideEnd : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			var labelNode = Utils.SCLabelNode ("XAMARIN 2014", Utils.LabelSize.Normal, false);

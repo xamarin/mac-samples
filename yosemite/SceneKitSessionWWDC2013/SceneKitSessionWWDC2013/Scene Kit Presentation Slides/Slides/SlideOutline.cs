@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideOutline : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideOutline : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 6;

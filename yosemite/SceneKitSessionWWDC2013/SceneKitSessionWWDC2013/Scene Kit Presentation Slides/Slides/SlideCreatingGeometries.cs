@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 using AppKit;
 using SceneKit;
@@ -7,17 +6,15 @@ using Foundation;
 using CoreGraphics;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideCreatingGeometries : Slide
-	{
-		private SCNNode CarouselNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideCreatingGeometries : Slide {
+		SCNNode CarouselNode { get; set; }
 
-		private SCNNode TextNode { get; set; }
+		SCNNode TextNode { get; set; }
 
-		private SCNNode Level2OutlineNode, Level2Node;
+		SCNNode Level2OutlineNode, Level2Node;
 
-		private int PrimitiveIndex { get; set; }
+		int PrimitiveIndex { get; set; }
 
 		public override int NumberOfSteps ()
 		{

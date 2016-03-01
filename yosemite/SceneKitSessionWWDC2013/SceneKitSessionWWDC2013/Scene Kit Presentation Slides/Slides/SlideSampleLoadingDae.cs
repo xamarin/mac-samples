@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideSampleLoadingDae : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideSampleLoadingDae : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Loading a DAE");

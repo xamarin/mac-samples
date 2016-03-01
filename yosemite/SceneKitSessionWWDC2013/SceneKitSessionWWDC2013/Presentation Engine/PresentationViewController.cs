@@ -11,14 +11,11 @@ using CoreGraphics;
 using CoreAnimation;
 using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
+namespace SceneKitSessionWWDC2013 {
 	public delegate void PresentationDelegate ();
 
-	public class PresentationViewController : NSViewController
-	{
-		public enum Light
-		{
+	public class PresentationViewController : NSViewController {
+		public enum Light {
 			Main = 0,
 			Front,
 			Spot,

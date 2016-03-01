@@ -2,15 +2,11 @@
 
 using AppKit;
 using SceneKit;
-using Foundation;
 using CoreGraphics;
-using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideSceneGraph : Slide
-	{
-		private static SCNNode DiagramNode = null;
+namespace SceneKitSessionWWDC2013 {
+	public class SlideSceneGraph : Slide {
+		static SCNNode DiagramNode = null;
 
 		public override int NumberOfSteps ()
 		{

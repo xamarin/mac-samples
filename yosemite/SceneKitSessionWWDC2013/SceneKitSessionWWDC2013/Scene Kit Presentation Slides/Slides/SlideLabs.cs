@@ -5,10 +5,8 @@ using SceneKit;
 using CoreGraphics;
 using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideLabs : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideLabs : Slide {
 		public override void PresentStep (int index, PresentationViewController presentationViewController)
 		{
 			// Set the slide's title

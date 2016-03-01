@@ -1,11 +1,8 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideFlattening : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideFlattening : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 2;

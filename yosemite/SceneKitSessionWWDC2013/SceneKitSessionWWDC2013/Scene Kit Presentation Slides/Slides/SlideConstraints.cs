@@ -7,11 +7,9 @@ using CoreGraphics;
 using CoreAnimation;
 using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideConstraints : Slide
-	{
-		private SCNNode BallNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideConstraints : Slide {
+		SCNNode BallNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{
@@ -75,7 +73,7 @@ namespace SceneKitSessionWWDC2013
 						SCNTransaction.Begin ();
 						SCNTransaction.AnimationDuration = 1;
 						// Animate to the result of applying the constraint
-						((SCNNode)arrow.ChildNodes [0]).Rotation = new SCNVector4 (0, 1, 0, (float)(Math.PI / 2));
+						arrow.ChildNodes [0].Rotation = new SCNVector4 (0, 1, 0, (float)(Math.PI / 2));
 						arrow.Constraints = new SCNConstraint[] { constraint };
 						SCNTransaction.Commit ();
 					});
@@ -108,7 +106,7 @@ namespace SceneKitSessionWWDC2013
 					NSValue.FromVector (new SCNVector3 (0, 0.0f, 0))
 				};
 
-				animation.CalculationMode = CAKeyFrameAnimation.AnimationCubicPaced; // smooth the movement between keyframes
+				animation.CalculationMode = CAAnimation.AnimationCubicPaced; // smooth the movement between keyframes
 				animation.RepeatCount = float.MaxValue;
 				animation.Duration = 10.0f;
 				animation.TimingFunction = CAMediaTimingFunction.FromName (CAMediaTimingFunction.Linear);

@@ -1,24 +1,21 @@
 ﻿using System;
 using System.IO;
 using AppKit;
-using OpenGL;
 using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideShaderModifiers : Slide
-	{
-		private SCNNode PlaneNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideShaderModifiers : Slide {
+		SCNNode PlaneNode { get; set; }
 
-		private SCNNode SphereNode { get; set; }
+		SCNNode SphereNode { get; set; }
 
-		private SCNNode TorusNode { get; set; }
+		SCNNode TorusNode { get; set; }
 
-		private SCNNode XRayNode { get; set; }
+		SCNNode XRayNode { get; set; }
 
-		private SCNNode VirusNode { get; set; }
+		SCNNode VirusNode { get; set; }
 
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{

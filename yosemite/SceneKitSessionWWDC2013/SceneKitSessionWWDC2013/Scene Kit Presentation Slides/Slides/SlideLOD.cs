@@ -4,10 +4,8 @@ using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideLOD : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideLOD : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 7;
@@ -135,7 +133,7 @@ namespace SceneKitSessionWWDC2013
 				var maintTeapot = GroundNode.FindChildNode ("Teapot0", true);
 
 				// The distances to use for each LOD
-				var distances = new float [4] { 30, 50, 90, 150 };
+				var distances = new float[] { 30, 50, 90, 150 };
 
 				// An array of SCNLevelOfDetail instances that we will build
 				var levelsOfDetail = new SCNLevelOfDetail[4];
@@ -265,14 +263,14 @@ namespace SceneKitSessionWWDC2013
 			return numberNode;
 		}
 
-		private void RemoveNumberNodes ()
+		void RemoveNumberNodes ()
 		{
 			// Move, fade and remove on completion
 			foreach (var node in GroundNode.ChildNodes) {
 				if (node.Name == "number") {
 					SCNTransaction.Begin ();
 					SCNTransaction.AnimationDuration = 1;
-					SCNTransaction.SetCompletionBlock (() => node.RemoveFromParentNode ());
+					SCNTransaction.SetCompletionBlock (node.RemoveFromParentNode);
 					node.Opacity = 0.0f;
 					node.Position = new SCNVector3 (node.Position.X, node.Position.Y, node.Position.Z - 20);
 					SCNTransaction.Commit ();

@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideRenderAScene : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideRenderAScene : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Rendering a Scene");

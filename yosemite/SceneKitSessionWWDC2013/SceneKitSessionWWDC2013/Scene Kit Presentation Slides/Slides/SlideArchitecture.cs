@@ -1,13 +1,9 @@
-﻿using System;
-
-using AppKit;
+﻿using AppKit;
 using SceneKit;
 using CoreGraphics;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideArchitecture : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideArchitecture : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Scene Kit");

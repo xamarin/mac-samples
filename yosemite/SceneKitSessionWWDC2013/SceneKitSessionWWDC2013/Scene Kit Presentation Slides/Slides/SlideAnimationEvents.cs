@@ -5,21 +5,18 @@ using Foundation;
 using ObjCRuntime;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideAnimationEvents : Slide
-	{
-		public enum CharacterAnimation
-		{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideAnimationEvents : Slide {
+		public enum CharacterAnimation {
 			Attack = 0,
 			Walk,
 			Die,
 			Count
 		}
 
-		private SCNNode HeroSkeletonNode { get; set; }
+		SCNNode HeroSkeletonNode { get; set; }
 
-		private CAAnimation[] Animations = new CAAnimation[(int)CharacterAnimation.Count];
+		CAAnimation[] Animations = new CAAnimation[(int)CharacterAnimation.Count];
 
 		public override int NumberOfSteps ()
 		{
@@ -101,7 +98,7 @@ namespace SceneKitSessionWWDC2013
 			}
 		}
 
-		private void SetAnimation (CharacterAnimation index, string animationName, string sceneName)
+		void SetAnimation (CharacterAnimation index, string animationName, string sceneName)
 		{
 			// Load the DAE using SCNSceneSource in order to be able to retrieve the animation by its identifier
 			var path = NSBundle.MainBundle.PathForResource ("Scenes/hero/" + sceneName, "dae");

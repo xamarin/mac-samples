@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using AppKit;
 using Foundation;
-using ObjCRuntime;
 
 namespace SceneKitSessionWWDC2013
 {

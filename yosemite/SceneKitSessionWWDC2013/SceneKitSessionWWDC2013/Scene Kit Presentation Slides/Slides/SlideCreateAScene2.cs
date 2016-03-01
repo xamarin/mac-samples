@@ -1,10 +1,7 @@
-﻿using System;
-using CoreFoundation;
+﻿using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideCreateAScene2 : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideCreateAScene2 : Slide {
 		public override void PresentStep (int index, PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Creating a Scene");

@@ -3,11 +3,9 @@ using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideLighting : Slide
-	{
-		private SCNNode RoomNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideLighting : Slide {
+		SCNNode RoomNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{

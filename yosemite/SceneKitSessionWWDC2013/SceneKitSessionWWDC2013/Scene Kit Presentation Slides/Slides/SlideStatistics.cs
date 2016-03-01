@@ -2,17 +2,15 @@
 using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideStatistics : Slide
-	{
-		private SCNNode FpsNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideStatistics : Slide {
+		SCNNode FpsNode { get; set; }
 
-		private SCNNode PanelNode { get; set; }
+		SCNNode PanelNode { get; set; }
 
-		private SCNNode ButtonNode { get; set; }
+		SCNNode ButtonNode { get; set; }
 
-		private SCNNode WindowNode { get; set; }
+		SCNNode WindowNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{

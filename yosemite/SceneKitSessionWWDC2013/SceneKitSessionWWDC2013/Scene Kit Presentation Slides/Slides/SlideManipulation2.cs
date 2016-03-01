@@ -1,10 +1,7 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideManipulation2 : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideManipulation2 : Slide {
 		SCNNode sceneGraphDiagramNode;
 
 		public override void SetupSlide (PresentationViewController presentationViewController)

@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMoreInfo : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideMoreInfo : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("More Information");

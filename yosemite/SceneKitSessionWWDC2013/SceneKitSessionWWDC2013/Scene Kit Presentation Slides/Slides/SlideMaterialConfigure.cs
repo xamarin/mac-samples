@@ -1,10 +1,7 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMaterialConfigure : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideMaterialConfigure : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 4;

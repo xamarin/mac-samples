@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideTexturing : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideTexturing : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 4;

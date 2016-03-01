@@ -3,11 +3,9 @@ using AppKit;
 using SceneKit;
 using Foundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideImplicitAnimations : Slide
-	{
-		private SCNNode AnimatedNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideImplicitAnimations : Slide {
+		SCNNode AnimatedNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{

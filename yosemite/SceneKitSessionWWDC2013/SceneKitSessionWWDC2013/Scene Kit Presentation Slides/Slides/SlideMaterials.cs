@@ -1,11 +1,8 @@
-﻿using System;
-using SceneKit;
+﻿using SceneKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMaterials : Slide
-	{
-		private SCNNode SceneGraphDiagramNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideMaterials : Slide {
+		SCNNode SceneGraphDiagramNode { get; set; }
 
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{

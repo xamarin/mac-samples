@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Globalization;
-using System.Collections.Generic;
 
 using AppKit;
-using OpenGL;
 using SceneKit;
 using Foundation;
 using CoreGraphics;
-using CoreText;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class Utils : SCNNode
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class Utils : SCNNode {
 		public const long NSEC_PER_SEC = 1000000000;
 
-		public enum LabelSize
-		{
+		public enum LabelSize {
 			Small = 1,
 			Normal = 2,
 			Large = 4

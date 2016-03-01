@@ -4,15 +4,13 @@ using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideMaterialProperties : Slide
-	{
-		private SCNNode EarthNode { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideMaterialProperties : Slide {
+		SCNNode EarthNode { get; set; }
 
-		private SCNNode CloudsNode { get; set; }
+		SCNNode CloudsNode { get; set; }
 
-		private SCNVector3 CameraOriginalPosition { get; set; }
+		SCNVector3 CameraOriginalPosition { get; set; }
 
 		public override int NumberOfSteps ()
 		{
@@ -209,7 +207,7 @@ namespace SceneKitSessionWWDC2013
 			SCNTransaction.Commit ();
 		}
 
-		private void ShowCodeExample (string code, string imageName, string extension)
+		void ShowCodeExample (string code, string imageName, string extension)
 		{
 			SCNTransaction.Begin ();
 			SCNTransaction.AnimationDuration = 0;

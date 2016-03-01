@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Drawing;
 using AppKit;
-using OpenGL;
 using OpenTK;
 using SceneKit;
 using Foundation;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideGeometry : Slide
-	{
-		private SCNNode TeapotNodeForPositionsAndNormals { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideGeometry : Slide {
+		SCNNode TeapotNodeForPositionsAndNormals { get; set; }
 
-		private SCNNode TeapotNodeForUVs { get; set; }
+		SCNNode TeapotNodeForUVs { get; set; }
 
-		private SCNNode TeapotNodeForMaterials { get; set; }
+		SCNNode TeapotNodeForMaterials { get; set; }
 
-		private SCNNode PositionsVisualizationNode;
-		private SCNNode NormalsVisualizationNode;
+		SCNNode PositionsVisualizationNode;
+		SCNNode NormalsVisualizationNode;
 
 		public override int NumberOfSteps ()
 		{
@@ -186,11 +182,11 @@ namespace SceneKitSessionWWDC2013
 			var normalSource = node.Geometry.GetGeometrySourcesForSemantic (SCNGeometrySourceSemantic.Normal) [0];
 
 			// Get vertex and normal bytes
-			var vertexBufferByte = (byte[])positionSource.Data.ToArray ();
+			var vertexBufferByte = positionSource.Data.ToArray ();
 			var vertexBuffer = new float[vertexBufferByte.Length / 4];
 			Buffer.BlockCopy (vertexBufferByte, 0, vertexBuffer, 0, vertexBufferByte.Length);
 
-			var normalBufferByte = (byte[])normalSource.Data.ToArray ();
+			var normalBufferByte = normalSource.Data.ToArray ();
 			var normalBuffer = new float[normalBufferByte.Length / 4];
 			Buffer.BlockCopy (normalBufferByte, 0, normalBuffer, 0, normalBufferByte.Length);
 

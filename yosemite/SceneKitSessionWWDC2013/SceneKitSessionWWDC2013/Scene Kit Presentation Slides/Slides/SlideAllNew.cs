@@ -1,18 +1,14 @@
-﻿using System;
-
-using AppKit;
+﻿using AppKit;
 using SceneKit;
 using Foundation;
 using CoreGraphics;
 using CoreAnimation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideAllNew : Slide
-	{
-		private SCNMaterial[] Materials { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideAllNew : Slide {
+		SCNMaterial[] Materials { get; set; }
 
-		private NSFont Font { get; set; }
+		NSFont Font { get; set; }
 
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
@@ -48,7 +44,7 @@ namespace SceneKitSessionWWDC2013
 			PlaceFeature ("Animation blending", new CGPoint (-2, -5), 1);
 		}
 
-		private void PlaceFeature (string message, CGPoint p, float offset)
+		void PlaceFeature (string message, CGPoint p, float offset)
 		{
 			// Create and configure a node with a text geometry, and add it to the scene
 			var text = SCNText.Create (message, 5);

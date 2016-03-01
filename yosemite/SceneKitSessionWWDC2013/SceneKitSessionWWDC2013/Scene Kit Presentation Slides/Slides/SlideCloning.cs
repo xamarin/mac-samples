@@ -4,12 +4,10 @@ using AppKit;
 using SceneKit;
 using CoreGraphics;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideCloning : Slide
-	{
-		private NSColor RedColor, GreenColor, BlueColor, PurpleColor;
-		private SCNNode DiagramNode;
+namespace SceneKitSessionWWDC2013 {
+	public class SlideCloning : Slide {
+		NSColor RedColor, GreenColor, BlueColor, PurpleColor;
+		SCNNode DiagramNode;
 
 		public override int NumberOfSteps ()
 		{

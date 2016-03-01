@@ -1,10 +1,8 @@
 ﻿using System;
 using SceneKit;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideDOF : Slide
-	{
+namespace SceneKitSessionWWDC2013 {
+	public class SlideDOF : Slide {
 		public override int NumberOfSteps ()
 		{
 			return 6;

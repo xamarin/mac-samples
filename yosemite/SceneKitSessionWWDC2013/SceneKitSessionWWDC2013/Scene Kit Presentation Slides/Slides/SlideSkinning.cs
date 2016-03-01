@@ -1,25 +1,23 @@
 ﻿using System;
 using System.IO;
-using System.Collections;
+
 using SceneKit;
 using Foundation;
 using ObjCRuntime;
 using CoreAnimation;
 using CoreFoundation;
 
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideSkinning : Slide
-	{
-		private CAAnimationGroup IdleAnimationGroup { get; set; }
+namespace SceneKitSessionWWDC2013 {
+	public class SlideSkinning : Slide {
+		CAAnimationGroup IdleAnimationGroup { get; set; }
 
-		private CAAnimationGroup AnimationGroup1 { get; set; }
+		CAAnimationGroup AnimationGroup1 { get; set; }
 
-		private CAAnimationGroup AnimationGroup2 { get; set; }
+		CAAnimationGroup AnimationGroup2 { get; set; }
 
-		private SCNNode CharacterNode { get; set; }
+		SCNNode CharacterNode { get; set; }
 
-		private SCNNode SkeletonNode { get; set; }
+		SCNNode SkeletonNode { get; set; }
 
 		public override int NumberOfSteps ()
 		{

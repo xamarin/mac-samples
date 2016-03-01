@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using AppKit;
 using SceneKit;
 using Foundation;

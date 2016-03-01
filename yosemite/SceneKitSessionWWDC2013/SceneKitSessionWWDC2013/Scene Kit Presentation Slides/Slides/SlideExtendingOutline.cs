@@ -1,9 +1,5 @@
-﻿using System;
-
-namespace SceneKitSessionWWDC2013
-{
-	public class SlideExtendingOutline : Slide
-	{
+﻿namespace SceneKitSessionWWDC2013 {
+	public class SlideExtendingOutline : Slide {
 		public override void SetupSlide (PresentationViewController presentationViewController)
 		{
 			TextManager.SetTitle ("Extending Scene Kit with OpenGL");
