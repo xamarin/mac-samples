@@ -17,16 +17,16 @@ namespace Earthquakes
 			quakesSource = quakes;
 		}
 
-		public override int GetRowCount (NSTableView tableView)
+		public override nint GetRowCount (NSTableView tableView)
 		{
 			return quakesSource.Count;
 		}
 
-		public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, int row)
+		public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
 		{
 			string identifier = tableColumn.Identifier;
 			NSTableCellView cellView = (NSTableCellView)tableView.MakeView (identifier, this);
-			Quake quake = quakesSource [row];
+			Quake quake = quakesSource [(int)row];
 
 			if (identifier == ColumnIdentifierPlace)
 				cellView.TextField.StringValue = quake.Location;

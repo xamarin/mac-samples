@@ -5,7 +5,7 @@ using ObjCRuntime;
 
 namespace Earthquakes
 {
-	[global::Foundation.Register ("AAPLQuake")]
+	[Register ("AAPLQuake")]
 	public class Quake : NSManagedObject
 	{
 		const string CodeKey = "code";
@@ -98,9 +98,12 @@ namespace Earthquakes
 				if (keyValuePair.Value == null)
 					continue;
 				string key = (NSString)keyValuePair.Key;
-				if (key == MagnitudeKey)
-					Magnitude = ((NSNumber)keyValuePair.Value).FloatValue;
-				else if (key == PlaceKey)
+				if (key == MagnitudeKey) {
+					var value = keyValuePair.Value as NSNumber;
+					if (value == null)
+						continue;
+					Magnitude = value.FloatValue;
+				} else if (key == PlaceKey)
 					Location = (NSString)keyValuePair.Value;
 				else if (key == CodeKey)
 					Code = (NSString)keyValuePair.Value;

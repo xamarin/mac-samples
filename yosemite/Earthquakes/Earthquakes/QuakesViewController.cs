@@ -64,7 +64,7 @@ namespace Earthquakes
 
 				NSError anyError;
 				NSManagedObjectContext taskContext = CreatePrivateQueueContext (out anyError);
-				var jsonDictionary = NSJsonSerialization.Deserialize (data, NSJsonReadingOptions.AllowFragments, new NSError ());
+				var jsonDictionary = NSJsonSerialization.Deserialize (data, NSJsonReadingOptions.AllowFragments, out anyError);
 
 				if (jsonDictionary == null) {
 					Console.WriteLine ("Error creating JSON dictionary: {0}", anyError.LocalizedDescription);
