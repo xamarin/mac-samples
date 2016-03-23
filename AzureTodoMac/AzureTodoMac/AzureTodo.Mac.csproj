@@ -44,10 +44,11 @@
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <CreatePackage>true</CreatePackage>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <EnableCodeSigning>true</EnableCodeSigning>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <Profiling>false</Profiling>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
