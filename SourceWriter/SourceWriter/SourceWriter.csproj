@@ -72,6 +72,7 @@
     <None Include="Info.plist" />
     <None Include="Notes.txt" />
     <None Include="License.txt" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
