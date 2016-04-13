@@ -33,6 +33,10 @@ namespace MacDatabase
 				DidChangeValue ("Person");
 			}
 		}
+
+		public ComboBoxDataSource DataSource {
+			get { return EmployeeSelector.DataSource as ComboBoxDataSource; }
+		}
 		#endregion
 
 		#region Constructors
@@ -63,13 +67,42 @@ namespace MacDatabase
 		}
 		#endregion
 
+		#region Private Methods
+		private void LoadSelectedPerson (string id)
+		{
+
+			// Found?
+			if (id != "") {
+				// Yes, load requested record
+				Person = new PersonModel (Conn, id);
+			}
+		}
+		#endregion
+
 		#region Override Methods
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
 
-			// Load the default person from the database
-			Person = new PersonModel (Conn, "0");
+			// Configure Employee selector dropdown
+			EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
+
+			// Wireup events
+			EmployeeSelector.Changed += (sender, e) => {
+				// Get ID
+				var id = DataSource.IDForValue (EmployeeSelector.StringValue);
+				LoadSelectedPerson (id);
+			};
+
+			EmployeeSelector.SelectionChanged += (sender, e) => {
+				// Get ID
+				var id = DataSource.IDForIndex (EmployeeSelector.SelectedIndex);
+				LoadSelectedPerson (id);
+			};
+
+			// Auto select the first person
+			EmployeeSelector.StringValue = DataSource.ValueForIndex (0);
+			Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 	
 		}
 		#endregion

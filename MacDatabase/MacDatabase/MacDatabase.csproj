@@ -130,6 +130,7 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Classes\TableORMDatasource.cs" />
     <Compile Include="Classes\TableORMDelegate.cs" />
+    <Compile Include="Classes\ComboBoxDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainWindow.xib" />

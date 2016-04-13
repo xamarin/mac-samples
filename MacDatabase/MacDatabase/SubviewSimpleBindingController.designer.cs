@@ -1,9 +1,26 @@
-﻿namespace MacDatabase
-{
+// WARNING
+//
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
+//
+using Foundation;
+using System.CodeDom.Compiler;
 
-	// Should subclass AppKit.NSViewController
-	[Foundation.Register ("SubviewSimpleBindingController")]
-	public partial class SubviewSimpleBindingController
+namespace MacDatabase
+{
+	[Register ("SubviewSimpleBindingController")]
+	partial class SubviewSimpleBindingController
 	{
+		[Outlet]
+		AppKit.NSComboBox EmployeeSelector { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (EmployeeSelector != null) {
+				EmployeeSelector.Dispose ();
+				EmployeeSelector = null;
+			}
+		}
 	}
 }
