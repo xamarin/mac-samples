@@ -21,7 +21,7 @@ namespace HttpClient {
 		{
 			var client = new System.Net.Http.HttpClient ();
 			viewController.HandlerType = typeof(HttpMessageInvoker).GetField ("handler", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue (client).GetType ();
-			viewController.RenderStream (await client.GetStreamAsync (secure ? "https://xamarin.com" : viewController.WisdomUrl));
+			viewController.RenderStream (await client.GetStreamAsync (secure ? "https://www.xamarin.com" : viewController.WisdomUrl));
 		}
 	}
 
