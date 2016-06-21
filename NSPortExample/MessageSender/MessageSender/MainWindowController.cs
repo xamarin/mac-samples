@@ -6,7 +6,7 @@ using Foundation;
 
 namespace MessageSender
 {
-	public partial class MainWindowController : NSWindowController
+	public partial class MainWindowController : NSWindowController, INSTextFieldDelegate
 	{
 		CFMessagePort msgPort;
 
@@ -40,6 +40,18 @@ namespace MessageSender
 				alert.RunSheetModal (Window);
 			}
 			TheButton.Activated += SendMessage;
+			TextField.WeakDelegate = this;
+		}
+
+		[Export("controlTextDidEndEditing:")]
+		public void EditingEnded(NSNotification notification)
+		{
+			var textMovement = notification.UserInfo.ObjectForKey ((NSString)"NSTextMovement");
+			var interactionCode = ((NSNumber)textMovement).Int32Value;
+			var textMovementType = (NSTextMovement)interactionCode;
+			if (textMovementType == NSTextMovement.Return)
+				SendMessage(null,null);
+	
 		}
 
 		void SendMessage (object sender, EventArgs e)
@@ -47,6 +59,7 @@ namespace MessageSender
 			using (var data = NSData.FromString (TextField.StringValue)) {
 				NSData responseData;
 				msgPort.SendRequest (0x111, data, 10.0, 10.0, (NSString)string.Empty, out responseData);
+				TextField.StringValue = String.Empty;
 			}
 		}
 	}
