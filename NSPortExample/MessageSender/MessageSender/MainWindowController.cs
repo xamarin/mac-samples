@@ -6,11 +6,10 @@ using Foundation;
 
 namespace MessageSender
 {
-	public partial class MainWindowController : NSWindowController,INSTextFieldDelegate
+	public partial class MainWindowController : NSWindowController, INSTextFieldDelegate
 	{
 		CFMessagePort msgPort;
-		object sender;
-		EventArgs e;
+
 		public new MainWindow Window {
 			get {
 				return (MainWindow)base.Window;
@@ -47,14 +46,12 @@ namespace MessageSender
 		[Export("controlTextDidEndEditing:")]
 		public void EditingEnded(NSNotification notification)
 		{
-			var textMovement = notification.UserInfo.ObjectForKey((NSString)"NSTextMovement");
+			var textMovement = notification.UserInfo.ObjectForKey ((NSString)"NSTextMovement");
 			var interactionCode = ((NSNumber)textMovement).Int32Value;
 			var textMovementType = (NSTextMovement)interactionCode;
-
 			if (textMovementType == NSTextMovement.Return)
-			{
-				SendMessage(sender,e);
-			}
+				SendMessage(null,null);
+	
 		}
 
 		void SendMessage (object sender, EventArgs e)
@@ -62,7 +59,7 @@ namespace MessageSender
 			using (var data = NSData.FromString (TextField.StringValue)) {
 				NSData responseData;
 				msgPort.SendRequest (0x111, data, 10.0, 10.0, (NSString)string.Empty, out responseData);
-				TextField.StringValue = "";
+				TextField.StringValue = String.Empty;
 			}
 		}
 	}
