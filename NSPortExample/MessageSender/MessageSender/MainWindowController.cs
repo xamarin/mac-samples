@@ -34,7 +34,7 @@ namespace MessageSender
 			msgPort = CFMessagePort.CreateRemotePort (CFAllocator.Default, "com.example.app.port.server");
 			if (msgPort == null) {
 				var alert = new NSAlert {
-					MessageText = "Unable to connect to port? Did you launch server first?",
+					MessageText = "Unable to connect to port? Did you launch server first?"
 				};
 				alert.AddButton ("OK");
 				alert.RunSheetModal (Window);
@@ -50,8 +50,7 @@ namespace MessageSender
 			var interactionCode = ((NSNumber)textMovement).Int32Value;
 			var textMovementType = (NSTextMovement)interactionCode;
 			if (textMovementType == NSTextMovement.Return)
-				SendMessage(null,null);
-	
+				SendMessage (null,null);
 		}
 
 		void SendMessage (object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace MessageSender
 			using (var data = NSData.FromString (TextField.StringValue)) {
 				NSData responseData;
 				msgPort.SendRequest (0x111, data, 10.0, 10.0, (NSString)string.Empty, out responseData);
-				TextField.StringValue = String.Empty;
+				TextField.StringValue = string.Empty;
 			}
 		}
 	}
