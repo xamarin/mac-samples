@@ -4,6 +4,7 @@
 
 using System;
 using System.Drawing;
+using MonoMac.AppKit;
 using MonoMac.CoreGraphics;
 using MonoMac.Foundation;
 
@@ -11,6 +12,7 @@ class DrawCircleInPDF {
 
 	static void Main ()
 	{
+		NSApplication.Init ();
 		var pdf = new CGContextPDF (NSUrl.FromFilename ("demo.pdf"), new RectangleF (0, 0, 617, 792));
 
 		pdf.BeginPage (null);

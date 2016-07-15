@@ -1,6 +1,7 @@
 include ../config.mk
 
-MONOMAC_DLL = $(MDROOT_ESCAPED)/Contents/MacOS/lib/monodevelop/AddIns/MonoDevelop.MonoMac/MonoMac.dll
+XAMMAC_DLL = /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/XamMac.dll 
+LIBXAMMAC_DLL = /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/libxammac.dylib 
 
 DEMOS = \
 	generate-pdf.exe	\
@@ -12,16 +13,19 @@ DEMOS = \
 all: $(DEMOS)
 
 clean:
-	rm -f *.dll *.exe demo.pdf
+	rm -f *.dll *.exe demo.pdf libxammac.dylib 
 
-MonoMac.dll: $(MONOMAC_DLL)
+XamMac.dll: $(XAMMAC_DLL)
 	cp "$<" $@
 
-generate-pdf.exe: MonoMac.dll generate-pdf.cs
-	gmcs generate-pdf.cs -r:MonoMac.dll -r:System.Drawing
+libxammac.dylib: $(LIBXAMMAC_DLL)
+	cp "$<" $@
 
-locator.exe: MonoMac.dll locator.cs
-	gmcs locator.cs -r:MonoMac.dll
+generate-pdf.exe: XamMac.dll libxammac.dylib generate-pdf.cs
+	mcs generate-pdf.cs -r:XamMac.dll -r:System.Drawing
 
-HelloCoreWlanSample.exe: MonoMac.dll HelloCoreWlanSample.cs
-	gmcs HelloCoreWlanSample.cs -r:MonoMac.dll
+locator.exe: XamMac.dll libxammac.dylib locator.cs
+	mcs locator.cs -r:XamMac.dll
+
+HelloCoreWlanSample.exe: XamMac.dll libxammac.dylib HelloCoreWlanSample.cs
+	mcs HelloCoreWlanSample.cs -r:XamMac.dll
