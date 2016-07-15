@@ -4,9 +4,9 @@
 // This sample finds your location and displays it in Google maps
 //
 using System;
-using MonoMac.CoreLocation;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using CoreLocation;
+using Foundation;
+using AppKit;
 
 class Locator {
 	const string googleUrl = "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{0},#{1}";

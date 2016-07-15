@@ -3,10 +3,10 @@
 // Thanks to Duane Wandless
 
 using System;
-using MonoMac.CoreLocation;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CoreWlan;
+using CoreLocation;
+using Foundation;
+using AppKit;
+using CoreWlan;
 using System.Runtime.InteropServices;
 namespace HelloCoreWlan
 {
