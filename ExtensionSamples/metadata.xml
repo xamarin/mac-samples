@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>B4E32B8B-09F4-4A09-9AED-57AEE41C1AEC</ID>
+  <Brief>Demonstrates how to use app extensions in Xamarin.Mac.</Brief>
+  <IsFullApplication>false</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Extension, Getting Started</Tags>
+  <Gallery>true</Gallery>
+</SampleMetadata>
