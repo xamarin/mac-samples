@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionSamples", "ExtensionSamples\ExtensionSamples.csproj", "{1881C59F-39C3-42B1-AE8E-C213495F3415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodayExtension", "TodayExtension\TodayExtension.csproj", "{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinderSyncExtension", "FinderSyncExtension\FinderSyncExtension.csproj", "{37B271A0-820E-465C-969A-4EE52208896B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareExtension", "ShareExtension\ShareExtension.csproj", "{971BF5CE-2049-45B1-AC86-62854E235E27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1881C59F-39C3-42B1-AE8E-C213495F3415}.Debug|x86.ActiveCfg = Debug|x86
+		{1881C59F-39C3-42B1-AE8E-C213495F3415}.Debug|x86.Build.0 = Debug|x86
+		{1881C59F-39C3-42B1-AE8E-C213495F3415}.Release|x86.ActiveCfg = Release|x86
+		{1881C59F-39C3-42B1-AE8E-C213495F3415}.Release|x86.Build.0 = Release|x86
+		{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}.Release|x86.Build.0 = Release|Any CPU
+		{37B271A0-820E-465C-969A-4EE52208896B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37B271A0-820E-465C-969A-4EE52208896B}.Debug|x86.Build.0 = Debug|Any CPU
+		{37B271A0-820E-465C-969A-4EE52208896B}.Release|x86.ActiveCfg = Release|Any CPU
+		{37B271A0-820E-465C-969A-4EE52208896B}.Release|x86.Build.0 = Release|Any CPU
+		{971BF5CE-2049-45B1-AC86-62854E235E27}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{971BF5CE-2049-45B1-AC86-62854E235E27}.Debug|x86.Build.0 = Debug|Any CPU
+		{971BF5CE-2049-45B1-AC86-62854E235E27}.Release|x86.ActiveCfg = Release|Any CPU
+		{971BF5CE-2049-45B1-AC86-62854E235E27}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
