@@ -5,7 +5,7 @@ using Foundation;
 namespace FinderSyncExtension
 {
 	[Register ("FinderSync")]
-	public partial class FinderSync : FIFinderSync
+	public class FinderSync : FIFinderSync
 	{
 		// Building and run will attempt to register this extension with PluginKit, however often it will not be
 		// enabled by default. 
@@ -17,35 +17,17 @@ namespace FinderSyncExtension
 		// PluginKit register/unregister can be done manually through the Apple pluginkit command line tool.
 		// man pluginkit for details
 
+		public override string ToolbarItemName { get; } = "Get URL Extension";
+
+		public override string ToolbarItemToolTip { get; } = "FinderSyncExtension: Click the toolbar item for a menu.";
+
+		public override NSImage ToolbarItemImage { get; } = NSImage.ImageNamed (NSImageName.ApplicationIcon);
+
 		public override NSMenu GetMenu (FIMenuKind menuKind)
 		{
-			NSMenu menu = new NSMenu ("");
-			menu.AddItem ("Get URL", new ObjCRuntime.Selector ("getURL:"), "");
+			var menu = new NSMenu (string.Empty);
+			menu.AddItem ("Get URL", new ObjCRuntime.Selector ("getURL:"), string.Empty);
 			return menu;
-		}
-
-		public override string ToolbarItemName
-		{
-			get
-			{
-				return "Get URL Extension";
-			}
-		}
-
-		public override string ToolbarItemToolTip
-		{
-			get
-			{
-				return "FinderSyncExtension: Click the toolbar item for a menu.";
-			}
-		}
-
-		public override NSImage ToolbarItemImage
-		{
-			get
-			{
-				return NSImage.ImageNamed (NSImageName.ApplicationIcon);
-			}
 		}
 
 		[Export ("getURL:")]
@@ -55,7 +37,7 @@ namespace FinderSyncExtension
 			var url = FIFinderSyncController.DefaultController.TargetedURL;
 
 			// See NSLogHelper for details on this vs Console.WriteLine
-			ExtensionSamples.NSLogHelper.NSLog ("FinderSync - GetURL - " + url);
+			ExtensionSamples.NSLogHelper.NSLog ($"FinderSync - GetURL - {url}");
 
 			// But we must get to the UI thread to use NSAlert
 			BeginInvokeOnMainThread (() =>

@@ -1,7 +1,6 @@
 ﻿using System;
 
 using AppKit;
-using Foundation;
 
 namespace ExtensionSamples
 {
@@ -15,21 +14,9 @@ namespace ExtensionSamples
 		{
 			base.ViewDidLoad ();
 			// Extension projects needs a container application.
-			TextView.Value = "This is just a container app for the interesting extensions in the sample.";
+			TextView.Value = "This is just a container app for the interesting extensions in the sample. " +
+				"Follow the instructions from README.md file.";
 			// Do any additional setup after loading the view.
-		}
-
-		public override NSObject RepresentedObject
-		{
-			get
-			{
-				return base.RepresentedObject;
-			}
-			set
-			{
-				base.RepresentedObject = value;
-				// Update the view, if already loaded.
-			}
 		}
 	}
 }

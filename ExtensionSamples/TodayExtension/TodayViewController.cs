@@ -40,12 +40,12 @@ namespace TodayExtension
 			var daysRemaining = 365 + leapYearExtra - dayOfYear;
 
 			if (daysRemaining == 1)
-				todayMessage.StringValue = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
+				todayMessage.StringValue = $"Today is day {dayOfYear}. There is one day remaining in the year.";
 			else
-				todayMessage.StringValue = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
+				todayMessage.StringValue = $"Today is day {dayOfYear}. There are {daysRemaining} days remaining in the year.";
 
 			// See NSLogHelper for details on this vs Console.WriteLine
-			ExtensionSamples.NSLogHelper.NSLog ("TodayViewController - LoadView - " + todayMessage.StringValue);
+			ExtensionSamples.NSLogHelper.NSLog ($"TodayViewController - LoadView - {todayMessage.StringValue}");
 		}
 
 		[Export ("widgetPerformUpdateWithCompletionHandler:")]
@@ -56,7 +56,6 @@ namespace TodayExtension
 			// If an error is encoutered, use NCUpdateResultFailed
 			// If there's no update required, use NCUpdateResultNoData
 			// If there's an update, use NCUpdateResultNewData
-
 			completionHandler (NCUpdateResult.NewData);
 		}
 	}

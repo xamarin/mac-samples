@@ -31,10 +31,10 @@ namespace ShareExtension
 			NSItemProvider provider = item.Attachments[0];
 			provider.LoadItem ("public.url", null, (arg1, arg2) =>
 			{
-				NSUrl url = (NSUrl)arg1;
+				var url = (NSUrl)arg1;
 
 				// See NSLogHelper for details on this vs Console.WriteLine
-				ExtensionSamples.NSLogHelper.NSLog ("ShareViewController - LoadView - " + url);
+				ExtensionSamples.NSLogHelper.NSLog ($"ShareViewController - LoadView - {url}");
 
 				BeginInvokeOnMainThread (() =>
 				{
@@ -45,7 +45,7 @@ namespace ShareExtension
 
 		partial void Close (NSObject sender)
 		{
-			NSExtensionItem outputItem = new NSExtensionItem ();
+			var outputItem = new NSExtensionItem ();
 			var outputItems = new[] { outputItem };
 			ExtensionContext.CompleteRequest (outputItems, null);
 		}
