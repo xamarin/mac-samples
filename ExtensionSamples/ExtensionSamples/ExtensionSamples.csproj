@@ -80,10 +80,26 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="NSLogHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TodayExtension\TodayExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{3B5163E7-FD66-4B17-BF34-A65FAA1031E9}</Project>
+      <Name>TodayExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShareExtension\ShareExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{971BF5CE-2049-45B1-AC86-62854E235E27}</Project>
+      <Name>ShareExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinderSyncExtension\FinderSyncExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{37B271A0-820E-465C-969A-4EE52208896B}</Project>
+      <Name>FinderSyncExtension</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>

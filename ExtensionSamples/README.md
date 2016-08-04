@@ -1,11 +1,9 @@
 ExtensionSamples
 ==============
 
-This sample demonstrates how to use app extensions in Xamarin.Mac. To install an extension on your machine you'll need to build and run the respective project from IDE to register this extension with PluginKit. However, sometimes it will not be enabled by default. 
+This sample demonstrates how to use app extensions in Xamarin.Mac. To register an extension on your machine you'll need run the host application, **ExtensionSamples** one time and then enable each plugin from the **System Preference** Extension panel. 
 
-Open System Preferences -> Extensions and enable the plugin.
-Open "Console" application to view the system log to view NSLog / Errors / Crashes of extension. Cleaning this project will unregister this plugin from PluginKit.
-PluginKit register/unregister can be done manually through the Apple PluginKit command line tool.
+Open "Console" application to view the system log to view NSLog / Errors / Crashes of extension. Cleaning this project will unregister this plugin from the system.
 
 Sample extensions:
 * Share extension
@@ -28,4 +26,4 @@ Xamarin samples released under the MIT license
 Author
 ------
 
-Chris Hammons
+Chris Hamons
