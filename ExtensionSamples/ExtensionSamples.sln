@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinderSyncExtension", "Find
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareExtension", "ShareExtension\ShareExtension.csproj", "{971BF5CE-2049-45B1-AC86-62854E235E27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{E4113762-7B3B-42DE-B511-204AC3E5746E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,5 +33,9 @@ Global
 		{971BF5CE-2049-45B1-AC86-62854E235E27}.Debug|x86.Build.0 = Debug|Any CPU
 		{971BF5CE-2049-45B1-AC86-62854E235E27}.Release|x86.ActiveCfg = Release|Any CPU
 		{971BF5CE-2049-45B1-AC86-62854E235E27}.Release|x86.Build.0 = Release|Any CPU
+		{E4113762-7B3B-42DE-B511-204AC3E5746E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4113762-7B3B-42DE-B511-204AC3E5746E}.Debug|x86.Build.0 = Debug|Any CPU
+		{E4113762-7B3B-42DE-B511-204AC3E5746E}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4113762-7B3B-42DE-B511-204AC3E5746E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

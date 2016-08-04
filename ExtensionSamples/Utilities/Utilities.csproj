@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37B271A0-820E-465C-969A-4EE52208896B}</ProjectGuid>
-    <ProjectTypeGuids>{10CE9E57-9141-4DF0-916A-2C4FD4EE2A73};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{E4113762-7B3B-42DE-B511-204AC3E5746E}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>FinderSyncExtension</RootNamespace>
-    <AssemblyName>FinderSyncExtension</AssemblyName>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -21,35 +21,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
-    <UseSGen>true</UseSGen>
-    <UseRefCounting>true</UseRefCounting>
-    <Profiling>true</Profiling>
+    <UseSGen>false</UseSGen>
     <HttpClientHandler></HttpClientHandler>
     <TlsProvider></TlsProvider>
     <LinkMode></LinkMode>
     <XamMacArch></XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <IncludeMonoRuntime>true</IncludeMonoRuntime>
-    <UseSGen>true</UseSGen>
-    <UseRefCounting>true</UseRefCounting>
-    <LinkMode>None</LinkMode>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
     <HttpClientHandler></HttpClientHandler>
     <TlsProvider></TlsProvider>
+    <LinkMode></LinkMode>
     <XamMacArch></XamMacArch>
   </PropertyGroup>
   <ItemGroup>
@@ -58,20 +52,8 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NSLogHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Info.plist" />
-    <None Include="Entitlements.plist" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="FinderSync.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{E4113762-7B3B-42DE-B511-204AC3E5746E}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.AppExtension.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
