@@ -1,1 +1,5 @@
 demo.pdf
+*.app/
+HelloCoreWlanSample
+generate-pdf
+locator

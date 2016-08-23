@@ -1,27 +1,51 @@
 include ../config.mk
 
-MONOMAC_DLL = $(MDROOT_ESCAPED)/Contents/MacOS/lib/monodevelop/AddIns/MonoDevelop.MonoMac/MonoMac.dll
+XM_DIR = /Library/Frameworks/Xamarin.Mac.framework
+XAMMAC_DLL = $(XM_DIR)/Versions/Current/lib/mono/Xamarin.Mac/Xamarin.Mac.dll
+LIBXAMMAC_DLL = /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/libxammac.dylib 
 
 DEMOS = \
-	generate-pdf.exe	\
-	locator.exe		\
-	HelloCoreWlanSample.exe		
+	generate-pdf.app \
+	locator.app \
+	HelloCoreWlanSample.app
 
 .PHONY: all clean
 
 all: $(DEMOS)
 
 clean:
-	rm -f *.dll *.exe demo.pdf
+	rm -fr obj/
+	rm -f demo.pdf 
+	rm -fr generate-pdf.app/
+	rm -fr locator.app/
+	rm -fr HelloCoreWlanSample.app/
+	rm -f generate-pdf
+	rm -f locator
+	rm -f HelloCoreWlanSample
 
-MonoMac.dll: $(MONOMAC_DLL)
-	cp "$<" $@
+obj/:
+	mkdir -p obj
 
-generate-pdf.exe: MonoMac.dll generate-pdf.cs
-	gmcs generate-pdf.cs -r:MonoMac.dll -r:System.Drawing
+generate-pdf:
+	echo "./generate-pdf.app/Contents/MacOS/generate-pdf" > generate-pdf
+	chmod +x generate-pdf
 
-locator.exe: MonoMac.dll locator.cs
-	gmcs locator.cs -r:MonoMac.dll
+locator:
+	echo "./locator.app/Contents/MacOS/locator" > locator
+	chmod +x locator
 
-HelloCoreWlanSample.exe: MonoMac.dll HelloCoreWlanSample.cs
-	gmcs HelloCoreWlanSample.cs -r:MonoMac.dll
+HelloCoreWlanSample:
+	echo "./HelloCoreWlanSample.app/Contents/MacOS/HelloCoreWlanSample" > HelloCoreWlanSample
+	chmod +x HelloCoreWlanSample
+
+generate-pdf.app: generate-pdf.cs obj/ generate-pdf
+	mcs generate-pdf.cs -r:$(XAMMAC_DLL) -out:obj/generate-pdf.exe
+	$(XM_DIR)/Commands/mmp  obj/generate-pdf.exe --target-framework=Mobile
+
+locator.app: locator.cs obj/ locator
+	mcs locator.cs -r:$(XAMMAC_DLL) -out:obj/locator.exe
+	$(XM_DIR)/Commands/mmp  obj/locator.exe --target-framework=Mobile
+
+HelloCoreWlanSample.app: HelloCoreWlanSample.cs obj/ HelloCoreWlanSample
+	mcs HelloCoreWlanSample.cs -r:$(XAMMAC_DLL) -out:obj/HelloCoreWlanSample.exe
+	$(XM_DIR)/Commands/mmp  obj/HelloCoreWlanSample.exe --target-framework=Mobile
