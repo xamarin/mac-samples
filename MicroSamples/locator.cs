@@ -4,6 +4,7 @@
 // This sample finds your location and displays it in Google maps
 //
 using System;
+
 using CoreLocation;
 using Foundation;
 using AppKit;

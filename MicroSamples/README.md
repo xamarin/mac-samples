@@ -20,4 +20,4 @@ Shows how to use CoreLocation on macOS.
 HelloCoreWlanSample.cs
 ----------------------
 
-Shows how to use CoreWlan on macOS.
+Shows how to use CoreWlan on macOS. To check sample output you should run native executable inside HelloCoreWlanSample app bundle.
