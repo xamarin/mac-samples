@@ -27,12 +27,11 @@ namespace NSOutlineViewAndTableViewExample
 			outlineView.Delegate = new OutlineViewDelegate ();
 			outlineView.DataSource = new OutlineViewDataSource ();
 
-			// NSOutlineView expects to be hosted inside an NSClipView and won't draw correctly otherwise  
-			NSClipView clipView = new NSClipView (frame) {
+			NSScrollView scrollView = new NSScrollView (frame) {
 				AutoresizingMask = NSViewResizingMask.HeightSizable | NSViewResizingMask.WidthSizable
 			};
-			clipView.DocumentView = outlineView;
-			return clipView;
+			scrollView.DocumentView = outlineView;
+			return scrollView;
 		}
 	}
 

@@ -25,12 +25,11 @@ namespace NSOutlineViewAndTableViewExample
 			tableView.DataSource = new TableDataSource ();
 			tableView.Delegate = new TableDelegate ();
 
-			// NSTableView expects to be hosted inside an NSClipView and won't draw correctly otherwise  
-			NSClipView clipView = new NSClipView (frame) {
+			NSScrollView scrollView = new NSScrollView (frame) {
 				AutoresizingMask = NSViewResizingMask.HeightSizable | NSViewResizingMask.WidthSizable
 			};
-			clipView.DocumentView = tableView;
-			return clipView;
+			scrollView.DocumentView = tableView;
+			return scrollView;
 		}
 	}
 
