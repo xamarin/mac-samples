@@ -1,7 +1,8 @@
+<?xml version="1.0"?>
 <SampleMetadata>
   <ID>9e196a0e-ad65-4191-8de3-7c8286ec49d3</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Beginner</Level>
+  <Level>Beginning</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
   <Brief>Demonstrates the creation of two custom `NSView`s, which each paint themself via different mechanisms.</Brief>

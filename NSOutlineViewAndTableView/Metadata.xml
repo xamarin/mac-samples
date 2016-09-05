@@ -1,7 +1,8 @@
+<?xml version="1.0"?>
 <SampleMetadata>
   <ID>4833aa85-d44f-4e79-afcc-8cef874ca913</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Beginner</Level>
+  <Level>Beginning</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
   <Brief>Demonstrates the programmatic creation of and use of `NSTableView`/`NSOutlineView`.</Brief>

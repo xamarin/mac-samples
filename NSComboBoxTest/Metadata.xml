@@ -1,7 +1,8 @@
+<?xml version="1.0"?>
 <SampleMetadata>
   <ID>832dd21a-9b5d-4837-82f6-5b5d107aec3a</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Beginner</Level>
+  <Level>Beginning</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
   <Brief>Demonstrates how to provide completion hints.</Brief>

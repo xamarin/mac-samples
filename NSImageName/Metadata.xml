@@ -1,7 +1,8 @@
+<?xml version="1.0"?>
 <SampleMetadata>
   <ID>23edf1a8-c5bf-47d3-a85a-ddf3cfad5245</ID>
   <IsFullApplication>true</IsFullApplication>
-  <Level>Beginner</Level>
+  <Level>Beginning</Level>
   <Tags>User Interface</Tags>
   <Gallery>true</Gallery>
   <Brief>A simple sample application demoing the `NSImageName` enum for `NSImage.ImageNamed`.</Brief>
