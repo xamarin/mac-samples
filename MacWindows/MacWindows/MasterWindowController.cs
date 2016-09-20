@@ -18,7 +18,12 @@ namespace MacWindows
 			base.WindowDidLoad ();
 
 			Window.DidResize += (sender, e) => {
-				Console.WriteLine ("Resizing...");
+				// Do something as the window is being live resized
+			};
+
+			Window.DidEndLiveResize += (sender, e) => {
+				// Do something after the user's finished resizing
+				// the window
 			};
 		}
 	}
