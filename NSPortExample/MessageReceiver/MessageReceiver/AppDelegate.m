@@ -20,7 +20,7 @@ static CFDataRef Callback(CFMessagePortRef port,
 {
     
     NSString* newStr = [NSString stringWithUTF8String:[(__bridge NSData*)data bytes]];
-    [[NSApp delegate] addItem:newStr];
+    [(AppDelegate*)[NSApp delegate] addItem:newStr];
     return nil;
 }
 
