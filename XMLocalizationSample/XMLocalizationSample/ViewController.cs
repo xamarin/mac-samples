@@ -1,7 +1,6 @@
 ﻿using System;
 
 using AppKit;
-using Foundation;
 
 namespace XMLocalizationSample
 {
