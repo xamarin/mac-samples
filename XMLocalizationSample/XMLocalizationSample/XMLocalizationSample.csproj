@@ -67,12 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Documentation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="README.txt" />
     <None Include="CustomBuildActions.targets" />
   </ItemGroup>
   <ItemGroup>
@@ -100,18 +98,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\es.lproj\Main.strings" />
     <BundleResource Include="Resources\fr.lproj\Main.strings" />
-    <BundleResource Include="4.png">
-      <Link>Documentation\4.png</Link>
-    </BundleResource>
-    <BundleResource Include="3.png">
-      <Link>Documentation\3.png</Link>
-    </BundleResource>
-    <BundleResource Include="2.png">
-      <Link>Documentation\2.png</Link>
-    </BundleResource>
-    <BundleResource Include="1.png">
-      <Link>Documentation\1.png</Link>
-    </BundleResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="CustomBuildActions.targets" />  
