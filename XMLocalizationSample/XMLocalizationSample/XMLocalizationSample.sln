@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLocalizationSample", "XMLocalizationSample.csproj", "{42AD1039-50A7-4920-A7AB-3AE735557E0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42AD1039-50A7-4920-A7AB-3AE735557E0B}.Debug|x86.ActiveCfg = Debug|x86
+		{42AD1039-50A7-4920-A7AB-3AE735557E0B}.Debug|x86.Build.0 = Debug|x86
+		{42AD1039-50A7-4920-A7AB-3AE735557E0B}.Release|x86.ActiveCfg = Release|x86
+		{42AD1039-50A7-4920-A7AB-3AE735557E0B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

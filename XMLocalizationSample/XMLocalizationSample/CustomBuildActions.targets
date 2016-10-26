@@ -1,0 +1,12 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+	    <CreateAppBundleDependsOn>$(CreateAppBundleDependsOn);WorkAroundLocalizationBug-ES;WorkAroundLocalizationBug-FR</CreateAppBundleDependsOn>
+	</PropertyGroup>
+
+	<Target Name="WorkAroundLocalizationBug-ES" Inputs="$(OutputPath)es/XMLocalizationSample.resources.dll" Outputs="$(AppBundleDir)/Contents/MonoBundle/es/XMLocalizationSample.resources.dll">
+	    <Copy SourceFiles="$(OutputPath)es/XMLocalizationSample.resources.dll" DestinationFiles="$(AppBundleDir)/Contents/MonoBundle/es/XMLocalizationSample.resources.dll" />
+	</Target>
+	<Target Name="WorkAroundLocalizationBug-FR" Inputs="$(OutputPath)fr/XMLocalizationSample.resources.dll" Outputs="$(AppBundleDir)/Contents/MonoBundle/fr/XMLocalizationSample.resources.dll">
+	    <Copy SourceFiles="$(OutputPath)fr/XMLocalizationSample.resources.dll" DestinationFiles="$(AppBundleDir)/Contents/MonoBundle/fr/XMLocalizationSample.resources.dll" />
+	</Target>
+</Project>
