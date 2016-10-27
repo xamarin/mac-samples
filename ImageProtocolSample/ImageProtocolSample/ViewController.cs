@@ -19,8 +19,7 @@ namespace ImageProtocolSample
 			// Register our custom url protocol
 			NSUrlProtocol.RegisterClass (new ObjCRuntime.Class (typeof (ImageProtocol)));
 
-			WebView web = new WebView ()
-			{
+			var web = new WebView {
 				AutoresizingMask = NSViewResizingMask.HeightSizable | NSViewResizingMask.WidthSizable
 			};
 
