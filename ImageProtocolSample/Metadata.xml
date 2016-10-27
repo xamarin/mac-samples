@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>a3cbbf5e-4c22-4761-8800-27ca6dc0f1df</ID>
+  <IsFullApplication>false</IsFullApplication>
+  <Level>Beginner</Level>
+  <Tags>User Interface, Platform Features</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use ImageProtocol with Xamarin.Mac.</Brief>
+</SampleMetadata>
