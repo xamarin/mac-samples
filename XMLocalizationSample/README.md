@@ -12,22 +12,22 @@ To add storyboard localization in Xcode:
   - Open Main.storyboard in Xcode, select it in the Xcode project tree, then click "Localize" in the first tab of the right inspector.
 
 <p align="center">
-  <img src="Docs/1.png">
+  <img src="https://github.com/xamarin/mac-samples/blob/master/XMLocalizationSample/Docs/1.png?raw=true">
 </p>
   - Then select the root project in the project tree, change the upper dropdown to point to the project.
  
 <p align="center">
-  <img src="Docs/2.png">
+  <img src="https://github.com/xamarin/mac-samples/blob/master/XMLocalizationSample/Docs/2.png?raw=true">
 </p>
   - Then enable Base localization.
  
 <p align="center">
-  <img src="Docs/3.png">
+  <img src="https://github.com/xamarin/mac-samples/blob/master/XMLocalizationSample/Docs/3.png?raw=true">
 </p>
   - Then add the specific languages in question.
  
 <p align="center">
-  <img src="Docs/4.png">
+  <img src="https://github.com/xamarin/mac-samples/blob/master/XMLocalizationSample/Docs/4.png?raw=true">
 </p>
   - Close Xcode and delete Main.storyboard from your project, as it now is copied into specific Resources/ folder.
 
