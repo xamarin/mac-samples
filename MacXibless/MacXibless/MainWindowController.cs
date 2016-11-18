@@ -6,18 +6,9 @@ using CoreGraphics;
 
 namespace MacXibless
 {
-	public partial class MainWindowController : NSWindowController
+	public class MainWindowController : NSWindowController
 	{
-		public MainWindowController (IntPtr handle) : base (handle)
-		{
-		}
-
-		[Export ("initWithCoder:")]
-		public MainWindowController (NSCoder coder) : base (coder)
-		{
-		}
-
-		public MainWindowController () : base ("MainWindow")
+		public MainWindowController () : base ()
 		{
 			// Construct the window from code here
 			CGRect contentRect = new CGRect (0, 0, 1000, 500);
@@ -26,11 +17,6 @@ namespace MacXibless
 
 			// Simulate Awaking from Nib
 			Window.AwakeFromNib ();
-		}
-
-		public override void AwakeFromNib ()
-		{
-			base.AwakeFromNib ();
 		}
 
 		public new MainWindow Window {
