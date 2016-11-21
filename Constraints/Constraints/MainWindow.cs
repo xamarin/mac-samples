@@ -84,10 +84,16 @@ namespace Constraints
 
 			var labelFont = NSFont.LabelFontOfSize (10);
 
-			var publicLabel = NSTextField.CreateLabel ("Your title and description will be public");
-			publicLabel.Font = labelFont;
+			var publicLabel = new NSTextField () {
+				StringValue = "Your title and description will be public",
+				Editable = false,
+				Bezeled = false,
+				DrawsBackground = false,
+				Selectable = false,
+				Font = labelFont,
+				TranslatesAutoresizingMaskIntoConstraints = false
+			};
 
-			publicLabel.TranslatesAutoresizingMaskIntoConstraints = false;
 			ContentView.AddSubview (publicLabel);
 
 			// You can also use different types of constraints for the same view
@@ -117,10 +123,14 @@ namespace Constraints
 			var emailConstraints = NSLayoutConstraint.FromVisualFormat (emailFormat, NSLayoutFormatOptions.None, null, emailViews);
 			NSLayoutConstraint.ActivateConstraints (emailConstraints);
 
-			var sendButton = NSButton.CreateButton ("OK", () => {
+			var sendButton = new NSButton {
+				Title = "OK"
+			};
+
+			sendButton.Activated += (sender, e) => {
 				NSAlert.WithMessage ("Button pressed", "Okay", null, null, "").RunModal ();
 				Dispose ();
-			});
+			};
 
 			sendButton.TranslatesAutoresizingMaskIntoConstraints = false;
 			ContentView.AddSubview (sendButton);

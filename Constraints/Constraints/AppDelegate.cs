@@ -10,8 +10,6 @@ namespace Constraints
 	{
 		MainWindowController mainWindowController;
 
-		int PADDING = 10;
-		
 		public AppDelegate ()
 		{
 		}
