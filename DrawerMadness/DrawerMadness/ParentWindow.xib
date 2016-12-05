@@ -16,7 +16,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Parent Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="7" customClass="ParentWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -170,7 +170,7 @@
                                 <buttonCell type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="31">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <accessibility identifier="closeBottomLeft"/>
+                                    <accessibility identifier="closeBottomRight"/>
                                     <connections>
                                         <action selector="closeLowerRightDrawer:" target="-2" id="49"/>
                                     </connections>
@@ -178,7 +178,7 @@
                                 <buttonCell type="push" title="Toggle" bezelStyle="rounded" alignment="center" borderStyle="border" tag="2" inset="2" id="33">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <accessibility identifier="toggleBottomLeft"/>
+                                    <accessibility identifier="toggleBottomRight"/>
                                     <connections>
                                         <action selector="toggleLowerRightDrawer:" target="-2" id="48"/>
                                     </connections>
