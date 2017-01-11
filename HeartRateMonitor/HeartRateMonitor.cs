@@ -5,6 +5,7 @@
 //   Aaron Bockover <abock@xamarin.com>
 //
 // Copyright 2013 Xamarin, Inc.
+// Copyright 2017 Microsoft.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -31,27 +32,26 @@ using CoreBluetooth;
 
 namespace Xamarin.HeartMonitor
 {
-	public class HeartRateMonitor : CBPeripheralDelegate
+	public class HeartRateMonitor
 	{
 		static readonly CBUUID PeripheralUUID = CBUUID.FromPartial (0x180D);
 		static readonly CBUUID HeartRateMeasurementCharacteristicUUID = CBUUID.FromPartial (0x2A37);
 		static readonly CBUUID BodySensorLocationCharacteristicUUID = CBUUID.FromPartial (0x2A38);
 		static readonly CBUUID HeartRateControlPointCharacteristicUUID = CBUUID.FromPartial (0x2A39);
-		
+
 		public static void ScanForHeartRateMonitors (CBCentralManager manager)
 		{
-			if (manager == null) {
-				throw new ArgumentNullException ("manager");
-			}
+			if (manager == null)
+				throw new ArgumentNullException (nameof (manager));
 
-			manager.ScanForPeripherals (PeripheralUUID);			
+			manager.ScanForPeripherals (PeripheralUUID);
 		}
-		
+
 		NSTimer beatTimer;
 		bool disposed;
 
-		public CBCentralManager Manager { get; private set; }
-		public CBPeripheral Peripheral { get; private set; }
+		public CBCentralManager Manager { get; }
+		public CBPeripheral Peripheral { get; }
 
 		public HeartRateMonitorLocation Location { get; private set; }
 		public HeartBeat CurrentHeartBeat { get; private set; }
@@ -60,139 +60,101 @@ namespace Xamarin.HeartMonitor
 		public event EventHandler<HeartBeatEventArgs> HeartRateUpdated;
 		public event EventHandler HeartBeat;
 		public event EventHandler LocationUpdated;
+		public event EventHandler RssiUpdated;
+		public event EventHandler NameUpdated;
 
-		public string Name {
-			get { return Peripheral.Name; }
+		public string Name => Peripheral.Name;
+
+		public HeartRateMonitor (CBCentralManager manager, CBPeripheral peripheral)
+		{
+			if (manager == null)
+				throw new ArgumentNullException (nameof (manager));
+
+			if (peripheral == null)
+				throw new ArgumentNullException (nameof (peripheral));
+
+			Location = HeartRateMonitorLocation.Unknown;
+
+			Manager = manager;
+
+			Peripheral = peripheral;
+			Peripheral.Delegate = new HeartRateMonitorDelegate (this);
+			Peripheral.DiscoverServices ();
 		}
 
-		protected override void Dispose (bool disposing)
+		public void Dispose ()
+		{
+			GC.SuppressFinalize (this);
+			Dispose (true);
+		}
+
+		protected virtual void Dispose (bool disposing)
 		{
 			disposed = true;
+
+			if (!disposing)
+				return;
+
+			if (Peripheral.Delegate != null) {
+				Peripheral.Delegate.Dispose ();
+				Peripheral.Delegate = null;
+			}
+
 			if (beatTimer != null) {
 				beatTimer.Dispose ();
 				beatTimer = null;
 			}
-	
-			base.Dispose (disposing);
 		}
 
-		public HeartRateMonitor (CBCentralManager manager, CBPeripheral peripheral)
-		{
-			if (manager == null) {
-				throw new ArgumentNullException ("manager");
-			} else if (peripheral == null) {
-				throw new ArgumentNullException ("peripheral");
-			}
-			
-			Location = HeartRateMonitorLocation.Unknown;
-			
-			Manager = manager;
-
-			Peripheral = peripheral;
-			Peripheral.Delegate = this;
-			Peripheral.DiscoverServices ();
-		}
-		
 		public void Connect ()
 		{
-			if (disposed) {
+			if (disposed)
 				return;
-			}
 
 			Manager.ConnectPeripheral (Peripheral, new PeripheralConnectionOptions {
 				NotifyOnDisconnection = true
 			});
+
+			OnNameUpdated ();
 		}
 
-		public override void DiscoveredService (CBPeripheral peripheral, NSError error)
-		{
-			if (disposed) {
-				return;
-			}
+		protected virtual void OnNameUpdated ()
+			=> NameUpdated?.Invoke (this, EventArgs.Empty);
 
-			foreach (var service in peripheral.Services) {
-				if (service.UUID == PeripheralUUID) {
-					peripheral.DiscoverCharacteristics (service);
-				}
-			}
-		}
+		protected virtual void OnRssiUpdated ()
+			=> RssiUpdated?.Invoke (this, EventArgs.Empty);
 
-		public override void DiscoveredCharacteristic (CBPeripheral peripheral, CBService service, NSError error)
-		{
-			if (disposed) {
-				return;
-			}
-
-			foreach (var characteristic in service.Characteristics) {
-				if (characteristic.UUID == HeartRateMeasurementCharacteristicUUID) {
-					service.Peripheral.SetNotifyValue (true, characteristic);
-				} else if (characteristic.UUID == BodySensorLocationCharacteristicUUID) {
-					service.Peripheral.ReadValue (characteristic);
-				} else if (characteristic.UUID == HeartRateControlPointCharacteristicUUID) {
-					service.Peripheral.WriteValue (NSData.FromBytes ((IntPtr)1, 1),
-						characteristic, CBCharacteristicWriteType.WithResponse);
-				}
-			}
-		}
-		
-		public override void UpdatedCharacterteristicValue (CBPeripheral peripheral, CBCharacteristic characteristic, NSError error)
-		{
-			if (disposed || error != null || characteristic.Value == null) {
-				return;
-			}
-
-			if (characteristic.UUID == HeartRateMeasurementCharacteristicUUID) {
-				UpdateHeartRate (characteristic.Value);
-			} else if (characteristic.UUID == BodySensorLocationCharacteristicUUID) {
-				UpdateBodySensorLocation (characteristic.Value);
-			}
-		}
-		
 		protected virtual void OnHeartRateUpdated ()
-		{
-			var handler = HeartRateUpdated;
-			if (handler != null) {
-				handler (this, new HeartBeatEventArgs (PreviousHeartBeat, CurrentHeartBeat));
-			}
-		}
-		
+			=> HeartRateUpdated?.Invoke (
+				this,
+				new HeartBeatEventArgs (PreviousHeartBeat, CurrentHeartBeat));
+
 		protected virtual void OnHeartBeat ()
-		{
-			var handler = HeartBeat;
-			if (handler != null) {
-				handler (this, EventArgs.Empty);
-			}
-		}
-		
+			=> HeartBeat?.Invoke (this, EventArgs.Empty);
+
 		protected virtual void OnLocationUpdated ()
-		{
-			var handler = LocationUpdated;
-			if (handler != null) {
-				handler (this, EventArgs.Empty);
-			}
-		}
-		
+			=> LocationUpdated?.Invoke (this, EventArgs.Empty);
+
 		void ScheduleBeatTimer ()
 		{
-			if (disposed) {
+			if (disposed)
 				return;
-			}
-		
-			if (beatTimer != null) {
-				beatTimer.Dispose ();
-			}
-			
+
+			Peripheral.ReadRSSI ();
+
+			beatTimer?.Dispose ();
+
 			OnHeartBeat ();
-			beatTimer = NSTimer.CreateScheduledTimer (60 / (double)CurrentHeartBeat.Rate, delegate {
-				ScheduleBeatTimer ();
-			});
-				
+
+			beatTimer = NSTimer.CreateScheduledTimer (
+				60 / (double)CurrentHeartBeat.Rate,
+				timer => ScheduleBeatTimer ());
 		}
-		
+
 		unsafe void UpdateHeartRate (NSData hr)
 		{
 			var now = DateTime.Now;
-		
+
 			var data = (byte *)hr.Bytes;
 			ushort bpm = 0;
 			if ((data [0] & 0x01) == 0) {
@@ -201,18 +163,18 @@ namespace Xamarin.HeartMonitor
 				bpm = (ushort)data [1];
 				bpm = (ushort)(((bpm >> 8) & 0xFF) | ((bpm << 8) & 0xFF00));
 			}
-						
+
 			PreviousHeartBeat = CurrentHeartBeat;
 			CurrentHeartBeat = new HeartBeat { Time = now, Rate = bpm };
 
 			OnHeartRateUpdated ();
 
-			if (PreviousHeartBeat.Rate == 0 && CurrentHeartBeat.Rate != 0) {			
+			if (PreviousHeartBeat.Rate == 0 && CurrentHeartBeat.Rate != 0) {
 				OnHeartBeat ();
 				ScheduleBeatTimer ();
 			}
 		}
-		
+
 		unsafe void UpdateBodySensorLocation (NSData location)
 		{
 			var value = ((byte *)location.Bytes) [0];
@@ -221,8 +183,70 @@ namespace Xamarin.HeartMonitor
 			} else {
 				Location = (HeartRateMonitorLocation)value;
 			}
-			
+
 			OnLocationUpdated ();
+		}
+
+		sealed class HeartRateMonitorDelegate : CBPeripheralDelegate
+		{
+			readonly HeartRateMonitor monitor;
+
+			public HeartRateMonitorDelegate (HeartRateMonitor monitor)
+			{
+				this.monitor = monitor;
+			}
+
+			public override void DiscoveredService (CBPeripheral peripheral, NSError error)
+			{
+				if (monitor.disposed)
+					return;
+
+				foreach (var service in peripheral.Services) {
+					if (service.UUID == PeripheralUUID)
+						peripheral.DiscoverCharacteristics (service);
+				}
+			}
+
+			public override void DiscoveredCharacteristic (CBPeripheral peripheral,
+				CBService service, NSError error)
+			{
+				if (monitor.disposed)
+					return;
+
+				foreach (var characteristic in service.Characteristics) {
+					if (characteristic.UUID == HeartRateMeasurementCharacteristicUUID)
+						service.Peripheral.SetNotifyValue (true, characteristic);
+					else if (characteristic.UUID == BodySensorLocationCharacteristicUUID)
+						service.Peripheral.ReadValue (characteristic);
+					else if (characteristic.UUID == HeartRateControlPointCharacteristicUUID)
+						service.Peripheral.WriteValue (NSData.FromBytes ((IntPtr)1, 1),
+							characteristic, CBCharacteristicWriteType.WithResponse);
+				}
+			}
+
+			public override void UpdatedCharacterteristicValue (
+				CBPeripheral peripheral,
+				CBCharacteristic characteristic, NSError error)
+			{
+				if (monitor.disposed || error != null || characteristic.Value == null)
+					return;
+
+				if (characteristic.UUID == HeartRateMeasurementCharacteristicUUID)
+					monitor.UpdateHeartRate (characteristic.Value);
+				else if (characteristic.UUID == BodySensorLocationCharacteristicUUID)
+					monitor.UpdateBodySensorLocation (characteristic.Value);
+			}
+
+			public override void RssiUpdated (CBPeripheral peripheral, NSError error)
+			{
+				if (monitor.disposed)
+					return;
+
+				monitor.OnRssiUpdated ();
+			}
+
+			public override void UpdatedName (CBPeripheral peripheral)
+				=> monitor.OnNameUpdated ();
 		}
 	}
 }

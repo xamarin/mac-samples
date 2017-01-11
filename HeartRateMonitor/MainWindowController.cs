@@ -5,6 +5,7 @@
 //   Aaron Bockover <abock@xamarin.com>
 //
 // Copyright 2013 Xamarin, Inc.
+// Copyright 2017 Microsoft.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +35,12 @@ using Foundation;
 
 namespace Xamarin.HeartMonitor
 {	
-	public partial class MainWindowController : AppKit.NSWindowController
+	public partial class MainWindowController : NSWindowController
 	{
-		CBCentralManager manager = new CBCentralManager ();
-		HeartRateMonitor monitor;
-		HeartRateMonitorTableDataSource heartRateMonitors = new HeartRateMonitorTableDataSource ();
+		readonly CBCentralManager manager = new CBCentralManager ();
+		readonly HeartRateMonitorTableDataSource heartRateMonitors = new HeartRateMonitorTableDataSource ();
+
+		HeartRateMonitor connectedMonitor;
 
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
@@ -61,6 +63,7 @@ namespace Xamarin.HeartMonitor
 		
 		public override void AwakeFromNib ()
 		{
+			DisconnectMonitor ();
 			InitializeAnimation ();
 			
 			deviceListScanningProgressIndicator.StartAnimation (this);
@@ -69,6 +72,7 @@ namespace Xamarin.HeartMonitor
 			deviceTableView.DoubleClick += ConnectToSelectedDevice;
 			
 			connectButton.Activated += (sender, e) => NSApplication.SharedApplication.BeginSheet (deviceListSheet, Window);
+			disconnectButton.Activated += (sender, e) => DisconnectMonitor ();
 			dismissDeviceListButton.Activated += (sender, e) => DismissDeviceListSheet ((NSObject)sender);
 			chooseDeviceButton.Activated += ConnectToSelectedDevice;
 
@@ -77,10 +81,18 @@ namespace Xamarin.HeartMonitor
 		
 		void ConnectToSelectedDevice (object sender, EventArgs e)
 		{
-			var monitor = heartRateMonitors.GetHeartRateMonitor ((int)deviceTableView.SelectedRow);
-			if (monitor != null) {
+			var peripheral = heartRateMonitors [(int)deviceTableView.SelectedRow];
+			if (peripheral != null) {
+				DisconnectMonitor ();
+
 				statusLabel.StringValue = "Connecting...";
-				monitor.Connect ();
+
+				connectedMonitor = new HeartRateMonitor (manager, peripheral);
+				connectedMonitor.HeartBeat += OnHeartBeat;
+				connectedMonitor.HeartRateUpdated += OnHeartRateUpdated;
+				connectedMonitor.RssiUpdated += OnRssiUpdated;
+				connectedMonitor.NameUpdated += OnNameUpdated;
+				connectedMonitor.Connect ();
 			}
 
 			DismissDeviceListSheet ((NSObject)sender);
@@ -94,12 +106,18 @@ namespace Xamarin.HeartMonitor
 			heartRateLabel.IntValue = 0;
 			heartRateLabel.Hidden = true;
 			heartRateUnitLabel.Hidden = true;
+			rssiLabel.Hidden = true;
 			deviceNameLabel.StringValue = String.Empty;
 			deviceNameLabel.Hidden = true;
+			disconnectButton.Hidden = true;
 
-			if (monitor != null) {
-				monitor.Dispose ();
-				monitor = null;
+			if (connectedMonitor != null) {
+				connectedMonitor.HeartBeat -= OnHeartBeat;
+				connectedMonitor.HeartRateUpdated -= OnHeartRateUpdated;
+				connectedMonitor.RssiUpdated -= OnRssiUpdated;
+				connectedMonitor.NameUpdated -= OnNameUpdated;
+				connectedMonitor.Dispose ();
+				connectedMonitor = null;
 			}
 		}
 
@@ -130,9 +148,6 @@ namespace Xamarin.HeartMonitor
 			} else {
 				statusLabel.StringValue = String.Format ("Connected on {0}", monitor.Location);
 			}
-			
-			deviceNameLabel.Hidden = false;
-			deviceNameLabel.StringValue = monitor.Name;
 		}
 
 		void OnHeartBeat (object sender, EventArgs e)
@@ -147,34 +162,58 @@ namespace Xamarin.HeartMonitor
 				heartImage.Layer.AddAnimation (anim, "scale");
 			}
 		}
-		
+
+		void OnRssiUpdated (object sender, EventArgs e)
+		{
+			rssiLabel.Hidden = connectedMonitor.Peripheral.RSSI == null;
+			rssiLabel.StringValue = $"RSSI: {connectedMonitor.Peripheral.RSSI} dB";
+		}
+
+		void OnNameUpdated (object sender, EventArgs e)
+		{
+			deviceNameLabel.Hidden = false;
+			deviceNameLabel.StringValue = connectedMonitor.Name;
+		}
+
 		#endregion
-		
+
 		#region Bluetooth
+
+		void LogPeripheral (string message, CBPeripheral peripheral)
+			=> Console.WriteLine ($"{message}: {peripheral.Identifier} {peripheral}");
 
 		void InitializeCoreBluetooth ()
 		{
 			manager.UpdatedState += OnCentralManagerUpdatedState;
 
 			manager.DiscoveredPeripheral += (sender, e) => {
-				if (monitor != null) {
-					monitor.Dispose ();
-				}
-
-				monitor = new HeartRateMonitor (manager, e.Peripheral);
-				monitor.HeartRateUpdated += OnHeartRateUpdated;
-				monitor.HeartBeat += OnHeartBeat;
-				
-				heartRateMonitors.AddHeartRateMonitor (monitor);
+				LogPeripheral ("Discovered", e.Peripheral);
+				heartRateMonitors.Add (e.Peripheral);
 				deviceTableView.ReloadData ();
 			};
-			
-			manager.ConnectedPeripheral += (sender, e) => e.Peripheral.DiscoverServices ();
-			manager.DisconnectedPeripheral += (sender, e) => DisconnectMonitor ();
+
+			manager.FailedToConnectPeripheral += (sender, e) => {
+				LogPeripheral ($"Failed to connect ({e.Error})", e.Peripheral);
+				DisconnectMonitor ();
+			};
+
+			manager.ConnectedPeripheral += (sender, e) => {
+				LogPeripheral ("Connected", e.Peripheral);
+				statusLabel.StringValue = "Discovering services...";
+				disconnectButton.Hidden = false;
+				e.Peripheral.DiscoverServices ();
+			};
+
+			manager.DisconnectedPeripheral += (sender, e) => {
+				LogPeripheral ("Disconneceted", e.Peripheral);
+				heartRateMonitors.Remove (e.Peripheral);
+				deviceTableView.ReloadData ();
+				DisconnectMonitor ();
+			};
 
 			HeartRateMonitor.ScanForHeartRateMonitors (manager);
 		}
-		
+
 		void OnCentralManagerUpdatedState (object sender, EventArgs e)
 		{
 			string message = null;
@@ -195,7 +234,7 @@ namespace Xamarin.HeartMonitor
 			default:
 				break;
 			}
-			
+
 			if (message != null) {
 				new NSAlert {
 					MessageText = "Heart Rate Monitor cannot be used at this time.",
