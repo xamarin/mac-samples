@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SampleMetadata>
+	<ID>76d1f836-5750-4f6e-a085-e4fc50c34ac3</ID>
+	<Brief>This sample shows how to use UI constraints in Xamarin.Mac apps.</Brief>
+	<IsFullApplication>true</IsFullApplication>
+	<Level>Beginning</Level>
+	<Tags>Getting Started</Tags>
+	<Gallery>true</Gallery>
+</SampleMetadata>
