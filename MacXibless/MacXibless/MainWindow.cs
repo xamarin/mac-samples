@@ -5,7 +5,7 @@ using CoreGraphics;
 
 namespace MacXibless
 {
-	public partial class MainWindow : NSWindow
+	public class MainWindow : NSWindow
 	{
 		#region Private Variables
 		private int NumberOfTimesClicked = 0;
@@ -17,16 +17,8 @@ namespace MacXibless
 		#endregion
 
 		#region Constructors
-		public MainWindow (IntPtr handle) : base (handle)
-		{
-		}
 
-		[Export ("initWithCoder:")]
-		public MainWindow (NSCoder coder) : base (coder)
-		{
-		}
-
-		public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore bufferingType, bool deferCreation): base (contentRect, aStyle,bufferingType,deferCreation) {
+		public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore bufferingType, bool deferCreation): base (contentRect, aStyle, bufferingType, deferCreation) {
 			// Define the User Interface of the Window here
 			Title = "Window From Code";
 
