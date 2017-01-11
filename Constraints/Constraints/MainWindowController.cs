@@ -1,13 +1,12 @@
 ﻿using System;
-
-using Foundation;
 using AppKit;
 using CoreGraphics;
+using Foundation;
 
 namespace Constraints
 {
-	[global::Foundation.Register ("MainWindowController")]
-	public partial class MainWindowController : NSWindowController
+	[Register ("MainWindowController")]
+	public class MainWindowController : NSWindowController
 	{
 		public MainWindowController (IntPtr handle) : base (handle)
 		{
@@ -18,10 +17,10 @@ namespace Constraints
 		{
 		}
 
-		public MainWindowController () : base ()
+		public MainWindowController ()
 		{
 			// Construct the window from code here
-			CGRect contentRect = new CGRect (0, 0, 1000, 500);
+			var contentRect = new CGRect (0, 0, 1000, 500);
 			base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable), NSBackingStore.Buffered, false);
 
 

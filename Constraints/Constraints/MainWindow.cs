@@ -1,11 +1,11 @@
 ﻿using System;
-using Foundation;
 using AppKit;
 using CoreGraphics;
+using Foundation;
 
 namespace Constraints
 {
-	[global::Foundation.Register ("MainWindow")]
+	[Register ("MainWindow")]
 	public class MainWindow : NSWindow
 	{
 		const int PADDING = 10;
@@ -30,11 +30,13 @@ namespace Constraints
 
 			ContentView = new NSView (centerRect);
 
-			var title = new NSTextField ();
-			title.StringValue = "Title your problem";
-			title.Editable = true;
-			title.UsesSingleLineMode = true;
-			title.PlaceholderString = "Title your problem";
+			var title = new NSTextField {
+				StringValue = "Title your problem",
+				Editable = true,
+				UsesSingleLineMode = true,
+				PlaceholderString = "Title your problem"
+			};
+
 			title.AccessibilityLabel = title.PlaceholderString;
 
 			title.TranslatesAutoresizingMaskIntoConstraints = false;
@@ -42,7 +44,8 @@ namespace Constraints
 
 			// There are three ways to set auto layout constraints programmatically.  The first is by setting layout anchors 
 			// https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW5
-			title.LeadingAnchor.ConstraintEqualToAnchor (ContentView.LeadingAnchor, PADDING).Active = true; // Don't forget to set .Active = true on the constraint or it won't show up
+			// Don't forget to set .Active = true on the constraint or it won't show up
+			title.LeadingAnchor.ConstraintEqualToAnchor (ContentView.LeadingAnchor, PADDING).Active = true;
 			title.TrailingAnchor.ConstraintEqualToAnchor (ContentView.TrailingAnchor, -PADDING).Active = true;
 			title.TopAnchor.ConstraintEqualToAnchor (ContentView.TopAnchor, PADDING).Active = true;
 
@@ -61,9 +64,8 @@ namespace Constraints
 			description.HorizontallyResizable = false;
 			description.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
-			description.TextContainer.ContainerSize = new CGSize (scrollSize.Width, float.MaxValue);
+			description.TextContainer.Size = new CGSize (scrollSize.Width, float.MaxValue);
 			description.TextContainer.WidthTracksTextView = true;
-
 
 			scroll.DocumentView = description;
 
@@ -80,11 +82,11 @@ namespace Constraints
 			// Alternatively, you can create the constraints as shown here and set .Active = true, same as with the anchor method above
 			NSLayoutConstraint.Create (scroll, NSLayoutAttribute.Top, NSLayoutRelation.Equal, title, NSLayoutAttribute.Bottom, 1, PADDING).Active = true;
 		
-			title.Activated += (sender, e) => this.MakeFirstResponder (description);
+			title.Activated += (sender, e) => MakeFirstResponder (description);
 
 			var labelFont = NSFont.LabelFontOfSize (10);
 
-			var publicLabel = new NSTextField () {
+			var publicLabel = new NSTextField {
 				StringValue = "Your title and description will be public",
 				Editable = false,
 				Bezeled = false,
@@ -99,13 +101,13 @@ namespace Constraints
 			// You can also use different types of constraints for the same view
 			ContentView.AddConstraints (new [] {
 				NSLayoutConstraint.Create(publicLabel, NSLayoutAttribute.Leading, NSLayoutRelation.GreaterThanOrEqual, ContentView, NSLayoutAttribute.Leading, 1, 40),
-				NSLayoutConstraint.Create(publicLabel, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, ContentView, NSLayoutAttribute.Trailing, 1, -PADDING),
+				NSLayoutConstraint.Create(publicLabel, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, ContentView, NSLayoutAttribute.Trailing, 1, -PADDING)
 			});
 			publicLabel.TopAnchor.ConstraintEqualToAnchor (scroll.BottomAnchor, 5).Active = true;
 
 			var email = new NSTextField {
 				Editable = true,
-				PlaceholderString = "Optional email address",
+				PlaceholderString = "Optional email address"
 			};
 
 			email.AccessibilityLabel = email.PlaceholderString;
@@ -113,13 +115,13 @@ namespace Constraints
 			email.TranslatesAutoresizingMaskIntoConstraints = false;
 			ContentView.AddSubview (email);
 			ContentView.AddConstraints (new [] {
-				NSLayoutConstraint.Create(email, NSLayoutAttribute.Top, NSLayoutRelation.Equal, publicLabel, NSLayoutAttribute.Bottom, 1, PADDING),
+				NSLayoutConstraint.Create(email, NSLayoutAttribute.Top, NSLayoutRelation.Equal, publicLabel, NSLayoutAttribute.Bottom, 1, PADDING)
 			});
 
 			// The third option for setting layout constraints is to use Visual Format Language
 			// https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html#//apple_ref/doc/uid/TP40010853-CH16-SW9
 			string emailFormat = "|-10-[email]-10-|";
-			NSDictionary emailViews = NSDictionary.FromObjectAndKey (email, (NSString)"email");
+			var emailViews = NSDictionary.FromObjectAndKey (email, (NSString)"email");
 			var emailConstraints = NSLayoutConstraint.FromVisualFormat (emailFormat, NSLayoutFormatOptions.None, null, emailViews);
 			NSLayoutConstraint.ActivateConstraints (emailConstraints);
 
@@ -128,7 +130,11 @@ namespace Constraints
 			};
 
 			sendButton.Activated += (sender, e) => {
-				NSAlert.WithMessage ("Button pressed", "Okay", null, null, "").RunModal ();
+				var alert = new NSAlert {
+					MessageText = "Button pressed"
+				};
+				alert.AddButton ("Okay");
+				alert.RunModal ();
 				Dispose ();
 			};
 
@@ -136,7 +142,7 @@ namespace Constraints
 			ContentView.AddSubview (sendButton);
 			ContentView.AddConstraints (new [] {
 				NSLayoutConstraint.Create(sendButton, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, ContentView, NSLayoutAttribute.Trailing, 1, -PADDING),
-				NSLayoutConstraint.Create(sendButton, NSLayoutAttribute.Leading, NSLayoutRelation.GreaterThanOrEqual, ContentView, NSLayoutAttribute.Leading, 1, 40),
+				NSLayoutConstraint.Create(sendButton, NSLayoutAttribute.Leading, NSLayoutRelation.GreaterThanOrEqual, ContentView, NSLayoutAttribute.Leading, 1, 40)
 			});
 
 			//To do vertical constraints with visual format language, start the format string with V:"
@@ -147,7 +153,7 @@ namespace Constraints
 
 			email.Activated += (sender, e) => {
 				if (sendButton.Enabled) {
-					this.MakeFirstResponder (sendButton);
+					MakeFirstResponder (sendButton);
 				}
 			};
 
