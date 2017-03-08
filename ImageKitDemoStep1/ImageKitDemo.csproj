@@ -42,6 +42,7 @@
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>false</UseSGen>
     <UseRefCounting>false</UseRefCounting>
+    <MonoBundlingExtraArgs>--registrar=dynamic</MonoBundlingExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
