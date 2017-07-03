@@ -22,8 +22,7 @@ namespace AzureTodo
 		{
 			// Establish a link to Azure
 			client = new MobileServiceClient (
-				Constants.ApplicationURL,
-				Constants.ApplicationKey
+				Constants.ApplicationURL		// Azure no longer requires an Application Key
 			);
 
 			// Read any existing todo items from the Azure client

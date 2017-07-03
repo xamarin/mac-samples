@@ -19,9 +19,6 @@ namespace Xamarin.HeartMonitor
 		AppKit.NSButton connectButton { get; set; }
 
 		[Outlet]
-		AppKit.NSArrayController deviceListController { get; set; }
-
-		[Outlet]
 		AppKit.NSProgressIndicator deviceListScanningProgressIndicator { get; set; }
 
 		[Outlet]
@@ -34,6 +31,9 @@ namespace Xamarin.HeartMonitor
 		AppKit.NSTableView deviceTableView { get; set; }
 
 		[Outlet]
+		AppKit.NSButton disconnectButton { get; set; }
+
+		[Outlet]
 		AppKit.NSButton dismissDeviceListButton { get; set; }
 
 		[Outlet]
@@ -44,6 +44,9 @@ namespace Xamarin.HeartMonitor
 
 		[Outlet]
 		AppKit.NSTextField heartRateUnitLabel { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField rssiLabel { get; set; }
 
 		[Outlet]
 		AppKit.NSTextField statusLabel { get; set; }
@@ -60,11 +63,6 @@ namespace Xamarin.HeartMonitor
 				connectButton = null;
 			}
 
-			if (deviceListController != null) {
-				deviceListController.Dispose ();
-				deviceListController = null;
-			}
-
 			if (deviceListScanningProgressIndicator != null) {
 				deviceListScanningProgressIndicator.Dispose ();
 				deviceListScanningProgressIndicator = null;
@@ -75,9 +73,19 @@ namespace Xamarin.HeartMonitor
 				deviceListSheet = null;
 			}
 
+			if (deviceNameLabel != null) {
+				deviceNameLabel.Dispose ();
+				deviceNameLabel = null;
+			}
+
 			if (deviceTableView != null) {
 				deviceTableView.Dispose ();
 				deviceTableView = null;
+			}
+
+			if (disconnectButton != null) {
+				disconnectButton.Dispose ();
+				disconnectButton = null;
 			}
 
 			if (dismissDeviceListButton != null) {
@@ -105,9 +113,9 @@ namespace Xamarin.HeartMonitor
 				statusLabel = null;
 			}
 
-			if (deviceNameLabel != null) {
-				deviceNameLabel.Dispose ();
-				deviceNameLabel = null;
+			if (rssiLabel != null) {
+				rssiLabel.Dispose ();
+				rssiLabel = null;
 			}
 		}
 	}

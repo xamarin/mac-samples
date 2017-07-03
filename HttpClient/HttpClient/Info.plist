@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>HttpClient</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.hamons.httpclient</string>
+	<string>com.xamarin.httpclient</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

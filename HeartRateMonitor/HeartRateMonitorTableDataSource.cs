@@ -5,6 +5,7 @@
 //   Aaron Bockover <abock@xamarin.com>
 //
 // Copyright 2013 Xamarin, Inc.
+// Copyright 2017 Microsoft.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,36 +30,36 @@ using System.Collections.Generic;
 
 using Foundation;
 using AppKit;
+using CoreBluetooth;
 
 namespace Xamarin.HeartMonitor
 {
-	public class HeartRateMonitorTableDataSource : NSTableViewDataSource
+	public sealed class HeartRateMonitorTableDataSource : NSTableViewDataSource
 	{
-		List<HeartRateMonitor> heartRateMonitors = new List<HeartRateMonitor> ();
+		readonly List<CBPeripheral> heartRateMonitors = new List<CBPeripheral> ();
 
-		public void AddHeartRateMonitor (HeartRateMonitor peripheral)
+		public void Add (CBPeripheral peripheral)
 		{
-			heartRateMonitors.Add (peripheral);
+			if (!heartRateMonitors.Contains (peripheral))
+				heartRateMonitors.Add (peripheral);
 		}
+
+		public void Remove (CBPeripheral peripheral)
+			=> heartRateMonitors.Remove (peripheral);
 
 		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn tableColumn, nint row)
-		{
-			var peripheral = heartRateMonitors [(int)row];
-			return new NSString (peripheral.Name);
-		}
+			=> new NSString (heartRateMonitors [(int)row]?.Name ?? "Unknown Peripheral");
 
 		public override nint GetRowCount (NSTableView tableView)
-		{
-			return heartRateMonitors.Count;
-		}
+			=> heartRateMonitors.Count;
 		
-		public HeartRateMonitor GetHeartRateMonitor (int row)
-		{
-			if (row < 0 || row >= heartRateMonitors.Count) {
-				return null;
-			}
+		public CBPeripheral this [int row] {
+			get {
+				if (row < 0 || row >= heartRateMonitors.Count)
+					return null;
 
-			return heartRateMonitors [row];
+				return heartRateMonitors [row];
+			}
 		}
 	}
 }

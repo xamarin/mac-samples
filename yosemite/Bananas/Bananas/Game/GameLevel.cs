@@ -676,7 +676,7 @@ namespace Bananas
 			PathPositions [0] = controlPoint;
 
 			var newPath = new List<SCNVector3> ();
-			SCNVector3 lastPosition;
+			var lastPosition = new SCNVector3 ();
 			float minDistanceBetweenPoints = 10.0f;
 			float steps = 10000f;
 

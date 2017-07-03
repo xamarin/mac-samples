@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>0fd6de61-4818-43a5-95cc-d1099e11b79e</ID>
+  <IsFullApplication>false</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <SupportedPlatforms>Mac</SupportedPlatforms>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use localization in Xamarin.Mac application.</Brief>
+</SampleMetadata>

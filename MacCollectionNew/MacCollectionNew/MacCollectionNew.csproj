@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{2805EA97-5E3B-4B38-B2D7-E8BFDAB58E1E}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacCollectionNew</RootNamespace>
+    <AssemblyName>MacCollectionNew</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <Profiling>true</Profiling>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>SdkOnly</LinkMode>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconAdd.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconAdd.imageset\circle-plus.png" />
+    <ImageAsset Include="Assets.xcassets\IconAdd.imageset\circle-plus%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconDelete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconDelete.imageset\circle-x.png" />
+    <ImageAsset Include="Assets.xcassets\IconDelete.imageset\circle-x%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconInfo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconInfo.imageset\info.png" />
+    <ImageAsset Include="Assets.xcassets\IconInfo.imageset\info%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconCollection.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconCollection.imageset\shoebox.png" />
+    <ImageAsset Include="Assets.xcassets\IconCollection.imageset\shoebox%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconGroup.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconGroup.imageset\group.png" />
+    <ImageAsset Include="Assets.xcassets\IconGroup.imageset\group%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconUser.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconUser.imageset\user.png" />
+    <ImageAsset Include="Assets.xcassets\IconUser.imageset\user%402x.png" />
+    <ImageAsset Include="Assets.xcassets\IconEdit.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconEdit.imageset\216-compose.png" />
+    <ImageAsset Include="Assets.xcassets\IconEdit.imageset\216-compose%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="DataModel\" />
+    <Folder Include="Assets.xcassets\IconAdd.imageset\" />
+    <Folder Include="Assets.xcassets\IconDelete.imageset\" />
+    <Folder Include="Assets.xcassets\IconInfo.imageset\" />
+    <Folder Include="Assets.xcassets\IconCollection.imageset\" />
+    <Folder Include="Assets.xcassets\IconGroup.imageset\" />
+    <Folder Include="Assets.xcassets\IconUser.imageset\" />
+    <Folder Include="Assets.xcassets\IconEdit.imageset\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeItem.cs" />
+    <Compile Include="EmployeeItemController.cs" />
+    <Compile Include="EmployeeItem.designer.cs">
+      <DependentUpon>EmployeeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeItemController.designer.cs">
+      <DependentUpon>EmployeeItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PersonModel.cs" />
+    <Compile Include="MainWindowController.cs" />
+    <Compile Include="MainWindowController.designer.cs">
+      <DependentUpon>MainWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ManualToolbarItem.cs" />
+    <Compile Include="Classes\CollectionViewDataSource.cs" />
+    <Compile Include="Classes\CollectionViewDelegate.cs" />
+    <Compile Include="PersonEditorController.cs" />
+    <Compile Include="PersonEditorController.designer.cs">
+      <DependentUpon>PersonEditorController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="EmployeeItemController.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>
