@@ -90,8 +90,10 @@ namespace MacCopyPaste
 			if (ok) {
 				// Read the image off of the pasteboard
 				NSObject [] objectsToPaste = pasteboard.ReadObjectsForClasses (classArray2, null);
-				ImageInfo info = (ImageInfo)objectsToPaste[0];
-
+                if (objectsToPaste.Length > 0)
+                {
+                    ImageInfo info = (ImageInfo)objectsToPaste[0];
+                }
 
 			}
 
