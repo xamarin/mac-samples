@@ -18,17 +18,17 @@ namespace OpenGLViewSample
 		{
 		}
 
-		public override void DidFinishLaunching (NSNotification notification)
+		public override void DidFinishLaunching(NSNotification notification)
 		{
-			mainWindowController = new MainWindowController ();
-            Class.ThrowOnInitFailure = false;
-			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new object [] {
+			mainWindowController = new MainWindowController();
+			Class.ThrowOnInitFailure = false;
+			view = new GLView(mainWindowController.Window.Frame, new NSOpenGLPixelFormat(new object[] {
 										NSOpenGLPixelFormatAttribute.FullScreen,
-										NSOpenGLPixelFormatAttribute.MinimumPolicy				
+										NSOpenGLPixelFormatAttribute.MinimumPolicy
 			}));
-			
+
 			mainWindowController.Window.ContentView = view;
- 			mainWindowController.Window.MakeKeyAndOrderFront (this);
+			mainWindowController.Window.MakeKeyAndOrderFront(this);
 		}
 	}
 	
