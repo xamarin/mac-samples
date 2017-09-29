@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMBindingExample", "XMBindingExample.csproj", "{EF336464-B5EF-494E-88AD-751F99E0FB3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBinding", "SimpleBinding\SimpleBinding.csproj", "{3DCFFF22-E369-47D7-BB13-48FF0219B99B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF336464-B5EF-494E-88AD-751F99E0FB3B}.Debug|x86.ActiveCfg = Debug|x86
+		{EF336464-B5EF-494E-88AD-751F99E0FB3B}.Debug|x86.Build.0 = Debug|x86
+		{EF336464-B5EF-494E-88AD-751F99E0FB3B}.Release|x86.ActiveCfg = Release|x86
+		{EF336464-B5EF-494E-88AD-751F99E0FB3B}.Release|x86.Build.0 = Release|x86
+		{3DCFFF22-E369-47D7-BB13-48FF0219B99B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DCFFF22-E369-47D7-BB13-48FF0219B99B}.Debug|x86.Build.0 = Debug|Any CPU
+		{3DCFFF22-E369-47D7-BB13-48FF0219B99B}.Release|x86.ActiveCfg = Release|Any CPU
+		{3DCFFF22-E369-47D7-BB13-48FF0219B99B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
