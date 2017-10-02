@@ -30,7 +30,7 @@ namespace UserNotificationExample
 		// Shared initialization code
 		void Initialize ()
 		{
-		                    // We get the Default notification Center
+			// We get the Default notification Center
 			if (center == null )
 				center = NSUserNotificationCenter.DefaultUserNotificationCenter;
 
