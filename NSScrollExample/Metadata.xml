@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SampleMetadata>
+  <ID>6ad8bf57-06bf-42af-b65d-0d89d33f7b5e</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Beginning</Level>
+  <Tags>Getting Started, User Interface</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Demonstrates how to use Standard NSScrollView in your Xamarin.Mac Application.</Brief>
+</SampleMetadata>
