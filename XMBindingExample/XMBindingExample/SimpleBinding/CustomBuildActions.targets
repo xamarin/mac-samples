@@ -1,0 +1,5 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="GenerateNativeLibrary" BeforeTargets="_GenerateBindings" Inputs="SimpleClass.h;SimpleClass.m" Outputs="SimpleClass.dylib">
+		<Exec Command="clang -arch x86_64 -dynamiclib -fobjc-arc -fobjc-link-runtime -std=gnu99 SimpleClass.m -current_version 1.0 -compatibility_version 1.0 -framework Cocoa -o SimpleClass.dylib" />
+	</Target>
+</Project>

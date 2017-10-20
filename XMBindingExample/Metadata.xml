@@ -5,5 +5,5 @@
   <Level>Advanced</Level>
   <Tags>Advanced, Binding</Tags>
   <Gallery>true</Gallery>
-  <Brief>This is a quick example, showing how to invoke bmac to create a binding for Xamarin.Mac Unified.</Brief>
+  <Brief>This is a quick example, showing how to use bindings project to create a binding for Xamarin.Mac.</Brief>
 </SampleMetadata>
