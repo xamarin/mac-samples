@@ -54,7 +54,7 @@ namespace CustomizeAnimation
 		
 		public void setLineWidth(float value)
 		{
-			SetValueForKeyPath((NSNumber) value,(NSString)"drawnLineWidth");
+			SetValueForKey((NSNumber) value,(NSString)"drawnLineWidth");
 		}
 		
 		[Export("drawnLineWidth")]
