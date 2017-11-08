@@ -9,6 +9,9 @@ namespace UserNotificationExample
 {
 	public partial class MainWindow : AppKit.NSWindow
 	{
+	
+		NSUserNotificationCenter center { get; set; }
+	
 		#region Constructors
 		
 		// Called when created from unmanaged code
@@ -27,6 +30,25 @@ namespace UserNotificationExample
 		// Shared initialization code
 		void Initialize ()
 		{
+			// We get the Default notification Center
+			if (center == null )
+				center = NSUserNotificationCenter.DefaultUserNotificationCenter;
+
+			center.DidDeliverNotification += (s, e) =>
+			{
+				Console.WriteLine("Notification Delivered");
+				DeliveredColorWell.Color = NSColor.Green;
+			};
+
+			center.DidActivateNotification += (s, e) =>
+			{
+				Console.WriteLine("Notification Touched");
+				TouchedColorWell.Color = NSColor.Green;
+			};
+
+			// If we return true here, Notification will show up even if your app is TopMost.
+			center.ShouldPresentNotification = (c, n) => { return true; };
+
 		}
 
 		partial void NotifyMeAction (AppKit.NSButton sender)
@@ -48,27 +70,8 @@ namespace UserNotificationExample
 			not.InformativeText = "This is an informative text";
 			not.DeliveryDate = (NSDate)DateTime.Now;
 			not.SoundName = NSUserNotification.NSUserNotificationDefaultSoundName;
-
-			// We get the Default notification Center
-			NSUserNotificationCenter center = NSUserNotificationCenter.DefaultUserNotificationCenter;
-			
-			center.DidDeliverNotification += (s, e) => 
-			{
-				Console.WriteLine("Notification Delivered");
-				DeliveredColorWell.Color = NSColor.Green;
-			};
-			
-			center.DidActivateNotification += (s, e) => 
-			{
-				Console.WriteLine("Notification Touched");
-				TouchedColorWell.Color = NSColor.Green;
-			};
-
-			// If we return true here, Notification will show up even if your app is TopMost.
-			center.ShouldPresentNotification = (c, n) => { return true; };
 			
 			center.ScheduleNotification(not);
-
 		}
 
 		// This will only reset colors to red
