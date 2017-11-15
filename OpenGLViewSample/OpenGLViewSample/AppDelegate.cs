@@ -22,8 +22,8 @@ namespace OpenGLViewSample
 		{
 			mainWindowController = new MainWindowController ();
 			view = new GLView (mainWindowController.Window.Frame, new NSOpenGLPixelFormat (new object [] {
-                                        NSOpenGLPixelFormatAttribute.Accelerated,
-										NSOpenGLPixelFormatAttribute.MinimumPolicy				
+                                                                    NSOpenGLPixelFormatAttribute.Accelerated,
+										                            NSOpenGLPixelFormatAttribute.MinimumPolicy				
 			}));
 			
 			mainWindowController.Window.ContentView = view;
