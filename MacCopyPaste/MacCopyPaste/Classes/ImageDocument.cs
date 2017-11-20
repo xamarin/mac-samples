@@ -95,11 +95,7 @@ namespace MacCopyPaste
 					ImageInfo info = (ImageInfo)objectsToPaste[0];
 
 				}
-
-
-
 			}
-
 		}
 		#endregion
 	}
