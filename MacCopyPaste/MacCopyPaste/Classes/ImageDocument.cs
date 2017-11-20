@@ -93,7 +93,6 @@ namespace MacCopyPaste
 				if (objectsToPaste.Length > 0)
 				{
 					ImageInfo info = (ImageInfo)objectsToPaste[0];
-
 				}
 			}
 		}
