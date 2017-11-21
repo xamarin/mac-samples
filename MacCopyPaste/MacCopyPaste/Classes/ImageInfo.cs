@@ -34,8 +34,11 @@ namespace MacCopyPaste
 			var type = decoder.DecodeObject("imageType") as NSString;
 
 			// Save data
-			Name = name.ToString();
-			ImageType = type.ToString ();
+            		if (name != null && type != null)
+            		{
+                		Name = name.ToString();
+                		ImageType = type.ToString();
+            		}
 		}
 		#endregion
 
@@ -43,9 +46,11 @@ namespace MacCopyPaste
 		[Export ("encodeWithCoder:")]
 		public void EncodeTo (NSCoder encoder)
 		{
-			// Encode data
-			encoder.Encode(new NSString(Name),"name");
-			encoder.Encode(new NSString(ImageType),"imageType");
+			if (Name != null && ImageType != null)
+			{
+				encoder.Encode(new NSString(Name), "name");
+				encoder.Encode(new NSString(ImageType), "imageType");
+			}
 		}
 
 		[Export ("writableTypesForPasteboard:")]
