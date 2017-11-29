@@ -58,7 +58,7 @@ namespace MacOutlines
 			view.TextField.EditingEnded += (sender, e) => {
 
 				// Grab product
-				var prod = outlineView.ItemAtRow(view.Tag) as Product;
+				var prod = outlineView.ItemAtRow(view.TextField.Tag) as Product;
 
 				// Take action based on type
 				switch(view.Identifier) {
