@@ -15,8 +15,12 @@ This applications shows how to use various QuickTime features:
 ###### Attention
 
 
-The partial static registrar isn't compatible with QTKit.
+Apple has [deprecated](https://developer.apple.com/library/content/technotes/tn2300/_index.html#//apple_ref/doc/uid/DTS40012852-CH1-XCODE) QTKit and no longer ships header files needed by the static registrar.
 
-The partial static registrar assumes everything in Xamarin.Mac.dll has been registered properly, but we skip QTKit-based types, because we don't have headers for those.
+This can be worked around by adding:
 
-So you should add `<MonoBundlingExtraArgs>--registrar=dynamic</MonoBundlingExtraArgs>` to all configurations.
+`<MonoBundlingExtraArgs>--registrar=dynamic</MonoBundlingExtraArgs>`
+
+to the MMP arguments of all projects still using QTKit.
+
+More information about the registrar can be found [here](https://developer.xamarin.com/guides/mac/under-the-hood/registrar/).
