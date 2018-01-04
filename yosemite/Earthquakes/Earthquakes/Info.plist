@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.8</string>
+	<string>10.10</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>olegoid</string>
 	<key>NSMainStoryboardFile</key>
@@ -31,20 +31,20 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSAppTransportSecurity</key>
-    <dict>
+	<dict>
   	<!--Include to allow all connections (DANGER)-->
-  	    <key>NSAllowsArbitraryLoads</key>
-  	    <true/>
-  	    <key>NSExceptionDomains</key>
-  	    <dict>
-  		    <key>earthquake.usgs.gov</key>
-  		    <dict>
- 			    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
- 			    <true/>
- 			    <key>NSIncludesSubdomains</key>
- 			    <true/>
- 		    </dict>
-	    </dict>
-    </dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>earthquake.usgs.gov</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>
