@@ -12,5 +12,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.scnetworkreachability</string>
 </dict>
 </plist>
