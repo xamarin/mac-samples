@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{15FF1FC9-3C96-465E-BBFB-506FE2E6B04E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>NSOutlineViewAndTableViewExample</RootNamespace>
+    <RootNamespace>NSOutlineViewAndTableView</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>NSOutlineViewAndTableViewExample</AssemblyName>
+    <AssemblyName>NSOutlineViewAndTableView</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
