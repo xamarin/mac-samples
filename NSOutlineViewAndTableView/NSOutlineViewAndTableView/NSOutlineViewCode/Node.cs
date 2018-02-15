@@ -2,7 +2,7 @@
 using Foundation;
 using System.Collections.Generic;
 
-namespace NSOutlineViewAndTableViewExample
+namespace NSOutlineViewAndTableView
 {
 	// This is a little tree data structure to show off outline view display
 	class Node : NSObject

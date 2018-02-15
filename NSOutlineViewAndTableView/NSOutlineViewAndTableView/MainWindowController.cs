@@ -1,11 +1,11 @@
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using AppKit;
 
-namespace NSOutlineViewAndTableViewExample
+namespace NSOutlineViewAndTableView
 {
 	public partial class MainWindowController : AppKit.NSWindowController
 	{
