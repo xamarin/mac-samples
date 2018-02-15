@@ -5,7 +5,7 @@ using AppKit;
 using ObjCRuntime;
 using System.Collections.Generic;
 
-namespace NSOutlineViewAndTableViewExample
+namespace NSOutlineViewAndTableView
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{

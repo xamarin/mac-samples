@@ -1,5 +1,5 @@
-
-namespace NSOutlineViewAndTableViewExample
+﻿
+namespace NSOutlineViewAndTableView
 {
 	
 	// Should subclass MonoMac.AppKit.NSWindow

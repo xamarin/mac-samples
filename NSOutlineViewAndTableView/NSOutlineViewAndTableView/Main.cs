@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using CoreGraphics;
 using Foundation;
 using AppKit;
 using ObjCRuntime;
 
-namespace NSOutlineViewAndTableViewExample
+namespace NSOutlineViewAndTableView
 {
 	class MainClass
 	{

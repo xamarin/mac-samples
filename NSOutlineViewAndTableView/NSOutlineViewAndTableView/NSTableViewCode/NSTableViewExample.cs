@@ -3,7 +3,7 @@ using AppKit;
 using CoreGraphics;
 using Foundation;
 
-namespace NSOutlineViewAndTableViewExample
+namespace NSOutlineViewAndTableView
 {
 	class TableSetup
 	{
