@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using CoreGraphics;
 using Foundation;
 using AppKit;
@@ -6,7 +6,7 @@ using ObjCRuntime;
 using CoreAnimation;
 using CoreGraphics;
 
-namespace NSCustomViewExample
+namespace NSCustomView
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{

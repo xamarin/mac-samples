@@ -1,5 +1,5 @@
-
-namespace NSCustomViewExample
+﻿
+namespace NSCustomView
 {
 	// Should subclass MonoMac.AppKit.NSResponder
 	[Foundation.Register ("AppDelegate")]
