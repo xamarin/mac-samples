@@ -210,8 +210,6 @@ namespace Xamarin.HeartMonitor
 				deviceTableView.ReloadData ();
 				DisconnectMonitor ();
 			};
-
-			HeartRateMonitor.ScanForHeartRateMonitors (manager);
 		}
 
 		void OnCentralManagerUpdatedState (object sender, EventArgs e)
@@ -220,7 +218,10 @@ namespace Xamarin.HeartMonitor
 
 			switch (manager.State) {
 			case CBCentralManagerState.PoweredOn:
-				connectButton.Enabled = true;
+				if (!connectButton.Enabled) {
+					HeartRateMonitor.ScanForHeartRateMonitors(manager);
+					connectButton.Enabled = true;
+				}
 				return;
 			case CBCentralManagerState.Unsupported:
 				message = "The platform or hardware does not support Bluetooth Low Energy.";
