@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSCustomViewExample", "NSCustomViewExample\NSCustomViewExample.csproj", "{8EDA4AD5-CEB7-4B64-B51C-C2CF9C83D799}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSCustomView", "NSCustomView\NSCustomView.csproj", "{8EDA4AD5-CEB7-4B64-B51C-C2CF9C83D799}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
