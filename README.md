@@ -1,7 +1,7 @@
 Mac Samples
 ===========
 
-Sample code for Xamarin's C# APIs to develop Mac applications.
+Sample code for Xamarin's C# APIs to develop Mac applications. Visit the [Mac Sample Gallery](http://developer.xamarin.com/samples/mac/all) to download individual samples.
 
 License
 -------
@@ -27,7 +27,7 @@ Samples Submission Guidelines
 
 ## Galleries
 
-We love samples! Application samples show off our platform and provide a great way for people to learn our stuff. And we even promote them as a first-class feature of the docs site. You can find our two sample galleries here:
+We love samples! Application samples show off our platform and provide a great way for people to learn our stuff. And we even promote them as a first-class feature of the docs site. You can find our sample galleries here:
 
 * [Xamarin Forms Samples](http://developer.xamarin.com/samples/xamarin-forms/all/)
 
@@ -39,7 +39,7 @@ We love samples! Application samples show off our platform and provide a great w
 
 ## Sample GitHub Repositories
 
-These sample galleries are populated by samples in our six sample GitHub repos:
+These sample galleries are populated by samples in these GitHub repos:
 
 * [https://github.com/xamarin/xamarin-forms-samples](https://github.com/xamarin/xamarin-forms-samples)
 
@@ -58,9 +58,9 @@ The [mac-ios-samples](https://github.com/xamarin/mac-ios-samples) repository is 
 
 ## Sample Requirements
 
-We welcome sample submissions. Please ping Nat or Miguel for repo commit access.
+We welcome sample submissions, please start by creating an issue with your proposal.
 
-However, because the sample galleries are powered by the github sample repos, each sample needs to have the following things:
+Because the sample galleries are powered by the github sample repos, each sample needs to have the following things:
 
 * **Screenshots** - a folder called Screenshots that has at least one screen shot of the sample (preferably a screen shot for every page or every major functionality piece, people really key off these things). for the xplat samples, the folder should be split into platform folders, e.g. iOS, Android, Windows. see[ https://github.com/xamarin/mobile-samples/tree/master/Tasky/Screenshots](https://github.com/xamarin/mobile-samples/tree/master/Tasky/Screenshots) for an example of this.
 
@@ -107,7 +107,7 @@ However, because the sample galleries are powered by the github sample repos, ea
 
 A good example of this stuff is here in the drawing sample:[ https://github.com/xamarin/monotouch-samples/tree/master/Drawing](https://github.com/xamarin/monotouch-samples/tree/master/Drawing)
 
-For a x-platform sample, please see: https://github.com/xamarin/mobile-samples/tree/master/Tasky
+For a cross-platform sample, please see: https://github.com/xamarin/mobile-samples/tree/master/Tasky
 
 ## GitHub Integration
 
