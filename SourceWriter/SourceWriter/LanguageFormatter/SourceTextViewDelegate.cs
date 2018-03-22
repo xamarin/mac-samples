@@ -122,9 +122,9 @@ namespace AppKit.TextKit.Formatter
 		/// <summary>
 		/// Called when the cell is dragged.
 		/// </summary>
-		/// <param name="textView">The <see cref="AppKit.TextKit.Formatter.SourceTextView"/>.</param>
+		/// <param name="view">The <see cref="AppKit.TextKit.Formatter.SourceTextView"/>.</param>
 		/// <param name="cell">The cell being acted upon.</param>
-		/// <param name="cellFrame">The onscreen frame of the cell.</param>
+		/// <param name="rect">The onscreen frame of the cell.</param>
 		/// <param name="theevent">An event defining the drag operation.</param>
 		/// <remarks>
 		/// Because a custom <c>Delegate</c> has been attached to the <c>NSTextView</c>, the normal events
