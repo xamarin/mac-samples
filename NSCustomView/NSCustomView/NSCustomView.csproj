@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{8EDA4AD5-CEB7-4B64-B51C-C2CF9C83D799}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>NSCustomViewExample</RootNamespace>
+    <RootNamespace>NSCustomView</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>NSCustomViewExample</AssemblyName>
+    <AssemblyName>NSCustomView</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
