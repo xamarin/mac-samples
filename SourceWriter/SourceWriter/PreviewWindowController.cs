@@ -84,6 +84,7 @@ namespace SourceWriter
 		/// <param name="title">The title of the document being displayed.</param>
 		/// <param name="text">The formatted text to be displayed.</param>
 		/// <param name="previewController">The <c>ViewController</c> who's document is being displayed.</param>
+		/// <param name="filePath">The path of the file.</param>
 		public void DisplayPreview(string title, string text, ViewController previewController, string filePath) {
 			string baseURL = "";
 

@@ -108,7 +108,6 @@ namespace SourceWriter
 						});
 						return true;
 					}
-					return false;
 				case 1001:
 					// Lose Changes
 					return true;

@@ -67,6 +67,7 @@ namespace SourceWriter
 		/// Displays the given text string as final output to the user using a <c>WebKit</c> view.
 		/// </summary>
 		/// <param name="text">The formatted text to display.</param>
+		/// <param name="filePath">The path of the file.</param>
 		public void DisplayPreview(string text, string filePath) {
 
 			// Are we already performing an update?
