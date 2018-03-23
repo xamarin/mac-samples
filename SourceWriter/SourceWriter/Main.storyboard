@@ -1180,7 +1180,7 @@ Gw
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" explicitItemIdentifier="PrintPreview" id="WFE-hK-GLq" customClass="ManualToolbarItem">
                                     <connections>
-                                        <action selector="printPreview:" target="n8A-zD-eLP" id="NeO-eg-Fvs"/>
+                                        <action selector="print:" target="n8A-zD-eLP" id="NeO-eg-Fvs"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>

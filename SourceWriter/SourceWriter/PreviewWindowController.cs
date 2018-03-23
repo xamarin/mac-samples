@@ -179,7 +179,7 @@ namespace SourceWriter
 		/// Prints the document currently being edited.
 		/// </summary>
 		/// <param name="sender">The controller calling the method.</param>
-		[Action("printPreview:")]
+		[Action("print:")]
 		public void PrintDocument (NSObject sender) {
 			ContentController.PrintPreview ();
 		}
