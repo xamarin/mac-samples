@@ -33,13 +33,23 @@
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="make -C &quot;${ProjectDir}/sundown/&quot;" />
-        <Command type="BeforeBuild" command="cp &quot;${ProjectDir}/sundown/libsundown.dylib&quot; &quot;${ProjectDir}/Resources&quot;" />
-        <Command type="AfterClean" command="rm -f &quot;${ProjectDir}/Resources/libsundown.dylib&quot;" />
+        <Command>
+          <type>BeforeBuild</type>
+          <command>make -C "${ProjectDir}/sundown/"</command>
+        </Command>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>cp "${ProjectDir}/sundown/libsundown.dylib" "${ProjectDir}/Resources"</command>
+        </Command>
+        <Command>
+          <type>AfterClean</type>
+          <command>rm -f "${ProjectDir}/Resources/libsundown.dylib"</command>
+        </Command>
       </CustomCommands>
     </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
     <XamMacArch>i386</XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -57,8 +67,25 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>make -C "${ProjectDir}/sundown/"</command>
+        </Command>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>cp "${ProjectDir}/sundown/libsundown.dylib" "${ProjectDir}/Resources"</command>
+        </Command>
+        <Command>
+          <type>AfterClean</type>
+          <command>rm -f "${ProjectDir}/Resources/libsundown.dylib"</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
     <XamMacArch>i386</XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -76,7 +103,24 @@
     <CreatePackage>True</CreatePackage>
     <EnablePackageSigning>True</EnablePackageSigning>
     <PlatformTarget>x86</PlatformTarget>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>make -C "${ProjectDir}/sundown/"</command>
+        </Command>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>cp "${ProjectDir}/sundown/libsundown.dylib" "${ProjectDir}/Resources"</command>
+        </Command>
+        <Command>
+          <type>AfterClean</type>
+          <command>rm -f "${ProjectDir}/Resources/libsundown.dylib"</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -109,6 +153,12 @@
     <BundleResource Include="Resources\Markdown.icns" />
     <BundleResource Include="Resources\Template.html" />
     <BundleResource Include="Resources\libsundown.dylib" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Resources\libsundown.dylib">
+      <Kind>Dynamic</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
