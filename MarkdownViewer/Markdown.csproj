@@ -31,15 +31,9 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="BeforeBuild" command="make -C &quot;${ProjectDir}/sundown/&quot;" />
-        <Command type="BeforeBuild" command="cp &quot;${ProjectDir}/sundown/libsundown.dylib&quot; &quot;${ProjectDir}/Resources&quot;" />
-        <Command type="AfterClean" command="rm -f &quot;${ProjectDir}/Resources/libsundown.dylib&quot;" />
-      </CustomCommands>
-    </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
     <XamMacArch>i386</XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -59,6 +53,7 @@
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <UseRefCounting>false</UseRefCounting>
     <XamMacArch>i386</XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -77,6 +72,7 @@
     <EnablePackageSigning>True</EnablePackageSigning>
     <PlatformTarget>x86</PlatformTarget>
     <UseRefCounting>false</UseRefCounting>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -110,5 +106,12 @@
     <BundleResource Include="Resources\Template.html" />
     <BundleResource Include="Resources\libsundown.dylib" />
   </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Resources\libsundown.dylib">
+      <Kind>Dynamic</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <Import Project="MarkdownActions.targets" />
 </Project>
