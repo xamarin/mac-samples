@@ -129,15 +129,14 @@ namespace SceneKitViewer
 			// Convert the mouse location in screen coordinates to local coordinates, then perform a hit test with the local coordinates.
 			var mouseLocation = this.ConvertPointFromView(theEvent.LocationInWindow, null);
 			var hits = this.HitTest(mouseLocation, (SCNHitTestOptions)null);
-    
-    		// If there was a hit, select the nearest object; otherwise unselect.
-			if (hits.Count() > 0) 
-			{
-       			var hit = hits[0]; // Choose the nearest object hit.
 
+			// If there was a hit, select the nearest object; otherwise unselect.
+			if (hits.Count() > 0)
+			{
+				var hit = hits[0]; // Choose the nearest object hit.
 				this.SelectNode(hit.Node, hit.GeometryIndex);
 			}
-			else 
+			else
 			{
 				this.SelectNode(null, -1);
 			}
@@ -151,19 +150,19 @@ namespace SceneKitViewer
 			this.selectedMaterial?.Emission?.RemoveAllAnimations();
 			// Clear the selection.
 			this.selectedMaterial = null;
-    
-		    // Highight the selection, if there is one.
+
+			// Highight the selection, if there is one.
 			if (node != null && index != -1)
 			{
-		        // Convert the geometry element index to a material index.
+				// Convert the geometry element index to a material index.
 				index = index % node.Geometry.Materials.Count();
-		        
-		        // Make the material unique (i.e. unshared).
+
+				// Make the material unique (i.e. unshared).
 				SCNMaterial unsharedMaterial = node.Geometry.Materials[index].Copy() as SCNMaterial;
 				node.Geometry.ReplaceMaterial(index, unsharedMaterial);
-		        
-		        // Select the material.
-		        this.selectedMaterial = unsharedMaterial;
+
+				// Select the material.
+				this.selectedMaterial = unsharedMaterial;
 
 				// Animate the material.
 				var highlightAnimation = CABasicAnimation.FromKeyPath("contents") as CABasicAnimation;
@@ -175,7 +174,7 @@ namespace SceneKitViewer
 				highlightAnimation.TimingFunction = CAMediaTimingFunction.FromName(CAMediaTimingFunction.EaseInEaseOut);
 
 				this.selectedMaterial.Emission.AddAnimation(highlightAnimation, new NSString("highlight"));
-		    }
+			}
 		}
 
 		#endregion

@@ -11,4 +11,4 @@ namespace SceneKitViewer
 			NSApplication.Main(args);
 		}
 	}
-}	
+}

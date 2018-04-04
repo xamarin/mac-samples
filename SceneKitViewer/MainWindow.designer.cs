@@ -9,16 +9,17 @@ using System.CodeDom.Compiler;
 
 namespace SceneKitViewer
 {
-	[Register ("MainWindow")]
+	[Register("MainWindow")]
 	partial class MainWindow
 	{
 		[Outlet]
 		SceneKitViewer.SceneView sceneView { get; set; }
-		
-		void ReleaseDesignerOutlets ()
+
+		void ReleaseDesignerOutlets()
 		{
-			if (sceneView != null) {
-				sceneView.Dispose ();
+			if (sceneView != null)
+			{
+				sceneView.Dispose();
 				sceneView = null;
 			}
 		}
