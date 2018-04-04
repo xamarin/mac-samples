@@ -95,7 +95,4 @@
   <ItemGroup>
     <Folder Include="AsyncTests.Framework\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
 </Project>

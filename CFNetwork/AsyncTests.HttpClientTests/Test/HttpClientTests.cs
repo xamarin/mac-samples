@@ -428,7 +428,7 @@ namespace AsyncTests.HttpClientTests.Test {
 				ctx.AutoDispose (response);
 				ctx.Assert (false, "#2");
 			} catch (AggregateException e) {
-				ctx.Assert (e.InnerException, Is.InstanceOfType (typeof(HttpRequestException)), "#3");
+				ctx.Assert (e.InnerException, Is.InstanceOf (typeof(HttpRequestException)), "#3");
 			} catch (HttpRequestException) {
 				;
 			}
