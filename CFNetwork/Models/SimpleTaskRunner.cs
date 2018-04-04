@@ -27,14 +27,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MonoMac.CFNetwork.Test.Models {
-
-	public abstract class SimpleTaskRunner : AsyncTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public abstract class SimpleTaskRunner : AsyncTaskRunner
+	{
 		internal override Task<string> Run (Uri uri, CancellationToken cancellationToken)
 		{
 			var cts = CancellationTokenSource.CreateLinkedTokenSource (cancellationToken);

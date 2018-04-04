@@ -31,11 +31,12 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using MonoMac.CFNetwork;
+using CFNetwork;
 
-namespace MonoMac.CFNetwork.Test.Models {
-
-	public abstract class AsyncTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public abstract class AsyncTaskRunner 
+	{
 		protected HttpClient CreateClient ()
 		{
 			return CreateClient (false);

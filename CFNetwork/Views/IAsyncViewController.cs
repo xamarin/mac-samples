@@ -26,18 +26,13 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace MonoMac.CFNetwork.Test.Views {
+using MonoMac.CFNetwork.Test.Models;
 
-	using Models;
-
-	public interface IAsyncViewController {
-		AsyncTaskRunner TaskRunner {
-			get;
-		}
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public interface IAsyncViewController
+	{
+		AsyncTaskRunner TaskRunner { get; }
 	}
 }

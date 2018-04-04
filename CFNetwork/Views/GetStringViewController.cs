@@ -27,21 +27,15 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Net.Http;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.WebKit;
-using MonoMac.CFNetwork;
+using Foundation;
+using AppKit;
+using WebKit;
+using MonoMac.CFNetwork.Test.Models;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	using Models;
-
-	public partial class GetStringViewController : NSViewController, IAsyncViewController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class GetStringViewController : NSViewController, IAsyncViewController 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

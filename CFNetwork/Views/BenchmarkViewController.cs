@@ -27,17 +27,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.CoreText;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
+using MonoMac.CFNetwork.Test.Models;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	using Models;
-
-	public partial class BenchmarkViewController : NSViewController, IAsyncViewController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class BenchmarkViewController : NSViewController, IAsyncViewController 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code
@@ -63,10 +60,7 @@ namespace MonoMac.CFNetwork.Test.Views {
 		void Initialize ()
 		{
 			repeatCount = 1;
-
-			var font = NSFont.UserFixedPitchFontOfSize (16);
-			textAttrs = new NSMutableDictionary ();
-			textAttrs.SetValueForKey (font, NSAttributedString.FontAttributeName);
+			textAttrs = new NSStringAttributes() { Font = NSFont.UserFixedPitchFontOfSize(16) };
 		}
 		
 		#endregion
@@ -93,7 +87,7 @@ namespace MonoMac.CFNetwork.Test.Views {
 
 		int mode;
 		int repeatCount;
-		NSMutableDictionary textAttrs;
+		NSStringAttributes textAttrs;
 		const string kMode = "Mode";
 		const string kRepeatCount = "RepeatCount";
 		const string kResults = "Results";
@@ -146,14 +140,14 @@ namespace MonoMac.CFNetwork.Test.Views {
 			public override NSObject TransformedValue (NSObject value)
 			{
 				var number = (NSNumber)value;
-				var log = Math.Log (number.IntValue, 2);
+				var log = Math.Log (number.Int32Value, 2);
 				return (NSNumber)log;
 			}
 
 			public override NSObject ReverseTransformedValue (NSObject value)
 			{
 				var number = (NSNumber)value;
-				var exp = Math.Pow (2, number.IntValue);
+				var exp = Math.Pow (2, number.Int32Value);
 				return (NSNumber)exp;
 			}
 		}

@@ -26,17 +26,12 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class URLViewController : MonoMac.AppKit.NSViewController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class URLViewController : AppKit.NSViewController 
+	{
 		public URLViewController ()
 			: base ("URLView", NSBundle.MainBundle)
 		{

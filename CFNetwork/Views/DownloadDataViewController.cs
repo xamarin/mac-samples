@@ -27,22 +27,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.CFNetwork;
+using AppKit;
+using Foundation;
+using MonoMac.CFNetwork.Test.Models;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	using Models;
-
-	public partial class DownloadDataViewController : NSViewController, IAsyncViewController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class DownloadDataViewController : NSViewController, IAsyncViewController
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

@@ -1,13 +1,10 @@
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class Preferences : MonoMac.AppKit.NSWindow {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class Preferences : AppKit.NSWindow 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

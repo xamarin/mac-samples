@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test
 {
@@ -12,28 +12,28 @@ namespace MonoMac.CFNetwork.Test
 	partial class AppDelegate
 	{
 		[Action ("GetString:")]
-		partial void GetString (MonoMac.Foundation.NSObject sender);
+		partial void GetString (Foundation.NSObject sender);
 
 		[Action ("DownloadData:")]
-		partial void DownloadData (MonoMac.Foundation.NSObject sender);
+		partial void DownloadData (Foundation.NSObject sender);
 
 		[Action ("CheckHeaders:")]
-		partial void CheckHeaders (MonoMac.Foundation.NSObject sender);
+		partial void CheckHeaders (Foundation.NSObject sender);
 
 		[Action ("Benchmark:")]
-		partial void Benchmark (MonoMac.Foundation.NSObject sender);
+		partial void Benchmark (Foundation.NSObject sender);
 
 		[Action ("Preferences:")]
-		partial void Preferences (MonoMac.Foundation.NSObject sender);
+		partial void Preferences (Foundation.NSObject sender);
 
 		[Action ("OpenLogViewer:")]
-		partial void OpenLogViewer (MonoMac.Foundation.NSObject sender);
+		partial void OpenLogViewer (Foundation.NSObject sender);
 
 		[Action ("RunUnitTests:")]
-		partial void RunUnitTests (MonoMac.Foundation.NSObject sender);
+		partial void RunUnitTests (Foundation.NSObject sender);
 
 		[Action ("RestartServer:")]
-		partial void RestartServer (MonoMac.Foundation.NSObject sender);
+		partial void RestartServer (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

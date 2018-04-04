@@ -27,16 +27,15 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using AppKit;
 using AsyncTests.Framework;
 using AsyncTests.HttpClientTests.Test;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class PreferencesController : MonoMac.AppKit.NSWindowController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class PreferencesController : NSWindowController 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

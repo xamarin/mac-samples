@@ -27,19 +27,15 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
+using MonoMac.CFNetwork.Test.Views;
+using MonoMac.CFNetwork.Test.Models;
 
-namespace MonoMac.CFNetwork.Test {
-
-	using Models;
-	using Views;
-
-	public partial class MainWindowController : MonoMac.AppKit.NSWindowController {
+namespace MonoMac.CFNetwork.Test
+{
+	public partial class MainWindowController : NSWindowController
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

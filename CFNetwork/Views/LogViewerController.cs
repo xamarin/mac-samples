@@ -27,17 +27,16 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class LogViewerController : MonoMac.AppKit.NSWindowController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class LogViewerController : NSWindowController 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

@@ -26,27 +26,15 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-using System;
-using System.Text;
-using System.Net;
-using System.Net.Sockets;
-using System.Net.Http;
-using System.Drawing;
-using System.Threading;
-using System.Threading.Tasks;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
-using MonoMac.CoreFoundation;
-using MonoMac.CFNetwork;
+using AppKit;
 
-namespace MonoMac.CFNetwork.Test {
-
-	class MainClass {
+namespace MonoMac.CFNetwork.Test
+{
+	class MainClass 
+	{
 		static void Main (string[] args)
 		{
 			NSApplication.Init ();
-
 			NSApplication.Main (args);
 		}
 	}

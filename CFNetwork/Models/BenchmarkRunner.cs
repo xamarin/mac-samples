@@ -27,18 +27,16 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using MonoMac.Foundation;
-using MonoMac.CFNetwork;
+using CFNetwork;
+using MonoMac.CFNetwork.Test.Views;
 
-namespace MonoMac.CFNetwork.Test.Models {
-
-	using Views;
-
-	public class BenchmarkRunner : AsyncTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public class BenchmarkRunner : AsyncTaskRunner 
+	{
 		public override bool CanReportProgress {
 			get { return false; }
 		}

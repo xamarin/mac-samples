@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test.Views
 {
@@ -12,16 +12,16 @@ namespace MonoMac.CFNetwork.Test.Views
 	partial class URLViewController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSComboBox URLBox { get; set; }
+		AppKit.NSComboBox URLBox { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField StatusLabel { get; set; }
+		AppKit.NSTextField StatusLabel { get; set; }
 
 		[Action ("Load:")]
-		partial void Load (MonoMac.Foundation.NSObject sender);
+		partial void Load (Foundation.NSObject sender);
 
 		[Action ("Stop:")]
-		partial void Stop (MonoMac.Foundation.NSObject sender);
+		partial void Stop (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -1,15 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Collections.Generic;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
+namespace MonoMac.CFNetwork.Test.Views
+{
 	[Register("HeaderTableDataSource")]
-	public class HeaderTableDataSource : NSTableViewDataSource {
+	public class HeaderTableDataSource : NSTableViewDataSource 
+	{
 		KeyValuePair<string,string>[] data;
 
 		public void Clear ()
@@ -32,7 +32,7 @@ namespace MonoMac.CFNetwork.Test.Views {
 			data = list.ToArray ();
 		}
 
-		public override int GetRowCount (NSTableView tableView)
+		public override nint GetRowCount (NSTableView tableView)
 		{
 			if (data == null)
 				return 0;
@@ -40,7 +40,7 @@ namespace MonoMac.CFNetwork.Test.Views {
 				return data.Length;
 		}
 
-		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn col, int row)
+		public override NSObject GetObjectValue (NSTableView tableView, NSTableColumn col, nint row)
 		{
 			var entry = data [row];
 			string value = entry.Value;

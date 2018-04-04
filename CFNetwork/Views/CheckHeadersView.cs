@@ -27,14 +27,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class CheckHeadersView : MonoMac.AppKit.NSView {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class CheckHeadersView : NSView 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code

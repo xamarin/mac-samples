@@ -1,13 +1,11 @@
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public partial class UnitTestRunner : MonoMac.AppKit.NSWindow {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class UnitTestRunner : AppKit.NSWindow 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code
@@ -31,4 +29,3 @@ namespace MonoMac.CFNetwork.Test.Views {
 		#endregion
 	}
 }
-
