@@ -30,6 +30,7 @@
     <EnableCodeSigning>False</EnableCodeSigning>
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -46,6 +47,7 @@
     <EnableCodeSigning>True</EnableCodeSigning>
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -63,6 +65,7 @@
     <CreatePackage>True</CreatePackage>
     <EnablePackageSigning>True</EnablePackageSigning>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -75,28 +78,25 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyDocument.cs" />
-    <Compile Include="MyDocument.designer.cs">
-      <DependentUpon>MyDocument.cs</DependentUpon>
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs" />
-    <Compile Include="MainMenu.xib.designer.cs">
-      <DependentUpon>MainMenu.xib</DependentUpon>
-    </Compile>
+    <Compile Include="AppDelegate.cs" />
     <Compile Include="SceneView.cs" />
+    <Compile Include="Main.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MyDocument.xib" />
-    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="Resources\MainMenu.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scene.dae">
+    <Content Include="Resources\scene.dae">
       <DependentUpon>Info.plist</DependentUpon>
     </Content>
-    <Content Include="male_large_01.png" />
+    <Content Include="Resources\male_large_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
