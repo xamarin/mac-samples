@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test.Views
 {
@@ -12,19 +12,19 @@ namespace MonoMac.CFNetwork.Test.Views
 	partial class UnitTestRunnerController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextFieldCell Status { get; set; }
+		AppKit.NSTextFieldCell Status { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSOutlineView ResultArea { get; set; }
+		AppKit.NSOutlineView ResultArea { get; set; }
 
 		[Action ("Run:")]
-		partial void Run (MonoMac.Foundation.NSObject sender);
+		partial void Run (Foundation.NSObject sender);
 
 		[Action ("Stop:")]
-		partial void Stop (MonoMac.Foundation.NSObject sender);
+		partial void Stop (Foundation.NSObject sender);
 
 		[Action ("Close:")]
-		partial void Close (MonoMac.Foundation.NSObject sender);
+		partial void Close (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

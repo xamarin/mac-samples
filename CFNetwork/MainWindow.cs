@@ -27,14 +27,13 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test {
-
-	public partial class MainWindow : MonoMac.AppKit.NSWindow {
+namespace MonoMac.CFNetwork.Test
+{
+	public partial class MainWindow : NSWindow 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code
@@ -58,4 +57,3 @@ namespace MonoMac.CFNetwork.Test {
 		#endregion
 	}
 }
-

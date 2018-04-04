@@ -30,11 +30,12 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Net;
 using System.Net.Http;
 
-namespace MonoMac.CFNetwork.Test.Models {
-	public class DownloadDataRunner : SimpleTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public class DownloadDataRunner : SimpleTaskRunner
+	{
 		public override bool CanReportProgress {
 			get { return true; }
 		}

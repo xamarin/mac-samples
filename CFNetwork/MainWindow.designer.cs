@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test
 {
@@ -12,13 +12,13 @@ namespace MonoMac.CFNetwork.Test
 	partial class MainWindowController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextField StatusLabel { get; set; }
+		AppKit.NSTextField StatusLabel { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSView View { get; set; }
+		AppKit.NSView View { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSView URLView { get; set; }
+		AppKit.NSView URLView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

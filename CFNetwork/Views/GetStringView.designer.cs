@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test.Views
 {
@@ -12,16 +12,16 @@ namespace MonoMac.CFNetwork.Test.Views
 	partial class GetStringViewController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSButton AutoRedirect { get; set; }
+		AppKit.NSButton AutoRedirect { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSBox Content { get; set; }
+		AppKit.NSBox Content { get; set; }
 
 		[Outlet]
-		MonoMac.AppKit.NSTextField Status { get; set; }
+		AppKit.NSTextField Status { get; set; }
 
 		[Action ("DisplayModeChanged:")]
-		partial void DisplayModeChanged (MonoMac.Foundation.NSObject sender);
+		partial void DisplayModeChanged (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

@@ -26,22 +26,19 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-using System;
-using System.Drawing;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+using AppKit;
 using AsyncTests.HttpClientTests.Addin;
 using AsyncTests.HttpClientTests.Test;
+using Foundation;
+using MonoMac.CFNetwork.Test.UnitTests;
+using MonoMac.CFNetwork.Test.Views;
 
-namespace MonoMac.CFNetwork.Test {
-
-	using UnitTests;
-	using Views;
-
-	public partial class AppDelegate : NSApplicationDelegate {
+namespace MonoMac.CFNetwork.Test
+{
+	public partial class AppDelegate : NSApplicationDelegate 
+	{
 		URLListDataSource urlList;
 		MainWindowController mainWindowController;
 		PreferencesController preferencesController;
@@ -63,8 +60,7 @@ namespace MonoMac.CFNetwork.Test {
 			unitTestController.RegisterDefaults ();
 		}
 
-		[Obsolete]
-		public override void FinishedLaunching (NSObject notification)
+		public override void DidFinishLaunching (NSNotification notification)
 		{
 			preferencesController.LoadDefaults ();
 			unitTestController.LoadDefaults ();

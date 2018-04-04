@@ -29,12 +29,12 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Net;
 using System.Net.Http;
 
-namespace MonoMac.CFNetwork.Test.Models {
-
-	public class CheckHeadersRunner : SimpleTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public class CheckHeadersRunner : SimpleTaskRunner
+	{
 		public override bool CanReportProgress {
 			get { return false; }
 		}

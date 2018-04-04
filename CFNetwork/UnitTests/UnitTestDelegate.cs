@@ -28,11 +28,11 @@
 //
 using System;
 using AsyncTests.Framework;
-using MonoMac.Foundation;
 
-namespace MonoMac.CFNetwork.Test.UnitTests {
-
-	public class UnitTestDelegate {
+namespace MonoMac.CFNetwork.Test.UnitTests
+{
+	public class UnitTestDelegate 
+	{
 		ResultWrapper root;
 
 		public UnitTestDelegate ()

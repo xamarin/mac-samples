@@ -1,14 +1,12 @@
 using System;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Collections.Generic;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
+using Foundation;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	public class URLListDataSource : NSComboBoxDataSource {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public class URLListDataSource : NSComboBoxDataSource 
+	{
 		List<string> list;
 
 		public URLListDataSource ()
@@ -32,15 +30,14 @@ namespace MonoMac.CFNetwork.Test.Views {
 				list.Add (item);
 		}
 
-		public override int ItemCount (NSComboBox comboBox)
+		public override nint ItemCount (NSComboBox comboBox)
 		{
 			return list.Count;
 		}
 
-		public override NSObject ObjectValueForItem (NSComboBox comboBox, int index)
+		public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 		{
-			return (NSString)list [index];
+			return (NSString)list [(int)index];
 		}
 	}
 }
-

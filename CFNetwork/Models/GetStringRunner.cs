@@ -27,14 +27,14 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MonoMac.CFNetwork.Test.Models {
-
-	public class GetStringRunner : SimpleTaskRunner {
+namespace MonoMac.CFNetwork.Test.Models
+{
+	public class GetStringRunner : SimpleTaskRunner 
+	{
 		public class CompletedEventArgs : EventArgs {
 			public Uri Uri {
 				get;

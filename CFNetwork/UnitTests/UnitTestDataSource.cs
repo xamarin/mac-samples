@@ -27,18 +27,15 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using MonoMac.Foundation;
-using MonoMac.CoreText;
-using MonoMac.CoreGraphics;
-using MonoMac.AppKit;
+using Foundation;
+using AppKit;
 using AsyncTests.Framework;
 
-namespace MonoMac.CFNetwork.Test.UnitTests {
-
+namespace MonoMac.CFNetwork.Test.UnitTests
+{
 	[Register ("UnitTestDataSource")]
-	public class UnitTestDataSource : NSOutlineViewDataSource {
+	public class UnitTestDataSource : NSOutlineViewDataSource 
+	{
 		ResultWrapper root;
 
 		public UnitTestDataSource ()
@@ -69,16 +66,16 @@ namespace MonoMac.CFNetwork.Test.UnitTests {
 
 		#region NSOutlineViewDataSource implementation
 
-		public override int GetChildrenCount (NSOutlineView outlineView, NSObject item)
+		public override nint GetChildrenCount (NSOutlineView outlineView, NSObject item)
 		{
 			ResultWrapper result = item != null ? (ResultWrapper)item : root;
 			return result != null ? result.Count : 0;
 		}
 
-		public override NSObject GetChild (NSOutlineView outlineView, int childIndex, NSObject ofItem)
+		public override NSObject GetChild (NSOutlineView outlineView, nint childIndex, NSObject ofItem)
 		{
 			var result = ofItem != null ? (ResultWrapper)ofItem : root;
-			return result.GetChild (childIndex);
+			return result.GetChild ((int)childIndex);
 		}
 
 		public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -121,7 +118,7 @@ namespace MonoMac.CFNetwork.Test.UnitTests {
 		public override NSObject GetObjectValue (NSOutlineView outlineView, NSTableColumn forTableColumn, NSObject byItem)
 		{
 			var wrapper = (ResultWrapper)byItem;
-			var tag = (ColumnTag)forTableColumn.DataCell.Tag;
+			var tag = (ColumnTag)(int)forTableColumn.DataCell.Tag;
 
 			var result = wrapper.Item as TestResult;
 			if (result == null) {

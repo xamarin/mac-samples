@@ -4,7 +4,7 @@
 // actions made in the Xcode designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoMac.Foundation;
+using Foundation;
 
 namespace MonoMac.CFNetwork.Test.Views
 {
@@ -12,10 +12,10 @@ namespace MonoMac.CFNetwork.Test.Views
 	partial class BenchmarkViewController
 	{
 		[Outlet]
-		MonoMac.AppKit.NSTextView Results { get; set; }
+		AppKit.NSTextView Results { get; set; }
 
 		[Action ("Clear:")]
-		partial void Clear (MonoMac.Foundation.NSObject sender);
+		partial void Clear (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

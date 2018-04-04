@@ -26,15 +26,15 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-using System;
 using System.Collections.Generic;
-using MonoMac.Foundation;
+using Foundation;
 using AsyncTests.Framework;
 
-namespace MonoMac.CFNetwork.Test.UnitTests {
-
+namespace MonoMac.CFNetwork.Test.UnitTests
+{
 	[Register ("ResultWrapper")]
-	internal class ResultWrapper : NSObject {
+	internal class ResultWrapper : NSObject 
+	{
 		List<ResultWrapper> children;
 
 		public TestResultItem Item {

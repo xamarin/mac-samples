@@ -27,23 +27,19 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
-using System.Reflection;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
+using AppKit;
 using AsyncTests.Framework;
-using AsyncTests.HttpClientTests.Addin;
 using AsyncTests.HttpClientTests.Test;
+using Foundation;
+using MonoMac.CFNetwork.Test.UnitTests;
 
-namespace MonoMac.CFNetwork.Test.Views {
-
-	using UnitTests;
-
-	public partial class UnitTestRunnerController : NSWindowController {
+namespace MonoMac.CFNetwork.Test.Views
+{
+	public partial class UnitTestRunnerController : NSWindowController 
+	{
 		#region Constructors
 		
 		// Called when created from unmanaged code
