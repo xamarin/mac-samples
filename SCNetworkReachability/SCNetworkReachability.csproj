@@ -30,6 +30,7 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -45,7 +46,9 @@
     <ConsolePause>false</ConsolePause>
     <EnablePackageSigning>false</EnablePackageSigning>
     <CreatePackage>true</CreatePackage>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -63,6 +66,7 @@
     <EnablePackageSigning>true</EnablePackageSigning>
     <CreatePackage>true</CreatePackage>
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

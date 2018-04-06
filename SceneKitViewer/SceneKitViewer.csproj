@@ -43,11 +43,12 @@
     <IncludeMonoRuntime>True</IncludeMonoRuntime>
     <EnablePackageSigning>False</EnablePackageSigning>
     <CreatePackage>True</CreatePackage>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
     <EnableCodeSigning>True</EnableCodeSigning>
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <AOTMode>None</AOTMode>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>

@@ -31,6 +31,7 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
     <XamMacArch>x86_64</XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -44,10 +45,12 @@
     <UseSGen>true</UseSGen>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <CreatePackage>true</CreatePackage>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
     <EnableCodeSigning>true</EnableCodeSigning>
     <EnablePackageSigning>false</EnablePackageSigning>
     <Profiling>false</Profiling>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
