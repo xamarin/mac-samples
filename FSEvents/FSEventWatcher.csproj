@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,10 +31,10 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <I18n>
-    </I18n>
+    <I18n></I18n>
     <LinkMode>Full</LinkMode>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -50,10 +50,10 @@
     <ConsolePause>False</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
-    <I18n>
-    </I18n>
+    <I18n></I18n>
     <EnableCodeSigning>false</EnableCodeSigning>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -72,6 +72,7 @@
     <EnablePackageSigning>True</EnablePackageSigning>
     <PlatformTarget>x86</PlatformTarget>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

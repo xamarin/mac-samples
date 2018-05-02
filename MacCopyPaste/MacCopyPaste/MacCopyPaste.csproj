@@ -30,6 +30,7 @@
     <EnableCodeSigning>false</EnableCodeSigning>
     <EnablePackageSigning>false</EnablePackageSigning>
     <AOTMode>None</AOTMode>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -49,6 +50,7 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <AOTMode>None</AOTMode>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

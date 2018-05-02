@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -32,6 +32,7 @@
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <UseRefCounting>false</UseRefCounting>
     <AOTMode>None</AOTMode>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -51,6 +52,7 @@
     <UseRefCounting>false</UseRefCounting>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <AOTMode>None</AOTMode>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <DebugType>none</DebugType>
@@ -70,6 +72,7 @@
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <UseRefCounting>false</UseRefCounting>
     <AOTMode>None</AOTMode>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

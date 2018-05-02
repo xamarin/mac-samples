@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -26,7 +26,7 @@
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -44,7 +44,7 @@
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>true</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
