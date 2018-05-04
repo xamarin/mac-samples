@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -28,7 +28,7 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <Profiling>true</Profiling>
-    <HttpClientHandler></HttpClientHandler>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
     <TlsProvider></TlsProvider>
     <LinkMode></LinkMode>
     <XamMacArch></XamMacArch>
@@ -49,7 +49,7 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>None</LinkMode>
-    <HttpClientHandler></HttpClientHandler>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
     <TlsProvider></TlsProvider>
     <XamMacArch></XamMacArch>
     <CodeSignProvision>Automatic</CodeSignProvision>

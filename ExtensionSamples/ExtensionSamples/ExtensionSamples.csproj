@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -32,6 +32,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodeSignProvision>Automatic</CodeSignProvision>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -50,6 +51,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodeSignProvision>Automatic</CodeSignProvision>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
