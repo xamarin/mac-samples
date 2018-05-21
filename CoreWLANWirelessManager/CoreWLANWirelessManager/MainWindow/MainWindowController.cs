@@ -71,19 +71,33 @@ namespace CoreWLANWirelessManager
 
 			networks = new CWNetwork[0];
 			refreshSpinner.Hidden = true;
-			interfacesPicker.AddItems (CWInterface.InterfaceNames);
-			CurrentInterface = new CWInterface (interfacesPicker.SelectedItem.Title);
+			if (CWInterface.InterfaceNames != null && CWInterface.InterfaceNames.Any ())
+			{ 
+				interfacesPicker.AddItems (CWInterface.InterfaceNames);
+				CurrentInterface = new CWInterface (interfacesPicker.SelectedItem.Title);
+			}
+			else
+			{
+				interfacesPicker.Enabled = false;
+				channelPicker.Enabled = false;
+				disconnectButton.Enabled = false;
+				powerState.Enabled = false;
+			}
+
 			tabView.DidSelect += (sender, e) => UpdateInfo();
 			UpdateInfo ();
 		}
 
 		partial void powerStateChanged (AppKit.NSSegmentedControl sender)
 		{
-			NSError error;
-			CurrentInterface.SetPower(powerState.SelectedSegment == 0, out error);
+			if (CurrentInterface != null)
+			{
+				NSError error;
+				CurrentInterface.SetPower (powerState.SelectedSegment == 0, out error);
 
-			if(error != null)
-				Console.WriteLine("Error occurred while changing interface power state: {0}", error.LocalizedDescription);
+				if (error != null)
+					Console.WriteLine ("Error occurred while changing interface power state: {0}", error.LocalizedDescription);
+			}
 		}
 
 		private void JoinNetwrok (object sender, EventArgs e)
@@ -102,7 +116,7 @@ namespace CoreWLANWirelessManager
 
 		partial void disconnectButtonClicked (AppKit.NSButton sender)
 		{
-			CurrentInterface.Disassociate();
+			CurrentInterface?.Disassociate();
 			UpdateInfoTab();
 		}
 
@@ -149,26 +163,30 @@ namespace CoreWLANWirelessManager
 
 		private void UpdateInfoTab ()
 		{
-			powerState.SetSelected (CurrentInterface.PowerOn, CurrentInterface.PowerOn ? 0 : 1);
-			disconnectButton.Enabled = CurrentInterface.ServiceActive;
+			if (CurrentInterface != null)
+			{
+				powerState.SetSelected(CurrentInterface.PowerOn, CurrentInterface.PowerOn ? 0 : 1);
+				disconnectButton.Enabled = CurrentInterface.ServiceActive;
 
-			if (CurrentInterface.PowerOn) {
-				securityTextField.StringValue = CurrentInterface.Security.ToString();
-				phyModeTextField.StringValue = CurrentInterface.ActivePHYMode.ToString();
-				noiseTextField.StringValue = string.Format("{0} dBm", CurrentInterface.NoiseMeasurement.ToString ());
-				ssidTextField.StringValue = CurrentInterface.Ssid ?? string.Empty;
-				bssidTextField.StringValue = CurrentInterface.Bssid ?? string.Empty;
-				rssiTextField.StringValue = string.Format("{0} dBm", CurrentInterface.RssiValue.ToString ());
-				transmissionRateTextField.StringValue = string.Format("{0} Mbps", CurrentInterface.TransmitRate.ToString ());
-				transmissionPowerTextField.StringValue = string.Format("{0} mW", CurrentInterface.TransmitPower.ToString());
-				countryCodeTextField.StringValue = CurrentInterface.CountryCode;
-				supportedChannelsTextField.StringValue = SupportedChannels;
+				if (CurrentInterface.PowerOn)
+				{
+					securityTextField.StringValue = CurrentInterface.Security.ToString();
+					phyModeTextField.StringValue = CurrentInterface.ActivePHYMode.ToString();
+					noiseTextField.StringValue = string.Format("{0} dBm", CurrentInterface.NoiseMeasurement.ToString());
+					ssidTextField.StringValue = CurrentInterface.Ssid ?? string.Empty;
+					bssidTextField.StringValue = CurrentInterface.Bssid ?? string.Empty;
+					rssiTextField.StringValue = string.Format("{0} dBm", CurrentInterface.RssiValue.ToString());
+					transmissionRateTextField.StringValue = string.Format("{0} Mbps", CurrentInterface.TransmitRate.ToString());
+					transmissionPowerTextField.StringValue = string.Format("{0} mW", CurrentInterface.TransmitPower.ToString());
+					countryCodeTextField.StringValue = CurrentInterface.CountryCode;
+					supportedChannelsTextField.StringValue = SupportedChannels;
 
-				channelPicker.AddItems (CurrentInterface.SupportedWlanChannels.Select(channel => 
-					string.Format("{0} {1}", channel.ChannelNumber, channel.ChannelBand)).ToArray<string>());
+					channelPicker.AddItems(CurrentInterface.SupportedWlanChannels.Select(channel =>
+					   string.Format("{0} {1}", channel.ChannelNumber, channel.ChannelBand)).ToArray<string>());
 
-				channelPicker.SelectItem (string.Format("{0} {1}",
-					CurrentInterface.WlanChannel.ChannelNumber, CurrentInterface.WlanChannel.ChannelBand));
+					channelPicker.SelectItem(string.Format("{0} {1}",
+						CurrentInterface.WlanChannel.ChannelNumber, CurrentInterface.WlanChannel.ChannelBand));
+				}
 			}
 		}
 
