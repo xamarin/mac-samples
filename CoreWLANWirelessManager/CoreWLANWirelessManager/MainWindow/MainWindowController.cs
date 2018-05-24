@@ -178,7 +178,7 @@ namespace CoreWLANWirelessManager
 					rssiTextField.StringValue = string.Format("{0} dBm", CurrentInterface.RssiValue.ToString());
 					transmissionRateTextField.StringValue = string.Format("{0} Mbps", CurrentInterface.TransmitRate.ToString());
 					transmissionPowerTextField.StringValue = string.Format("{0} mW", CurrentInterface.TransmitPower.ToString());
-					countryCodeTextField.StringValue = CurrentInterface.CountryCode;
+					countryCodeTextField.StringValue = CurrentInterface.CountryCode ?? string.Empty;
 					supportedChannelsTextField.StringValue = SupportedChannels;
 
 					channelPicker.AddItems(CurrentInterface.SupportedWlanChannels.Select(channel =>
