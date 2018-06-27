@@ -47,7 +47,7 @@ namespace ImageKitDemo
 
         public override void AwakeFromNib()
         {
-            browseData.AddImages(NSUrl.FromString("http://raw.githubusercontent.com/xamarin/mac-samples/master/ImageKitDemoStep1/grain.jpg"));
+            browseData.AddImages(NSUrl.FromString("https://raw.githubusercontent.com/xamarin/mac-samples/master/ImageKitDemoStep1/grain.jpg"));
             browseData.AddImages(NSUrl.FromFilename("/Library/Desktop Pictures/Nature/"));
             browseData.AddImages(NSUrl.FromFilename("/Library/Desktop Pictures/"));
             browserView.DataSource = browseData;
