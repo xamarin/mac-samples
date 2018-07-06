@@ -59,6 +59,9 @@ namespace SceneKitViewer
 				FlattenScene = true,
 			};
 
+            // Escape spaces (convert to %20)
+            path = Uri.EscapeUriString(path);
+
 			var scene = SCNScene.FromUrl(new NSUrl($"file://{path}"), options, out error);
 			if (scene != null)
 			{
