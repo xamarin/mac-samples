@@ -25,10 +25,10 @@
 // 
 using System;
 using CoreGraphics;
-
 using Foundation;
 using AppKit;
 using CoreVideo;
+using System.Linq;
 using OpenGL;
 using OpenTK.Graphics.OpenGL;
 
@@ -57,7 +57,17 @@ namespace GLSLShader
 				NSOpenGLPixelFormatAttribute.ColorSize, 24,
 				NSOpenGLPixelFormatAttribute.DepthSize, 16 };
 
-			pixelFormat = new NSOpenGLPixelFormat (attribs);
+			try
+			{
+				pixelFormat = new NSOpenGLPixelFormat (attribs);
+			}
+			catch (Exception)
+			{
+				// Fails on VM because there is no hardware-acceleration
+				// https://github.com/xamarin/xamarin-macios/issues/4417
+				attribs = attribs.Skip (1).ToArray ();
+				pixelFormat = new NSOpenGLPixelFormat (attribs);
+			}
 
 			if (pixelFormat == null)
 				Console.WriteLine ("No OpenGL pixel format");
