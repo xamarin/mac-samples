@@ -6,7 +6,7 @@ using Foundation;
 namespace MacCopyPaste
 {
 	[Register("ImageInfo")]
-	public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboardReading
+    public class ImageInfo : NSObject, INSSecureCoding, INSPasteboardWriting, INSPasteboardReading
 	{
 		#region Computed Properties
 		[Export("name")]
@@ -14,6 +14,9 @@ namespace MacCopyPaste
 
 		[Export("imageType")]
 		public string ImageType { get; set; }
+
+        [Export("supportsSecureCoding")]
+        public static bool SupportsSecureCoding => true;
 		#endregion
 
 		#region Constructors
