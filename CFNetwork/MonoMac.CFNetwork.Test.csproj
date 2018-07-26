@@ -10,6 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MonoMac.CFNetwork.Test</RootNamespace>
     <AssemblyName>MonoMac.CFNetwork.Test</AssemblyName>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
