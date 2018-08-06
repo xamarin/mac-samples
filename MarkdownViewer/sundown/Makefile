@@ -8,8 +8,8 @@ OBJECTS = \
 	markdown.o \
 	stack.o
 
-CFLAGS = -fPIC -Wall -Werror -Wsign-compare -std=c99 -m32 -O3
-LDFLAGS = -m32 -dynamiclib -undefined suppress -flat_namespace
+CFLAGS = -fPIC -Wall -Werror -Wsign-compare -std=c99 -O3
+LDFLAGS = -dynamiclib -undefined suppress -flat_namespace
 
 all: libsundown.dylib
 
