@@ -151,6 +151,8 @@ namespace CircleView
 		}
 	}
 
+	// "lineFragmentRectForGlyphAtIndex:effectiveRange:" binding is missing so work around with manual bindings
+	// https://github.com/xamarin/xamarin-macios/issues/4740
 	public static class LayoutManagerExtensions
 	{
 		static readonly IntPtr selLineFragmentRectForGlyphAtIndex_EffectiveRange_Handle = ObjCRuntime.Selector.GetHandle ("lineFragmentRectForGlyphAtIndex:effectiveRange:");
