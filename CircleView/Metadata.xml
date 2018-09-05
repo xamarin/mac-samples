@@ -1,0 +1,8 @@
+<SampleMetadata>
+  <ID>aa76cb16-effa-49db-a98f-c2dcddc66b34</ID>
+  <IsFullApplication>true</IsFullApplication>
+  <Level>Intermediate</Level>
+  <Tags>Platform Features</Tags>
+  <Gallery>true</Gallery>
+  <Brief>Layout circular text on a custom view using NSLayoutManager.</Brief>
+</SampleMetadata>
