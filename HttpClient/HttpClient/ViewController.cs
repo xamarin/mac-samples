@@ -97,7 +97,7 @@ namespace HttpClient {
 			try {
 				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-				var request = new HttpWebRequest (new Uri ("https://howsmyssl.com:443/a/check"));
+				var request = WebRequest.CreateHttp (new Uri ("https://howsmyssl.com:443/a/check"));
 				ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 				var clientCertificate = new X509Certificate2 ("cert.pem");
 				request.ClientCertificates.Add (clientCertificate);
