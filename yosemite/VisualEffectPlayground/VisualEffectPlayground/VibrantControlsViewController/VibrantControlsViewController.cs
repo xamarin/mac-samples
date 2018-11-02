@@ -17,7 +17,7 @@ namespace VisualEffectPlayground
 		{
 			base.AwakeFromNib ();
 			if (TopImageView != null)
-				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Poppies.jpg");
+				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Frog.jpg");
 		}
 	}
 }

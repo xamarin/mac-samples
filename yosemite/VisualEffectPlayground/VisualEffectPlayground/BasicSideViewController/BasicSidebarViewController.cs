@@ -17,10 +17,10 @@ namespace VisualEffectPlayground
 		{
 			// This image will appear non-vibrant by virtue of it NOT being a template image. If it is a template image it will be vibrant.
 			if (TopImageView != null)
-				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Elephant.jpg");
+				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Color Burst 1.jpg");
 
 			if (SideImageView != null)
-				SideImageView.Image = new NSImage ("/Library/Desktop Pictures/Elephant.jpg");
+				SideImageView.Image = new NSImage ("/Library/Desktop Pictures/Color Burst 1.jpg");
 		}
 	}
 }

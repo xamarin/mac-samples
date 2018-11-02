@@ -18,7 +18,7 @@ namespace VisualEffectPlayground
 			Window.TitlebarAppearsTransparent = true;
 			Window.MovableByWindowBackground = true;
 
-			ImageView.Image = new NSImage ("/Library/Desktop Pictures/Lion.jpg");
+			ImageView.Image = new NSImage ("/Library/Desktop Pictures/Moon.jpg");
 		}
 	}
 }
