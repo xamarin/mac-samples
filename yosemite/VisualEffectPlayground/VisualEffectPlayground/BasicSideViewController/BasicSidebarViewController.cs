@@ -16,11 +16,8 @@ namespace VisualEffectPlayground
 		public override void AwakeFromNib ()
 		{
 			// This image will appear non-vibrant by virtue of it NOT being a template image. If it is a template image it will be vibrant.
-			if (TopImageView != null)
-				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Color Burst 1.jpg");
-
-			if (SideImageView != null)
-				SideImageView.Image = new NSImage ("/Library/Desktop Pictures/Color Burst 1.jpg");
+			ImageLoader.LoadImage(TopImageView, "/Library/Desktop Pictures/Color Burst 1.jpg", "/Library/Desktop Pictures/Elephant.jpg");
+			ImageLoader.LoadImage(SideImageView, "/Library/Desktop Pictures/Color Burst 1.jpg", "/Library/Desktop Pictures/Elephant.jpg");
 		}
 	}
 }
