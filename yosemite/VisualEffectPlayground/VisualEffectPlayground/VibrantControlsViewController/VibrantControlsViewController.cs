@@ -16,8 +16,7 @@ namespace VisualEffectPlayground
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
-			if (TopImageView != null)
-				TopImageView.Image = new NSImage ("/Library/Desktop Pictures/Poppies.jpg");
+			ImageLoader.LoadImage(TopImageView, "/Library/Desktop Pictures/Frog.jpg", "/Library/Desktop Pictures/Poppies.jpg");
 		}
 	}
 }
