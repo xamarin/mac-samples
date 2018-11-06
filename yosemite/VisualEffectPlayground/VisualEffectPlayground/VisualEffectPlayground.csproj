@@ -111,6 +111,7 @@
     <Compile Include="SampleMapsWindowController\SampleMapsWindowController.designer.cs">
       <DependentUpon>SampleMapsWindowController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
