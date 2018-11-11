@@ -35,9 +35,9 @@ namespace MacControls
 				SliderValue.IntValue = AmountStepper.IntValue;
 			};
 
-			CollorWell.Color = NSColor.Red;
-			CollorWell.Activated += (sender, e) => {
-				FeedbackLabel.StringValue = string.Format("Color Changed: {0}", CollorWell.Color);
+			ColorWell.Color = NSColor.Red;
+			ColorWell.Activated += (sender, e) => {
+				FeedbackLabel.StringValue = string.Format("Color Changed: {0}", ColorWell.Color);
 			};
 
 			ImageWell.Image = NSImage.ImageNamed ("tag.png");

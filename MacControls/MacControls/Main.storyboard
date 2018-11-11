@@ -1444,7 +1444,7 @@
                     <connections>
                         <outlet property="AmountField" destination="fC4-PI-Epk" id="wJf-6I-zu7"/>
                         <outlet property="AmountStepper" destination="GZo-gm-I1r" id="3xV-2k-TQl"/>
-                        <outlet property="CollorWell" destination="9ZB-xA-Cq9" id="fLA-Ex-bzl"/>
+                        <outlet property="ColorWell" destination="9ZB-xA-Cq9" id="fLA-Ex-bzl"/>
                         <outlet property="DateTime" destination="95c-MA-XDE" id="9IC-8R-nUn"/>
                         <outlet property="FeedbackLabel" destination="MNn-Zq-FTI" id="CKU-eK-TlM"/>
                         <outlet property="ImageWell" destination="vcu-Hd-h6b" id="sgB-19-4LJ"/>
