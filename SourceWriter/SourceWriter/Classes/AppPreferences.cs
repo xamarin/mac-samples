@@ -20,17 +20,17 @@ namespace SourceWriter
 		/// document.
 		/// </summary>
 		/// <value>The default <see cref="AppKit.TextKit.Formatter.LanguageDescriptor"/>.</value>
-		[Export("DefaultLangauge")]
+		[Export("DefaultLanguage")]
 		public int DefaultLanguage {
 			get { 
-				var value = LoadInt ("DefaultLangauge", 0);
+				var value = LoadInt ("DefaultLanguage", 0);
 				//Console.WriteLine ("Get Language: {0}", value);
 				return value; 
 			}
 			set {
-				WillChangeValue ("DefaultLangauge");
-				SaveInt ("DefaultLangauge", value, true);
-				DidChangeValue ("DefaultLangauge");
+				WillChangeValue ("DefaultLanguage");
+				SaveInt ("DefaultLanguage", value, true);
+				DidChangeValue ("DefaultLanguage");
 				//Console.WriteLine ("Set Language: {0}", value);
 			}
 		}
