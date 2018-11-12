@@ -4,7 +4,7 @@ namespace MacTables
 {
 	public class Product
 	{
-		#region Computed Propoperties
+		#region Computed Properties
 		public string Title { get; set;} = "";
 		public string Description { get; set;} = "";
 		#endregion
