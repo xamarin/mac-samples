@@ -19,7 +19,7 @@ namespace MacControls
 		AppKit.NSStepper AmountStepper { get; set; }
 
 		[Outlet]
-		AppKit.NSColorWell CollorWell { get; set; }
+		AppKit.NSColorWell ColorWell { get; set; }
 
 		[Outlet]
 		AppKit.NSDatePicker DateTime { get; set; }
@@ -60,9 +60,9 @@ namespace MacControls
 				AmountStepper = null;
 			}
 
-			if (CollorWell != null) {
-				CollorWell.Dispose ();
-				CollorWell = null;
+			if (ColorWell != null) {
+				ColorWell.Dispose ();
+				ColorWell = null;
 			}
 
 			if (DateTime != null) {
