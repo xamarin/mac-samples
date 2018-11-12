@@ -1019,7 +1019,7 @@ Gw
                                     </menu>
                                 </popUpButtonCell>
                                 <connections>
-                                    <binding destination="S4q-80-Zjb" name="selectedIndex" keyPath="self.Preferences.DefaultLangauge" id="9MQ-BK-faJ"/>
+                                    <binding destination="S4q-80-Zjb" name="selectedIndex" keyPath="self.Preferences.DefaultLanguage" id="9MQ-BK-faJ"/>
                                 </connections>
                             </popUpButton>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2Y-Ij-ObO">

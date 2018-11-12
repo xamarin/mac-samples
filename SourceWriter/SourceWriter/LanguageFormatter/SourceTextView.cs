@@ -63,7 +63,7 @@ namespace AppKit.TextKit.Formatter
 		private bool _allowAutoComplete = true;
 
 		/// <summary>
-		/// Should the editor auto complete keywords as defined in the current langauge.
+		/// Should the editor auto complete keywords as defined in the current language.
 		/// </summary>
 		private bool _autoCompleteKeywords = true;
 

@@ -149,7 +149,7 @@ namespace SourceWriter
 		}
 
 		/// <summary>
-		/// Selects XML as the new document langauge.
+		/// Selects XML as the new document language.
 		/// </summary>
 		/// <param name="sender">The object that started this action.</param>
 		partial void SelectXML (Foundation.NSObject sender) {
