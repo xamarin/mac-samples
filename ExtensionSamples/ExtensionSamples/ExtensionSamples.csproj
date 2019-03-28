@@ -22,7 +22,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <EnableCodeSigning>true</EnableCodeSigning>
-    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
@@ -31,7 +31,6 @@
     <Profiling>true</Profiling>
     <PlatformTarget>x86</PlatformTarget>
     <CodeSignProvision>Automatic</CodeSignProvision>
-    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <HttpClientHandler>NSUrlSessionHandler</HttpClientHandler>
     <AOTMode>None</AOTMode>
   </PropertyGroup>
