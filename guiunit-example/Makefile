@@ -5,7 +5,7 @@ clean::
 	rm -rf ./obj/
 
 obj/Test.app/: obj/ obj/Test.dll obj/GuiUnit.exe
-	/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/bin/mmp --output obj/Test.app obj/GuiUnit.exe -a /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Xamarin.Mac.dll --nolink --profile mobile --arch i386
+	/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/bin/mmp --output obj/Test.app obj/GuiUnit.exe -a /Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Xamarin.Mac.dll --nolink --profile mobile --arch x86_64
 
 obj/:
 	mkdir obj
@@ -17,5 +17,5 @@ obj/guiunit/: obj/
 	if [ ! -d "obj/guiunit" ]; then git clone https://github.com/mono/guiunit.git obj/guiunit; fi
 
 obj/GuiUnit.exe: obj/ obj/guiunit/
-	xbuild obj/guiunit/src/framework/GuiUnit_NET_4_5.csproj 
+	msbuild obj/guiunit/src/framework/GuiUnit_NET_4_5.csproj
 	cp obj/guiunit/bin/net_4_5/GuiUnit.exe obj/
