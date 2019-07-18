@@ -1,5 +1,16 @@
-PopupBindings
-=============
+---
+name: Xamarin.Mac - PopupBindings
+description: PopupBindings is a Xamarin.Mac sample application that demonstrates how to use the bindings to manage the contents and selection of the...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: popupbindings
+---
+# PopupBindings
 
 "PopupBindings" is a Xamarin.Mac sample application that demonstrates how to use the bindings to manage the contents and selection of the `NSPopupButton` class. It uses the `NSArrayController` class to hold the data and track the selection.
 
@@ -29,12 +40,12 @@ All four Form Cells describing the person's address is bound to the array contro
 	Controller Key: selection
 	Model Key Path: addressStreet
 
-Copyright
----------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
------- 
+![PopupBindings application screenshot](Screenshots/0.png "PopupBindings application screenshot")
+
+## Author 
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.

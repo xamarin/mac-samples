@@ -1,5 +1,16 @@
-MacDatabinding XIBs
-==============
+---
+name: Xamarin.Mac - MacDatabinding XIBs
+description: '> ℹ️ NOTE: This method of working with controls and Data Binding has been deprecated, please see the MacDatabinding-Storyboard or MacCollectionNew...'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macdatabinding-xibs
+---
+# MacDatabinding XIBs
 
 > ℹ️ **NOTE**: This method of working with controls and Data Binding has been deprecated, please see the **MacDatabinding-Storyboard** or **MacCollectionNew** samples instead.
 

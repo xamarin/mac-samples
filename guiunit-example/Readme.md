@@ -1,5 +1,16 @@
-GUIUnit Example
-===============
+---
+name: Xamarin.Mac - GUIUnit Example
+description: This is a quick example showing how to package up a nunit test that requires Xamarin.Mac into a bundle and invoke it using GUIUnit. About GUIUnit...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: guiunit-example
+---
+# GUIUnit Example
 
 This is a quick example showing how to package up a `nunit` test that requires Xamarin.Mac into a bundle and invoke it using [GUIUnit](https://github.com/mono/guiunit).
 

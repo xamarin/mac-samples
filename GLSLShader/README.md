@@ -1,5 +1,16 @@
-GLSLShader
-==========
+---
+name: Xamarin.Mac - GLSLShader
+description: Simple GLSL shader harness program. Does nothing more than draw a line on the screen. The color is controlled by the shader.vert GSL source....
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: glslshader
+---
+# GLSLShader
 
 Simple GLSL shader harness program. Does nothing more than draw a line on the screen. The color is controlled by the shader.vert GSL source.
 

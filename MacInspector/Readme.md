@@ -1,5 +1,16 @@
-MacInspector
-============
+---
+name: Xamarin.Mac - MacInspector
+description: Most modern OS X applications present auxiliary controls and options that affect the active document or selection as Inspectors that are part of...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macinspector
+---
+# MacInspector
 
 Most modern OS X applications present auxiliary controls and options that affect the active document or selection as **Inspectors** that are part of the Main Window (like Apple's Pages or Numbers apps), instead of using [Panel Windows](https://developer.xamarin.com/guides/mac/user-interface/working-with-windows/#Panels).
 

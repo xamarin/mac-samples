@@ -1,5 +1,16 @@
-Hello, Mac
-==========
+---
+name: Xamarin.Mac - Hello, Mac
+description: Source code for the [Hello, Mac Getting Started Guide] on the [Xamarin Developer Center]. Uses [Xamarin.Mac]. Consists of a single window, button...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: hello-mac
+---
+# Hello, Mac
 
 Source code for the [Hello, Mac Getting Started Guide] on the [Xamarin Developer Center].
 

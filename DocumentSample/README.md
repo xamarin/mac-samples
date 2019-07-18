@@ -1,5 +1,16 @@
-DocumentSample
-==============
+---
+name: Xamarin.Mac - DocumentSample
+description: Shows how to create a Document-based application. Document-based applications are supported by the NSDocument family of classes and take a lot of...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: documentsample
+---
+# DocumentSample
 
 Shows how to create a Document-based application.
 

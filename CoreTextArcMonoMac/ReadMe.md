@@ -1,5 +1,16 @@
-CoreTextArcMonoMac
-==================
+---
+name: Xamarin.Mac - CoreTextArcMonoMac
+description: Illustrates how to use CoreText to draw text along an arc in a Xamarin.Mac application. The main drawing functionality demonstrated in this...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: coretextarcmonomac
+---
+# CoreTextArcMonoMac
 
 Illustrates how to use `CoreText` to draw text along an arc in a Xamarin.Mac application.
 
@@ -7,8 +18,7 @@ The main drawing functionality demonstrated in this application is implemented i
 All of the interresting functionality in that view is encapsulated in the  -drawRect: method in the `CoreTextArcView.cs` file.  
 There, `CoreText` is used to layout and draw glyphs along a curve.
 
-NSFontPanel
------------
+## NSFontPanel
 
 This sample also makes use of the `NSFontPanel` to allow user configuration of the text being displayed in the custom view.  
 This functionality can be found in the file `MyDocument.cs`. Key points to make note of in that file are:
@@ -19,20 +29,19 @@ This functionality can be found in the file `MyDocument.cs`. Key points to make 
 
 3. The methods -toggleBold: and -toggleItalic: are called in response to user clicks in the italic and bold checkboxes. In these methods, the respective font attributes are changed and then the current settings are synchronized to the font pane and to the custom view.
 
-Instructions
-------------
+## Instructions
 
 * Build and run this sample.  
 * When launched, the application will display a string drawn along an curve.  
 * Click in the checkboxes in wthe window to change some font settings.  
 * Choose the "Show Fonts" menu item from the "Format" menu to open the font panel so you can change additional font settings.
 
-Copyright
----------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
-------
+![CoreTextArcMonoMac application screenshot](Screenshots/0.png "CoreTextArcMonoMac application screenshot")
+
+## Author
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.

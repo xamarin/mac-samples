@@ -1,5 +1,16 @@
-UseMSBuildToCopyFilesToBundleExample
-==========
+---
+name: Xamarin.Mac - UseMSBuildToCopyFilesToBundleExample
+description: This sample shows you how to extend your build with msbuild to copy arbitrary files into your bundle. This is better the custom commands in your...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: usemsbuildtocopyfilestobundleexample
+---
+# UseMSBuildToCopyFilesToBundleExample
 
 This sample shows you how to extend your build with msbuild to copy arbitrary files into your bundle.
 

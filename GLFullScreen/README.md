@@ -1,18 +1,27 @@
-GLFullScreen
-============
+---
+name: Xamarin.Mac - GLFullScreen
+description: This sample code demonstrates OpenGL drawing to the entire screen. Files Description MainWindowController.cs - A controller object that handles...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: glfullscreen
+---
+# GLFullScreen
 
 This sample code demonstrates `OpenGL` drawing to the entire screen.
 
-Files Description
------------------
+## Files Description
 
 * `MainWindowController.cs` - A controller object that handles full-screen/window modes switching and user interactions.
 * `MyOpenGLView.m` - An `NSView` subclass that delegates to separate "scene" and "controller" objects for OpenGL rendering and input event handling.
 * `Scene.cs` - A delegate object used by `MyOpenGLView` and `MainWindowController` to render a simple scene.
 * `Texture.cs` - A helper class that loads an `OpenGL` texture from an image path.
 
-Instructions
-------------
+## Instructions
 
 * In the window mode, press the "Go FullScreen" button to switch to the full-screen mode.
 * In the full-screen mode, press [ESC] to switch to the window mode.
@@ -20,12 +29,12 @@ Instructions
 * Press [w]/[W] to toggle wireframe rendering.
 * Hold and drag the mouse to change the roll angle and from which the light is coming.
 
-Copyright
----------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
------- 
+![GLFullScreen application screenshot](Screenshots/0.png "GLFullScreen application screenshot")
+
+## Author 
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.

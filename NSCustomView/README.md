@@ -1,5 +1,16 @@
-NSCustomView
-============
+---
+name: Xamarin.Mac - NSCustomView
+description: This example shows the creation of two custom NSViews, which each paint themselves via different mechanisms. - One overrides the draw method and...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: nscustomview
+---
+# NSCustomView
 
 This example shows the creation of two custom `NSView`s, which each paint themselves via different mechanisms.
 

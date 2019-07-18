@@ -1,5 +1,16 @@
-NSTableViewBinding
-==================
+---
+name: Xamarin.Mac - NSTableViewBinding
+description: NSTableViewBinding is an application that demonstrates how to use Cocoa Bindings with a NSTableView. It demonstrates how to setup bindings in both...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: nstableviewbinding
+---
+# NSTableViewBinding
 
 NSTableViewBinding is an application that demonstrates how to use Cocoa Bindings with a `NSTableView`.
 
@@ -16,8 +27,7 @@ Of course, to set this flag will mean that these bindings setup in Interface Bui
 * `NSArrayController` drives the content of several `NSTextFields` based on the controller's selection.
 * Provides notification of table selection changes through the use of `observeValueForKeyPath`.
 
-Steps for setting the Compiler Directive "USE BINDINGS BY CODE"
----------------------------------------------------------------
+## Steps for setting the Compiler Directive "USE BINDINGS BY CODE"
 
 Running example with code binding:
 
@@ -26,8 +36,7 @@ Running example with code binding:
 3. Under the category Build -> Compiler look for the field labeled Define Symbols half way down the panel page.
 4. Add the symbol "USE BINDINGS BY CODE"			
 
-Steps for un-setting the Compiler Directive "USE BINDINGS BY CODE"
-------------------------------------------------------------------
+## Steps for un-setting the Compiler Directive "USE BINDINGS BY CODE"
 
 Running example without code binding where the bindings are established in Interface Builder:
 
@@ -36,19 +45,18 @@ Running example without code binding where the bindings are established in Inter
 3. Under the category Build -> Compiler look for the field labeled Define Symbols half way down the panel page.
 4. Make sure the symbol "USE BINDINGS BY CODE" is not in this field.
 
-Instructions
-------------
+## Instructions
 
 * Use the Add and Remove buttons (small square buttons marked with "+" and "-") to add and remove people from the table.
 * You can edit each person's info by changing the first, last, and phone text fields.
 * By double-clicking a row in the table can also alternately edit a given person through the use of a sheet window.
 
-Copyright
----------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
------- 
+![NSTableViewBinding application screenshot](Screenshots/0.png "NSTableViewBinding application screenshot")
+
+## Author 
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.

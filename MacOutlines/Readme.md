@@ -1,5 +1,16 @@
-MacOutlines
-===========
+---
+name: Xamarin.Mac - MacOutlines
+description: Source code for the Outline Views documentation on Xamarin Developer Center Uses Xamarin.Mac. This sample covers working with Outline Views in a...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macoutlines
+---
+# MacOutlines
 
 Source code for the [Outline Views](/guides/mac/user-interface/working-with-outlineviews/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

@@ -1,5 +1,16 @@
-MacXibless
-==========
+---
+name: Xamarin.Mac - MacXibless
+description: Source code for the .XIBless User Interface Design documentation on Xamarin Developer Center Uses Xamarin.Mac. This project covers creating a...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macxibless
+---
+# MacXibless
 
 Source code for the [.XIBless User Interface Design](/guides/mac/application_fundamentals/xibless-ui) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

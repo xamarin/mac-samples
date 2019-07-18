@@ -1,5 +1,16 @@
-MacOpenTK
-=========
+---
+name: Xamarin.Mac - MacOpenTK
+description: OpenTK (The Open Toolkit) is an advanced, low-level C library that makes working with OpenGL, OpenCL and OpenAL easier. OpenTK can be used for...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macopentk
+---
+# MacOpenTK
 
 OpenTK (The Open Toolkit) is an advanced, low-level C# library that makes working with OpenGL, OpenCL and OpenAL easier. OpenTK can be used for games, scientific applications or other projects that require 3D graphics, audio or computational functionality. This example gives a brief introduction to using OpenTK in a Xamarin.Mac app.
 

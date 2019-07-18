@@ -1,5 +1,16 @@
-XMLocalizationSample
-==============
+---
+name: Xamarin.Mac - XMLocalizationSample
+description: 'This sample shows two methods for localization your Xamarin.Mac application: - .resx files - Storyboard string files. Due to bug...'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: xmlocalizationsample
+---
+# XMLocalizationSample
 
 This sample shows two methods for localization your Xamarin.Mac application:
 - .resx files
@@ -31,21 +42,19 @@ To add storyboard localization in Xcode:
 </p>
   - Close Xcode and delete Main.storyboard from your project, as it now is copied into specific Resources/ folder.
 
-Build Requirements
-------------------
+## Build Requirements
 
 OS X 10.11, Xcode 8.0 or later
 
-Runtime
-------------------
+## Runtime
 OS X 10.11
 
-Copyright
----------
+## Copyright
 
 Released under the MIT license
 
-Author
-------
+![XMLocalizationSample application screenshot](Screenshots/1.png "XMLocalizationSample application screenshot")
+
+## Author
 
 Chris Hamons

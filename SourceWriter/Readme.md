@@ -1,5 +1,16 @@
-SourceWriter
-============
+---
+name: Xamarin.Mac - SourceWriter
+description: The SourceWriter Xamarin.Mac app is a simple source code editor that provides support for code completion and simple syntax highlighting. It is...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: sourcewriter
+---
+# SourceWriter
 
 The SourceWriter Xamarin.Mac app is a simple source code editor that provides support for code completion and simple syntax highlighting. It is presented as an example of a complete Xamarin.Mac app that includes many of the features a user would expect to find in a typical Mac application.  
 

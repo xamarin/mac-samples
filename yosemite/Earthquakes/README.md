@@ -1,5 +1,16 @@
-Earthquakes
-===========
+---
+name: Xamarin.Mac - Earthquakes
+description: Most applications that use Core Data employ a single persistent store coordinator to mediate access to a given persistent store. Earthquakes shows...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: yosemite-earthquakes
+---
+# Earthquakes
 
 Most applications that use Core Data employ a single persistent store coordinator to mediate access to a given persistent store. Earthquakes shows how to use an additional "private" persistent store coordinator when creating managed objects using data retrieved from a remote server.
 
@@ -9,21 +20,19 @@ The main persistent store coordinator is vended by a singleton "stack controller
 Current version of Xamarin Studio have no support for xcdatamodeld. If you want to use them in your applications
 use Xcode to create data model files and momc utility to compile xcdatamodeld to mom. Read Apple's doc for more info: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/Articles/cdUsingMOM.html
 
-Build Requirements
-------------------
+## Build Requirements
 
 OS X 10.10, Xcode 6.0 or later
 
-Runtime
-------------------
+## Runtime
 OS X 10.10
 
-Copyright
---------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
-------
+![Earthquakes application screenshot](Screenshots/1.png "Earthquakes application screenshot")
+
+## Author
 
 Ported to Xamarin.Mac by Oleg Demchenko

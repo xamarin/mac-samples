@@ -1,5 +1,16 @@
-Drag and Drop Example
-=====================
+---
+name: Xamarin.Mac - Drag and Drop Example
+description: This sample shows how to do a simple drag & drop between two views in a Xamarin.Mac application. When the application is run, the user can drag...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: draganddropexample
+---
+# Drag and Drop Example
 
 This sample shows how to do a simple drag & drop between two views in a Xamarin.Mac application. When the application is run, the user can drag from the **Red View** and drop onto the **Green View**.
 

@@ -1,5 +1,16 @@
-PredicateEditorSample
-=====================
+---
+name: Xamarin.Mac - PredicateEditorSample
+description: PredicateEditorSample is a Xamarin.Mac sample application that shows how to use the NSPredicateEditor. The NSPredicateEditor class is a subclass of...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: predicateeditorsample
+---
+# PredicateEditorSample
 
 "PredicateEditorSample" is a Xamarin.Mac sample application that shows how to use the `NSPredicateEditor`.
 
@@ -11,8 +22,7 @@ It shows how to:
 * Build Spotlight friendly queries based on `NSPredicate` and `NSCompountPredicate`.
 * Build search results based on `NSMetadataQuery` object.
 
-Instructions
-------------
+## Instructions
 
 Simply build and run the sample using MonoDevelop with the Xamarin.Mac plugin. Enter query information pertaining to your Address Book. The application will display matches in its table view.
 
@@ -29,12 +39,12 @@ address book data only. Together along with the other predicates from the `NSPre
 	// and send it off for processing...
 	query.StartQuery();
 
-Copyright
---------
+## Copyright
 
 Xamarin port changes are released under the MIT license
 
-Author
-------
+![PredicateEditorSample application screenshot](Screenshots/0.png "PredicateEditorSample application screenshot")
+
+## Author
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.

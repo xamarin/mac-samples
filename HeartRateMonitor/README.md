@@ -1,5 +1,16 @@
-HeartRateMonitor
-================
+---
+name: Xamarin.Mac - HeartRateMonitor
+description: The CoreBluetooth framework provides the classes needed for your iOS and Mac apps to communicate with devices that are equipped with Bluetooth low...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: heartratemonitor
+---
+# HeartRateMonitor
 
 The `CoreBluetooth` framework provides the classes needed for your iOS and Mac apps to communicate with devices that are equipped with Bluetooth low energy wireless technology, such as heart rate monitors, cycling cadence sensors, and temperature monitors.
 
