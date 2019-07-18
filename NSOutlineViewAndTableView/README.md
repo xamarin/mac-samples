@@ -1,5 +1,16 @@
-NSTableView / NSOutlineView
-===========================
+---
+name: Xamarin.Mac - NSTableView / NSOutlineView
+description: This quick start guide will walk you through the programmatic creation of and use of NSTableView/NSOutlineView with Xamarin.Mac. These views often...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: nsoutlineviewandtableview
+---
+# NSTableView / NSOutlineView
 
 This quick start guide will walk you through the programmatic creation of and 
 use of `NSTableView`/`NSOutlineView` with Xamarin.Mac.

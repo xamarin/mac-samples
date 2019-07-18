@@ -1,11 +1,21 @@
-OpenGLLayer
-===========
+---
+name: Xamarin.Mac - OpenGLLayer
+description: 'For a full description of the program you will have to buy the book: [Core Animation for Mac OS X and the iPhone] - Creating Compelling Dynamic...'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: opengllayer
+---
+# OpenGLLayer
 
 For a full description of the program you will have to buy the book:  
 [Core Animation for Mac OS X and the iPhone] - Creating Compelling Dynamic User Interfaces by Bill Dudney.
 
-Author
-------
+## Author
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
 

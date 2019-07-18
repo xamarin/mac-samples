@@ -1,5 +1,16 @@
-Rulers
-======
+---
+name: Xamarin.Mac - Rulers
+description: This project demonstrates many of the interactions between an NSRulerView and its client view. It should give you an idea how to go about this when...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: rulers
+---
+# Rulers
 
 This project demonstrates many of the interactions between an `NSRulerView` and its client view. 
 It should give you an idea how to go about this when creating a view subclass that really does something.
@@ -9,8 +20,7 @@ The RectsView puts markers in the horizontal and vertical rulers showing the pla
 
 `RectsView.m` defines a lot of methods, but these are the ones primarily related to working with `NSRulerViews`:
 
-Methods Description
--------------------
+## Methods Description
 
 * `rulerView: shouldMoveMarker:` - Denies move if no selection or if selection is locked.
 * `rulerView: willMoveMarker:` toLocation: - Limits minimum rectangle size and updates display; try changing this to snap markers to whole units.

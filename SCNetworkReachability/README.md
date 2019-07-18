@@ -1,5 +1,16 @@
-SCNetworkReachability
-=====================
+---
+name: Xamarin.Mac - SCNetworkReachability
+description: The NetworkReachability programming interface allows an application to determine the status of a system's current network configuration and the...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: scnetworkreachability
+---
+# SCNetworkReachability
 
 The `NetworkReachability` programming interface allows an application to determine the status of a system's current network configuration and the reachability of a target host. A remote host is considered reachable when a data packet, sent by an application into the network stack, can leave the
 local device. Reachability does not guarantee that the data packet will actually be received by the host.

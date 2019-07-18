@@ -1,5 +1,16 @@
-FileCards
-==============
+---
+name: Xamarin.Mac - FileCards
+description: Demonstrates the use of NSPageController. App are displayed for the contents of the user's Documents folder. You can swipe, click the arrow buttons...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: yosemite-filecards
+---
+# FileCards
 
 Demonstrates the use of `NSPageController`.
 App are displayed for the contents of the user's `Documents` folder.
@@ -17,18 +28,17 @@ Simple wrapper around NSUrl to make binding to file properties in IB easier.
 `CardBackgroundView`:  
 Draws the rounded edge background of the file cards.
 
-Build Requirements
-------------------
+## Build Requirements
 
 Xcode 6.0, OS X 10.10
 
-Runtime Requirements
---------------------
+## Runtime Requirements
 
 OS X 10.8 or later
 
-Author
------- 
+![FileCards application screenshot](Screenshots/Screen.png "FileCards application screenshot")
+
+## Author 
 Copyright (C) 2014 Apple Inc. All rights reserved.
 
 Ported to Xamarin.Mac by Rustam Zaitov

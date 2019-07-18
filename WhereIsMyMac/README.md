@@ -1,13 +1,25 @@
-WhereIsMyMac
-============
+---
+name: Xamarin.Mac - WhereIsMyMac
+description: 'Shows the use of the CoreLocation API. For a full description of the program and the original article point your browser here: [WhereIsMyMac]'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: whereismymac
+---
+# WhereIsMyMac
 
 Shows the use of the CoreLocation API.
 
 For a full description of the program and the original article point your browser here:
 [WhereIsMyMac]
 
-Author
------- 
+![WhereIsMyMac application screenshot](Screenshots/0.png "WhereIsMyMac application screenshot")
+
+## Author 
 
 Ported to Xamarin.Mac by Kenneth J. Pouncey.
 

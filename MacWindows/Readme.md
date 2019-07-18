@@ -1,5 +1,16 @@
-MacWindows
-==========
+---
+name: Xamarin.Mac - MacWindows
+description: Source code for the Windows, Dialogs and Alerts documentation on Xamarin Developer Center Uses Xamarin.Mac. This project covers working with...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macwindows
+---
+# MacWindows
 
 Source code for the [Windows](/guides/mac/user-interface/working-with-windows/), [Dialogs](/guides/mac/user-interface/working-with-dialogs/) and [Alerts](/guides/mac/user-interface/working-with-alerts/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

@@ -1,5 +1,16 @@
-QTRecorder
-==========
+---
+name: Xamarin.Mac - QTRecorder
+description: 'This applications shows how to use various QuickTime features: Capture video. Display a live video feed. Play the newly created video in the UI....'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: qtrecorder
+---
+# QTRecorder
 
 This applications shows how to use various QuickTime features: 
 
@@ -8,10 +19,7 @@ This applications shows how to use various QuickTime features:
 * Play the newly created video in the UI.
 * Apply CoreImage effects to the video source.
 * Use Cocoa drawers.
-* Use Cocoa Key/Value bindings to the UI and a document-based interface.
-
-
----
+## * Use Cocoa Key/Value bindings to the UI and a document-based interface.
 ###### Attention
 
 

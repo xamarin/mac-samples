@@ -1,5 +1,16 @@
-MacDatabase
-===========
+---
+name: Xamarin.Mac - MacDatabase
+description: Source code for the Working with SQLite Databases documentation on Xamarin Developer Center Uses Xamarin.Mac. This project covers working with...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macdatabase
+---
+# MacDatabase
 
 Source code for the [Working with SQLite Databases](/guides/mac/application_fundamentals/databases/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

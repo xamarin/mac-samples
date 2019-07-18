@@ -1,5 +1,16 @@
-MacImages
-==========
+---
+name: Xamarin.Mac - MacImages
+description: Source code for the Working with Images documentation on Xamarin Developer Center Uses Xamarin.Mac. When working with C and .NET in a Xamarin.Mac...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: macimages
+---
+# MacImages
 
 Source code for the [Working with Images](/guides/mac/application_fundamentals/working-with-images) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

@@ -1,5 +1,16 @@
-ImageKit Demo
-=============
+---
+name: Xamarin.Mac - ImageKit Demo
+description: Simple demo to exercise ImageKit's ImageBrowserView. While it is largely unrecognizable from the source, this code was inspired by and modeled...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: imagekitdemostep1
+---
+# ImageKit Demo
 
 Simple demo to exercise ImageKit's `ImageBrowserView`.
 
@@ -12,8 +23,7 @@ This demo illustrates:
 * IKImageBrowserItem.
 * Drag and drop support.
 	
-Instructions
-------------
+## Instructions
 
 * Drag images (or PDFs, etc) around the browser view to re-organize.
 * Enter search text to filter the images displayed.
@@ -23,7 +33,8 @@ Instructions
 * Dragging a folder will add all files in that folder.
 * Events for double click, right click etc. are wired up, but only print notices to the console.
 
-Author
------- 
+![ImageKit Demo application screenshot](Screenshots/0.png "ImageKit Demo application screenshot")
+
+## Author 
 
 Ported to Xamarin.Mac by Regan Sarwas.

@@ -1,5 +1,16 @@
-ExtensionSamples
-==============
+---
+name: Xamarin.Mac - ExtensionSamples
+description: This sample demonstrates how to use app extensions in Xamarin.Mac. To register an extension on your machine you'll need run the host application,...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: extensionsamples
+---
+# ExtensionSamples
 
 This sample demonstrates how to use app extensions in Xamarin.Mac. To register an extension on your machine you'll need run the host application, **ExtensionSamples** one time and then enable each plugin from the **System Preference** Extension panel. 
 
@@ -10,20 +21,18 @@ Sample extensions:
 * Finder extension
 * Today extension
 
-Build Requirements
-------------------
+## Build Requirements
 OS X 10.11, Xcode 7.0 or later
 
-Runtime
-------------------
+## Runtime
 OS X 10.11
 
-Copyright
----------
+## Copyright
 
 Xamarin samples released under the MIT license
 
-Author
-------
+![ExtensionSamples application screenshot](Screenshots/0.png "ExtensionSamples application screenshot")
+
+## Author
 
 Chris Hamons

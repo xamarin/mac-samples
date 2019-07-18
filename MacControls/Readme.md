@@ -1,5 +1,16 @@
-MacControls
-==========
+---
+name: Xamarin.Mac - MacControls
+description: Source code for the Standard Controls documentation on Xamarin Developer Center Uses Xamarin.Mac. When working with C and .NET in a Xamarin.Mac...
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: maccontrols
+---
+# MacControls
 
 Source code for the [Standard Controls](/guides/mac/user-interface/standard-controls/) documentation on [Xamarin Developer Center](http://docs.xamarin.com)
 

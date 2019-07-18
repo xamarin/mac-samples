@@ -1,5 +1,16 @@
-CoreWLANWirelessManager
-=======================
+---
+name: Xamarin.Mac - CoreWLANWirelessManager
+description: 'Description: An example application which utilizes the CoreWLAN Framework. Interface Popup Button: The app supports a multiple interface scenario,...'
+page_type: sample
+languages:
+- csharp
+products:
+- xamarin
+technologies:
+- xamarin-mac
+urlFragment: corewlanwirelessmanager
+---
+# CoreWLANWirelessManager
 
 * Description:
 An example application which utilizes the `CoreWLAN` Framework.
@@ -24,7 +35,8 @@ And, there is a button in the bottom right corner of the Scan tab which allows t
 
 Also there is another one push button entitled "Create IBSS". A sheet will be presented upon clicking the Create IBSS button that will allow the user to provide the appropriate credentials for creating the computer-to-computer network.
 
-Author
-------
+![CoreWLANWirelessManager application screenshot](Screenshots/1.png "CoreWLANWirelessManager application screenshot")
+
+## Author
 
 Ported to Xamarin.Mac by Oleg Demchenko.
