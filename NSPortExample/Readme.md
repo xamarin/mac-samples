@@ -6,8 +6,6 @@ languages:
 - csharp
 products:
 - xamarin
-technologies:
-- xamarin-mac
 urlFragment: nsportexample
 ---
 # NSPortExample

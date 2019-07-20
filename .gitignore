@@ -8,3 +8,4 @@ packages/
 *.lock.json
 *.nuget.props
 *.nuget.targets
+.vscode/settings.json

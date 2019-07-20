@@ -6,8 +6,6 @@ languages:
 - csharp
 products:
 - xamarin
-technologies:
-- xamarin-mac
 urlFragment: yosemite-scenekitsessionwwdc2014
 ---
 # Scene Kit Session WWDC 2014

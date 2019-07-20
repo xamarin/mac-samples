@@ -6,8 +6,6 @@ languages:
 - csharp
 products:
 - xamarin
-technologies:
-- xamarin-mac
 urlFragment: yosemite-visualeffectplayground
 ---
 # Blurs, translucency and vibrancy on OS X
