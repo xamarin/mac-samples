@@ -18,3 +18,16 @@ The drag will contain two items:
 * `NSImage` - A `NSImage` containing a House icon.
 
 When the drop happens on the **Green View**, the drop counter will be incremented and the contents of the drag package will be read and displayed in the console.
+
+![Sample drag and drop sample](Screenshots/0.png)
+
+## Prerequisites
+
+* Mac computer with the latest version of macOS.
+* [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
+* Latest version of [Xcode](https://developer.apple.com/xcode/) from Apple.
+
+## Running the sample
+
+1. Open the solution file (**.sln**) in Visual Studio for Mac.
+1. Use the **Run** button or menu to start the app.

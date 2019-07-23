@@ -16,15 +16,18 @@ Shows the use of the `NSDockTile`.
 * Manipulating the Application Badge.
 * Getting the users attention: Informational and Critical.
 
-## Instructions
+![DockAppIcon application screenshot](Screenshots/0.png "DockAppIcon application screenshot")
+
+## Prerequisites
+
+* Mac computer with the latest version of macOS.
+* [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
+* Latest version of [Xcode](https://developer.apple.com/xcode/) from Apple.
+
+## Running the sample
 
 To see the request for attention:
+
 * Use the Request Button.
 * Move away from this application by activating another application within 3 seconds.
 * The requests only work if the requesting application is not the active application.
-
-![DockAppIcon application screenshot](Screenshots/0.png "DockAppIcon application screenshot")
-
-## Author
-
-Ported to Xamarin.Mac by Kenneth J. Pouncey.

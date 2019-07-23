@@ -26,6 +26,8 @@ Simple wrapper around NSUrl to make binding to file properties in IB easier.
 `CardBackgroundView`:  
 Draws the rounded edge background of the file cards.
 
+![FileCards application screenshot](Screenshots/Screen.png "FileCards application screenshot")
+
 ## Build Requirements
 
 Xcode 6.0, OS X 10.10
@@ -34,9 +36,6 @@ Xcode 6.0, OS X 10.10
 
 OS X 10.8 or later
 
-![FileCards application screenshot](Screenshots/Screen.png "FileCards application screenshot")
+## License
 
-## Author 
-Copyright (C) 2014 Apple Inc. All rights reserved.
-
-Ported to Xamarin.Mac by Rustam Zaitov
+Xamarin port changes are released under the MIT license

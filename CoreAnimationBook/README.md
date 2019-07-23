@@ -14,6 +14,13 @@ The samples in this directory are ports from the book "Pragmatic's Core Animatio
 
 ![CoreAnimationBook application screenshot](Screenshots/1.png "CoreAnimationBook application screenshot")
 
-## Author 
+## Prerequisites
 
-Ported to Xamarin.Mac by Kenneth J. Pouncey.
+* Mac computer with the latest version of macOS.
+* [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
+* Latest version of [Xcode](https://developer.apple.com/xcode/) from Apple.
+
+## Running the sample
+
+1. Open the solution file (**.sln**) in Visual Studio for Mac.
+1. Use the **Run** button or menu to start the app.
