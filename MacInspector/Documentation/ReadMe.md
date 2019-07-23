@@ -2,15 +2,15 @@
 
 Most modern OS X applications present auxiliary controls and options that affect the active document or selection as **Inspectors** that are part of the Main Window (like Apple's Pages or Numbers apps), instead of using [Panel Windows](https://developer.xamarin.com/guides/mac/user-interface/working-with-windows/#Panels).
 
-While **Panel Windows** have been deprecated in Storyboards, Apple does not provide a specific User Interface Widget to build **Inspectors**. Instead the developer must use `NSSplitViewControllers` and standard UI Widgets (such as Checkboxes and Text Fields) to create the [Inspector Interface](/guides/mac/user-interface/working-with-windows/#Inspectors).
+While **Panel Windows** have been deprecated in Storyboards, Apple does not provide a specific User Interface Widget to build **Inspectors**. Instead the developer must use `NSSplitViewControllers` and standard UI Widgets (such as Checkboxes and Text Fields) to create the [Inspector Interface](https://docs.microsoft.com/xamarin/mac/user-interface/window#inspectors).
 
-This app shows an example of creating two different types of Inspector Panels and running those panels with a Split View. It also uses a [Segment Control](/guides/mac/user-interface/standard-controls/#Working_with_Selection_Controls) in the [Toolbar](/guides/mac/user-interface/working-with-toolbars/) to control the **Inspector** similar to Apple's Pages word processing app.
+This app shows an example of creating two different types of Inspector Panels and running those panels with a Split View. It also uses a [Segment Control](https://docs.microsoft.com/xamarin/mac/user-interface/standard-controls#working-with-selection-controls) in the [Toolbar](https://docs.microsoft.com/xamarin/mac/user-interface/toolbar) to control the **Inspector** similar to Apple's Pages word processing app.
 
-# Implementation
+## Implementation
 
 The following sections will briefly discuss the key source code components and how they were used to implement MacInspector's functionality.
 
-## Generic Classes
+### Generic Classes
 
 The following generic classes are defined:
 
@@ -18,11 +18,11 @@ The following generic classes are defined:
 * **DocumentProperties.cs** - Provides a set of adjustable properties for the document being edited and exposes those properties via [Key-Value Coding and Data Binding](https://developer.xamarin.com/guides/mac/application_fundamentals/databinding/).
 * **ReplaceInspectorPanelSegue.cs** - Creates a custom Segue type that is used to show new **Inspector Panels** in the **Inspector**.
 
-## Resources
+### Resources
 
 Provides the custom Toolbar images used in MacInspector.
 
-## App, Windows and Controllers
+### App, Windows and Controllers
 
 The following classes provide app support, Windows, Windows Controllers, View and View Controller Support in the application:
 
@@ -32,12 +32,11 @@ The following classes provide app support, Windows, Windows Controllers, View an
 * **DocPrefsViewController.cs** - Handles the **Inspector Panel** for the `DocumentProperties` for the window. It uses [Key-Value Coding and Data Binding](https://developer.xamarin.com/guides/mac/application_fundamentals/databinding/) to maintain the values.
 * **Entitlements.plist** - Controls any Entitlements for the app such as Sandboxing or iCloud support.
 * **Info.plist** - The [`Info.plist`](https://developer.xamarin.com/guides/mac/getting_started/hello,_mac/#Info.plist) file defines information for the app such as its Title, Type and Icon.
-* **InspectorViewController.cs** - Handles the [Inspector Interface](/guides/mac/user-interface/working-with-windows/#Inspectors) and controls the hiding and displaying of **Inspector Panels**.
+* **InspectorViewController.cs** - Handles the [Inspector Interface](https://docs.microsoft.com/xamarin/mac/user-interface/window#Inspectors) and controls the hiding and displaying of **Inspector Panels**.
 * **Main.cs** - The [`Main.cs`](https://developer.xamarin.com/guides/mac/getting_started/hello,_mac/#Main.cs) file starts the App.
 * **Main.storyboard** - This [Storyboard](https://developer.xamarin.com/guides/mac/platform-features/storyboards/) defines the User Interface for the app. Use Xcode's Interface Builder to edit.
 * **MainSplitViewController.cs** - Handles the Split View used to contain the document content on the left and the **Inspector** on the right. Contains routines to help the Content communicate with the **Inspector**.
 * **MainWindow.cs** - Defines the main window for the app.
-* **MainWindowController.cs** - Handles the `MainWindow` for the app and controls the [Toolbar](/guides/mac/user-interface/working-with-toolbars/) for the window.
+* **MainWindowController.cs** - Handles the `MainWindow` for the app and controls the [Toolbar](https://docs.microsoft.com/xamarin/mac/user-interface/toolbar) for the window.
 
 For more detailed descriptions, please see the [API Documentation](html/index.html) for the MacInspector source code.
-
