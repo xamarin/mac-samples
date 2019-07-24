@@ -1,6 +1,6 @@
 ---
 name: Xamarin.Mac - ButtonMadness
-description: This is a button sample for mac.
+description: This is a button sample for macOS apps.
 page_type: sample
 languages:
 - csharp
@@ -8,9 +8,9 @@ products:
 - xamarin
 urlFragment: buttonmadness
 ---
-# ButtonMaddness
+# ButtonMadness
 
-This is a button sample for mac.
+This is a button sample for macOS apps written with Xamarin.Mac.
 
 ![ButtonMadness application screenshot](Screenshots/0.png "ButtonMadness application screenshot")
 
