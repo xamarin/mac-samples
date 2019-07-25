@@ -17,7 +17,7 @@ Source code for the [Hello, Mac Getting Started Guide] on the [Xamarin Developer
 
 Consists of a single window, button and label; demonstrating how to build your first Xamarin.Mac application.
 
-![Simple macOS app screenshot](Screenshots01.png)
+![Simple macOS app screenshot](Screenshots/Screenshots01.png)
 
 Contains the correct entitlements and other configuration to submit to the Mac App Store. Refer to the [Publishing to the App Store] documentation for more information.
 
