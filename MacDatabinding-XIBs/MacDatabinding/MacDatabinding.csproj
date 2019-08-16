@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{566D3FBF-96C1-46B9-B9B3-24AD32417F18}</ProjectGuid>
+    <ProjectGuid>{4B76C698-91F5-48D6-9110-FE8BFA1E0210}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MacDatabinding</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>

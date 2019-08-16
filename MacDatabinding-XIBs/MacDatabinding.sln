@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacDatabinding", "MacDatabinding\MacDatabinding.csproj", "{566D3FBF-96C1-46B9-B9B3-24AD32417F18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacDatabinding", "MacDatabinding\MacDatabinding.csproj", "{4B76C698-91F5-48D6-9110-FE8BFA1E0210}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{566D3FBF-96C1-46B9-B9B3-24AD32417F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{566D3FBF-96C1-46B9-B9B3-24AD32417F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{566D3FBF-96C1-46B9-B9B3-24AD32417F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{566D3FBF-96C1-46B9-B9B3-24AD32417F18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B76C698-91F5-48D6-9110-FE8BFA1E0210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B76C698-91F5-48D6-9110-FE8BFA1E0210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B76C698-91F5-48D6-9110-FE8BFA1E0210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B76C698-91F5-48D6-9110-FE8BFA1E0210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
