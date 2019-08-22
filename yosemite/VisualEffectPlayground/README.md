@@ -1,6 +1,6 @@
 ---
-name: Xamarin.Mac - Blurs, translucency and vibrancy on OS X
-description: This sample shows how to use various options of NSVisualEffectView to do blurs, translucency and vibrancy on OS X. It demonstrates in window...
+name: Xamarin.Mac - Blurs, translucency and vibrancy on macOS
+description: This sample shows how to use various options of NSVisualEffectView to do blurs, translucency, and vibrancy on macOS.
 page_type: sample
 languages:
 - csharp
@@ -8,19 +8,11 @@ products:
 - xamarin
 urlFragment: yosemite-visualeffectplayground
 ---
-# Blurs, translucency and vibrancy on OS X
+# Blurs, translucency and vibrancy on macOS
 
-This sample shows how to use various options of NSVisualEffectView to do blurs, translucency and vibrancy on OS X. It demonstrates in window blending, behind window blending, creating masks, using state, and custom vibrant controls.
+This sample shows how to use various options of NSVisualEffectView to do blurs, translucency, and vibrancy on macOS. It demonstrates in window blending, behind window blending, creating masks, using state, and custom vibrant controls.
 
-![Blurs, translucency and vibrancy on OS X application screenshot](Screenshots/1.png "Blurs, translucency and vibrancy on OS X application screenshot")
-
-## Build Requirements
-
-OS X 10.10, Xcode 6.0 or later
-
-## Runtime
-
-OS X 10.10
+![Screenshot of sample app menu of effects](Screenshots/1.png)
 
 ## License
 
