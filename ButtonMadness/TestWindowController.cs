@@ -1,4 +1,3 @@
-
 using System;
 using CoreGraphics;
 using System.Collections.Generic;
@@ -157,19 +156,19 @@ namespace SamplesButtonMadness
 			// use a menu to the first segment (applied to both nib-based and code-based)
 			codeBasedSegmentControl.SetMenu (buttonMenu, 0);
 			nibBasedSegControl.SetMenu (buttonMenu, 0);
-			
-			// add icons to each segment (applied to both nib-based and code-based)
-			NSImage segmentIcon1 = NSWorkspace.SharedWorkspace.IconForFileType(NSFileTypeForHFSTypeCode.ComputerIcon);
+
+            // add icons to each segment (applied to both nib-based and code-based)
+            NSImage segmentIcon1 = NSWorkspace.SharedWorkspace.IconForFileType(HFSTypeCode.ComputerIcon);
 			segmentIcon1.Size = new CGSize(16, 16);
 			nibBasedSegControl.SetImage (segmentIcon1, 0);
 			codeBasedSegmentControl.SetImage (segmentIcon1, 0);
 			
-			NSImage segmentIcon2 = NSWorkspace.SharedWorkspace.IconForFileType (NSFileTypeForHFSTypeCode.DesktopIcon);
+			NSImage segmentIcon2 = NSWorkspace.SharedWorkspace.IconForFileType (HFSTypeCode.DesktopIcon);
 			segmentIcon2.Size = new CGSize (16, 16);
 			nibBasedSegControl.SetImage (segmentIcon2, 1);
 			codeBasedSegmentControl.SetImage (segmentIcon2, 1);
 			
-			NSImage segmentIcon3 = NSWorkspace.SharedWorkspace.IconForFileType (NSFileTypeForHFSTypeCode.FinderIcon);
+			NSImage segmentIcon3 = NSWorkspace.SharedWorkspace.IconForFileType (HFSTypeCode.FinderIcon);
 			segmentIcon3.Size = new CGSize (16, 16);
 			nibBasedSegControl.SetImage (segmentIcon3, 2);
 			codeBasedSegmentControl.SetImage (segmentIcon3, 2);
@@ -240,4 +239,3 @@ namespace SamplesButtonMadness
 		#endregion
 	}
 }
-
