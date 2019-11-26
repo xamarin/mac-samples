@@ -12,11 +12,10 @@ using Foundation;
 
 namespace HelloCoreWlan {
 	public class HelloCoreWlanSample {
-
 		static void Main (string[] args)
 		{
 			NSApplication.Init ();
-			
+
 			using (new NSAutoreleasePool ()) {
 				string[] interfaces = CWInterface.SupportedInterfaces;
 				
