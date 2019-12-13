@@ -21,13 +21,14 @@ namespace MacWindows
 		[Export ("windowDidResize:")]
 		public void DidResize (NSNotification notification)
 		{
-			throw new System.NotImplementedException ();
+			// Do something as the window is being live resized
 		}
 
 		[Export ("windowDidEndLiveResize:")]
 		public void DidEndLiveResize (NSNotification notification)
 		{
-			throw new System.NotImplementedException ();
+			// Do something after the user's finished resizing
+			// the window
 		}
 	}
 }
