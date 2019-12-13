@@ -5,7 +5,7 @@ using Foundation;
 
 namespace MacWindows
 {
-	public partial class ViewController : NSViewController
+	public partial class ViewController : NSViewController, INSWindowDelegate
 	{
 		#region Computed Properties
 		public override NSObject RepresentedObject {
@@ -45,6 +45,20 @@ namespace MacWindows
 
 		}
 
+		[Export ("windowWillClose:")]
+		public void WillClose (NSNotification notification)
+		{
+			// is the window dirty?
+			if (DocumentEdited) {
+				var alert = new NSAlert () {
+					AlertStyle = NSAlertStyle.Critical,
+					InformativeText = "We need to give the user the ability to save the document here...",
+					MessageText = "Save Document",
+				};
+				alert.RunModal ();
+			}
+		}
+
 		public override void ViewWillAppear ()
 		{
 			base.ViewWillAppear ();
@@ -52,17 +66,7 @@ namespace MacWindows
 			// Set Window Title
 			this.View.Window.Title = "untitled";
 
-			View.Window.WillClose += (sender, e) => {
-				// is the window dirty?
-				if (DocumentEdited) {
-					var alert = new NSAlert () {
-						AlertStyle = NSAlertStyle.Critical,
-						InformativeText = "We need to give the user the ability to save the document here...",
-						MessageText = "Save Document",
-					};
-					alert.RunModal ();
-				}
-			};
+			View.Window.Delegate = this;
 		}
 
 		public override void AwakeFromNib ()
