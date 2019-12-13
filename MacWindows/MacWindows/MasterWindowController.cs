@@ -7,8 +7,7 @@ using AppKit;
 
 namespace MacWindows
 {
-	public partial class MasterWindowController : NSWindowController
-	{
+	public partial class MasterWindowController : NSWindowController, INSWindowDelegate {
 		public MasterWindowController (IntPtr handle) : base (handle)
 		{
 		}
@@ -16,15 +15,19 @@ namespace MacWindows
 		public override void WindowDidLoad ()
 		{
 			base.WindowDidLoad ();
+			Window.Delegate = this;
+		}
 
-			Window.DidResize += (sender, e) => {
-				// Do something as the window is being live resized
-			};
+		[Export ("windowDidResize:")]
+		public void DidResize (NSNotification notification)
+		{
+			throw new System.NotImplementedException ();
+		}
 
-			Window.DidEndLiveResize += (sender, e) => {
-				// Do something after the user's finished resizing
-				// the window
-			};
+		[Export ("windowDidEndLiveResize:")]
+		public void DidEndLiveResize (NSNotification notification)
+		{
+			throw new System.NotImplementedException ();
 		}
 	}
 }
