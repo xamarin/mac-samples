@@ -157,8 +157,8 @@ namespace SamplesButtonMadness
 			codeBasedSegmentControl.SetMenu (buttonMenu, 0);
 			nibBasedSegControl.SetMenu (buttonMenu, 0);
 
-            // add icons to each segment (applied to both nib-based and code-based)
-            NSImage segmentIcon1 = NSWorkspace.SharedWorkspace.IconForFileType(HFSTypeCode.ComputerIcon);
+			// add icons to each segment (applied to both nib-based and code-based)
+			NSImage segmentIcon1 = NSWorkspace.SharedWorkspace.IconForFileType(HFSTypeCode.ComputerIcon);
 			segmentIcon1.Size = new CGSize(16, 16);
 			nibBasedSegControl.SetImage (segmentIcon1, 0);
 			codeBasedSegmentControl.SetImage (segmentIcon1, 0);
