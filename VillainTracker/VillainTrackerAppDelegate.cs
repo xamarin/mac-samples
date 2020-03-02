@@ -40,7 +40,8 @@ namespace VillainTracker
 			// initialize delegates after critical data initialized
 			villainsTableView.DataSource = new DataSource (this); 
 			villainsTableView.Delegate = new VillainsTableViewDelegate (this);
-			
+
+			notesView.Delegate = null;
 			notesView.TextDidChange += delegate {
 				villain.Notes = notesView.Value;
 			};
