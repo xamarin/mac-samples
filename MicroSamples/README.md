@@ -6,18 +6,18 @@ show how to use particular APIs of Xamarin.Mac. They are not
 very complicated, but instead just show one or two features
 and are mostly GUI-less.
 
-generate-pdf.cs
+pdf/
 ---------------
 
 Shows how to generate a PDF using CoreGraphics
 
-locator.cs
+locator/
 ----------
 
 Shows how to use CoreLocation on macOS.
 
 
-HelloCoreWlanSample.cs
+CoreWlan/
 ----------------------
 
-Shows how to use CoreWlan on macOS. To check sample output you should run native executable inside HelloCoreWlanSample app bundle.
+Shows how to use CoreWlan on macOS.

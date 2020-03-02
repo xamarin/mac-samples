@@ -15,6 +15,7 @@ class DrawCircleInPDF {
 	{
 		NSApplication.Init ();
 		NSUrl path = NSUrl.FromFilename (Path.Combine ("../../..", "demo.pdf")); //Escape out of generate-pdf.app/Contents/Resources
+		Console.WriteLine ($"Saving to: {path}");
 		var pdf = new CGContextPDF (path, new RectangleF (0, 0, 617, 792));
 
 		pdf.BeginPage (null);
