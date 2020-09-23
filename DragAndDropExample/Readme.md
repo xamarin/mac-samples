@@ -19,7 +19,7 @@ The drag will contain two items:
 
 When the drop happens on the **Green View**, the drop counter will be incremented and the contents of the drag package will be read and displayed in the console.
 
-![Sample drag and drop sample](Screenshots/0.png)
+![Sample drag and drop sample](Screenshots/01.png)
 
 ## Prerequisites
 
