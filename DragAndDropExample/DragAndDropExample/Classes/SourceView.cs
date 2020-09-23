@@ -43,6 +43,9 @@ namespace DragAndDropExample
 			var text = new NSDraggingItem ((NSString)"Hello World");
 			var images = new NSDraggingItem (homeImage);
 
+			text.DraggingFrame = Bounds;
+			images.DraggingFrame = Bounds;
+
 			// Inform the OS that the drag has started and that it contains the two elements
 			// that we created above
 			BeginDraggingSession (new [] { text, images }, theEvent, this);
