@@ -11,7 +11,7 @@ urlFragment: cameraBrowser
 
 # CameraBrowser
 
-This sample demonstrates how to read, download, and delete media files from a device using the `ImageCaptureCore` framework. [Based on the Camera Browser Sample](https://developer.apple.com/library/archive/samplecode/CameraBrowser/Introduction/Intro.html#//apple_ref/doc/uid/DTS40007761-Intro-DontLinkElementID_2).
+This sample demonstrates how to read, download, and delete media files from a device using the `ImageCaptureCore` framework. Based on the [Camera Browser Sample](https://developer.apple.com/library/archive/samplecode/CameraBrowser/Introduction/Intro.html#//apple_ref/doc/uid/DTS40007761-Intro-DontLinkElementID_2).
 
 ![CameraBrowser application screenshot](Screenshots/sample.png "CameraBrowser application screenshot")
 
