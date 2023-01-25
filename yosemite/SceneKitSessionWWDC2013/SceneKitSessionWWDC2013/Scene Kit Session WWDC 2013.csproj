@@ -74,10 +74,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Xamarin.Mac" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="Newtonsoft.Json" Version="8.0.2" Private="false" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
