@@ -3,6 +3,7 @@ using CoreGraphics;
 using Foundation;
 using AppKit;
 using ObjCRuntime;
+using CoreLocation;
 
 namespace CoreWLANWirelessManager
 {
@@ -12,6 +13,12 @@ namespace CoreWLANWirelessManager
 
 		public AppDelegate ()
 		{
+		}
+		
+		public override void WillFinishLaunching(NSNotification notification)
+		{
+			var manager = new CLLocationManager();
+			manager.RequestAlwaysAuthorization();
 		}
 
 		public override void DidFinishLaunching (NSNotification notification)
