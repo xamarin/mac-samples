@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Linq;
 using AppKit;
 using Foundation;
 using ImageCaptureCore;
 using ObjCRuntime;
-#nullable enable
 
 namespace CameraBrowserSample
 {
 	public partial class ViewController : NSViewController, IICDeviceBrowserDelegate, IICCameraDeviceDelegate, IICCameraDeviceDownloadDelegate, IICDeviceDelegate {
 		public ICDeviceBrowser DeviceBrowser { get; set; } = new ICDeviceBrowser();
-		public NSMutableArray Cameras { [Export("Cameras")] get; [Export("setCameras:")] set; } = new NSMutableArray();
+
+		[Export("Cameras")]
+		public NSMutableArray Cameras { get; set; } = new NSMutableArray();
 
 		static ViewController() //init
 		{
@@ -37,11 +39,18 @@ namespace CameraBrowserSample
 
 			CamerasController.SelectsInsertedObjects = false;
 
-			NSNotificationCenter.DefaultCenter.AddObserver(this, new Selector("processICLaunchParams:"), (NSString)"ICLaunchParamsNotification", null);
+			NSNotificationCenter.DefaultCenter.AddObserver((NSString)"ICLaunchParamsNotification", (v) => HandleProcessICLaunchParams(v));
 
-			CamerasController.SelectsInsertedObjects = false;
+            CamerasController.SelectsInsertedObjects = false;
+			
 
-			MediaFilesController.AddObserver(this, (NSString)"selectedObjects", (NSKeyValueObservingOptions)0, IntPtr.Zero);
+			MediaFilesController.AddObserver((NSString)"selectedObjects", (NSKeyValueObservingOptions)0, (v)=>
+			{
+                WillChangeValue("canDelete");
+                WillChangeValue("canDownload");
+                DidChangeValue("canDelete");
+                DidChangeValue("canDownload");
+            });
 
 			DeviceBrowser.Delegate = this;
 			DeviceBrowser.BrowsedDeviceTypeMask = ICBrowsedDeviceType.Local | ICBrowsedDeviceType.Remote | ICBrowsedDeviceType.Camera;
@@ -65,17 +74,24 @@ namespace CameraBrowserSample
 		public bool CanDelete ()
 		{
 			bool can = false;
-			InvokeOnMainThread(() => {
-				var selectedFiles = MediaFilesController.SelectedObjects;
-				foreach (ICCameraFile f in selectedFiles)
-				{
-					if (!f.Locked)
-					{
-						can = true;
-						break;
-					}
-				}
-			});
+			InvokeOnMainThread(() =>
+			{
+				//The following are ways to express the same logic using different linq queries
+
+				// can = MediaFilesController.SelectedObjects.Any (file => !((file as ICCameraFile)?.Locked ?? true));
+				// -> solid way, good time complexity (O(N)), but not very readable
+
+				// can = MediaFilesController.SelectedObjects.Any( file => !((ICCameraFile) file).Locked);
+				// can = MediaFilesController.SelectedObjects.Select(file => (ICCameraFile)file).Any(file => !file.Locked);
+				// -> more readable than first ex but casting may throw exceptiion if item is not ICCameraFile
+
+				// can = MediaFilesController.SelectedObjects.Select(file => file as ICCameraFile).Any(file => file is not null && !file.Locked);
+				// -> repetitve, iterating over same item again
+
+				// readable, O(2N) complexity but constant is << so barely any significant impact
+				can = MediaFilesController.SelectedObjects.Any(obj => obj is ICCameraFile file ? !file.Locked: false);
+
+            });
 			return can;
 		}
 
@@ -84,7 +100,7 @@ namespace CameraBrowserSample
 		{
 			var res = false;
 			InvokeOnMainThread(() => {
-				res = MediaFilesController.SelectedObjects is not null ? MediaFilesController.SelectedObjects.Length > 0 : false;
+				res = MediaFilesController.SelectedObjects?.Length > 0;
 			} );
 			return res;
 		}
@@ -94,64 +110,57 @@ namespace CameraBrowserSample
 		{
 			get
 			{
-				var selectedObjects = CamerasController.SelectedObjects;
-				if (selectedObjects is null || selectedObjects.Length == 0)
-					return null;
-				return selectedObjects[0] as ICCameraDevice;
+				return CamerasController.SelectedObjects?.FirstOrDefault() as ICCameraDevice;
 			}
 
 		}
 
 		[Export("downloadFiles:")]
-		public void downloadFiles (ICCameraFile[] files)
+		public void DownloadFiles (ICCameraFile[] files)
 		{
-			NSString filePath = new NSString("~/Pictures");
-			var filePath1 = filePath.ExpandTildeInPath();
-			string[] fileUrl = new string[] { filePath1 };
+			var myPictures = (NSString) Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            var dict = new NSDictionary<NSString, NSObject>(myPictures, ICCameraDownloadOptionKeys.DownloadsDirectoryUrl);
 
-			var objects = new[] { NSUrl.CreateFileUrl(fileUrl) };
-			var keys = new[] { ICCameraDownloadOptionKeys.DownloadsDirectoryUrl };
-			var dict = new NSDictionary<NSString, NSObject>(keys, objects);
-			foreach (ICCameraFile f in files)
+            foreach (ICCameraFile f in files)
 			{
-				f?.Device?.RequestDownloadFile(f, dict, didDownloadFileDel);
+				f?.Device?.RequestDownloadFile(f, dict, DidDownloadFile);
 			}
 		}
 
-		public void didDownloadFileDel(ICCameraFile f, NSError err, NSDictionary options)
+		public void DidDownloadFile(ICCameraFile? file, NSError? error, NSDictionary? options)
 		{
 			Console.WriteLine("didDownloadFile called with:");
-			Console.WriteLine($"file: {f}");
-			Console.WriteLine($"error: {err}");
+			Console.WriteLine($"file: {file}");
+			Console.WriteLine($"error: {error}");
 			Console.WriteLine($"options: {options}");
 		}
 
 		[Export("readFiles:")]
-		public void readFiles (ICCameraFile[] files)
+		public void ReadFiles (ICCameraFile[] files)
 		{
 			foreach(ICCameraFile f in files)
 			{
-				f?.Device?.RequestReadDataFromFile(f, 0, f.FileSize, didReadDataDel);
-			}
-		}
+				f?.Device?.RequestReadDataFromFile(f, 0, f.FileSize, DidReadData);
+				
+            }
+        }
 
-		public void didReadDataDel(NSData data, ICCameraFile file, NSError err)
+		public void DidReadData(NSData? data, ICCameraFile? file, NSError? error)
 		{
 			Console.WriteLine("didReadData called with:");
 			Console.WriteLine($"data: {data}");
 			Console.WriteLine($"file: {file}");
-			Console.WriteLine($"error: {err}");
+			Console.WriteLine($"error: {error}");
 		}
 
 		[Export("openCamera")]
-		public void openCamera()
+		public void OpenCamera()
 		{
 			SelectedCamera?.RequestOpenSession();
 		}
 
 		// IICDeviceBrowserDelegate Impl
 
-		[Export("deviceBrowser:didAddDevice:moreComing:")]
 		public void DidAddDevice(ICDeviceBrowser browser, ICDevice device, bool moreComing)
 		{
 			Console.WriteLine($"{nameof(DidAddDevice)}: {device}");
@@ -165,72 +174,52 @@ namespace CameraBrowserSample
 			}
 		}
 
-		[Export("deviceBrowser:didRemoveDevice:moreGoing:")]
 		public void DidRemoveDevice(ICDeviceBrowser browser, ICDevice device, bool moreGoing)
 		{
 			Console.WriteLine($"{nameof(DidRemoveDevice)}: {device}");
 			CamerasController.RemoveObject(device);
 		}
 
-		[Export("deviceBrowser:deviceDidChangeName:")]
 		public void DeviceDidChangeName(ICDeviceBrowser browser, ICDevice device) => Console.WriteLine($"{nameof(DeviceDidChangeName)}: {device}");
 
-		[Export("deviceBrowser:deviceDidChangeSharingState:")]
 		public void DeviceDidChangeSharingState(ICDeviceBrowser browser, ICDevice device) => Console.WriteLine($"{nameof(DeviceDidChangeSharingState)}: {device}");
 
-		[Export("deviceBrowser:requestsSelectDevice:")]
 		public void RequestsSelectDevice(ICDeviceBrowser browser, ICDevice device) => Console.WriteLine($"{nameof(RequestsSelectDevice)}: {device}");
 
 		// start of camera device
 
-		[Export("cameraDevice:didAddItem:")]
 		public void DidAddItem(ICCameraDevice camera, ICCameraItem item) => Console.WriteLine($"{nameof(DidAddItem)}: \n cameraDevice: {camera} item: {item}");
 
-		[Export("cameraDevice:didRemoveItem:")]
 		public void DidRemoveItem(ICCameraDevice camera, ICCameraItem item) => Console.WriteLine($"{nameof(DidRemoveItem)}: \n cameraDevice: {camera} \n item: {item}");
 
-		[Export("cameraDevice:didRenameItems:")]
 		public void DidRenameItems(ICCameraDevice camera, ICCameraItem[] items) => Console.WriteLine($"{nameof(DidRenameItems)}:\n device: {camera} \n items: {items}");
 
-		[Export("cameraDevice:didCompleteDeleteFilesWithError:")]
 		public void DidCompleteDeleteFiles(ICCameraDevice scanner, NSError? error) => Console.WriteLine($"{nameof(DidCompleteDeleteFiles)}:\n device: {scanner} \n error: {error}");
 
-		[Export("cameraDeviceDidChangeCapability:")]
 		public void DidChangeCapability(ICCameraDevice camera) => Console.WriteLine($"cameraDeviceDidChangeCapability: {camera}");
 
-		[Export("cameraDevice:didReceiveThumbnailForItem:")]
 		public void DidReceiveThumbnail(ICCameraDevice camera, ICCameraItem forItem) => Console.WriteLine($"{nameof(DidReceiveThumbnail)}:\n device: {camera} \n item: {forItem}");
 
-		[Export("cameraDevice:didReceiveMetadataForItem:")]
 		public void DidReceiveMetadata(ICCameraDevice camera, ICCameraItem forItem) => Console.WriteLine($"{nameof(DidReceiveMetadata)}:\n device: {camera} \n item: {forItem}");
 
-		[Export("cameraDevice:didReceivePTPEvent:")]
 		public void DidReceivePtpEvent(ICCameraDevice camera, NSData eventData) => Console.WriteLine($"{nameof(DidReceivePtpEvent)}:\n device: {camera} \n data: {eventData}");
 
 		// start of IC device
 
-		[Export("device:didOpenSessionWithError:")]
 		public void DidOpenSession(ICDevice device, NSError error) => Console.WriteLine($"{nameof(DidOpenSession)}: \n device: {device} \n error: {error}");
 
-		[Export("device:didCloseSessionWithError:")]
 		public void DidCloseSession(ICDevice device, NSError error) => Console.WriteLine($"{nameof(DidCloseSession)}: \n device: {device} \n error: {error}");
 
-		[Export("deviceDidChangeName:")]
 		public void DidChangeName(ICDevice device) => Console.WriteLine($"{nameof(DidChangeName)}: \n device: {device}");
 
-		[Export("deviceDidChangeSharingState:")]
 		public void DidChangeSharingState(ICDevice device) => Console.WriteLine($"{nameof(DidChangeSharingState)}: \n device: {device}");
 
-		[Export("device:didReceiveStatusInformation:")]
 		public void DidReceiveStatusInformation(ICDevice device, NSDictionary<NSString, NSObject> status) => Console.WriteLine($"{nameof(DidReceiveStatusInformation)}: \n device: {device} \n status: {status}");
 
-		[Export("device:didEncounterError:")]
 		public void DidEncounterError(ICDevice device, NSError error) => Console.WriteLine($"{nameof(DidEncounterError)}: \n device: {device} \n error: {error}");
 
-		[Export("deviceDidBecomeReady:")]
 		public void DidBecomeReadyWithCompleteContentCatalog(ICDevice device) => Console.WriteLine($"{nameof(DidBecomeReadyWithCompleteContentCatalog)}: \n device: {device}");
 
-		[Export("didRemoveDevice:")]
 		public void DidRemoveDevice(ICDevice device) => Console.WriteLine($"{nameof(DidRemoveDevice)}:\n device: {device}");
 
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -748,11 +747,11 @@
                                 <rect key="frame" x="5" y="105" width="1213" height="561"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="FZJ-Y2-r7g">
-                                    <rect key="frame" x="3" y="3" width="1207" height="543"/>
+                                    <rect key="frame" x="4" y="5" width="1205" height="541"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxi-E7-53u">
-                                            <rect key="frame" x="6" y="8" width="1189" height="535"/>
+                                            <rect key="frame" x="6" y="6" width="1189" height="535"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <subviews>
                                                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="XUF-C8-nzu">
@@ -824,14 +823,14 @@
                                                     </tableHeaderView>
                                                 </scrollView>
                                                 <box fixedFrame="YES" titlePosition="noTitle" id="ZOh-WK-es3">
-                                                    <rect key="frame" x="273" y="0.0" width="919" height="539"/>
+                                                    <rect key="frame" x="273" y="-2" width="919" height="541"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" id="1Ga-jS-paR">
-                                                        <rect key="frame" x="3" y="3" width="913" height="535"/>
+                                                        <rect key="frame" x="4" y="5" width="911" height="533"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRV-5S-35Y">
-                                                                <rect key="frame" x="0.0" y="14" width="913" height="521"/>
+                                                                <rect key="frame" x="0.0" y="12" width="913" height="521"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <clipView key="contentView" id="nYb-39-z72">
                                                                     <rect key="frame" x="1" y="1" width="911" height="519"/>
@@ -901,7 +900,7 @@
                                                                     </subviews>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="EjI-Tm-Hiu">
-                                                                    <rect key="frame" x="1" y="496" width="868" height="16"/>
+                                                                    <rect key="frame" x="1" y="504" width="911" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="7g1-gr-1eN">

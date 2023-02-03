@@ -2,7 +2,6 @@
 using ObjCRuntime;
 using AppKit;
 using CoreGraphics;
-#nullable enable
 
 namespace CameraBrowserSample
 {
@@ -20,7 +19,11 @@ namespace CameraBrowserSample
 			if (value is null)
 				return null;
 
-			CGImage img = Runtime.GetINativeObject<CGImage>(value.Handle, false)!;
+			var img = Runtime.GetINativeObject<CGImage>(value.Handle, false);
+
+			if (img is null)
+				return null;
+
             return new NSImage(img, CGSize.Empty);
 		}
 	}
